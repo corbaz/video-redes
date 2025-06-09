@@ -4,12 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Video Downloader - Solo MP4 con Audio</title>
+    <title>Video Downloader - Instagram & LinkedIn MP4</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        /* Estilos del modal personalizado */
+        .cinema-player {
+            width: 90vw;
+            max-width: 1200px;
+            margin: 0;
+            padding: 0;
+            background: #0f0f12;
+            border-radius: 12px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6), 
+                        0 0 100px rgba(138, 43, 226, 0.3);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .cinema-player video {
+            width: 100%;
+            max-height: 80vh;
+            display: block;
+            outline: none;
+            background: #000;
+        }
+        
+        .cinema-controls {
+            padding: 15px;
+            background: rgba(15, 15, 18, 0.95);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .video-title {
+            color: #fff;
+            margin: 0;
+            font-size: 1.1em;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 80%;
+        }
+        
+        .close-modal {
+            background: rgba(138, 43, 226, 0.2);
+            border: none;
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            background: rgba(138, 43, 226, 0.4);
+            transform: rotate(90deg);
         }
 
         body {
@@ -46,12 +108,15 @@
             border-radius: 10px;
             padding: 15px;
             margin-bottom: 30px;
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
         }
 
         .status.success {
             background: rgba(76, 175, 80, 0.2);
             border: 1px solid rgba(76, 175, 80, 0.3);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
         }
 
         .input-section {
@@ -71,6 +136,8 @@
             margin-bottom: 20px;
             background: rgba(255, 255, 255, 0.9);
             color: #333;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
         }
 
         .url-input:focus {
@@ -717,12 +784,12 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>📹 Instagram MP4 Downloader</h1>
+            <h1>📹 Video Downloader (Instagram & LinkedIn)</h1>
             <p>Descarga videos MP4 con audio - verificación en servidor</p>
         </div>
 
-        <div class="input-section">
-            <input type="text" id="urlInput" class="url-input" placeholder="Pega aquí la URL del video de Instagram..."
+        <div class="input-section"> <input type="text" id="urlInput" class="url-input"
+                placeholder="Pega aquí la URL del video (Instagram o LinkedIn)..."
                 value="https://www.instagram.com/reel/DC2s8l_R-jr/">
             <br>
             <button id="analyzeBtn" class="btn">🔍 Buscar</button>
@@ -736,6 +803,9 @@
         <div id="results"></div>
     </div>
 
+    <script src="card.js"></script>
+    <script src="insta.js"></script>
+    <script src="linkedin.js"></script>
     <script>
         class InstagramMp4Downloader {
             constructor() {
@@ -757,10 +827,8 @@
             }
 
             async analyzeVideo() {
-                const url = this.urlInput.value.trim();
-
-                if (!url) {
-                    this.showError('Por favor ingresa una URL de Instagram');
+                const url = this.urlInput.value.trim(); if (!url) {
+                    this.showError('Por favor ingresa una URL de video');
                     return;
                 }
 
@@ -827,82 +895,24 @@
                         <p>${message}</p>
                     </div>
                 `;
-            }
-
-            showInstagramError(response) {
+            } showInstagramError(response) {
                 const error = response.error || 'Error desconocido';
                 const suggestion = response.suggestion || '';
 
                 this.results.innerHTML = `
                     <div class="error">
-                        <h3>🔐 Instagram Protegió Este Contenido</h3>
+                        <h3>🔐 Contenido Protegido</h3>
                         <p><strong>Motivo:</strong> ${error}</p>
                         ${suggestion ? `<p><strong>💡 Sugerencia:</strong> ${suggestion}</p>` : ''}
                     </div>
                 `;
             } async showSuccess(data) {
-                const formats = data.video_formats || [];
-                if (formats.length === 0) {
-                    this.results.innerHTML = `
-                        <div class="error">
-                            <h3>⚠️ No se encontraron MP4s con audio</h3>
-                            <p>Este video no tiene formatos MP4 con indicadores de audio.</p>
-                            <p><strong>Formatos analizados:</strong> ${data.total_all_formats || 'desconocido'}</p>
-                        </div>
-                    `;
-                    return;
+                const url = this.urlInput.value.trim();
+                if (url.includes('linkedin.com')) {
+                    showLinkedinVideo(data, this.results);
+                } else {
+                    showInstagramVideo(data, this.results);
                 }
-                // Mejor formato
-                const format = formats[0];
-                const videoInfo = this.getVideoInfo(format);
-                const duration = data.duration ? this.formatDuration(data.duration) : '';
-                const likes = data.like_count ? data.like_count.toLocaleString() : '';
-                const comments = data.comment_count ? data.comment_count.toLocaleString() : '';
-                const views = data.view_count ? data.view_count.toLocaleString() : '';
-                // Alias real (channel)
-                const uploader_id = data.uploader_id && data.uploader_id !== 'usuario' ? data.uploader_id : (data.channel || '');
-                const uploaderUrl = uploader_id ? `https://www.instagram.com/${uploader_id}` : '';
-                const uploader = data.uploader || '';
-                const title = data.title || '';
-                const upload_date = data.upload_date && !data.upload_date.includes('desconocida') ? data.upload_date : '';
-                const description = data.description || data.description_full || '';
-                let tags = data.tags || [];
-                let tagsHtml = '';
-                if (tags.length > 0) {
-                    tagsHtml = `<div class="pro-tags"><span class="pro-label">🏷️ Tags:</span> <span class="pro-value">${tags.map(tag => `#${tag}`).join(' ')}</span></div>`;
-                }
-                // Card profesional
-                this.results.innerHTML = `
-                <div class="pro-card">
-                  <div class="pro-title-row" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
-                    <span class="pro-title" style="font-size:1.25rem;font-weight:700;color:#fff;letter-spacing:0.01em;text-shadow:0 2px 8px rgba(0,0,0,0.13);">${title}</span>
-                    ${uploader_id ? `<a href="${uploaderUrl}" target="_blank" style="color:#4ECDC4;text-decoration:none;font-weight:700;font-size:1.12rem;letter-spacing:0.01em;">${uploader_id}</a>` : ''}
-                  </div>
-                  <div class="pro-card-grid" style="gap:36px;align-items:flex-start;">
-                    <div class="pro-card-left" style="flex:1 1 50%;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;">
-                      <div class="pro-video-center" style="width:100%;display:flex;align-items:center;justify-content:center;">
-                        <div class="pro-video-padding" style="background:rgba(0,0,0,0.13);border-radius:18px;padding:18px;box-shadow:0 2px 16px rgba(0,0,0,0.18);">
-                          <video class="pro-video-preview" src="${format.url}" controls preload="metadata" style="width:100%;max-width:340px;max-height:440px;min-height:180px;background:#000;border-radius:16px;box-shadow:0 2px 16px rgba(0,0,0,0.18);display:block;margin:auto;"></video>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="pro-card-right pro-info-centered" style="flex:1 1 50%;display:flex;flex-direction:column;gap:14px;justify-content:flex-start;font-size:1.09rem;align-items:flex-start;">
-                      ${uploader ? `<div class="pro-info-row" style="margin-bottom:0;"><span class="pro-label">👤 Usuario:</span></div><div class="pro-value" style="margin-bottom:10px;font-size:1.08rem;font-weight:500;">${uploader}</div>` : ''}
-                      ${upload_date ? `<div class="pro-info-row"><span class="pro-label">📅 Subido:</span> <span class="pro-value">${upload_date}</span></div>` : ''}
-                      ${duration ? `<div class="pro-info-row"><span class="pro-label">⏱️ Duración:</span> <span class="pro-value">${duration}</span></div>` : ''}
-                      ${likes ? `<div class="pro-info-row"><span class="pro-label">❤️ Likes:</span> <span class="pro-value">${likes}</span></div>` : ''}
-                      ${comments && comments !== '0' ? `<div class="pro-info-row"><span class="pro-label">💬 Comentarios:</span> <span class="pro-value">${comments}</span></div>` : ''}
-                      ${views && views !== '0' ? `<div class="pro-info-row"><span class="pro-label">👁️ Visualizaciones:</span> <span class="pro-value">${views}</span></div>` : ''}
-                      <div class="pro-info-row"><span class="pro-label">🎬 Resolución:</span> <span class="pro-value">${videoInfo}</span></div>
-                    </div>
-                  </div>
-                  <div class="pro-description pro-description-full" style="margin-top:28px;">
-                    <span class="pro-label">📝 Descripción:</span>
-                    <div class="pro-value" style="white-space: pre-line;font-size:1.09rem;">${description}</div>
-                    ${tagsHtml ? `<div style='margin-top:10px;'>${tagsHtml}</div>` : ''}
-                  </div>
-                </div>
-                `;
             } displayResults(formatsWithAudio, totalFormats, data) {
                 if (formatsWithAudio.length === 0) {
                     this.results.innerHTML = `
@@ -1039,6 +1049,137 @@
         document.addEventListener('DOMContentLoaded', () => {
             new InstagramMp4Downloader();
         });
+
+        // Función para mostrar el reproductor de video en modal (sin título)
+        function showVideoModal(videoUrl) {
+            const modal = document.createElement('div');
+            modal.className = 'video-modal';
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+                padding: 20px;
+                box-sizing: border-box;
+            `;
+            
+            modal.innerHTML = `
+                <div class="video-player-container">
+                    <button class="close-modal" onclick="this.closest('.video-modal').remove()" style="
+                        position: absolute;
+                        top: 20px;
+                        right: 20px;
+                        background: rgba(255, 255, 255, 0.2);
+                        border: none;
+                        color: white;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        z-index: 10;
+                        font-size: 20px;
+                    ">
+                        &times;
+                    </button>
+                    <video controls autoplay style="
+                        max-width: 90%;
+                        max-height: 90vh;
+                        outline: none;
+                        background: #000;
+                    ">
+                        <source src="${videoUrl}" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                </div>
+            `;
+            
+            // Estilos para el modal
+            const style = document.createElement('style');
+            style.textContent = `
+                .cinema-modal {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.85);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 9999;
+                    padding: 20px;
+                    box-sizing: border-box;
+                    backdrop-filter: blur(10px);
+                }
+                
+                /* Estilos eliminados - Ahora son inline */
+            `;
+            
+            document.head.appendChild(style);
+            document.body.appendChild(modal);
+            
+            // Cerrar al hacer clic fuera del contenido
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+            
+            // Cerrar con la tecla Escape
+            const handleEscape = (e) => {
+                if (e.key === 'Escape') {
+                    modal.remove();
+                    document.removeEventListener('keydown', handleEscape);
+                }
+            };
+            
+            document.addEventListener('keydown', handleEscape);
+        }
+    </script>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script>
+        // Función para mostrar el reproductor con SweetAlert2
+        function showVideoPlayer(url, title = '') {
+            Swal.fire({
+                html: `
+                    <div class="cinema-player">
+                        <div class="cinema-controls">
+                            <h3 class="video-title">${title}</h3>
+                        </div>
+                        <video controls autoplay style="width:100%; max-height:70vh;">
+                            <source src="${url}" type="video/mp4">
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                    </div>
+                `,
+                width: '90%',
+                padding: '0',
+                background: 'transparent',
+                showConfirmButton: false,
+                showCloseButton: true,
+                customClass: {
+                    closeButton: 'close-modal',
+                    popup: 'cinema-modal'
+                },
+                didOpen: () => {
+                    // Enfocar el video cuando se abre el modal
+                    const video = document.querySelector('.swal2-popup video');
+                    if (video) video.focus();
+                }
+            });
+        }
     </script>
 </body>
 
