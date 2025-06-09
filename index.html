@@ -170,9 +170,27 @@
             padding: 20px;
             border-radius: 10px;
             display: flex;
+            flex-direction: column;
+            /* Cambiado para apilar vista previa y detalles */
+            align-items: center;
+            gap: 15px;
+            /* Reducido para mejor ajuste con vista previa */
+        }
+
+        .video-preview {
+            width: 100%;
+            max-width: 320px;
+            /* Ajusta según sea necesario */
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .format-details-container {
+            display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 20px;
+            width: 100%;
+            gap: 15px;
         }
 
         .format-info {
@@ -199,16 +217,17 @@
         }
 
         .download-btn {
-            background: linear-gradient(45deg, #4ECDC4, #44A08D);
+            background: #4ECDC4;
             color: white;
             border: none;
-            padding: 15px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 1rem;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
             font-weight: bold;
-            transition: all 0.3s ease;
-            display: inline-block;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            /* Asegurar que no parezca un enlace normal */
         }
 
         .download-btn:hover {
@@ -275,6 +294,189 @@
             color: #FFC107;
             margin-bottom: 10px;
         }
+
+        .pro-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .pro-card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 20px;
+        }
+
+        .pro-card-left {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pro-video-preview {
+            width: 100%;
+            max-width: 320px;
+            max-height: 420px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+        }
+
+        .pro-card-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .pro-info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .pro-label {
+            font-weight: bold;
+            color: #FFC107;
+        }
+
+        .pro-value {
+            color: white;
+            text-align: right;
+        }
+
+        .pro-tips {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .pro-tips h3 {
+            color: #FFC107;
+            margin-bottom: 10px;
+        }
+
+        .pro-tips ul {
+            list-style: disc;
+            padding-left: 20px;
+            color: white;
+            text-align: left;
+        }
+
+        .pro-tips li {
+            margin-bottom: 8px;
+        }
+
+        /* --- ESTILOS PRO CARD --- */
+        .pro-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+            padding: 32px 24px 24px 24px;
+            margin: 32px auto 0 auto;
+            max-width: 900px;
+        }
+
+        .pro-card-grid {
+            display: flex;
+            flex-direction: row;
+            gap: 32px;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .pro-card-left {
+            flex: 1 1 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pro-video-center {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pro-video-padding {
+            background: #111;
+            border-radius: 18px;
+            padding: 18px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pro-video-preview {
+            width: 100%;
+            max-width: 320px;
+            max-height: 420px;
+            min-height: 180px;
+            background: #000;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+            display: block;
+            margin: auto;
+        }
+
+        .pro-card-right {
+            flex: 1 1 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            justify-content: flex-start;
+            font-size: 1.08rem;
+        }
+
+        .pro-info-row {
+            font-weight: 600;
+            color: #4ECDC4;
+            margin-bottom: 0px;
+            margin-top: 10px;
+        }
+
+        .pro-label {
+            font-weight: 600;
+            color: #4ECDC4;
+            min-width: 120px;
+        }
+
+        .pro-value {
+            color: #fff;
+            word-break: break-word;
+            margin-bottom: 8px;
+            margin-left: 0;
+        }
+
+        .pro-description {
+            margin-top: 32px;
+            background: rgba(0, 0, 0, 0.10);
+            border-radius: 12px;
+            padding: 18px 20px;
+            font-size: 1.08rem;
+            color: #fff;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        @media (max-width: 900px) {
+            .pro-card-grid {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .pro-card-left,
+            .pro-card-right {
+                width: 100%;
+            }
+
+            .pro-description {
+                margin-top: 18px;
+            }
+        }
     </style>
 </head>
 
@@ -302,15 +504,6 @@
         </div>
 
         <div id="results"></div>
-        <div class="tips">
-            <h3>📝 Importante:</h3>
-            <ul>
-                <li><strong>Solo MP4s:</strong> El servidor filtra únicamente formatos MP4 con audio</li>
-                <li><strong>MoviePy:</strong> Detección precisa de audio usando librería especializada</li>
-                <li><strong>Sin Falsos Positivos:</strong> Análisis directo del contenido de audio</li>
-                <li><strong>Descarga Directa:</strong> Click en el botón para descargar el MP4 completo</li>
-            </ul>
-        </div>
     </div>
 
     <script>
@@ -431,7 +624,43 @@
                     return;
                 }
 
-                this.displayResults(formats, data.total_all_formats || formats.length, data);
+                // Mostrar solo la mejor calidad (primer formato)
+                const format = formats[0];
+                const videoInfo = this.getVideoInfo(format);
+                const duration = data.duration ? this.formatDuration(data.duration) : '';
+                const likes = data.like_count ? data.like_count.toLocaleString() : '';
+                const uploader = data.uploader || '';
+                const description = data.description || '';
+                const views = data.view_count ? data.view_count.toLocaleString() : '';
+
+                this.results.innerHTML = `
+                <div class="pro-card">
+                  <div class="pro-card-grid">
+                    <div class="pro-card-left">
+                      <div class="pro-video-center">
+                        <div class="pro-video-padding">
+                          <video class="pro-video-preview" src="${format.url}" controls preload="metadata" style="width:100%;max-width:320px;max-height:420px;min-height:180px;background:#000;border-radius:16px;box-shadow:0 2px 16px rgba(0,0,0,0.18);display:block;margin:auto;padding:18px;"></video>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pro-card-right">
+                      <div class="pro-info-row"><span class="pro-label">👤 Usuario:</span></div>
+                      <div class="pro-value">${uploader}</div>
+                      <div class="pro-info-row"><span class="pro-label">⏱️ Duración:</span></div>
+                      <div class="pro-value">${duration}</div>
+                      <div class="pro-info-row"><span class="pro-label">❤️ Likes:</span></div>
+                      <div class="pro-value">${likes}</div>
+                      ${views ? `<div class='pro-info-row'><span class='pro-label'>👁️ Visualizaciones:</span></div><div class='pro-value'>${views}</div>` : ''}
+                      <div class="pro-info-row"><span class="pro-label">🎬 Resolución:</span></div>
+                      <div class="pro-value">${videoInfo}</div>
+                    </div>
+                  </div>
+                  <div class="pro-description">
+                    <span class="pro-label">📝 Descripción:</span>
+                    <div class="pro-value">${description}</div>
+                  </div>
+                </div>
+            `;
             } displayResults(formatsWithAudio, totalFormats, data) {
                 if (formatsWithAudio.length === 0) {
                     this.results.innerHTML = `
@@ -471,7 +700,7 @@
                         </div>
                         
                         <h3>🎵 Formatos MP4 con Audio (${formatsWithAudio.length} encontrados)</h3>
-                        <div class="formats">
+                        <div class="formats" id="formats">
                 `;
 
                 formatsWithAudio.forEach(format => {
@@ -482,6 +711,7 @@
 
                     html += `
                         <div class="format">
+                            <video class="video-preview" src="${format.url}" controls preload="metadata" style="max-width:220px; max-height:320px; background:#000; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.15);"></video>
                             <div class="format-info">
                                 <div class="quality">${quality}</div>
                                 <div class="details">
@@ -491,9 +721,7 @@
                                 </div>
                             </div>
                             <div class="format-actions">
-                                <a href="${format.url}" class="download-btn" download>
-                                    📥 Descargar MP4
-                                </a>
+                                <a href="${format.url}" class="download-btn" download target="_self">📥 Descargar MP4</a>
                             </div>
                         </div>
                     `;
