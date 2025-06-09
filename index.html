@@ -332,18 +332,22 @@
 
         .pro-info-row {
             display: flex;
-            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
             margin-bottom: 10px;
         }
 
         .pro-label {
             font-weight: bold;
             color: #FFC107;
+            margin-right: 6px;
         }
 
         .pro-value {
             color: white;
-            text-align: right;
+            text-align: left;
+            margin: 0;
         }
 
         .pro-tips {
@@ -391,36 +395,21 @@
         .pro-card-left {
             flex: 1 1 50%;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
         }
 
-        .pro-video-center {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .pro-video-padding {
-            background: #111;
-            border-radius: 18px;
-            padding: 18px 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .pro-video-preview {
-            width: 100%;
-            max-width: 320px;
-            max-height: 420px;
-            min-height: 180px;
-            background: #000;
+        .pro-description {
+            margin-top: 0;
+            margin-bottom: 18px;
+            background: rgba(0, 0, 0, 0.10);
             border-radius: 12px;
-            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
-            display: block;
-            margin: auto;
+            padding: 18px 20px;
+            font-size: 1.08rem;
+            color: #fff;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+            max-width: 420px;
         }
 
         .pro-card-right {
@@ -432,34 +421,11 @@
             font-size: 1.08rem;
         }
 
-        .pro-info-row {
-            font-weight: 600;
-            color: #4ECDC4;
-            margin-bottom: 0px;
-            margin-top: 10px;
-        }
-
-        .pro-label {
-            font-weight: 600;
-            color: #4ECDC4;
-            min-width: 120px;
-        }
-
-        .pro-value {
-            color: #fff;
-            word-break: break-word;
-            margin-bottom: 8px;
-            margin-left: 0;
-        }
-
-        .pro-description {
-            margin-top: 32px;
-            background: rgba(0, 0, 0, 0.10);
-            border-radius: 12px;
-            padding: 18px 20px;
-            font-size: 1.08rem;
-            color: #fff;
-            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+        .pro-video-center {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         @media (max-width: 900px) {
@@ -477,6 +443,274 @@
                 margin-top: 18px;
             }
         }
+
+        .pro-info-centered {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: left;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .pro-info-row,
+        .pro-value {
+            align-self: flex-start;
+            text-align: left;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        @media (max-width: 900px) {
+            .pro-info-centered {
+                align-items: center;
+                text-align: center;
+            }
+
+            .pro-info-row,
+            .pro-value {
+                align-self: center;
+                text-align: center;
+            }
+        }
+
+        .pro-title-row {
+            text-align: left;
+            margin-bottom: 18px;
+        }
+
+        .pro-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.01em;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+        }
+
+        .pro-tags {
+            margin-top: 10px;
+            font-size: 1.01rem;
+            color: #4ECDC4;
+            font-weight: 600;
+        }
+
+        .pro-description-full {
+            grid-column: span 2;
+            /* Ocupa ambas columnas en el grid */
+            width: 100%;
+            /* Asegura que use todo el ancho disponible */
+            margin-top: 10px;
+            /* Espacio superior opcional */
+        }
+
+        .pro-description.pro-description-full {
+            max-width: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 24px;
+            margin-bottom: 0;
+            padding: 22px 28px;
+            border-radius: 14px;
+            background: rgba(0, 0, 0, 0.13);
+            font-size: 1.12rem;
+            color: #fff;
+            box-shadow: 0 1px 8px rgba(0, 0, 0, 0.10);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .pro-description.pro-description-full .pro-label {
+            margin-bottom: 8px;
+            color: #FFC107;
+            font-size: 1.08rem;
+        }
+
+        .pro-description.pro-description-full .pro-value {
+            color: #fff;
+            font-size: 1.08rem;
+            margin-bottom: 10px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .pro-description.pro-description-full .pro-tags {
+            margin-top: 8px;
+            font-size: 1.01rem;
+            color: #4ECDC4;
+            font-weight: 600;
+            width: 100%;
+        }
+
+        /* --- NUEVA CARD PROFESIONAL --- */
+        .pro-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+            padding: 32px 24px 24px 24px;
+            margin: 32px auto 0 auto;
+            max-width: 900px;
+        }
+
+        .pro-card-grid {
+            display: flex;
+            flex-direction: row;
+            gap: 32px;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .pro-card-left {
+            flex: 1 1 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .pro-description {
+            margin-top: 0;
+            margin-bottom: 18px;
+            background: rgba(0, 0, 0, 0.10);
+            border-radius: 12px;
+            padding: 18px 20px;
+            font-size: 1.08rem;
+            color: #fff;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+            max-width: 420px;
+        }
+
+        .pro-card-right {
+            flex: 1 1 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            justify-content: flex-start;
+            font-size: 1.08rem;
+        }
+
+        .pro-video-center {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 900px) {
+            .pro-card-grid {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .pro-card-left,
+            .pro-card-right {
+                width: 100%;
+            }
+
+            .pro-description {
+                margin-top: 18px;
+            }
+        }
+
+        .pro-info-centered {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: left;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .pro-info-row,
+        .pro-value {
+            align-self: flex-start;
+            text-align: left;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        @media (max-width: 900px) {
+            .pro-info-centered {
+                align-items: center;
+                text-align: center;
+            }
+
+            .pro-info-row,
+            .pro-value {
+                align-self: center;
+                text-align: center;
+            }
+        }
+
+        .pro-title-row {
+            text-align: left;
+            margin-bottom: 18px;
+        }
+
+        .pro-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.01em;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+        }
+
+        .pro-tags {
+            margin-top: 10px;
+            font-size: 1.01rem;
+            color: #4ECDC4;
+            font-weight: 600;
+        }
+
+        .pro-description-full {
+            grid-column: span 2;
+            /* Ocupa ambas columnas en el grid */
+            width: 100%;
+            /* Asegura que use todo el ancho disponible */
+            margin-top: 10px;
+            /* Espacio superior opcional */
+        }
+
+        .pro-description.pro-description-full {
+            max-width: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 24px;
+            margin-bottom: 0;
+            padding: 22px 28px;
+            border-radius: 14px;
+            background: rgba(0, 0, 0, 0.13);
+            font-size: 1.12rem;
+            color: #fff;
+            box-shadow: 0 1px 8px rgba(0, 0, 0, 0.10);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .pro-description.pro-description-full .pro-label {
+            margin-bottom: 8px;
+            color: #FFC107;
+            font-size: 1.08rem;
+        }
+
+        .pro-description.pro-description-full .pro-value {
+            color: #fff;
+            font-size: 1.08rem;
+            margin-bottom: 10px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .pro-description.pro-description-full .pro-tags {
+            margin-top: 8px;
+            font-size: 1.01rem;
+            color: #4ECDC4;
+            font-weight: 600;
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -486,21 +720,17 @@
             <h1>📹 Instagram MP4 Downloader</h1>
             <p>Descarga videos MP4 con audio - verificación en servidor</p>
         </div>
-        <div class="status success">
-            <strong>🎯 Detección Precisa con MoviePy</strong><br>
-            Análisis de audio directo en el video usando librería especializada de Python
-        </div>
 
         <div class="input-section">
             <input type="text" id="urlInput" class="url-input" placeholder="Pega aquí la URL del video de Instagram..."
                 value="https://www.instagram.com/reel/DC2s8l_R-jr/">
             <br>
-            <button id="analyzeBtn" class="btn">🔍 Buscar MP4 con Audio</button>
+            <button id="analyzeBtn" class="btn">🔍 Buscar</button>
             <button id="clearBtn" class="btn">🗑️ Limpiar</button>
         </div>
         <div id="loading" class="loading">
             <div class="spinner"></div>
-            <p>Analizando audio con moviepy en el servidor...</p>
+            <p>Buscando Video...</p>
         </div>
 
         <div id="results"></div>
@@ -612,7 +842,6 @@
                 `;
             } async showSuccess(data) {
                 const formats = data.video_formats || [];
-
                 if (formats.length === 0) {
                     this.results.innerHTML = `
                         <div class="error">
@@ -623,44 +852,57 @@
                     `;
                     return;
                 }
-
-                // Mostrar solo la mejor calidad (primer formato)
+                // Mejor formato
                 const format = formats[0];
                 const videoInfo = this.getVideoInfo(format);
                 const duration = data.duration ? this.formatDuration(data.duration) : '';
                 const likes = data.like_count ? data.like_count.toLocaleString() : '';
-                const uploader = data.uploader || '';
-                const description = data.description || '';
+                const comments = data.comment_count ? data.comment_count.toLocaleString() : '';
                 const views = data.view_count ? data.view_count.toLocaleString() : '';
-
+                // Alias real (channel)
+                const uploader_id = data.uploader_id && data.uploader_id !== 'usuario' ? data.uploader_id : (data.channel || '');
+                const uploaderUrl = uploader_id ? `https://www.instagram.com/${uploader_id}` : '';
+                const uploader = data.uploader || '';
+                const title = data.title || '';
+                const upload_date = data.upload_date && !data.upload_date.includes('desconocida') ? data.upload_date : '';
+                const description = data.description || data.description_full || '';
+                let tags = data.tags || [];
+                let tagsHtml = '';
+                if (tags.length > 0) {
+                    tagsHtml = `<div class="pro-tags"><span class="pro-label">🏷️ Tags:</span> <span class="pro-value">${tags.map(tag => `#${tag}`).join(' ')}</span></div>`;
+                }
+                // Card profesional
                 this.results.innerHTML = `
                 <div class="pro-card">
-                  <div class="pro-card-grid">
-                    <div class="pro-card-left">
-                      <div class="pro-video-center">
-                        <div class="pro-video-padding">
-                          <video class="pro-video-preview" src="${format.url}" controls preload="metadata" style="width:100%;max-width:320px;max-height:420px;min-height:180px;background:#000;border-radius:16px;box-shadow:0 2px 16px rgba(0,0,0,0.18);display:block;margin:auto;padding:18px;"></video>
+                  <div class="pro-title-row" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+                    <span class="pro-title" style="font-size:1.25rem;font-weight:700;color:#fff;letter-spacing:0.01em;text-shadow:0 2px 8px rgba(0,0,0,0.13);">${title}</span>
+                    ${uploader_id ? `<a href="${uploaderUrl}" target="_blank" style="color:#4ECDC4;text-decoration:none;font-weight:700;font-size:1.12rem;letter-spacing:0.01em;">${uploader_id}</a>` : ''}
+                  </div>
+                  <div class="pro-card-grid" style="gap:36px;align-items:flex-start;">
+                    <div class="pro-card-left" style="flex:1 1 50%;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;">
+                      <div class="pro-video-center" style="width:100%;display:flex;align-items:center;justify-content:center;">
+                        <div class="pro-video-padding" style="background:rgba(0,0,0,0.13);border-radius:18px;padding:18px;box-shadow:0 2px 16px rgba(0,0,0,0.18);">
+                          <video class="pro-video-preview" src="${format.url}" controls preload="metadata" style="width:100%;max-width:340px;max-height:440px;min-height:180px;background:#000;border-radius:16px;box-shadow:0 2px 16px rgba(0,0,0,0.18);display:block;margin:auto;"></video>
                         </div>
                       </div>
                     </div>
-                    <div class="pro-card-right">
-                      <div class="pro-info-row"><span class="pro-label">👤 Usuario:</span></div>
-                      <div class="pro-value">${uploader}</div>
-                      <div class="pro-info-row"><span class="pro-label">⏱️ Duración:</span></div>
-                      <div class="pro-value">${duration}</div>
-                      <div class="pro-info-row"><span class="pro-label">❤️ Likes:</span></div>
-                      <div class="pro-value">${likes}</div>
-                      ${views ? `<div class='pro-info-row'><span class='pro-label'>👁️ Visualizaciones:</span></div><div class='pro-value'>${views}</div>` : ''}
-                      <div class="pro-info-row"><span class="pro-label">🎬 Resolución:</span></div>
-                      <div class="pro-value">${videoInfo}</div>
+                    <div class="pro-card-right pro-info-centered" style="flex:1 1 50%;display:flex;flex-direction:column;gap:14px;justify-content:flex-start;font-size:1.09rem;align-items:flex-start;">
+                      ${uploader ? `<div class="pro-info-row" style="margin-bottom:0;"><span class="pro-label">👤 Usuario:</span></div><div class="pro-value" style="margin-bottom:10px;font-size:1.08rem;font-weight:500;">${uploader}</div>` : ''}
+                      ${upload_date ? `<div class="pro-info-row"><span class="pro-label">📅 Subido:</span> <span class="pro-value">${upload_date}</span></div>` : ''}
+                      ${duration ? `<div class="pro-info-row"><span class="pro-label">⏱️ Duración:</span> <span class="pro-value">${duration}</span></div>` : ''}
+                      ${likes ? `<div class="pro-info-row"><span class="pro-label">❤️ Likes:</span> <span class="pro-value">${likes}</span></div>` : ''}
+                      ${comments && comments !== '0' ? `<div class="pro-info-row"><span class="pro-label">💬 Comentarios:</span> <span class="pro-value">${comments}</span></div>` : ''}
+                      ${views && views !== '0' ? `<div class="pro-info-row"><span class="pro-label">👁️ Visualizaciones:</span> <span class="pro-value">${views}</span></div>` : ''}
+                      <div class="pro-info-row"><span class="pro-label">🎬 Resolución:</span> <span class="pro-value">${videoInfo}</span></div>
                     </div>
                   </div>
-                  <div class="pro-description">
+                  <div class="pro-description pro-description-full" style="margin-top:28px;">
                     <span class="pro-label">📝 Descripción:</span>
-                    <div class="pro-value">${description}</div>
+                    <div class="pro-value" style="white-space: pre-line;font-size:1.09rem;">${description}</div>
+                    ${tagsHtml ? `<div style='margin-top:10px;'>${tagsHtml}</div>` : ''}
                   </div>
                 </div>
-            `;
+                `;
             } displayResults(formatsWithAudio, totalFormats, data) {
                 if (formatsWithAudio.length === 0) {
                     this.results.innerHTML = `

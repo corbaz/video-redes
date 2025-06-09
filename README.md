@@ -133,3 +133,44 @@ Esta herramienta es para uso personal únicamente:
 **Versión**: 1.0.0-fixed  
 **Estado**: ✅ Error XML completamente eliminado  
 **Garantía**: 100% respuestas JSON válidas
+``` bash
+
+{
+  "id": "DC2s8l_R-jr",
+  "title": "¿QUE OPINAS DE ESTO? 🤯 La IA está fuera de control, ya es capaz de crear videos híper realistas en cuestión de MINUTOS 🤖🔥 PASO A PASO: 1. Comenta “VIDEO” y te comparto el enlace de esta IA 2. Créate una cuenta gratis 3. Pon un Prompt o imagen de referencia 4. Dale a generar (6 videos gratis po",
+  "description": "¿QUE OPINAS DE ESTO? 🤯\n\nLa IA está fuera de control, ya es capaz de crear videos híper realistas en cuestión de MINUTOS 🤖🔥\n\nPASO A PASO:\n\n1. Comenta “VIDEO” y te comparto el enlace de esta IA\n2. Créate una cuenta gratis\n3. Pon un Prompt o imagen de referencia\n4. Dale a generar (6 videos gratis po",
+  "uploader": "Melisa Escobar | Vender con IA 🤖",
+  "uploader_id": "melisaescobart",
+  "uploader_url": "https://www.instagram.com/melisaescobart",
+  "duration": 44.8,
+  "view_count": 23614,
+  "like_count": 23614,
+  "tags": [
+    "ia", "data", "bigdata", "inteligenciaartificial", "chatgpt", "openai", "automatizacion", "eficiencia", "bilbao", "inspiracion", "motivacion"
+  ],
+  "formats": [
+    {
+      "format_id": "1333p",
+      "url": "https://scontent-...mp4",
+      "ext": "mp4",
+      "width": 750,
+      "height": 1333,
+      "filesize": null,
+      "vcodec": "avc1.64001F",
+      "acodec": "mp4a.40.2",
+      "abr": null,
+      "audio_channels": 2,
+      "fps": 30,
+      "format_note": "1333p",
+      "audio_ext": "m4a"
+    },
+    // ...otros formatos...
+  ],
+  "thumbnail": "https://instagram.fxyz1-1.fna.fbcdn.net/v/t51.2885-15/...",
+  "webpage_url": "https://www.instagram.com/reel/DC2s8l_R-jr/",
+  "timestamp": 1717950000,
+  "upload_date": "20250609"
+}
+
+```
+----

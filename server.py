@@ -404,15 +404,70 @@ class InstagramDownloader:
             print(
                 f"🎵 Encontrados {len(mp4_with_audio)} MP4s con audio de {len(all_formats)} formatos totales")
 
+            # Extraer y formatear fecha de subida
+            upload_date_str = ""
+            timestamp = data.get("timestamp", 0)
+            if timestamp:
+                import datetime
+                try:
+                    dt = datetime.datetime.fromtimestamp(timestamp)
+                    # Calcular tiempo transcurrido
+                    now = datetime.datetime.now()
+                    diff = now - dt
+
+                    if diff.days > 365:
+                        years = diff.days // 365
+                        upload_date_str = f"{years} año{'s' if years > 1 else ''} atrás"
+                    elif diff.days > 30:
+                        months = diff.days // 30
+                        upload_date_str = f"{months} mes{'es' if months > 1 else ''} atrás"
+                    elif diff.days > 7:
+                        weeks = diff.days // 7
+                        upload_date_str = f"{weeks} sem{'anas' if weeks > 1 else 'ana'} atrás"
+                    elif diff.days > 0:
+                        upload_date_str = f"{diff.days} día{'s' if diff.days > 1 else ''} atrás"
+                    elif diff.seconds > 3600:
+                        hours = diff.seconds // 3600
+                        upload_date_str = f"{hours} hora{'s' if hours > 1 else ''} atrás"
+                    else:
+                        minutes = diff.seconds // 60
+                        upload_date_str = f"{minutes} minuto{'s' if minutes > 1 else ''} atrás"
+                except:
+                    upload_date_str = "Fecha desconocida"
+
+            # Extraer tags de la descripción
+            description = data.get("description", "")
+            tags = []
+            if description:
+                import re
+                # Buscar hashtags en la descripción
+                hashtags = re.findall(r'#(\w+)', description)
+                tags = hashtags[:10]  # Limitar a 10 tags
+
+            # Mapear correctamente los campos
+            uploader_id = data.get("channel", "") or data.get(
+                "uploader_id", "") or "usuario"  # Usar channel como alias
+            uploader_name = data.get("uploader", "Usuario de Instagram")
+
+            # Crear URL del perfil usando el alias
+            uploader_url = f"https://www.instagram.com/{uploader_id}" if uploader_id and uploader_id != "usuario" else ""
+
             return {
                 "success": True,
                 "data": {
-                    "title": data.get("title", "Instagram Video"),
-                    "uploader": data.get("uploader", "Instagram User"),
+                    "title": data.get("title", "Video de Instagram"),
+                    "uploader": uploader_name,
+                    "uploader_id": uploader_id,  # Alias correcto (channel)
+                    "uploader_url": uploader_url,  # URL del perfil
                     "duration": data.get("duration", 0),
                     "view_count": data.get("view_count", 0),
                     "like_count": data.get("like_count", 0),
-                    "description": (data.get("description") or "")[:300],
+                    "comment_count": data.get("comment_count", 0),
+                    "description": description,  # Descripción completa sin truncar
+                    "description_full": description,  # Alias para compatibilidad con frontend
+                    "tags": tags,  # Tags extraídos de la descripción
+                    "upload_date": upload_date_str,  # Fecha formateada como "27 sem"
+                    "timestamp": timestamp,  # Timestamp original
                     "thumbnail": data.get("thumbnail", ""),
                     "video_formats": mp4_with_audio,  # Solo MP4s con audio verificados
                     "all_formats": all_formats,  # Todos los formatos para debug
@@ -648,8 +703,10 @@ def start_server(port=8000):
     print("=" * 50)
 
     try:
-        with socketserver.TCPServer(("", port), RequestHandler) as httpd:
-            print(f"🚀 Server started on port {port}")
+        # Cambiado a 0.0.0.0 para escuchar en todas las interfaces
+        with socketserver.TCPServer(("0.0.0.0", port), RequestHandler) as httpd:
+            print(
+                f"🚀 Server started on port {port} (accesible en todas las IPs de la red)")
             httpd.serve_forever()
     except KeyboardInterrupt:
         print("\n🛑 Server stopped")
