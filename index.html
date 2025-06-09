@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Video Downloader - Solo MP4 con Audio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .status {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .status.success {
+            background: rgba(76, 175, 80, 0.2);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .input-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .url-input {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+        }
+
+        .url-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading {
+            display: none;
+            margin: 20px 0;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .error {
+            background: rgba(244, 67, 54, 0.2);
+            border: 1px solid rgba(244, 67, 54, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .error h3 {
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+
+        .success {
+            background: rgba(76, 175, 80, 0.2);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .video-info {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .video-info h3 {
+            color: #4ECDC4;
+            margin-bottom: 10px;
+        }
+
+        .formats {
+            display: grid;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .format {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .format-info {
+            flex: 1;
+            text-align: left;
+        }
+
+        .format-quality {
+            font-weight: bold;
+            color: #4ECDC4;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .format-details {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .audio-verified {
+            color: #4CAF50;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .download-btn {
+            background: linear-gradient(45deg, #4ECDC4, #44A08D);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-preview {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .preview-video {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 6px;
+            background: #000;
+        }
+
+        .preview-controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .preview-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .preview-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .format {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .format-info {
+                text-align: center;
+            }
+        }
+
+        .tips {
+            background: rgba(255, 193, 7, 0.2);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .tips h3 {
+            color: #FFC107;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📹 Instagram MP4 Downloader</h1>
+            <p>Descarga videos MP4 con audio - verificación en servidor</p>
+        </div>
+        <div class="status success">
+            <strong>🎯 Detección Precisa con MoviePy</strong><br>
+            Análisis de audio directo en el video usando librería especializada de Python
+        </div>
+
+        <div class="input-section">
+            <input type="text" id="urlInput" class="url-input" placeholder="Pega aquí la URL del video de Instagram..."
+                value="https://www.instagram.com/reel/DC2s8l_R-jr/">
+            <br>
+            <button id="analyzeBtn" class="btn">🔍 Buscar MP4 con Audio</button>
+            <button id="clearBtn" class="btn">🗑️ Limpiar</button>
+        </div>
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Analizando audio con moviepy en el servidor...</p>
+        </div>
+
+        <div id="results"></div>
+        <div class="tips">
+            <h3>📝 Importante:</h3>
+            <ul>
+                <li><strong>Solo MP4s:</strong> El servidor filtra únicamente formatos MP4 con audio</li>
+                <li><strong>MoviePy:</strong> Detección precisa de audio usando librería especializada</li>
+                <li><strong>Sin Falsos Positivos:</strong> Análisis directo del contenido de audio</li>
+                <li><strong>Descarga Directa:</strong> Click en el botón para descargar el MP4 completo</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        class InstagramMp4Downloader {
+            constructor() {
+                this.urlInput = document.getElementById('urlInput');
+                this.analyzeBtn = document.getElementById('analyzeBtn');
+                this.clearBtn = document.getElementById('clearBtn');
+                this.loading = document.getElementById('loading');
+                this.results = document.getElementById('results');
+
+                this.initEventListeners();
+            }
+
+            initEventListeners() {
+                this.analyzeBtn.addEventListener('click', () => this.analyzeVideo());
+                this.clearBtn.addEventListener('click', () => this.clearResults());
+                this.urlInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') this.analyzeVideo();
+                });
+            }
+
+            async analyzeVideo() {
+                const url = this.urlInput.value.trim();
+
+                if (!url) {
+                    this.showError('Por favor ingresa una URL de Instagram');
+                    return;
+                }
+
+                this.showLoading(true);
+                this.clearResults();
+
+                try {
+                    // Validate URL first
+                    const validateResponse = await this.makeRequest('/api/validate', { url });
+
+                    if (!validateResponse.success) {
+                        throw new Error(validateResponse.error || 'URL inválida');
+                    }
+
+                    // Extract video info
+                    const extractResponse = await this.makeRequest('/api/extract', { url: validateResponse.url });
+
+                    if (extractResponse.success) {
+                        this.showSuccess(extractResponse.data);
+                    } else {
+                        this.showInstagramError(extractResponse);
+                    }
+
+                } catch (error) {
+                    console.error('Download error:', error);
+                    this.showError(error.message);
+                } finally {
+                    this.showLoading(false);
+                }
+            }
+
+            async makeRequest(endpoint, data) {
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const contentType = response.headers.get('content-type');
+                if (!contentType || !contentType.includes('application/json')) {
+                    const text = await response.text();
+                    throw new Error(`Server returned non-JSON response: ${text.slice(0, 200)}`);
+                }
+
+                try {
+                    return await response.json();
+                } catch (e) {
+                    const text = await response.text();
+                    throw new Error(`Invalid JSON response: ${text.slice(0, 200)}`);
+                }
+            }
+
+            showLoading(show) {
+                this.loading.style.display = show ? 'block' : 'none';
+                this.analyzeBtn.disabled = show;
+            }
+
+            showError(message) {
+                this.results.innerHTML = `
+                    <div class="error">
+                        <h3>❌ Error</h3>
+                        <p>${message}</p>
+                    </div>
+                `;
+            }
+
+            showInstagramError(response) {
+                const error = response.error || 'Error desconocido';
+                const suggestion = response.suggestion || '';
+
+                this.results.innerHTML = `
+                    <div class="error">
+                        <h3>🔐 Instagram Protegió Este Contenido</h3>
+                        <p><strong>Motivo:</strong> ${error}</p>
+                        ${suggestion ? `<p><strong>💡 Sugerencia:</strong> ${suggestion}</p>` : ''}
+                    </div>
+                `;
+            } async showSuccess(data) {
+                const formats = data.video_formats || [];
+
+                if (formats.length === 0) {
+                    this.results.innerHTML = `
+                        <div class="error">
+                            <h3>⚠️ No se encontraron MP4s con audio</h3>
+                            <p>Este video no tiene formatos MP4 con indicadores de audio.</p>
+                            <p><strong>Formatos analizados:</strong> ${data.total_all_formats || 'desconocido'}</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                this.displayResults(formats, data.total_all_formats || formats.length, data);
+            } displayResults(formatsWithAudio, totalFormats, data) {
+                if (formatsWithAudio.length === 0) {
+                    this.results.innerHTML = `
+                        <div class="error">
+                            <h3>❌ No se encontraron MP4s con audio</h3>
+                            <p>Se analizaron ${totalFormats} formatos pero ninguno contiene indicadores de audio.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                // Ordenar por calidad (resolución)
+                formatsWithAudio.sort((a, b) => {
+                    const getResolution = (f) => {
+                        if (f.height) return f.height;
+                        if (f.quality && f.quality.includes('p')) {
+                            return parseInt(f.quality.replace('p', ''));
+                        }
+                        if (f.format_note && f.format_note.includes('p')) {
+                            return parseInt(f.format_note.replace('p', ''));
+                        }
+                        return 0;
+                    };
+                    return getResolution(b) - getResolution(a);
+                });
+
+                let html = `
+                    <div class="success">
+                        <h3>✅ Video Encontrado</h3>
+                        <div class="video-info">
+                            <h3>📺 ${data.title || 'Video de Instagram'}</h3>
+                            <p><strong>👤 Usuario:</strong> ${data.uploader || 'Usuario de Instagram'}</p>
+                            ${data.duration ? `<p><strong>⏱️ Duración:</strong> ${this.formatDuration(data.duration)}</p>` : ''}
+                            ${data.view_count ? `<p><strong>👁️ Visualizaciones:</strong> ${data.view_count.toLocaleString()}</p>` : ''}
+                            ${data.like_count ? `<p><strong>❤️ Likes:</strong> ${data.like_count.toLocaleString()}</p>` : ''}
+                            ${data.description ? `<p><strong>📝 Descripción:</strong> ${data.description}</p>` : ''}
+                        </div>
+                        
+                        <h3>🎵 Formatos MP4 con Audio (${formatsWithAudio.length} encontrados)</h3>
+                        <div class="formats">
+                `;
+
+                formatsWithAudio.forEach(format => {
+                    const quality = this.getQualityLabel(format);
+                    const fileSize = format.filesize ? this.formatFileSize(format.filesize) : 'Tamaño desconocido';
+                    const audioInfo = this.getAudioInfo(format);
+                    const videoInfo = this.getVideoInfo(format);
+
+                    html += `
+                        <div class="format">
+                            <div class="format-info">
+                                <div class="quality">${quality}</div>
+                                <div class="details">
+                                    <span class="file-size">📦 ${fileSize}</span>
+                                    <span class="video-info">🎬 ${videoInfo}</span>
+                                    <span class="audio-info">🎵 ${audioInfo}</span>
+                                </div>
+                            </div>
+                            <div class="format-actions">
+                                <a href="${format.url}" class="download-btn" download>
+                                    📥 Descargar MP4
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `
+                        </div>
+                    </div>
+                `;
+
+                this.results.innerHTML = html;
+            }
+
+            getQualityLabel(format) {
+                if (format.height) {
+                    return `${format.height}p`;
+                }
+                if (format.quality) {
+                    return format.quality;
+                }
+                if (format.format_note) {
+                    return format.format_note;
+                }
+                return 'Calidad desconocida';
+            }
+
+            getAudioInfo(format) {
+                const parts = [];
+                if (format.acodec && format.acodec !== 'none') {
+                    parts.push(format.acodec);
+                }
+                if (format.abr) {
+                    parts.push(`${format.abr}kbps`);
+                }
+                if (format.audio_channels) {
+                    parts.push(`${format.audio_channels} canales`);
+                }
+                return parts.length > 0 ? parts.join(', ') : 'Audio detectado';
+            }
+
+            getVideoInfo(format) {
+                const parts = [];
+                if (format.width && format.height) {
+                    parts.push(`${format.width}x${format.height}`);
+                }
+                if (format.vcodec && format.vcodec !== 'none') {
+                    parts.push(format.vcodec);
+                }
+                if (format.fps) {
+                    parts.push(`${format.fps}fps`);
+                }
+                return parts.length > 0 ? parts.join(', ') : 'Video MP4';
+            } clearResults() {
+                this.results.innerHTML = '';
+            }
+
+            formatDuration(seconds) {
+                const minutes = Math.floor(seconds / 60);
+                const remainingSeconds = seconds % 60;
+                return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+            }
+
+            formatFileSize(bytes) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            }
+        }
+
+        // Initialize the downloader when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new InstagramMp4Downloader();
+        });
+    </script>
+</body>
+
+</html>
