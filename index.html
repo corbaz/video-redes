@@ -20,13 +20,13 @@
             padding: 0;
             background: #0f0f12;
             border-radius: 12px;
-            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6), 
-                        0 0 100px rgba(138, 43, 226, 0.3);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6),
+                0 0 100px rgba(138, 43, 226, 0.3);
             border: 1px solid rgba(138, 43, 226, 0.2);
             overflow: hidden;
             position: relative;
         }
-        
+
         .cinema-player video {
             width: 100%;
             max-height: 80vh;
@@ -34,7 +34,7 @@
             outline: none;
             background: #000;
         }
-        
+
         .cinema-controls {
             padding: 15px;
             background: rgba(15, 15, 18, 0.95);
@@ -43,7 +43,7 @@
             align-items: center;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
+
         .video-title {
             color: #fff;
             margin: 0;
@@ -54,7 +54,7 @@
             text-overflow: ellipsis;
             max-width: 80%;
         }
-        
+
         .close-modal {
             background: rgba(138, 43, 226, 0.2);
             border: none;
@@ -68,7 +68,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .close-modal:hover {
             background: rgba(138, 43, 226, 0.4);
             transform: rotate(90deg);
@@ -803,9 +803,9 @@
         <div id="results"></div>
     </div>
 
-    <script src="card.js"></script>
-    <script src="insta.js"></script>
-    <script src="linkedin.js"></script>
+    <script src="card.js?v=20250610"></script>
+    <script src="insta.js?v=20250610"></script>
+    <script src="linkedin.js?v=20250610"></script>
     <script>
         class InstagramMp4Downloader {
             constructor() {
@@ -827,7 +827,8 @@
             }
 
             async analyzeVideo() {
-                const url = this.urlInput.value.trim(); if (!url) {
+                const url = this.urlInput.value.trim();
+                if (!url) {
                     this.showError('Por favor ingresa una URL de video');
                     return;
                 }
@@ -836,18 +837,31 @@
                 this.clearResults();
 
                 try {
+                    console.log("1. Starting analysis for URL:", url);
+
                     // Validate URL first
                     const validateResponse = await this.makeRequest('/api/validate', { url });
+                    console.log("2. Validate response:", validateResponse);
 
                     if (!validateResponse.success) {
                         throw new Error(validateResponse.error || 'URL inválida');
                     }
 
                     // Extract video info
+                    console.log("3. Starting extraction for URL:", validateResponse.url);
                     const extractResponse = await this.makeRequest('/api/extract', { url: validateResponse.url });
+                    console.log("4. Extract response:", extractResponse); if (extractResponse.success) {
+                        let data = extractResponse.data;
+                        console.log("5. Initial data from extractResponse.data:", data);
 
-                    if (extractResponse.success) {
-                        this.showSuccess(extractResponse.data);
+                        // Si no hay 'data', usar toda la respuesta (caso LinkedIn actual)
+                        if (!data) {
+                            console.log("6. No extractResponse.data found, using full response");
+                            data = extractResponse;
+                        }
+
+                        console.log("7. Final data to pass to showSuccess:", JSON.stringify(data, null, 2));
+                        this.showSuccess(data);
                     } else {
                         this.showInstagramError(extractResponse);
                     }
@@ -908,11 +922,73 @@
                 `;
             } async showSuccess(data) {
                 const url = this.urlInput.value.trim();
+                console.log("showSuccess called with data:", JSON.stringify(data, null, 2));
+
+                // Verificar que data no sea undefined/null
+                if (!data) {
+                    console.error("❌ showSuccess called with undefined/null data");
+                    this.showError("Error: No se recibieron datos del video");
+                    return;
+                }
+
                 if (url.includes('linkedin.com')) {
-                    showLinkedinVideo(data, this.results);
+                    // Buscar videoUrl en cualquier lugar de la estructura
+                    let videoUrl = this.extractVideoUrl(data);
+                    console.log("LinkedIn videoUrl extracted:", videoUrl);
+
+                    if (!videoUrl) {
+                        this.showError("No se pudo extraer la URL del video de LinkedIn");
+                        return;
+                    }
+
+                    showLinkedinVideo({ videoUrl }, this.results);
                 } else {
                     showInstagramVideo(data, this.results);
                 }
+            }
+
+            extractVideoUrl(data) {
+                // Buscar videoUrl en todas las posibles ubicaciones
+                console.log("🔍 extractVideoUrl: searching in data:", JSON.stringify(data, null, 2));
+
+                // Estructura estándar: data.videoUrl
+                if (data.videoUrl) {
+                    console.log("✅ Found data.videoUrl:", data.videoUrl);
+                    return data.videoUrl;
+                }
+
+                // Estructura anidada: data.data.videoUrl
+                if (data.data && data.data.videoUrl) {
+                    console.log("✅ Found data.data.videoUrl:", data.data.videoUrl);
+                    return data.data.videoUrl;
+                }
+
+                // LinkedIn directo: data.video_url (respuesta actual de LinkedIn)
+                if (data.video_url) {
+                    console.log("✅ Found data.video_url:", data.video_url);
+                    return data.video_url;
+                }
+
+                // Alternativas
+                if (data.url) {
+                    console.log("✅ Found data.url:", data.url);
+                    return data.url;
+                }
+
+                // Buscar en arrays de formatos (si existe)
+                if (data.video_formats && data.video_formats.length > 0) {
+                    const formatUrl = data.video_formats[0].url;
+                    console.log("✅ Found data.video_formats[0].url:", formatUrl);
+                    return formatUrl;
+                }
+                if (data.data && data.data.video_formats && data.data.video_formats.length > 0) {
+                    const formatUrl = data.data.video_formats[0].url;
+                    console.log("✅ Found data.data.video_formats[0].url:", formatUrl);
+                    return formatUrl;
+                }
+
+                console.log("❌ No video URL found in any location");
+                return null;
             } displayResults(formatsWithAudio, totalFormats, data) {
                 if (formatsWithAudio.length === 0) {
                     this.results.innerHTML = `
@@ -1068,7 +1144,7 @@
                 padding: 20px;
                 box-sizing: border-box;
             `;
-            
+
             modal.innerHTML = `
                 <div class="video-player-container">
                     <button class="close-modal" onclick="this.closest('.video-modal').remove()" style="
@@ -1101,7 +1177,7 @@
                     </video>
                 </div>
             `;
-            
+
             // Estilos para el modal
             const style = document.createElement('style');
             style.textContent = `
@@ -1123,17 +1199,17 @@
                 
                 /* Estilos eliminados - Ahora son inline */
             `;
-            
+
             document.head.appendChild(style);
             document.body.appendChild(modal);
-            
+
             // Cerrar al hacer clic fuera del contenido
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
                     modal.remove();
                 }
             });
-            
+
             // Cerrar con la tecla Escape
             const handleEscape = (e) => {
                 if (e.key === 'Escape') {
@@ -1141,14 +1217,14 @@
                     document.removeEventListener('keydown', handleEscape);
                 }
             };
-            
+
             document.addEventListener('keydown', handleEscape);
         }
     </script>
-    
+
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
     <script>
         // Función para mostrar el reproductor con SweetAlert2
         function showVideoPlayer(url, title = '') {

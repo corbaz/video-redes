@@ -1,7 +1,10 @@
 // Función para renderizar la tarjeta de video simplificada
-function renderVideoCard({ title = "", uploader = "", videoUrl = "" }) {
-    // Crear el HTML del reproductor mini (sin thumbnail)
-    const videoCardHTML = `
+function renderVideoCard({ videoUrl = "" }) {
+    if (!videoUrl) {
+        return `<div class='error'><h3>No se encontró video disponible</h3></div>`;
+    }
+    // Card con preview miniatura y modal al hacer clic
+    return `
     <div class="video-thumbnail-container" 
          style="width: 200px; margin: 10px; display: inline-block; vertical-align: top;">
       <div style="position:relative; width:100%; padding-bottom:177.78%; background:#000; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer;"
@@ -17,5 +20,4 @@ function renderVideoCard({ title = "", uploader = "", videoUrl = "" }) {
       </div>
     </div>
   `;
-    return videoCardHTML;
 }
