@@ -1,9 +1,8 @@
-// Función para renderizar la tarjeta de video simplificada
+// Tarjeta profesional reutilizable para mostrar un video
 function renderVideoCard({ videoUrl = "" }) {
     if (!videoUrl) {
         return `<div class='error'><h3>No se encontró video disponible</h3></div>`;
     }
-    // Card con preview miniatura y modal al hacer clic
     return `
     <div class="video-thumbnail-container" 
          style="width: 200px; margin: 10px; display: inline-block; vertical-align: top;">
