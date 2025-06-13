@@ -196,15 +196,101 @@
 
         .loading {
             display: none;
+        }
+
+        /* Nuevo loading que simula el placeholder */
+        .loading-placeholder {
+            width: 200px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .loading-placeholder-content {
+            position: relative;
+            width: 100%;
+            padding-bottom: 177.78%; /* Misma proporción que el video */
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            overflow: visible; /* Cambiar de hidden a visible */
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            border: 2px dashed rgba(255, 255, 255, 0.5);
+            animation: loadingPulse 2s ease-in-out infinite;
+            z-index: 5;
+        }
+
+        .loading-placeholder-inner {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: 100;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            z-index: 10; /* Asegurar que esté al frente */
+        }
+
+        .loading-placeholder-icons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            justify-content: center;
+            z-index: 15; /* Prioridad alta */
+        }
+
+        .loading-placeholder-icon {
+            font-size: 2rem;
+            animation: searchPulse 1.5s ease-in-out infinite;
+            z-index: 16;
+        }
+
+        .loading-spinner {
+            font-size: 1.8rem; /* Más grande */
+            animation: spin 1s linear infinite;
+            color: #4ECDC4; /* Color más visible */
+            text-shadow: 0 0 10px rgba(78, 205, 196, 0.5); /* Brillo */
+            z-index: 16;
+            display: inline-block; /* Asegurar visibilidad */
+        }
+
+        .loading-placeholder-text {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            animation: textFade 2s ease-in-out infinite;
+            z-index: 15;
+        }
+
+        @keyframes loadingPulse {
+            0%, 100% {
+                border-color: rgba(255, 255, 255, 0.3);
+                background: rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                border-color: rgba(255, 255, 255, 0.6);
+                background: rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        @keyframes searchPulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes textFade {
+            0%, 100% {
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 1;
+            }
         }
 
         .spinner {
@@ -467,6 +553,23 @@
 
             .video-placeholder-text {
                 font-size: 2.5vw;
+            }
+
+            /* Loading placeholder responsivo */
+            .loading-placeholder {
+                width: 40vw !important;
+            }
+
+            .loading-placeholder-icon {
+                font-size: 4vw !important;
+            }
+
+            .loading-spinner {
+                font-size: 3vw !important;
+            }
+
+            .loading-placeholder-text {
+                font-size: 2.5vw !important;
             }
 
             /* Hacer que el video card también sea más pequeño en móvil */
@@ -1053,37 +1156,29 @@
                 this.clearResults();
 
                 try {
-                    console.log("1. Starting analysis for URL:", url);
-
                     // Validate URL first
                     const validateResponse = await this.makeRequest('/api/validate', { url });
-                    console.log("2. Validate response:", validateResponse);
 
                     if (!validateResponse.success) {
                         throw new Error(validateResponse.error || 'URL inválida');
                     }
 
                     // Extract video info
-                    console.log("3. Starting extraction for URL:", validateResponse.url);
                     const extractResponse = await this.makeRequest('/api/extract', { url: validateResponse.url });
-                    console.log("4. Extract response:", extractResponse); if (extractResponse.success) {
+                    if (extractResponse.success) {
                         let data = extractResponse.data;
-                        console.log("5. Initial data from extractResponse.data:", data);
 
                         // Si no hay 'data', usar toda la respuesta (caso LinkedIn actual)
                         if (!data) {
-                            console.log("6. No extractResponse.data found, using full response");
                             data = extractResponse;
                         }
 
-                        console.log("7. Final data to pass to showSuccess:", JSON.stringify(data, null, 2));
                         this.showSuccess(data);
                     } else {
                         this.showInstagramError(extractResponse);
                     }
 
                 } catch (error) {
-                    console.error('Download error:', error);
                     this.showError(error.message);
                 } finally {
                     this.showLoading(false);
@@ -1114,8 +1209,37 @@
             }
 
             showLoading(show) {
-                this.loading.style.display = show ? 'block' : 'none';
+                const videoPlayerContainer = document.getElementById('videoPlayerContainer');
                 this.analyzeBtn.disabled = show;
+                
+                if (show) {
+                    // Mostrar loading placeholder en el área del reproductor - versión simple
+                    videoPlayerContainer.innerHTML = `
+                        <div class="loading-placeholder">
+                            <div class="loading-placeholder-content">
+                                <div class="loading-placeholder-inner">
+                                    <div style="font-size: 2rem; margin-bottom: 8px;">🔍</div>
+                                    <div style="font-size: 1.5rem; animation: spin 1s linear infinite; color: #4ECDC4; margin-bottom: 8px;">🔄</div>
+                                    <div class="loading-placeholder-text">Buscando video...</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    // Si no hay loading y no hay video cargado, mostrar placeholder normal
+                    if (!videoPlayerContainer.innerHTML.includes('video-thumbnail-container')) {
+                        videoPlayerContainer.innerHTML = `
+                            <div class="video-placeholder">
+                                <div class="video-placeholder-content">
+                                    <div class="video-placeholder-inner">
+                                        <div class="video-placeholder-icon">🎬</div>
+                                        <div class="video-placeholder-text">El video aparecerá aquí</div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }
             }
 
             showError(message) {
@@ -1138,11 +1262,9 @@
                 `;
             }            async showSuccess(data) {
                 const url = this.urlInput.value.trim();
-                console.log("showSuccess called with data:", JSON.stringify(data, null, 2));
 
                 // Verificar que data no sea undefined/null
                 if (!data) {
-                    console.error("❌ showSuccess called with undefined/null data");
                     this.showError("Error: No se recibieron datos del video");
                     return;
                 }
@@ -1153,7 +1275,6 @@
                 if (url.includes('linkedin.com')) {
                     // Buscar videoUrl en cualquier lugar de la estructura
                     let videoUrl = this.extractVideoUrl(data);
-                    console.log("LinkedIn videoUrl extracted:", videoUrl);
 
                     if (!videoUrl) {
                         this.showError("No se pudo extraer la URL del video de LinkedIn");
@@ -1164,7 +1285,6 @@
                 } else if (url.includes('x.com') || url.includes('twitter.com')) {
                     // Buscar videoUrl para X/Twitter
                     let videoUrl = this.extractVideoUrl(data);
-                    console.log("X videoUrl extracted:", videoUrl);
 
                     if (!videoUrl) {
                         this.showError("No se pudo extraer la URL del video de X/Twitter");
@@ -1182,45 +1302,37 @@
 
             extractVideoUrl(data) {
                 // Buscar videoUrl en todas las posibles ubicaciones
-                console.log("🔍 extractVideoUrl: searching in data:", JSON.stringify(data, null, 2));
 
                 // Estructura estándar: data.videoUrl
                 if (data.videoUrl) {
-                    console.log("✅ Found data.videoUrl:", data.videoUrl);
                     return data.videoUrl;
                 }
 
                 // Estructura anidada: data.data.videoUrl
                 if (data.data && data.data.videoUrl) {
-                    console.log("✅ Found data.data.videoUrl:", data.data.videoUrl);
                     return data.data.videoUrl;
                 }
 
                 // LinkedIn directo: data.video_url (respuesta actual de LinkedIn)
                 if (data.video_url) {
-                    console.log("✅ Found data.video_url:", data.video_url);
                     return data.video_url;
                 }
 
                 // Alternativas
                 if (data.url) {
-                    console.log("✅ Found data.url:", data.url);
                     return data.url;
                 }
 
                 // Buscar en arrays de formatos (si existe)
                 if (data.video_formats && data.video_formats.length > 0) {
                     const formatUrl = data.video_formats[0].url;
-                    console.log("✅ Found data.video_formats[0].url:", formatUrl);
                     return formatUrl;
                 }
                 if (data.data && data.data.video_formats && data.data.video_formats.length > 0) {
                     const formatUrl = data.data.video_formats[0].url;
-                    console.log("✅ Found data.data.video_formats[0].url:", formatUrl);
                     return formatUrl;
                 }
 
-                console.log("❌ No video URL found in any location");
                 return null;
             } displayResults(formatsWithAudio, totalFormats, data) {
                 if (formatsWithAudio.length === 0) {

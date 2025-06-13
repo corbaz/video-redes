@@ -1,6 +1,5 @@
 // Funciones específicas para LinkedIn - Updated 2025-06-10
 function showLinkedinVideo(data, container) {
-    console.log("LinkedIn showLinkedinVideo called with:", data);
     container.innerHTML = "";
     const videoUrl = data.videoUrl || "";
     if (!videoUrl) {

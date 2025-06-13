@@ -1,6 +1,5 @@
 // Funciones específicas para X/Twitter - COPIANDO EXACTAMENTE LinkedIn
 function showXVideo(data, container) {
-    console.log("X showXVideo called with:", data);
     container.innerHTML = "";
     const videoUrl = data.videoUrl || "";
     if (!videoUrl) {
