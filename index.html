@@ -77,19 +77,33 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            height: 100vh; /* Usar altura exacta del viewport */
             color: white;
-            padding: 20px;
+            padding: 2vh 3vw; /* Usar viewport units */
+            margin: 0;
+            box-sizing: border-box;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: none;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative; /* Para el spinner absoluto */
         }
 
         .header {
-            margin-bottom: 40px;
+            margin-bottom: 3vh; /* Usar viewport height */
+            flex-shrink: 0;
         }
 
         .header h1 {
@@ -132,9 +146,10 @@
         .input-section {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
+            padding: 3vh 3vw;
+            margin-bottom: 2vh;
             backdrop-filter: blur(10px);
+            flex-shrink: 0;
         }
 
         .url-input {
@@ -181,7 +196,15 @@
 
         .loading {
             display: none;
-            margin: 20px 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
         }
 
         .spinner {
@@ -348,13 +371,114 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                padding: 2vh 4vw; /* Más padding lateral en móvil */
+                height: 100vh;
+                overflow: hidden; /* Evitar scroll completamente */
+            }
+
+            .container {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                max-width: 100%;
+                margin: 0;
+            }
+
+            .header {
+                margin-bottom: 2vh; /* Reducido pero usando vh */
+                flex-shrink: 0;
+            }
+
+            .header h1 {
+                font-size: 4vw; /* Responsivo con viewport width */
+                margin-bottom: 0.5vh;
+            }
+
+            .header h2 {
+                font-size: 3vw; /* Responsivo con viewport width */
+                margin-bottom: 1vh;
+            }
+
+            .header p {
+                font-size: 2.5vw; /* Responsivo */
+                margin-bottom: 0;
+            }
+
+            .video-player-section {
+                padding: 2vh 3vw;
+                margin-bottom: 2vh;
+                min-height: 22vh; /* Altura fija optimizada */
+                flex-shrink: 0;
+            }
+
+            .input-section {
+                padding: 2vh 4vw;
+                margin-bottom: 1vh;
+                flex-shrink: 0;
+            }
+
+            .url-input {
+                padding: 2vh 3vw;
+                font-size: 3.5vw;
+                margin-bottom: 2vh;
+            }
+
+            .btn {
+                padding: 1.5vh 4vw;
+                font-size: 3vw;
+                margin: 1vh;
+            }
+
+            .loading {
+                position: fixed; /* Cambiar a fixed para móvil */
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1000;
+                margin: 0; /* Remover márgenes */
+            }
+
+            .spinner {
+                width: 6vw;
+                height: 6vw;
+                margin: 0 auto 1vh;
+            }
+
             .format {
                 flex-direction: column;
                 text-align: center;
+                padding: 2vh 3vw;
             }
 
             .format-info {
                 text-align: center;
+            }
+
+            /* Estilos específicos para el placeholder y video en móvil */
+            .video-placeholder {
+                width: 40vw; /* Usar viewport width */
+            }
+
+            .video-placeholder-icon {
+                font-size: 4vw;
+            }
+
+            .video-placeholder-text {
+                font-size: 2.5vw;
+            }
+
+            /* Hacer que el video card también sea más pequeño en móvil */
+            .video-thumbnail-container {
+                width: 40vw !important; /* Responsivo con viewport */
+            }
+
+            /* Área de resultados flexible */
+            #results {
+                flex: 1;
+                overflow-y: auto;
+                margin-top: 1vh;
             }
         }
 
@@ -793,13 +917,14 @@
         .video-player-section {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 30px;
+            padding: 2vh 2vw;
+            margin-bottom: 3vh;
             backdrop-filter: blur(10px);
-            min-height: 300px;
+            min-height: 25vh; /* Usar 25% del viewport height */
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
 
         .video-placeholder {
@@ -859,7 +984,7 @@
         <div class="header">
             <h1>📹 Video Downloader</h1>
             <h2>(Instagram, LinkedIn & X/Twitter)</h2>
-            <p>Descarga videos MP4 con audio de las Redes Sociales</p>
+            <p>Descarga videos MP4 de las Redes Sociales</p>
         </div>
 
         <!-- Reproductor de video siempre visible -->
