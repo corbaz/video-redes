@@ -93,9 +93,19 @@
         }
 
         .header h1 {
-            font-size: 2.5rem;
+            font-size: 2rem; /* Reducido de 2.5rem a 2rem */
+            margin-bottom: 5px; /* Reducido para acercar las líneas */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+        }
+
+        .header h2 {
+            font-size: 1.5rem; /* Un tamaño menor que h1 */
+            margin-top: 0;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            opacity: 0.9;
+            font-weight: 600;
         }
 
         .header p {
@@ -778,23 +788,103 @@
             font-weight: 600;
             width: 100%;
         }
+
+        /* Estilos para el reproductor de video siempre visible */
+        .video-player-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-placeholder {
+            width: 200px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .video-placeholder-content {
+            position: relative;
+            width: 100%;
+            padding-bottom: 177.78%; /* Misma proporción que el video */
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-placeholder-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .video-placeholder-icon {
+            font-size: 2rem;
+            opacity: 0.6;
+        }
+
+        .video-placeholder-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        #videoPlayerContainer {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="header">
-            <h1>📹 Video Downloader (Instagram, LinkedIn & X/Twitter)</h1>
-            <p>Descarga videos MP4 con audio - verificación en servidor</p>
+            <h1>📹 Video Downloader</h1>
+            <h2>(Instagram, LinkedIn & X/Twitter)</h2>
+            <p>Descarga videos MP4 con audio de las Redes Sociales</p>
         </div>
 
-        <div class="input-section"> <input type="text" id="urlInput" class="url-input"
+        <!-- Reproductor de video siempre visible -->
+        <div class="video-player-section">
+            <div id="videoPlayerContainer">
+                <div class="video-placeholder">
+                    <div class="video-placeholder-content">
+                        <div class="video-placeholder-inner">
+                            <div class="video-placeholder-icon">🎬</div>
+                            <div class="video-placeholder-text">El video aparecerá aquí</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-section">
+            <input type="text" id="urlInput" class="url-input"
                 placeholder="Pega aquí la URL del video (Instagram, LinkedIn o X/Twitter)..."
                 value="">
             <br>
             <button id="analyzeBtn" class="btn">🔍 Buscar</button>
             <button id="clearBtn" class="btn">🗑️ Limpiar</button>
         </div>
+        
         <div id="loading" class="loading">
             <div class="spinner"></div>
             <p>Buscando Video...</p>
@@ -921,7 +1011,7 @@
                         ${suggestion ? `<p><strong>💡 Sugerencia:</strong> ${suggestion}</p>` : ''}
                     </div>
                 `;
-            } async showSuccess(data) {
+            }            async showSuccess(data) {
                 const url = this.urlInput.value.trim();
                 console.log("showSuccess called with data:", JSON.stringify(data, null, 2));
 
@@ -931,6 +1021,9 @@
                     this.showError("Error: No se recibieron datos del video");
                     return;
                 }
+
+                // Obtener el contenedor del reproductor de video
+                const videoPlayerContainer = document.getElementById('videoPlayerContainer');
 
                 if (url.includes('linkedin.com')) {
                     // Buscar videoUrl en cualquier lugar de la estructura
@@ -942,7 +1035,7 @@
                         return;
                     }
 
-                    showLinkedinVideo({ videoUrl }, this.results);
+                    showLinkedinVideo({ videoUrl }, videoPlayerContainer);
                 } else if (url.includes('x.com') || url.includes('twitter.com')) {
                     // Buscar videoUrl para X/Twitter
                     let videoUrl = this.extractVideoUrl(data);
@@ -953,10 +1046,13 @@
                         return;
                     }
 
-                    showXVideo({ videoUrl }, this.results);
+                    showXVideo({ videoUrl }, videoPlayerContainer);
                 } else {
-                    showInstagramVideo(data, this.results);
+                    showInstagramVideo(data, videoPlayerContainer);
                 }
+
+                // Limpiar resultados ya que ahora el video se muestra arriba
+                this.results.innerHTML = '';
             }
 
             extractVideoUrl(data) {
@@ -1114,8 +1210,21 @@
                     parts.push(`${format.fps}fps`);
                 }
                 return parts.length > 0 ? parts.join(', ') : 'Video MP4';
-            } clearResults() {
+            }            clearResults() {
                 this.results.innerHTML = '';
+                
+                // Restablecer el reproductor de video al placeholder
+                const videoPlayerContainer = document.getElementById('videoPlayerContainer');
+                videoPlayerContainer.innerHTML = `
+                    <div class="video-placeholder">
+                        <div class="video-placeholder-content">
+                            <div class="video-placeholder-inner">
+                                <div class="video-placeholder-icon">🎬</div>
+                                <div class="video-placeholder-text">El video aparecerá aquí</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
             }
 
             formatDuration(seconds) {
