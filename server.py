@@ -12,6 +12,7 @@ from urllib.parse import urlparse, parse_qs
 import tempfile
 from insta_extractor import InstagramExtractor
 from linkedin_extractor import LinkedInExtractor
+from x_extractor import XExtractor
 
 # Try to import moviepy for precise audio detection
 try:
@@ -36,6 +37,7 @@ GUARANTEED to never show XML/JSON parsing errors
 # Instancias globales
 insta_extractor = InstagramExtractor()
 linkedin_extractor = LinkedInExtractor()
+x_extractor = XExtractor()
 
 
 class RequestHandler(http.server.SimpleHTTPRequestHandler):
@@ -156,26 +158,37 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             return str(obj)
 
     def _handle_validate(self, data):
-        """Validate Instagram or LinkedIn URL"""
+        """Validate Instagram, LinkedIn o X URL"""
         url = data.get('url', '').strip()
 
         if not url:
             self._send_json_error("URL is required")
             return
 
-        # Check if it's a valid Instagram or LinkedIn URL
-        if 'instagram.com' in url or 'linkedin.com' in url:
+        # Check if it's a valid Instagram, LinkedIn o X URL
+        if (
+            'instagram.com' in url or
+            'linkedin.com' in url or
+            'x.com' in url or
+            'twitter.com' in url
+        ):
+            if 'linkedin.com' in url:
+                platform = 'linkedin'
+            elif 'x.com' in url or 'twitter.com' in url:
+                platform = 'x'
+            else:
+                platform = 'instagram'
             self._send_json({
                 "success": True,
                 "url": url,
-                "platform": "linkedin" if 'linkedin.com' in url else "instagram"
+                "platform": platform
             })
         else:
             self._send_json_error(
-                "URL no válida. Solo se admiten enlaces de Instagram o LinkedIn")
+                "URL no válida. Solo se admiten enlaces de Instagram, LinkedIn o X/Twitter")
 
     def _handle_extract(self, data):
-        """Extract video from Instagram or LinkedIn"""
+        """Extract video from Instagram, LinkedIn o X"""
         url = data.get('url', '').strip()
 
         if not url:
@@ -185,6 +198,8 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
         # Detect platform and use appropriate extractor
         if 'linkedin.com' in url:
             result = linkedin_extractor.extract_info(url)
+        elif 'x.com' in url or 'twitter.com' in url:
+            result = x_extractor.extract_info(url)
         else:
             result = insta_extractor.extract_info(url)
 

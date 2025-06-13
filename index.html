@@ -784,13 +784,13 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>📹 Video Downloader (Instagram & LinkedIn)</h1>
+            <h1>📹 Video Downloader (Instagram, LinkedIn & X/Twitter)</h1>
             <p>Descarga videos MP4 con audio - verificación en servidor</p>
         </div>
 
         <div class="input-section"> <input type="text" id="urlInput" class="url-input"
-                placeholder="Pega aquí la URL del video (Instagram o LinkedIn)..."
-                value="https://www.instagram.com/reel/DC2s8l_R-jr/">
+                placeholder="Pega aquí la URL del video (Instagram, LinkedIn o X/Twitter)..."
+                value="">
             <br>
             <button id="analyzeBtn" class="btn">🔍 Buscar</button>
             <button id="clearBtn" class="btn">🗑️ Limpiar</button>
@@ -803,9 +803,10 @@
         <div id="results"></div>
     </div>
 
-    <script src="card.js?v=20250610"></script>
-    <script src="insta.js?v=20250610"></script>
-    <script src="linkedin.js?v=20250610"></script>
+    <script src="card.js?v=20250612"></script>
+    <script src="insta.js?v=20250612"></script>
+    <script src="linkedin.js?v=20250612"></script>
+    <script src="x.js?v=20250612"></script>
     <script>
         class InstagramMp4Downloader {
             constructor() {
@@ -942,6 +943,17 @@
                     }
 
                     showLinkedinVideo({ videoUrl }, this.results);
+                } else if (url.includes('x.com') || url.includes('twitter.com')) {
+                    // Buscar videoUrl para X/Twitter
+                    let videoUrl = this.extractVideoUrl(data);
+                    console.log("X videoUrl extracted:", videoUrl);
+
+                    if (!videoUrl) {
+                        this.showError("No se pudo extraer la URL del video de X/Twitter");
+                        return;
+                    }
+
+                    showXVideo({ videoUrl }, this.results);
                 } else {
                     showInstagramVideo(data, this.results);
                 }

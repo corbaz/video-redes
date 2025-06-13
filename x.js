@@ -1,13 +1,13 @@
-// Funciones específicas para LinkedIn - Updated 2025-06-10
-function showLinkedinVideo(data, container) {
-    console.log("LinkedIn showLinkedinVideo called with:", data);
+// Funciones específicas para X/Twitter - COPIANDO EXACTAMENTE LinkedIn
+function showXVideo(data, container) {
+    console.log("X showXVideo called with:", data);
     container.innerHTML = "";
     const videoUrl = data.videoUrl || "";
     if (!videoUrl) {
         container.innerHTML = `<div class="error"><h3>No se encontró video disponible</h3></div>`;
         return;
     }
-    // Renderizar la tarjeta con preview igual que Instagram
+    // Renderizar la tarjeta con preview igual que LinkedIn
     const videoCardHTML = renderVideoCard({
         videoUrl: videoUrl,
     });
