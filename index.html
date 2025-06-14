@@ -768,8 +768,26 @@
 
             /* Estilos específicos para el placeholder y video en móvil */
             .video-placeholder {
-                width: 40vw;
-                /* Usar viewport width */
+                width: 200px !important;
+                /* FORZAR mismo ancho que desktop */
+            }
+
+            .video-card-container {
+                width: 200px !important;
+                /* FORZAR mismo ancho que desktop - SIN CAMBIOS DE TAMAÑO */
+            }
+
+            /* Máxima especificidad para video card */
+            .video-thumbnail-container.video-card-container {
+                width: 200px !important;
+                margin: 0 auto !important;
+                display: block !important;
+                /* FORZAR dimensiones desktop en móvil */
+            }
+
+            .netflix-loading {
+                width: 200px !important;
+                /* FORZAR mismo ancho que desktop */
             }
 
             .video-placeholder-icon {
@@ -786,25 +804,34 @@
                 margin-bottom: 2vh;
             }
 
-            /* SVG responsive */
+            /* SVG responsive - mantener tamaño desktop */
             .platform-svg {
-                width: 8vw;
-                height: 8vw;
-                margin-bottom: 2vh;
+                width: 4rem !important;
+                height: 4rem !important;
+                margin-bottom: 15px;
             }
 
             .netflix-loading-text {
-                font-size: 2.5vw;
-                margin-bottom: 2vh;
+                font-size: 0.9rem !important;
+                margin-bottom: 15px;
+                /* Mantener tamaño desktop para consistencia */
             }
 
             .netflix-progress-bar {
-                width: 25vw;
-                height: 1vw;
+                width: 120px !important;
+                height: 4px !important;
+                /* Mantener tamaño desktop */
             }
 
             .video-placeholder-text {
-                font-size: 2.5vw;
+                font-size: 0.8rem !important;
+                /* Mantener legible pero consistente */
+            }
+
+            /* Video container responsive */
+            #videoPlayerContainer {
+                min-height: 200px !important;
+                /* Altura mínima igual que desktop */
             }
 
             /* Loading placeholder responsivo */
@@ -1304,6 +1331,19 @@
             display: block;
         }
 
+        .video-card-container {
+            width: 200px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* Clase específica para asegurar que el video mantenga tamaño */
+        .video-thumbnail-container.video-card-container {
+            width: 200px !important;
+            margin: 0 auto !important;
+            display: block !important;
+        }
+
         .video-placeholder-content {
             position: relative;
             width: 100%;
@@ -1347,6 +1387,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            min-height: 200px;
+            /* Altura mínima para estabilidad */
         }
     </style>
 </head>
