@@ -672,210 +672,229 @@
         }
 
         @media (max-width: 768px) {
+            /* LAYOUT PROFESIONAL MÓVIL: Header fijo + Video flexible + Footer fijo */
+
             body {
-                padding: 2vh 4vw;
-                /* Más padding lateral en móvil */
+                padding: 0;
+                margin: 0;
                 height: 100vh;
                 overflow: hidden;
-                /* Evitar scroll completamente */
             }
 
             .container {
-                height: 100%;
+                height: 100vh;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
                 max-width: 100%;
                 margin: 0;
+                overflow: hidden;
+                position: relative;
             }
 
+            /* HEADER FIJO ARRIBA */
             .header {
-                margin-bottom: 2vh;
-                /* Reducido pero usando vh */
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                z-index: 100;
+                padding: 8px 16px;
+                text-align: center;
                 flex-shrink: 0;
+                height: 80px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
             }
 
             .header h1 {
-                font-size: 4vw;
-                /* Responsivo con viewport width */
-                margin-bottom: 0.5vh;
+                font-size: 16px;
+                margin-bottom: 2px;
+                line-height: 1.2;
             }
 
             .header h2 {
-                font-size: 3vw;
-                /* Responsivo con viewport width */
-                margin-bottom: 1vh;
+                font-size: 12px;
+                margin-bottom: 2px;
+                line-height: 1.2;
             }
 
             .header p {
-                font-size: 2.5vw;
-                /* Responsivo */
+                font-size: 10px;
                 margin-bottom: 0;
+                line-height: 1.2;
             }
 
+            /* SECCIÓN VIDEO CENTRADA Y FLEXIBLE */
             .video-player-section {
-                padding: 2vh 3vw;
-                margin-bottom: 2vh;
-                min-height: 22vh;
-                /* Altura fija optimizada */
-                flex-shrink: 0;
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 80px;
+                /* Altura exacta del header */
+                margin-bottom: 120px;
+                /* Altura exacta del footer */
+                padding: 15px;
+                overflow: hidden;
+                height: calc(100vh - 200px);
+                /* Altura total disponible */
             }
 
+            /* FOOTER FIJO ABAJO (Input + Botones) - Contenido centrado */
             .input-section {
-                padding: 2vh 4vw;
-                margin-bottom: 1vh;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                z-index: 100;
+                padding: 12px 16px;
                 flex-shrink: 0;
+                height: 120px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
             }
 
             .url-input {
-                padding: 2vh 3vw;
-                font-size: 3.5vw;
-                margin-bottom: 2vh;
+                padding: 10px 12px;
+                font-size: 14px;
+                margin-bottom: 8px;
+                width: 100%;
+                max-width: 100%;
+                border-radius: 8px;
             }
 
             .btn {
-                padding: 1.5vh 4vw;
-                font-size: 3vw;
-                margin: 1vh;
+                padding: 8px 16px;
+                font-size: 13px;
+                margin: 2px 6px;
+                display: inline-block;
+                border-radius: 20px;
             }
 
-            .loading {
-                position: fixed;
-                /* Cambiar a fixed para móvil */
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 1000;
-                margin: 0;
-                /* Remover márgenes */
+            /* Contenedor para los botones centrados */
+            .buttons-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+                width: 100%;
             }
 
-            .spinner {
-                width: 6vw;
-                height: 6vw;
-                margin: 0 auto 1vh;
-            }
-
-            .format {
-                flex-direction: column;
-                text-align: center;
-                padding: 2vh 3vw;
-            }
-
-            .format-info {
-                text-align: center;
-            }
-
-            /* Estilos específicos para el placeholder y video en móvil */
+            /* Videos, placeholder y loading con medidas idénticas (tamaño apropiado móvil) */
             .video-placeholder {
                 width: 200px !important;
-                /* FORZAR mismo ancho que desktop */
+                height: auto !important;
+                max-width: 75vw !important;
+                aspect-ratio: 9/16 !important;
             }
 
             .video-card-container {
                 width: 200px !important;
-                /* FORZAR mismo ancho que desktop - SIN CAMBIOS DE TAMAÑO */
+                height: auto !important;
+                max-width: 75vw !important;
+                aspect-ratio: 9/16 !important;
             }
 
-            /* Máxima especificidad para video card */
             .video-thumbnail-container.video-card-container {
                 width: 200px !important;
+                height: auto !important;
+                max-width: 75vw !important;
+                aspect-ratio: 9/16 !important;
                 margin: 0 auto !important;
                 display: block !important;
-                /* FORZAR dimensiones desktop en móvil */
             }
 
             .netflix-loading {
                 width: 200px !important;
-                /* FORZAR mismo ancho que desktop */
+                height: auto !important;
+                max-width: 75vw !important;
+                aspect-ratio: 9/16 !important;
+                margin: 0 auto !important;
+                display: block !important;
+            }
+
+            /* Asegurar que el contenedor del video mantenga proporción correcta */
+            #videoPlayerContainer {
+                width: 100% !important;
+                height: auto !important;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                min-height: 200px !important;
+            }
+
+            /* Ajustar placeholder con tamaño consistente */
+            .video-placeholder-content {
+                min-height: auto !important;
+                padding-bottom: 177.78% !important;
+                /* Restaurar proporción correcta */
+                height: auto !important;
+            }
+
+            .video-placeholder-inner {
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
             }
 
             .video-placeholder-icon {
-                font-size: 4vw;
-            }
-
-            /* Netflix loading responsive */
-            .netflix-loading {
-                width: 40vw;
-            }
-
-            .netflix-platform-icon {
-                font-size: 6vw;
-                margin-bottom: 2vh;
-            }
-
-            /* SVG responsive - mantener tamaño desktop */
-            .platform-svg {
-                width: 4rem !important;
-                height: 4rem !important;
-                margin-bottom: 15px;
-            }
-
-            .netflix-loading-text {
-                font-size: 0.9rem !important;
-                margin-bottom: 15px;
-                /* Mantener tamaño desktop para consistencia */
-            }
-
-            .netflix-progress-bar {
-                width: 120px !important;
-                height: 4px !important;
-                /* Mantener tamaño desktop */
+                font-size: 2rem !important;
+                /* Icono proporcionado al tamaño */
             }
 
             .video-placeholder-text {
+                font-size: 0.9rem !important;
+                /* Texto proporcionado al tamaño */
+            }
+
+            /* Ajustar loading Netflix para medidas idénticas al reproductor */
+            .netflix-loading-content {
+                padding-bottom: 177.78% !important;
+                /* Proporción exacta del reproductor */
+                min-height: auto !important;
+                height: auto !important;
+                width: 100% !important;
+                position: relative !important;
+            }
+
+            .netflix-platform-icon {
+                font-size: 2rem !important;
+                /* Tamaño proporcionado al tamaño general */
+            }
+
+            .platform-svg {
+                width: 2rem !important;
+                height: 2rem !important;
+            }
+
+            .netflix-loading-text {
                 font-size: 0.8rem !important;
-                /* Mantener legible pero consistente */
             }
 
-            /* Video container responsive */
-            #videoPlayerContainer {
-                min-height: 200px !important;
-                /* Altura mínima igual que desktop */
+            /* Ajustar placeholder para medidas idénticas al reproductor */
+            .video-placeholder-content {
+                padding-bottom: 177.78% !important;
+                /* Proporción exacta del reproductor */
+                min-height: auto !important;
+                height: auto !important;
+                width: 100% !important;
+                position: relative !important;
             }
 
-            /* Loading placeholder responsivo */
-            .loading-placeholder {
-                width: 40vw !important;
+            /* Ocultar elementos que no son esenciales en móvil */
+            #loading {
+                display: none !important;
             }
 
-            .loading-placeholder-icon {
-                font-size: 4vw !important;
-            }
-
-            .loading-spinner {
-                font-size: 3vw !important;
-            }
-
-            .loading-placeholder-text {
-                font-size: 2.5vw !important;
-            }
-
-            /* Hacer que el video card también sea más pequeño en móvil */
-            .video-thumbnail-container {
-                width: 40vw !important;
-                /* Responsivo con viewport */
-            }
-
-            /* Área de resultados flexible */
             #results {
-                flex: 1;
-                overflow-y: auto;
-                margin-top: 1vh;
-            }
-
-            /* Modal de error responsive */
-            .error-modal {
-                padding: 15px 25px;
-                max-width: 85vw;
-            }
-
-            .error-modal h3 {
-                font-size: 1rem;
-            }
-
-            .error-modal p {
-                font-size: 0.85rem;
+                display: none !important;
             }
         }
 
@@ -1357,6 +1376,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            min-height: 200px;
+            /* Altura mínima para móviles */
         }
 
         .video-placeholder-inner {
@@ -1405,13 +1426,13 @@
                 <!-- El placeholder se insertará con JavaScript -->
             </div>
         </div>
-
         <div class="input-section">
             <input type="text" id="urlInput" class="url-input"
                 placeholder="Pega aquí la URL del video (Instagram, LinkedIn o X/Twitter)..." value="">
-            <br>
-            <button id="analyzeBtn" class="btn">🔍 Buscar</button>
-            <button id="clearBtn" class="btn">🗑️ Limpiar</button>
+            <div class="buttons-container">
+                <button id="analyzeBtn" class="btn">🔍 Buscar</button>
+                <button id="clearBtn" class="btn">🗑️ Limpiar</button>
+            </div>
         </div>
 
         <div id="loading" class="loading">

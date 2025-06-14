@@ -5,7 +5,7 @@ function renderVideoCard({ videoUrl = "" }) {
     }
 
     return `
-    <div class="video-thumbnail-container video-card-container" style="width: 200px !important; margin: 0 auto !important; display: block !important;">
+    <div class="video-thumbnail-container video-card-container">
       <div style="position:relative; width:100%; padding-bottom:177.78%; background:#000; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.3); cursor: pointer;"
            onclick="showVideoModal('${videoUrl.replace(/'/g, "\\'")}')">
         <video src="${videoUrl}" 
