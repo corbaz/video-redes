@@ -227,6 +227,114 @@
             z-index: 5;
         }
 
+        /* Loading estilo Netflix con iconos de redes sociales */
+        .netflix-loading {
+            width: 200px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .netflix-loading-content {
+            position: relative;
+            width: 100%;
+            padding-bottom: 177.78%;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 50;
+        }
+
+        .netflix-loading-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 60;
+        }
+
+        .netflix-platform-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            animation: netflixPulse 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px currentColor);
+        }
+
+        .netflix-platform-icon.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .netflix-platform-icon.linkedin {
+            color: #0077B5;
+        }
+
+        .netflix-platform-icon.twitter {
+            color: #1DA1F2;
+        }
+
+        .netflix-loading-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            animation: textFade 2s ease-in-out infinite;
+        }
+
+        .netflix-progress-bar {
+            width: 120px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .netflix-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+            background-size: 200% 100%;
+            animation: netflixProgress 2.5s ease-in-out infinite;
+            border-radius: 2px;
+            width: 0%;
+        }
+
+        @keyframes netflixPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes netflixProgress {
+            0% {
+                width: 0%;
+                background-position: 0% 50%;
+            }
+
+            50% {
+                width: 70%;
+                background-position: 100% 50%;
+            }
+
+            100% {
+                width: 100%;
+                background-position: 0% 50%;
+            }
+        }
+
         .loading-placeholder-inner {
             position: absolute;
             top: 50%;
@@ -645,6 +753,26 @@
 
             .video-placeholder-icon {
                 font-size: 4vw;
+            }
+
+            /* Netflix loading responsive */
+            .netflix-loading {
+                width: 40vw;
+            }
+
+            .netflix-platform-icon {
+                font-size: 6vw;
+                margin-bottom: 2vh;
+            }
+
+            .netflix-loading-text {
+                font-size: 2.5vw;
+                margin-bottom: 2vh;
+            }
+
+            .netflix-progress-bar {
+                width: 25vw;
+                height: 1vw;
             }
 
             .video-placeholder-text {
@@ -1264,17 +1392,21 @@
                 this.urlInput.addEventListener('keypress', (e) => {
                     if (e.key === 'Enter') this.analyzeVideo();
                 });
-            }
-
-            async analyzeVideo() {
+            } async analyzeVideo() {
                 const url = this.urlInput.value.trim();
                 if (!url) {
                     this.showError('Por favor ingresa una URL de video');
                     return;
                 }
 
-                this.showLoading(true);
+                // Limpiar resultados ANTES de mostrar loading
                 this.clearResults();
+                // Mostrar loading después de limpiar
+                this.showLoading(true);
+
+                // Tiempo mínimo de loading para mostrar la animación (2.5 segundos)
+                const minimumLoadingTime = 2500;
+                const startTime = Date.now();
 
                 try {
                     // Validate URL first
@@ -1286,6 +1418,15 @@
 
                     // Extract video info
                     const extractResponse = await this.makeRequest('/api/extract', { url: validateResponse.url });
+
+                    // Calcular tiempo transcurrido y esperar si es necesario
+                    const elapsedTime = Date.now() - startTime;
+                    const remainingTime = Math.max(0, minimumLoadingTime - elapsedTime);
+
+                    if (remainingTime > 0) {
+                        await new Promise(resolve => setTimeout(resolve, remainingTime));
+                    }
+
                     if (extractResponse.success) {
                         let data = extractResponse.data;
 
@@ -1300,6 +1441,14 @@
                     }
 
                 } catch (error) {
+                    // Asegurar tiempo mínimo incluso en caso de error
+                    const elapsedTime = Date.now() - startTime;
+                    const remainingTime = Math.max(0, minimumLoadingTime - elapsedTime);
+
+                    if (remainingTime > 0) {
+                        await new Promise(resolve => setTimeout(resolve, remainingTime));
+                    }
+
                     this.showError(error.message);
                 } finally {
                     this.showLoading(false);
@@ -1327,25 +1476,49 @@
                     const text = await response.text();
                     throw new Error(`Invalid JSON response: ${text.slice(0, 200)}`);
                 }
-            }
-
-            showLoading(show) {
+            } showLoading(show) {
                 const videoPlayerContainer = document.getElementById('videoPlayerContainer');
                 this.analyzeBtn.disabled = show;
 
                 if (show) {
-                    // Mostrar loading placeholder en el área del reproductor - versión simple
+                    // Detectar la plataforma basada en la URL
+                    const url = this.urlInput.value.trim();
+                    let platformIcon = '🎬';
+                    let platformClass = '';
+                    let platformName = 'video';
+
+                    if (url.includes('instagram.com')) {
+                        platformIcon = '📷';
+                        platformClass = 'instagram';
+                        platformName = 'Instagram';
+                    } else if (url.includes('linkedin.com')) {
+                        platformIcon = '💼';
+                        platformClass = 'linkedin';
+                        platformName = 'LinkedIn';
+                    } else if (url.includes('x.com') || url.includes('twitter.com')) {
+                        platformIcon = '✖️';
+                        platformClass = 'twitter';
+                        platformName = 'X/Twitter';
+                    }
+
+                    // Forzar inmediatamente el loading estilo Netflix
                     videoPlayerContainer.innerHTML = `
-                        <div class="loading-placeholder">
-                            <div class="loading-placeholder-content">
-                                <div class="loading-placeholder-inner">
-                                    <div style="font-size: 2rem; margin-bottom: 8px;">🔍</div>
-                                    <div style="font-size: 1.5rem; animation: spin 1s linear infinite; color: #4ECDC4; margin-bottom: 8px;">🔄</div>
-                                    <div class="loading-placeholder-text">Buscando video...</div>
+                        <div class="netflix-loading">
+                            <div class="netflix-loading-content">
+                                <div class="netflix-loading-inner">
+                                    <div class="netflix-platform-icon ${platformClass}">${platformIcon}</div>
+                                    <div class="netflix-loading-text">Buscando en ${platformName}...</div>
+                                    <div class="netflix-progress-bar">
+                                        <div class="netflix-progress-fill"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     `;
+
+                    // Forzar actualización del DOM
+                    videoPlayerContainer.offsetHeight;
+
                 } else {
                     // Si no hay loading y no hay video cargado, mostrar placeholder normal
                     if (!videoPlayerContainer.innerHTML.includes('video-thumbnail-container')) {
@@ -1583,8 +1756,13 @@
             } clearResults() {
                 this.results.innerHTML = '';
 
-                // Restablecer el reproductor de video al placeholder                const videoPlayerContainer = document.getElementById('videoPlayerContainer');
-                videoPlayerContainer.innerHTML = generateVideoPlaceholder();
+                // Solo restablecer el reproductor al placeholder si NO hay loading activo
+                const videoPlayerContainer = document.getElementById('videoPlayerContainer');
+                const isLoadingActive = videoPlayerContainer.innerHTML.includes('netflix-loading');
+
+                if (!isLoadingActive) {
+                    videoPlayerContainer.innerHTML = generateVideoPlaceholder();
+                }
             }
 
             clearAll() {
