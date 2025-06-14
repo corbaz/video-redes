@@ -1251,7 +1251,7 @@
 
             initEventListeners() {
                 this.analyzeBtn.addEventListener('click', () => this.analyzeVideo());
-                this.clearBtn.addEventListener('click', () => this.clearResults());
+                this.clearBtn.addEventListener('click', () => this.clearAll());
                 this.urlInput.addEventListener('keypress', (e) => {
                     if (e.key === 'Enter') this.analyzeVideo();
                 });
@@ -1595,6 +1595,17 @@
                         </div>
                     </div>
                 `;
+            }
+
+            clearAll() {
+                // Limpiar el input URL (solo cuando se hace clic en Limpiar)
+                this.urlInput.value = '';
+
+                // Llamar a clearResults para limpiar el resto
+                this.clearResults();
+
+                // Enfocar el input para nueva búsqueda
+                this.urlInput.focus();
             }
 
             formatDuration(seconds) {
