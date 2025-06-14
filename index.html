@@ -742,7 +742,7 @@
                 /* Altura total disponible */
             }
 
-            /* FOOTER FIJO ABAJO (Input + Botones) - Contenido centrado */
+            /* FOOTER FIJO completamente pegado abajo */
             .input-section {
                 position: fixed;
                 bottom: 0;
@@ -750,7 +750,9 @@
                 right: 0;
                 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                 z-index: 100;
-                padding: 12px 16px;
+                padding: 8px 12px;
+                /* Reducido padding */
+                margin: 0;
                 flex-shrink: 0;
                 height: 120px;
                 display: flex;
@@ -758,6 +760,7 @@
                 justify-content: center;
                 align-items: center;
                 text-align: center;
+                box-sizing: border-box;
             }
 
             .url-input {
@@ -786,47 +789,73 @@
                 width: 100%;
             }
 
-            /* Videos, placeholder y loading con medidas idénticas (tamaño apropiado móvil) */
+            /* Videos, placeholder y loading - ABSOLUTOS centrados en toda la pantalla */
             .video-placeholder {
-                width: 200px !important;
-                height: auto !important;
-                max-width: 75vw !important;
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                width: auto !important;
+                height: 350px !important;
+                max-width: 90vw !important;
                 aspect-ratio: 9/16 !important;
+                z-index: 50 !important;
             }
 
             .video-card-container {
-                width: 200px !important;
-                height: auto !important;
-                max-width: 75vw !important;
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                width: auto !important;
+                height: 350px !important;
+                max-width: 90vw !important;
                 aspect-ratio: 9/16 !important;
+                z-index: 50 !important;
             }
 
             .video-thumbnail-container.video-card-container {
-                width: 200px !important;
-                height: auto !important;
-                max-width: 75vw !important;
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                width: auto !important;
+                height: 350px !important;
+                max-width: 90vw !important;
                 aspect-ratio: 9/16 !important;
-                margin: 0 auto !important;
+                margin: 0 !important;
                 display: block !important;
+                z-index: 50 !important;
             }
 
             .netflix-loading {
-                width: 200px !important;
-                height: auto !important;
-                max-width: 75vw !important;
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                width: auto !important;
+                height: 350px !important;
+                max-width: 90vw !important;
                 aspect-ratio: 9/16 !important;
-                margin: 0 auto !important;
+                margin: 0 !important;
                 display: block !important;
+                z-index: 50 !important;
             }
 
-            /* Asegurar que el contenedor del video mantenga proporción correcta */
+            /* Video container TAMBIÉN absoluto con 350px como TODOS los demás */
             #videoPlayerContainer {
-                width: 100% !important;
-                height: auto !important;
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                width: auto !important;
+                height: 350px !important;
+                max-width: 90vw !important;
+                aspect-ratio: 9/16 !important;
                 display: flex !important;
                 justify-content: center !important;
                 align-items: center !important;
-                min-height: 200px !important;
+                z-index: 50 !important;
             }
 
             /* Ajustar placeholder con tamaño consistente */
@@ -878,14 +907,61 @@
                 font-size: 0.8rem !important;
             }
 
-            /* Ajustar placeholder para medidas idénticas al reproductor */
+            /* Ajustar placeholder para 350px como TODOS */
             .video-placeholder-content {
-                padding-bottom: 177.78% !important;
-                /* Proporción exacta del reproductor */
-                min-height: auto !important;
-                height: auto !important;
                 width: 100% !important;
+                height: 350px !important;
+                min-height: 350px !important;
+                padding-bottom: 0 !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
                 position: relative !important;
+                background: rgba(0, 0, 0, 0.2);
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                border: 2px dashed rgba(255, 255, 255, 0.3);
+            }
+
+            .video-placeholder-inner {
+                position: static !important;
+                top: auto !important;
+                left: auto !important;
+                transform: none !important;
+                color: rgba(255, 255, 255, 0.7);
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+
+            /* Ajustar loading Netflix para 350px como TODOS */
+            .netflix-loading-content {
+                width: 100% !important;
+                height: 350px !important;
+                min-height: 350px !important;
+                padding-bottom: 0 !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                position: relative !important;
+                background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                z-index: 50;
+            }
+
+            .netflix-loading-inner {
+                position: static !important;
+                top: auto !important;
+                left: auto !important;
+                transform: none !important;
+                text-align: center;
+                z-index: 60;
             }
 
             /* Ocultar elementos que no son esenciales en móvil */
