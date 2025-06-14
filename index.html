@@ -1201,19 +1201,10 @@
             <h1>📹 Video Downloader</h1>
             <h2>(Instagram, LinkedIn & X/Twitter)</h2>
             <p>Descarga videos MP4 de las Redes Sociales</p>
-        </div>
-
-        <!-- Reproductor de video siempre visible -->
+        </div> <!-- Reproductor de video siempre visible -->
         <div class="video-player-section">
             <div id="videoPlayerContainer">
-                <div class="video-placeholder">
-                    <div class="video-placeholder-content">
-                        <div class="video-placeholder-inner">
-                            <div class="video-placeholder-icon">🎬</div>
-                            <div class="video-placeholder-text">El video aparecerá aquí</div>
-                        </div>
-                    </div>
-                </div>
+                <!-- El placeholder se insertará con JavaScript -->
             </div>
         </div>
 
@@ -1232,13 +1223,24 @@
 
         <div id="results"></div>
     </div>
-
     <script src="card.js?v=20250612"></script>
     <script src="insta.js?v=20250612"></script>
     <script src="linkedin.js?v=20250612"></script>
     <script src="x.js?v=20250612"></script>
     <script>
-        class InstagramMp4Downloader {
+        // Función para generar HTML del placeholder de video
+        function generateVideoPlaceholder() {
+            return `
+                <div class="video-placeholder">
+                    <div class="video-placeholder-content">
+                        <div class="video-placeholder-inner">
+                            <div class="video-placeholder-icon">🎬</div>
+                            <div class="video-placeholder-text">El video aparecerá aquí</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        } class InstagramMp4Downloader {
             constructor() {
                 this.urlInput = document.getElementById('urlInput');
                 this.analyzeBtn = document.getElementById('analyzeBtn');
@@ -1247,6 +1249,13 @@
                 this.results = document.getElementById('results');
 
                 this.initEventListeners();
+                this.initVideoPlaceholder();
+            }
+
+            initVideoPlaceholder() {
+                // Inicializar el placeholder del video al cargar la página
+                const videoPlayerContainer = document.getElementById('videoPlayerContainer');
+                videoPlayerContainer.innerHTML = generateVideoPlaceholder();
             }
 
             initEventListeners() {
@@ -1340,16 +1349,7 @@
                 } else {
                     // Si no hay loading y no hay video cargado, mostrar placeholder normal
                     if (!videoPlayerContainer.innerHTML.includes('video-thumbnail-container')) {
-                        videoPlayerContainer.innerHTML = `
-                            <div class="video-placeholder">
-                                <div class="video-placeholder-content">
-                                    <div class="video-placeholder-inner">
-                                        <div class="video-placeholder-icon">🎬</div>
-                                        <div class="video-placeholder-text">El video aparecerá aquí</div>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
+                        videoPlayerContainer.innerHTML = generateVideoPlaceholder();
                     }
                 }
             } showError(message) {
@@ -1583,18 +1583,8 @@
             } clearResults() {
                 this.results.innerHTML = '';
 
-                // Restablecer el reproductor de video al placeholder
-                const videoPlayerContainer = document.getElementById('videoPlayerContainer');
-                videoPlayerContainer.innerHTML = `
-                    <div class="video-placeholder">
-                        <div class="video-placeholder-content">
-                            <div class="video-placeholder-inner">
-                                <div class="video-placeholder-icon">🎬</div>
-                                <div class="video-placeholder-text">El video aparecerá aquí</div>
-                            </div>
-                        </div>
-                    </div>
-                `;
+                // Restablecer el reproductor de video al placeholder                const videoPlayerContainer = document.getElementById('videoPlayerContainer');
+                videoPlayerContainer.innerHTML = generateVideoPlaceholder();
             }
 
             clearAll() {
