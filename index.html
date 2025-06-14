@@ -536,11 +536,11 @@
                 width: 100%;
             }
 
-            /* Videos, placeholder y loading - ABSOLUTOS centrados (cálculo exacto 47.5%) */
+            /* Videos, placeholder y loading - ABSOLUTOS centrados (50% - diferencia header/footer) */
 
             .video-card-container {
                 position: absolute !important;
-                top: 47.5% !important;
+                top: calc(50% - 40px) !important;
                 left: 50% !important;
                 transform: translate(-50%, -50%) !important;
                 width: auto !important;
@@ -552,7 +552,7 @@
 
             .video-thumbnail-container.video-card-container {
                 position: absolute !important;
-                top: 47.5% !important;
+                top: calc(50% - 40px) !important;
                 left: 50% !important;
                 transform: translate(-50%, -50%) !important;
                 width: auto !important;
@@ -566,7 +566,7 @@
 
             .netflix-loading {
                 position: absolute !important;
-                top: 47.5% !important;
+                top: calc(50% - 40px) !important;
                 left: 50% !important;
                 transform: translate(-50%, -50%) !important;
                 width: auto !important;
@@ -578,10 +578,10 @@
                 z-index: 50 !important;
             }
 
-            /* Video container TAMBIÉN con cálculo exacto 47.5% */
+            /* Video container TAMBIÉN con cálculo correcto (50% - 20px) */
             #videoPlayerContainer {
                 position: absolute !important;
-                top: 47.5% !important;
+                top: calc(50% - 40px) !important;
                 left: 50% !important;
                 transform: translate(-50%, -50%) !important;
                 width: auto !important;
@@ -722,11 +722,11 @@
             display: block;
         }
 
-        /* EN MÓVIL: Placeholder con centrado absoluto al 47.5% */
+        /* EN MÓVIL: Placeholder con centrado correcto (50% - 20px) */
         @media (max-width: 768px) {
             .video-placeholder {
                 position: absolute !important;
-                top: 47.5% !important;
+                top: calc(50% - 40px) !important;
                 left: 50% !important;
                 transform: translate(-50%, -50%) !important;
                 width: auto !important;
@@ -805,7 +805,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>📹 Redes Sociales Downloader v14.0</h1>
+            <h1>📹 Redes Sociales Downloader v16.0</h1>
             <h2>(Instagram, LinkedIn & X/Twitter)</h2>
             <p>Descarga videos MP4 de las Redes Sociales</p>
         </div> <!-- Reproductor de video siempre visible -->
