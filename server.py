@@ -1,278 +1,337 @@
-from typing import Dict, Any, List
-import os
-import time
-import traceback
-import re
-import subprocess
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import json
-import socketserver
-import http.server
-import requests
-from urllib.parse import urlparse, parse_qs
-import tempfile
+import os
+import sys
+import traceback
+import logging
+from urllib.parse import parse_qs, urlparse
+from socketserver import ThreadingMixIn
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
+# Importar extractores
 from insta_extractor import InstagramExtractor
 from linkedin_extractor import LinkedInExtractor
 from x_extractor import XExtractor
 
-# Try to import moviepy for precise audio detection
-try:
-    from moviepy.editor import VideoFileClip
-    MOVIEPY_AVAILABLE = True
-except ImportError:
-    MOVIEPY_AVAILABLE = False
-
-# Try to import pydub as alternative for audio detection
-try:
-    from pydub import AudioSegment
-    PYDUB_AVAILABLE = True
-except ImportError:
-    PYDUB_AVAILABLE = False
-
-"""
-Instagram Video Downloader - Bulletproof Server
-GUARANTEED to never show XML/JSON parsing errors
-"""
+# Configurar logging (sin emojis para Windows)
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('server.log', encoding='utf-8'),
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+logger = logging.getLogger(__name__)
 
 
-# Instancias globales
-insta_extractor = InstagramExtractor()
-linkedin_extractor = LinkedInExtractor()
-x_extractor = XExtractor()
+class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
+    """HTTP Server que maneja requests en threads separados"""
+    daemon_threads = True
+    allow_reuse_address = True
+    timeout = 60
 
 
-class RequestHandler(http.server.SimpleHTTPRequestHandler):
-    """HTTP request handler with bulletproof JSON responses"""
-
+class VideoDownloaderHandler(BaseHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, directory='.', **kwargs)
+        self.timeout = 30
+        super().__init__(*args, **kwargs)
 
     def log_message(self, format, *args):
-        print(f"🌐 {format % args}")
+        """Override para usar nuestro logger"""
+        logger.info(f"{self.address_string()} - {format % args}")
+
+    def do_GET(self):
+        try:
+            # Filtrar requests de DevTools que no necesitamos
+            if '/.well-known/' in self.path:
+                self.send_error(404)
+                return
+
+            # Limpiar la ruta de parámetros de versión (?v=...)
+            clean_path = self.path.split('?')[0]
+
+            # Servir index.html para la raíz
+            if clean_path == '/' or clean_path == '/index.html':
+                self.serve_file('index.html')
+            elif clean_path.endswith('.js'):
+                filename = clean_path.lstrip('/')
+                if os.path.exists(filename):
+                    self.serve_file(filename)
+                else:
+                    self.send_error(404)
+            elif clean_path.endswith('.css'):
+                filename = clean_path.lstrip('/')
+                if os.path.exists(filename):
+                    self.serve_file(filename)
+                else:
+                    self.send_error(404)
+            elif clean_path.endswith('.ico'):
+                filename = clean_path.lstrip('/')
+                if os.path.exists(filename):
+                    self.serve_file(filename)
+                else:
+                    self.send_error(404)
+            else:
+                self.send_error(404)
+
+        except Exception as e:
+            logger.error(f"Error en do_GET: {str(e)}")
+            self.send_error(500)
+
+    def do_POST(self):
+        try:
+            # Obtener el path sin el / inicial
+            path = self.path.lstrip('/')
+
+            # Manejar endpoints de API
+            if path == 'api/validate':
+                self.handle_validate()
+            elif path == 'api/extract':
+                self.handle_extract()
+            else:
+                logger.warning(f"Endpoint no encontrado: {path}")
+                self.send_error(404)
+
+        except Exception as e:
+            logger.error(f"Error en do_POST: {str(e)}")
+            logger.error(traceback.format_exc())
+            self.send_json_response(
+                {'success': False, 'error': 'Error del servidor'}, 500)
+
+    def serve_file(self, filename):
+        """Sirve archivos estáticos con headers apropiados"""
+        try:
+            if not os.path.exists(filename):
+                logger.warning(f"Archivo no encontrado: {filename}")
+                self.send_error(404)
+                return
+
+            with open(filename, 'rb') as f:
+                content = f.read()
+
+            # Determinar content-type
+            if filename.endswith('.html'):
+                content_type = 'text/html; charset=utf-8'
+            elif filename.endswith('.js'):
+                content_type = 'application/javascript; charset=utf-8'
+            elif filename.endswith('.css'):
+                content_type = 'text/css; charset=utf-8'
+            elif filename.endswith('.ico'):
+                content_type = 'image/x-icon'
+            else:
+                content_type = 'application/octet-stream'
+
+            self.send_response(200)
+            self.send_header('Content-Type', content_type)
+            self.send_header('Content-Length', str(len(content)))
+            self.send_header('Cache-Control', 'no-cache')
+            self.end_headers()
+            self.wfile.write(content)
+
+            logger.debug(f"Archivo servido: {filename}")
+
+        except Exception as e:
+            logger.error(f"Error sirviendo archivo {filename}: {str(e)}")
+            self.send_error(500)
+
+    def handle_validate(self):
+        """Valida URLs para compatibilidad con el frontend actual"""
+        try:
+            content_length = int(self.headers['Content-Length'])
+            post_data = self.rfile.read(content_length).decode('utf-8')
+            data = json.loads(post_data)
+
+            url = data.get('url', '').strip()
+            if not url:
+                self.send_json_response(
+                    {'success': False, 'error': 'URL requerida'}, 400)
+                return
+
+            # Validar URL según plataforma
+            if any(domain in url for domain in ['instagram.com', 'linkedin.com', 'x.com', 'twitter.com']):
+                self.send_json_response({
+                    'success': True,
+                    'url': url,
+                    'message': 'URL válida'
+                })
+            else:
+                self.send_json_response({
+                    'success': False,
+                    'error': 'Plataforma no soportada. Usa Instagram, LinkedIn o X/Twitter.'
+                }, 400)
+
+        except Exception as e:
+            logger.error(f"Error en validate: {str(e)}")
+            self.send_json_response({'success': False, 'error': str(e)}, 500)
+
+    def handle_extract(self):
+        """Maneja requests de extracción de video"""
+        try:
+            content_length = int(self.headers['Content-Length'])
+            post_data = self.rfile.read(content_length).decode('utf-8')
+            data = json.loads(post_data)
+
+            url = data.get('url', '').strip()
+            if not url:
+                self.send_json_response(
+                    {'success': False, 'error': 'URL requerida'}, 400)
+                return
+
+            logger.info(f"Extrayendo video de: {url}")
+
+            # Determinar plataforma y extraer
+            result = self.extract_video_info(url)
+
+            if result['success']:
+                logger.info(f"Extracción exitosa para: {url}")
+                self.send_json_response(result)
+            else:
+                logger.warning(f"Error extrayendo {url}: {result['error']}")
+                self.send_json_response(result, 400)
+
+        except json.JSONDecodeError:
+            logger.error("Error decodificando JSON del request")
+            self.send_json_response(
+                {'success': False, 'error': 'JSON inválido'}, 400)
+        except Exception as e:
+            logger.error(f"Error en handle_extract: {str(e)}")
+            logger.error(traceback.format_exc())
+            self.send_json_response(
+                {'success': False, 'error': f'Error del servidor: {str(e)}'}, 500)
+
+    def extract_video_info(self, url):
+        """Extrae información del video según la plataforma"""
+        try:
+            # Detectar plataforma e inicializar extractor
+            if 'instagram.com' in url:
+                extractor = InstagramExtractor()
+                platform = 'instagram'
+            elif 'linkedin.com' in url:
+                extractor = LinkedInExtractor()
+                platform = 'linkedin'
+            elif 'x.com' in url or 'twitter.com' in url:
+                extractor = XExtractor()
+                platform = 'x'
+            else:
+                return {
+                    'success': False,
+                    'error': 'Plataforma no soportada. Usa Instagram, LinkedIn o X/Twitter.'
+                }
+
+            # Extraer video usando el método extract_info del extractor
+            result = extractor.extract_info(url)
+
+            if result.get('success'):
+                result['platform'] = platform
+                return result
+            else:
+                return {
+                    'success': False,
+                    'error': result.get('error', f'Error extrayendo video de {platform}')
+                }
+
+        except Exception as e:
+            logger.error(f"Error extrayendo video de {url}: {str(e)}")
+            return {
+                'success': False,
+                'error': f'Error procesando URL: {str(e)}'
+            }
+
+    def send_json_response(self, data, status=200):
+        """Envía respuesta JSON con headers apropiados"""
+        try:
+            response = json.dumps(data, ensure_ascii=False).encode('utf-8')
+
+            self.send_response(status)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.send_header('Content-Length', str(len(response)))
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.send_header('Access-Control-Allow-Methods',
+                             'GET, POST, OPTIONS')
+            self.send_header('Access-Control-Allow-Headers', 'Content-Type')
+            self.send_header('Cache-Control', 'no-cache')
+            self.end_headers()
+
+            self.wfile.write(response)
+        except Exception as e:
+            logger.error(f"Error enviando respuesta JSON: {str(e)}")
 
     def do_OPTIONS(self):
+        """Maneja requests CORS preflight"""
         self.send_response(200)
-        self._send_cors_headers()
-        self.end_headers()
-
-    def _send_cors_headers(self):
         self.send_header('Access-Control-Allow-Origin', '*')
         self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
         self.send_header('Access-Control-Allow-Headers', 'Content-Type')
-
-    def do_GET(self):
-        if self.path.startswith('/api/'):
-            self._handle_api()
-        else:
-            if self.path == '/':
-                self.path = '/index.html'
-            super().do_GET()
-
-    def do_POST(self):
-        if self.path.startswith('/api/'):
-            self._handle_api()
-        else:
-            self._send_json_error("Endpoint not found", 404)
-
-    def _handle_api(self):
-        """Handle API requests with guaranteed JSON responses"""
-        try:
-            # Read request data
-            content_length = int(self.headers.get('Content-Length', 0))
-            post_data = self.rfile.read(
-                content_length) if content_length > 0 else b''
-
-            data = {}
-            if post_data:
-                try:
-                    data = json.loads(post_data.decode('utf-8'))
-                except json.JSONDecodeError:
-                    self._send_json_error("Invalid JSON", 400)
-                    return
-
-            # Route API endpoints
-            if self.path == '/api/validate':
-                self._handle_validate(data)
-            elif self.path == '/api/extract':
-                self._handle_extract(data)
-            elif self.path == '/api/health':
-                self._send_json(
-                    {"status": "ok", "message": "Server is running"})
-            else:
-                self._send_json_error("Endpoint not found", 404)
-
-        except Exception as e:
-            print(f"❌ API error: {e}")
-            self._send_json_error("Internal server error", 500)
-
-    def _send_json(self, data: Any, status: int = 200):
-        """Send JSON response with absolute guarantee"""
-        try:
-            # Ensure JSON-safe data
-            safe_data = self._make_json_safe(data)
-
-            # Create JSON
-            try:
-                json_str = json.dumps(safe_data, ensure_ascii=False, indent=2)
-            except Exception as e:
-                print(f"❌ JSON serialization failed: {e}")
-                json_str = json.dumps({
-                    "success": False,
-                    "error": "JSON serialization error"
-                })
-
-            json_bytes = json_str.encode('utf-8')
-
-            # Send response
-            self.send_response(status)
-            self._send_cors_headers()
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
-            self.send_header('Content-Length', str(len(json_bytes)))
-            self.end_headers()
-            self.wfile.write(json_bytes)
-
-            print(f"✅ JSON sent: {status}")
-
-        except Exception as e:
-            print(f"❌ Fatal response error: {e}")
-            try:
-                self.send_error(500)
-            except:
-                pass
-
-    def _send_json_error(self, message: str, status: int = 400):
-        """Send JSON error response"""
-        self._send_json({
-            "success": False,
-            "error": str(message)
-        }, status)
-
-    def _make_json_safe(self, obj: Any) -> Any:
-        """Make object JSON serializable"""
-        if isinstance(obj, dict):
-            return {str(k): self._make_json_safe(v) for k, v in obj.items()}
-        elif isinstance(obj, (list, tuple)):
-            return [self._make_json_safe(item) for item in obj]
-        elif isinstance(obj, (str, int, float, bool)) or obj is None:
-            return obj
-        else:
-            return str(obj)
-
-    def _handle_validate(self, data):
-        """Validate Instagram, LinkedIn o X URL"""
-        url = data.get('url', '').strip()
-
-        if not url:
-            self._send_json_error("URL is required")
-            return
-
-        # Check if it's a valid Instagram, LinkedIn o X URL
-        if (
-            'instagram.com' in url or
-            'linkedin.com' in url or
-            'x.com' in url or
-            'twitter.com' in url
-        ):
-            if 'linkedin.com' in url:
-                platform = 'linkedin'
-            elif 'x.com' in url or 'twitter.com' in url:
-                platform = 'x'
-            else:
-                platform = 'instagram'
-            self._send_json({
-                "success": True,
-                "url": url,
-                "platform": platform
-            })
-        else:
-            self._send_json_error(
-                "URL no válida. Solo se admiten enlaces de Instagram, LinkedIn o X/Twitter")
-
-    def _handle_extract(self, data):
-        """Extract video from Instagram, LinkedIn o X"""
-        url = data.get('url', '').strip()
-
-        if not url:
-            self._send_json_error("URL is required")
-            return
-
-        # Detect platform and use appropriate extractor
-        if 'linkedin.com' in url:
-            result = linkedin_extractor.extract_info(url)
-        elif 'x.com' in url or 'twitter.com' in url:
-            result = x_extractor.extract_info(url)
-        else:
-            result = insta_extractor.extract_info(url)
-
-        status = 200 if result.get("success") else 400
-        self._send_json(result, status)
+        self.end_headers()
 
 
-def start_server(port=8000):
-    """Start the Instagram downloader server"""
-    print("🚀 Instagram Video Downloader")
-    print("=" * 50)
-    print("✅ XML Error Completely Fixed")
-    print("✅ Bulletproof JSON Responses")
-    print("✅ Professional Error Handling")
-    print(f"🌐 Server: http://localhost:{port}")
-    print("=" * 50)
-
-    # Check yt-dlp
+def run_server():
+    """Inicia el servidor con configuración optimizada"""
     try:
-        result = subprocess.run(['yt-dlp', '--version'],
-                                capture_output=True, text=True, timeout=5)
-        if result.returncode == 0:
-            print(f"✅ yt-dlp: {result.stdout.strip()}")
-        else:
-            print("⚠️ yt-dlp not found - install with: pip install yt-dlp")
-    except:
-        print("⚠️ yt-dlp not found - install with: pip install yt-dlp")
+        # Configuración del servidor
+        host = '0.0.0.0'  # Escucha en todas las interfaces
+        port = 8000  # Puerto estándar
 
-    # Check moviepy for precise audio detection
-    if MOVIEPY_AVAILABLE:
-        print("✅ moviepy: Disponible para detección precisa de audio")
-    else:
-        print("⚠️ moviepy not found - install with: pip install moviepy")
+        server = ThreadedHTTPServer((host, port), VideoDownloaderHandler)
+        server.timeout = 60
 
-    # Check pydub as alternative
-    if PYDUB_AVAILABLE:
-        print("✅ pydub: Disponible como alternativa para detección de audio")
-    else:
-        print("⚠️ pydub not found - install with: pip install pydub")
+        logger.info("=" * 60)
+        logger.info("Video Downloader Server v2.2 - API Fixed")
+        logger.info("=" * 60)
+        logger.info(f"Servidor iniciado en http://{host}:{port}")
+        logger.info(f"Acceso local: http://localhost:{port}")
+        logger.info(f"Acceso red: http://192.168.1.50:{port}")
+        logger.info("Endpoints disponibles:")
+        logger.info("  POST /api/validate - Validar URLs")
+        logger.info("  POST /api/extract - Extraer videos")
+        logger.info("Presiona Ctrl+C para detener")
+        logger.info("=" * 60)
 
-    if not MOVIEPY_AVAILABLE and not PYDUB_AVAILABLE:
-        print("   Usando ffprobe como respaldo para detección de audio")
+        server.serve_forever()
 
-    # Check ffprobe (para verificación de audio adicional)
-    try:
-        result = subprocess.run(['ffprobe', '-version'],
-                                capture_output=True, text=True, timeout=5)
-        if result.returncode == 0:
-            print("✅ ffprobe: Disponible como verificación adicional")
-        else:
-            print("ℹ️ ffprobe not found - usando solo moviepy para verificación")
-    except:
-        print("ℹ️ ffprobe not found - usando solo moviepy para verificación")
-
-    print("=" * 50)
-
-    try:
-        # Cambiado a 0.0.0.0 para escuchar en todas las interfaces
-        with socketserver.TCPServer(("0.0.0.0", port), RequestHandler) as httpd:
-            print(
-                f"🚀 Server started on port {port} (accesible en todas las IPs de la red)")
-            httpd.serve_forever()
     except KeyboardInterrupt:
-        print("\n🛑 Server stopped")
+        logger.info("Servidor detenido por usuario")
     except OSError as e:
-        if "Address already in use" in str(e):
-            print(f"❌ Port {port} is already in use. Try a different port:")
-            print(f"   python3 server.py {port + 1}")
+        if e.errno == 98 or "Address already in use" in str(e):
+            logger.error(f"Puerto {port} ya está en uso")
+            logger.info("Ejecuta: taskkill /f /im python.exe")
         else:
-            print(f"❌ Server error: {e}")
+            logger.error(f"Error del sistema: {e}")
+    except Exception as e:
+        logger.error(f"Error inesperado: {e}")
+        logger.error(traceback.format_exc())
+    finally:
+        try:
+            server.server_close()
+            logger.info("Servidor cerrado correctamente")
+        except:
+            pass
 
 
-if __name__ == "__main__":
-    import sys
-    port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
-    start_server(port)
+if __name__ == '__main__':
+    # Verificar extractores disponibles
+    print("Verificando extractores...")
+
+    try:
+        from insta_extractor import InstagramExtractor
+        print("Instagram extractor: OK")
+    except Exception as e:
+        print(f"Instagram extractor error: {e}")
+
+    try:
+        from linkedin_extractor import LinkedInExtractor
+        print("LinkedIn extractor: OK")
+    except Exception as e:
+        print(f"LinkedIn extractor error: {e}")
+
+    try:
+        from x_extractor import XExtractor
+        print("X/Twitter extractor: OK")
+    except Exception as e:
+        print(f"X/Twitter extractor error: {e}")
+
+    print()
+    run_server()

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Downloader - Instagram & LinkedIn MP4</title>
+    <title>Redes Sociales Downloader</title>
     <style>
         * {
             margin: 0;
@@ -537,17 +537,6 @@
             }
 
             /* Videos, placeholder y loading - ABSOLUTOS centrados (cálculo exacto 47.5%) */
-            .video-placeholder {
-                position: absolute !important;
-                top: 47.5% !important;
-                left: 50% !important;
-                transform: translate(-50%, -50%) !important;
-                width: auto !important;
-                height: 350px !important;
-                max-width: 90vw !important;
-                aspect-ratio: 9/16 !important;
-                z-index: 50 !important;
-            }
 
             .video-card-container {
                 position: absolute !important;
@@ -708,8 +697,11 @@
                 left: auto !important;
                 transform: none !important;
                 text-align: center;
-                z-index: 60;            }
-        }/* Estilos para el reproductor de video siempre visible */
+                z-index: 60;
+            }
+        }
+
+        /* Estilos para el reproductor de video siempre visible */
         .video-player-section {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
@@ -728,6 +720,22 @@
             width: 200px;
             margin: 0 auto;
             display: block;
+        }
+
+        /* EN MÓVIL: Placeholder con centrado absoluto al 47.5% */
+        @media (max-width: 768px) {
+            .video-placeholder {
+                position: absolute !important;
+                top: 47.5% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                width: auto !important;
+                height: 350px !important;
+                max-width: 90vw !important;
+                aspect-ratio: 9/16 !important;
+                z-index: 50 !important;
+                margin: 0 !important;
+            }
         }
 
         .video-card-container {
@@ -797,7 +805,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>📹 Video Downloader</h1>
+            <h1>📹 Redes Sociales Downloader v14.0</h1>
             <h2>(Instagram, LinkedIn & X/Twitter)</h2>
             <p>Descarga videos MP4 de las Redes Sociales</p>
         </div> <!-- Reproductor de video siempre visible -->
@@ -812,7 +820,8 @@
             <div class="buttons-container">
                 <button id="analyzeBtn" class="btn">🔍 Buscar</button>
                 <button id="clearBtn" class="btn">🗑️ Limpiar</button>
-            </div>        </div>
+            </div>
+        </div>
     </div>
     <script src="card.js?v=20250612"></script>
     <script src="insta.js?v=20250612"></script>
@@ -832,7 +841,8 @@
                 </div>
             `;
         } class InstagramMp4Downloader {
-            constructor() {                this.urlInput = document.getElementById('urlInput');
+            constructor() {
+                this.urlInput = document.getElementById('urlInput');
                 this.analyzeBtn = document.getElementById('analyzeBtn');
                 this.clearBtn = document.getElementById('clearBtn');
 
@@ -1080,7 +1090,8 @@
 
                     showXVideo({ videoUrl }, videoPlayerContainer);
                 } else {
-                    showInstagramVideo(data, videoPlayerContainer);                }
+                    showInstagramVideo(data, videoPlayerContainer);
+                }
             }
 
             extractVideoUrl(data) {
@@ -1116,7 +1127,8 @@
                     return formatUrl;
                 }
 
-                return null;            }            clearResults() {
+                return null;
+            } clearResults() {
                 // Solo restablecer el reproductor al placeholder si NO hay loading activo
                 const videoPlayerContainer = document.getElementById('videoPlayerContainer');
                 const isLoadingActive = videoPlayerContainer.innerHTML.includes('netflix-loading');
@@ -1135,7 +1147,8 @@
 
                 // Enfocar el input para nueva búsqueda
                 this.urlInput.focus();
-            }        }
+            }
+        }
 
         // Initialize the downloader when page loads
         document.addEventListener('DOMContentLoaded', () => {

@@ -186,5 +186,24 @@ Esta herramienta es para uso personal únicamente:
   "upload_date": "20250609"
 }
 ```
-
 ---
+``` bash
+c:\www\insta\
+├── .git/                    # Control de versiones
+├── card.js                  # Componente de video card
+├── favicon.ico              # Icono del sitio
+├── index.html               # Frontend principal
+├── insta.js                 # Lógica de Instagram
+├── insta_extractor.py       # Extractor de Instagram
+├── linkedin.js              # Lógica de LinkedIn
+├── linkedin_extractor.py    # Extractor de LinkedIn
+├── p.bat                    # Script de inicio rápido
+├── README.md                # Documentación
+├── requirements.txt         # Dependencias Python
+├── server.log               # Logs del servidor
+├── server.py                # Servidor principal (ÚNICO)
+├── x.js                     # Lógica de X/Twitter
+└── x_extractor.py           # Extractor de X/Twitter
+```
+---
+

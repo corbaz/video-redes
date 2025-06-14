@@ -1,0 +1,357 @@
+2025-06-14 19:23:55,719 - INFO - ============================================================
+2025-06-14 19:23:55,719 - INFO - Video Downloader Server v2.0
+2025-06-14 19:23:55,719 - INFO - ============================================================
+2025-06-14 19:23:55,720 - INFO - Servidor iniciado en http://0.0.0.0:8001
+2025-06-14 19:23:55,720 - INFO - Acceso local: http://localhost:8001
+2025-06-14 19:23:55,720 - INFO - Acceso red: http://192.168.1.50:8001
+2025-06-14 19:23:55,720 - INFO - Presiona Ctrl+C para detener
+2025-06-14 19:23:55,720 - INFO - ============================================================
+2025-06-14 19:24:32,133 - INFO - 127.0.0.1 - code 404, message Not Found
+2025-06-14 19:24:32,133 - INFO - 127.0.0.1 - "GET /sw.js HTTP/1.1" 404 -
+2025-06-14 19:25:00,835 - INFO - 127.0.0.1 - code 404, message Not Found
+2025-06-14 19:25:00,835 - INFO - 127.0.0.1 - "GET /sw.js HTTP/1.1" 404 -
+2025-06-14 19:25:10,287 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:25:10,321 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:25:10,321 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:25:10,321 - INFO - 192.168.1.150 - "GET /card.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:25:10,321 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:25:10,322 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:25:10,322 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:25:10,324 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:25:10,324 - INFO - 192.168.1.150 - "GET /insta.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:25:10,368 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:25:10,369 - INFO - 192.168.1.150 - "GET /card.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:25:10,396 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:25:10,396 - INFO - 192.168.1.150 - "GET /insta.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:25:10,417 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:25:10,417 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:25:10,439 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:25:10,439 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:25:21,639 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-14 19:25:21,674 - INFO - Extrayendo video de: https://www.linkedin.com/posts/rammcodes_html-css-javascript-activity-7339618780022464512-sTZp?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc&utm_campaign=copy_link
+2025-06-14 19:25:21,675 - ERROR - Error extrayendo video de https://www.linkedin.com/posts/rammcodes_html-css-javascript-activity-7339618780022464512-sTZp?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc&utm_campaign=copy_link: 'LinkedInExtractor' object has no attribute 'extract'
+2025-06-14 19:25:21,676 - WARNING - Error extrayendo https://www.linkedin.com/posts/rammcodes_html-css-javascript-activity-7339618780022464512-sTZp?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc&utm_campaign=copy_link: Error procesando URL: 'LinkedInExtractor' object has no attribute 'extract'
+2025-06-14 19:25:21,677 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 400 -
+2025-06-14 19:25:31,998 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-14 19:25:32,018 - INFO - Extrayendo video de: https://www.linkedin.com/posts/rammcodes_html-css-javascript-activity-7339618780022464512-sTZp?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc&utm_campaign=copy_link
+2025-06-14 19:25:32,019 - ERROR - Error extrayendo video de https://www.linkedin.com/posts/rammcodes_html-css-javascript-activity-7339618780022464512-sTZp?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc&utm_campaign=copy_link: 'LinkedInExtractor' object has no attribute 'extract'
+2025-06-14 19:25:32,020 - WARNING - Error extrayendo https://www.linkedin.com/posts/rammcodes_html-css-javascript-activity-7339618780022464512-sTZp?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc&utm_campaign=copy_link: Error procesando URL: 'LinkedInExtractor' object has no attribute 'extract'
+2025-06-14 19:25:32,021 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 400 -
+2025-06-14 19:25:46,687 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-14 19:25:46,712 - INFO - Extrayendo video de: https://www.instagram.com/reel/DK3PMTFIfz_/?igsh=amd4Z2p4N2VvdGVh
+2025-06-14 19:25:46,713 - ERROR - Error extrayendo video de https://www.instagram.com/reel/DK3PMTFIfz_/?igsh=amd4Z2p4N2VvdGVh: 'InstagramExtractor' object has no attribute 'extract'
+2025-06-14 19:25:46,714 - WARNING - Error extrayendo https://www.instagram.com/reel/DK3PMTFIfz_/?igsh=amd4Z2p4N2VvdGVh: Error procesando URL: 'InstagramExtractor' object has no attribute 'extract'
+2025-06-14 19:25:46,715 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 400 -
+2025-06-14 19:26:02,474 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:26:02,511 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:26:02,512 - INFO - 192.168.1.150 - "GET /card.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:26:02,514 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:26:02,516 - INFO - 192.168.1.150 - "GET /insta.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:26:02,517 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:26:02,519 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:26:02,520 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:26:02,522 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:26:02,540 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:26:02,540 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:26:10,464 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:26:10,496 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:26:10,496 - INFO - 192.168.1.150 - "GET /card.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:26:10,502 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:26:10,502 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:26:10,503 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:26:10,503 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:26:10,506 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:26:10,506 - INFO - 192.168.1.150 - "GET /insta.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:26:10,524 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:26:10,525 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:26:10,557 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:26:10,557 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:26:16,822 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:26:16,859 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:26:16,859 - INFO - 192.168.1.150 - "GET /card.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:26:16,859 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:26:16,859 - INFO - 192.168.1.150 - "GET /insta.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:26:16,860 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:26:16,860 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:26:16,863 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:26:16,863 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:26:16,880 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:26:16,880 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:26:16,900 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:26:16,900 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:26:33,650 - INFO - 127.0.0.1 - code 404, message Not Found
+2025-06-14 19:26:33,650 - INFO - 127.0.0.1 - "GET /sw.js HTTP/1.1" 404 -
+2025-06-14 19:27:02,369 - INFO - 127.0.0.1 - code 404, message Not Found
+2025-06-14 19:27:02,370 - INFO - 127.0.0.1 - "GET /sw.js HTTP/1.1" 404 -
+2025-06-14 19:28:35,232 - INFO - ============================================================
+2025-06-14 19:28:35,232 - INFO - Video Downloader Server v2.0
+2025-06-14 19:28:35,232 - INFO - ============================================================
+2025-06-14 19:28:35,232 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2025-06-14 19:28:35,233 - INFO - Acceso local: http://localhost:8000
+2025-06-14 19:28:35,233 - INFO - Acceso red: http://192.168.1.50:8000
+2025-06-14 19:28:35,233 - INFO - Presiona Ctrl+C para detener
+2025-06-14 19:28:35,233 - INFO - ============================================================
+2025-06-14 19:29:09,723 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:29:09,755 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:29:09,756 - INFO - 192.168.1.150 - "GET /card.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:29:09,762 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:29:09,763 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:29:09,766 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:29:09,767 - INFO - 192.168.1.150 - "GET /insta.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:29:09,768 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:29:09,770 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:29:09,817 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:29:09,817 - INFO - 192.168.1.150 - "GET /card.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:29:09,836 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:29:09,836 - INFO - 192.168.1.150 - "GET /insta.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:29:09,850 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:29:09,850 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:29:09,863 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:29:09,863 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:29:17,442 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-14 19:29:17,464 - INFO - Extrayendo video de: https://x.com/ElTioBostero/status/1933270054306537921?t=LWXmYeiQTgVH2cDvn49wzg&s=19
+2025-06-14 19:29:17,464 - ERROR - Error extrayendo video de https://x.com/ElTioBostero/status/1933270054306537921?t=LWXmYeiQTgVH2cDvn49wzg&s=19: 'XExtractor' object has no attribute 'extract'
+2025-06-14 19:29:17,464 - WARNING - Error extrayendo https://x.com/ElTioBostero/status/1933270054306537921?t=LWXmYeiQTgVH2cDvn49wzg&s=19: Error procesando URL: 'XExtractor' object has no attribute 'extract'
+2025-06-14 19:29:17,465 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 400 -
+2025-06-14 19:29:31,249 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-14 19:29:31,274 - INFO - Extrayendo video de: https://x.com/ElTioBostero/status/1933270054306537921?t=LWXmYeiQTgVH2cDvn49wzg&s=19
+2025-06-14 19:29:31,275 - ERROR - Error extrayendo video de https://x.com/ElTioBostero/status/1933270054306537921?t=LWXmYeiQTgVH2cDvn49wzg&s=19: 'XExtractor' object has no attribute 'extract'
+2025-06-14 19:29:31,276 - WARNING - Error extrayendo https://x.com/ElTioBostero/status/1933270054306537921?t=LWXmYeiQTgVH2cDvn49wzg&s=19: Error procesando URL: 'XExtractor' object has no attribute 'extract'
+2025-06-14 19:29:31,277 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 400 -
+2025-06-14 19:30:08,563 - INFO - ============================================================
+2025-06-14 19:30:08,563 - INFO - Video Downloader Server v2.0
+2025-06-14 19:30:08,563 - INFO - ============================================================
+2025-06-14 19:30:08,563 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2025-06-14 19:30:08,564 - INFO - Acceso local: http://localhost:8000
+2025-06-14 19:30:08,564 - INFO - Acceso red: http://192.168.1.50:8000
+2025-06-14 19:30:08,564 - INFO - Presiona Ctrl+C para detener
+2025-06-14 19:30:08,564 - INFO - ============================================================
+2025-06-14 19:30:17,340 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:30:17,376 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:30:17,376 - INFO - 192.168.1.150 - "GET /card.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:30:17,381 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:30:17,381 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:30:17,389 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:30:17,390 - INFO - 192.168.1.150 - "GET /insta.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:30:17,391 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:30:17,392 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:30:17,416 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:30:17,417 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:30:17,439 - INFO - 192.168.1.150 - code 404, message Not Found
+2025-06-14 19:30:17,440 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 404 -
+2025-06-14 19:32:40,983 - INFO - ============================================================
+2025-06-14 19:32:40,983 - INFO - Video Downloader Server v2.0
+2025-06-14 19:32:40,983 - INFO - ============================================================
+2025-06-14 19:32:40,983 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2025-06-14 19:32:40,984 - INFO - Acceso local: http://localhost:8000
+2025-06-14 19:32:40,984 - INFO - Acceso red: http://192.168.1.50:8000
+2025-06-14 19:32:40,984 - INFO - Presiona Ctrl+C para detener
+2025-06-14 19:32:40,984 - INFO - ============================================================
+2025-06-14 19:32:46,354 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:32:46,401 - INFO - 192.168.1.150 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:32:46,402 - INFO - 192.168.1.150 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:32:46,405 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:32:46,410 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:34:02,039 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:34:02,082 - INFO - 192.168.1.150 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:34:02,082 - INFO - 192.168.1.150 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:34:02,088 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:34:02,088 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:34:08,891 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:34:09,158 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:34:09,317 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:34:09,317 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:34:09,317 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:34:09,484 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-14 19:34:09,979 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:34:10,242 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:34:10,305 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:34:10,306 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:34:10,306 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:34:25,157 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:34:25,531 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:34:25,532 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:34:25,532 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:34:25,533 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:34:25,772 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-14 19:34:29,771 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-14 19:34:30,094 - INFO - Extrayendo video de: https://x.com/lanacionmas/status/1933610311971492111
+2025-06-14 19:34:30,095 - ERROR - Error extrayendo video de https://x.com/lanacionmas/status/1933610311971492111: 'XExtractor' object has no attribute 'extract'
+2025-06-14 19:34:30,095 - WARNING - Error extrayendo https://x.com/lanacionmas/status/1933610311971492111: Error procesando URL: 'XExtractor' object has no attribute 'extract'
+2025-06-14 19:34:30,096 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2025-06-14 19:35:00,363 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-14 19:39:33,890 - INFO - ============================================================
+2025-06-14 19:39:33,891 - INFO - Video Downloader Server v2.0
+2025-06-14 19:39:33,891 - INFO - ============================================================
+2025-06-14 19:39:33,891 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2025-06-14 19:39:33,891 - INFO - Acceso local: http://localhost:8000
+2025-06-14 19:39:33,891 - INFO - Acceso red: http://192.168.1.50:8000
+2025-06-14 19:39:33,891 - INFO - Presiona Ctrl+C para detener
+2025-06-14 19:39:33,892 - INFO - ============================================================
+2025-06-14 19:39:48,599 - ERROR - Error en do_GET: VideoDownloaderHandler.serve_file() missing 1 required positional argument: 'content_type'
+2025-06-14 19:39:48,600 - INFO - 127.0.0.1 - code 500, message Internal Server Error
+2025-06-14 19:39:48,600 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 500 -
+2025-06-14 19:39:48,859 - ERROR - Error en do_GET: VideoDownloaderHandler.serve_file() missing 1 required positional argument: 'content_type'
+2025-06-14 19:39:48,859 - INFO - 127.0.0.1 - code 500, message Internal Server Error
+2025-06-14 19:39:48,859 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 500 -
+2025-06-14 19:40:00,560 - ERROR - Error en do_GET: VideoDownloaderHandler.serve_file() missing 1 required positional argument: 'content_type'
+2025-06-14 19:40:00,561 - INFO - 127.0.0.1 - code 500, message Internal Server Error
+2025-06-14 19:40:00,562 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 500 -
+2025-06-14 19:40:00,824 - ERROR - Error en do_GET: VideoDownloaderHandler.serve_file() missing 1 required positional argument: 'content_type'
+2025-06-14 19:40:00,824 - INFO - 127.0.0.1 - code 500, message Internal Server Error
+2025-06-14 19:40:00,825 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 500 -
+2025-06-14 19:40:06,453 - ERROR - Error en do_GET: VideoDownloaderHandler.serve_file() missing 1 required positional argument: 'content_type'
+2025-06-14 19:40:06,453 - INFO - 127.0.0.1 - code 500, message Internal Server Error
+2025-06-14 19:40:06,454 - INFO - 127.0.0.1 - "GET /?id=470c3434-26bd-4a75-b2a3-9cc951361428&vscodeBrowserReqId=1749940806138 HTTP/1.1" 500 -
+2025-06-14 19:40:31,042 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-14 19:40:36,724 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-14 19:41:01,286 - INFO - ============================================================
+2025-06-14 19:41:01,287 - INFO - Video Downloader Server v2.0
+2025-06-14 19:41:01,287 - INFO - ============================================================
+2025-06-14 19:41:01,287 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2025-06-14 19:41:01,287 - INFO - Acceso local: http://localhost:8000
+2025-06-14 19:41:01,287 - INFO - Acceso red: http://192.168.1.50:8000
+2025-06-14 19:41:01,288 - INFO - Presiona Ctrl+C para detener
+2025-06-14 19:41:01,288 - INFO - ============================================================
+2025-06-14 19:41:07,160 - ERROR - Error en do_GET: VideoDownloaderHandler.serve_file() missing 1 required positional argument: 'content_type'
+2025-06-14 19:41:07,160 - INFO - 127.0.0.1 - code 500, message Internal Server Error
+2025-06-14 19:41:07,160 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 500 -
+2025-06-14 19:41:07,426 - ERROR - Error en do_GET: VideoDownloaderHandler.serve_file() missing 1 required positional argument: 'content_type'
+2025-06-14 19:41:07,426 - INFO - 127.0.0.1 - code 500, message Internal Server Error
+2025-06-14 19:41:07,426 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 500 -
+2025-06-14 19:41:37,712 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-14 19:43:51,559 - INFO - ============================================================
+2025-06-14 19:43:51,559 - INFO - Video Downloader Server v2.1
+2025-06-14 19:43:51,559 - INFO - ============================================================
+2025-06-14 19:43:51,559 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2025-06-14 19:43:51,560 - INFO - Acceso local: http://localhost:8000
+2025-06-14 19:43:51,560 - INFO - Acceso red: http://192.168.1.50:8000
+2025-06-14 19:43:51,560 - INFO - Presiona Ctrl+C para detener
+2025-06-14 19:43:51,560 - INFO - ============================================================
+2025-06-14 19:43:56,863 - INFO - 127.0.0.1 - "GET /?id=e2d93259-1fb1-46d8-b66f-4ff0eb35eafe&vscodeBrowserReqId=1749941036551 HTTP/1.1" 200 -
+2025-06-14 19:43:57,127 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:43:57,188 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:43:57,189 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:43:57,189 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:44:08,648 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:44:08,919 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:44:09,046 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:44:09,046 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:44:09,046 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:44:09,181 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-14 19:44:14,767 - WARNING - Endpoint no encontrado: api/validate
+2025-06-14 19:44:14,767 - INFO - 127.0.0.1 - code 404, message Not Found
+2025-06-14 19:44:14,768 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 404 -
+2025-06-14 19:44:27,190 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-14 19:44:28,189 - WARNING - Endpoint no encontrado: api/validate
+2025-06-14 19:44:28,190 - INFO - 127.0.0.1 - code 404, message Not Found
+2025-06-14 19:44:28,191 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 404 -
+2025-06-14 19:44:51,013 - WARNING - Endpoint no encontrado: api/validate
+2025-06-14 19:44:51,016 - INFO - 127.0.0.1 - code 404, message Not Found
+2025-06-14 19:44:51,018 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 404 -
+2025-06-14 19:45:21,290 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-14 19:47:37,693 - INFO - ============================================================
+2025-06-14 19:47:37,693 - INFO - Video Downloader Server v2.2 - API Fixed
+2025-06-14 19:47:37,694 - INFO - ============================================================
+2025-06-14 19:47:37,694 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2025-06-14 19:47:37,694 - INFO - Acceso local: http://localhost:8000
+2025-06-14 19:47:37,694 - INFO - Acceso red: http://192.168.1.50:8000
+2025-06-14 19:47:37,694 - INFO - Endpoints disponibles:
+2025-06-14 19:47:37,694 - INFO -   POST /api/validate - Validar URLs
+2025-06-14 19:47:37,694 - INFO -   POST /api/extract - Extraer videos
+2025-06-14 19:47:37,695 - INFO - Presiona Ctrl+C para detener
+2025-06-14 19:47:37,695 - INFO - ============================================================
+2025-06-14 19:47:43,151 - INFO - 127.0.0.1 - "GET /?id=e2d93259-1fb1-46d8-b66f-4ff0eb35eafe&vscodeBrowserReqId=1749941262834 HTTP/1.1" 200 -
+2025-06-14 19:47:43,419 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:47:43,462 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:47:43,463 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:47:43,463 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:47:47,073 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:47:47,337 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:47:47,464 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:47:47,464 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:47:47,464 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:47:47,593 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-14 19:47:56,161 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-14 19:47:56,425 - INFO - Extrayendo video de: https://x.com/lanacionmas/status/1933610311971492111
+2025-06-14 19:47:59,958 - INFO - Extracción exitosa para: https://x.com/lanacionmas/status/1933610311971492111
+2025-06-14 19:47:59,958 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-14 19:48:13,463 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-14 19:48:17,836 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-14 19:48:18,180 - INFO - Extrayendo video de: https://www.linkedin.com/posts/rammcodes_html-css-javascript-ugcPost-7337444975166590976-rM-L?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2025-06-14 19:48:21,035 - INFO - Extracción exitosa para: https://www.linkedin.com/posts/rammcodes_html-css-javascript-ugcPost-7337444975166590976-rM-L?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2025-06-14 19:48:21,035 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-14 19:48:48,455 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-14 19:49:57,224 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-14 19:49:57,475 - INFO - Extrayendo video de: https://www.instagram.com/reel/DK45CMERzG9/?utm_source=ig_web_copy_link
+2025-06-14 19:50:00,889 - INFO - Extracción exitosa para: https://www.instagram.com/reel/DK45CMERzG9/?utm_source=ig_web_copy_link
+2025-06-14 19:50:00,890 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-14 19:50:27,554 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-14 19:50:40,041 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:50:40,110 - INFO - 192.168.1.150 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:50:40,113 - INFO - 192.168.1.150 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:50:40,116 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:50:40,117 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:50:47,376 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-14 19:50:47,401 - INFO - Extrayendo video de: https://x.com/ElTioBostero/status/1933270054306537921?t=LWXmYeiQTgVH2cDvn49wzg&s=19
+2025-06-14 19:50:48,978 - INFO - Extracción exitosa para: https://x.com/ElTioBostero/status/1933270054306537921?t=LWXmYeiQTgVH2cDvn49wzg&s=19
+2025-06-14 19:50:48,978 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-14 19:51:38,667 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-14 19:51:38,691 - INFO - Extrayendo video de: https://www.instagram.com/reel/DK5U1VWx5wt/?igsh=YzljYTk1ODg3Zg==
+2025-06-14 19:51:41,274 - INFO - Extracción exitosa para: https://www.instagram.com/reel/DK5U1VWx5wt/?igsh=YzljYTk1ODg3Zg==
+2025-06-14 19:51:41,274 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-14 19:52:12,801 - INFO - 192.168.1.152 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:52:12,981 - INFO - 192.168.1.152 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:52:26,947 - INFO - 192.168.1.152 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-14 19:52:26,980 - INFO - Extrayendo video de: https://www.linkedin.com/posts/midudev_sab%C3%ADas-que-en-visual-studio-code-puedes-activity-7339651708714639360-TGRP?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2025-06-14 19:52:28,224 - INFO - Extracción exitosa para: https://www.linkedin.com/posts/midudev_sab%C3%ADas-que-en-visual-studio-code-puedes-activity-7339651708714639360-TGRP?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2025-06-14 19:52:28,225 - INFO - 192.168.1.152 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-14 19:57:41,588 - INFO - ============================================================
+2025-06-14 19:57:41,589 - INFO - Video Downloader Server v2.2 - API Fixed
+2025-06-14 19:57:41,589 - INFO - ============================================================
+2025-06-14 19:57:41,589 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2025-06-14 19:57:41,589 - INFO - Acceso local: http://localhost:8000
+2025-06-14 19:57:41,589 - INFO - Acceso red: http://192.168.1.50:8000
+2025-06-14 19:57:41,589 - INFO - Endpoints disponibles:
+2025-06-14 19:57:41,590 - INFO -   POST /api/validate - Validar URLs
+2025-06-14 19:57:41,590 - INFO -   POST /api/extract - Extraer videos
+2025-06-14 19:57:41,590 - INFO - Presiona Ctrl+C para detener
+2025-06-14 19:57:41,590 - INFO - ============================================================
+2025-06-14 19:57:58,376 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:57:58,430 - INFO - 192.168.1.150 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:57:58,433 - INFO - 192.168.1.150 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:57:58,437 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:57:58,439 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:58:24,027 - INFO - 192.168.1.152 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:58:24,107 - INFO - 192.168.1.152 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:58:27,808 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:58:27,855 - INFO - 192.168.1.150 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:58:27,863 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:58:27,864 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:58:27,864 - INFO - 192.168.1.150 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:58:43,179 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:58:43,218 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:58:43,219 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:58:43,220 - INFO - 192.168.1.150 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:58:43,222 - INFO - 192.168.1.150 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:59:00,627 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:59:00,628 - INFO - 192.168.1.150 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-14 19:59:00,684 - INFO - 192.168.1.150 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:59:00,685 - INFO - 192.168.1.150 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:59:00,707 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:59:00,707 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:59:00,781 - INFO - 192.168.1.150 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-14 19:59:10,892 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-14 19:59:10,906 - INFO - Extrayendo video de: https://www.instagram.com/reel/DK5U1VWx5wt/?igsh=YzljYTk1ODg3Zg==
+2025-06-14 19:59:13,473 - INFO - Extracción exitosa para: https://www.instagram.com/reel/DK5U1VWx5wt/?igsh=YzljYTk1ODg3Zg==
+2025-06-14 19:59:13,474 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-14 19:59:21,949 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2025-06-14 19:59:21,975 - INFO - 192.168.1.150 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:59:21,989 - INFO - 192.168.1.150 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:59:21,992 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:59:21,996 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-14 19:59:22,026 - INFO - 192.168.1.150 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-14 19:59:35,968 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-14 19:59:35,997 - INFO - Extrayendo video de: https://www.instagram.com/reel/DK3PMTFIfz_/?igsh=amd4Z2p4N2VvdGVh
+2025-06-14 19:59:38,521 - INFO - Extracción exitosa para: https://www.instagram.com/reel/DK3PMTFIfz_/?igsh=amd4Z2p4N2VvdGVh
+2025-06-14 19:59:38,521 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
