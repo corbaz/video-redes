@@ -77,9 +77,11 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            height: 100vh; /* Usar altura exacta del viewport */
+            height: 100vh;
+            /* Usar altura exacta del viewport */
             color: white;
-            padding: 2vh 3vw; /* Usar viewport units */
+            padding: 2vh 3vw;
+            /* Usar viewport units */
             margin: 0;
             box-sizing: border-box;
             -webkit-overflow-scrolling: touch;
@@ -98,23 +100,28 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            position: relative; /* Para el spinner absoluto */
+            position: relative;
+            /* Para el spinner absoluto */
         }
 
         .header {
-            margin-bottom: 3vh; /* Usar viewport height */
+            margin-bottom: 3vh;
+            /* Usar viewport height */
             flex-shrink: 0;
         }
 
         .header h1 {
-            font-size: 2rem; /* Reducido de 2.5rem a 2rem */
-            margin-bottom: 5px; /* Reducido para acercar las líneas */
+            font-size: 2rem;
+            /* Reducido de 2.5rem a 2rem */
+            margin-bottom: 5px;
+            /* Reducido para acercar las líneas */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             line-height: 1.2;
         }
 
         .header h2 {
-            font-size: 1.5rem; /* Un tamaño menor que h1 */
+            font-size: 1.5rem;
+            /* Un tamaño menor que h1 */
             margin-top: 0;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -208,11 +215,13 @@
         .loading-placeholder-content {
             position: relative;
             width: 100%;
-            padding-bottom: 177.78%; /* Misma proporción que el video */
+            padding-bottom: 177.78%;
+            /* Misma proporción que el video */
             background: rgba(0, 0, 0, 0.3);
             border-radius: 12px;
-            overflow: visible; /* Cambiar de hidden a visible */
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            overflow: visible;
+            /* Cambiar de hidden a visible */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             border: 2px dashed rgba(255, 255, 255, 0.5);
             animation: loadingPulse 2s ease-in-out infinite;
             z-index: 5;
@@ -229,7 +238,8 @@
             flex-direction: column;
             align-items: center;
             gap: 12px;
-            z-index: 10; /* Asegurar que esté al frente */
+            z-index: 10;
+            /* Asegurar que esté al frente */
         }
 
         .loading-placeholder-icons {
@@ -237,7 +247,8 @@
             align-items: center;
             gap: 12px;
             justify-content: center;
-            z-index: 15; /* Prioridad alta */
+            z-index: 15;
+            /* Prioridad alta */
         }
 
         .loading-placeholder-icon {
@@ -247,12 +258,16 @@
         }
 
         .loading-spinner {
-            font-size: 1.8rem; /* Más grande */
+            font-size: 1.8rem;
+            /* Más grande */
             animation: spin 1s linear infinite;
-            color: #4ECDC4; /* Color más visible */
-            text-shadow: 0 0 10px rgba(78, 205, 196, 0.5); /* Brillo */
+            color: #4ECDC4;
+            /* Color más visible */
+            text-shadow: 0 0 10px rgba(78, 205, 196, 0.5);
+            /* Brillo */
             z-index: 16;
-            display: inline-block; /* Asegurar visibilidad */
+            display: inline-block;
+            /* Asegurar visibilidad */
         }
 
         .loading-placeholder-text {
@@ -263,10 +278,13 @@
         }
 
         @keyframes loadingPulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 border-color: rgba(255, 255, 255, 0.3);
                 background: rgba(0, 0, 0, 0.2);
             }
+
             50% {
                 border-color: rgba(255, 255, 255, 0.6);
                 background: rgba(0, 0, 0, 0.4);
@@ -274,10 +292,13 @@
         }
 
         @keyframes searchPulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
                 opacity: 0.7;
             }
+
             50% {
                 transform: scale(1.1);
                 opacity: 1;
@@ -285,11 +306,76 @@
         }
 
         @keyframes textFade {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 0.6;
             }
+
             50% {
                 opacity: 1;
+            }
+        }
+
+        /* Modal de error toast */
+        .error-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 90vw;
+            text-align: center;
+            animation: errorSlideIn 0.4s ease-out;
+        }
+
+        .error-modal.closing {
+            animation: errorSlideOut 0.3s ease-in forwards;
+        }
+
+        .error-modal h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #FF6B6B;
+            /* Color del gradiente */
+        }
+
+        .error-modal p {
+            margin: 0;
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        @keyframes errorSlideIn {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes errorSlideOut {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0;
             }
         }
 
@@ -458,9 +544,11 @@
 
         @media (max-width: 768px) {
             body {
-                padding: 2vh 4vw; /* Más padding lateral en móvil */
+                padding: 2vh 4vw;
+                /* Más padding lateral en móvil */
                 height: 100vh;
-                overflow: hidden; /* Evitar scroll completamente */
+                overflow: hidden;
+                /* Evitar scroll completamente */
             }
 
             .container {
@@ -473,29 +561,34 @@
             }
 
             .header {
-                margin-bottom: 2vh; /* Reducido pero usando vh */
+                margin-bottom: 2vh;
+                /* Reducido pero usando vh */
                 flex-shrink: 0;
             }
 
             .header h1 {
-                font-size: 4vw; /* Responsivo con viewport width */
+                font-size: 4vw;
+                /* Responsivo con viewport width */
                 margin-bottom: 0.5vh;
             }
 
             .header h2 {
-                font-size: 3vw; /* Responsivo con viewport width */
+                font-size: 3vw;
+                /* Responsivo con viewport width */
                 margin-bottom: 1vh;
             }
 
             .header p {
-                font-size: 2.5vw; /* Responsivo */
+                font-size: 2.5vw;
+                /* Responsivo */
                 margin-bottom: 0;
             }
 
             .video-player-section {
                 padding: 2vh 3vw;
                 margin-bottom: 2vh;
-                min-height: 22vh; /* Altura fija optimizada */
+                min-height: 22vh;
+                /* Altura fija optimizada */
                 flex-shrink: 0;
             }
 
@@ -518,12 +611,14 @@
             }
 
             .loading {
-                position: fixed; /* Cambiar a fixed para móvil */
+                position: fixed;
+                /* Cambiar a fixed para móvil */
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 z-index: 1000;
-                margin: 0; /* Remover márgenes */
+                margin: 0;
+                /* Remover márgenes */
             }
 
             .spinner {
@@ -544,7 +639,8 @@
 
             /* Estilos específicos para el placeholder y video en móvil */
             .video-placeholder {
-                width: 40vw; /* Usar viewport width */
+                width: 40vw;
+                /* Usar viewport width */
             }
 
             .video-placeholder-icon {
@@ -574,7 +670,8 @@
 
             /* Hacer que el video card también sea más pequeño en móvil */
             .video-thumbnail-container {
-                width: 40vw !important; /* Responsivo con viewport */
+                width: 40vw !important;
+                /* Responsivo con viewport */
             }
 
             /* Área de resultados flexible */
@@ -582,6 +679,20 @@
                 flex: 1;
                 overflow-y: auto;
                 margin-top: 1vh;
+            }
+
+            /* Modal de error responsive */
+            .error-modal {
+                padding: 15px 25px;
+                max-width: 85vw;
+            }
+
+            .error-modal h3 {
+                font-size: 1rem;
+            }
+
+            .error-modal p {
+                font-size: 0.85rem;
             }
         }
 
@@ -1023,7 +1134,8 @@
             padding: 2vh 2vw;
             margin-bottom: 3vh;
             backdrop-filter: blur(10px);
-            min-height: 25vh; /* Usar 25% del viewport height */
+            min-height: 25vh;
+            /* Usar 25% del viewport height */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1039,11 +1151,12 @@
         .video-placeholder-content {
             position: relative;
             width: 100%;
-            padding-bottom: 177.78%; /* Misma proporción que el video */
+            padding-bottom: 177.78%;
+            /* Misma proporción que el video */
             background: rgba(0, 0, 0, 0.2);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             border: 2px dashed rgba(255, 255, 255, 0.3);
             display: flex;
             align-items: center;
@@ -1106,13 +1219,12 @@
 
         <div class="input-section">
             <input type="text" id="urlInput" class="url-input"
-                placeholder="Pega aquí la URL del video (Instagram, LinkedIn o X/Twitter)..."
-                value="">
+                placeholder="Pega aquí la URL del video (Instagram, LinkedIn o X/Twitter)..." value="">
             <br>
             <button id="analyzeBtn" class="btn">🔍 Buscar</button>
             <button id="clearBtn" class="btn">🗑️ Limpiar</button>
         </div>
-        
+
         <div id="loading" class="loading">
             <div class="spinner"></div>
             <p>Buscando Video...</p>
@@ -1211,7 +1323,7 @@
             showLoading(show) {
                 const videoPlayerContainer = document.getElementById('videoPlayerContainer');
                 this.analyzeBtn.disabled = show;
-                
+
                 if (show) {
                     // Mostrar loading placeholder en el área del reproductor - versión simple
                     videoPlayerContainer.innerHTML = `
@@ -1240,27 +1352,48 @@
                         `;
                     }
                 }
-            }
-
-            showError(message) {
-                this.results.innerHTML = `
-                    <div class="error">
-                        <h3>❌ Error</h3>
-                        <p>${message}</p>
-                    </div>
+            } showError(message) {
+                // Crear modal de error toast
+                const errorModal = document.createElement('div');
+                errorModal.className = 'error-modal';
+                errorModal.innerHTML = `
+                    <h3>❌ Error</h3>
+                    <p>${message}</p>
                 `;
+
+                // Agregar al body
+                document.body.appendChild(errorModal);
+
+                // Auto-cerrar después de 3 segundos
+                setTimeout(() => {
+                    errorModal.classList.add('closing');
+                    setTimeout(() => {
+                        if (errorModal.parentNode) {
+                            errorModal.parentNode.removeChild(errorModal);
+                        }
+                    }, 300); // Esperar a que termine la animación
+                }, 3000);
+
+                // Permitir cerrar haciendo clic
+                errorModal.addEventListener('click', () => {
+                    errorModal.classList.add('closing');
+                    setTimeout(() => {
+                        if (errorModal.parentNode) {
+                            errorModal.parentNode.removeChild(errorModal);
+                        }
+                    }, 300);
+                });
             } showInstagramError(response) {
                 const error = response.error || 'Error desconocido';
                 const suggestion = response.suggestion || '';
 
-                this.results.innerHTML = `
-                    <div class="error">
-                        <h3>🔐 Contenido Protegido</h3>
-                        <p><strong>Motivo:</strong> ${error}</p>
-                        ${suggestion ? `<p><strong>💡 Sugerencia:</strong> ${suggestion}</p>` : ''}
-                    </div>
-                `;
-            }            async showSuccess(data) {
+                const fullMessage = suggestion
+                    ? `${error}\n💡 Sugerencia: ${suggestion}`
+                    : error;
+
+                // Usar el mismo modal de error
+                this.showError(fullMessage);
+            } async showSuccess(data) {
                 const url = this.urlInput.value.trim();
 
                 // Verificar que data no sea undefined/null
@@ -1447,9 +1580,9 @@
                     parts.push(`${format.fps}fps`);
                 }
                 return parts.length > 0 ? parts.join(', ') : 'Video MP4';
-            }            clearResults() {
+            } clearResults() {
                 this.results.innerHTML = '';
-                
+
                 // Restablecer el reproductor de video al placeholder
                 const videoPlayerContainer = document.getElementById('videoPlayerContainer');
                 videoPlayerContainer.innerHTML = `
