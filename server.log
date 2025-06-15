@@ -1229,3 +1229,98 @@ yt-dlp: error: no such option: --extract-flat
 2025-06-15 09:25:17,419 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
 2025-06-15 09:25:17,682 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
 2025-06-15 09:25:47,854 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-15 09:33:58,454 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-15 09:33:58,725 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:33:58,828 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:33:58,828 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:33:58,829 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:33:58,829 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:33:58,852 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:33:59,434 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-15 09:34:06,295 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2025-06-15 09:36:04,658 - INFO - ============================================================
+2025-06-15 09:36:04,658 - INFO - Video Downloader Server v2.2 - API Fixed
+2025-06-15 09:36:04,659 - INFO - ============================================================
+2025-06-15 09:36:04,659 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2025-06-15 09:36:04,659 - INFO - Acceso local: http://localhost:8000
+2025-06-15 09:36:04,659 - INFO - Acceso red: http://192.168.1.50:8000
+2025-06-15 09:36:04,659 - INFO - Endpoints disponibles:
+2025-06-15 09:36:04,660 - INFO -   POST /api/validate - Validar URLs
+2025-06-15 09:36:04,660 - INFO -   POST /api/extract - Extraer videos
+2025-06-15 09:36:04,660 - INFO - Presiona Ctrl+C para detener
+2025-06-15 09:36:04,660 - INFO - ============================================================
+2025-06-15 09:36:09,723 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-15 09:36:09,989 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:36:10,123 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:36:10,131 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:36:10,134 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:36:10,134 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:36:10,164 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:36:10,665 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-15 09:36:20,255 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 09:36:20,587 - INFO - Extrayendo video de: https://www.facebook.com/share/v/1FekbrLwFo/
+2025-06-15 09:36:24,440 - INFO - Extracción exitosa para: https://www.facebook.com/share/v/1FekbrLwFo/
+2025-06-15 09:36:24,440 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-15 09:36:50,853 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-15 09:38:12,850 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 09:38:13,114 - INFO - Extrayendo video de: https://www.facebook.com/share/v/1Z3KMCTdTo/
+2025-06-15 09:38:16,512 - WARNING - Error extrayendo https://www.facebook.com/share/v/1Z3KMCTdTo/: Error: error: [facebook] 1884476308978726: cannot parse data; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appro
+2025-06-15 09:38:16,512 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2025-06-15 09:38:27,255 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 09:38:27,625 - INFO - Extrayendo video de: https://www.facebook.com/share/v/1Z3KMCTdTo
+2025-06-15 09:38:30,789 - WARNING - Error extrayendo https://www.facebook.com/share/v/1Z3KMCTdTo: Error: error: [facebook] 1884476308978726: cannot parse data; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appro
+2025-06-15 09:38:30,790 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2025-06-15 09:38:57,888 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-15 09:44:41,478 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 09:44:41,746 - INFO - Extrayendo video de: https://www.facebook.com/share/p/19TVbcYjpb/
+2025-06-15 09:44:45,792 - INFO - Extracción exitosa para: https://www.facebook.com/share/p/19TVbcYjpb/
+2025-06-15 09:44:45,792 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-15 09:45:11,799 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-15 10:24:18,114 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 10:24:18,369 - INFO - Extrayendo video de: https://www.facebook.com/share/r/1HrTqvBAd6/
+2025-06-15 10:24:22,299 - INFO - Extracción exitosa para: https://www.facebook.com/share/r/1HrTqvBAd6/
+2025-06-15 10:24:22,299 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-15 10:24:48,448 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-15 10:25:53,800 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 10:25:54,066 - INFO - Extrayendo video de: https://www.facebook.com/share/p/19TVbcYjpb/
+2025-06-15 10:25:58,623 - INFO - Extracción exitosa para: https://www.facebook.com/share/p/19TVbcYjpb/
+2025-06-15 10:25:58,623 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-15 10:26:24,126 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-15 10:32:04,272 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 10:32:04,531 - INFO - Extrayendo video de: https://www.facebook.com/share/v/19Ja1ADUej/
+2025-06-15 10:32:07,968 - WARNING - Error extrayendo https://www.facebook.com/share/v/19Ja1ADUej/: Error: error: [facebook] 1621560885173440: cannot parse data; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appro
+2025-06-15 10:32:07,969 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2025-06-15 10:32:34,626 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-15 12:41:13,631 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 12:41:13,647 - INFO - Extrayendo video de: https://www.linkedin.com/posts/rammcodes_html-css-javascript-activity-7339618780022464512-sTZp?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc&utm_campaign=copy_link
+2025-06-15 12:41:16,381 - INFO - Extracción exitosa para: https://www.linkedin.com/posts/rammcodes_html-css-javascript-activity-7339618780022464512-sTZp?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc&utm_campaign=copy_link
+2025-06-15 12:41:16,381 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-15 19:06:47,401 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2025-06-15 19:06:47,501 - INFO - 192.168.1.150 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 19:06:47,501 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 19:06:47,504 - INFO - 192.168.1.150 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 19:06:47,509 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 19:06:47,512 - INFO - 192.168.1.150 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 19:06:47,513 - INFO - 192.168.1.150 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 19:08:58,467 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 19:08:58,505 - INFO - Extrayendo video de: https://vm.tiktok.com/ZMSPBgdqB/
+2025-06-15 19:09:04,368 - INFO - Extracción exitosa para: https://vm.tiktok.com/ZMSPBgdqB/
+2025-06-15 19:09:04,368 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-15 19:34:50,156 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 19:34:50,181 - INFO - Extrayendo video de: https://vm.tiktok.com/ZMSPSyu1K/
+2025-06-15 19:34:54,571 - INFO - Extracción exitosa para: https://vm.tiktok.com/ZMSPSyu1K/
+2025-06-15 19:34:54,572 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-15 19:37:24,203 - INFO - 192.168.1.150 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-15 19:37:44,830 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 19:37:44,847 - INFO - Extrayendo video de: https://vm.tiktok.com/ZMSPSyu1K/
+2025-06-15 19:37:46,580 - INFO - Extracción exitosa para: https://vm.tiktok.com/ZMSPSyu1K/
+2025-06-15 19:37:46,581 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-15 19:51:31,509 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-15 19:51:31,775 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 19:51:31,904 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 19:51:31,904 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 19:51:31,904 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 19:51:31,904 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 19:51:31,905 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 19:51:32,531 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-15 19:52:02,777 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')

@@ -15,6 +15,7 @@ from insta_extractor import InstagramExtractor
 from linkedin_extractor import LinkedInExtractor
 from x_extractor import XExtractor
 from tiktok_extractor import TikTokExtractor
+from facebook_extractor import FacebookExtractor
 
 # Configurar logging (sin emojis para Windows)
 logging.basicConfig(
@@ -150,7 +151,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 self.send_json_response(
                     {'success': False, 'error': 'URL requerida'}, 400)
                 return            # Validar URL según plataforma
-            if any(domain in url for domain in ['instagram.com', 'linkedin.com', 'x.com', 'twitter.com', 'tiktok.com']):
+            if any(domain in url for domain in ['instagram.com', 'linkedin.com', 'x.com', 'twitter.com', 'tiktok.com', 'facebook.com', 'fb.watch']):
                 self.send_json_response({
                     'success': True,
                     'url': url,
@@ -212,14 +213,17 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 platform = 'linkedin'
             elif 'x.com' in url or 'twitter.com' in url:
                 extractor = XExtractor()
-                platform = 'x'
+                platform = 'x' 
             elif 'tiktok.com' in url:
                 extractor = TikTokExtractor()
                 platform = 'tiktok'
+            elif 'facebook.com' in url or 'fb.watch' in url:
+                extractor = FacebookExtractor()
+                platform = 'facebook'
             else:
                 return {
                     'success': False,
-                    'error': 'Plataforma no soportada. Usa Instagram, LinkedIn, X/Twitter o TikTok.'
+                    'error': 'Plataforma no soportada. Usa Instagram, LinkedIn, X/Twitter, TikTok o Facebook.'
                 }
 
             # Extraer video usando el método extract_info del extractor
@@ -332,13 +336,19 @@ if __name__ == '__main__':
         from x_extractor import XExtractor
         print("X/Twitter extractor: OK")
     except Exception as e:
-        print(f"X/Twitter extractor error: {e}")
-
+        print(f"X/Twitter extractor error: {e}") 
+    
     try:
         from tiktok_extractor import TikTokExtractor
         print("TikTok extractor: OK")
     except Exception as e:
         print(f"TikTok extractor error: {e}")
+
+    try:
+        from facebook_extractor import FacebookExtractor
+        print("Facebook extractor: OK")
+    except Exception as e:
+        print(f"Facebook extractor error: {e}")
 
     print()
     run_server()
