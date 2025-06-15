@@ -1208,3 +1208,24 @@ yt-dlp: error: no such option: --extract-flat
 2025-06-15 09:20:45,101 - INFO - Extrayendo video de: https://vm.tiktok.com/ZMSfoRu1Q/ Esta publicación se ha compartido a través de TikTok Lite. Para disfrutar de más publicaciones, descarga TikTok Lite:  https://www.tiktok.com/tiktoklite
 2025-06-15 09:20:52,844 - INFO - Extracción exitosa para: https://vm.tiktok.com/ZMSfoRu1Q/ Esta publicación se ha compartido a través de TikTok Lite. Para disfrutar de más publicaciones, descarga TikTok Lite:  https://www.tiktok.com/tiktoklite
 2025-06-15 09:20:52,845 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-15 09:25:05,740 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-15 09:25:05,997 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:25:06,149 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:25:06,151 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:25:06,157 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:25:06,162 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:25:06,331 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-15 09:25:06,845 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-15 09:25:07,107 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:25:07,175 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:25:07,175 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:25:07,175 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:25:07,175 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:25:17,034 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-15 09:25:17,417 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:25:17,418 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:25:17,418 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:25:17,418 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:25:17,419 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 09:25:17,682 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-15 09:25:47,854 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
