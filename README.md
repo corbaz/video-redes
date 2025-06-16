@@ -1,12 +1,38 @@
-# 📹 Instagram Video Downloader - Versión Arreglada
+# 📹 Multi-Platform Video Downloader
 
-## ✅ Error XML Completamente Solucionado
+## 🌟 Plataformas Soportadas
 
-Esta versión **GARANTIZA** que nunca verás el error:
+✅ **Instagram** - Posts y Reels  
+✅ **LinkedIn** - Videos de posts  
+✅ **X/Twitter** - Videos de tweets  
+✅ **TikTok** - Videos y contenido  
+✅ **Facebook** - Videos públicos  
+✅ **YouTube** - Videos y Shorts (CALIDAD OPTIMIZADA)  
 
-```
-❌ Unexpected token '<', "<?xml vers"... is not valid JSON
-```
+## 🚀 Características Principales
+
+- **UI/UX Unificada**: Misma experiencia para todas las plataformas
+- **Calidad Optimizada**: YouTube descarga automáticamente la mejor calidad disponible (hasta 1080p) con audio incluido
+- **Extractores Robustos**: Sistema de fallback para máxima compatibilidad
+- **Logging Detallado**: Información completa de resolución, bitrate y calidad
+- **Interfaz Responsiva**: Diseño moderno y adaptable
+- **API REST**: Endpoints para validación y extracción
+
+## 🎥 YouTube - Calidad Optimizada
+
+El extractor de YouTube implementa un sistema de múltiples formatos para garantizar la mejor calidad:
+
+1. **bestvideo[height<=1080]+bestaudio** - Máxima calidad con audio
+2. **best[height<=1080][ext=mp4]** - Formato MP4 de alta calidad  
+3. **bestvideo[height>=720]+bestaudio** - Calidad HD con audio
+4. **bestvideo[height>=480]+bestaudio** - Calidad media con audio
+5. **best** - Mejor calidad disponible como último recurso
+
+### Resoluciones Objetivo
+- 🎯 **1080p** (Preferido)
+- 🎯 **720p** (Muy buena calidad)
+- 🎯 **480p** (Calidad estándar)
+- 🎯 **Auto** (Mejor disponible)
 
 ## 🚀 Instalación y Uso
 
