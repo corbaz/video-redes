@@ -16,6 +16,7 @@ from linkedin_extractor import LinkedInExtractor
 from x_extractor import XExtractor
 from tiktok_extractor import TikTokExtractor
 from facebook_extractor import FacebookExtractor
+from youtube_extractor import YouTubeExtractor
 
 # Configurar logging (sin emojis para Windows)
 logging.basicConfig(
@@ -151,7 +152,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 self.send_json_response(
                     {'success': False, 'error': 'URL requerida'}, 400)
                 return            # Validar URL según plataforma
-            if any(domain in url for domain in ['instagram.com', 'linkedin.com', 'x.com', 'twitter.com', 'tiktok.com', 'facebook.com', 'fb.watch']):
+            if any(domain in url for domain in ['instagram.com', 'linkedin.com', 'x.com', 'twitter.com', 'tiktok.com', 'facebook.com', 'fb.watch', 'youtube.com', 'youtu.be', 'm.youtube.com']):
                 self.send_json_response({
                     'success': True,
                     'url': url,
@@ -160,7 +161,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             else:
                 self.send_json_response({
                     'success': False,
-                    'error': 'Plataforma no soportada. Usa Instagram, LinkedIn, X/Twitter o TikTok.'
+                    'error': 'Plataforma no soportada. Usa Instagram, LinkedIn, X/Twitter, TikTok, Facebook o YouTube.'
                 }, 400)
 
         except Exception as e:
@@ -186,7 +187,21 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             result = self.extract_video_info(url)
 
             if result['success']:
-                logger.info(f"Extracción exitosa para: {url}")
+                # Log detallado con información de video
+                platform = result.get('platform', 'Desconocida')
+                title = result.get('title', 'Sin título')[:50]
+                quality = result.get(
+                    'quality_label', result.get('video_quality', 'N/A'))
+                filesize = result.get('filesize', 'N/A')
+                duration = result.get('duration', 0)
+
+                logger.info(f"✅ Extracción exitosa para: {url}")
+                logger.info(f"   📺 Plataforma: {platform}")
+                logger.info(f"   🎬 Título: {title}...")
+                logger.info(f"   🎯 Resolución: {quality}")
+                logger.info(f"   📁 Tamaño: {filesize}")
+                logger.info(f"   ⏱️ Duración: {duration}s")
+
                 self.send_json_response(result)
             else:
                 logger.warning(f"Error extrayendo {url}: {result['error']}")
@@ -204,7 +219,8 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
 
     def extract_video_info(self, url):
         """Extrae información del video según la plataforma"""
-        try:            # Detectar plataforma e inicializar extractor
+        try:
+            # Detectar plataforma e inicializar extractor
             if 'instagram.com' in url:
                 extractor = InstagramExtractor()
                 platform = 'instagram'
@@ -213,17 +229,20 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 platform = 'linkedin'
             elif 'x.com' in url or 'twitter.com' in url:
                 extractor = XExtractor()
-                platform = 'x' 
+                platform = 'x'
             elif 'tiktok.com' in url:
                 extractor = TikTokExtractor()
                 platform = 'tiktok'
             elif 'facebook.com' in url or 'fb.watch' in url:
                 extractor = FacebookExtractor()
                 platform = 'facebook'
+            elif 'youtube.com' in url or 'youtu.be' in url or 'm.youtube.com' in url:
+                extractor = YouTubeExtractor()
+                platform = 'youtube'
             else:
                 return {
                     'success': False,
-                    'error': 'Plataforma no soportada. Usa Instagram, LinkedIn, X/Twitter, TikTok o Facebook.'
+                    'error': 'Plataforma no soportada. Usa Instagram, LinkedIn, X/Twitter, TikTok, Facebook o YouTube.'
                 }
 
             # Extraer video usando el método extract_info del extractor
@@ -336,8 +355,8 @@ if __name__ == '__main__':
         from x_extractor import XExtractor
         print("X/Twitter extractor: OK")
     except Exception as e:
-        print(f"X/Twitter extractor error: {e}") 
-    
+        print(f"X/Twitter extractor error: {e}")
+
     try:
         from tiktok_extractor import TikTokExtractor
         print("TikTok extractor: OK")

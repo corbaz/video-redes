@@ -1324,3 +1324,496 @@ yt-dlp: error: no such option: --extract-flat
 2025-06-15 19:51:31,905 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
 2025-06-15 19:51:32,531 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
 2025-06-15 19:52:02,777 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-15 20:26:18,335 - INFO - ============================================================
+2025-06-15 20:26:18,336 - INFO - Video Downloader Server v2.2 - API Fixed
+2025-06-15 20:26:18,336 - INFO - ============================================================
+2025-06-15 20:26:18,336 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2025-06-15 20:26:18,336 - INFO - Acceso local: http://localhost:8000
+2025-06-15 20:26:18,336 - INFO - Acceso red: http://192.168.1.50:8000
+2025-06-15 20:26:18,336 - INFO - Endpoints disponibles:
+2025-06-15 20:26:18,336 - INFO -   POST /api/validate - Validar URLs
+2025-06-15 20:26:18,337 - INFO -   POST /api/extract - Extraer videos
+2025-06-15 20:26:18,337 - INFO - Presiona Ctrl+C para detener
+2025-06-15 20:26:18,337 - INFO - ============================================================
+2025-06-15 20:26:23,302 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-15 20:26:23,570 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:26:23,696 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:26:23,696 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:26:23,696 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:26:23,697 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:26:23,713 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:26:23,880 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:26:24,478 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-15 20:26:32,917 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 20:26:33,253 - INFO - Extrayendo video de: https://youtube.com/shorts/CBU6JR_Zz_8?si=QHxCY7ctodVzSy8I
+2025-06-15 20:26:37,586 - INFO - Extracción exitosa para: https://youtube.com/shorts/CBU6JR_Zz_8?si=QHxCY7ctodVzSy8I
+2025-06-15 20:26:37,586 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-15 20:27:00,242 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 20:27:00,575 - INFO - Extrayendo video de: https://www.tiktok.com/@eli.cocinaa/video/7515957394493443333?is_from_webapp=1&sender_device=pc
+2025-06-15 20:27:01,470 - INFO - Extracción exitosa para: https://www.tiktok.com/@eli.cocinaa/video/7515957394493443333?is_from_webapp=1&sender_device=pc
+2025-06-15 20:27:01,470 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-15 20:27:09,749 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 20:27:10,095 - INFO - Extrayendo video de: https://x.com/lanacionmas/status/1933610311971492111
+2025-06-15 20:27:12,566 - INFO - Extracción exitosa para: https://x.com/lanacionmas/status/1933610311971492111
+2025-06-15 20:27:12,566 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-15 20:27:40,351 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-15 20:28:45,034 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-15 20:28:50,452 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 20:28:50,769 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev
+2025-06-15 20:28:54,974 - INFO - Extracción exitosa para: https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev
+2025-06-15 20:28:54,974 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-15 20:29:21,038 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-15 20:29:33,788 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-15 20:29:34,038 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:29:34,181 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:29:34,181 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:29:34,181 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:29:34,185 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:29:34,197 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:29:34,357 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:29:34,849 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-15 20:29:39,995 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 20:29:40,323 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=L4OH_18x33A&ab_channel=HugoPod
+2025-06-15 20:29:45,363 - INFO - Extracción exitosa para: https://www.youtube.com/watch?v=L4OH_18x33A&ab_channel=HugoPod
+2025-06-15 20:29:45,363 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-15 20:30:10,600 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-15 20:30:28,178 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-15 20:30:28,442 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:30:28,553 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:30:28,553 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:30:28,553 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:30:28,554 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:30:28,554 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:30:28,753 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:30:29,188 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-15 20:30:34,269 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 20:30:34,589 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev
+2025-06-15 20:30:38,889 - INFO - Extracción exitosa para: https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev
+2025-06-15 20:30:38,889 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-15 20:31:04,864 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-15 20:36:59,537 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 20:36:59,802 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev
+2025-06-15 20:37:04,315 - INFO - Extracción exitosa para: https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev
+2025-06-15 20:37:04,315 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-15 20:37:29,848 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-15 20:39:46,525 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-15 20:39:46,792 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:39:46,934 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:39:46,934 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:39:46,934 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:39:46,934 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:39:46,935 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:39:47,120 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:39:47,679 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-15 20:39:54,950 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 20:39:55,267 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev
+2025-06-15 20:39:59,715 - INFO - Extracción exitosa para: https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev
+2025-06-15 20:39:59,715 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-15 20:40:25,531 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-15 20:40:39,274 - INFO - ============================================================
+2025-06-15 20:40:39,275 - INFO - Video Downloader Server v2.2 - API Fixed
+2025-06-15 20:40:39,275 - INFO - ============================================================
+2025-06-15 20:40:39,275 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2025-06-15 20:40:39,275 - INFO - Acceso local: http://localhost:8000
+2025-06-15 20:40:39,275 - INFO - Acceso red: http://192.168.1.50:8000
+2025-06-15 20:40:39,276 - INFO - Endpoints disponibles:
+2025-06-15 20:40:39,276 - INFO -   POST /api/validate - Validar URLs
+2025-06-15 20:40:39,276 - INFO -   POST /api/extract - Extraer videos
+2025-06-15 20:40:39,276 - INFO - Presiona Ctrl+C para detener
+2025-06-15 20:40:39,276 - INFO - ============================================================
+2025-06-15 20:40:47,007 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-15 20:40:47,275 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:40:47,408 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:40:47,409 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:40:47,411 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:40:47,412 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:40:47,412 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:40:47,602 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:40:48,258 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-15 20:40:54,366 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 20:40:54,693 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev
+2025-06-15 20:40:59,606 - WARNING - Error extrayendo https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev: Error al procesar la respuesta del servidor
+2025-06-15 20:40:59,606 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2025-06-15 20:41:13,800 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 20:41:14,131 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev
+2025-06-15 20:41:18,465 - WARNING - Error extrayendo https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev: Error al procesar la respuesta del servidor
+2025-06-15 20:41:18,465 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2025-06-15 20:41:44,403 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-15 20:47:44,698 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-15 20:47:44,964 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:47:45,089 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:47:45,091 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:47:45,092 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:47:45,092 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:47:45,093 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:47:45,276 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 20:47:45,746 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-15 20:47:58,484 - INFO - ============================================================
+2025-06-15 20:47:58,484 - INFO - Video Downloader Server v2.2 - API Fixed
+2025-06-15 20:47:58,485 - INFO - ============================================================
+2025-06-15 20:47:58,485 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2025-06-15 20:47:58,485 - INFO - Acceso local: http://localhost:8000
+2025-06-15 20:47:58,485 - INFO - Acceso red: http://192.168.1.50:8000
+2025-06-15 20:47:58,485 - INFO - Endpoints disponibles:
+2025-06-15 20:47:58,485 - INFO -   POST /api/validate - Validar URLs
+2025-06-15 20:47:58,486 - INFO -   POST /api/extract - Extraer videos
+2025-06-15 20:47:58,486 - INFO - Presiona Ctrl+C para detener
+2025-06-15 20:47:58,486 - INFO - ============================================================
+2025-06-15 20:48:48,971 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 20:48:49,232 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev
+2025-06-15 20:48:53,465 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev
+2025-06-15 20:48:53,465 - INFO -    📺 Plataforma: youtube
+2025-06-15 20:48:53,465 - INFO -    🎬 Título: ¡CSS evoluciona! Llega if. ¿Ya es un lenguaje de p...
+2025-06-15 20:48:53,465 - INFO -    🎯 Resolución: 640x360
+2025-06-15 20:48:53,465 - INFO -    📁 Tamaño: 21.4 MB
+2025-06-15 20:48:53,466 - INFO -    ⏱️ Duración: 487s
+2025-06-15 20:48:53,466 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-15 20:49:19,325 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-15 21:09:21,192 - INFO - Servidor detenido por usuario
+2025-06-15 21:09:21,192 - INFO - Servidor cerrado correctamente
+2025-06-15 21:27:59,420 - INFO - ============================================================
+2025-06-15 21:27:59,421 - INFO - Video Downloader Server v2.2 - API Fixed
+2025-06-15 21:27:59,421 - INFO - ============================================================
+2025-06-15 21:27:59,421 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2025-06-15 21:27:59,421 - INFO - Acceso local: http://localhost:8000
+2025-06-15 21:27:59,421 - INFO - Acceso red: http://192.168.1.50:8000
+2025-06-15 21:27:59,421 - INFO - Endpoints disponibles:
+2025-06-15 21:27:59,422 - INFO -   POST /api/validate - Validar URLs
+2025-06-15 21:27:59,422 - INFO -   POST /api/extract - Extraer videos
+2025-06-15 21:27:59,422 - INFO - Presiona Ctrl+C para detener
+2025-06-15 21:27:59,422 - INFO - ============================================================
+2025-06-15 21:28:03,596 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-15 21:28:03,863 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:28:04,001 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:28:04,001 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:28:04,001 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:28:04,001 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:28:04,001 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:28:04,185 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:28:04,764 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-15 21:28:10,676 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 21:28:11,000 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev
+2025-06-15 21:28:15,264 - WARNING - Error extrayendo https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev: No se pudo obtener la URL del video
+2025-06-15 21:28:15,264 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2025-06-15 21:28:24,404 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 21:28:24,724 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev
+2025-06-15 21:28:29,041 - WARNING - Error extrayendo https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev: No se pudo obtener la URL del video
+2025-06-15 21:28:29,041 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2025-06-15 21:28:55,002 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-15 21:37:59,088 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-15 21:37:59,354 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:37:59,527 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:37:59,527 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:37:59,527 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:37:59,528 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:37:59,528 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:37:59,666 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:38:00,117 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-15 21:38:20,820 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 21:38:21,142 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev
+2025-06-15 21:38:25,483 - WARNING - Error extrayendo https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev: No se pudo obtener la URL del video
+2025-06-15 21:38:25,483 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2025-06-15 21:39:24,511 - INFO - ============================================================
+2025-06-15 21:39:24,511 - INFO - Video Downloader Server v2.2 - API Fixed
+2025-06-15 21:39:24,511 - INFO - ============================================================
+2025-06-15 21:39:24,512 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2025-06-15 21:39:24,512 - INFO - Acceso local: http://localhost:8000
+2025-06-15 21:39:24,512 - INFO - Acceso red: http://192.168.1.50:8000
+2025-06-15 21:39:24,512 - INFO - Endpoints disponibles:
+2025-06-15 21:39:24,512 - INFO -   POST /api/validate - Validar URLs
+2025-06-15 21:39:24,512 - INFO -   POST /api/extract - Extraer videos
+2025-06-15 21:39:24,512 - INFO - Presiona Ctrl+C para detener
+2025-06-15 21:39:24,513 - INFO - ============================================================
+2025-06-15 21:39:27,552 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-15 21:39:27,821 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:39:27,948 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:39:27,948 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:39:27,948 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:39:27,948 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:39:27,949 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:39:28,134 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 21:39:28,569 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-15 21:39:33,627 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 21:39:33,953 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev
+2025-06-15 21:39:38,274 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev
+2025-06-15 21:39:38,274 - INFO -    📺 Plataforma: youtube
+2025-06-15 21:39:38,274 - INFO -    🎬 Título: ¡CSS evoluciona! Llega if. ¿Ya es un lenguaje de p...
+2025-06-15 21:39:38,275 - INFO -    🎯 Resolución: 640x360
+2025-06-15 21:39:38,275 - INFO -    📁 Tamaño: 21.4 MB
+2025-06-15 21:39:38,275 - INFO -    ⏱️ Duración: 487s
+2025-06-15 21:39:38,275 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-15 21:40:04,218 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-15 23:31:22,763 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-06-15 23:31:23,024 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 23:31:23,166 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 23:31:23,166 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 23:31:23,167 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 23:31:23,167 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 23:31:23,167 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 23:31:23,337 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-06-15 23:31:23,967 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-15 23:31:34,775 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-15 23:31:35,105 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev
+2025-06-15 23:31:39,642 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=SlZ8xeEBJms&ab_channel=midudev
+2025-06-15 23:31:39,642 - INFO -    📺 Plataforma: youtube
+2025-06-15 23:31:39,643 - INFO -    🎬 Título: ¡CSS evoluciona! Llega if. ¿Ya es un lenguaje de p...
+2025-06-15 23:31:39,643 - INFO -    🎯 Resolución: 640x360
+2025-06-15 23:31:39,643 - INFO -    📁 Tamaño: 21.4 MB
+2025-06-15 23:31:39,643 - INFO -    ⏱️ Duración: 487s
+2025-06-15 23:31:39,643 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-15 23:32:05,380 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-06-16 09:27:57,812 - INFO - ============================================================
+2025-06-16 09:27:57,813 - INFO - Video Downloader Server v2.2 - API Fixed
+2025-06-16 09:27:57,813 - INFO - ============================================================
+2025-06-16 09:27:57,813 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2025-06-16 09:27:57,813 - INFO - Acceso local: http://localhost:8000
+2025-06-16 09:27:57,813 - INFO - Acceso red: http://192.168.1.50:8000
+2025-06-16 09:27:57,814 - INFO - Endpoints disponibles:
+2025-06-16 09:27:57,814 - INFO -   POST /api/validate - Validar URLs
+2025-06-16 09:27:57,814 - INFO -   POST /api/extract - Extraer videos
+2025-06-16 09:27:57,814 - INFO - Presiona Ctrl+C para detener
+2025-06-16 09:27:57,814 - INFO - ============================================================
+2025-06-16 09:28:27,462 - INFO - 192.168.1.50 - "GET / HTTP/1.1" 200 -
+2025-06-16 09:28:27,663 - INFO - 192.168.1.50 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 09:28:27,671 - INFO - 192.168.1.50 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 09:28:27,675 - INFO - 192.168.1.50 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 09:28:27,675 - INFO - 192.168.1.50 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 09:28:27,702 - INFO - 192.168.1.50 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 09:28:27,723 - INFO - 192.168.1.50 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 09:28:27,725 - INFO - 192.168.1.50 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 09:28:27,874 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-16 09:28:34,273 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-16 09:28:34,276 - INFO - Extrayendo video de: https://www.tiktok.com/@gomezvergara/video/7513770309141515576?is_from_webapp=1&sender_device=pc
+2025-06-16 09:28:35,027 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@gomezvergara/video/7513770309141515576?is_from_webapp=1&sender_device=pc
+2025-06-16 09:28:35,028 - INFO -    📺 Plataforma: tiktok
+2025-06-16 09:28:35,028 - INFO -    🎬 Título: Video de TikTok...
+2025-06-16 09:28:35,028 - INFO -    🎯 Resolución: TikTok HD
+2025-06-16 09:28:35,028 - INFO -    📁 Tamaño: N/A
+2025-06-16 09:28:35,029 - INFO -    ⏱️ Duración: 0s
+2025-06-16 09:28:35,029 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-16 12:39:25,811 - INFO - ============================================================
+2025-06-16 12:39:25,812 - INFO - Video Downloader Server v2.2 - API Fixed
+2025-06-16 12:39:25,812 - INFO - ============================================================
+2025-06-16 12:39:25,812 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2025-06-16 12:39:25,812 - INFO - Acceso local: http://localhost:8000
+2025-06-16 12:39:25,812 - INFO - Acceso red: http://192.168.1.50:8000
+2025-06-16 12:39:25,812 - INFO - Endpoints disponibles:
+2025-06-16 12:39:25,813 - INFO -   POST /api/validate - Validar URLs
+2025-06-16 12:39:25,813 - INFO -   POST /api/extract - Extraer videos
+2025-06-16 12:39:25,813 - INFO - Presiona Ctrl+C para detener
+2025-06-16 12:39:25,813 - INFO - ============================================================
+2025-06-16 12:40:52,684 - INFO - 192.168.1.50 - "GET / HTTP/1.1" 200 -
+2025-06-16 12:40:52,792 - INFO - 192.168.1.50 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:40:52,802 - INFO - 192.168.1.50 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:40:52,802 - INFO - 192.168.1.50 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:40:52,802 - INFO - 192.168.1.50 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:40:52,802 - INFO - 192.168.1.50 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:40:52,802 - INFO - 192.168.1.50 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:40:52,803 - INFO - 192.168.1.50 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:42:18,637 - INFO - 192.168.1.50 - "GET / HTTP/1.1" 200 -
+2025-06-16 12:42:18,716 - INFO - 192.168.1.50 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:42:18,745 - INFO - 192.168.1.50 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:42:18,745 - INFO - 192.168.1.50 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:42:18,745 - INFO - 192.168.1.50 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:42:18,745 - INFO - 192.168.1.50 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:42:18,746 - INFO - 192.168.1.50 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:42:18,746 - INFO - 192.168.1.50 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:42:18,834 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-16 12:42:31,446 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-16 12:42:31,450 - INFO - Extrayendo video de: https://x.com/lanacionmas/status/1933610311971492111
+2025-06-16 12:42:34,340 - INFO - ✅ Extracción exitosa para: https://x.com/lanacionmas/status/1933610311971492111
+2025-06-16 12:42:34,340 - INFO -    📺 Plataforma: x
+2025-06-16 12:42:34,340 - INFO -    🎬 Título: Sin título...
+2025-06-16 12:42:34,341 - INFO -    🎯 Resolución: N/A
+2025-06-16 12:42:34,341 - INFO -    📁 Tamaño: N/A
+2025-06-16 12:42:34,341 - INFO -    ⏱️ Duración: 0s
+2025-06-16 12:42:34,341 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-16 12:42:37,066 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-16 12:43:01,682 - INFO - 192.168.1.50 - "GET / HTTP/1.1" 200 -
+2025-06-16 12:43:01,721 - INFO - 192.168.1.50 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:43:01,739 - INFO - 192.168.1.50 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:43:01,739 - INFO - 192.168.1.50 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:43:01,739 - INFO - 192.168.1.50 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:43:01,740 - INFO - 192.168.1.50 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:43:01,740 - INFO - 192.168.1.50 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:43:01,750 - INFO - 192.168.1.50 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:43:01,828 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-16 12:43:50,001 - INFO - 192.168.1.50 - "GET / HTTP/1.1" 200 -
+2025-06-16 12:43:50,059 - INFO - 192.168.1.50 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:43:50,079 - INFO - 192.168.1.50 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:43:50,079 - INFO - 192.168.1.50 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:43:50,079 - INFO - 192.168.1.50 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:43:50,079 - INFO - 192.168.1.50 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:43:50,079 - INFO - 192.168.1.50 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:43:50,080 - INFO - 192.168.1.50 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 12:43:50,350 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-16 12:44:00,138 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-16 12:44:00,142 - INFO - Extrayendo video de: https://x.com/lanacionmas/status/1933610311971492111
+2025-06-16 12:44:01,295 - INFO - ✅ Extracción exitosa para: https://x.com/lanacionmas/status/1933610311971492111
+2025-06-16 12:44:01,296 - INFO -    📺 Plataforma: x
+2025-06-16 12:44:01,296 - INFO -    🎬 Título: Sin título...
+2025-06-16 12:44:01,296 - INFO -    🎯 Resolución: N/A
+2025-06-16 12:44:01,296 - INFO -    📁 Tamaño: N/A
+2025-06-16 12:44:01,296 - INFO -    ⏱️ Duración: 0s
+2025-06-16 12:44:01,296 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-16 12:44:15,190 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-16 12:44:15,194 - INFO - Extrayendo video de: https://www.linkedin.com/posts/rammcodes_html-css-javascript-ugcPost-7337079221535571968-5TZ9?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2025-06-16 12:44:16,446 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/rammcodes_html-css-javascript-ugcPost-7337079221535571968-5TZ9?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2025-06-16 12:44:16,446 - INFO -    📺 Plataforma: linkedin
+2025-06-16 12:44:16,446 - INFO -    🎬 Título: Sin título...
+2025-06-16 12:44:16,446 - INFO -    🎯 Resolución: N/A
+2025-06-16 12:44:16,446 - INFO -    📁 Tamaño: N/A
+2025-06-16 12:44:16,447 - INFO -    ⏱️ Duración: 0s
+2025-06-16 12:44:16,447 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-16 12:44:20,728 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-16 12:44:35,015 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-16 12:44:35,019 - INFO - Extrayendo video de: https://www.instagram.com/reel/DK2RfgButNr/?utm_source=ig_web_copy_link
+2025-06-16 12:44:37,852 - INFO - ✅ Extracción exitosa para: https://www.instagram.com/reel/DK2RfgButNr/?utm_source=ig_web_copy_link
+2025-06-16 12:44:37,852 - INFO -    📺 Plataforma: instagram
+2025-06-16 12:44:37,853 - INFO -    🎬 Título: Sin título...
+2025-06-16 12:44:37,853 - INFO -    🎯 Resolución: N/A
+2025-06-16 12:44:37,853 - INFO -    📁 Tamaño: N/A
+2025-06-16 12:44:37,853 - INFO -    ⏱️ Duración: 0s
+2025-06-16 12:44:37,853 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-16 12:46:05,886 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-16 12:46:05,890 - INFO - Extrayendo video de: https://www.tiktok.com/@monpetitglouton/video/7507061311348559110?is_from_webapp=1&sender_device=pc
+2025-06-16 12:46:06,798 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@monpetitglouton/video/7507061311348559110?is_from_webapp=1&sender_device=pc
+2025-06-16 12:46:06,798 - INFO -    📺 Plataforma: tiktok
+2025-06-16 12:46:06,798 - INFO -    🎬 Título: Video de TikTok...
+2025-06-16 12:46:06,799 - INFO -    🎯 Resolución: TikTok HD
+2025-06-16 12:46:06,799 - INFO -    📁 Tamaño: N/A
+2025-06-16 12:46:06,799 - INFO -    ⏱️ Duración: 0s
+2025-06-16 12:46:06,799 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-16 12:49:16,047 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-16 12:49:16,051 - INFO - Extrayendo video de: https://www.facebook.com/share/r/1CM1mMfxon/
+2025-06-16 12:49:20,074 - INFO - ✅ Extracción exitosa para: https://www.facebook.com/share/r/1CM1mMfxon/
+2025-06-16 12:49:20,075 - INFO -    📺 Plataforma: facebook
+2025-06-16 12:49:20,075 - INFO -    🎬 Título: 7.4K reactions · 1K comments | Hualpenpostin on Re...
+2025-06-16 12:49:20,075 - INFO -    🎯 Resolución: N/AxN/A
+2025-06-16 12:49:20,075 - INFO -    📁 Tamaño: N/A
+2025-06-16 12:49:20,075 - INFO -    ⏱️ Duración: 11.08s
+2025-06-16 12:49:20,075 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-16 12:50:26,751 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-16 12:50:26,756 - INFO - Extrayendo video de: https://www.facebook.com/share/v/1ELFh2i6GA/
+2025-06-16 12:50:30,892 - INFO - ✅ Extracción exitosa para: https://www.facebook.com/share/v/1ELFh2i6GA/
+2025-06-16 12:50:30,892 - INFO -    📺 Plataforma: facebook
+2025-06-16 12:50:30,893 - INFO -    🎬 Título: 946K views · 2.9K reactions | iPhone16 16Plus 16PR...
+2025-06-16 12:50:30,893 - INFO -    🎯 Resolución: N/AxN/A
+2025-06-16 12:50:30,893 - INFO -    📁 Tamaño: N/A
+2025-06-16 12:50:30,893 - INFO -    ⏱️ Duración: 23.305s
+2025-06-16 12:50:30,893 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-16 12:51:48,606 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-16 12:51:48,610 - INFO - Extrayendo video de: https://www.facebook.com/share/r/1H8XbwEKzn/
+2025-06-16 12:51:52,900 - INFO - ✅ Extracción exitosa para: https://www.facebook.com/share/r/1H8XbwEKzn/
+2025-06-16 12:51:52,901 - INFO -    📺 Plataforma: facebook
+2025-06-16 12:51:52,901 - INFO -    🎬 Título: 320K views · 11K reactions | Ideas de proyectos pa...
+2025-06-16 12:51:52,901 - INFO -    🎯 Resolución: N/AxN/A
+2025-06-16 12:51:52,901 - INFO -    📁 Tamaño: N/A
+2025-06-16 12:51:52,902 - INFO -    ⏱️ Duración: 12.4s
+2025-06-16 12:51:52,902 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-16 12:53:49,663 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-16 12:53:49,666 - INFO - Extrayendo video de: https://www.facebook.com/share/p/1JW4U3pFQ3/
+2025-06-16 12:53:53,339 - WARNING - Error extrayendo https://www.facebook.com/share/p/1JW4U3pFQ3/: Error: error: [facebook] 9789921674394304: cannot parse data; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appro
+2025-06-16 12:53:53,339 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 400 -
+2025-06-16 13:19:11,666 - INFO - 192.168.1.50 - "GET / HTTP/1.1" 200 -
+2025-06-16 13:19:11,754 - INFO - 192.168.1.50 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 13:19:11,760 - INFO - 192.168.1.50 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 13:19:11,762 - INFO - 192.168.1.50 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 13:19:11,762 - INFO - 192.168.1.50 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 13:19:11,763 - INFO - 192.168.1.50 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 13:19:11,764 - INFO - 192.168.1.50 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 13:19:11,764 - INFO - 192.168.1.50 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 13:19:12,259 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-16 13:19:18,437 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-16 13:19:18,443 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=0XatqszW6mE
+2025-06-16 13:19:28,456 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=0XatqszW6mE
+2025-06-16 13:19:28,456 - INFO -    📺 Plataforma: youtube
+2025-06-16 13:19:28,457 - INFO -    🎬 Título: 3 estrellas...
+2025-06-16 13:19:28,457 - INFO -    🎯 Resolución: 640x360
+2025-06-16 13:19:28,457 - INFO -    📁 Tamaño: N/A
+2025-06-16 13:19:28,457 - INFO -    ⏱️ Duración: 353s
+2025-06-16 13:19:28,457 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-16 14:02:40,878 - INFO - 192.168.1.50 - "GET / HTTP/1.1" 200 -
+2025-06-16 14:02:40,951 - INFO - 192.168.1.50 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 14:02:40,973 - INFO - 192.168.1.50 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 14:02:40,974 - INFO - 192.168.1.50 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 14:02:40,974 - INFO - 192.168.1.50 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 14:02:40,974 - INFO - 192.168.1.50 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 14:02:40,974 - INFO - 192.168.1.50 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 14:02:40,975 - INFO - 192.168.1.50 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 14:02:41,202 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-16 14:03:46,573 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-16 14:03:46,577 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=0XatqszW6mE
+2025-06-16 14:03:55,934 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=0XatqszW6mE
+2025-06-16 14:03:55,934 - INFO -    📺 Plataforma: youtube
+2025-06-16 14:03:55,934 - INFO -    🎬 Título: 3 estrellas...
+2025-06-16 14:03:55,934 - INFO -    🎯 Resolución: 640x360
+2025-06-16 14:03:55,935 - INFO -    📁 Tamaño: N/A
+2025-06-16 14:03:55,935 - INFO -    ⏱️ Duración: 353s
+2025-06-16 14:03:55,935 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-16 14:04:09,424 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-16 14:14:49,983 - INFO - 192.168.1.50 - Request timed out: TimeoutError('timed out')
+2025-06-16 14:43:47,181 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2025-06-16 14:43:47,310 - INFO - 192.168.1.150 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 14:43:47,310 - INFO - 192.168.1.150 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 14:43:47,311 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 14:43:47,311 - INFO - 192.168.1.150 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 14:43:47,320 - INFO - 192.168.1.150 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 14:43:47,425 - INFO - 192.168.1.150 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 14:43:47,425 - INFO - 192.168.1.150 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-06-16 14:43:47,558 - INFO - 192.168.1.150 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-06-16 14:43:56,586 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-16 14:43:56,599 - INFO - Extrayendo video de: https://vm.tiktok.com/ZMSftR7qd/
+2025-06-16 14:43:58,440 - INFO - ✅ Extracción exitosa para: https://vm.tiktok.com/ZMSftR7qd/
+2025-06-16 14:43:58,440 - INFO -    📺 Plataforma: tiktok
+2025-06-16 14:43:58,440 - INFO -    🎬 Título: Video de TikTok...
+2025-06-16 14:43:58,441 - INFO -    🎯 Resolución: TikTok HD
+2025-06-16 14:43:58,441 - INFO -    📁 Tamaño: N/A
+2025-06-16 14:43:58,441 - INFO -    ⏱️ Duración: 0s
+2025-06-16 14:43:58,441 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-16 14:44:39,877 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-16 14:44:39,903 - INFO - Extrayendo video de: https://vm.tiktok.com/ZMSftR7qd/
+2025-06-16 14:44:43,763 - INFO - ✅ Extracción exitosa para: https://vm.tiktok.com/ZMSftR7qd/
+2025-06-16 14:44:43,763 - INFO -    📺 Plataforma: tiktok
+2025-06-16 14:44:43,764 - INFO -    🎬 Título: Video de TikTok...
+2025-06-16 14:44:43,764 - INFO -    🎯 Resolución: TikTok HD
+2025-06-16 14:44:43,764 - INFO -    📁 Tamaño: N/A
+2025-06-16 14:44:43,764 - INFO -    ⏱️ Duración: 0s
+2025-06-16 14:44:43,765 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-16 14:45:12,700 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-16 14:45:12,721 - INFO - Extrayendo video de: https://www.linkedin.com/posts/rammcodes_html-css-javascript-activity-7339618780022464512-sTZp?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc&utm_campaign=copy_link
+2025-06-16 14:45:13,938 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/rammcodes_html-css-javascript-activity-7339618780022464512-sTZp?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc&utm_campaign=copy_link
+2025-06-16 14:45:13,939 - INFO -    📺 Plataforma: linkedin
+2025-06-16 14:45:13,939 - INFO -    🎬 Título: Sin título...
+2025-06-16 14:45:13,939 - INFO -    🎯 Resolución: N/A
+2025-06-16 14:45:13,939 - INFO -    📁 Tamaño: N/A
+2025-06-16 14:45:13,939 - INFO -    ⏱️ Duración: 0s
+2025-06-16 14:45:13,940 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-16 14:46:46,303 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 400 -
+2025-06-16 14:47:06,301 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-16 14:47:06,317 - INFO - Extrayendo video de: https://www.instagram.com/reel/DK3PMTFIfz_/?igsh=amd4Z2p4N2VvdGVh
+2025-06-16 14:47:09,091 - INFO - ✅ Extracción exitosa para: https://www.instagram.com/reel/DK3PMTFIfz_/?igsh=amd4Z2p4N2VvdGVh
+2025-06-16 14:47:09,092 - INFO -    📺 Plataforma: instagram
+2025-06-16 14:47:09,092 - INFO -    🎬 Título: Sin título...
+2025-06-16 14:47:09,092 - INFO -    🎯 Resolución: N/A
+2025-06-16 14:47:09,092 - INFO -    📁 Tamaño: N/A
+2025-06-16 14:47:09,092 - INFO -    ⏱️ Duración: 0s
+2025-06-16 14:47:09,093 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-16 14:47:26,996 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-16 14:47:27,019 - INFO - Extrayendo video de: https://x.com/ElTioBostero/status/1933270054306537921?t=LWXmYeiQTgVH2cDvn49wzg&s=19
+2025-06-16 14:47:28,346 - INFO - ✅ Extracción exitosa para: https://x.com/ElTioBostero/status/1933270054306537921?t=LWXmYeiQTgVH2cDvn49wzg&s=19
+2025-06-16 14:47:28,346 - INFO -    📺 Plataforma: x
+2025-06-16 14:47:28,346 - INFO -    🎬 Título: Sin título...
+2025-06-16 14:47:28,347 - INFO -    🎯 Resolución: N/A
+2025-06-16 14:47:28,347 - INFO -    📁 Tamaño: N/A
+2025-06-16 14:47:28,347 - INFO -    ⏱️ Duración: 0s
+2025-06-16 14:47:28,347 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2025-06-16 14:48:57,583 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2025-06-16 14:48:57,599 - INFO - Extrayendo video de: https://vm.tiktok.com/ZMSftR7qd/
+2025-06-16 14:48:59,060 - INFO - ✅ Extracción exitosa para: https://vm.tiktok.com/ZMSftR7qd/
+2025-06-16 14:48:59,060 - INFO -    📺 Plataforma: tiktok
+2025-06-16 14:48:59,060 - INFO -    🎬 Título: Video de TikTok...
+2025-06-16 14:48:59,060 - INFO -    🎯 Resolución: TikTok HD
+2025-06-16 14:48:59,061 - INFO -    📁 Tamaño: N/A
+2025-06-16 14:48:59,061 - INFO -    ⏱️ Duración: 0s
+2025-06-16 14:48:59,061 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -

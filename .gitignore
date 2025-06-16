@@ -169,6 +169,15 @@ cython_debug/
 server.log
 *.log
 
+# Archivos de prueba y temporales
+test_*.py
+*_test.py
+*_new.py
+*_old.py
+*_backup.py
+temp_*
+*.tmp
+
 # Videos descargados (si los hay)
 downloads/
 videos/
