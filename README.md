@@ -215,21 +215,28 @@ Esta herramienta es para uso personal únicamente:
 ---
 ``` bash
 c:\www\insta\
-├── .git/                    # Control de versiones
-├── card.js                  # Componente de video card
-├── favicon.ico              # Icono del sitio
-├── index.html               # Frontend principal
-├── insta.js                 # Lógica de Instagram
-├── insta_extractor.py       # Extractor de Instagram
-├── linkedin.js              # Lógica de LinkedIn
-├── linkedin_extractor.py    # Extractor de LinkedIn
-├── p.bat                    # Script de inicio rápido
-├── README.md                # Documentación
-├── requirements.txt         # Dependencias Python
-├── server.log               # Logs del servidor
-├── server.py                # Servidor principal (ÚNICO)
-├── x.js                     # Lógica de X/Twitter
-└── x_extractor.py           # Extractor de X/Twitter
+├── .git/                   # Control de versiones
+├── .gitignore              # Exclusiones (temporales, logs, videos)
+├── card.js                 # Template unificado de video
+├── facebook.js             # Frontend Facebook
+├── facebook_extractor.py   # Backend Facebook
+├── favicon.ico             # Icono de la app
+├── index.html              # Frontend principal
+├── insta.js                # Frontend Instagram
+├── insta_extractor.py      # Backend Instagram
+├── linkedin.js             # Frontend LinkedIn
+├── linkedin_extractor.py   # Backend LinkedIn
+├── p.bat                   # Script de inicio
+├── README.md               # Documentación completa
+├── requirements.txt        # Dependencias Python
+├── server.log              # Log del servidor (excluido en git)
+├── server.py               # Servidor principal
+├── tiktok.js               # Frontend TikTok
+├── tiktok_extractor.py     # Backend TikTok
+├── x.js                    # Frontend X/Twitter
+├── x_extractor.py          # Backend X/Twitter
+├── youtube.js              # Frontend YouTube
+└── youtube_extractor.py    # Backend YouTube (OPTIMIZADO)
 ```
 ---
 
