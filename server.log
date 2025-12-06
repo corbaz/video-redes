@@ -1817,3 +1817,234 @@ yt-dlp: error: no such option: --extract-flat
 2025-06-16 14:48:59,061 - INFO -    📁 Tamaño: N/A
 2025-06-16 14:48:59,061 - INFO -    ⏱️ Duración: 0s
 2025-06-16 14:48:59,061 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 06:40:37,762 - INFO - ============================================================
+2025-12-06 06:40:37,762 - INFO - Video Downloader Server v2.2 - API Fixed
+2025-12-06 06:40:37,762 - INFO - ============================================================
+2025-12-06 06:40:37,762 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2025-12-06 06:40:37,762 - INFO - Acceso local: http://localhost:8000
+2025-12-06 06:40:37,763 - INFO - Acceso red: http://192.168.1.50:8000
+2025-12-06 06:40:37,763 - INFO - Endpoints disponibles:
+2025-12-06 06:40:37,763 - INFO -   POST /api/validate - Validar URLs
+2025-12-06 06:40:37,763 - INFO -   POST /api/extract - Extraer videos
+2025-12-06 06:40:37,763 - INFO - Presiona Ctrl+C para detener
+2025-12-06 06:40:37,763 - INFO - ============================================================
+2025-12-06 06:41:40,909 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-12-06 06:41:40,949 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 06:41:41,144 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 06:41:41,255 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 06:41:41,257 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 06:41:41,261 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 06:41:41,265 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 06:41:41,275 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 06:41:41,617 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-12-06 06:42:01,249 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-12-06 06:42:01,563 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 06:42:01,563 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 06:42:01,595 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 06:42:01,595 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 06:42:01,596 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 06:42:01,596 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 06:42:01,876 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 06:42:02,081 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-12-06 06:42:32,218 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-06 06:44:54,018 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 06:44:54,298 - INFO - Extrayendo video de: https://www.linkedin.com/posts/shubhamsaboo_googles-advent-of-agents-2025-is-now-live-activity-7401322020006825984-Sp4l?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2025-12-06 06:45:00,915 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/shubhamsaboo_googles-advent-of-agents-2025-is-now-live-activity-7401322020006825984-Sp4l?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2025-12-06 06:45:00,924 - INFO -    📺 Plataforma: linkedin
+2025-12-06 06:45:00,966 - INFO -    🎬 Título: Sin título...
+2025-12-06 06:45:01,000 - INFO -    🎯 Resolución: N/A
+2025-12-06 06:45:01,016 - INFO -    📁 Tamaño: N/A
+2025-12-06 06:45:01,036 - INFO -    ⏱️ Duración: 0s
+2025-12-06 06:45:01,053 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 06:45:06,183 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-12-06 06:50:20,192 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 06:50:20,457 - INFO - Extrayendo video de: https://www.instagram.com/reel/DRxyteRkRrX/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2025-12-06 06:50:22,676 - INFO - ✅ Extracción exitosa para: https://www.instagram.com/reel/DRxyteRkRrX/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2025-12-06 06:50:22,677 - INFO -    📺 Plataforma: instagram
+2025-12-06 06:50:22,677 - INFO -    🎬 Título: Sin título...
+2025-12-06 06:50:22,677 - INFO -    🎯 Resolución: N/A
+2025-12-06 06:50:22,677 - INFO -    📁 Tamaño: N/A
+2025-12-06 06:50:22,677 - INFO -    ⏱️ Duración: 0s
+2025-12-06 06:50:22,677 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 06:50:50,511 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-06 06:53:30,694 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 06:53:30,956 - INFO - Extrayendo video de: https://www.tiktok.com/@todonoticias/video/7579392348078001464?is_from_webapp=1&sender_device=pc
+2025-12-06 06:53:32,686 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@todonoticias/video/7579392348078001464?is_from_webapp=1&sender_device=pc
+2025-12-06 06:53:32,686 - INFO -    📺 Plataforma: tiktok
+2025-12-06 06:53:32,686 - INFO -    🎬 Título: Video de TikTok...
+2025-12-06 06:53:32,686 - INFO -    🎯 Resolución: TikTok HD
+2025-12-06 06:53:32,687 - INFO -    📁 Tamaño: N/A
+2025-12-06 06:53:32,687 - INFO -    ⏱️ Duración: 0s
+2025-12-06 06:53:32,687 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 06:54:01,008 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-06 06:59:41,081 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 06:59:41,342 - INFO - Extrayendo video de: https://x.com/therealbuni/status/1996328075441877191?s=20
+2025-12-06 06:59:42,867 - INFO - ✅ Extracción exitosa para: https://x.com/therealbuni/status/1996328075441877191?s=20
+2025-12-06 06:59:42,868 - INFO -    📺 Plataforma: x
+2025-12-06 06:59:42,868 - INFO -    🎬 Título: Sin título...
+2025-12-06 06:59:42,868 - INFO -    🎯 Resolución: N/A
+2025-12-06 06:59:42,868 - INFO -    📁 Tamaño: N/A
+2025-12-06 06:59:42,869 - INFO -    ⏱️ Duración: 0s
+2025-12-06 06:59:42,869 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 07:00:11,462 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-06 07:03:46,378 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 07:03:46,625 - INFO - Extrayendo video de: https://www.facebook.com/share/r/1A8SaDh4Yt/
+2025-12-06 07:03:49,744 - WARNING - Error extrayendo https://www.facebook.com/share/r/1A8SaDh4Yt/: Error: error: [facebook] 1398403791659356: no video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the
+2025-12-06 07:03:49,744 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2025-12-06 07:03:57,791 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 07:03:58,101 - INFO - Extrayendo video de: https://www.facebook.com/share/r/1A8SaDh4Yt/
+2025-12-06 07:04:01,131 - WARNING - Error extrayendo https://www.facebook.com/share/r/1A8SaDh4Yt/: Error: error: [facebook] 1398403791659356: no video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the
+2025-12-06 07:04:01,132 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2025-12-06 07:04:27,330 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 07:04:27,653 - INFO - Extrayendo video de: https://www.facebook.com/reel/1181469097254323
+2025-12-06 07:04:30,251 - INFO - ✅ Extracción exitosa para: https://www.facebook.com/reel/1181469097254323
+2025-12-06 07:04:30,252 - INFO -    📺 Plataforma: facebook
+2025-12-06 07:04:30,252 - INFO -    🎬 Título: 736K views · 1K reactions | Repair on dirty glass ...
+2025-12-06 07:04:30,252 - INFO -    🎯 Resolución: N/AxN/A
+2025-12-06 07:04:30,252 - INFO -    📁 Tamaño: N/A
+2025-12-06 07:04:30,252 - INFO -    ⏱️ Duración: 170.295s
+2025-12-06 07:04:30,252 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 07:04:57,933 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-06 07:06:22,563 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 07:06:22,810 - INFO - Extrayendo video de: https://youtube.com/shorts/iouTvSMQtoc?si=5MYGlbrc8Y61GZFL
+2025-12-06 07:06:34,325 - INFO - ✅ Extracción exitosa para: https://youtube.com/shorts/iouTvSMQtoc?si=5MYGlbrc8Y61GZFL
+2025-12-06 07:06:34,325 - INFO -    📺 Plataforma: youtube
+2025-12-06 07:06:34,325 - INFO -    🎬 Título: ¡He creado una extensión de Visual Studio Code! #t...
+2025-12-06 07:06:34,325 - INFO -    🎯 Resolución: 1080x1920
+2025-12-06 07:06:34,326 - INFO -    📁 Tamaño: N/A
+2025-12-06 07:06:34,326 - INFO -    ⏱️ Duración: 15s
+2025-12-06 07:06:34,326 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 07:06:52,888 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-06 07:23:42,330 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 07:23:42,583 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=AeX_afiXTzA
+2025-12-06 07:23:48,096 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=AeX_afiXTzA
+2025-12-06 07:23:48,096 - INFO -    📺 Plataforma: youtube
+2025-12-06 07:23:48,096 - INFO -    🎬 Título: Me voló la cabeza, cambia todo....
+2025-12-06 07:23:48,097 - INFO -    🎯 Resolución: 1920x1080
+2025-12-06 07:23:48,097 - INFO -    📁 Tamaño: N/A
+2025-12-06 07:23:48,097 - INFO -    ⏱️ Duración: 1819s
+2025-12-06 07:23:48,097 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 07:24:12,655 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-06 07:41:02,086 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 07:41:02,350 - INFO - Extrayendo video de: https://x.com/MengTo/status/1996986766591680883
+2025-12-06 07:41:03,826 - INFO - ✅ Extracción exitosa para: https://x.com/MengTo/status/1996986766591680883
+2025-12-06 07:41:03,826 - INFO -    📺 Plataforma: x
+2025-12-06 07:41:03,826 - INFO -    🎬 Título: Sin título...
+2025-12-06 07:41:03,827 - INFO -    🎯 Resolución: N/A
+2025-12-06 07:41:03,827 - INFO -    📁 Tamaño: N/A
+2025-12-06 07:41:03,827 - INFO -    ⏱️ Duración: 0s
+2025-12-06 07:41:03,827 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 07:41:32,425 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-06 07:42:05,333 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 07:42:05,584 - INFO - Extrayendo video de: https://x.com/MengTo/1996986766591680883
+2025-12-06 07:42:07,493 - WARNING - Error extrayendo https://x.com/MengTo/1996986766591680883: Error al extraer video de X/Twitter: [0;31mERROR:[0m Unsupported URL: https://x.com/MengTo/1996986766591680883
+2025-12-06 07:42:07,493 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2025-12-06 07:42:13,684 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 07:42:14,007 - INFO - Extrayendo video de: https://x.com/MengTo/
+2025-12-06 07:42:14,770 - WARNING - Error extrayendo https://x.com/MengTo/: Error al extraer video de X/Twitter: [0;31mERROR:[0m Unsupported URL: https://x.com/MengTo/
+2025-12-06 07:42:14,771 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2025-12-06 07:42:17,422 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 07:42:17,734 - INFO - Extrayendo video de: https://x.com/MengTo/
+2025-12-06 07:42:18,443 - WARNING - Error extrayendo https://x.com/MengTo/: Error al extraer video de X/Twitter: [0;31mERROR:[0m Unsupported URL: https://x.com/MengTo/
+2025-12-06 07:42:18,443 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2025-12-06 07:42:30,389 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 07:42:30,710 - INFO - Extrayendo video de: https://x.com/MengTo/status/1996986766591680883?s=20
+2025-12-06 07:42:31,771 - INFO - ✅ Extracción exitosa para: https://x.com/MengTo/status/1996986766591680883?s=20
+2025-12-06 07:42:31,771 - INFO -    📺 Plataforma: x
+2025-12-06 07:42:31,771 - INFO -    🎬 Título: Sin título...
+2025-12-06 07:42:31,771 - INFO -    🎯 Resolución: N/A
+2025-12-06 07:42:31,771 - INFO -    📁 Tamaño: N/A
+2025-12-06 07:42:31,772 - INFO -    ⏱️ Duración: 0s
+2025-12-06 07:42:31,772 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 07:43:00,971 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-06 07:50:34,343 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 07:50:34,591 - INFO - Extrayendo video de: https://x.com/GoogleCloudTech/status/1997123833086566408?s=20
+2025-12-06 07:50:35,903 - INFO - ✅ Extracción exitosa para: https://x.com/GoogleCloudTech/status/1997123833086566408?s=20
+2025-12-06 07:50:35,903 - INFO -    📺 Plataforma: x
+2025-12-06 07:50:35,903 - INFO -    🎬 Título: Sin título...
+2025-12-06 07:50:35,903 - INFO -    🎯 Resolución: N/A
+2025-12-06 07:50:35,904 - INFO -    📁 Tamaño: N/A
+2025-12-06 07:50:35,904 - INFO -    ⏱️ Duración: 0s
+2025-12-06 07:50:35,904 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 07:51:04,674 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-06 07:56:02,441 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-12-06 07:56:02,479 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:56:02,704 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:56:02,788 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:56:02,788 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:56:02,788 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:56:02,788 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:56:02,788 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:56:04,144 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-12-06 07:56:17,480 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 07:56:17,798 - INFO - Extrayendo video de: https://x.com/GoogleCloudTech/status/1997123833086566408?s=20
+2025-12-06 07:56:19,129 - INFO - ✅ Extracción exitosa para: https://x.com/GoogleCloudTech/status/1997123833086566408?s=20
+2025-12-06 07:56:19,129 - INFO -    📺 Plataforma: x
+2025-12-06 07:56:19,129 - INFO -    🎬 Título: Sin título...
+2025-12-06 07:56:19,129 - INFO -    🎯 Resolución: N/A
+2025-12-06 07:56:19,130 - INFO -    📁 Tamaño: N/A
+2025-12-06 07:56:19,130 - INFO -    ⏱️ Duración: 0s
+2025-12-06 07:56:19,130 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 07:56:22,082 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-12-06 07:57:14,698 - INFO - Servidor detenido por usuario
+2025-12-06 07:57:14,698 - INFO - Servidor cerrado correctamente
+2025-12-06 07:57:21,839 - INFO - ============================================================
+2025-12-06 07:57:21,839 - INFO - Video Downloader Server v2.2 - API Fixed
+2025-12-06 07:57:21,840 - INFO - ============================================================
+2025-12-06 07:57:21,840 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2025-12-06 07:57:21,840 - INFO - Acceso local: http://localhost:8000
+2025-12-06 07:57:21,840 - INFO - Acceso red: http://192.168.1.50:8000
+2025-12-06 07:57:21,840 - INFO - Endpoints disponibles:
+2025-12-06 07:57:21,840 - INFO -   POST /api/validate - Validar URLs
+2025-12-06 07:57:21,841 - INFO -   POST /api/extract - Extraer videos
+2025-12-06 07:57:21,841 - INFO - Presiona Ctrl+C para detener
+2025-12-06 07:57:21,841 - INFO - ============================================================
+2025-12-06 07:57:29,780 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-12-06 07:57:29,818 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:57:30,123 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:57:30,126 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:57:30,127 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:57:30,128 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:57:30,128 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:57:30,130 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:57:30,689 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-12-06 07:57:38,566 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 07:57:38,882 - INFO - Extrayendo video de: https://x.com/MengTo/status/1996986766591680883?s=20
+2025-12-06 07:57:40,578 - INFO - ✅ Extracción exitosa para: https://x.com/MengTo/status/1996986766591680883?s=20
+2025-12-06 07:57:40,578 - INFO -    📺 Plataforma: x
+2025-12-06 07:57:40,579 - INFO -    🎬 Título: Sin título...
+2025-12-06 07:57:40,579 - INFO -    🎯 Resolución: N/A
+2025-12-06 07:57:40,579 - INFO -    📁 Tamaño: N/A
+2025-12-06 07:57:40,579 - INFO -    ⏱️ Duración: 0s
+2025-12-06 07:57:40,579 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 07:58:09,212 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-06 07:58:14,627 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-12-06 07:58:20,910 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-12-06 07:58:21,214 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:58:21,272 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:58:21,272 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:58:21,272 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:58:21,272 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:58:21,272 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:58:21,523 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 07:58:22,595 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-12-06 07:58:30,454 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 07:58:30,772 - INFO - Extrayendo video de: https://x.com/MengTo/status/1996986766591680883?s=20
+2025-12-06 07:58:31,579 - INFO - ✅ Extracción exitosa para: https://x.com/MengTo/status/1996986766591680883?s=20
+2025-12-06 07:58:31,580 - INFO -    📺 Plataforma: x
+2025-12-06 07:58:31,580 - INFO -    🎬 Título: Sin título...
+2025-12-06 07:58:31,580 - INFO -    🎯 Resolución: N/A
+2025-12-06 07:58:31,580 - INFO -    📁 Tamaño: N/A
+2025-12-06 07:58:31,580 - INFO -    ⏱️ Duración: 0s
+2025-12-06 07:58:31,580 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 07:58:35,070 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-12-06 07:58:58,599 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 07:58:58,865 - INFO - Extrayendo video de: https://x.com/GoogleCloudTech/status/1997123833086566408?s=20
+2025-12-06 07:58:59,890 - INFO - ✅ Extracción exitosa para: https://x.com/GoogleCloudTech/status/1997123833086566408?s=20
+2025-12-06 07:58:59,890 - INFO -    📺 Plataforma: x
+2025-12-06 07:58:59,891 - INFO -    🎬 Título: Sin título...
+2025-12-06 07:58:59,891 - INFO -    🎯 Resolución: N/A
+2025-12-06 07:58:59,891 - INFO -    📁 Tamaño: N/A
+2025-12-06 07:58:59,891 - INFO -    ⏱️ Duración: 0s
+2025-12-06 07:58:59,892 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 07:59:28,941 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')

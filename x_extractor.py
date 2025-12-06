@@ -10,10 +10,15 @@ class XExtractor:
             print(f"🔍 Extrayendo video de X/Twitter con yt-dlp: {url}")
             import yt_dlp
 
+            # Configurar yt-dlp para obtener la mejor calidad
             ydl_opts = {
                 'quiet': True,
                 'skip_download': True,
-                'timeout': 10
+                'timeout': 10,
+                # Seleccionar la mejor calidad de video+audio combinada
+                # Formato: mejor video + mejor audio, o mejor combinado
+                'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio/best',
+                'merge_output_format': 'mp4',  # Asegurar salida en MP4
             }
 
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
@@ -26,14 +31,39 @@ class XExtractor:
                 # Buscar la URL real del video en diferentes campos
                 video_url = None
 
-                # Si hay formatos disponibles, usar el mejor
+                # Si hay formatos disponibles, seleccionar el de mejor calidad
                 if 'formats' in info and info['formats']:
-                    for fmt in info['formats']:
-                        if fmt.get('vcodec') != 'none' and fmt.get('url'):
-                            video_url = fmt['url']
-                            print(
-                                f"✅ Found video in formats: {video_url[:50]}...")
-                            break
+                    # Filtrar solo formatos con video
+                    video_formats = [
+                        fmt for fmt in info['formats']
+                        if fmt.get('vcodec') != 'none' and fmt.get('url')
+                    ]
+                    
+                    if video_formats:
+                        # Ordenar por calidad (resolución y bitrate)
+                        def get_quality_score(fmt):
+                            # Calcular un score basado en altura, ancho y bitrate
+                            height = fmt.get('height') or 0
+                            width = fmt.get('width') or 0
+                            tbr = fmt.get('tbr') or 0  # Total bitrate
+                            
+                            # Priorizar resolución, luego bitrate
+                            return (height * width, tbr)
+                        
+                        # Ordenar de mayor a menor calidad
+                        video_formats.sort(key=get_quality_score, reverse=True)
+                        
+                        # Tomar el de mejor calidad
+                        best_format = video_formats[0]
+                        video_url = best_format['url']
+                        
+                        resolution = f"{best_format.get('width')}x{best_format.get('height')}" if best_format.get('width') else 'unknown'
+                        bitrate = f"{best_format.get('tbr')}kbps" if best_format.get('tbr') else 'unknown'
+                        
+                        print(f"✅ Mejor calidad encontrada: {resolution} @ {bitrate}")
+                        print(f"   URL: {video_url[:50]}...")
+                    else:
+                        print("⚠️ No se encontraron formatos de video válidos")
 
                 # Fallback a campos directos
                 if not video_url:

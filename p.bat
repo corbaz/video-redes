@@ -5,6 +5,6 @@ taskkill /f /im pythonw.exe >nul 2>&1
 echo Procesos Python terminados.
 echo.
 echo Iniciando servidor...
-cd /d c:\www\insta
+rem cd /d c:\www\insta
 python server.py
 pause
