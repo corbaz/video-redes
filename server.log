@@ -2048,3 +2048,663 @@ yt-dlp: error: no such option: --extract-flat
 2025-12-06 07:58:59,891 - INFO -    ⏱️ Duración: 0s
 2025-12-06 07:58:59,892 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
 2025-12-06 07:59:28,941 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-06 16:59:29,860 - INFO - ============================================================
+2025-12-06 16:59:29,861 - INFO - Video Downloader Server v2.2 - API Fixed
+2025-12-06 16:59:29,862 - INFO - ============================================================
+2025-12-06 16:59:29,863 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2025-12-06 16:59:29,863 - INFO - Acceso local: http://localhost:8000
+2025-12-06 16:59:29,863 - INFO - Acceso red: http://192.168.1.50:8000
+2025-12-06 16:59:29,863 - INFO - Endpoints disponibles:
+2025-12-06 16:59:29,864 - INFO -   POST /api/validate - Validar URLs
+2025-12-06 16:59:29,864 - INFO -   POST /api/extract - Extraer videos
+2025-12-06 16:59:29,864 - INFO - Presiona Ctrl+C para detener
+2025-12-06 16:59:29,865 - INFO - ============================================================
+2025-12-06 16:59:51,482 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-12-06 16:59:51,565 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 16:59:51,745 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 16:59:51,882 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 16:59:51,885 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 16:59:51,885 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 16:59:51,885 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 16:59:51,885 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-12-06 16:59:52,052 - INFO - 127.0.0.1 - code 404, message Not Found
+2025-12-06 16:59:52,052 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2025-12-06 16:59:53,036 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-12-06 17:00:01,327 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 17:00:01,658 - INFO - Extrayendo video de: https://www.youtube.com/shorts/iouTvSMQtoc
+2025-12-06 17:00:13,239 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/shorts/iouTvSMQtoc
+2025-12-06 17:00:13,239 - INFO -    📺 Plataforma: youtube
+2025-12-06 17:00:13,240 - INFO -    🎬 Título: ¡He creado una extensión de Visual Studio Code! #t...
+2025-12-06 17:00:13,240 - INFO -    🎯 Resolución: 1080x1920
+2025-12-06 17:00:13,240 - INFO -    📁 Tamaño: N/A
+2025-12-06 17:00:13,240 - INFO -    ⏱️ Duración: 15s
+2025-12-06 17:00:13,240 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 17:00:16,529 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-12-06 17:01:26,508 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 17:01:26,769 - INFO - Extrayendo video de: https://www.tiktok.com/@todonoticias/video/7578980107742629131
+2025-12-06 17:01:29,066 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@todonoticias/video/7578980107742629131
+2025-12-06 17:01:29,067 - INFO -    📺 Plataforma: tiktok
+2025-12-06 17:01:29,067 - INFO -    🎬 Título: Video de TikTok...
+2025-12-06 17:01:29,067 - INFO -    🎯 Resolución: TikTok HD
+2025-12-06 17:01:29,067 - INFO -    📁 Tamaño: N/A
+2025-12-06 17:01:29,067 - INFO -    ⏱️ Duración: 0s
+2025-12-06 17:01:29,067 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 17:01:45,455 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 17:01:45,772 - INFO - Extrayendo video de: https://www.tiktok.com/@todonoticias/video/7578980107742629131
+2025-12-06 17:01:48,224 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@todonoticias/video/7578980107742629131
+2025-12-06 17:01:48,224 - INFO -    📺 Plataforma: tiktok
+2025-12-06 17:01:48,225 - INFO -    🎬 Título: Video de TikTok...
+2025-12-06 17:01:48,225 - INFO -    🎯 Resolución: TikTok HD
+2025-12-06 17:01:48,225 - INFO -    📁 Tamaño: N/A
+2025-12-06 17:01:48,225 - INFO -    ⏱️ Duración: 0s
+2025-12-06 17:01:48,225 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 17:02:12,326 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 17:02:12,652 - INFO - Extrayendo video de: https://www.tiktok.com/@todonoticias/video/7578980107742629131
+2025-12-06 17:02:14,027 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@todonoticias/video/7578980107742629131
+2025-12-06 17:02:14,027 - INFO -    📺 Plataforma: tiktok
+2025-12-06 17:02:14,028 - INFO -    🎬 Título: Video de TikTok...
+2025-12-06 17:02:14,028 - INFO -    🎯 Resolución: TikTok HD
+2025-12-06 17:02:14,028 - INFO -    📁 Tamaño: N/A
+2025-12-06 17:02:14,028 - INFO -    ⏱️ Duración: 0s
+2025-12-06 17:02:14,028 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 17:02:42,924 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-06 17:02:46,273 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 17:02:46,535 - INFO - Extrayendo video de: https://www.tiktok.com/@futbolactivo2.0/video/7579645593824414987
+2025-12-06 17:02:49,360 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@futbolactivo2.0/video/7579645593824414987
+2025-12-06 17:02:49,361 - INFO -    📺 Plataforma: tiktok
+2025-12-06 17:02:49,361 - INFO -    🎬 Título: Video de TikTok...
+2025-12-06 17:02:49,361 - INFO -    🎯 Resolución: TikTok HD
+2025-12-06 17:02:49,361 - INFO -    📁 Tamaño: N/A
+2025-12-06 17:02:49,361 - INFO -    ⏱️ Duración: 0s
+2025-12-06 17:02:49,362 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 17:02:58,081 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 17:02:58,406 - INFO - Extrayendo video de: https://www.tiktok.com/@futbolactivo2.0/video/7579645593824414987
+2025-12-06 17:02:59,786 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@futbolactivo2.0/video/7579645593824414987
+2025-12-06 17:02:59,787 - INFO -    📺 Plataforma: tiktok
+2025-12-06 17:02:59,787 - INFO -    🎬 Título: Video de TikTok...
+2025-12-06 17:02:59,787 - INFO -    🎯 Resolución: TikTok HD
+2025-12-06 17:02:59,787 - INFO -    📁 Tamaño: N/A
+2025-12-06 17:02:59,787 - INFO -    ⏱️ Duración: 0s
+2025-12-06 17:02:59,788 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 17:03:13,715 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-06 17:03:14,038 - INFO - Extrayendo video de: https://www.tiktok.com/@futbolactivo2.0/video/7579645593824414987
+2025-12-06 17:03:15,704 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@futbolactivo2.0/video/7579645593824414987
+2025-12-06 17:03:15,704 - INFO -    📺 Plataforma: tiktok
+2025-12-06 17:03:15,704 - INFO -    🎬 Título: Video de TikTok...
+2025-12-06 17:03:15,704 - INFO -    🎯 Resolución: TikTok HD
+2025-12-06 17:03:15,704 - INFO -    📁 Tamaño: N/A
+2025-12-06 17:03:15,704 - INFO -    ⏱️ Duración: 0s
+2025-12-06 17:03:15,705 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-06 17:03:44,314 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-07 07:23:19,936 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-12-07 07:23:20,014 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:23:20,185 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:23:20,315 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:23:20,317 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:23:20,317 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:23:20,317 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:23:20,325 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:23:20,489 - INFO - 127.0.0.1 - code 404, message Not Found
+2025-12-07 07:23:20,489 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2025-12-07 07:23:21,843 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-12-07 07:23:51,800 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-07 07:28:29,666 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-12-07 07:28:29,743 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:28:29,923 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:28:30,056 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:28:30,057 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:28:30,058 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:28:30,059 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:28:30,059 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:28:30,226 - INFO - 127.0.0.1 - code 404, message Not Found
+2025-12-07 07:28:30,226 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2025-12-07 07:28:31,226 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-12-07 07:29:01,487 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-07 07:30:02,405 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-12-07 07:30:02,509 - INFO - 127.0.0.1 - code 404, message Not Found
+2025-12-07 07:30:02,509 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2025-12-07 07:30:02,654 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:30:02,816 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:30:02,817 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:30:02,818 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:30:02,819 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:30:02,820 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:30:02,963 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 07:30:04,051 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-12-07 07:30:15,051 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 07:30:15,362 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=eyGBP34-pzk&t=3306s
+2025-12-07 07:30:20,820 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=eyGBP34-pzk&t=3306s
+2025-12-07 07:30:20,820 - INFO -    📺 Plataforma: youtube
+2025-12-07 07:30:20,820 - INFO -    🎬 Título: Noticias programación: Opus 4.5 el mejor para Prog...
+2025-12-07 07:30:20,820 - INFO -    🎯 Resolución: 1920x1080
+2025-12-07 07:30:20,821 - INFO -    📁 Tamaño: N/A
+2025-12-07 07:30:20,821 - INFO -    ⏱️ Duración: 6137s
+2025-12-07 07:30:20,821 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 07:30:29,175 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-12-07 07:31:08,577 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 07:31:08,841 - INFO - Extrayendo video de: https://www.tiktok.com/@trycatch.tv/video/7540423777201605944?q=mcp&t=1765020371227
+2025-12-07 07:31:13,158 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@trycatch.tv/video/7540423777201605944?q=mcp&t=1765020371227
+2025-12-07 07:31:13,159 - INFO -    📺 Plataforma: tiktok
+2025-12-07 07:31:13,159 - INFO -    🎬 Título: Video de TikTok...
+2025-12-07 07:31:13,159 - INFO -    🎯 Resolución: TikTok HD
+2025-12-07 07:31:13,159 - INFO -    📁 Tamaño: N/A
+2025-12-07 07:31:13,160 - INFO -    ⏱️ Duración: 0s
+2025-12-07 07:31:13,160 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 07:31:38,906 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-07 07:31:50,269 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 07:31:50,530 - INFO - Extrayendo video de: https://www.tiktok.com/@trycatch.tv/video/7540423777201605944?q=mcp&t=1765020371227
+2025-12-07 07:31:52,157 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@trycatch.tv/video/7540423777201605944?q=mcp&t=1765020371227
+2025-12-07 07:31:52,158 - INFO -    📺 Plataforma: tiktok
+2025-12-07 07:31:52,158 - INFO -    🎬 Título: Video de TikTok...
+2025-12-07 07:31:52,159 - INFO -    🎯 Resolución: TikTok HD
+2025-12-07 07:31:52,159 - INFO -    📁 Tamaño: N/A
+2025-12-07 07:31:52,160 - INFO -    ⏱️ Duración: 0s
+2025-12-07 07:31:52,160 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 07:32:12,472 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 07:32:12,793 - INFO - Extrayendo video de: https://www.tiktok.com/@trycatch.tv/video/7540423777201605944?q=mcp&t=1765020371227
+2025-12-07 07:32:14,463 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@trycatch.tv/video/7540423777201605944?q=mcp&t=1765020371227
+2025-12-07 07:32:14,463 - INFO -    📺 Plataforma: tiktok
+2025-12-07 07:32:14,463 - INFO -    🎬 Título: Video de TikTok...
+2025-12-07 07:32:14,463 - INFO -    🎯 Resolución: TikTok HD
+2025-12-07 07:32:14,464 - INFO -    📁 Tamaño: N/A
+2025-12-07 07:32:14,464 - INFO -    ⏱️ Duración: 0s
+2025-12-07 07:32:14,464 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 07:32:43,071 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-07 07:33:20,804 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 07:33:21,069 - INFO - Extrayendo video de: https://x.com/n0rawitsimper/status/1997251452440543355
+2025-12-07 07:33:23,149 - INFO - ✅ Extracción exitosa para: https://x.com/n0rawitsimper/status/1997251452440543355
+2025-12-07 07:33:23,149 - INFO -    📺 Plataforma: x
+2025-12-07 07:33:23,150 - INFO -    🎬 Título: Sin título...
+2025-12-07 07:33:23,150 - INFO -    🎯 Resolución: N/A
+2025-12-07 07:33:23,150 - INFO -    📁 Tamaño: N/A
+2025-12-07 07:33:23,150 - INFO -    ⏱️ Duración: 0s
+2025-12-07 07:33:23,150 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 07:33:51,124 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-07 07:34:09,507 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 07:34:09,752 - INFO - Extrayendo video de: https://x.com/srv_or/status/1997250845268902046?s=20
+2025-12-07 07:34:11,370 - INFO - ✅ Extracción exitosa para: https://x.com/srv_or/status/1997250845268902046?s=20
+2025-12-07 07:34:11,370 - INFO -    📺 Plataforma: x
+2025-12-07 07:34:11,370 - INFO -    🎬 Título: Sin título...
+2025-12-07 07:34:11,370 - INFO -    🎯 Resolución: N/A
+2025-12-07 07:34:11,371 - INFO -    📁 Tamaño: N/A
+2025-12-07 07:34:11,371 - INFO -    ⏱️ Duración: 0s
+2025-12-07 07:34:11,371 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 07:34:39,833 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-07 07:35:06,178 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 07:35:06,443 - INFO - Extrayendo video de: https://www.facebook.com/share/r/1KF5btYg8k/
+2025-12-07 07:35:10,948 - INFO - ✅ Extracción exitosa para: https://www.facebook.com/share/r/1KF5btYg8k/
+2025-12-07 07:35:10,948 - INFO -    📺 Plataforma: facebook
+2025-12-07 07:35:10,949 - INFO -    🎬 Título: 42K views · 3.4K reactions | ¿Vos tenés alma? Ulti...
+2025-12-07 07:35:10,949 - INFO -    🎯 Resolución: N/AxN/A
+2025-12-07 07:35:10,949 - INFO -    📁 Tamaño: N/A
+2025-12-07 07:35:10,949 - INFO -    ⏱️ Duración: 192.177s
+2025-12-07 07:35:10,949 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 07:35:36,497 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-07 07:43:14,921 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 07:43:15,187 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=aYG7h20YNB0&embeds_referring_euri=https%3A%2F%2Fadventofagents.com%2F
+2025-12-07 07:43:20,041 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=aYG7h20YNB0&embeds_referring_euri=https%3A%2F%2Fadventofagents.com%2F
+2025-12-07 07:43:20,041 - INFO -    📺 Plataforma: youtube
+2025-12-07 07:43:20,042 - INFO -    🎬 Título: Day 1 of Advent of Agents Google Cloud Video...
+2025-12-07 07:43:20,042 - INFO -    🎯 Resolución: 1920x1080
+2025-12-07 07:43:20,042 - INFO -    📁 Tamaño: N/A
+2025-12-07 07:43:20,042 - INFO -    ⏱️ Duración: 59s
+2025-12-07 07:43:20,043 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 07:43:45,240 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-07 07:44:32,422 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 07:44:32,669 - INFO - Extrayendo video de: https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit
+2025-12-07 07:44:35,213 - WARNING - Error extrayendo https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit: Error al extraer video de LinkedIn: [0;31mERROR:[0m Unsupported URL: https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F%3Ftrk%3Dguest_homepage-basic_google-one-tap-submit
+2025-12-07 07:44:35,213 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2025-12-07 07:44:52,184 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 07:44:52,502 - INFO - Extrayendo video de: https://www.linkedin.com/posts/shubhamsaboo_build-google-adk-agents-in-antigravity-cursor-ugcPost-7403133901906264064-Y8aJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2025-12-07 07:44:53,499 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/shubhamsaboo_build-google-adk-agents-in-antigravity-cursor-ugcPost-7403133901906264064-Y8aJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2025-12-07 07:44:53,499 - INFO -    📺 Plataforma: linkedin
+2025-12-07 07:44:53,499 - INFO -    🎬 Título: Sin título...
+2025-12-07 07:44:53,499 - INFO -    🎯 Resolución: N/A
+2025-12-07 07:44:53,500 - INFO -    📁 Tamaño: N/A
+2025-12-07 07:44:53,500 - INFO -    ⏱️ Duración: 0s
+2025-12-07 07:44:53,500 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 07:45:22,766 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-07 08:39:09,222 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 08:39:09,468 - INFO - Extrayendo video de: https://www.tiktok.com/@trycatch.tv/video/7540423777201605944?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:39:11,112 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@trycatch.tv/video/7540423777201605944?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:39:11,112 - INFO -    📺 Plataforma: tiktok
+2025-12-07 08:39:11,112 - INFO -    🎬 Título: Video de TikTok...
+2025-12-07 08:39:11,113 - INFO -    🎯 Resolución: TikTok HD
+2025-12-07 08:39:11,113 - INFO -    📁 Tamaño: N/A
+2025-12-07 08:39:11,113 - INFO -    ⏱️ Duración: 0s
+2025-12-07 08:39:11,113 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 08:39:26,651 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 08:39:26,959 - INFO - Extrayendo video de: https://www.tiktok.com/@trycatch.tv/video/7540423777201605944?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:39:28,634 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@trycatch.tv/video/7540423777201605944?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:39:28,634 - INFO -    📺 Plataforma: tiktok
+2025-12-07 08:39:28,634 - INFO -    🎬 Título: Video de TikTok...
+2025-12-07 08:39:28,634 - INFO -    🎯 Resolución: TikTok HD
+2025-12-07 08:39:28,634 - INFO -    📁 Tamaño: N/A
+2025-12-07 08:39:28,635 - INFO -    ⏱️ Duración: 0s
+2025-12-07 08:39:28,635 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 08:39:35,426 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 08:39:35,741 - INFO - Extrayendo video de: https://www.tiktok.com/@trycatch.tv/video/7540423777201605944?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:39:36,973 - WARNING - Error extrayendo https://www.tiktok.com/@trycatch.tv/video/7540423777201605944?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147: No se encontró enlace de descarga
+2025-12-07 08:39:36,973 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2025-12-07 08:39:52,136 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 08:39:52,463 - INFO - Extrayendo video de: https://www.tiktok.com/@trycatch.tv/video/7540423777201605944?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:39:54,074 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@trycatch.tv/video/7540423777201605944?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:39:54,074 - INFO -    📺 Plataforma: tiktok
+2025-12-07 08:39:54,074 - INFO -    🎬 Título: Video de TikTok...
+2025-12-07 08:39:54,074 - INFO -    🎯 Resolución: TikTok HD
+2025-12-07 08:39:54,074 - INFO -    📁 Tamaño: N/A
+2025-12-07 08:39:54,075 - INFO -    ⏱️ Duración: 0s
+2025-12-07 08:39:54,075 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 08:40:04,267 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 08:40:04,582 - INFO - Extrayendo video de: https://www.tiktok.com/@trycatch.tv/video/7540423777201605944?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:40:06,238 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@trycatch.tv/video/7540423777201605944?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:40:06,238 - INFO -    📺 Plataforma: tiktok
+2025-12-07 08:40:06,238 - INFO -    🎬 Título: Video de TikTok...
+2025-12-07 08:40:06,238 - INFO -    🎯 Resolución: TikTok HD
+2025-12-07 08:40:06,239 - INFO -    📁 Tamaño: N/A
+2025-12-07 08:40:06,239 - INFO -    ⏱️ Duración: 0s
+2025-12-07 08:40:06,239 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 08:40:34,851 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-07 08:40:54,226 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 08:40:54,489 - INFO - Extrayendo video de: https://www.tiktok.com/@trycatch.tv/video/7540423777201605944?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:40:56,102 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@trycatch.tv/video/7540423777201605944?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:40:56,102 - INFO -    📺 Plataforma: tiktok
+2025-12-07 08:40:56,102 - INFO -    🎬 Título: Video de TikTok...
+2025-12-07 08:40:56,102 - INFO -    🎯 Resolución: TikTok HD
+2025-12-07 08:40:56,102 - INFO -    📁 Tamaño: N/A
+2025-12-07 08:40:56,103 - INFO -    ⏱️ Duración: 0s
+2025-12-07 08:40:56,103 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 08:41:24,558 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-07 08:41:47,595 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 08:41:47,845 - INFO - Extrayendo video de: https://www.tiktok.com/@juanortizdev/video/7540139204051881223?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:41:50,310 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@juanortizdev/video/7540139204051881223?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:41:50,310 - INFO -    📺 Plataforma: tiktok
+2025-12-07 08:41:50,310 - INFO -    🎬 Título: Video de TikTok...
+2025-12-07 08:41:50,310 - INFO -    🎯 Resolución: TikTok HD
+2025-12-07 08:41:50,311 - INFO -    📁 Tamaño: N/A
+2025-12-07 08:41:50,311 - INFO -    ⏱️ Duración: 0s
+2025-12-07 08:41:50,311 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 08:42:17,909 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-07 08:44:54,869 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 08:44:55,131 - INFO - Extrayendo video de: https://www.tiktok.com/@juanortizdev/video/7564609638033919243?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:44:59,121 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@juanortizdev/video/7564609638033919243?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:44:59,121 - INFO -    📺 Plataforma: tiktok
+2025-12-07 08:44:59,121 - INFO -    🎬 Título: Video de TikTok...
+2025-12-07 08:44:59,122 - INFO -    🎯 Resolución: TikTok HD
+2025-12-07 08:44:59,122 - INFO -    📁 Tamaño: N/A
+2025-12-07 08:44:59,122 - INFO -    ⏱️ Duración: 0s
+2025-12-07 08:44:59,122 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 08:45:06,801 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 08:45:07,114 - INFO - Extrayendo video de: https://www.tiktok.com/@juanortizdev/video/7564609638033919243?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:45:08,782 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@juanortizdev/video/7564609638033919243?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:45:08,782 - INFO -    📺 Plataforma: tiktok
+2025-12-07 08:45:08,782 - INFO -    🎬 Título: Video de TikTok...
+2025-12-07 08:45:08,783 - INFO -    🎯 Resolución: TikTok HD
+2025-12-07 08:45:08,783 - INFO -    📁 Tamaño: N/A
+2025-12-07 08:45:08,783 - INFO -    ⏱️ Duración: 0s
+2025-12-07 08:45:08,783 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 08:45:20,495 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 08:45:20,823 - INFO - Extrayendo video de: https://www.tiktok.com/@juanortizdev/video/7564609638033919243?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:45:22,247 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@juanortizdev/video/7564609638033919243?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:45:22,247 - INFO -    📺 Plataforma: tiktok
+2025-12-07 08:45:22,247 - INFO -    🎬 Título: Video de TikTok...
+2025-12-07 08:45:22,248 - INFO -    🎯 Resolución: TikTok HD
+2025-12-07 08:45:22,248 - INFO -    📁 Tamaño: N/A
+2025-12-07 08:45:22,248 - INFO -    ⏱️ Duración: 0s
+2025-12-07 08:45:22,248 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 08:45:42,380 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 08:45:42,703 - INFO - Extrayendo video de: https://www.tiktok.com/@juanortizdev/video/7564609638033919243?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:45:44,905 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@juanortizdev/video/7564609638033919243?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:45:44,905 - INFO -    📺 Plataforma: tiktok
+2025-12-07 08:45:44,905 - INFO -    🎬 Título: Video de TikTok...
+2025-12-07 08:45:44,905 - INFO -    🎯 Resolución: TikTok HD
+2025-12-07 08:45:44,905 - INFO -    📁 Tamaño: N/A
+2025-12-07 08:45:44,905 - INFO -    ⏱️ Duración: 0s
+2025-12-07 08:45:44,905 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 08:45:57,377 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 08:45:57,689 - INFO - Extrayendo video de: https://www.tiktok.com/@juanortizdev/video/7564609638033919243?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:45:59,286 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@juanortizdev/video/7564609638033919243?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:45:59,286 - INFO -    📺 Plataforma: tiktok
+2025-12-07 08:45:59,287 - INFO -    🎬 Título: Video de TikTok...
+2025-12-07 08:45:59,287 - INFO -    🎯 Resolución: TikTok HD
+2025-12-07 08:45:59,287 - INFO -    📁 Tamaño: N/A
+2025-12-07 08:45:59,287 - INFO -    ⏱️ Duración: 0s
+2025-12-07 08:45:59,287 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 08:46:10,586 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 08:46:10,906 - INFO - Extrayendo video de: https://www.tiktok.com/@juanortizdev/video/7564609638033919243?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:46:12,563 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@juanortizdev/video/7564609638033919243?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:46:12,563 - INFO -    📺 Plataforma: tiktok
+2025-12-07 08:46:12,563 - INFO -    🎬 Título: Video de TikTok...
+2025-12-07 08:46:12,563 - INFO -    🎯 Resolución: TikTok HD
+2025-12-07 08:46:12,564 - INFO -    📁 Tamaño: N/A
+2025-12-07 08:46:12,564 - INFO -    ⏱️ Duración: 0s
+2025-12-07 08:46:12,564 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 08:46:41,161 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-07 08:53:52,259 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2025-12-07 08:53:52,391 - INFO - 127.0.0.1 - code 404, message Not Found
+2025-12-07 08:53:52,391 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2025-12-07 08:53:52,515 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 08:53:52,708 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 08:53:52,708 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 08:53:52,708 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 08:53:52,709 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 08:53:52,731 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 08:53:52,828 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2025-12-07 08:53:53,996 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-12-07 08:53:59,124 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 08:53:59,429 - INFO - Extrayendo video de: https://www.tiktok.com/@juanortizdev/video/7564196906411232520?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:54:02,223 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@juanortizdev/video/7564196906411232520?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:54:02,223 - INFO -    📺 Plataforma: tiktok
+2025-12-07 08:54:02,223 - INFO -    🎬 Título: Video de TikTok...
+2025-12-07 08:54:02,223 - INFO -    🎯 Resolución: TikTok HD
+2025-12-07 08:54:02,223 - INFO -    📁 Tamaño: N/A
+2025-12-07 08:54:02,224 - INFO -    ⏱️ Duración: 0s
+2025-12-07 08:54:02,224 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 08:54:29,700 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-07 08:55:00,384 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 08:55:00,647 - INFO - Extrayendo video de: https://www.tiktok.com/@juanortizdev/video/7562003447248063800?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:55:03,305 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@juanortizdev/video/7562003447248063800?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:55:03,305 - INFO -    📺 Plataforma: tiktok
+2025-12-07 08:55:03,305 - INFO -    🎬 Título: Video de TikTok...
+2025-12-07 08:55:03,306 - INFO -    🎯 Resolución: TikTok HD
+2025-12-07 08:55:03,306 - INFO -    📁 Tamaño: N/A
+2025-12-07 08:55:03,306 - INFO -    ⏱️ Duración: 0s
+2025-12-07 08:55:03,306 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 08:55:13,780 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2025-12-07 08:57:21,551 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 08:57:21,815 - INFO - Extrayendo video de: https://www.tiktok.com/@juanortizdev/video/7555707163507690764?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:57:27,392 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@juanortizdev/video/7555707163507690764?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:57:27,392 - INFO -    📺 Plataforma: tiktok
+2025-12-07 08:57:27,392 - INFO -    🎬 Título: Video de TikTok...
+2025-12-07 08:57:27,392 - INFO -    🎯 Resolución: TikTok HD
+2025-12-07 08:57:27,392 - INFO -    📁 Tamaño: N/A
+2025-12-07 08:57:27,393 - INFO -    ⏱️ Duración: 0s
+2025-12-07 08:57:27,393 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 08:57:51,865 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-07 08:58:51,013 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-07 08:58:51,280 - INFO - Extrayendo video de: https://www.tiktok.com/@juanortizdev/video/7555707163507690764?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:58:53,228 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@juanortizdev/video/7555707163507690764?is_from_webapp=1&sender_device=pc&web_id=7580680188926363147
+2025-12-07 08:58:53,228 - INFO -    📺 Plataforma: tiktok
+2025-12-07 08:58:53,228 - INFO -    🎬 Título: Video de TikTok...
+2025-12-07 08:58:53,228 - INFO -    🎯 Resolución: TikTok HD
+2025-12-07 08:58:53,228 - INFO -    📁 Tamaño: N/A
+2025-12-07 08:58:53,229 - INFO -    ⏱️ Duración: 0s
+2025-12-07 08:58:53,229 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-07 08:59:21,338 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2025-12-08 09:18:10,008 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2025-12-08 09:18:10,246 - INFO - Extrayendo video de: https://www.instagram.com/p/DMqEfs1s4dQ/
+2025-12-08 09:18:13,544 - INFO - ✅ Extracción exitosa para: https://www.instagram.com/p/DMqEfs1s4dQ/
+2025-12-08 09:18:13,544 - INFO -    📺 Plataforma: instagram
+2025-12-08 09:18:13,545 - INFO -    🎬 Título: Sin título...
+2025-12-08 09:18:13,545 - INFO -    🎯 Resolución: N/A
+2025-12-08 09:18:13,545 - INFO -    📁 Tamaño: N/A
+2025-12-08 09:18:13,546 - INFO -    ⏱️ Duración: 0s
+2025-12-08 09:18:13,547 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2025-12-08 09:18:40,335 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 18:09:10,081 - INFO - ============================================================
+2026-01-04 18:09:10,082 - INFO - Video Downloader Server v2.2 - API Fixed
+2026-01-04 18:09:10,082 - INFO - ============================================================
+2026-01-04 18:09:10,082 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-04 18:09:10,082 - INFO - Acceso local: http://localhost:8000
+2026-01-04 18:09:10,082 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-04 18:09:10,083 - INFO - Endpoints disponibles:
+2026-01-04 18:09:10,083 - INFO -   POST /api/validate - Validar URLs
+2026-01-04 18:09:10,083 - INFO -   POST /api/extract - Extraer videos
+2026-01-04 18:09:10,083 - INFO - Presiona Ctrl+C para detener
+2026-01-04 18:09:10,083 - INFO - ============================================================
+2026-01-04 19:03:44,724 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-04 19:03:44,840 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:03:44,953 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:03:45,139 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:03:45,139 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:03:45,145 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:03:45,145 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:03:45,167 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:03:46,099 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 19:04:14,584 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-04 19:04:14,890 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=Mu-ijc76QGg
+2026-01-04 19:04:21,146 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=Mu-ijc76QGg
+2026-01-04 19:04:21,146 - INFO -    📺 Plataforma: youtube
+2026-01-04 19:04:21,146 - INFO -    🎬 Título: Google Antigravity + n8n: Crea Apps Brutales con A...
+2026-01-04 19:04:21,146 - INFO -    🎯 Resolución: 1920x1080
+2026-01-04 19:04:21,146 - INFO -    📁 Tamaño: N/A
+2026-01-04 19:04:21,146 - INFO -    ⏱️ Duración: 2111s
+2026-01-04 19:04:21,147 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-04 19:04:44,504 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 19:04:57,697 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-04 19:04:57,948 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=Mu-ijc76QGg
+2026-01-04 19:05:03,154 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=Mu-ijc76QGg
+2026-01-04 19:05:03,154 - INFO -    📺 Plataforma: youtube
+2026-01-04 19:05:03,154 - INFO -    🎬 Título: Google Antigravity + n8n: Crea Apps Brutales con A...
+2026-01-04 19:05:03,154 - INFO -    🎯 Resolución: 1920x1080
+2026-01-04 19:05:03,155 - INFO -    📁 Tamaño: N/A
+2026-01-04 19:05:03,155 - INFO -    ⏱️ Duración: 2111s
+2026-01-04 19:05:03,155 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-04 19:05:28,001 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 19:09:38,757 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-04 19:09:38,871 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:09:39,007 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:09:39,178 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:09:39,178 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:09:39,178 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:09:39,178 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:09:39,179 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:09:39,991 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 19:09:41,807 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-04 19:09:42,112 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=Mu-ijc76QGg
+2026-01-04 19:09:47,345 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=Mu-ijc76QGg
+2026-01-04 19:09:47,345 - INFO -    📺 Plataforma: youtube
+2026-01-04 19:09:47,345 - INFO -    🎬 Título: Google Antigravity + n8n: Crea Apps Brutales con A...
+2026-01-04 19:09:47,346 - INFO -    🎯 Resolución: 1920x1080
+2026-01-04 19:09:47,346 - INFO -    📁 Tamaño: N/A
+2026-01-04 19:09:47,346 - INFO -    ⏱️ Duración: 2111s
+2026-01-04 19:09:47,346 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-04 19:09:55,131 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 19:13:45,704 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-04 19:13:45,955 - INFO - Extrayendo video de: https://youtu.be/NllWnBtaLwU?si=Dc7krSwLdmS7sSW6
+2026-01-04 19:13:51,145 - INFO - ✅ Extracción exitosa para: https://youtu.be/NllWnBtaLwU?si=Dc7krSwLdmS7sSW6
+2026-01-04 19:13:51,145 - INFO -    📺 Plataforma: youtube
+2026-01-04 19:13:51,145 - INFO -    🎬 Título: El eructo inflamable | La Gambeta #lagambeta #humo...
+2026-01-04 19:13:51,145 - INFO -    🎯 Resolución: 1080x1920
+2026-01-04 19:13:51,145 - INFO -    📁 Tamaño: N/A
+2026-01-04 19:13:51,145 - INFO -    ⏱️ Duración: 35s
+2026-01-04 19:13:51,146 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-04 19:14:16,008 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 19:15:35,213 - INFO - ============================================================
+2026-01-04 19:15:35,213 - INFO - Video Downloader Server v2.2 - API Fixed
+2026-01-04 19:15:35,213 - INFO - ============================================================
+2026-01-04 19:15:35,213 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-04 19:15:35,213 - INFO - Acceso local: http://localhost:8000
+2026-01-04 19:15:35,213 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-04 19:15:35,214 - INFO - Endpoints disponibles:
+2026-01-04 19:15:35,214 - INFO -   POST /api/validate - Validar URLs
+2026-01-04 19:15:35,214 - INFO -   POST /api/extract - Extraer videos
+2026-01-04 19:15:35,214 - INFO - Presiona Ctrl+C para detener
+2026-01-04 19:15:35,214 - INFO - ============================================================
+2026-01-04 19:15:40,873 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-04 19:15:41,123 - INFO - Extrayendo video de: https://youtu.be/NllWnBtaLwU?si=Dc7krSwLdmS7sSW6
+2026-01-04 19:15:46,069 - INFO - ✅ Extracción exitosa para: https://youtu.be/NllWnBtaLwU?si=Dc7krSwLdmS7sSW6
+2026-01-04 19:15:46,069 - INFO -    📺 Plataforma: youtube
+2026-01-04 19:15:46,070 - INFO -    🎬 Título: El eructo inflamable | La Gambeta #lagambeta #humo...
+2026-01-04 19:15:46,070 - INFO -    🎯 Resolución: 1080x1920
+2026-01-04 19:15:46,070 - INFO -    📁 Tamaño: N/A
+2026-01-04 19:15:46,070 - INFO -    ⏱️ Duración: 35s
+2026-01-04 19:15:46,070 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-04 19:16:11,177 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 19:16:35,232 - INFO - Servidor detenido por usuario
+2026-01-04 19:16:35,232 - INFO - Servidor cerrado correctamente
+2026-01-04 19:26:02,031 - INFO - ============================================================
+2026-01-04 19:26:02,031 - INFO - Video Downloader Server v2.2 - API Fixed
+2026-01-04 19:26:02,031 - INFO - ============================================================
+2026-01-04 19:26:02,031 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-04 19:26:02,031 - INFO - Acceso local: http://localhost:8000
+2026-01-04 19:26:02,032 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-04 19:26:02,032 - INFO - Endpoints disponibles:
+2026-01-04 19:26:02,032 - INFO -   POST /api/validate - Validar URLs
+2026-01-04 19:26:02,032 - INFO -   POST /api/extract - Extraer videos
+2026-01-04 19:26:02,032 - INFO - Presiona Ctrl+C para detener
+2026-01-04 19:26:02,032 - INFO - ============================================================
+2026-01-04 19:26:32,313 - INFO - ============================================================
+2026-01-04 19:26:32,313 - INFO - Video Downloader Server v2.2 - API Fixed
+2026-01-04 19:26:32,314 - INFO - ============================================================
+2026-01-04 19:26:32,314 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-04 19:26:32,314 - INFO - Acceso local: http://localhost:8000
+2026-01-04 19:26:32,314 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-04 19:26:32,314 - INFO - Endpoints disponibles:
+2026-01-04 19:26:32,314 - INFO -   POST /api/validate - Validar URLs
+2026-01-04 19:26:32,314 - INFO -   POST /api/extract - Extraer videos
+2026-01-04 19:26:32,314 - INFO - Presiona Ctrl+C para detener
+2026-01-04 19:26:32,314 - INFO - ============================================================
+2026-01-04 19:26:40,206 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-04 19:26:40,317 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:26:40,456 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:26:40,624 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:26:40,624 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:26:40,624 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:26:40,624 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:26:40,625 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:26:41,406 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 19:26:43,507 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-04 19:27:14,765 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-04 19:27:15,015 - INFO - Extrayendo video de: https://youtu.be/NllWnBtaLwU?si=Dc7krSwLdmS7sSW6
+2026-01-04 19:27:17,522 - INFO - ✅ Extracción exitosa para: https://youtu.be/NllWnBtaLwU?si=Dc7krSwLdmS7sSW6
+2026-01-04 19:27:17,522 - INFO -    📺 Plataforma: youtube
+2026-01-04 19:27:17,523 - INFO -    🎬 Título: El eructo inflamable | La Gambeta #lagambeta #humo...
+2026-01-04 19:27:17,523 - INFO -    🎯 Resolución: 1080x1920
+2026-01-04 19:27:17,523 - INFO -    📁 Tamaño: N/A
+2026-01-04 19:27:17,523 - INFO -    ⏱️ Duración: 35s
+2026-01-04 19:27:17,523 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-04 19:27:38,839 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 19:30:26,751 - INFO - ============================================================
+2026-01-04 19:30:26,751 - INFO - Video Downloader Server v2.2 - API Fixed
+2026-01-04 19:30:26,752 - INFO - ============================================================
+2026-01-04 19:30:26,752 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-04 19:30:26,752 - INFO - Acceso local: http://localhost:8000
+2026-01-04 19:30:26,752 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-04 19:30:26,752 - INFO - Endpoints disponibles:
+2026-01-04 19:30:26,752 - INFO -   POST /api/validate - Validar URLs
+2026-01-04 19:30:26,752 - INFO -   POST /api/extract - Extraer videos
+2026-01-04 19:30:26,753 - INFO - Presiona Ctrl+C para detener
+2026-01-04 19:30:26,753 - INFO - ============================================================
+2026-01-04 19:31:12,681 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-04 19:31:12,781 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:31:12,932 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:31:13,089 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:31:13,090 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:31:13,089 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:31:13,089 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:31:13,090 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:31:13,988 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 19:31:15,952 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-04 19:31:16,260 - INFO - Extrayendo video de: https://youtu.be/NllWnBtaLwU?si=Dc7krSwLdmS7sSW6
+2026-01-04 19:31:19,003 - INFO - ✅ Extracción exitosa para: https://youtu.be/NllWnBtaLwU?si=Dc7krSwLdmS7sSW6
+2026-01-04 19:31:19,003 - INFO -    📺 Plataforma: youtube
+2026-01-04 19:31:19,003 - INFO -    🎬 Título: El eructo inflamable | La Gambeta #lagambeta #humo...
+2026-01-04 19:31:19,004 - INFO -    🎯 Resolución: 1080x1920
+2026-01-04 19:31:19,004 - INFO -    📁 Tamaño: N/A
+2026-01-04 19:31:19,004 - INFO -    ⏱️ Duración: 35s
+2026-01-04 19:31:19,004 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-04 19:31:22,190 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 19:31:24,754 - INFO - Iniciando descarga proxy desde: https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1767587479/ei/N-paabioLOSO-LAPh4ab2AM/ip/2802:8012:2af5:9701:8c75:de08:9f30:607e/id/3659569c1b5a2f05/itag/301/source/youtube/requiressl/yes/ratebypass/yes/pfa/1/sgoap/clen%3D574261%3Bdur%3D35.433%3Bgir%3Dyes%3Bitag%3D140%3Blmt%3D1766943915433168/sgovp/clen%3D14039346%3Bdur%3D35.366%3Bgir%3Dyes%3Bitag%3D299%3Blmt%3D1766944478710057/rqh/1/hls_chunk_host/rr8---sn-uxax4vopj55gb-x1xz.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/cps/0/met/1767565879,/mh/80/mm/31,29/mn/sn-uxax4vopj55gb-x1xz,sn-njaeyn7z/ms/au,rdu/mv/m/mvi/8/pl/41/rms/au,au/initcwndbps/2047500/bui/AYUSA3Dd3_wnVH6A4agnH8jjuH7ilfCBvnfacYb04BQMEP4Fa_BiQ6rp_IfwFLXh3E3MbuaGG_T_l6hZ/spc/wH4Qq0oZXmfm6VrlNqfhxqGqQSk_xl1p0vqsLaftZbeiQ3FGqrXsGcLJWiodEyLo0ASZyQ/vprv/1/ns/Nue-FWuAbuD7MEwgIRfyA7YR/playlist_type/CLEAN/dover/11/txp/443C534/mt/1767565541/fvip/3/keepalive/yes/fexp/51355912,51552689,51565116,51565681,51580968/n/IuSgYoBG7T6q4zQHPf/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,pfa,sgoap,sgovp,rqh,xpc,bui,spc,vprv,ns,playlist_type/sig/AJfQdSswRAIgYTRSni2rrjzPYrBaNPSUqk3ZMdS_b7_xby8JdccqaTYCIDbsNyZc7Bbw4INYHXagQzP93yor1cI_nBbO1wGZzMEp/lsparams/hls_chunk_host,cps,met,mh,mm,mn,ms,mv,mvi,pl,rms,initcwndbps/lsig/APaTxxMwRQIgZboLQ2gFcBfqtUSJTDrHmkcVcq1FpyGRXVXA9nRWrPYCIQCN2qhunBS4WvEgyq81BRyNIgwSxQU-vj_cQ_WmYcdzfA%3D%3D/playlist/index.m3u8
+2026-01-04 19:31:25,443 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fmanifest.googlevideo.com%2Fapi%2Fmanifest%2Fhls_playlist%2Fexpire%2F1767587479%2Fei%2FN-paabioLOSO-LAPh4ab2AM%2Fip%2F2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e%2Fid%2F3659569c1b5a2f05%2Fitag%2F301%2Fsource%2Fyoutube%2Frequiressl%2Fyes%2Fratebypass%2Fyes%2Fpfa%2F1%2Fsgoap%2Fclen%253D574261%253Bdur%253D35.433%253Bgir%253Dyes%253Bitag%253D140%253Blmt%253D1766943915433168%2Fsgovp%2Fclen%253D14039346%253Bdur%253D35.366%253Bgir%253Dyes%253Bitag%253D299%253Blmt%253D1766944478710057%2Frqh%2F1%2Fhls_chunk_host%2Frr8---sn-uxax4vopj55gb-x1xz.googlevideo.com%2Fxpc%2FEgVo2aDSNQ%253D%253D%2Fcps%2F0%2Fmet%2F1767565879%2C%2Fmh%2F80%2Fmm%2F31%2C29%2Fmn%2Fsn-uxax4vopj55gb-x1xz%2Csn-njaeyn7z%2Fms%2Fau%2Crdu%2Fmv%2Fm%2Fmvi%2F8%2Fpl%2F41%2Frms%2Fau%2Cau%2Finitcwndbps%2F2047500%2Fbui%2FAYUSA3Dd3_wnVH6A4agnH8jjuH7ilfCBvnfacYb04BQMEP4Fa_BiQ6rp_IfwFLXh3E3MbuaGG_T_l6hZ%2Fspc%2FwH4Qq0oZXmfm6VrlNqfhxqGqQSk_xl1p0vqsLaftZbeiQ3FGqrXsGcLJWiodEyLo0ASZyQ%2Fvprv%2F1%2Fns%2FNue-FWuAbuD7MEwgIRfyA7YR%2Fplaylist_type%2FCLEAN%2Fdover%2F11%2Ftxp%2F443C534%2Fmt%2F1767565541%2Ffvip%2F3%2Fkeepalive%2Fyes%2Ffexp%2F51355912%2C51552689%2C51565116%2C51565681%2C51580968%2Fn%2FIuSgYoBG7T6q4zQHPf%2Fsparams%2Fexpire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cratebypass%2Cpfa%2Csgoap%2Csgovp%2Crqh%2Cxpc%2Cbui%2Cspc%2Cvprv%2Cns%2Cplaylist_type%2Fsig%2FAJfQdSswRAIgYTRSni2rrjzPYrBaNPSUqk3ZMdS_b7_xby8JdccqaTYCIDbsNyZc7Bbw4INYHXagQzP93yor1cI_nBbO1wGZzMEp%2Flsparams%2Fhls_chunk_host%2Ccps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps%2Flsig%2FAPaTxxMwRQIgZboLQ2gFcBfqtUSJTDrHmkcVcq1FpyGRXVXA9nRWrPYCIQCN2qhunBS4WvEgyq81BRyNIgwSxQU-vj_cQ_WmYcdzfA%253D%253D%2Fplaylist%2Findex.m3u8&filename=video.mp4 HTTP/1.1" 200 -
+2026-01-04 19:31:25,444 - INFO - Descarga proxy completada exitosamente
+2026-01-04 19:31:54,995 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 19:31:55,005 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 19:34:24,962 - INFO - ============================================================
+2026-01-04 19:34:24,963 - INFO - Video Downloader Server v2.2 - API Fixed
+2026-01-04 19:34:24,963 - INFO - ============================================================
+2026-01-04 19:34:24,963 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-04 19:34:24,963 - INFO - Acceso local: http://localhost:8000
+2026-01-04 19:34:24,963 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-04 19:34:24,963 - INFO - Endpoints disponibles:
+2026-01-04 19:34:24,964 - INFO -   POST /api/validate - Validar URLs
+2026-01-04 19:34:24,964 - INFO -   POST /api/extract - Extraer videos
+2026-01-04 19:34:24,964 - INFO - Presiona Ctrl+C para detener
+2026-01-04 19:34:24,964 - INFO - ============================================================
+2026-01-04 19:35:04,279 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-04 19:35:04,372 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:35:04,529 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:35:04,680 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:35:04,680 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:35:04,680 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:35:04,680 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:35:04,680 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:35:05,200 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 19:35:06,546 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-04 19:35:06,851 - INFO - Extrayendo video de: https://youtu.be/NllWnBtaLwU?si=Dc7krSwLdmS7sSW6
+2026-01-04 19:35:09,311 - INFO - ✅ Extracción exitosa para: https://youtu.be/NllWnBtaLwU?si=Dc7krSwLdmS7sSW6
+2026-01-04 19:35:09,311 - INFO -    📺 Plataforma: youtube
+2026-01-04 19:35:09,311 - INFO -    🎬 Título: El eructo inflamable | La Gambeta #lagambeta #humo...
+2026-01-04 19:35:09,311 - INFO -    🎯 Resolución: 1080x1920
+2026-01-04 19:35:09,311 - INFO -    📁 Tamaño: N/A
+2026-01-04 19:35:09,311 - INFO -    ⏱️ Duración: 35s
+2026-01-04 19:35:09,312 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-04 19:35:12,142 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 19:35:15,247 - INFO - Iniciando descarga proxy desde: https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1767587710/ei/HutaaYfWA7Lv1sQP5eG28QY/ip/2802:8012:2af5:9701:8c75:de08:9f30:607e/id/3659569c1b5a2f05/itag/301/source/youtube/requiressl/yes/ratebypass/yes/pfa/1/sgoap/clen%3D574261%3Bdur%3D35.433%3Bgir%3Dyes%3Bitag%3D140%3Blmt%3D1766943915433168/sgovp/clen%3D14039346%3Bdur%3D35.366%3Bgir%3Dyes%3Bitag%3D299%3Blmt%3D1766944478710057/rqh/1/hls_chunk_host/rr8---sn-uxax4vopj55gb-x1xz.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/cps/106/met/1767566110,/mh/80/mm/31,29/mn/sn-uxax4vopj55gb-x1xz,sn-njaeyn7z/ms/au,rdu/mv/m/mvi/8/pl/41/rms/au,au/initcwndbps/1948750/bui/AYUSA3A60y7GL57NwErfrtQUWe2YC9xWJa81npmKPOFWeFq9OP-p0jUYQVYOaPRyK4zCi5SrhGv-iU_w/spc/wH4Qqzd6cMNClZ0Dpi0xgEfBxATuu88Qlbm12GgcgpMhPbn_5aJc9ADjTsY8e2aVk-WwBA/vprv/1/ns/gNf6wMgD-UXKal3sPl_KjGwR/playlist_type/CLEAN/dover/11/txp/443C534/mt/1767565764/fvip/3/keepalive/yes/fexp/51355912,51552689,51565116,51565681,51580968/n/OfnUaQFqUfnI7raHA0/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,pfa,sgoap,sgovp,rqh,xpc,bui,spc,vprv,ns,playlist_type/sig/AJfQdSswRQIhAIDtzbsE214j07LVY6EA4TgE-be1XceC7KmAbiQ3ZbXCAiB1dJlk7vrfKpxFshrTRrRMeaa7eiqL8mkW9x1Gr2wR-Q%3D%3D/lsparams/hls_chunk_host,cps,met,mh,mm,mn,ms,mv,mvi,pl,rms,initcwndbps/lsig/APaTxxMwRgIhAM3a7Kf3TaEvqgqJNB8pxhLxiV_PI4IGWsJoql63xdtfAiEA-FVGzw1arzxt8Z5HGY0797YFnejtFlGePFoeZW4_1hA%3D/playlist/index.m3u8
+2026-01-04 19:35:15,916 - INFO - Response Content-Type: application/vnd.apple.mpegurl
+2026-01-04 19:35:15,916 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fmanifest.googlevideo.com%2Fapi%2Fmanifest%2Fhls_playlist%2Fexpire%2F1767587710%2Fei%2FHutaaYfWA7Lv1sQP5eG28QY%2Fip%2F2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e%2Fid%2F3659569c1b5a2f05%2Fitag%2F301%2Fsource%2Fyoutube%2Frequiressl%2Fyes%2Fratebypass%2Fyes%2Fpfa%2F1%2Fsgoap%2Fclen%253D574261%253Bdur%253D35.433%253Bgir%253Dyes%253Bitag%253D140%253Blmt%253D1766943915433168%2Fsgovp%2Fclen%253D14039346%253Bdur%253D35.366%253Bgir%253Dyes%253Bitag%253D299%253Blmt%253D1766944478710057%2Frqh%2F1%2Fhls_chunk_host%2Frr8---sn-uxax4vopj55gb-x1xz.googlevideo.com%2Fxpc%2FEgVo2aDSNQ%253D%253D%2Fcps%2F106%2Fmet%2F1767566110%2C%2Fmh%2F80%2Fmm%2F31%2C29%2Fmn%2Fsn-uxax4vopj55gb-x1xz%2Csn-njaeyn7z%2Fms%2Fau%2Crdu%2Fmv%2Fm%2Fmvi%2F8%2Fpl%2F41%2Frms%2Fau%2Cau%2Finitcwndbps%2F1948750%2Fbui%2FAYUSA3A60y7GL57NwErfrtQUWe2YC9xWJa81npmKPOFWeFq9OP-p0jUYQVYOaPRyK4zCi5SrhGv-iU_w%2Fspc%2FwH4Qqzd6cMNClZ0Dpi0xgEfBxATuu88Qlbm12GgcgpMhPbn_5aJc9ADjTsY8e2aVk-WwBA%2Fvprv%2F1%2Fns%2FgNf6wMgD-UXKal3sPl_KjGwR%2Fplaylist_type%2FCLEAN%2Fdover%2F11%2Ftxp%2F443C534%2Fmt%2F1767565764%2Ffvip%2F3%2Fkeepalive%2Fyes%2Ffexp%2F51355912%2C51552689%2C51565116%2C51565681%2C51580968%2Fn%2FOfnUaQFqUfnI7raHA0%2Fsparams%2Fexpire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cratebypass%2Cpfa%2Csgoap%2Csgovp%2Crqh%2Cxpc%2Cbui%2Cspc%2Cvprv%2Cns%2Cplaylist_type%2Fsig%2FAJfQdSswRQIhAIDtzbsE214j07LVY6EA4TgE-be1XceC7KmAbiQ3ZbXCAiB1dJlk7vrfKpxFshrTRrRMeaa7eiqL8mkW9x1Gr2wR-Q%253D%253D%2Flsparams%2Fhls_chunk_host%2Ccps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps%2Flsig%2FAPaTxxMwRgIhAM3a7Kf3TaEvqgqJNB8pxhLxiV_PI4IGWsJoql63xdtfAiEA-FVGzw1arzxt8Z5HGY0797YFnejtFlGePFoeZW4_1hA%253D%2Fplaylist%2Findex.m3u8&filename=video.mp4 HTTP/1.1" 200 -
+2026-01-04 19:35:15,917 - INFO - Descarga proxy completada exitosamente
+2026-01-04 19:35:45,463 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 19:35:45,497 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 19:37:34,064 - INFO - ============================================================
+2026-01-04 19:37:34,064 - INFO - Video Downloader Server v2.2 - API Fixed
+2026-01-04 19:37:34,065 - INFO - ============================================================
+2026-01-04 19:37:34,065 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-04 19:37:34,065 - INFO - Acceso local: http://localhost:8000
+2026-01-04 19:37:34,065 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-04 19:37:34,065 - INFO - Endpoints disponibles:
+2026-01-04 19:37:34,065 - INFO -   POST /api/validate - Validar URLs
+2026-01-04 19:37:34,065 - INFO -   POST /api/extract - Extraer videos
+2026-01-04 19:37:34,065 - INFO - Presiona Ctrl+C para detener
+2026-01-04 19:37:34,066 - INFO - ============================================================
+2026-01-04 19:38:30,313 - INFO - ============================================================
+2026-01-04 19:38:30,314 - INFO - Video Downloader Server v2.2 - API Fixed
+2026-01-04 19:38:30,314 - INFO - ============================================================
+2026-01-04 19:38:30,314 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-04 19:38:30,314 - INFO - Acceso local: http://localhost:8000
+2026-01-04 19:38:30,314 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-04 19:38:30,314 - INFO - Endpoints disponibles:
+2026-01-04 19:38:30,314 - INFO -   POST /api/validate - Validar URLs
+2026-01-04 19:38:30,315 - INFO -   POST /api/extract - Extraer videos
+2026-01-04 19:38:30,315 - INFO - Presiona Ctrl+C para detener
+2026-01-04 19:38:30,315 - INFO - ============================================================
+2026-01-04 19:38:37,661 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-04 19:38:37,745 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:38:37,911 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:38:38,052 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:38:38,052 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:38:38,052 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:38:38,053 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:38:38,053 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:38:38,571 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 19:38:39,845 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-04 19:38:57,640 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-04 19:38:57,891 - INFO - Extrayendo video de: https://youtu.be/NllWnBtaLwU?si=Dc7krSwLdmS7sSW6
+2026-01-04 19:39:00,356 - INFO - ✅ Extracción exitosa para: https://youtu.be/NllWnBtaLwU?si=Dc7krSwLdmS7sSW6
+2026-01-04 19:39:00,356 - INFO -    📺 Plataforma: youtube
+2026-01-04 19:39:00,356 - INFO -    🎬 Título: El eructo inflamable | La Gambeta #lagambeta #humo...
+2026-01-04 19:39:00,357 - INFO -    🎯 Resolución: 360x640
+2026-01-04 19:39:00,357 - INFO -    📁 Tamaño: 2.5 MB
+2026-01-04 19:39:00,357 - INFO -    ⏱️ Duración: 35s
+2026-01-04 19:39:00,357 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-04 19:39:03,897 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 19:39:07,233 - INFO - Iniciando descarga proxy desde: https://rr8---sn-uxax4vopj55gb-x1xz.googlevideo.com/videoplayback?expire=1767587941&ei=BOxaab3APLTp1AGj97uYBg&ip=2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e&id=o-AKLCxvTh4-Za_Bwvj5PSvJ8FAFiWdL7FtcnRwTfPOPR0&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=12&met=1767566340%2C&mh=80&mm=31%2C29&mn=sn-uxax4vopj55gb-x1xz%2Csn-njaeyn7z&ms=au%2Crdu&mv=m&mvi=8&pcm2cms=yes&pl=41&rms=au%2Cau&initcwndbps=1948750&bui=AYUSA3AqKVyRwETqBuglZmsL08dasxmttbMrNiYvuIHIrF7Mz-hz1-3BYPrjETkforBA095Y889CcjMm&spc=wH4Qq8R0kMVa9gRgf4np&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=2640443&ratebypass=yes&dur=35.434&lmt=1766944342985667&mt=1767565764&fvip=3&fexp=51552689%2C51565116%2C51565682%2C51580968&c=ANDROID&txp=4430534&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRgIhAMlKUSaXExGekVETwyJqgy3aqlUyBvBMTjb2lDCNq7gKAiEA4K1FljKYZeMDfZmJKW3IGG0PfSP2c8a7Qp19rXt2Rb4%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpcm2cms%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRgIhANru6wXHPHXdDT7OmVr6o62nxYM7DJAtx6QwK_1r6XPmAiEA9_bJF3n4KM156AlKC96eJ7ACxsWFRR8_ZBXX6iLsaNo%3D
+2026-01-04 19:39:07,609 - INFO - Response Content-Type: video/mp4
+2026-01-04 19:39:07,610 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Frr8---sn-uxax4vopj55gb-x1xz.googlevideo.com%2Fvideoplayback%3Fexpire%3D1767587941%26ei%3DBOxaab3APLTp1AGj97uYBg%26ip%3D2802%253A8012%253A2af5%253A9701%253A8c75%253Ade08%253A9f30%253A607e%26id%3Do-AKLCxvTh4-Za_Bwvj5PSvJ8FAFiWdL7FtcnRwTfPOPR0%26itag%3D18%26source%3Dyoutube%26requiressl%3Dyes%26xpc%3DEgVo2aDSNQ%253D%253D%26cps%3D12%26met%3D1767566340%252C%26mh%3D80%26mm%3D31%252C29%26mn%3Dsn-uxax4vopj55gb-x1xz%252Csn-njaeyn7z%26ms%3Dau%252Crdu%26mv%3Dm%26mvi%3D8%26pcm2cms%3Dyes%26pl%3D41%26rms%3Dau%252Cau%26initcwndbps%3D1948750%26bui%3DAYUSA3AqKVyRwETqBuglZmsL08dasxmttbMrNiYvuIHIrF7Mz-hz1-3BYPrjETkforBA095Y889CcjMm%26spc%3DwH4Qq8R0kMVa9gRgf4np%26vprv%3D1%26svpuc%3D1%26mime%3Dvideo%252Fmp4%26rqh%3D1%26gir%3Dyes%26clen%3D2640443%26ratebypass%3Dyes%26dur%3D35.434%26lmt%3D1766944342985667%26mt%3D1767565764%26fvip%3D3%26fexp%3D51552689%252C51565116%252C51565682%252C51580968%26c%3DANDROID%26txp%3D4430534%26sparams%3Dexpire%252Cei%252Cip%252Cid%252Citag%252Csource%252Crequiressl%252Cxpc%252Cbui%252Cspc%252Cvprv%252Csvpuc%252Cmime%252Crqh%252Cgir%252Cclen%252Cratebypass%252Cdur%252Clmt%26sig%3DAJfQdSswRgIhAMlKUSaXExGekVETwyJqgy3aqlUyBvBMTjb2lDCNq7gKAiEA4K1FljKYZeMDfZmJKW3IGG0PfSP2c8a7Qp19rXt2Rb4%253D%26lsparams%3Dcps%252Cmet%252Cmh%252Cmm%252Cmn%252Cms%252Cmv%252Cmvi%252Cpcm2cms%252Cpl%252Crms%252Cinitcwndbps%26lsig%3DAPaTxxMwRgIhANru6wXHPHXdDT7OmVr6o62nxYM7DJAtx6QwK_1r6XPmAiEA9_bJF3n4KM156AlKC96eJ7ACxsWFRR8_ZBXX6iLsaNo%253D&filename=video.mp4 HTTP/1.1" 200 -
+2026-01-04 19:39:07,706 - INFO - Descarga proxy completada exitosamente
+2026-01-04 19:39:37,476 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 19:39:37,484 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 19:40:06,157 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-04 19:40:06,409 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=Mu-ijc76QGg
+2026-01-04 19:40:09,029 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=Mu-ijc76QGg
+2026-01-04 19:40:09,029 - INFO -    📺 Plataforma: youtube
+2026-01-04 19:40:09,029 - INFO -    🎬 Título: Google Antigravity + n8n: Crea Apps Brutales con A...
+2026-01-04 19:40:09,029 - INFO -    🎯 Resolución: 640x360
+2026-01-04 19:40:09,029 - INFO -    📁 Tamaño: 59.5 MB
+2026-01-04 19:40:09,030 - INFO -    ⏱️ Duración: 2111s
+2026-01-04 19:40:09,030 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-04 19:40:15,659 - INFO - Iniciando descarga proxy desde: https://rr1---sn-uxax4vopj55gb-x1xlz.googlevideo.com/videoplayback?expire=1767588009&ei=Sexaabm_IoSlobIPx7S18Ac&ip=2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e&id=o-ALIZrT12irgRMRPYVfWbTSgvHUrCiLfKGRV6GINo5NPa&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=4&met=1767566409%2C&mh=q6&mm=31%2C29&mn=sn-uxax4vopj55gb-x1xlz%2Csn-x1xe7n7d&ms=au%2Crdu&mv=m&mvi=1&pl=41&rms=au%2Cau&initcwndbps=1946250&bui=AYUSA3DGGtu11-WdjXPjNH19iThl6gEyUkdq44JNHCa8_erpDlGWYnvz-JkpXxkR6pBrKgKDw9RbCMZk&spc=wH4Qqy2YBgBfvFgAMR9r&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=62411976&ratebypass=yes&dur=2110.531&lmt=1765848174945229&mt=1767566004&fvip=3&fexp=51552689%2C51565115%2C51565681%2C51580968&c=ANDROID&txp=5438534&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRQIhAJa5T1sLdyHrEWWvpBGpeJjKnne6sBCh72rvqifGsh4GAiBKryDXlTxWeVUNXwPV4sk6jGnJAyPPrCjcos_G02i94A%3D%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRAIgSvP2QLnTh2vgZQRA8gg22-DrSEZKdNJhbqWX8ZTZehACICPHKrQs75xPbMmQPiApVXPWqpo7ZgECvQYs0LdMR5bB
+2026-01-04 19:40:16,815 - INFO - Response Content-Type: video/mp4
+2026-01-04 19:40:16,854 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Frr1---sn-uxax4vopj55gb-x1xlz.googlevideo.com%2Fvideoplayback%3Fexpire%3D1767588009%26ei%3DSexaabm_IoSlobIPx7S18Ac%26ip%3D2802%253A8012%253A2af5%253A9701%253A8c75%253Ade08%253A9f30%253A607e%26id%3Do-ALIZrT12irgRMRPYVfWbTSgvHUrCiLfKGRV6GINo5NPa%26itag%3D18%26source%3Dyoutube%26requiressl%3Dyes%26xpc%3DEgVo2aDSNQ%253D%253D%26cps%3D4%26met%3D1767566409%252C%26mh%3Dq6%26mm%3D31%252C29%26mn%3Dsn-uxax4vopj55gb-x1xlz%252Csn-x1xe7n7d%26ms%3Dau%252Crdu%26mv%3Dm%26mvi%3D1%26pl%3D41%26rms%3Dau%252Cau%26initcwndbps%3D1946250%26bui%3DAYUSA3DGGtu11-WdjXPjNH19iThl6gEyUkdq44JNHCa8_erpDlGWYnvz-JkpXxkR6pBrKgKDw9RbCMZk%26spc%3DwH4Qqy2YBgBfvFgAMR9r%26vprv%3D1%26svpuc%3D1%26mime%3Dvideo%252Fmp4%26rqh%3D1%26gir%3Dyes%26clen%3D62411976%26ratebypass%3Dyes%26dur%3D2110.531%26lmt%3D1765848174945229%26mt%3D1767566004%26fvip%3D3%26fexp%3D51552689%252C51565115%252C51565681%252C51580968%26c%3DANDROID%26txp%3D5438534%26sparams%3Dexpire%252Cei%252Cip%252Cid%252Citag%252Csource%252Crequiressl%252Cxpc%252Cbui%252Cspc%252Cvprv%252Csvpuc%252Cmime%252Crqh%252Cgir%252Cclen%252Cratebypass%252Cdur%252Clmt%26sig%3DAJfQdSswRQIhAJa5T1sLdyHrEWWvpBGpeJjKnne6sBCh72rvqifGsh4GAiBKryDXlTxWeVUNXwPV4sk6jGnJAyPPrCjcos_G02i94A%253D%253D%26lsparams%3Dcps%252Cmet%252Cmh%252Cmm%252Cmn%252Cms%252Cmv%252Cmvi%252Cpl%252Crms%252Cinitcwndbps%26lsig%3DAPaTxxMwRAIgSvP2QLnTh2vgZQRA8gg22-DrSEZKdNJhbqWX8ZTZehACICPHKrQs75xPbMmQPiApVXPWqpo7ZgECvQYs0LdMR5bB&filename=video.mp4 HTTP/1.1" 200 -
+2026-01-04 19:40:19,089 - INFO - Descarga proxy completada exitosamente
+2026-01-04 19:40:45,960 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')

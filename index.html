@@ -832,6 +832,7 @@
                 value="">
             <div class="buttons-container">
                 <button id="analyzeBtn" class="btn">🔍 Buscar</button>
+                <button id="pasteBtn" class="btn">📋 Pegar</button>
                 <button id="clearBtn" class="btn">🗑️ Limpiar</button>
             </div>
         </div>
@@ -861,6 +862,7 @@
                 this.urlInput = document.getElementById('urlInput');
                 this.analyzeBtn = document.getElementById('analyzeBtn');
                 this.clearBtn = document.getElementById('clearBtn');
+                this.pasteBtn = document.getElementById('pasteBtn');
 
                 this.initEventListeners();
                 this.initVideoPlaceholder();
@@ -875,6 +877,7 @@
             initEventListeners() {
                 this.analyzeBtn.addEventListener('click', () => this.analyzeVideo());
                 this.clearBtn.addEventListener('click', () => this.clearAll());
+                this.pasteBtn.addEventListener('click', () => this.pasteFromClipboard());
                 this.urlInput.addEventListener('keypress', (e) => {
                     if (e.key === 'Enter') this.analyzeVideo();
                 });
@@ -1156,7 +1159,7 @@
                         return;
                     }
 
-                    showYouTubeVideo({ videoUrl }, videoPlayerContainer);
+                    showYouTubeVideo({ ...data, videoUrl }, videoPlayerContainer);
                 } else {
                     showInstagramVideo(data, videoPlayerContainer);
                 }
@@ -1216,6 +1219,26 @@
                 // Enfocar el input para nueva búsqueda
                 this.urlInput.focus();
             }
+            async pasteFromClipboard() {
+                try {
+                    if (!navigator.clipboard || !navigator.clipboard.readText) {
+                        this.urlInput.focus();
+                        this.showError('El portapapeles no está disponible en este navegador. Usa Ctrl+V para pegar.');
+                        return;
+                    }
+                    const text = await navigator.clipboard.readText();
+                    const pasted = (text || '').trim();
+                    if (!pasted) {
+                        this.showError('El portapapeles está vacío');
+                        return;
+                    }
+                    this.urlInput.value = pasted;
+                    this.urlInput.focus();
+                    this.analyzeVideo();
+                } catch (e) {
+                    this.showError('No se pudo acceder al portapapeles. Revisa permisos del navegador.');
+                }
+            }
         }
 
         // Initialize the downloader when page loads
@@ -1263,17 +1286,34 @@
                         font-size: 20px;
                     ">
                         &times;
-                    </button>                    <video controls autoplay style="
+                    </button>
+                    <video controls autoplay style="
                         max-width: 90vw;
-                        max-height: 90vh;
+                        max-height: 80vh;
                         outline: none;
                         background: #000;
                         display: block;
                         margin: 0 auto;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 20px rgba(0,0,0,0.5);
                     ">
                         <source src="${videoUrl}" type="video/mp4">
                         Tu navegador no soporta el elemento de video.
                     </video>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <a href="/api/download?url=${encodeURIComponent(videoUrl)}&filename=video.mp4" class="btn" style="
+                            display: inline-flex; 
+                            align-items: center; 
+                            text-decoration: none; 
+                            padding: 10px 25px;
+                            background: linear-gradient(45deg, #4ECDC4, #556270);
+                        ">
+                            <svg style="width:20px;height:20px;margin-right:8px;fill:currentColor" viewBox="0 0 24 24">
+                                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                            </svg>
+                            Descargar Video
+                        </a>
+                    </div>
                 </div>
             `;            // Estilos para el modal
             const style = document.createElement('style');

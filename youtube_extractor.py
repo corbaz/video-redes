@@ -31,16 +31,10 @@ class YouTubeExtractor:
         """
         # Lista de formatos a probar en orden de preferencia
         formats_to_try = [
-            # 1. Intentar obtener la mejor calidad posible con audio combinado
-            'bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/bestvideo[height<=1080]+bestaudio/best[height<=1080][ext=mp4]',
-            # 2. Fallback a formatos ya combinados de alta calidad
-            'best[height<=1080][ext=mp4]/best[height<=720][ext=mp4]/best[ext=mp4]',
-            # 3. Intentar cualquier formato de buena calidad con audio
-            'bestvideo[height>=720]+bestaudio/best[height>=720]',
-            # 4. Intentar formato de calidad media con audio
-            'bestvideo[height>=480]+bestaudio/best[height>=480]',
-            # 5. Último recurso
-            'best'
+            # 1. Progressive MP4 (Audio+Video) - HTTP/HTTPS direct link only
+            'best[ext=mp4][protocol^=http]',
+            # 2. Fallback: any MP4 with http protocol
+            'best[ext=mp4][protocol^=http]/best[protocol^=http]'
         ]
 
         for i, format_selector in enumerate(formats_to_try):

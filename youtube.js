@@ -54,7 +54,7 @@ function prepareYouTubeData(result) {
         description: result.description || "",
         uploader: result.uploader || "Canal de YouTube",
         thumbnail: result.thumbnail || "",
-        video_url: result.video_url || "",
+        videoUrl: result.video_url || "",
         platform: result.platform || "YouTube",
         view_count: result.view_count || 0,
         like_count: result.like_count || 0,
@@ -93,8 +93,7 @@ async function extractYouTubeVideo(url) {
         // Detectar tipo de contenido
         const isShort = isYouTubeShort(normalizedUrl);
         console.log(
-            `🎥 Extrayendo ${
-                isShort ? "YouTube Short" : "video de YouTube"
+            `🎥 Extrayendo ${isShort ? "YouTube Short" : "video de YouTube"
             }: ${normalizedUrl}`
         );
 
@@ -223,7 +222,7 @@ function hideLoading() {
 function showYouTubeVideo(data, container) {
     console.log("🎥 Mostrando video de YouTube:", data);
 
-    if (!data.videoUrl) {
+    if (!data.videoUrl && !data.video_url) {
         console.error("❌ No se encontró URL del video de YouTube");
         container.innerHTML = `<div class="error"><h3>No se encontró URL del video de YouTube</h3></div>`;
         return;
@@ -231,10 +230,11 @@ function showYouTubeVideo(data, container) {
 
     // Preparar datos enriquecidos con información de calidad
     const enrichedData = {
-        videoUrl: data.videoUrl,
+        videoUrl: data.videoUrl || data.video_url,
         title: data.title || "Video de YouTube",
         uploader: data.uploader || "Canal de YouTube",
         platform: data.platform || "YouTube",
+        thumbnail: data.thumbnail || "",
         // Información adicional de calidad
         qualityInfo: {
             selected: data.quality_label || data.video_quality || "Auto",
@@ -260,10 +260,9 @@ function showYouTubeVideo(data, container) {
     );
     console.log(`📊 Calidad seleccionada: ${data.quality_label || "Auto"}`);
     console.log(
-        `📋 Calidades disponibles: ${
-            data.available_qualities
-                ? data.available_qualities.join(", ")
-                : "N/A"
+        `📋 Calidades disponibles: ${data.available_qualities
+            ? data.available_qualities.join(", ")
+            : "N/A"
         }`
     );
 
@@ -296,19 +295,17 @@ function addQualityInfo(container, data) {
             <span style="color: #ff0000; margin-right: 8px;">🎯</span>
             <strong style="color: #fff;">Calidad seleccionada: ${qualitySelected}</strong>
         </div>
-        ${
-            filesize
-                ? `
+        ${filesize
+            ? `
         <div style="display: flex; align-items: center; margin-bottom: 8px;">
             <span style="color: #ff0000; margin-right: 8px;">📁</span>
             <span style="color: #ccc;">Tamaño: ${filesize}</span>
         </div>
         `
-                : ""
+            : ""
         }
-        ${
-            availableQualities.length > 0
-                ? `
+        ${availableQualities.length > 0
+            ? `
         <div style="display: flex; align-items: center;">
             <span style="color: #ff0000; margin-right: 8px;">📊</span>
             <span style="color: #ccc;">Calidades disponibles: ${availableQualities.join(
@@ -316,7 +313,7 @@ function addQualityInfo(container, data) {
             )}</span>
         </div>
         `
-                : ""
+            : ""
         }
     `;
 
