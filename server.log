@@ -4058,3 +4058,42 @@ yt-dlp: error: no such option: --extract-flat
 2026-01-05 12:55:44,778 - INFO - Descarga proxy estándar para: https://scontent-eze1-2.cdninstagram.com/o1/v/t2/f2/m86/AQMCSS43Mc2cj9bU37Fn4rzTK2FyeWZa10CzhWJlLmddUVSfifgb8gkEp_zo7TMyZHIezJx2LJNfF5bSFqWhIVr5EFYV5P6QG_6bxRk.mp4?_nc_cat=108&_nc_sid=5e9851&_nc_ht=scontent-eze1-2.cdninstagram.com&_nc_ohc=ZzfHUq6wjfcQ7kNvwHWAF0G&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6OTQzNTU3MzE4MTEwMDg3LCJhc3NldF9hZ2VfZGF5cyI6MCwidmlfdXNlY2FzZV9pZCI6MTA4MjcsImR1cmF0aW9uX3MiOjExOCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=6a32bcd7cc778edc&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC9CODQ4NzNERDBCOEZBQzI5NTQ2RkU3ODA1NUNERDVCQl92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HQmdhWnlSM0lJblBkZThHQUczMEloU0U3b2x4YnN0VEFRQUYVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmjq6r7KGKrQMVAigCQzMsF0BdtU_fO2RaGBJkYXNoX2Jhc2VsaW5lXzFfdjERAHX-B2WWqQEA&_nc_gid=R2Zvflv9Q58CNBkSxBcBPw&_nc_zt=28&oh=00_AfrxAElZr5xoGO2-dcVAbn3zS_C89EseiBn4GKCHVXIeLQ&oe=695DA4E1
 2026-01-05 12:55:45,139 - INFO - 192.168.1.50 - "GET /api/download?url=https%3A%2F%2Fscontent-eze1-2.cdninstagram.com%2Fo1%2Fv%2Ft2%2Ff2%2Fm86%2FAQMCSS43Mc2cj9bU37Fn4rzTK2FyeWZa10CzhWJlLmddUVSfifgb8gkEp_zo7TMyZHIezJx2LJNfF5bSFqWhIVr5EFYV5P6QG_6bxRk.mp4%3F_nc_cat%3D108%26_nc_sid%3D5e9851%26_nc_ht%3Dscontent-eze1-2.cdninstagram.com%26_nc_ohc%3DZzfHUq6wjfcQ7kNvwHWAF0G%26efg%3DeyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6OTQzNTU3MzE4MTEwMDg3LCJhc3NldF9hZ2VfZGF5cyI6MCwidmlfdXNlY2FzZV9pZCI6MTA4MjcsImR1cmF0aW9uX3MiOjExOCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9%26ccb%3D17-1%26vs%3D6a32bcd7cc778edc%26_nc_vs%3DHBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC9CODQ4NzNERDBCOEZBQzI5NTQ2RkU3ODA1NUNERDVCQl92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HQmdhWnlSM0lJblBkZThHQUczMEloU0U3b2x4YnN0VEFRQUYVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmjq6r7KGKrQMVAigCQzMsF0BdtU_fO2RaGBJkYXNoX2Jhc2VsaW5lXzFfdjERAHX-B2WWqQEA%26_nc_gid%3DR2Zvflv9Q58CNBkSxBcBPw%26_nc_zt%3D28%26oh%3D00_AfrxAElZr5xoGO2-dcVAbn3zS_C89EseiBn4GKCHVXIeLQ%26oe%3D695DA4E1&filename=instagram_video.mp4 HTTP/1.1" 200 -
 2026-01-05 12:56:14,779 - INFO - 192.168.1.50 - Request timed out: TimeoutError('timed out')
+2026-01-05 13:10:17,238 - INFO - 192.168.1.50 - "GET / HTTP/1.1" 200 -
+2026-01-05 13:10:17,321 - INFO - 192.168.1.50 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:10:17,325 - INFO - 192.168.1.50 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:10:17,325 - INFO - 192.168.1.50 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:10:17,325 - INFO - 192.168.1.50 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:10:17,325 - INFO - 192.168.1.50 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:10:17,325 - INFO - 192.168.1.50 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:10:17,327 - INFO - 192.168.1.50 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:10:18,071 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 13:10:44,310 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 13:10:44,318 - INFO - Extrayendo video de: https://www.tiktok.com/@tech.tipsbyia/video/7577516435753553173?is_from_webapp=1&sender_device=pc
+2026-01-05 13:10:45,781 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@tech.tipsbyia/video/7577516435753553173?is_from_webapp=1&sender_device=pc
+2026-01-05 13:10:45,781 - INFO -    📺 Plataforma: tiktok
+2026-01-05 13:10:45,782 - INFO -    🎬 Título: Video de TikTok...
+2026-01-05 13:10:45,782 - INFO -    🎯 Resolución: TikTok HD
+2026-01-05 13:10:45,782 - INFO -    📁 Tamaño: N/A
+2026-01-05 13:10:45,782 - INFO -    ⏱️ Duración: 0s
+2026-01-05 13:10:45,782 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 13:10:49,483 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-05 13:10:49,483 - INFO -    🔗 URL: https://tikcdn.io/ssstik/7577516435753553173?st=7gBYZO5e1glxWMKPonkTVw&e=1767651047...
+2026-01-05 13:10:49,483 - INFO -    📄 Filename: tiktok_video.mp4
+2026-01-05 13:10:49,483 - INFO - Descarga proxy estándar para: https://tikcdn.io/ssstik/7577516435753553173?st=7gBYZO5e1glxWMKPonkTVw&e=1767651047
+2026-01-05 13:10:52,597 - INFO - 192.168.1.50 - "GET /api/download?url=https%3A%2F%2Ftikcdn.io%2Fssstik%2F7577516435753553173%3Fst%3D7gBYZO5e1glxWMKPonkTVw%26e%3D1767651047&filename=tiktok_video.mp4 HTTP/1.1" 200 -
+2026-01-05 13:11:19,483 - INFO - 192.168.1.50 - Request timed out: TimeoutError('timed out')
+2026-01-05 13:24:26,299 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 13:24:26,312 - INFO - Extrayendo video de: https://www.instagram.com/reel/DTGauUTDmN8/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==
+2026-01-05 13:24:28,149 - INFO - ✅ Extracción exitosa para: https://www.instagram.com/reel/DTGauUTDmN8/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==
+2026-01-05 13:24:28,149 - INFO -    📺 Plataforma: instagram
+2026-01-05 13:24:28,149 - INFO -    🎬 Título: Sin título...
+2026-01-05 13:24:28,149 - INFO -    🎯 Resolución: N/A
+2026-01-05 13:24:28,150 - INFO -    📁 Tamaño: N/A
+2026-01-05 13:24:28,150 - INFO -    ⏱️ Duración: 0s
+2026-01-05 13:24:28,150 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 13:24:32,495 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-05 13:24:32,496 - INFO -    🔗 URL: https://scontent-eze1-2.cdninstagram.com/o1/v/t2/f2/m86/AQOLePec--dHsMdoPLgOfkYkz48S3qaf1rlhg01BZ0vV...
+2026-01-05 13:24:32,496 - INFO -    📄 Filename: instagram_video.mp4
+2026-01-05 13:24:32,496 - INFO - Descarga proxy estándar para: https://scontent-eze1-2.cdninstagram.com/o1/v/t2/f2/m86/AQOLePec--dHsMdoPLgOfkYkz48S3qaf1rlhg01BZ0vV6lsJPqKfee9p6qpkeAWRBZowVBhyYOZcL1ZL-z3O-JcBTE3cE7MIuddBa8Q.mp4?_nc_cat=108&_nc_sid=5e9851&_nc_ht=scontent-eze1-2.cdninstagram.com&_nc_ohc=8nOk7VcwQ-gQ7kNvwHD9Z-Q&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6ODk2MzAwODQ5NDgzNzEzLCJhc3NldF9hZ2VfZGF5cyI6MCwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjgxLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=a1uNzK0VQFdFSax01oQ6cA&_nc_zt=28&vs=19dc75cae864a9d8&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC84QjRBRDQ0ODlDNkRCOEFFMzA0MkY2NTYyRTBENURCNl92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HSEtFTnlReWJUc2hab0lGQURqQ0JmOTUwRFFEYnN0VEFRQUYVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmgr_228nLlwMVAigCQzMsF0BUaIMSbpeNGBJkYXNoX2Jhc2VsaW5lXzFfdjERAHX-B2XmnQEA&oh=00_AfrRz3XajYvAD1ekXTNOkvWt3two_Gjn0p-FvHy_67dQpQ&oe=695DD2BD
+2026-01-05 13:24:32,864 - INFO - 192.168.1.50 - "GET /api/download?url=https%3A%2F%2Fscontent-eze1-2.cdninstagram.com%2Fo1%2Fv%2Ft2%2Ff2%2Fm86%2FAQOLePec--dHsMdoPLgOfkYkz48S3qaf1rlhg01BZ0vV6lsJPqKfee9p6qpkeAWRBZowVBhyYOZcL1ZL-z3O-JcBTE3cE7MIuddBa8Q.mp4%3F_nc_cat%3D108%26_nc_sid%3D5e9851%26_nc_ht%3Dscontent-eze1-2.cdninstagram.com%26_nc_ohc%3D8nOk7VcwQ-gQ7kNvwHD9Z-Q%26efg%3DeyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6ODk2MzAwODQ5NDgzNzEzLCJhc3NldF9hZ2VfZGF5cyI6MCwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjgxLCJ1cmxnZW5fc291cmNlIjoid3d3In0%253D%26ccb%3D17-1%26_nc_gid%3Da1uNzK0VQFdFSax01oQ6cA%26_nc_zt%3D28%26vs%3D19dc75cae864a9d8%26_nc_vs%3DHBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC84QjRBRDQ0ODlDNkRCOEFFMzA0MkY2NTYyRTBENURCNl92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HSEtFTnlReWJUc2hab0lGQURqQ0JmOTUwRFFEYnN0VEFRQUYVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmgr_228nLlwMVAigCQzMsF0BUaIMSbpeNGBJkYXNoX2Jhc2VsaW5lXzFfdjERAHX-B2XmnQEA%26oh%3D00_AfrRz3XajYvAD1ekXTNOkvWt3two_Gjn0p-FvHy_67dQpQ%26oe%3D695DD2BD&filename=instagram_video.mp4 HTTP/1.1" 200 -
+2026-01-05 13:25:02,503 - INFO - 192.168.1.50 - Request timed out: TimeoutError('timed out')

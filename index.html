@@ -1340,7 +1340,7 @@
                     const videoUrl = data.video_url || (data.data ? data.data.videoUrl : null);
                     if (videoUrl) showFacebookVideo({ videoUrl }, container);
                 } else if (url.includes('x.com') || url.includes('twitter')) {
-                    const videoUrl = data.video_url || (data.data ? data.data.videoUrl : null);
+                    const videoUrl = data.video_url || data.videoUrl || (data.data ? data.data.videoUrl : null);
                     if (videoUrl) showXVideo({ videoUrl }, container);
                 }
             }
