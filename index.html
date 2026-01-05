@@ -837,13 +837,13 @@
             </div>
         </div>
     </div>
-    <script src="card.js?v=20250612"></script>
-    <script src="insta.js?v=20250612"></script>
-    <script src="linkedin.js?v=20250612"></script>
-    <script src="x.js?v=20250612"></script>
-    <script src="tiktok.js?v=20250612"></script>
-    <script src="facebook.js?v=20250612"></script>
-    <script src="youtube.js?v=20250612"></script>
+    <script src="card.js?v=20260105"></script>
+    <script src="insta.js?v=20260105"></script>
+    <script src="linkedin.js?v=20260105"></script>
+    <script src="x.js?v=20260105"></script>
+    <script src="tiktok.js?v=20260105"></script>
+    <script src="facebook.js?v=20260105"></script>
+    <script src="youtube.js?v=20260105"></script>
     <script>
         // Función para generar HTML del placeholder de video
         function generateVideoPlaceholder() {
@@ -1151,15 +1151,8 @@
 
                     showFacebookVideo({ videoUrl }, videoPlayerContainer);
                 } else if (url.includes('youtube.com') || url.includes('youtu.be')) {
-                    // Buscar videoUrl para YouTube
-                    let videoUrl = this.extractVideoUrl(data);
-
-                    if (!videoUrl) {
-                        this.showError("No se pudo extraer la URL del video de YouTube");
-                        return;
-                    }
-
-                    showYouTubeVideo({ ...data, videoUrl }, videoPlayerContainer);
+                    // showYouTubeVideo espera 'data' completo
+                    showYouTubeVideo(data, videoPlayerContainer);
                 } else {
                     showInstagramVideo(data, videoPlayerContainer);
                 }
@@ -1247,8 +1240,16 @@
         });
 
         // Función para mostrar el reproductor de video en modal (sin título)
-        function showVideoModal(videoUrl) {
+        function showVideoModal(videoUrl, title = "video", originalUrl = "") {
             const modal = document.createElement('div');
+            // Sanitize filename: remove quotes and special chars for safety
+            const safeTitle = title.replace(/[\\/:*?"<>|]/g, "").trim() || "video";
+            const filename = encodeURIComponent(safeTitle + ".mp4");
+
+            // Determinar qué URL usar para descarga. 
+            // Si hay originalUrl (ej. YouTube), la usamos para que el backend baje HQ.
+            const downloadUrl = originalUrl || videoUrl;
+
             modal.className = 'video-modal'; modal.style.cssText = `
                 position: fixed;
                 top: 0;
@@ -1301,7 +1302,7 @@
                         Tu navegador no soporta el elemento de video.
                     </video>
                     <div style="text-align: center; margin-top: 15px;">
-                        <a href="/api/download?url=${encodeURIComponent(videoUrl)}&filename=video.mp4" class="btn" style="
+                        <a href="/api/download?url=${encodeURIComponent(downloadUrl)}&filename=${filename}" class="btn" style="
                             display: inline-flex; 
                             align-items: center; 
                             text-decoration: none; 

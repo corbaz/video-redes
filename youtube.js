@@ -55,11 +55,13 @@ function prepareYouTubeData(result) {
         uploader: result.uploader || "Canal de YouTube",
         thumbnail: result.thumbnail || "",
         videoUrl: result.video_url || "",
+        originalUrl: result.original_url || "",
         platform: result.platform || "YouTube",
         view_count: result.view_count || 0,
         like_count: result.like_count || 0,
         duration: result.duration || 0,
         video_quality: result.video_quality || "N/A",
+        max_quality: result.max_quality || result.video_quality || "N/A",
         is_short: result.is_short || false,
     };
 
@@ -230,7 +232,8 @@ function showYouTubeVideo(data, container) {
 
     // Preparar datos enriquecidos con información de calidad
     const enrichedData = {
-        videoUrl: data.videoUrl || data.video_url,
+        videoUrl: data.video_url || data.videoUrl,
+        originalUrl: data.original_url || data.originalUrl || data.video_url || data.videoUrl,
         title: data.title || "Video de YouTube",
         uploader: data.uploader || "Canal de YouTube",
         platform: data.platform || "YouTube",
@@ -238,6 +241,7 @@ function showYouTubeVideo(data, container) {
         // Información adicional de calidad
         qualityInfo: {
             selected: data.quality_label || data.video_quality || "Auto",
+            maxQuality: data.max_quality || "N/A",
             available: data.available_qualities || [],
             filesize: data.filesize || "N/A",
             format: data.selected_format || {},

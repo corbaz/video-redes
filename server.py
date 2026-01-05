@@ -10,6 +10,9 @@ from urllib.parse import parse_qs, urlparse
 from socketserver import ThreadingMixIn
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import requests
+import subprocess
+import uuid
+import imageio_ffmpeg
 
 # Importar extractores
 from insta_extractor import InstagramExtractor
@@ -89,7 +92,11 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             self.send_error(500)
 
     def handle_download(self):
-        """Proxy para descargar videos evitando problemas de CORS"""
+        """Descarga video usando pytubefix para YouTube (720p+) o proxy para otros"""
+        temp_dir = "temp_downloads"
+        if not os.path.exists(temp_dir):
+            os.makedirs(temp_dir)
+            
         try:
             # Parsear query params
             query = urlparse(self.path).query
@@ -98,81 +105,110 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             url = params.get('url', [''])[0]
             filename = params.get('filename', ['video.mp4'])[0]
             
+            logger.info(f"📥 Solicitud de descarga recibida:")
+            logger.info(f"   🔗 URL: {url[:100]}...")
+            logger.info(f"   📄 Filename: {filename}")
+            
             if not url:
                 self.send_error(400, "URL requerida")
                 return
+
+            # Detectar si es YouTube para usar yt-dlp CLI
+            # IMPORTANTE: Los links de googlevideo.com NO son links de YouTube válidos para yt-dlp HQ.
+            # Necesitamos la URL original de YouTube.
+            is_youtube = 'youtube.com' in url or 'youtu.be' in url
+            
+            if is_youtube:
+                logger.info(f"🚀 Iniciando descarga HQ con YT-DLP CLI para: {url[:100]}...")
                 
-            logger.info(f"Iniciando descarga proxy desde: {url}")
-            
-            # Request al servidor de origen (streaming)
-            # Usar headers de navegador para evitar bloqueos
-            headers = {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                'Referer': 'https://www.youtube.com/',
-                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
-                'Accept-Language': 'en-US,en;q=0.9',
-                'Sec-Fetch-Dest': 'document',
-                'Sec-Fetch-Mode': 'navigate',
-                'Sec-Fetch-Site': 'none',
-                'Sec-Fetch-User': '?1',
-                'Upgrade-Insecure-Requests': '1'
-            }
-            
-            # Realizar request con stream activado
-            r = requests.get(url, stream=True, headers=headers, timeout=30)
-            r.raise_for_status()
-            
-            content_type = r.headers.get('Content-Type', '')
-            logger.info(f"Response Content-Type: {content_type}")
-            
-            # Verificar contenido inicial
-            first_chunk = next(r.iter_content(chunk_size=1024), None)
-            
-            if not first_chunk:
-                logger.error("El servidor remoto no devolvió contenido")
-                self.send_error(502, "Respuesta vacía del servidor remoto")
-                return
+                # Configuración de salida
+                unique_id = str(uuid.uuid4())
+                filename_base = f"yt_{unique_id}"
+                output_template = os.path.join(temp_dir, f"{filename_base}.%(ext)s")
+                final_path = os.path.join(temp_dir, f"{filename_base}.mp4")
+                
+                ffmpeg_exe = imageio_ffmpeg.get_ffmpeg_exe()
 
-            # Detectar si es una playlist M3U8 disfrazada
-            if first_chunk.startswith(b'#EXTM3U'):
-                logger.error("La URL apunta a un playlist M3U8, no a un archivo de video directo.")
-                self.send_error(502, "Error: El formato disponible es streaming (HLS), no descargable directamente.")
-                return
+                try:
+                    # Usamos el CLI directamente para asegurar el comportamiento de JDownloader
+                    # -f 'bv+ba/b' es el estándar para mejor calidad
+                    # --extractor-args ayuda a encontrar formatos HD
+                    cmd = [
+                        'yt-dlp',
+                        '-f', 'bv[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/bv+ba/b',
+                        '--merge-output-format', 'mp4',
+                        '--ffmpeg-location', ffmpeg_exe,
+                        '--extractor-args', 'youtube:player_client=ios,web,android',
+                        '--no-warnings',
+                        '--quiet',
+                        '-o', output_template,
+                        url
+                    ]
+                    
+                    logger.info(f"Ejecutando descarga: {' '.join(cmd)}")
+                    subprocess.run(cmd, check=True)
+                    
+                    # Verificación robusta del archivo resultante
+                    if not os.path.exists(final_path):
+                        # Buscar cualquier archivo que empiece con el prefijo (por si cambió la extensión)
+                        possible_files = [f for f in os.listdir(temp_dir) if f.startswith(filename_base)]
+                        if possible_files:
+                            final_path = os.path.join(temp_dir, possible_files[0])
+                        else:
+                            raise Exception("Descarga completada pero no se encontró el archivo final.")
 
-            # Detectar HTML/Texto (Error)
-            if b'<html' in first_chunk[:100] or b'<!DOCTYPE' in first_chunk[:100]:
-                 # Leer un poco más para loggear el error
-                error_content = first_chunk.decode('utf-8', errors='ignore')
-                logger.error(f"El servidor remoto devolvió HTML en lugar de video: {error_content[:200]}...")
-                self.send_error(502, "El servidor remoto devolvió una página web en lugar de video (bloqueo o enlace caducado).")
-                return
 
-            # Configurar headers de respuesta
-            self.send_response(200)
-            # Forzar tipo video/mp4
-            final_type = 'video/mp4' if 'application/octet-stream' in content_type else content_type
-            self.send_header('Content-Type', final_type)
-            self.send_header('Content-Disposition', f'attachment; filename="{filename}"')
-            
-            if 'Content-Length' in r.headers:
-                self.send_header('Content-Length', r.headers['Content-Length'])
-            
-            self.end_headers()
-            
-            # Escribir el primer chunk que ya leímos
-            self.wfile.write(first_chunk)
-            
-            # Stream del resto del contenido
-            for chunk in r.iter_content(chunk_size=8192):
-                if chunk:
-                    self.wfile.write(chunk)
+                    # Enviar el archivo
+                    with open(final_path, 'rb') as f:
+                        self.send_response(200)
+                        self.send_header('Content-Type', 'video/mp4')
+                        self.send_header('Content-Disposition', f'attachment; filename="{filename}"')
+                        self.send_header('Content-Length', str(os.path.getsize(final_path)))
+                        self.end_headers()
                         
-            logger.info("Descarga proxy completada exitosamente")
-            r.close()
-            
+                        # Streaming para evitar cargar archivos gigantes en RAM
+                        while True:
+                            chunk = f.read(8192)
+                            if not chunk: break
+                            self.wfile.write(chunk)
+                        
+                        logger.info(f"📤 Video enviado (HQ): {filename}")
+                    return
+
+                except Exception as e:
+                    logger.error(f"❌ Error en descarga CLI: {str(e)}")
+                    self.send_error(500, f"Error en descarga: {str(e)}")
+                finally:
+                    # Limpieza
+                    files = [f for f in os.listdir(temp_dir) if f.startswith(filename_base)]
+                    for f in files:
+                        try: os.remove(os.path.join(temp_dir, f))
+                        except: pass
+
+
+            else:
+                # Lógica legacy para otros sitios (proxy directo usando requests)
+                logger.info(f"Descarga proxy estándar para: {url}")
+                headers = {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+                }
+                r = requests.get(url, stream=True, headers=headers, timeout=30)
+                
+                self.send_response(200)
+                self.send_header('Content-Type', r.headers.get('Content-Type', 'video/mp4'))
+                self.send_header('Content-Disposition', f'attachment; filename="{filename}"')
+                if 'Content-Length' in r.headers:
+                    self.send_header('Content-Length', r.headers['Content-Length'])
+                self.end_headers()
+                
+                for chunk in r.iter_content(chunk_size=8192):
+                    if chunk:
+                        self.wfile.write(chunk)
+
         except Exception as e:
-            logger.error(f"Error en proxy de descarga: {str(e)}")
-            # No enviar error si ya empezamos a streamear (evita broken pipes ruidosos)
+            logger.error(f"Error general en descarga: {str(e)}")
+            if not self.wfile.closed:
+                self.send_error(500, f"Error: {str(e)}")
 
     def do_POST(self):
         try:
@@ -393,7 +429,7 @@ def run_server():
         server.timeout = 60
 
         logger.info("=" * 60)
-        logger.info("Video Downloader Server v2.2 - API Fixed")
+        logger.info("Video Downloader Server v2.3 - High Quality Fix")
         logger.info("=" * 60)
         logger.info(f"Servidor iniciado en http://{host}:{port}")
         logger.info(f"Acceso local: http://localhost:{port}")

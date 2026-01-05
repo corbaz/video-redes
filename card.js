@@ -1,5 +1,5 @@
 // Tarjeta profesional reutilizable para mostrar un video
-function renderVideoCard({ videoUrl = "", thumbnail = "" }) {
+function renderVideoCard({ videoUrl = "", thumbnail = "", title = "video", originalUrl = "" }) {
   if (!videoUrl) {
     return `<div class='error'><h3>No se encontró video disponible</h3></div>`;
   }
@@ -10,7 +10,7 @@ function renderVideoCard({ videoUrl = "", thumbnail = "" }) {
   return `
     <div class="video-thumbnail-container video-card-container">
       <div style="position:relative; width:100%; padding-bottom:177.78%; background:#000; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.3); cursor: pointer;"
-           onclick="showVideoModal('${videoUrl.replace(/'/g, "\\'")}')">
+           onclick="showVideoModal('${videoUrl.replace(/'/g, "\\'")}', '${title.replace(/'/g, "\\'")}', '${originalUrl ? originalUrl.replace(/'/g, "\\'") : ""}')">
         <video src="${videoUrl}" ${posterAttr}
                style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; border-radius:12px; background:#000;"
                muted loop playsinline preload="metadata" tabindex="-1"></video>

@@ -2708,3 +2708,625 @@ yt-dlp: error: no such option: --extract-flat
 2026-01-04 19:40:16,854 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Frr1---sn-uxax4vopj55gb-x1xlz.googlevideo.com%2Fvideoplayback%3Fexpire%3D1767588009%26ei%3DSexaabm_IoSlobIPx7S18Ac%26ip%3D2802%253A8012%253A2af5%253A9701%253A8c75%253Ade08%253A9f30%253A607e%26id%3Do-ALIZrT12irgRMRPYVfWbTSgvHUrCiLfKGRV6GINo5NPa%26itag%3D18%26source%3Dyoutube%26requiressl%3Dyes%26xpc%3DEgVo2aDSNQ%253D%253D%26cps%3D4%26met%3D1767566409%252C%26mh%3Dq6%26mm%3D31%252C29%26mn%3Dsn-uxax4vopj55gb-x1xlz%252Csn-x1xe7n7d%26ms%3Dau%252Crdu%26mv%3Dm%26mvi%3D1%26pl%3D41%26rms%3Dau%252Cau%26initcwndbps%3D1946250%26bui%3DAYUSA3DGGtu11-WdjXPjNH19iThl6gEyUkdq44JNHCa8_erpDlGWYnvz-JkpXxkR6pBrKgKDw9RbCMZk%26spc%3DwH4Qqy2YBgBfvFgAMR9r%26vprv%3D1%26svpuc%3D1%26mime%3Dvideo%252Fmp4%26rqh%3D1%26gir%3Dyes%26clen%3D62411976%26ratebypass%3Dyes%26dur%3D2110.531%26lmt%3D1765848174945229%26mt%3D1767566004%26fvip%3D3%26fexp%3D51552689%252C51565115%252C51565681%252C51580968%26c%3DANDROID%26txp%3D5438534%26sparams%3Dexpire%252Cei%252Cip%252Cid%252Citag%252Csource%252Crequiressl%252Cxpc%252Cbui%252Cspc%252Cvprv%252Csvpuc%252Cmime%252Crqh%252Cgir%252Cclen%252Cratebypass%252Cdur%252Clmt%26sig%3DAJfQdSswRQIhAJa5T1sLdyHrEWWvpBGpeJjKnne6sBCh72rvqifGsh4GAiBKryDXlTxWeVUNXwPV4sk6jGnJAyPPrCjcos_G02i94A%253D%253D%26lsparams%3Dcps%252Cmet%252Cmh%252Cmm%252Cmn%252Cms%252Cmv%252Cmvi%252Cpl%252Crms%252Cinitcwndbps%26lsig%3DAPaTxxMwRAIgSvP2QLnTh2vgZQRA8gg22-DrSEZKdNJhbqWX8ZTZehACICPHKrQs75xPbMmQPiApVXPWqpo7ZgECvQYs0LdMR5bB&filename=video.mp4 HTTP/1.1" 200 -
 2026-01-04 19:40:19,089 - INFO - Descarga proxy completada exitosamente
 2026-01-04 19:40:45,960 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 19:43:15,741 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-04 19:43:15,992 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=XLuWYT7E6aM
+2026-01-04 19:43:18,829 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=XLuWYT7E6aM
+2026-01-04 19:43:18,829 - INFO -    📺 Plataforma: youtube
+2026-01-04 19:43:18,829 - INFO -    🎬 Título: Desarrolla un E-commerce Fullstack con IA...
+2026-01-04 19:43:18,829 - INFO -    🎯 Resolución: 640x360
+2026-01-04 19:43:18,829 - INFO -    📁 Tamaño: 31.2 MB
+2026-01-04 19:43:18,829 - INFO -    ⏱️ Duración: 1581s
+2026-01-04 19:43:18,829 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-04 19:43:36,193 - INFO - Iniciando descarga proxy desde: https://rr3---sn-uxax4vopj55gb-x1xlz.googlevideo.com/videoplayback?expire=1767588199&ei=B-1aaaLZFr6gobIPj6Hb8Qc&ip=2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e&id=o-ABarDUQbcQGR2HpX2s17HeCqcxoU0bu0HQyGomT2QWpG&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=1&met=1767566599%2C&mh=IR&mm=31%2C29&mn=sn-uxax4vopj55gb-x1xlz%2Csn-njaeyn7z&ms=au%2Crdu&mv=m&mvi=3&pl=41&rms=au%2Cau&initcwndbps=1760000&bui=AYUSA3BwKqMs6DJCTTCKH9qMW-zf8UJ_BXWX3BKisIOPuwgaMhn558GrXGhXs0Cqa3T-zS4aNfwAlUUN&spc=wH4Qq5rIxBz5K90D0N4U&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=32673987&ratebypass=yes&dur=1580.860&lmt=1767383255361061&mt=1767566251&fvip=1&fexp=51552689%2C51565115%2C51565681%2C51580968&c=ANDROID&txp=6309224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRAIgBYyQC-qBoio52py3_QPKixAGbn3--laC9isqByXgI6oCIAIycvjEobuOePCbK0Tg58vXHKSCjeMtQ-1pNxDwRePb&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRAIgcC6p-6S2b2N9IBLtbAerYPQPPBnj_14NlVI64C0YPE0CID4dwC6ws8d0VuUfP64ZACQjgMUHCfvAhTS4Bp-NCl_H
+2026-01-04 19:43:37,440 - INFO - Response Content-Type: video/mp4
+2026-01-04 19:43:37,482 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Frr3---sn-uxax4vopj55gb-x1xlz.googlevideo.com%2Fvideoplayback%3Fexpire%3D1767588199%26ei%3DB-1aaaLZFr6gobIPj6Hb8Qc%26ip%3D2802%253A8012%253A2af5%253A9701%253A8c75%253Ade08%253A9f30%253A607e%26id%3Do-ABarDUQbcQGR2HpX2s17HeCqcxoU0bu0HQyGomT2QWpG%26itag%3D18%26source%3Dyoutube%26requiressl%3Dyes%26xpc%3DEgVo2aDSNQ%253D%253D%26cps%3D1%26met%3D1767566599%252C%26mh%3DIR%26mm%3D31%252C29%26mn%3Dsn-uxax4vopj55gb-x1xlz%252Csn-njaeyn7z%26ms%3Dau%252Crdu%26mv%3Dm%26mvi%3D3%26pl%3D41%26rms%3Dau%252Cau%26initcwndbps%3D1760000%26bui%3DAYUSA3BwKqMs6DJCTTCKH9qMW-zf8UJ_BXWX3BKisIOPuwgaMhn558GrXGhXs0Cqa3T-zS4aNfwAlUUN%26spc%3DwH4Qq5rIxBz5K90D0N4U%26vprv%3D1%26svpuc%3D1%26mime%3Dvideo%252Fmp4%26rqh%3D1%26gir%3Dyes%26clen%3D32673987%26ratebypass%3Dyes%26dur%3D1580.860%26lmt%3D1767383255361061%26mt%3D1767566251%26fvip%3D1%26fexp%3D51552689%252C51565115%252C51565681%252C51580968%26c%3DANDROID%26txp%3D6309224%26sparams%3Dexpire%252Cei%252Cip%252Cid%252Citag%252Csource%252Crequiressl%252Cxpc%252Cbui%252Cspc%252Cvprv%252Csvpuc%252Cmime%252Crqh%252Cgir%252Cclen%252Cratebypass%252Cdur%252Clmt%26sig%3DAJfQdSswRAIgBYyQC-qBoio52py3_QPKixAGbn3--laC9isqByXgI6oCIAIycvjEobuOePCbK0Tg58vXHKSCjeMtQ-1pNxDwRePb%26lsparams%3Dcps%252Cmet%252Cmh%252Cmm%252Cmn%252Cms%252Cmv%252Cmvi%252Cpl%252Crms%252Cinitcwndbps%26lsig%3DAPaTxxMwRAIgcC6p-6S2b2N9IBLtbAerYPQPPBnj_14NlVI64C0YPE0CID4dwC6ws8d0VuUfP64ZACQjgMUHCfvAhTS4Bp-NCl_H&filename=video.mp4 HTTP/1.1" 200 -
+2026-01-04 19:43:39,892 - INFO - Descarga proxy completada exitosamente
+2026-01-04 19:44:06,483 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 19:49:16,824 - INFO - ============================================================
+2026-01-04 19:49:16,824 - INFO - Video Downloader Server v2.2 - API Fixed
+2026-01-04 19:49:16,824 - INFO - ============================================================
+2026-01-04 19:49:16,824 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-04 19:49:16,825 - INFO - Acceso local: http://localhost:8000
+2026-01-04 19:49:16,825 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-04 19:49:16,825 - INFO - Endpoints disponibles:
+2026-01-04 19:49:16,825 - INFO -   POST /api/validate - Validar URLs
+2026-01-04 19:49:16,825 - INFO -   POST /api/extract - Extraer videos
+2026-01-04 19:49:16,825 - INFO - Presiona Ctrl+C para detener
+2026-01-04 19:49:16,825 - INFO - ============================================================
+2026-01-04 19:52:20,995 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-04 19:52:21,099 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:52:21,245 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:52:21,404 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:52:21,405 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:52:21,405 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:52:21,406 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:52:21,406 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 19:52:22,226 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 19:52:23,634 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-04 19:52:23,941 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=XLuWYT7E6aM
+2026-01-04 19:52:29,333 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=XLuWYT7E6aM
+2026-01-04 19:52:29,334 - INFO -    📺 Plataforma: youtube
+2026-01-04 19:52:29,334 - INFO -    🎬 Título: Desarrolla un E-commerce Fullstack con IA...
+2026-01-04 19:52:29,334 - INFO -    🎯 Resolución: 640x360
+2026-01-04 19:52:29,334 - INFO -    📁 Tamaño: 31.2 MB
+2026-01-04 19:52:29,334 - INFO -    ⏱️ Duración: 1581s
+2026-01-04 19:52:29,335 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-04 19:52:31,706 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 19:52:34,370 - INFO - Iniciando descarga proxy desde: https://rr3---sn-uxax4vopj55gb-x1xlz.googlevideo.com/videoplayback?expire=1767588749&ei=Le9aadSrNemK-LAPl5mP-Ag&ip=2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e&id=o-AOUy3Sc93oxk-T8pnAMhcGwGIWLNS9yYm0hU4W7mA7NH&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=108&met=1767567149%2C&mh=IR&mm=31%2C29&mn=sn-uxax4vopj55gb-x1xlz%2Csn-njaeyn7z&ms=au%2Crdu&mv=m&mvi=3&pl=41&rms=au%2Cau&initcwndbps=1998750&bui=AYUSA3CTxqYAaebWQGyd-j6Y_Mgl2vulcFe98950sUQW6vTKXB1b-7dueMTU7mYNqG44TUcCa4gW_2gd&spc=wH4Qq7-t61-H6J7ms1Bm&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=32673987&ratebypass=yes&dur=1580.860&lmt=1767383255361061&mt=1767566720&fvip=1&fexp=51552689%2C51565115%2C51565681%2C51580968&c=ANDROID&txp=6309224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRQIhAKOvH6ov9DTK_FHBjQxdKqryW8CwMqwmLfgwgXtZ6jH6AiBVt3lyK6eE52QMnbVfSKX3bDEfSWvkC-YO4lr8YoKg9A%3D%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRAIgf3himX3FPcmatXGOya3lTS4XaYKSmhWRcPoQ7tdYMSQCIDTCAFJh9Y1CbOHDL3eIdvcFqClBgPkSTS1-VOEfZCjw
+2026-01-04 19:52:35,463 - INFO - Response Content-Type: video/mp4
+2026-01-04 19:52:35,501 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Frr3---sn-uxax4vopj55gb-x1xlz.googlevideo.com%2Fvideoplayback%3Fexpire%3D1767588749%26ei%3DLe9aadSrNemK-LAPl5mP-Ag%26ip%3D2802%253A8012%253A2af5%253A9701%253A8c75%253Ade08%253A9f30%253A607e%26id%3Do-AOUy3Sc93oxk-T8pnAMhcGwGIWLNS9yYm0hU4W7mA7NH%26itag%3D18%26source%3Dyoutube%26requiressl%3Dyes%26xpc%3DEgVo2aDSNQ%253D%253D%26cps%3D108%26met%3D1767567149%252C%26mh%3DIR%26mm%3D31%252C29%26mn%3Dsn-uxax4vopj55gb-x1xlz%252Csn-njaeyn7z%26ms%3Dau%252Crdu%26mv%3Dm%26mvi%3D3%26pl%3D41%26rms%3Dau%252Cau%26initcwndbps%3D1998750%26bui%3DAYUSA3CTxqYAaebWQGyd-j6Y_Mgl2vulcFe98950sUQW6vTKXB1b-7dueMTU7mYNqG44TUcCa4gW_2gd%26spc%3DwH4Qq7-t61-H6J7ms1Bm%26vprv%3D1%26svpuc%3D1%26mime%3Dvideo%252Fmp4%26rqh%3D1%26gir%3Dyes%26clen%3D32673987%26ratebypass%3Dyes%26dur%3D1580.860%26lmt%3D1767383255361061%26mt%3D1767566720%26fvip%3D1%26fexp%3D51552689%252C51565115%252C51565681%252C51580968%26c%3DANDROID%26txp%3D6309224%26sparams%3Dexpire%252Cei%252Cip%252Cid%252Citag%252Csource%252Crequiressl%252Cxpc%252Cbui%252Cspc%252Cvprv%252Csvpuc%252Cmime%252Crqh%252Cgir%252Cclen%252Cratebypass%252Cdur%252Clmt%26sig%3DAJfQdSswRQIhAKOvH6ov9DTK_FHBjQxdKqryW8CwMqwmLfgwgXtZ6jH6AiBVt3lyK6eE52QMnbVfSKX3bDEfSWvkC-YO4lr8YoKg9A%253D%253D%26lsparams%3Dcps%252Cmet%252Cmh%252Cmm%252Cmn%252Cms%252Cmv%252Cmvi%252Cpl%252Crms%252Cinitcwndbps%26lsig%3DAPaTxxMwRAIgf3himX3FPcmatXGOya3lTS4XaYKSmhWRcPoQ7tdYMSQCIDTCAFJh9Y1CbOHDL3eIdvcFqClBgPkSTS1-VOEfZCjw&filename=Desarrolla%20un%20E-commerce%20Fullstack%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-04 19:52:36,847 - INFO - Descarga proxy completada exitosamente
+2026-01-04 19:53:04,592 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 19:53:04,621 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 19:59:41,988 - INFO - ============================================================
+2026-01-04 19:59:41,988 - INFO - Video Downloader Server v2.2 - API Fixed
+2026-01-04 19:59:41,988 - INFO - ============================================================
+2026-01-04 19:59:41,988 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-04 19:59:41,988 - INFO - Acceso local: http://localhost:8000
+2026-01-04 19:59:41,989 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-04 19:59:41,989 - INFO - Endpoints disponibles:
+2026-01-04 19:59:41,989 - INFO -   POST /api/validate - Validar URLs
+2026-01-04 19:59:41,989 - INFO -   POST /api/extract - Extraer videos
+2026-01-04 19:59:41,989 - INFO - Presiona Ctrl+C para detener
+2026-01-04 19:59:41,989 - INFO - ============================================================
+2026-01-04 20:00:47,112 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-04 20:00:47,209 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:00:47,362 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:00:47,513 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:00:47,514 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:00:47,515 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:00:47,515 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:00:47,516 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:00:48,281 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 20:01:00,746 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-04 20:01:01,055 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=XLuWYT7E6aM
+2026-01-04 20:01:05,526 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=XLuWYT7E6aM
+2026-01-04 20:01:05,526 - INFO -    📺 Plataforma: youtube
+2026-01-04 20:01:05,526 - INFO -    🎬 Título: Desarrolla un E-commerce Fullstack con IA...
+2026-01-04 20:01:05,526 - INFO -    🎯 Resolución: 640x360
+2026-01-04 20:01:05,526 - INFO -    📁 Tamaño: 31.2 MB
+2026-01-04 20:01:05,526 - INFO -    ⏱️ Duración: 1581s
+2026-01-04 20:01:05,527 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-04 20:01:11,722 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 20:01:15,380 - INFO - Iniciando descarga proxy desde: https://rr3---sn-uxax4vopj55gb-x1xlz.googlevideo.com/videoplayback?expire=1767589266&ei=MvFaabrtIMed-LAP6pjfwQY&ip=2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e&id=o-AA2RO3x3oC4P82fZMHb6dlg2lMfnnorrrlCCVDI-0PZT&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=105&met=1767567666%2C&mh=IR&mm=31%2C29&mn=sn-uxax4vopj55gb-x1xlz%2Csn-njaeyn7z&ms=au%2Crdu&mv=m&mvi=3&pl=41&rms=au%2Cau&initcwndbps=1883750&bui=AYUSA3CWGQ_zENIKzaulWBy0TcJ0i9O4dX6cqaNv-KWk4VpEnifLjr7f0LkyQ0iJ9gWcRgUDPPqp5qd5&spc=wH4Qqzq-WmY15WbE9dt8-7_o-dAf1p0zcmqOU4dky0helask5uiISm_ZGIrgpxlUfJs&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=32673987&ratebypass=yes&dur=1580.860&lmt=1767383255361061&mt=1767567442&fvip=1&fexp=51552689%2C51565116%2C51565681%2C51580968&c=ANDROID&txp=6309224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRQIgTSrnjDNEROwWo3TZtZJYFM3gV6upFzrvP9PVHK4o_sMCIQC4yFbeLeqIQ1nhLpiJoRjIXnAIEv6svm9K6wxJUbiV_Q%3D%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRgIhAOXCqs0z8RqTdehIx3UNNGGQ5Lln9uUMsm-3g7m8R4ZAAiEAlIGPkXC91xuRxZoTCWmK9VAgt4IPON4NHG3Q_9HHdTc%3D
+2026-01-04 20:01:16,810 - INFO - Response Content-Type: video/mp4
+2026-01-04 20:01:16,838 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Frr3---sn-uxax4vopj55gb-x1xlz.googlevideo.com%2Fvideoplayback%3Fexpire%3D1767589266%26ei%3DMvFaabrtIMed-LAP6pjfwQY%26ip%3D2802%253A8012%253A2af5%253A9701%253A8c75%253Ade08%253A9f30%253A607e%26id%3Do-AA2RO3x3oC4P82fZMHb6dlg2lMfnnorrrlCCVDI-0PZT%26itag%3D18%26source%3Dyoutube%26requiressl%3Dyes%26xpc%3DEgVo2aDSNQ%253D%253D%26cps%3D105%26met%3D1767567666%252C%26mh%3DIR%26mm%3D31%252C29%26mn%3Dsn-uxax4vopj55gb-x1xlz%252Csn-njaeyn7z%26ms%3Dau%252Crdu%26mv%3Dm%26mvi%3D3%26pl%3D41%26rms%3Dau%252Cau%26initcwndbps%3D1883750%26bui%3DAYUSA3CWGQ_zENIKzaulWBy0TcJ0i9O4dX6cqaNv-KWk4VpEnifLjr7f0LkyQ0iJ9gWcRgUDPPqp5qd5%26spc%3DwH4Qqzq-WmY15WbE9dt8-7_o-dAf1p0zcmqOU4dky0helask5uiISm_ZGIrgpxlUfJs%26vprv%3D1%26svpuc%3D1%26mime%3Dvideo%252Fmp4%26rqh%3D1%26gir%3Dyes%26clen%3D32673987%26ratebypass%3Dyes%26dur%3D1580.860%26lmt%3D1767383255361061%26mt%3D1767567442%26fvip%3D1%26fexp%3D51552689%252C51565116%252C51565681%252C51580968%26c%3DANDROID%26txp%3D6309224%26sparams%3Dexpire%252Cei%252Cip%252Cid%252Citag%252Csource%252Crequiressl%252Cxpc%252Cbui%252Cspc%252Cvprv%252Csvpuc%252Cmime%252Crqh%252Cgir%252Cclen%252Cratebypass%252Cdur%252Clmt%26sig%3DAJfQdSswRQIgTSrnjDNEROwWo3TZtZJYFM3gV6upFzrvP9PVHK4o_sMCIQC4yFbeLeqIQ1nhLpiJoRjIXnAIEv6svm9K6wxJUbiV_Q%253D%253D%26lsparams%3Dcps%252Cmet%252Cmh%252Cmm%252Cmn%252Cms%252Cmv%252Cmvi%252Cpl%252Crms%252Cinitcwndbps%26lsig%3DAPaTxxMwRgIhAOXCqs0z8RqTdehIx3UNNGGQ5Lln9uUMsm-3g7m8R4ZAAiEAlIGPkXC91xuRxZoTCWmK9VAgt4IPON4NHG3Q_9HHdTc%253D&filename=Desarrolla%20un%20E-commerce%20Fullstack%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-04 20:01:24,651 - INFO - Descarga proxy completada exitosamente
+2026-01-04 20:01:45,612 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 20:01:45,630 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 20:10:55,544 - INFO - ============================================================
+2026-01-04 20:10:55,545 - INFO - Video Downloader Server v2.2 - API Fixed
+2026-01-04 20:10:55,545 - INFO - ============================================================
+2026-01-04 20:10:55,545 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-04 20:10:55,545 - INFO - Acceso local: http://localhost:8000
+2026-01-04 20:10:55,545 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-04 20:10:55,545 - INFO - Endpoints disponibles:
+2026-01-04 20:10:55,545 - INFO -   POST /api/validate - Validar URLs
+2026-01-04 20:10:55,546 - INFO -   POST /api/extract - Extraer videos
+2026-01-04 20:10:55,546 - INFO - Presiona Ctrl+C para detener
+2026-01-04 20:10:55,546 - INFO - ============================================================
+2026-01-04 20:12:08,378 - INFO - ============================================================
+2026-01-04 20:12:08,378 - INFO - Video Downloader Server v2.2 - API Fixed
+2026-01-04 20:12:08,379 - INFO - ============================================================
+2026-01-04 20:12:08,379 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-04 20:12:08,379 - INFO - Acceso local: http://localhost:8000
+2026-01-04 20:12:08,379 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-04 20:12:08,379 - INFO - Endpoints disponibles:
+2026-01-04 20:12:08,379 - INFO -   POST /api/validate - Validar URLs
+2026-01-04 20:12:08,379 - INFO -   POST /api/extract - Extraer videos
+2026-01-04 20:12:08,379 - INFO - Presiona Ctrl+C para detener
+2026-01-04 20:12:08,379 - INFO - ============================================================
+2026-01-04 20:12:14,647 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-04 20:12:14,749 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:12:14,897 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:12:15,054 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:12:15,054 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:12:15,054 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:12:15,055 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:12:15,056 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:12:15,935 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 20:12:25,751 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-04 20:12:26,055 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=XLuWYT7E6aM
+2026-01-04 20:12:30,728 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=XLuWYT7E6aM
+2026-01-04 20:12:30,728 - INFO -    📺 Plataforma: youtube
+2026-01-04 20:12:30,728 - INFO -    🎬 Título: Desarrolla un E-commerce Fullstack con IA...
+2026-01-04 20:12:30,728 - INFO -    🎯 Resolución: 640x360
+2026-01-04 20:12:30,728 - INFO -    📁 Tamaño: 31.2 MB
+2026-01-04 20:12:30,728 - INFO -    ⏱️ Duración: 1581s
+2026-01-04 20:12:30,729 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-04 20:12:34,256 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 20:12:38,211 - INFO - Iniciando descarga HQ para: https://rr3---sn-uxax4vopj55gb-x1xlz.googlevideo.com/videoplayback?expire=1767589951&ei=3_NaacjsKu77-LAP1vv4iAk&ip=2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e&id=o-ACsDTV-sOoqn5L1yHkE01CEu100PS8nVR7_esq14qWu5&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=2&met=1767568351%2C&mh=IR&mm=31%2C29&mn=sn-uxax4vopj55gb-x1xlz%2Csn-njaeyn7z&ms=au%2Crdu&mv=m&mvi=3&pl=41&rms=au%2Cau&initcwndbps=1896250&bui=AYUSA3DcWIid0RxprRhopG20wgj4EiNrFKJWKf1xFm92_f80AYKjdrYkzjbvFZRkcWq2JRZL4qC6lLFu&spc=wH4QqytZfMzztiDavQmTUbJec5t2HQSAtqeROZzvGoAt0xMrZWTpKTWQJzy3k-04WLE&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=32673987&ratebypass=yes&dur=1580.860&lmt=1767383255361061&mt=1767567925&fvip=1&fexp=51552689%2C51565116%2C51565682%2C51580968%2C51626154&c=ANDROID&txp=6309224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRQIgCZqH1LASsaA055CC8kzTFl4SvjbeXg0MhvIjb3rDPzMCIQDIcojWfV3C1mTrkb0ZOrxaeBXGvFDfyl1V_SHp5tC4rQ%3D%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRgIhALni6awt3Jd-aIxo660tHyusJDenUZC1PLg7SlXp364xAiEAmBRkd4igtujBenSQ5oKKuZUCcqhcqla3q3n5LfzxUDk%3D
+2026-01-04 20:12:38,838 - INFO - Procesando video con ffmpeg...
+2026-01-04 20:12:50,242 - INFO - Video procesado exitosamente. Tamaño: 32673987 bytes
+2026-01-04 20:12:50,242 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Frr3---sn-uxax4vopj55gb-x1xlz.googlevideo.com%2Fvideoplayback%3Fexpire%3D1767589951%26ei%3D3_NaacjsKu77-LAP1vv4iAk%26ip%3D2802%253A8012%253A2af5%253A9701%253A8c75%253Ade08%253A9f30%253A607e%26id%3Do-ACsDTV-sOoqn5L1yHkE01CEu100PS8nVR7_esq14qWu5%26itag%3D18%26source%3Dyoutube%26requiressl%3Dyes%26xpc%3DEgVo2aDSNQ%253D%253D%26cps%3D2%26met%3D1767568351%252C%26mh%3DIR%26mm%3D31%252C29%26mn%3Dsn-uxax4vopj55gb-x1xlz%252Csn-njaeyn7z%26ms%3Dau%252Crdu%26mv%3Dm%26mvi%3D3%26pl%3D41%26rms%3Dau%252Cau%26initcwndbps%3D1896250%26bui%3DAYUSA3DcWIid0RxprRhopG20wgj4EiNrFKJWKf1xFm92_f80AYKjdrYkzjbvFZRkcWq2JRZL4qC6lLFu%26spc%3DwH4QqytZfMzztiDavQmTUbJec5t2HQSAtqeROZzvGoAt0xMrZWTpKTWQJzy3k-04WLE%26vprv%3D1%26svpuc%3D1%26mime%3Dvideo%252Fmp4%26rqh%3D1%26gir%3Dyes%26clen%3D32673987%26ratebypass%3Dyes%26dur%3D1580.860%26lmt%3D1767383255361061%26mt%3D1767567925%26fvip%3D1%26fexp%3D51552689%252C51565116%252C51565682%252C51580968%252C51626154%26c%3DANDROID%26txp%3D6309224%26sparams%3Dexpire%252Cei%252Cip%252Cid%252Citag%252Csource%252Crequiressl%252Cxpc%252Cbui%252Cspc%252Cvprv%252Csvpuc%252Cmime%252Crqh%252Cgir%252Cclen%252Cratebypass%252Cdur%252Clmt%26sig%3DAJfQdSswRQIgCZqH1LASsaA055CC8kzTFl4SvjbeXg0MhvIjb3rDPzMCIQDIcojWfV3C1mTrkb0ZOrxaeBXGvFDfyl1V_SHp5tC4rQ%253D%253D%26lsparams%3Dcps%252Cmet%252Cmh%252Cmm%252Cmn%252Cms%252Cmv%252Cmvi%252Cpl%252Crms%252Cinitcwndbps%26lsig%3DAPaTxxMwRgIhALni6awt3Jd-aIxo660tHyusJDenUZC1PLg7SlXp364xAiEAmBRkd4igtujBenSQ5oKKuZUCcqhcqla3q3n5LfzxUDk%253D&filename=Desarrolla%20un%20E-commerce%20Fullstack%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-04 20:12:51,567 - INFO - Envío finalizado.
+2026-01-04 20:12:51,572 - INFO - Archivo temporal eliminado
+2026-01-04 20:13:08,397 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 20:13:08,462 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 20:13:52,548 - INFO - Servidor detenido por usuario
+2026-01-04 20:13:52,548 - INFO - Servidor cerrado correctamente
+2026-01-04 20:14:09,102 - INFO - ============================================================
+2026-01-04 20:14:09,102 - INFO - Video Downloader Server v2.2 - API Fixed
+2026-01-04 20:14:09,102 - INFO - ============================================================
+2026-01-04 20:14:09,102 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-04 20:14:09,102 - INFO - Acceso local: http://localhost:8000
+2026-01-04 20:14:09,102 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-04 20:14:09,102 - INFO - Endpoints disponibles:
+2026-01-04 20:14:09,103 - INFO -   POST /api/validate - Validar URLs
+2026-01-04 20:14:09,103 - INFO -   POST /api/extract - Extraer videos
+2026-01-04 20:14:09,103 - INFO - Presiona Ctrl+C para detener
+2026-01-04 20:14:09,103 - INFO - ============================================================
+2026-01-04 20:15:40,176 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-04 20:15:40,289 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:15:40,427 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:15:40,593 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:15:40,593 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:15:40,593 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:15:40,593 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:15:40,595 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:15:41,623 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 20:16:11,864 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 20:16:31,895 - INFO - ============================================================
+2026-01-04 20:16:31,895 - INFO - Video Downloader Server v2.2 - API Fixed
+2026-01-04 20:16:31,896 - INFO - ============================================================
+2026-01-04 20:16:31,896 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-04 20:16:31,896 - INFO - Acceso local: http://localhost:8000
+2026-01-04 20:16:31,896 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-04 20:16:31,896 - INFO - Endpoints disponibles:
+2026-01-04 20:16:31,896 - INFO -   POST /api/validate - Validar URLs
+2026-01-04 20:16:31,896 - INFO -   POST /api/extract - Extraer videos
+2026-01-04 20:16:31,897 - INFO - Presiona Ctrl+C para detener
+2026-01-04 20:16:31,897 - INFO - ============================================================
+2026-01-04 20:17:59,948 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-04 20:18:00,053 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:18:00,198 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:18:00,357 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:18:00,357 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:18:00,357 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:18:00,358 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:18:00,363 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 20:18:00,898 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 20:18:03,508 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-04 20:18:03,815 - INFO - Extrayendo video de: Matando procesos Python existentes...Procesos Python terminados.Iniciando servidor...Verificando extractores...Instagram extractor: OKLinkedIn extractor: OKX/Twitter extractor: OKTikTok extractor: OKFacebook extractor: OK2026-01-04 20:12:08,378 - INFO - ============================================================2026-01-04 20:12:08,378 - INFO - Video Downloader Server v2.2 - API Fixed2026-01-04 20:12:08,379 - INFO - ============================================================2026-01-04 20:12:08,379 - INFO - Servidor iniciado en http://0.0.0.0:80002026-01-04 20:12:08,379 - INFO - Acceso local: http://localhost:80002026-01-04 20:12:08,379 - INFO - Acceso red: http://192.168.1.50:80002026-01-04 20:12:08,379 - INFO - Endpoints disponibles:2026-01-04 20:12:08,379 - INFO -   POST /api/validate - Validar URLs2026-01-04 20:12:08,379 - INFO -   POST /api/extract - Extraer videos2026-01-04 20:12:08,379 - INFO - Presiona Ctrl+C para detener2026-01-04 20:12:08,379 - INFO - ============================================================2026-01-04 20:12:14,647 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -2026-01-04 20:12:14,749 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -2026-01-04 20:12:14,897 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -2026-01-04 20:12:15,054 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -2026-01-04 20:12:15,054 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -2026-01-04 20:12:15,054 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -2026-01-04 20:12:15,055 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -2026-01-04 20:12:15,056 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -2026-01-04 20:12:15,935 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -2026-01-04 20:12:25,751 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -2026-01-04 20:12:26,055 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=XLuWYT7E6aM🎥 Intento 1: Probando formato 'best[height>=720][ext=mp4][protocol^=http]' para https://www.youtube.com/watch?v=XLuWYT7E6aM📊 Return code: 1❌ Fallo formato 1: ERROR: [youtube] XLuWYT7E6aM: Requested format is not available. Use --list-formats for a list of available formats🎥 Intento 2: Probando formato 'best[ext=mp4][protocol^=http]/best[protocol^=http]' para https://www.youtube.com/watch?v=XLuWYT7E6aM📊 Return code: 0✅ Formato exitoso: best[ext=mp4][protocol^=http]/best[protocol^=http]✅ Video extraído exitosamente (CALIDAD OPTIMIZADA):   📺 Título: Desarrolla un E-commerce Fullstack con IA...   🎯 Resolución: 640x360   📁 Tamaño: 31.2 MB   ⏱️ Duración: 1581s   📊 Bitrate total: 165.347 kbps   🎬 Bitrate video: None kbps   🔊 Bitrate audio: None kbps   📱 Es Short: No   🔊 Audio: Incluido   🎥 Formato usado: best[ext=mp4][protocol^=http]/best[protocol^=http]2026-01-04 20:12:30,728 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=XLuWYT7E6aM2026-01-04 20:12:30,728 - INFO -    📺 Plataforma: youtube2026-01-04 20:12:30,728 - INFO -    🎬 Título: Desarrolla un E-commerce Fullstack con IA...2026-01-04 20:12:30,728 - INFO -    🎯 Resolución: 640x3602026-01-04 20:12:30,728 - INFO -    📁 Tamaño: 31.2 MB2026-01-04 20:12:30,728 - INFO -    ⏱️ Duración: 1581s2026-01-04 20:12:30,729 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -2026-01-04 20:12:34,256 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -2026-01-04 20:12:38,211 - INFO - Iniciando descarga HQ para: https://rr3---sn-uxax4vopj55gb-x1xlz.googlevideo.com/videoplayback?expire=1767589951&ei=3_NaacjsKu77-LAP1vv4iAk&ip=2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e&id=o-ACsDTV-sOoqn5L1yHkE01CEu100PS8nVR7_esq14qWu5&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=2&met=1767568351%2C&mh=IR&mm=31%2C29&mn=sn-uxax4vopj55gb-x1xlz%2Csn-njaeyn7z&ms=au%2Crdu&mv=m&mvi=3&pl=41&rms=au%2Cau&initcwndbps=1896250&bui=AYUSA3DcWIid0RxprRhopG20wgj4EiNrFKJWKf1xFm92_f80AYKjdrYkzjbvFZRkcWq2JRZL4qC6lLFu&spc=wH4QqytZfMzztiDavQmTUbJec5t2HQSAtqeROZzvGoAt0xMrZWTpKTWQJzy3k-04WLE&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=32673987&ratebypass=yes&dur=1580.860&lmt=1767383255361061&mt=1767567925&fvip=1&fexp=51552689%2C51565116%2C51565682%2C51580968%2C51626154&c=ANDROID&txp=6309224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRQIgCZqH1LASsaA055CC8kzTFl4SvjbeXg0MhvIjb3rDPzMCIQDIcojWfV3C1mTrkb0ZOrxaeBXGvFDfyl1V_SHp5tC4rQ%3D%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRgIhALni6awt3Jd-aIxo660tHyusJDenUZC1PLg7SlXp364xAiEAmBRkd4igtujBenSQ5oKKuZUCcqhcqla3q3n5LfzxUDk%3D2026-01-04 20:12:38,838 - INFO - Procesando video con ffmpeg...2026-01-04 20:12:50,242 - INFO - Video procesado exitosamente. Tamaño: 32673987 bytes2026-01-04 20:12:50,242 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Frr3---sn-uxax4vopj55gb-x1xlz.googlevideo.com%2Fvideoplayback%3Fexpire%3D1767589951%26ei%3D3_NaacjsKu77-LAP1vv4iAk%26ip%3D2802%253A8012%253A2af5%253A9701%253A8c75%253Ade08%253A9f30%253A607e%26id%3Do-ACsDTV-sOoqn5L1yHkE01CEu100PS8nVR7_esq14qWu5%26itag%3D18%26source%3Dyoutube%26requiressl%3Dyes%26xpc%3DEgVo2aDSNQ%253D%253D%26cps%3D2%26met%3D1767568351%252C%26mh%3DIR%26mm%3D31%252C29%26mn%3Dsn-uxax4vopj55gb-x1xlz%252Csn-njaeyn7z%26ms%3Dau%252Crdu%26mv%3Dm%26mvi%3D3%26pl%3D41%26rms%3Dau%252Cau%26initcwndbps%3D1896250%26bui%3DAYUSA3DcWIid0RxprRhopG20wgj4EiNrFKJWKf1xFm92_f80AYKjdrYkzjbvFZRkcWq2JRZL4qC6lLFu%26spc%3DwH4QqytZfMzztiDavQmTUbJec5t2HQSAtqeROZzvGoAt0xMrZWTpKTWQJzy3k-04WLE%26vprv%3D1%26svpuc%3D1%26mime%3Dvideo%252Fmp4%26rqh%3D1%26gir%3Dyes%26clen%3D32673987%26ratebypass%3Dyes%26dur%3D1580.860%26lmt%3D1767383255361061%26mt%3D1767567925%26fvip%3D1%26fexp%3D51552689%252C51565116%252C51565682%252C51580968%252C51626154%26c%3DANDROID%26txp%3D6309224%26sparams%3Dexpire%252Cei%252Cip%252Cid%252Citag%252Csource%252Crequiressl%252Cxpc%252Cbui%252Cspc%252Cvprv%252Csvpuc%252Cmime%252Crqh%252Cgir%252Cclen%252Cratebypass%252Cdur%252Clmt%26sig%3DAJfQdSswRQIgCZqH1LASsaA055CC8kzTFl4SvjbeXg0MhvIjb3rDPzMCIQDIcojWfV3C1mTrkb0ZOrxaeBXGvFDfyl1V_SHp5tC4rQ%253D%253D%26lsparams%3Dcps%252Cmet%252Cmh%252Cmm%252Cmn%252Cms%252Cmv%252Cmvi%252Cpl%252Crms%252Cinitcwndbps%26lsig%3DAPaTxxMwRgIhALni6awt3Jd-aIxo660tHyusJDenUZC1PLg7SlXp364xAiEAmBRkd4igtujBenSQ5oKKuZUCcqhcqla3q3n5LfzxUDk%253D&filename=Desarrolla%20un%20E-commerce%20Fullstack%20con%20IA.mp4 HTTP/1.1" 200 -2026-01-04 20:12:51,567 - INFO - Envío finalizado.2026-01-04 20:12:51,572 - INFO - Archivo temporal eliminado2026-01-04 20:13:08,397 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')2026-01-04 20:13:08,462 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 20:18:06,797 - WARNING - Error extrayendo Matando procesos Python existentes...Procesos Python terminados.Iniciando servidor...Verificando extractores...Instagram extractor: OKLinkedIn extractor: OKX/Twitter extractor: OKTikTok extractor: OKFacebook extractor: OK2026-01-04 20:12:08,378 - INFO - ============================================================2026-01-04 20:12:08,378 - INFO - Video Downloader Server v2.2 - API Fixed2026-01-04 20:12:08,379 - INFO - ============================================================2026-01-04 20:12:08,379 - INFO - Servidor iniciado en http://0.0.0.0:80002026-01-04 20:12:08,379 - INFO - Acceso local: http://localhost:80002026-01-04 20:12:08,379 - INFO - Acceso red: http://192.168.1.50:80002026-01-04 20:12:08,379 - INFO - Endpoints disponibles:2026-01-04 20:12:08,379 - INFO -   POST /api/validate - Validar URLs2026-01-04 20:12:08,379 - INFO -   POST /api/extract - Extraer videos2026-01-04 20:12:08,379 - INFO - Presiona Ctrl+C para detener2026-01-04 20:12:08,379 - INFO - ============================================================2026-01-04 20:12:14,647 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -2026-01-04 20:12:14,749 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -2026-01-04 20:12:14,897 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -2026-01-04 20:12:15,054 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -2026-01-04 20:12:15,054 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -2026-01-04 20:12:15,054 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -2026-01-04 20:12:15,055 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -2026-01-04 20:12:15,056 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -2026-01-04 20:12:15,935 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -2026-01-04 20:12:25,751 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -2026-01-04 20:12:26,055 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=XLuWYT7E6aM🎥 Intento 1: Probando formato 'best[height>=720][ext=mp4][protocol^=http]' para https://www.youtube.com/watch?v=XLuWYT7E6aM📊 Return code: 1❌ Fallo formato 1: ERROR: [youtube] XLuWYT7E6aM: Requested format is not available. Use --list-formats for a list of available formats🎥 Intento 2: Probando formato 'best[ext=mp4][protocol^=http]/best[protocol^=http]' para https://www.youtube.com/watch?v=XLuWYT7E6aM📊 Return code: 0✅ Formato exitoso: best[ext=mp4][protocol^=http]/best[protocol^=http]✅ Video extraído exitosamente (CALIDAD OPTIMIZADA):   📺 Título: Desarrolla un E-commerce Fullstack con IA...   🎯 Resolución: 640x360   📁 Tamaño: 31.2 MB   ⏱️ Duración: 1581s   📊 Bitrate total: 165.347 kbps   🎬 Bitrate video: None kbps   🔊 Bitrate audio: None kbps   📱 Es Short: No   🔊 Audio: Incluido   🎥 Formato usado: best[ext=mp4][protocol^=http]/best[protocol^=http]2026-01-04 20:12:30,728 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=XLuWYT7E6aM2026-01-04 20:12:30,728 - INFO -    📺 Plataforma: youtube2026-01-04 20:12:30,728 - INFO -    🎬 Título: Desarrolla un E-commerce Fullstack con IA...2026-01-04 20:12:30,728 - INFO -    🎯 Resolución: 640x3602026-01-04 20:12:30,728 - INFO -    📁 Tamaño: 31.2 MB2026-01-04 20:12:30,728 - INFO -    ⏱️ Duración: 1581s2026-01-04 20:12:30,729 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -2026-01-04 20:12:34,256 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -2026-01-04 20:12:38,211 - INFO - Iniciando descarga HQ para: https://rr3---sn-uxax4vopj55gb-x1xlz.googlevideo.com/videoplayback?expire=1767589951&ei=3_NaacjsKu77-LAP1vv4iAk&ip=2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e&id=o-ACsDTV-sOoqn5L1yHkE01CEu100PS8nVR7_esq14qWu5&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=2&met=1767568351%2C&mh=IR&mm=31%2C29&mn=sn-uxax4vopj55gb-x1xlz%2Csn-njaeyn7z&ms=au%2Crdu&mv=m&mvi=3&pl=41&rms=au%2Cau&initcwndbps=1896250&bui=AYUSA3DcWIid0RxprRhopG20wgj4EiNrFKJWKf1xFm92_f80AYKjdrYkzjbvFZRkcWq2JRZL4qC6lLFu&spc=wH4QqytZfMzztiDavQmTUbJec5t2HQSAtqeROZzvGoAt0xMrZWTpKTWQJzy3k-04WLE&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=32673987&ratebypass=yes&dur=1580.860&lmt=1767383255361061&mt=1767567925&fvip=1&fexp=51552689%2C51565116%2C51565682%2C51580968%2C51626154&c=ANDROID&txp=6309224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRQIgCZqH1LASsaA055CC8kzTFl4SvjbeXg0MhvIjb3rDPzMCIQDIcojWfV3C1mTrkb0ZOrxaeBXGvFDfyl1V_SHp5tC4rQ%3D%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRgIhALni6awt3Jd-aIxo660tHyusJDenUZC1PLg7SlXp364xAiEAmBRkd4igtujBenSQ5oKKuZUCcqhcqla3q3n5LfzxUDk%3D2026-01-04 20:12:38,838 - INFO - Procesando video con ffmpeg...2026-01-04 20:12:50,242 - INFO - Video procesado exitosamente. Tamaño: 32673987 bytes2026-01-04 20:12:50,242 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Frr3---sn-uxax4vopj55gb-x1xlz.googlevideo.com%2Fvideoplayback%3Fexpire%3D1767589951%26ei%3D3_NaacjsKu77-LAP1vv4iAk%26ip%3D2802%253A8012%253A2af5%253A9701%253A8c75%253Ade08%253A9f30%253A607e%26id%3Do-ACsDTV-sOoqn5L1yHkE01CEu100PS8nVR7_esq14qWu5%26itag%3D18%26source%3Dyoutube%26requiressl%3Dyes%26xpc%3DEgVo2aDSNQ%253D%253D%26cps%3D2%26met%3D1767568351%252C%26mh%3DIR%26mm%3D31%252C29%26mn%3Dsn-uxax4vopj55gb-x1xlz%252Csn-njaeyn7z%26ms%3Dau%252Crdu%26mv%3Dm%26mvi%3D3%26pl%3D41%26rms%3Dau%252Cau%26initcwndbps%3D1896250%26bui%3DAYUSA3DcWIid0RxprRhopG20wgj4EiNrFKJWKf1xFm92_f80AYKjdrYkzjbvFZRkcWq2JRZL4qC6lLFu%26spc%3DwH4QqytZfMzztiDavQmTUbJec5t2HQSAtqeROZzvGoAt0xMrZWTpKTWQJzy3k-04WLE%26vprv%3D1%26svpuc%3D1%26mime%3Dvideo%252Fmp4%26rqh%3D1%26gir%3Dyes%26clen%3D32673987%26ratebypass%3Dyes%26dur%3D1580.860%26lmt%3D1767383255361061%26mt%3D1767567925%26fvip%3D1%26fexp%3D51552689%252C51565116%252C51565682%252C51580968%252C51626154%26c%3DANDROID%26txp%3D6309224%26sparams%3Dexpire%252Cei%252Cip%252Cid%252Citag%252Csource%252Crequiressl%252Cxpc%252Cbui%252Cspc%252Cvprv%252Csvpuc%252Cmime%252Crqh%252Cgir%252Cclen%252Cratebypass%252Cdur%252Clmt%26sig%3DAJfQdSswRQIgCZqH1LASsaA055CC8kzTFl4SvjbeXg0MhvIjb3rDPzMCIQDIcojWfV3C1mTrkb0ZOrxaeBXGvFDfyl1V_SHp5tC4rQ%253D%253D%26lsparams%3Dcps%252Cmet%252Cmh%252Cmm%252Cmn%252Cms%252Cmv%252Cmvi%252Cpl%252Crms%252Cinitcwndbps%26lsig%3DAPaTxxMwRgIhALni6awt3Jd-aIxo660tHyusJDenUZC1PLg7SlXp364xAiEAmBRkd4igtujBenSQ5oKKuZUCcqhcqla3q3n5LfzxUDk%253D&filename=Desarrolla%20un%20E-commerce%20Fullstack%20con%20IA.mp4 HTTP/1.1" 200 -2026-01-04 20:12:51,567 - INFO - Envío finalizado.2026-01-04 20:12:51,572 - INFO - Archivo temporal eliminado2026-01-04 20:13:08,397 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')2026-01-04 20:13:08,462 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out'): No se pudo extraer el video con formato básico
+2026-01-04 20:18:06,797 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-01-04 20:18:14,275 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-04 20:18:14,587 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=XLuWYT7E6aM
+2026-01-04 20:18:18,977 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=XLuWYT7E6aM
+2026-01-04 20:18:18,977 - INFO -    📺 Plataforma: youtube
+2026-01-04 20:18:18,977 - INFO -    🎬 Título: Desarrolla un E-commerce Fullstack con IA...
+2026-01-04 20:18:18,977 - INFO -    🎯 Resolución: 640x360
+2026-01-04 20:18:18,978 - INFO -    📁 Tamaño: 31.2 MB
+2026-01-04 20:18:18,978 - INFO -    ⏱️ Duración: 1581s
+2026-01-04 20:18:18,978 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-04 20:18:24,956 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 20:18:30,946 - INFO - Iniciando descarga HQ para: https://rr3---sn-uxax4vopj55gb-x1xlz.googlevideo.com/videoplayback?expire=1767590300&ei=PPVaabKOAaH01sQPsf7Z8AY&ip=2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e&id=o-AAo8NunP4QLVKS919jgj16Sj2rUwHygHKJ6Hgy3Xj3bw&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=1&met=1767568700%2C&mh=IR&mm=31%2C29&mn=sn-uxax4vopj55gb-x1xlz%2Csn-nja7snll&ms=au%2Crdu&mv=m&mvi=3&pl=41&rms=au%2Cau&initcwndbps=1873750&bui=AYUSA3DCQWjNQDyWm2IR9sTizzci4SvkJBZd6ELcHumfEvuluDhXge_DfXfz_BXVOu7CWcsvhN3QQoLk&spc=wH4QqzzjCtUi0nekXQOQNvXA40QGU8jFoVe4tDhIe07cdAw4G8dF4nlCF4vp3_Lj9mI&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=32673987&ratebypass=yes&dur=1580.860&lmt=1767383255361061&mt=1767568169&fvip=1&fexp=51552689%2C51565116%2C51565682%2C51580968&c=ANDROID&txp=6309224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRAIgFfcDEwAhrzBtpXmnO-g3l9FZiFFemlzFF4EfQiOHo-0CIDeq6tG9yW1jHPVg_-rnZEHbdNoz2hIfdtKQJMEm6nLv&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRQIgBI2O3tmq1thQgGyT7CzUukj7s4pKBFghWx6NZDtQcM8CIQC_Bl7xL3Po0yjM52RST_sJY-HEw3KQNbRCFQukvMGPVg%3D%3D
+2026-01-04 20:18:31,141 - INFO - Procesando video con ffmpeg...
+2026-01-04 20:18:33,899 - INFO - Video procesado exitosamente. Tamaño: 32673987 bytes
+2026-01-04 20:18:33,899 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Frr3---sn-uxax4vopj55gb-x1xlz.googlevideo.com%2Fvideoplayback%3Fexpire%3D1767590300%26ei%3DPPVaabKOAaH01sQPsf7Z8AY%26ip%3D2802%253A8012%253A2af5%253A9701%253A8c75%253Ade08%253A9f30%253A607e%26id%3Do-AAo8NunP4QLVKS919jgj16Sj2rUwHygHKJ6Hgy3Xj3bw%26itag%3D18%26source%3Dyoutube%26requiressl%3Dyes%26xpc%3DEgVo2aDSNQ%253D%253D%26cps%3D1%26met%3D1767568700%252C%26mh%3DIR%26mm%3D31%252C29%26mn%3Dsn-uxax4vopj55gb-x1xlz%252Csn-nja7snll%26ms%3Dau%252Crdu%26mv%3Dm%26mvi%3D3%26pl%3D41%26rms%3Dau%252Cau%26initcwndbps%3D1873750%26bui%3DAYUSA3DCQWjNQDyWm2IR9sTizzci4SvkJBZd6ELcHumfEvuluDhXge_DfXfz_BXVOu7CWcsvhN3QQoLk%26spc%3DwH4QqzzjCtUi0nekXQOQNvXA40QGU8jFoVe4tDhIe07cdAw4G8dF4nlCF4vp3_Lj9mI%26vprv%3D1%26svpuc%3D1%26mime%3Dvideo%252Fmp4%26rqh%3D1%26gir%3Dyes%26clen%3D32673987%26ratebypass%3Dyes%26dur%3D1580.860%26lmt%3D1767383255361061%26mt%3D1767568169%26fvip%3D1%26fexp%3D51552689%252C51565116%252C51565682%252C51580968%26c%3DANDROID%26txp%3D6309224%26sparams%3Dexpire%252Cei%252Cip%252Cid%252Citag%252Csource%252Crequiressl%252Cxpc%252Cbui%252Cspc%252Cvprv%252Csvpuc%252Cmime%252Crqh%252Cgir%252Cclen%252Cratebypass%252Cdur%252Clmt%26sig%3DAJfQdSswRAIgFfcDEwAhrzBtpXmnO-g3l9FZiFFemlzFF4EfQiOHo-0CIDeq6tG9yW1jHPVg_-rnZEHbdNoz2hIfdtKQJMEm6nLv%26lsparams%3Dcps%252Cmet%252Cmh%252Cmm%252Cmn%252Cms%252Cmv%252Cmvi%252Cpl%252Crms%252Cinitcwndbps%26lsig%3DAPaTxxMwRQIgBI2O3tmq1thQgGyT7CzUukj7s4pKBFghWx6NZDtQcM8CIQC_Bl7xL3Po0yjM52RST_sJY-HEw3KQNbRCFQukvMGPVg%253D%253D&filename=Desarrolla%20un%20E-commerce%20Fullstack%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-04 20:18:35,245 - INFO - Envío finalizado.
+2026-01-04 20:18:35,250 - INFO - Archivo temporal eliminado
+2026-01-04 20:19:01,261 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 21:34:12,470 - INFO - 192.168.1.160 - "GET / HTTP/1.1" 200 -
+2026-01-04 21:34:14,603 - INFO - 192.168.1.160 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 21:34:14,603 - INFO - 192.168.1.160 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 21:34:14,608 - INFO - 192.168.1.160 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 21:34:14,720 - INFO - 192.168.1.160 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 21:34:14,720 - INFO - 192.168.1.160 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 21:34:14,722 - INFO - 192.168.1.160 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 21:34:14,757 - INFO - 192.168.1.160 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 21:34:18,399 - INFO - 192.168.1.160 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 21:34:31,647 - INFO - 192.168.1.160 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-04 21:35:19,025 - INFO - 192.168.1.160 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-04 21:35:19,075 - INFO - Extrayendo video de: https://www.clarin.comhttps://youtube.com/shorts/K6NtYbNJq8k?si=Pn9Wh78W7vtVMDB3
+2026-01-04 21:35:22,871 - WARNING - Error extrayendo https://www.clarin.comhttps://youtube.com/shorts/K6NtYbNJq8k?si=Pn9Wh78W7vtVMDB3: No se pudo extraer el video con formato básico
+2026-01-04 21:35:22,872 - INFO - 192.168.1.160 - "POST /api/extract HTTP/1.1" 400 -
+2026-01-04 21:35:44,605 - INFO - 192.168.1.160 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-04 21:35:44,914 - INFO - Extrayendo video de: https://youtube.com/shorts/K6NtYbNJq8k?si=Pn9Wh78W7vtVMDB3
+2026-01-04 21:35:48,881 - INFO - ✅ Extracción exitosa para: https://youtube.com/shorts/K6NtYbNJq8k?si=Pn9Wh78W7vtVMDB3
+2026-01-04 21:35:48,881 - INFO -    📺 Plataforma: youtube
+2026-01-04 21:35:48,881 - INFO -    🎬 Título: La pelada de LUZBELITO | La Gambeta #lagambeta #hu...
+2026-01-04 21:35:48,882 - INFO -    🎯 Resolución: 360x640
+2026-01-04 21:35:48,882 - INFO -    📁 Tamaño: 5.1 MB
+2026-01-04 21:35:48,882 - INFO -    ⏱️ Duración: 73s
+2026-01-04 21:35:48,882 - INFO - 192.168.1.160 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-04 21:35:54,654 - INFO - Iniciando descarga HQ para: https://rr3---sn-uxax4vopj55gb-x1xl.googlevideo.com/videoplayback?expire=1767594950&ei=ZgdbacvFIvCjobIP8qetqQg&ip=2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e&id=o-APIzNqPmbs6F44QM1tT2hBG-G334qyY0xh91gEjRiv5q&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=2&met=1767573350%2C&mh=e3&mm=31%2C29&mn=sn-uxax4vopj55gb-x1xl%2Csn-qja5mc-5h&ms=au%2Crdu&mv=m&mvi=3&pcm2cms=yes&pl=41&rms=au%2Cau&initcwndbps=2162500&bui=AYUSA3B8CMKHVEjsBSp7g6B1ZNJYMHIHclEV53uvArta-JkkdjeWE_oy3Pf6vFPAUK9wXgnVT2ppOEZF&spc=wH4Qq-2BwItE1XEqv5QH7iJ9ibOu5g15S9sW3ridgaJOm-NQz0VsDIxVIaUr_IUerOc&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=5375066&ratebypass=yes&dur=72.533&lmt=1767107632585078&mt=1767572981&fvip=2&fexp=51552689%2C51565115%2C51565681%2C51580968&c=ANDROID&txp=4430534&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRQIhAJCqsyp7LOVnae3VsBNAZTu826g_NJRWKpbgXrAO0c2rAiApeX47O7LRotyqUkVm6er_HUYEOuBQmcUferKL-1LKVA%3D%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpcm2cms%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRQIhANv7iNo2a7-nIo5rp3eOBP-6jRL-vG9KxGS2kmfTYps-AiBLHAVIdfFWhR4wZeGQZhw3QiEV8GmVLmNMDusPuQay7A%3D%3D
+2026-01-04 21:35:54,655 - INFO - Procesando video con ffmpeg...
+2026-01-04 21:35:55,262 - INFO - Video procesado exitosamente. Tamaño: 5375066 bytes
+2026-01-04 21:35:55,262 - INFO - 192.168.1.160 - "GET /api/download?url=https%3A%2F%2Frr3---sn-uxax4vopj55gb-x1xl.googlevideo.com%2Fvideoplayback%3Fexpire%3D1767594950%26ei%3DZgdbacvFIvCjobIP8qetqQg%26ip%3D2802%253A8012%253A2af5%253A9701%253A8c75%253Ade08%253A9f30%253A607e%26id%3Do-APIzNqPmbs6F44QM1tT2hBG-G334qyY0xh91gEjRiv5q%26itag%3D18%26source%3Dyoutube%26requiressl%3Dyes%26xpc%3DEgVo2aDSNQ%253D%253D%26cps%3D2%26met%3D1767573350%252C%26mh%3De3%26mm%3D31%252C29%26mn%3Dsn-uxax4vopj55gb-x1xl%252Csn-qja5mc-5h%26ms%3Dau%252Crdu%26mv%3Dm%26mvi%3D3%26pcm2cms%3Dyes%26pl%3D41%26rms%3Dau%252Cau%26initcwndbps%3D2162500%26bui%3DAYUSA3B8CMKHVEjsBSp7g6B1ZNJYMHIHclEV53uvArta-JkkdjeWE_oy3Pf6vFPAUK9wXgnVT2ppOEZF%26spc%3DwH4Qq-2BwItE1XEqv5QH7iJ9ibOu5g15S9sW3ridgaJOm-NQz0VsDIxVIaUr_IUerOc%26vprv%3D1%26svpuc%3D1%26mime%3Dvideo%252Fmp4%26rqh%3D1%26gir%3Dyes%26clen%3D5375066%26ratebypass%3Dyes%26dur%3D72.533%26lmt%3D1767107632585078%26mt%3D1767572981%26fvip%3D2%26fexp%3D51552689%252C51565115%252C51565681%252C51580968%26c%3DANDROID%26txp%3D4430534%26sparams%3Dexpire%252Cei%252Cip%252Cid%252Citag%252Csource%252Crequiressl%252Cxpc%252Cbui%252Cspc%252Cvprv%252Csvpuc%252Cmime%252Crqh%252Cgir%252Cclen%252Cratebypass%252Cdur%252Clmt%26sig%3DAJfQdSswRQIhAJCqsyp7LOVnae3VsBNAZTu826g_NJRWKpbgXrAO0c2rAiApeX47O7LRotyqUkVm6er_HUYEOuBQmcUferKL-1LKVA%253D%253D%26lsparams%3Dcps%252Cmet%252Cmh%252Cmm%252Cmn%252Cms%252Cmv%252Cmvi%252Cpcm2cms%252Cpl%252Crms%252Cinitcwndbps%26lsig%3DAPaTxxMwRQIhANv7iNo2a7-nIo5rp3eOBP-6jRL-vG9KxGS2kmfTYps-AiBLHAVIdfFWhR4wZeGQZhw3QiEV8GmVLmNMDusPuQay7A%253D%253D&filename=La%20pelada%20de%20LUZBELITO%20%20La%20Gambeta%20%23lagambeta%20%23humor%20%23comedia%20%23lagambeta2025%20%23takawishi.mp4 HTTP/1.1" 200 -
+2026-01-04 21:35:56,663 - INFO - Envío finalizado.
+2026-01-04 21:35:56,664 - INFO - Archivo temporal eliminado
+2026-01-04 21:36:24,719 - INFO - 192.168.1.160 - Request timed out: TimeoutError('timed out')
+2026-01-04 21:38:08,136 - INFO - ============================================================
+2026-01-04 21:38:08,137 - INFO - Video Downloader Server v2.2 - API Fixed
+2026-01-04 21:38:08,137 - INFO - ============================================================
+2026-01-04 21:38:08,137 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-04 21:38:08,137 - INFO - Acceso local: http://localhost:8000
+2026-01-04 21:38:08,137 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-04 21:38:08,137 - INFO - Endpoints disponibles:
+2026-01-04 21:38:08,138 - INFO -   POST /api/validate - Validar URLs
+2026-01-04 21:38:08,138 - INFO -   POST /api/extract - Extraer videos
+2026-01-04 21:38:08,138 - INFO - Presiona Ctrl+C para detener
+2026-01-04 21:38:08,138 - INFO - ============================================================
+2026-01-04 21:38:32,388 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-04 21:38:32,487 - INFO - 127.0.0.1 - "GET /card.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 21:38:32,649 - INFO - 127.0.0.1 - "GET /insta.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 21:38:32,802 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 21:38:32,803 - INFO - 127.0.0.1 - "GET /x.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 21:38:32,804 - INFO - 127.0.0.1 - "GET /youtube.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 21:38:32,805 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 21:38:32,806 - INFO - 127.0.0.1 - "GET /facebook.js?v=20250612 HTTP/1.1" 200 -
+2026-01-04 21:38:33,671 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 21:38:48,438 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-04 21:38:48,756 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=XLuWYT7E6aM
+2026-01-04 21:38:53,265 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=XLuWYT7E6aM
+2026-01-04 21:38:53,265 - INFO -    📺 Plataforma: youtube
+2026-01-04 21:38:53,265 - INFO -    🎬 Título: Desarrolla un E-commerce Fullstack con IA...
+2026-01-04 21:38:53,265 - INFO -    🎯 Resolución: 640x360
+2026-01-04 21:38:53,265 - INFO -    📁 Tamaño: 31.2 MB
+2026-01-04 21:38:53,266 - INFO -    ⏱️ Duración: 1581s
+2026-01-04 21:38:53,266 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-04 21:38:55,331 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-04 21:38:58,338 - INFO - Iniciando descarga HQ para: https://rr3---sn-uxax4vopj55gb-x1xlz.googlevideo.com/videoplayback?expire=1767595134&ei=HghbaffjOL-b1sQP2Iy14QY&ip=2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e&id=o-AJ4WiwyvBg16dNwBk8DLH4GebTEt45caj_QOfybUVKYe&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=0&met=1767573534%2C&mh=IR&mm=31%2C29&mn=sn-uxax4vopj55gb-x1xlz%2Csn-a5msenes&ms=au%2Crdu&mv=m&mvi=3&pl=41&rms=au%2Cau&initcwndbps=1913750&bui=AYUSA3A_WVrdBEJyawm0CFJWr6zqJJz19W2DCkifPJ9fosmXBdDrFD14g_yzHeFMajEV0dkQ1VfvZ2tP&spc=wH4Qq3-P20COJVCOokXxG4orpOBjYQ_hnrenuqwbGedV0FGtjcAgbo9MEpiqfct670s&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=32673987&ratebypass=yes&dur=1580.860&lmt=1767383255361061&mt=1767572981&fvip=4&fexp=51552689%2C51565115%2C51565682%2C51580968&c=ANDROID&txp=6309224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRgIhAL7b8xyPLiyhwWXjhm7tD6lCIfQ_e7o0VhipOlSTJT9JAiEA-C9EVOXvGUlH5atZBIP7doYeBMMrYHVW_Ap-RVUU7Cs%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRQIhAJvR1itbDw_R9g4P3jtnvbKXvum3cKsdnejT2raGL6ufAiAlT5W_n3lXk_KvAArk7J4q68ORHoCwKINBX7l5Ofy2ew%3D%3D
+2026-01-04 21:38:58,519 - INFO - Procesando video con ffmpeg...
+2026-01-04 21:39:07,995 - INFO - Video procesado exitosamente. Tamaño: 32673987 bytes
+2026-01-04 21:39:07,995 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Frr3---sn-uxax4vopj55gb-x1xlz.googlevideo.com%2Fvideoplayback%3Fexpire%3D1767595134%26ei%3DHghbaffjOL-b1sQP2Iy14QY%26ip%3D2802%253A8012%253A2af5%253A9701%253A8c75%253Ade08%253A9f30%253A607e%26id%3Do-AJ4WiwyvBg16dNwBk8DLH4GebTEt45caj_QOfybUVKYe%26itag%3D18%26source%3Dyoutube%26requiressl%3Dyes%26xpc%3DEgVo2aDSNQ%253D%253D%26cps%3D0%26met%3D1767573534%252C%26mh%3DIR%26mm%3D31%252C29%26mn%3Dsn-uxax4vopj55gb-x1xlz%252Csn-a5msenes%26ms%3Dau%252Crdu%26mv%3Dm%26mvi%3D3%26pl%3D41%26rms%3Dau%252Cau%26initcwndbps%3D1913750%26bui%3DAYUSA3A_WVrdBEJyawm0CFJWr6zqJJz19W2DCkifPJ9fosmXBdDrFD14g_yzHeFMajEV0dkQ1VfvZ2tP%26spc%3DwH4Qq3-P20COJVCOokXxG4orpOBjYQ_hnrenuqwbGedV0FGtjcAgbo9MEpiqfct670s%26vprv%3D1%26svpuc%3D1%26mime%3Dvideo%252Fmp4%26rqh%3D1%26gir%3Dyes%26clen%3D32673987%26ratebypass%3Dyes%26dur%3D1580.860%26lmt%3D1767383255361061%26mt%3D1767572981%26fvip%3D4%26fexp%3D51552689%252C51565115%252C51565682%252C51580968%26c%3DANDROID%26txp%3D6309224%26sparams%3Dexpire%252Cei%252Cip%252Cid%252Citag%252Csource%252Crequiressl%252Cxpc%252Cbui%252Cspc%252Cvprv%252Csvpuc%252Cmime%252Crqh%252Cgir%252Cclen%252Cratebypass%252Cdur%252Clmt%26sig%3DAJfQdSswRgIhAL7b8xyPLiyhwWXjhm7tD6lCIfQ_e7o0VhipOlSTJT9JAiEA-C9EVOXvGUlH5atZBIP7doYeBMMrYHVW_Ap-RVUU7Cs%253D%26lsparams%3Dcps%252Cmet%252Cmh%252Cmm%252Cmn%252Cms%252Cmv%252Cmvi%252Cpl%252Crms%252Cinitcwndbps%26lsig%3DAPaTxxMwRQIhAJvR1itbDw_R9g4P3jtnvbKXvum3cKsdnejT2raGL6ufAiAlT5W_n3lXk_KvAArk7J4q68ORHoCwKINBX7l5Ofy2ew%253D%253D&filename=Desarrolla%20un%20E-commerce%20Fullstack%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-04 21:39:08,447 - INFO - Envío finalizado.
+2026-01-04 21:39:08,452 - INFO - Archivo temporal eliminado
+2026-01-04 21:39:28,660 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 21:39:28,722 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-04 21:43:12,816 - INFO - ============================================================
+2026-01-04 21:43:12,817 - INFO - Video Downloader Server v2.2 - API Fixed
+2026-01-04 21:43:12,817 - INFO - ============================================================
+2026-01-04 21:43:12,817 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-04 21:43:12,817 - INFO - Acceso local: http://localhost:8000
+2026-01-04 21:43:12,817 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-04 21:43:12,817 - INFO - Endpoints disponibles:
+2026-01-04 21:43:12,818 - INFO -   POST /api/validate - Validar URLs
+2026-01-04 21:43:12,818 - INFO -   POST /api/extract - Extraer videos
+2026-01-04 21:43:12,818 - INFO - Presiona Ctrl+C para detener
+2026-01-04 21:43:12,818 - INFO - ============================================================
+2026-01-05 05:38:57,047 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 05:38:57,185 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:38:57,391 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:38:57,481 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:38:57,482 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:38:57,485 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:38:57,487 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:38:57,508 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:38:58,428 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 05:39:13,119 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 05:39:13,431 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=XLuWYT7E6aM
+2026-01-05 05:39:18,450 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=XLuWYT7E6aM
+2026-01-05 05:39:18,451 - INFO -    📺 Plataforma: youtube
+2026-01-05 05:39:18,451 - INFO -    🎬 Título: Desarrolla un E-commerce Fullstack con IA...
+2026-01-05 05:39:18,451 - INFO -    🎯 Resolución: 640x360
+2026-01-05 05:39:18,451 - INFO -    📁 Tamaño: 31.2 MB
+2026-01-05 05:39:18,451 - INFO -    ⏱️ Duración: 1581s
+2026-01-05 05:39:18,451 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 05:39:42,655 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 05:39:42,973 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=XLuWYT7E6aM
+2026-01-05 05:39:47,044 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=XLuWYT7E6aM
+2026-01-05 05:39:47,044 - INFO -    📺 Plataforma: youtube
+2026-01-05 05:39:47,044 - INFO -    🎬 Título: Desarrolla un E-commerce Fullstack con IA...
+2026-01-05 05:39:47,044 - INFO -    🎯 Resolución: 640x360
+2026-01-05 05:39:47,044 - INFO -    📁 Tamaño: 31.2 MB
+2026-01-05 05:39:47,044 - INFO -    ⏱️ Duración: 1581s
+2026-01-05 05:39:47,045 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 05:39:53,035 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 05:39:59,603 - INFO - Descarga proxy estándar para: https://rr3---sn-uxax4vopj55gb-x1xlz.googlevideo.com/videoplayback?expire=1767623988&ei=1HhbadHWJ52Q-LAP6O6jsAQ&ip=2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e&id=o-ADO-N3vYoSckVDlEInjikoiN_-20GPfra7_3738BvKK0&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=0&met=1767602388%2C&mh=IR&mm=31%2C29&mn=sn-uxax4vopj55gb-x1xlz%2Csn-x1x7dn7s&ms=au%2Crdu&mv=m&mvi=3&pl=41&rms=au%2Cau&initcwndbps=1693750&bui=AYUSA3AKzkYwJf555ttDtQaETLURdoBX9xRAHqJyZGk5uyt69H5WhSjem_57gyOWWutJZ_eoygHPebJT&spc=wH4Qq9YVqJvxMUYmLh8xLW2waBp431JVdfqyooOZrLWp4Xjb_RCYLvRo54zLD7UL1m0&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=32673987&ratebypass=yes&dur=1580.860&lmt=1767383255361061&mt=1767601983&fvip=2&fexp=51552689%2C51565116%2C51565682%2C51580968&c=ANDROID&txp=6309224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRQIhAL64G6l2FwtTscJ6wH44Bsg1jKjbIZ88chCcxMzqqrUOAiAwf8d94ayO1wZxPtJSoEWnjScoIJDuyt27r8nSF23Auw%3D%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRQIgL9tG7gLUjb-3otiyMtek1_LP9S7O4ttJO0yeLPgCiv0CIQCpFACivhFOOPabLDxI2x5EXFFCm3_X3WC7bHHo3Kjodg%3D%3D
+2026-01-05 05:40:00,001 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Frr3---sn-uxax4vopj55gb-x1xlz.googlevideo.com%2Fvideoplayback%3Fexpire%3D1767623988%26ei%3D1HhbadHWJ52Q-LAP6O6jsAQ%26ip%3D2802%253A8012%253A2af5%253A9701%253A8c75%253Ade08%253A9f30%253A607e%26id%3Do-ADO-N3vYoSckVDlEInjikoiN_-20GPfra7_3738BvKK0%26itag%3D18%26source%3Dyoutube%26requiressl%3Dyes%26xpc%3DEgVo2aDSNQ%253D%253D%26cps%3D0%26met%3D1767602388%252C%26mh%3DIR%26mm%3D31%252C29%26mn%3Dsn-uxax4vopj55gb-x1xlz%252Csn-x1x7dn7s%26ms%3Dau%252Crdu%26mv%3Dm%26mvi%3D3%26pl%3D41%26rms%3Dau%252Cau%26initcwndbps%3D1693750%26bui%3DAYUSA3AKzkYwJf555ttDtQaETLURdoBX9xRAHqJyZGk5uyt69H5WhSjem_57gyOWWutJZ_eoygHPebJT%26spc%3DwH4Qq9YVqJvxMUYmLh8xLW2waBp431JVdfqyooOZrLWp4Xjb_RCYLvRo54zLD7UL1m0%26vprv%3D1%26svpuc%3D1%26mime%3Dvideo%252Fmp4%26rqh%3D1%26gir%3Dyes%26clen%3D32673987%26ratebypass%3Dyes%26dur%3D1580.860%26lmt%3D1767383255361061%26mt%3D1767601983%26fvip%3D2%26fexp%3D51552689%252C51565116%252C51565682%252C51580968%26c%3DANDROID%26txp%3D6309224%26sparams%3Dexpire%252Cei%252Cip%252Cid%252Citag%252Csource%252Crequiressl%252Cxpc%252Cbui%252Cspc%252Cvprv%252Csvpuc%252Cmime%252Crqh%252Cgir%252Cclen%252Cratebypass%252Cdur%252Clmt%26sig%3DAJfQdSswRQIhAL64G6l2FwtTscJ6wH44Bsg1jKjbIZ88chCcxMzqqrUOAiAwf8d94ayO1wZxPtJSoEWnjScoIJDuyt27r8nSF23Auw%253D%253D%26lsparams%3Dcps%252Cmet%252Cmh%252Cmm%252Cmn%252Cms%252Cmv%252Cmvi%252Cpl%252Crms%252Cinitcwndbps%26lsig%3DAPaTxxMwRQIgL9tG7gLUjb-3otiyMtek1_LP9S7O4ttJO0yeLPgCiv0CIQCpFACivhFOOPabLDxI2x5EXFFCm3_X3WC7bHHo3Kjodg%253D%253D&filename=Desarrolla%20un%20E-commerce%20Fullstack%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-05 05:40:29,790 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 05:40:29,854 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 05:41:57,006 - INFO - Servidor detenido por usuario
+2026-01-05 05:41:57,006 - INFO - Servidor cerrado correctamente
+2026-01-05 05:43:50,790 - INFO - ============================================================
+2026-01-05 05:43:50,790 - INFO - Video Downloader Server v2.2 - API Fixed
+2026-01-05 05:43:50,790 - INFO - ============================================================
+2026-01-05 05:43:50,790 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-05 05:43:50,791 - INFO - Acceso local: http://localhost:8000
+2026-01-05 05:43:50,791 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-05 05:43:50,791 - INFO - Endpoints disponibles:
+2026-01-05 05:43:50,791 - INFO -   POST /api/validate - Validar URLs
+2026-01-05 05:43:50,791 - INFO -   POST /api/extract - Extraer videos
+2026-01-05 05:43:50,791 - INFO - Presiona Ctrl+C para detener
+2026-01-05 05:43:50,791 - INFO - ============================================================
+2026-01-05 05:43:58,646 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 05:43:58,761 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:43:58,899 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:43:59,078 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:43:59,078 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:43:59,079 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:43:59,080 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:43:59,079 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:43:59,859 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 05:44:16,640 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 05:44:16,960 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=XLuWYT7E6aM
+2026-01-05 05:44:21,163 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=XLuWYT7E6aM
+2026-01-05 05:44:21,163 - INFO -    📺 Plataforma: youtube
+2026-01-05 05:44:21,163 - INFO -    🎬 Título: Desarrolla un E-commerce Fullstack con IA...
+2026-01-05 05:44:21,163 - INFO -    🎯 Resolución: 640x360
+2026-01-05 05:44:21,163 - INFO -    📁 Tamaño: 31.2 MB
+2026-01-05 05:44:21,163 - INFO -    ⏱️ Duración: 1581s
+2026-01-05 05:44:21,164 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 05:44:47,235 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 05:48:26,280 - INFO - ============================================================
+2026-01-05 05:48:26,282 - INFO - Video Downloader Server v2.2 - API Fixed
+2026-01-05 05:48:26,282 - INFO - ============================================================
+2026-01-05 05:48:26,282 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-05 05:48:26,282 - INFO - Acceso local: http://localhost:8000
+2026-01-05 05:48:26,283 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-05 05:48:26,283 - INFO - Endpoints disponibles:
+2026-01-05 05:48:26,283 - INFO -   POST /api/validate - Validar URLs
+2026-01-05 05:48:26,283 - INFO -   POST /api/extract - Extraer videos
+2026-01-05 05:48:26,283 - INFO - Presiona Ctrl+C para detener
+2026-01-05 05:48:26,284 - INFO - ============================================================
+2026-01-05 05:49:33,800 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 05:49:33,899 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:49:34,045 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:49:34,217 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:49:34,217 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:49:34,217 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:49:34,217 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:49:34,217 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:49:34,992 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 05:49:44,400 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 05:49:44,725 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=XLuWYT7E6aM
+2026-01-05 05:49:49,073 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=XLuWYT7E6aM
+2026-01-05 05:49:49,073 - INFO -    📺 Plataforma: youtube
+2026-01-05 05:49:49,073 - INFO -    🎬 Título: Desarrolla un E-commerce Fullstack con IA...
+2026-01-05 05:49:49,074 - INFO -    🎯 Resolución: 640x360
+2026-01-05 05:49:49,074 - INFO -    📁 Tamaño: 31.2 MB
+2026-01-05 05:49:49,074 - INFO -    ⏱️ Duración: 1581s
+2026-01-05 05:49:49,074 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 05:49:52,347 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 05:49:57,569 - INFO - Descarga proxy estándar para: https://rr3---sn-uxax4vopj55gb-x1xlz.googlevideo.com/videoplayback?expire=1767624590&ei=LntbadedKI_4-LAPot7zoAk&ip=2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e&id=o-AIqnjucxTXkhPEykQFTlZrgHm7lQZBDAH1qxc4Sk_2Z1&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=0&met=1767602990%2C&mh=IR&mm=31%2C29&mn=sn-uxax4vopj55gb-x1xlz%2Csn-x1x7dn7s&ms=au%2Crdu&mv=m&mvi=3&pl=41&rms=au%2Cau&pcm2=no&initcwndbps=1836250&bui=AYUSA3DDP-muPmZtlMTn5o2bXzuzsApRNuZ7Fd7zC-xOoMrAridt_vU40VLEsG-kH2wSm5Ytu_SbssKL&spc=wH4QqwXyWajoBAr3m7g4BGVuofBGR_78EsVIkdRceGQsFu81sqKEs5W8ZqS-SMGjm-M&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=32673987&ratebypass=yes&dur=1580.860&lmt=1767383255361061&mt=1767602469&fvip=2&fexp=51552689%2C51565116%2C51565681%2C51580968&c=ANDROID&txp=6309224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cpcm2%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRAIgVj_BTMk87OOgqOdz55Zh3KfpsbWn6TIHmCnzkNw2fBgCICsBjSVVNk91BGQ9OcTzkgDwg3sh6FsLL-1wmihdpU_Z&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRQIhAImkLNvRzlnJmpeDiR-LS6GmRJMETZBMNPQmIw5gOEiyAiACr3eYAIkX9b4zVwobvAfsVsXSozBmG6WKQL5hzmR78w%3D%3D
+2026-01-05 05:49:57,906 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Frr3---sn-uxax4vopj55gb-x1xlz.googlevideo.com%2Fvideoplayback%3Fexpire%3D1767624590%26ei%3DLntbadedKI_4-LAPot7zoAk%26ip%3D2802%253A8012%253A2af5%253A9701%253A8c75%253Ade08%253A9f30%253A607e%26id%3Do-AIqnjucxTXkhPEykQFTlZrgHm7lQZBDAH1qxc4Sk_2Z1%26itag%3D18%26source%3Dyoutube%26requiressl%3Dyes%26xpc%3DEgVo2aDSNQ%253D%253D%26cps%3D0%26met%3D1767602990%252C%26mh%3DIR%26mm%3D31%252C29%26mn%3Dsn-uxax4vopj55gb-x1xlz%252Csn-x1x7dn7s%26ms%3Dau%252Crdu%26mv%3Dm%26mvi%3D3%26pl%3D41%26rms%3Dau%252Cau%26pcm2%3Dno%26initcwndbps%3D1836250%26bui%3DAYUSA3DDP-muPmZtlMTn5o2bXzuzsApRNuZ7Fd7zC-xOoMrAridt_vU40VLEsG-kH2wSm5Ytu_SbssKL%26spc%3DwH4QqwXyWajoBAr3m7g4BGVuofBGR_78EsVIkdRceGQsFu81sqKEs5W8ZqS-SMGjm-M%26vprv%3D1%26svpuc%3D1%26mime%3Dvideo%252Fmp4%26rqh%3D1%26gir%3Dyes%26clen%3D32673987%26ratebypass%3Dyes%26dur%3D1580.860%26lmt%3D1767383255361061%26mt%3D1767602469%26fvip%3D2%26fexp%3D51552689%252C51565116%252C51565681%252C51580968%26c%3DANDROID%26txp%3D6309224%26sparams%3Dexpire%252Cei%252Cip%252Cid%252Citag%252Csource%252Crequiressl%252Cxpc%252Cpcm2%252Cbui%252Cspc%252Cvprv%252Csvpuc%252Cmime%252Crqh%252Cgir%252Cclen%252Cratebypass%252Cdur%252Clmt%26sig%3DAJfQdSswRAIgVj_BTMk87OOgqOdz55Zh3KfpsbWn6TIHmCnzkNw2fBgCICsBjSVVNk91BGQ9OcTzkgDwg3sh6FsLL-1wmihdpU_Z%26lsparams%3Dcps%252Cmet%252Cmh%252Cmm%252Cmn%252Cms%252Cmv%252Cmvi%252Cpl%252Crms%252Cinitcwndbps%26lsig%3DAPaTxxMwRQIhAImkLNvRzlnJmpeDiR-LS6GmRJMETZBMNPQmIw5gOEiyAiACr3eYAIkX9b4zVwobvAfsVsXSozBmG6WKQL5hzmR78w%253D%253D&filename=Desarrolla%20un%20E-commerce%20Fullstack%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-05 05:50:27,772 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 05:50:27,834 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 05:51:36,592 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 05:51:36,678 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:51:36,860 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:51:37,004 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:51:37,004 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:51:37,005 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:51:37,005 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:51:37,005 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:51:37,554 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 05:51:41,264 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 05:51:41,581 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 05:51:45,696 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 05:51:45,696 - INFO -    📺 Plataforma: youtube
+2026-01-05 05:51:45,696 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 05:51:45,696 - INFO -    🎯 Resolución: 640x360
+2026-01-05 05:51:45,697 - INFO -    📁 Tamaño: 28.9 MB
+2026-01-05 05:51:45,697 - INFO -    ⏱️ Duración: 956s
+2026-01-05 05:51:45,697 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 05:51:57,870 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 05:51:59,822 - INFO - Descarga proxy estándar para: https://rr1---sn-uxax4vopj55gb-x1xle.googlevideo.com/videoplayback?expire=1767624707&ei=o3tbafO3EqT6-LAPy9X9-Ag&ip=2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e&id=o-AIuYaD0xUXpzbQwnckDYNVyGHvXaLyuFqDvAHjhtvv9i&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=0&met=1767603107%2C&mh=_r&mm=31%2C29&mn=sn-uxax4vopj55gb-x1xle%2Csn-x1xe7n7z&ms=au%2Crdu&mv=m&mvi=1&pl=41&rms=au%2Cau&initcwndbps=1826250&bui=AYUSA3DBcqBNKBTm7DpeVDTr0sDX-MEPXppXRrEYvVUO8je4u-8D7O2KQY6P6mLfvzPUu6w2YCERM1In&spc=wH4Qq_vbu3p3AFuCZpOyqXh8XaW9BuN7BsSk3B-uL7ugoHlBlxa2huSjNNvC5Mc-Mxs&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=30263102&ratebypass=yes&dur=955.640&lmt=1766645811854540&mt=1767602705&fvip=1&fexp=51552689%2C51565115%2C51565682%2C51580968&c=ANDROID&txp=5538534&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRgIhAPLzYkBzDV2qTiPlUM_J7QIGbId3QYOKCQfMaiKK1qoJAiEA60VNUyVXhou9Xa4fnAHlNIYnBDfz4jN_PR6UbcL-TTA%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRgIhAK_dPsfGUhL0ZGLu9O_VfLfEEqLKd5hax85pcxLye2NrAiEAjMVe7BMXJrY4aUl_lqKdNhNrM1wUIV_LqR5xc0myTyQ%3D
+2026-01-05 05:52:00,188 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Frr1---sn-uxax4vopj55gb-x1xle.googlevideo.com%2Fvideoplayback%3Fexpire%3D1767624707%26ei%3Do3tbafO3EqT6-LAPy9X9-Ag%26ip%3D2802%253A8012%253A2af5%253A9701%253A8c75%253Ade08%253A9f30%253A607e%26id%3Do-AIuYaD0xUXpzbQwnckDYNVyGHvXaLyuFqDvAHjhtvv9i%26itag%3D18%26source%3Dyoutube%26requiressl%3Dyes%26xpc%3DEgVo2aDSNQ%253D%253D%26cps%3D0%26met%3D1767603107%252C%26mh%3D_r%26mm%3D31%252C29%26mn%3Dsn-uxax4vopj55gb-x1xle%252Csn-x1xe7n7z%26ms%3Dau%252Crdu%26mv%3Dm%26mvi%3D1%26pl%3D41%26rms%3Dau%252Cau%26initcwndbps%3D1826250%26bui%3DAYUSA3DBcqBNKBTm7DpeVDTr0sDX-MEPXppXRrEYvVUO8je4u-8D7O2KQY6P6mLfvzPUu6w2YCERM1In%26spc%3DwH4Qq_vbu3p3AFuCZpOyqXh8XaW9BuN7BsSk3B-uL7ugoHlBlxa2huSjNNvC5Mc-Mxs%26vprv%3D1%26svpuc%3D1%26mime%3Dvideo%252Fmp4%26rqh%3D1%26gir%3Dyes%26clen%3D30263102%26ratebypass%3Dyes%26dur%3D955.640%26lmt%3D1766645811854540%26mt%3D1767602705%26fvip%3D1%26fexp%3D51552689%252C51565115%252C51565682%252C51580968%26c%3DANDROID%26txp%3D5538534%26sparams%3Dexpire%252Cei%252Cip%252Cid%252Citag%252Csource%252Crequiressl%252Cxpc%252Cbui%252Cspc%252Cvprv%252Csvpuc%252Cmime%252Crqh%252Cgir%252Cclen%252Cratebypass%252Cdur%252Clmt%26sig%3DAJfQdSswRgIhAPLzYkBzDV2qTiPlUM_J7QIGbId3QYOKCQfMaiKK1qoJAiEA60VNUyVXhou9Xa4fnAHlNIYnBDfz4jN_PR6UbcL-TTA%253D%26lsparams%3Dcps%252Cmet%252Cmh%252Cmm%252Cmn%252Cms%252Cmv%252Cmvi%252Cpl%252Crms%252Cinitcwndbps%26lsig%3DAPaTxxMwRgIhAK_dPsfGUhL0ZGLu9O_VfLfEEqLKd5hax85pcxLye2NrAiEAjMVe7BMXJrY4aUl_lqKdNhNrM1wUIV_LqR5xc0myTyQ%253D&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-05 05:52:30,010 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 05:52:30,088 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 05:55:26,160 - INFO - ============================================================
+2026-01-05 05:55:26,161 - INFO - Video Downloader Server v2.2 - API Fixed
+2026-01-05 05:55:26,161 - INFO - ============================================================
+2026-01-05 05:55:26,161 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-05 05:55:26,161 - INFO - Acceso local: http://localhost:8000
+2026-01-05 05:55:26,161 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-05 05:55:26,161 - INFO - Endpoints disponibles:
+2026-01-05 05:55:26,161 - INFO -   POST /api/validate - Validar URLs
+2026-01-05 05:55:26,162 - INFO -   POST /api/extract - Extraer videos
+2026-01-05 05:55:26,162 - INFO - Presiona Ctrl+C para detener
+2026-01-05 05:55:26,162 - INFO - ============================================================
+2026-01-05 05:56:58,579 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 05:56:58,699 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:56:58,832 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:56:59,022 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:56:59,022 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:56:59,023 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:56:59,023 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:56:59,024 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:56:59,601 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 05:57:06,150 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 05:57:06,455 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 05:57:10,679 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 05:57:10,680 - INFO -    📺 Plataforma: youtube
+2026-01-05 05:57:10,680 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 05:57:10,680 - INFO -    🎯 Resolución: 640x360
+2026-01-05 05:57:10,680 - INFO -    📁 Tamaño: 28.9 MB
+2026-01-05 05:57:10,680 - INFO -    ⏱️ Duración: 956s
+2026-01-05 05:57:10,681 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 05:57:25,371 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 05:57:30,025 - INFO - Descarga proxy estándar para: https://rr1---sn-uxax4vopj55gb-x1xle.googlevideo.com/videoplayback?expire=1767625032&ei=6HxbabOnE_CjobIPhMCyiQM&ip=2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e&id=o-AGxHZM1z0sj2Lk2k4kbMFVG1qyL4U5F1hp_DbnnNmOL-&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=0&met=1767603432%2C&mh=_r&mm=31%2C29&mn=sn-uxax4vopj55gb-x1xle%2Csn-x1xe7n7z&ms=au%2Crdu&mv=m&mvi=1&pl=41&rms=au%2Cau&initcwndbps=1692500&bui=AYUSA3CAVLbd-NoqKMW0njAXTGvEIqxADzOI_kKnyT2HCAeeCZlOvheiXJbZgCC4R60IH-QGFa52NNpJ&spc=wH4Qq3npyekqZI3BVXjFOl4P5Sbt4oK-vtb-AUMfAGNgxuZ9Nj8nukTY7SGlbnkVr1o&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=30263102&ratebypass=yes&dur=955.640&lmt=1766645811854540&mt=1767602946&fvip=1&fexp=51552689%2C51565115%2C51565681%2C51580968&c=ANDROID&txp=5538534&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRQIhAKvqgrtZoiwaEZzcZEJX5iOw4u6nhTdQGTK3ceUDQZLyAiBzSHsg6RC4ZkE5XntiezmVoRZPMR67wDlbZSavuOcHNQ%3D%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRgIhANSg_OMtVtHAKyADTK7vUfxXdvKOVzi6kJbGyEnTW0LOAiEAu6R_fMnDGCIIK1mecTBhFu-PVDugSxcn5EY9KfACqYc%3D
+2026-01-05 05:57:30,341 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Frr1---sn-uxax4vopj55gb-x1xle.googlevideo.com%2Fvideoplayback%3Fexpire%3D1767625032%26ei%3D6HxbabOnE_CjobIPhMCyiQM%26ip%3D2802%253A8012%253A2af5%253A9701%253A8c75%253Ade08%253A9f30%253A607e%26id%3Do-AGxHZM1z0sj2Lk2k4kbMFVG1qyL4U5F1hp_DbnnNmOL-%26itag%3D18%26source%3Dyoutube%26requiressl%3Dyes%26xpc%3DEgVo2aDSNQ%253D%253D%26cps%3D0%26met%3D1767603432%252C%26mh%3D_r%26mm%3D31%252C29%26mn%3Dsn-uxax4vopj55gb-x1xle%252Csn-x1xe7n7z%26ms%3Dau%252Crdu%26mv%3Dm%26mvi%3D1%26pl%3D41%26rms%3Dau%252Cau%26initcwndbps%3D1692500%26bui%3DAYUSA3CAVLbd-NoqKMW0njAXTGvEIqxADzOI_kKnyT2HCAeeCZlOvheiXJbZgCC4R60IH-QGFa52NNpJ%26spc%3DwH4Qq3npyekqZI3BVXjFOl4P5Sbt4oK-vtb-AUMfAGNgxuZ9Nj8nukTY7SGlbnkVr1o%26vprv%3D1%26svpuc%3D1%26mime%3Dvideo%252Fmp4%26rqh%3D1%26gir%3Dyes%26clen%3D30263102%26ratebypass%3Dyes%26dur%3D955.640%26lmt%3D1766645811854540%26mt%3D1767602946%26fvip%3D1%26fexp%3D51552689%252C51565115%252C51565681%252C51580968%26c%3DANDROID%26txp%3D5538534%26sparams%3Dexpire%252Cei%252Cip%252Cid%252Citag%252Csource%252Crequiressl%252Cxpc%252Cbui%252Cspc%252Cvprv%252Csvpuc%252Cmime%252Crqh%252Cgir%252Cclen%252Cratebypass%252Cdur%252Clmt%26sig%3DAJfQdSswRQIhAKvqgrtZoiwaEZzcZEJX5iOw4u6nhTdQGTK3ceUDQZLyAiBzSHsg6RC4ZkE5XntiezmVoRZPMR67wDlbZSavuOcHNQ%253D%253D%26lsparams%3Dcps%252Cmet%252Cmh%252Cmm%252Cmn%252Cms%252Cmv%252Cmvi%252Cpl%252Crms%252Cinitcwndbps%26lsig%3DAPaTxxMwRgIhANSg_OMtVtHAKyADTK7vUfxXdvKOVzi6kJbGyEnTW0LOAiEAu6R_fMnDGCIIK1mecTBhFu-PVDugSxcn5EY9KfACqYc%253D&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-05 05:58:00,331 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 05:58:27,831 - INFO - Servidor detenido por usuario
+2026-01-05 05:58:27,831 - INFO - Servidor cerrado correctamente
+2026-01-05 05:59:05,115 - INFO - ============================================================
+2026-01-05 05:59:05,115 - INFO - Video Downloader Server v2.2 - API Fixed
+2026-01-05 05:59:05,115 - INFO - ============================================================
+2026-01-05 05:59:05,115 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-05 05:59:05,115 - INFO - Acceso local: http://localhost:8000
+2026-01-05 05:59:05,115 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-05 05:59:05,115 - INFO - Endpoints disponibles:
+2026-01-05 05:59:05,116 - INFO -   POST /api/validate - Validar URLs
+2026-01-05 05:59:05,116 - INFO -   POST /api/extract - Extraer videos
+2026-01-05 05:59:05,116 - INFO - Presiona Ctrl+C para detener
+2026-01-05 05:59:05,116 - INFO - ============================================================
+2026-01-05 05:59:19,234 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 05:59:19,363 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:59:19,490 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:59:19,678 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:59:19,678 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:59:19,678 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:59:19,678 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:59:19,678 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 05:59:20,558 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 05:59:24,913 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 05:59:25,221 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 05:59:29,520 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 05:59:29,520 - INFO -    📺 Plataforma: youtube
+2026-01-05 05:59:29,521 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 05:59:29,521 - INFO -    🎯 Resolución: 640x360
+2026-01-05 05:59:29,521 - INFO -    📁 Tamaño: 28.9 MB
+2026-01-05 05:59:29,521 - INFO -    ⏱️ Duración: 956s
+2026-01-05 05:59:29,521 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 05:59:55,489 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 06:00:48,933 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 06:00:49,199 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 06:00:53,521 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 06:00:53,521 - INFO -    📺 Plataforma: youtube
+2026-01-05 06:00:53,521 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 06:00:53,521 - INFO -    🎯 Resolución: 640x360
+2026-01-05 06:00:53,522 - INFO -    📁 Tamaño: 28.9 MB
+2026-01-05 06:00:53,522 - INFO -    ⏱️ Duración: 956s
+2026-01-05 06:00:53,522 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 06:00:55,173 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 06:01:00,963 - INFO - Descarga proxy estándar para: https://rr1---sn-uxax4vopj55gb-x1xle.googlevideo.com/videoplayback?expire=1767625255&ei=x31badvUCPakobIP3v__0A0&ip=2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e&id=o-AK9JudzGXWWsVMhFosa3FT6uA2uSO_CeZ546zc3xzq-w&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=0&met=1767603655%2C&mh=_r&mm=31%2C29&mn=sn-uxax4vopj55gb-x1xle%2Csn-x1x7dnez&ms=au%2Crdu&mv=m&mvi=1&pl=41&rms=au%2Cau&initcwndbps=1920000&bui=AYUSA3BT5OOLjcH11jZgp1THNA1xrOpDok1MB383fQt2RrpB4c8iQ9yzoF41H_MazYaQFJi-ED9jrbqV&spc=wH4Qq45o4pEsuX1JKftqgpb2f_M6j71zENEUMGzmHqfZm4zOPeBZMu9th556Mb-g8TM&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=30263102&ratebypass=yes&dur=955.640&lmt=1766645811854540&mt=1767603187&fvip=2&fexp=51552689%2C51565116%2C51565681%2C51580968&c=ANDROID&txp=5538534&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRQIhAOHfuRzc1z_0fTxQpSjA9Knez4xr3bpT_CLKrrK3XY3gAiAOjLWKjfWISNe-y2plQoCceWcrsnXUnni-4Urwz7pU3Q%3D%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRgIhAPDpBaNAFsbYN9VTCLvzRSugcJcqzBhfURg2FFs8I9k7AiEApAO3NUmuPifDnslwmnAkBU0Wwev0eDYm6TLT_gox20c%3D
+2026-01-05 06:01:01,309 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Frr1---sn-uxax4vopj55gb-x1xle.googlevideo.com%2Fvideoplayback%3Fexpire%3D1767625255%26ei%3Dx31badvUCPakobIP3v__0A0%26ip%3D2802%253A8012%253A2af5%253A9701%253A8c75%253Ade08%253A9f30%253A607e%26id%3Do-AK9JudzGXWWsVMhFosa3FT6uA2uSO_CeZ546zc3xzq-w%26itag%3D18%26source%3Dyoutube%26requiressl%3Dyes%26xpc%3DEgVo2aDSNQ%253D%253D%26cps%3D0%26met%3D1767603655%252C%26mh%3D_r%26mm%3D31%252C29%26mn%3Dsn-uxax4vopj55gb-x1xle%252Csn-x1x7dnez%26ms%3Dau%252Crdu%26mv%3Dm%26mvi%3D1%26pl%3D41%26rms%3Dau%252Cau%26initcwndbps%3D1920000%26bui%3DAYUSA3BT5OOLjcH11jZgp1THNA1xrOpDok1MB383fQt2RrpB4c8iQ9yzoF41H_MazYaQFJi-ED9jrbqV%26spc%3DwH4Qq45o4pEsuX1JKftqgpb2f_M6j71zENEUMGzmHqfZm4zOPeBZMu9th556Mb-g8TM%26vprv%3D1%26svpuc%3D1%26mime%3Dvideo%252Fmp4%26rqh%3D1%26gir%3Dyes%26clen%3D30263102%26ratebypass%3Dyes%26dur%3D955.640%26lmt%3D1766645811854540%26mt%3D1767603187%26fvip%3D2%26fexp%3D51552689%252C51565116%252C51565681%252C51580968%26c%3DANDROID%26txp%3D5538534%26sparams%3Dexpire%252Cei%252Cip%252Cid%252Citag%252Csource%252Crequiressl%252Cxpc%252Cbui%252Cspc%252Cvprv%252Csvpuc%252Cmime%252Crqh%252Cgir%252Cclen%252Cratebypass%252Cdur%252Clmt%26sig%3DAJfQdSswRQIhAOHfuRzc1z_0fTxQpSjA9Knez4xr3bpT_CLKrrK3XY3gAiAOjLWKjfWISNe-y2plQoCceWcrsnXUnni-4Urwz7pU3Q%253D%253D%26lsparams%3Dcps%252Cmet%252Cmh%252Cmm%252Cmn%252Cms%252Cmv%252Cmvi%252Cpl%252Crms%252Cinitcwndbps%26lsig%3DAPaTxxMwRgIhAPDpBaNAFsbYN9VTCLvzRSugcJcqzBhfURg2FFs8I9k7AiEApAO3NUmuPifDnslwmnAkBU0Wwev0eDYm6TLT_gox20c%253D&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-05 06:01:31,269 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 06:03:46,269 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 06:03:46,551 - INFO - Extrayendo video de: https://x.com/PapiTrumpo/status/2007927104713933060?s=20
+2026-01-05 06:03:48,742 - INFO - ✅ Extracción exitosa para: https://x.com/PapiTrumpo/status/2007927104713933060?s=20
+2026-01-05 06:03:48,742 - INFO -    📺 Plataforma: x
+2026-01-05 06:03:48,742 - INFO -    🎬 Título: Sin título...
+2026-01-05 06:03:48,742 - INFO -    🎯 Resolución: N/A
+2026-01-05 06:03:48,742 - INFO -    📁 Tamaño: N/A
+2026-01-05 06:03:48,743 - INFO -    ⏱️ Duración: 0s
+2026-01-05 06:03:48,743 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 06:03:55,712 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 06:03:56,025 - INFO - Extrayendo video de: https://x.com/PapiTrumpo/status/2007927104713933060
+2026-01-05 06:03:56,744 - INFO - ✅ Extracción exitosa para: https://x.com/PapiTrumpo/status/2007927104713933060
+2026-01-05 06:03:56,744 - INFO -    📺 Plataforma: x
+2026-01-05 06:03:56,745 - INFO -    🎬 Título: Sin título...
+2026-01-05 06:03:56,745 - INFO -    🎯 Resolución: N/A
+2026-01-05 06:03:56,745 - INFO -    📁 Tamaño: N/A
+2026-01-05 06:03:56,746 - INFO -    ⏱️ Duración: 0s
+2026-01-05 06:03:56,746 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 06:04:26,303 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 06:05:24,692 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 06:05:24,958 - INFO - Extrayendo video de: https://x.com/PapiTrumpo/status/2007927104713933060?s=20
+2026-01-05 06:05:25,891 - INFO - ✅ Extracción exitosa para: https://x.com/PapiTrumpo/status/2007927104713933060?s=20
+2026-01-05 06:05:25,891 - INFO -    📺 Plataforma: x
+2026-01-05 06:05:25,892 - INFO -    🎬 Título: Sin título...
+2026-01-05 06:05:25,892 - INFO -    🎯 Resolución: N/A
+2026-01-05 06:05:25,892 - INFO -    📁 Tamaño: N/A
+2026-01-05 06:05:25,892 - INFO -    ⏱️ Duración: 0s
+2026-01-05 06:05:25,892 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 06:05:32,534 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 06:05:32,849 - INFO - Extrayendo video de: https://x.com/PapiTrumpo/status/2007927104713933060?s=20
+2026-01-05 06:05:33,610 - INFO - ✅ Extracción exitosa para: https://x.com/PapiTrumpo/status/2007927104713933060?s=20
+2026-01-05 06:05:33,610 - INFO -    📺 Plataforma: x
+2026-01-05 06:05:33,610 - INFO -    🎬 Título: Sin título...
+2026-01-05 06:05:33,611 - INFO -    🎯 Resolución: N/A
+2026-01-05 06:05:33,611 - INFO -    📁 Tamaño: N/A
+2026-01-05 06:05:33,611 - INFO -    ⏱️ Duración: 0s
+2026-01-05 06:05:33,611 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 06:06:03,126 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 06:58:23,602 - INFO - ============================================================
+2026-01-05 06:58:23,603 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-05 06:58:23,604 - INFO - ============================================================
+2026-01-05 06:58:23,605 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-05 06:58:23,605 - INFO - Acceso local: http://localhost:8000
+2026-01-05 06:58:23,605 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-05 06:58:23,606 - INFO - Endpoints disponibles:
+2026-01-05 06:58:23,606 - INFO -   POST /api/validate - Validar URLs
+2026-01-05 06:58:23,606 - INFO -   POST /api/extract - Extraer videos
+2026-01-05 06:58:23,606 - INFO - Presiona Ctrl+C para detener
+2026-01-05 06:58:23,607 - INFO - ============================================================
+2026-01-05 06:59:24,868 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 06:59:24,964 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 06:59:25,129 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 06:59:25,270 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 06:59:25,271 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 06:59:25,273 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 06:59:25,275 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 06:59:25,276 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 06:59:26,182 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 06:59:43,416 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 06:59:43,748 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 06:59:46,115 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 06:59:46,116 - INFO -    📺 Plataforma: youtube
+2026-01-05 06:59:46,116 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 06:59:46,116 - INFO -    🎯 Resolución: 360p
+2026-01-05 06:59:46,116 - INFO -    📁 Tamaño: 28.86 MB
+2026-01-05 06:59:46,117 - INFO -    ⏱️ Duración: 956s
+2026-01-05 06:59:46,117 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 06:59:50,878 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 07:00:04,120 - INFO - Descarga proxy estándar para: https://rr1---sn-uxax4vopj55gb-x1xle.googlevideo.com/videoplayback?expire=1767628787&ei=k4tbaf6_FKapobIP_LeysQg&ip=2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e&id=o-AILJqlh7r8lJtJqnjpyzRvzGhRPUbKe0JianY7FEzEPa&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=32&met=1767607187%2C&mh=_r&mm=31%2C29&mn=sn-uxax4vopj55gb-x1xle%2Csn-x1x7dnez&ms=au%2Crdu&mv=m&mvi=1&pl=41&rms=au%2Cau&initcwndbps=1470000&bui=AYUSA3C9oRhqVnWOQW8yItDfGz1aIZa7YUcmbFmgwPqEvL05q2xPGzwb6Xq9ch-sLJXdBR60NBh2S2BF&spc=wH4Qq6V5DjcW_wxRgLeY&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=30263102&ratebypass=yes&dur=955.640&lmt=1766645811854540&mt=1767606547&fvip=2&fexp=51552689%2C51565116%2C51565682%2C51580968&c=ANDROID&txp=5538534&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRgIhAKN873--D3KJn18t1zXc_cwNar709l4wRfto0BrWyEwuAiEA7-mzE-elw5ysSF5HmKnUdJNJT1eEJhhn4kCgISXQgGk%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRQIhAL-MCKxBdybDBaJRmTpmnGMBseaD1A4_2sZnoYBjhGgvAiBd7xohXgX0uh2ipidns8Bm1dAKai6e_pMb4c7uWC3eCQ%3D%3D
+2026-01-05 07:00:04,456 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Frr1---sn-uxax4vopj55gb-x1xle.googlevideo.com%2Fvideoplayback%3Fexpire%3D1767628787%26ei%3Dk4tbaf6_FKapobIP_LeysQg%26ip%3D2802%253A8012%253A2af5%253A9701%253A8c75%253Ade08%253A9f30%253A607e%26id%3Do-AILJqlh7r8lJtJqnjpyzRvzGhRPUbKe0JianY7FEzEPa%26itag%3D18%26source%3Dyoutube%26requiressl%3Dyes%26xpc%3DEgVo2aDSNQ%253D%253D%26cps%3D32%26met%3D1767607187%252C%26mh%3D_r%26mm%3D31%252C29%26mn%3Dsn-uxax4vopj55gb-x1xle%252Csn-x1x7dnez%26ms%3Dau%252Crdu%26mv%3Dm%26mvi%3D1%26pl%3D41%26rms%3Dau%252Cau%26initcwndbps%3D1470000%26bui%3DAYUSA3C9oRhqVnWOQW8yItDfGz1aIZa7YUcmbFmgwPqEvL05q2xPGzwb6Xq9ch-sLJXdBR60NBh2S2BF%26spc%3DwH4Qq6V5DjcW_wxRgLeY%26vprv%3D1%26svpuc%3D1%26mime%3Dvideo%252Fmp4%26rqh%3D1%26gir%3Dyes%26clen%3D30263102%26ratebypass%3Dyes%26dur%3D955.640%26lmt%3D1766645811854540%26mt%3D1767606547%26fvip%3D2%26fexp%3D51552689%252C51565116%252C51565682%252C51580968%26c%3DANDROID%26txp%3D5538534%26sparams%3Dexpire%252Cei%252Cip%252Cid%252Citag%252Csource%252Crequiressl%252Cxpc%252Cbui%252Cspc%252Cvprv%252Csvpuc%252Cmime%252Crqh%252Cgir%252Cclen%252Cratebypass%252Cdur%252Clmt%26sig%3DAJfQdSswRgIhAKN873--D3KJn18t1zXc_cwNar709l4wRfto0BrWyEwuAiEA7-mzE-elw5ysSF5HmKnUdJNJT1eEJhhn4kCgISXQgGk%253D%26lsparams%3Dcps%252Cmet%252Cmh%252Cmm%252Cmn%252Cms%252Cmv%252Cmvi%252Cpl%252Crms%252Cinitcwndbps%26lsig%3DAPaTxxMwRQIhAL-MCKxBdybDBaJRmTpmnGMBseaD1A4_2sZnoYBjhGgvAiBd7xohXgX0uh2ipidns8Bm1dAKai6e_pMb4c7uWC3eCQ%253D%253D&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-05 07:00:34,336 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 07:00:34,398 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 07:14:19,197 - INFO - ============================================================
+2026-01-05 07:14:19,197 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-05 07:14:19,198 - INFO - ============================================================
+2026-01-05 07:14:19,198 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-05 07:14:19,198 - INFO - Acceso local: http://localhost:8000
+2026-01-05 07:14:19,198 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-05 07:14:19,198 - INFO - Endpoints disponibles:
+2026-01-05 07:14:19,198 - INFO -   POST /api/validate - Validar URLs
+2026-01-05 07:14:19,199 - INFO -   POST /api/extract - Extraer videos
+2026-01-05 07:14:19,199 - INFO - Presiona Ctrl+C para detener
+2026-01-05 07:14:19,199 - INFO - ============================================================
+2026-01-05 07:47:51,796 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 07:47:51,918 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 07:47:52,055 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 07:47:52,238 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 07:47:52,238 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 07:47:52,238 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 07:47:52,238 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 07:47:52,238 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 07:47:53,103 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 07:47:59,680 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 07:48:00,001 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 07:48:02,282 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 07:48:02,282 - INFO -    📺 Plataforma: youtube
+2026-01-05 07:48:02,282 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 07:48:02,283 - INFO -    🎯 Resolución: 360p
+2026-01-05 07:48:02,283 - INFO -    📁 Tamaño: 28.86 MB
+2026-01-05 07:48:02,283 - INFO -    ⏱️ Duración: 956s
+2026-01-05 07:48:02,283 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 07:48:19,368 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 07:48:22,747 - INFO - Descarga proxy estándar para: https://rr1---sn-uxax4vopj55gb-x1xle.googlevideo.com/videoplayback?expire=1767631683&ei=45ZbaYKEJeidobIPjuCEuAc&ip=2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e&id=o-AJOVUlspNSWELAH3ZnzQg5Sd3zY1u7hc0ALa6AhSWK2A&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=0&met=1767610083%2C&mh=_r&mm=31%2C29&mn=sn-uxax4vopj55gb-x1xle%2Csn-x1x7dnez&ms=au%2Crdu&mv=m&mvi=1&pl=41&rms=au%2Cau&initcwndbps=1761250&bui=AYUSA3BTvXZ2fAMnTj3KcwtUMvAYEEV8zdvDE52Wa8DvScH2B0sVucsHANOErxFstXvBQYSjoASBf01g&spc=wH4QqxfYqEF8LDPe_Zgq1Mrhf8lCFnHyuru94tE2ITa19AVHjT-OCjdCwcrxdcelMj4&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=30263102&ratebypass=yes&dur=955.640&lmt=1766645811854540&mt=1767609676&fvip=2&fexp=51552689%2C51565115%2C51565682%2C51580968&c=ANDROID&txp=5538534&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRQIhAPTHkkj3Jk--XyZQZXIC9Bp2SpbcBFdi5W4GNehurXAkAiAZdCjFg39ar8zIV8BQ5awEa60ENOjY7tdkCKqKB3bDXw%3D%3D&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRQIgZBgxWAlAsMsUlhm7hxSl05ICT47oLmvGZJ-qMZTQt9oCIQDEFimN8LAdEEqKhgN5ZUzDucKFbCbSDN3oRKW3cYPrWA%3D%3D
+2026-01-05 07:48:23,146 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Frr1---sn-uxax4vopj55gb-x1xle.googlevideo.com%2Fvideoplayback%3Fexpire%3D1767631683%26ei%3D45ZbaYKEJeidobIPjuCEuAc%26ip%3D2802%253A8012%253A2af5%253A9701%253A8c75%253Ade08%253A9f30%253A607e%26id%3Do-AJOVUlspNSWELAH3ZnzQg5Sd3zY1u7hc0ALa6AhSWK2A%26itag%3D18%26source%3Dyoutube%26requiressl%3Dyes%26xpc%3DEgVo2aDSNQ%253D%253D%26cps%3D0%26met%3D1767610083%252C%26mh%3D_r%26mm%3D31%252C29%26mn%3Dsn-uxax4vopj55gb-x1xle%252Csn-x1x7dnez%26ms%3Dau%252Crdu%26mv%3Dm%26mvi%3D1%26pl%3D41%26rms%3Dau%252Cau%26initcwndbps%3D1761250%26bui%3DAYUSA3BTvXZ2fAMnTj3KcwtUMvAYEEV8zdvDE52Wa8DvScH2B0sVucsHANOErxFstXvBQYSjoASBf01g%26spc%3DwH4QqxfYqEF8LDPe_Zgq1Mrhf8lCFnHyuru94tE2ITa19AVHjT-OCjdCwcrxdcelMj4%26vprv%3D1%26svpuc%3D1%26mime%3Dvideo%252Fmp4%26rqh%3D1%26gir%3Dyes%26clen%3D30263102%26ratebypass%3Dyes%26dur%3D955.640%26lmt%3D1766645811854540%26mt%3D1767609676%26fvip%3D2%26fexp%3D51552689%252C51565115%252C51565682%252C51580968%26c%3DANDROID%26txp%3D5538534%26sparams%3Dexpire%252Cei%252Cip%252Cid%252Citag%252Csource%252Crequiressl%252Cxpc%252Cbui%252Cspc%252Cvprv%252Csvpuc%252Cmime%252Crqh%252Cgir%252Cclen%252Cratebypass%252Cdur%252Clmt%26sig%3DAJfQdSswRQIhAPTHkkj3Jk--XyZQZXIC9Bp2SpbcBFdi5W4GNehurXAkAiAZdCjFg39ar8zIV8BQ5awEa60ENOjY7tdkCKqKB3bDXw%253D%253D%26lsparams%3Dcps%252Cmet%252Cmh%252Cmm%252Cmn%252Cms%252Cmv%252Cmvi%252Cpl%252Crms%252Cinitcwndbps%26lsig%3DAPaTxxMwRQIgZBgxWAlAsMsUlhm7hxSl05ICT47oLmvGZJ-qMZTQt9oCIQDEFimN8LAdEEqKhgN5ZUzDucKFbCbSDN3oRKW3cYPrWA%253D%253D&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-05 07:48:53,034 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 07:59:45,501 - INFO - ============================================================
+2026-01-05 07:59:45,501 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-05 07:59:45,501 - INFO - ============================================================
+2026-01-05 07:59:45,502 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-05 07:59:45,502 - INFO - Acceso local: http://localhost:8000
+2026-01-05 07:59:45,502 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-05 07:59:45,502 - INFO - Endpoints disponibles:
+2026-01-05 07:59:45,502 - INFO -   POST /api/validate - Validar URLs
+2026-01-05 07:59:45,502 - INFO -   POST /api/extract - Extraer videos
+2026-01-05 07:59:45,502 - INFO - Presiona Ctrl+C para detener
+2026-01-05 07:59:45,503 - INFO - ============================================================
+2026-01-05 08:00:33,847 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 08:00:33,961 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:00:34,094 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:00:34,279 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:00:34,279 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:00:34,279 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:00:34,279 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:00:34,280 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:00:35,069 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 08:00:38,139 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 08:00:38,446 - INFO - Extrayendo video de: [youtube] Extracting URL: https://www.youtube.com/watch?v=gpWB9N39HEM[youtube] gpWB9N39HEM: Downloading webpageWARNING: [youtube] No supported JavaScript runtime could be found. YouTube extraction without a JS runtime has been deprecated, and some formats may be missing. See  https://github.com/yt-dlp/yt-dlp/wiki/EJS  for details on installing one. To silence this warning, you can use  --extractor-args "youtube:player_client=default"[youtube] gpWB9N39HEM: Downloading android sdkless player API JSON[youtube] gpWB9N39HEM: Downloading web safari player API JSONWARNING: [youtube] gpWB9N39HEM: Some web_safari client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details[youtube] gpWB9N39HEM: Downloading m3u8 informationWARNING: [youtube] gpWB9N39HEM: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details[info] Available formats for gpWB9N39HEM:ID      EXT   RESOLUTION FPS CH │   FILESIZE   TBR PROTO │ VCODEC         VBR ACODEC      ABR ASR MORE INFO───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────sb3     mhtml 48x27        0    │                  mhtml │ images                                 storyboardsb2     mhtml 80x45        0    │                  mhtml │ images                                 storyboardsb1     mhtml 160x90       0    │                  mhtml │ images                                 storyboardsb0     mhtml 320x180      0    │                  mhtml │ images                                 storyboard139-drc m4a   audio only      2 │    5.56MiB   49k https │ audio only         mp4a.40.5   49k 22k [es-US] Spanish (US) original, low, DRC, m4a_dash249-drc webm  audio only      2 │    7.06MiB   62k https │ audio only         opus        62k 48k [es-US] Spanish (US) original, low, DRC, webm_dash139-0   m4a   audio only      2 │    5.56MiB   49k https │ audio only         mp4a.40.5   49k 22k [en-US] English (US) (default), low, m4a_dash139-1   m4a   audio only      2 │    5.56MiB   49k https │ audio only         mp4a.40.5   49k 22k [es-US] Spanish (US) original, low, m4a_dash249-0   webm  audio only      2 │    7.48MiB   66k https │ audio only         opus        66k 48k [en-US] English (US) (default), low, webm_dash249-1   webm  audio only      2 │    7.06MiB   62k https │ audio only         opus        62k 48k [es-US] Spanish (US) original, low, webm_dash140-drc m4a   audio only      2 │   14.75MiB  129k https │ audio only         mp4a.40.2  129k 44k [es-US] Spanish (US) original, medium, DRC, m4a_dash251-drc webm  audio only      2 │   17.04MiB  150k https │ audio only         opus       150k 48k [es-US] Spanish (US) original, medium, DRC, webm_dash140-0   m4a   audio only      2 │   14.75MiB  129k https │ audio only         mp4a.40.2  129k 44k [en-US] English (US) (default), medium, m4a_dash140-1   m4a   audio only      2 │   14.75MiB  129k https │ audio only         mp4a.40.2  129k 44k [es-US] Spanish (US) original, medium, m4a_dash251-0   webm  audio only      2 │   18.62MiB  163k https │ audio only         opus       163k 48k [en-US] English (US) (default), medium, webm_dash251-1   webm  audio only      2 │   17.04MiB  150k https │ audio only         opus       150k 48k [es-US] Spanish (US) original, medium, webm_dash91-0    mp4   256x144     30    │ ~ 18.48MiB  162k m3u8  │ avc1.4D400C        mp4a.40.5           [es]91-1    mp4   256x144     30    │ ~ 18.49MiB  162k m3u8  │ avc1.4D400C        mp4a.40.5           [en-US] (default)91-2    mp4   256x144     30    │ ~ 18.48MiB  162k m3u8  │ avc1.4D400C        mp4a.40.5           [es-US] (original)160     mp4   256x144     30    │    2.30MiB   20k https │ avc1.4d400c    20k video only          144p, mp4_dash278     webm  256x144     30    │    4.57MiB   40k https │ vp9            40k video only          144p, webm_dash394     mp4   256x144     30    │    3.20MiB   28k https │ av01.0.00M.08  28k video only          144p, mp4_dash92-0    mp4   426x240     30    │ ~ 32.93MiB  289k m3u8  │ avc1.4D4015        mp4a.40.5           [es]92-1    mp4   426x240     30    │ ~ 32.94MiB  289k m3u8  │ avc1.4D4015        mp4a.40.5           [en-US] (default)92-2    mp4   426x240     30    │ ~ 32.93MiB  289k m3u8  │ avc1.4D4015        mp4a.40.5           [es-US] (original)133     mp4   426x240     30    │    3.66MiB   32k https │ avc1.4d4015    32k video only          240p, mp4_dash242     webm  426x240     30    │    5.96MiB   52k https │ vp9            52k video only          240p, webm_dash395     mp4   426x240     30    │    3.72MiB   33k https │ av01.0.00M.08  33k video only          240p, mp4_dash93-0    mp4   640x360     30    │ ~ 66.77MiB  586k m3u8  │ avc1.4D401E        mp4a.40.2           [es]93-1    mp4   640x360     30    │ ~ 66.76MiB  586k m3u8  │ avc1.4D401E        mp4a.40.2           [en-US] (default)93-2    mp4   640x360     30    │ ~ 66.77MiB  586k m3u8  │ avc1.4D401E        mp4a.40.2           [es-US] (original)134     mp4   640x360     30    │    6.58MiB   58k https │ avc1.4d401e    58k video only          360p, mp4_dash18      mp4   640x360     30  2 │   28.86MiB  253k https │ avc1.42001E        mp4a.40.2       44k [es] 360p243     webm  640x360     30    │   11.61MiB  102k https │ vp9           102k video only          360p, webm_dash396     mp4   640x360     30    │    6.72MiB   59k https │ av01.0.01M.08  59k video only          360p, mp4_dash94-0    mp4   854x480     30    │ ~100.30MiB  880k m3u8  │ avc1.4D401F        mp4a.40.2           [es]94-1    mp4   854x480     30    │ ~100.29MiB  880k m3u8  │ avc1.4D401F        mp4a.40.2           [en-US] (default)94-2    mp4   854x480     30    │ ~100.30MiB  880k m3u8  │ avc1.4D401F        mp4a.40.2           [es-US] (original)135     mp4   854x480     30    │    9.85MiB   86k https │ avc1.4d401f    86k video only          480p, mp4_dash244     webm  854x480     30    │   16.20MiB  142k https │ vp9           142k video only          480p, webm_dash397     mp4   854x480     30    │   10.96MiB   96k https │ av01.0.04M.08  96k video only          480p, mp4_dash95-0    mp4   1280x720    30    │ ~155.25MiB 1362k m3u8  │ avc1.4D401F        mp4a.40.2           [es]95-1    mp4   1280x720    30    │ ~155.24MiB 1362k m3u8  │ avc1.4D401F        mp4a.40.2           [en-US] (default)95-2    mp4   1280x720    30    │ ~155.25MiB 1362k m3u8  │ avc1.4D401F        mp4a.40.2           [es-US] (original)136     mp4   1280x720    30    │   17.65MiB  155k https │ avc1.4d401f   155k video only          720p, mp4_dash247     webm  1280x720    30    │   28.77MiB  253k https │ vp9           253k video only          720p, webm_dash398     mp4   1280x720    30    │   18.70MiB  164k https │ av01.0.05M.08 164k video only          720p, mp4_dash96-0    mp4   1920x1080   30    │ ~374.72MiB 3288k m3u8  │ avc1.640028        mp4a.40.2           [es]96-1    mp4   1920x1080   30    │ ~374.71MiB 3288k m3u8  │ avc1.640028        mp4a.40.2           [en-US] (default)96-2    mp4   1920x1080   30    │ ~374.72MiB 3288k m3u8  │ avc1.640028        mp4a.40.2           [es-US] (original)137     mp4   1920x1080   30    │   48.59MiB  427k https │ avc1.640028   427k video only          1080p, mp4_dash248     webm  1920x1080   30    │   52.95MiB  465k https │ vp9           465k video only          1080p, webm_dash399     mp4   1920x1080   30    │   29.63MiB  260k https │ av01.0.08M.08 260k video only          1080p, mp4_dash
+2026-01-05 08:00:40,158 - WARNING - Error extrayendo [youtube] Extracting URL: https://www.youtube.com/watch?v=gpWB9N39HEM[youtube] gpWB9N39HEM: Downloading webpageWARNING: [youtube] No supported JavaScript runtime could be found. YouTube extraction without a JS runtime has been deprecated, and some formats may be missing. See  https://github.com/yt-dlp/yt-dlp/wiki/EJS  for details on installing one. To silence this warning, you can use  --extractor-args "youtube:player_client=default"[youtube] gpWB9N39HEM: Downloading android sdkless player API JSON[youtube] gpWB9N39HEM: Downloading web safari player API JSONWARNING: [youtube] gpWB9N39HEM: Some web_safari client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details[youtube] gpWB9N39HEM: Downloading m3u8 informationWARNING: [youtube] gpWB9N39HEM: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details[info] Available formats for gpWB9N39HEM:ID      EXT   RESOLUTION FPS CH │   FILESIZE   TBR PROTO │ VCODEC         VBR ACODEC      ABR ASR MORE INFO───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────sb3     mhtml 48x27        0    │                  mhtml │ images                                 storyboardsb2     mhtml 80x45        0    │                  mhtml │ images                                 storyboardsb1     mhtml 160x90       0    │                  mhtml │ images                                 storyboardsb0     mhtml 320x180      0    │                  mhtml │ images                                 storyboard139-drc m4a   audio only      2 │    5.56MiB   49k https │ audio only         mp4a.40.5   49k 22k [es-US] Spanish (US) original, low, DRC, m4a_dash249-drc webm  audio only      2 │    7.06MiB   62k https │ audio only         opus        62k 48k [es-US] Spanish (US) original, low, DRC, webm_dash139-0   m4a   audio only      2 │    5.56MiB   49k https │ audio only         mp4a.40.5   49k 22k [en-US] English (US) (default), low, m4a_dash139-1   m4a   audio only      2 │    5.56MiB   49k https │ audio only         mp4a.40.5   49k 22k [es-US] Spanish (US) original, low, m4a_dash249-0   webm  audio only      2 │    7.48MiB   66k https │ audio only         opus        66k 48k [en-US] English (US) (default), low, webm_dash249-1   webm  audio only      2 │    7.06MiB   62k https │ audio only         opus        62k 48k [es-US] Spanish (US) original, low, webm_dash140-drc m4a   audio only      2 │   14.75MiB  129k https │ audio only         mp4a.40.2  129k 44k [es-US] Spanish (US) original, medium, DRC, m4a_dash251-drc webm  audio only      2 │   17.04MiB  150k https │ audio only         opus       150k 48k [es-US] Spanish (US) original, medium, DRC, webm_dash140-0   m4a   audio only      2 │   14.75MiB  129k https │ audio only         mp4a.40.2  129k 44k [en-US] English (US) (default), medium, m4a_dash140-1   m4a   audio only      2 │   14.75MiB  129k https │ audio only         mp4a.40.2  129k 44k [es-US] Spanish (US) original, medium, m4a_dash251-0   webm  audio only      2 │   18.62MiB  163k https │ audio only         opus       163k 48k [en-US] English (US) (default), medium, webm_dash251-1   webm  audio only      2 │   17.04MiB  150k https │ audio only         opus       150k 48k [es-US] Spanish (US) original, medium, webm_dash91-0    mp4   256x144     30    │ ~ 18.48MiB  162k m3u8  │ avc1.4D400C        mp4a.40.5           [es]91-1    mp4   256x144     30    │ ~ 18.49MiB  162k m3u8  │ avc1.4D400C        mp4a.40.5           [en-US] (default)91-2    mp4   256x144     30    │ ~ 18.48MiB  162k m3u8  │ avc1.4D400C        mp4a.40.5           [es-US] (original)160     mp4   256x144     30    │    2.30MiB   20k https │ avc1.4d400c    20k video only          144p, mp4_dash278     webm  256x144     30    │    4.57MiB   40k https │ vp9            40k video only          144p, webm_dash394     mp4   256x144     30    │    3.20MiB   28k https │ av01.0.00M.08  28k video only          144p, mp4_dash92-0    mp4   426x240     30    │ ~ 32.93MiB  289k m3u8  │ avc1.4D4015        mp4a.40.5           [es]92-1    mp4   426x240     30    │ ~ 32.94MiB  289k m3u8  │ avc1.4D4015        mp4a.40.5           [en-US] (default)92-2    mp4   426x240     30    │ ~ 32.93MiB  289k m3u8  │ avc1.4D4015        mp4a.40.5           [es-US] (original)133     mp4   426x240     30    │    3.66MiB   32k https │ avc1.4d4015    32k video only          240p, mp4_dash242     webm  426x240     30    │    5.96MiB   52k https │ vp9            52k video only          240p, webm_dash395     mp4   426x240     30    │    3.72MiB   33k https │ av01.0.00M.08  33k video only          240p, mp4_dash93-0    mp4   640x360     30    │ ~ 66.77MiB  586k m3u8  │ avc1.4D401E        mp4a.40.2           [es]93-1    mp4   640x360     30    │ ~ 66.76MiB  586k m3u8  │ avc1.4D401E        mp4a.40.2           [en-US] (default)93-2    mp4   640x360     30    │ ~ 66.77MiB  586k m3u8  │ avc1.4D401E        mp4a.40.2           [es-US] (original)134     mp4   640x360     30    │    6.58MiB   58k https │ avc1.4d401e    58k video only          360p, mp4_dash18      mp4   640x360     30  2 │   28.86MiB  253k https │ avc1.42001E        mp4a.40.2       44k [es] 360p243     webm  640x360     30    │   11.61MiB  102k https │ vp9           102k video only          360p, webm_dash396     mp4   640x360     30    │    6.72MiB   59k https │ av01.0.01M.08  59k video only          360p, mp4_dash94-0    mp4   854x480     30    │ ~100.30MiB  880k m3u8  │ avc1.4D401F        mp4a.40.2           [es]94-1    mp4   854x480     30    │ ~100.29MiB  880k m3u8  │ avc1.4D401F        mp4a.40.2           [en-US] (default)94-2    mp4   854x480     30    │ ~100.30MiB  880k m3u8  │ avc1.4D401F        mp4a.40.2           [es-US] (original)135     mp4   854x480     30    │    9.85MiB   86k https │ avc1.4d401f    86k video only          480p, mp4_dash244     webm  854x480     30    │   16.20MiB  142k https │ vp9           142k video only          480p, webm_dash397     mp4   854x480     30    │   10.96MiB   96k https │ av01.0.04M.08  96k video only          480p, mp4_dash95-0    mp4   1280x720    30    │ ~155.25MiB 1362k m3u8  │ avc1.4D401F        mp4a.40.2           [es]95-1    mp4   1280x720    30    │ ~155.24MiB 1362k m3u8  │ avc1.4D401F        mp4a.40.2           [en-US] (default)95-2    mp4   1280x720    30    │ ~155.25MiB 1362k m3u8  │ avc1.4D401F        mp4a.40.2           [es-US] (original)136     mp4   1280x720    30    │   17.65MiB  155k https │ avc1.4d401f   155k video only          720p, mp4_dash247     webm  1280x720    30    │   28.77MiB  253k https │ vp9           253k video only          720p, webm_dash398     mp4   1280x720    30    │   18.70MiB  164k https │ av01.0.05M.08 164k video only          720p, mp4_dash96-0    mp4   1920x1080   30    │ ~374.72MiB 3288k m3u8  │ avc1.640028        mp4a.40.2           [es]96-1    mp4   1920x1080   30    │ ~374.71MiB 3288k m3u8  │ avc1.640028        mp4a.40.2           [en-US] (default)96-2    mp4   1920x1080   30    │ ~374.72MiB 3288k m3u8  │ avc1.640028        mp4a.40.2           [es-US] (original)137     mp4   1920x1080   30    │   48.59MiB  427k https │ avc1.640028   427k video only          1080p, mp4_dash248     webm  1920x1080   30    │   52.95MiB  465k https │ vp9           465k video only          1080p, webm_dash399     mp4   1920x1080   30    │   29.63MiB  260k https │ av01.0.08M.08 260k video only          1080p, mp4_dash: No se pudo extraer el video con formato básico
+2026-01-05 08:00:40,158 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-01-05 08:00:54,767 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 08:00:55,100 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:00:56,739 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:00:56,740 - INFO -    📺 Plataforma: youtube
+2026-01-05 08:00:56,740 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 08:00:56,740 - INFO -    🎯 Resolución: 360p
+2026-01-05 08:00:56,740 - INFO -    📁 Tamaño: 28.86 MB
+2026-01-05 08:00:56,741 - INFO -    ⏱️ Duración: 956s
+2026-01-05 08:00:56,741 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 08:01:00,145 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 08:01:09,873 - INFO - Descarga proxy estándar para: https://rr1---sn-uxax4vopj55gb-x1xle.googlevideo.com/videoplayback?expire=1767632458&ei=6plbabqpBuz4-LAPusK3yAQ&ip=2802%3A8012%3A2af5%3A9701%3A8c75%3Ade08%3A9f30%3A607e&id=o-ANRKOB3n-bUGQK7lTNhx1MU6Fsf47JoDGtg-L5ihIIq1&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=58&met=1767610858%2C&mh=_r&mm=31%2C29&mn=sn-uxax4vopj55gb-x1xle%2Csn-x1x7dnez&ms=au%2Crdu&mv=m&mvi=1&pl=41&rms=au%2Cau&initcwndbps=1588750&bui=AYUSA3AMxNmnnDWtftZstt6ydXzqzIoIkZ-idSfnsc1ILxMRSDFpc3MNUHSBaV-vzKVz9agPjtSMmjr0&spc=wH4QqxVfvF0JvD19Iggo&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&gir=yes&clen=30263102&ratebypass=yes&dur=955.640&lmt=1766645811854540&mt=1767610412&fvip=2&fexp=51552689%2C51565115%2C51565681%2C51580968&c=ANDROID&txp=5538534&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRAIgFqzxRUFBWyM2SAgHJLDEUWTe0HS1Q7ySACRhhPXzvZQCIHf80S1ROUnbtDFaovVlcca9xB93nfLBV4F_IWrHv7CY&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRQIhAKlxp4ewc33e1EmUHtSlgC7GtYYWWImLssW0Q197ipudAiAh0G3NLN0wBUdqgtGew4IfMTBUnQjHTJUczNNmJvIDBA%3D%3D
+2026-01-05 08:01:10,198 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Frr1---sn-uxax4vopj55gb-x1xle.googlevideo.com%2Fvideoplayback%3Fexpire%3D1767632458%26ei%3D6plbabqpBuz4-LAPusK3yAQ%26ip%3D2802%253A8012%253A2af5%253A9701%253A8c75%253Ade08%253A9f30%253A607e%26id%3Do-ANRKOB3n-bUGQK7lTNhx1MU6Fsf47JoDGtg-L5ihIIq1%26itag%3D18%26source%3Dyoutube%26requiressl%3Dyes%26xpc%3DEgVo2aDSNQ%253D%253D%26cps%3D58%26met%3D1767610858%252C%26mh%3D_r%26mm%3D31%252C29%26mn%3Dsn-uxax4vopj55gb-x1xle%252Csn-x1x7dnez%26ms%3Dau%252Crdu%26mv%3Dm%26mvi%3D1%26pl%3D41%26rms%3Dau%252Cau%26initcwndbps%3D1588750%26bui%3DAYUSA3AMxNmnnDWtftZstt6ydXzqzIoIkZ-idSfnsc1ILxMRSDFpc3MNUHSBaV-vzKVz9agPjtSMmjr0%26spc%3DwH4QqxVfvF0JvD19Iggo%26vprv%3D1%26svpuc%3D1%26mime%3Dvideo%252Fmp4%26rqh%3D1%26gir%3Dyes%26clen%3D30263102%26ratebypass%3Dyes%26dur%3D955.640%26lmt%3D1766645811854540%26mt%3D1767610412%26fvip%3D2%26fexp%3D51552689%252C51565115%252C51565681%252C51580968%26c%3DANDROID%26txp%3D5538534%26sparams%3Dexpire%252Cei%252Cip%252Cid%252Citag%252Csource%252Crequiressl%252Cxpc%252Cbui%252Cspc%252Cvprv%252Csvpuc%252Cmime%252Crqh%252Cgir%252Cclen%252Cratebypass%252Cdur%252Clmt%26sig%3DAJfQdSswRAIgFqzxRUFBWyM2SAgHJLDEUWTe0HS1Q7ySACRhhPXzvZQCIHf80S1ROUnbtDFaovVlcca9xB93nfLBV4F_IWrHv7CY%26lsparams%3Dcps%252Cmet%252Cmh%252Cmm%252Cmn%252Cms%252Cmv%252Cmvi%252Cpl%252Crms%252Cinitcwndbps%26lsig%3DAPaTxxMwRQIhAKlxp4ewc33e1EmUHtSlgC7GtYYWWImLssW0Q197ipudAiAh0G3NLN0wBUdqgtGew4IfMTBUnQjHTJUczNNmJvIDBA%253D%253D&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-05 08:01:40,115 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 08:01:40,130 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 08:02:13,884 - INFO - Servidor detenido por usuario
+2026-01-05 08:02:13,884 - INFO - Servidor cerrado correctamente
