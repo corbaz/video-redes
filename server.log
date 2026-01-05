@@ -4097,3 +4097,257 @@ yt-dlp: error: no such option: --extract-flat
 2026-01-05 13:24:32,496 - INFO - Descarga proxy estándar para: https://scontent-eze1-2.cdninstagram.com/o1/v/t2/f2/m86/AQOLePec--dHsMdoPLgOfkYkz48S3qaf1rlhg01BZ0vV6lsJPqKfee9p6qpkeAWRBZowVBhyYOZcL1ZL-z3O-JcBTE3cE7MIuddBa8Q.mp4?_nc_cat=108&_nc_sid=5e9851&_nc_ht=scontent-eze1-2.cdninstagram.com&_nc_ohc=8nOk7VcwQ-gQ7kNvwHD9Z-Q&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6ODk2MzAwODQ5NDgzNzEzLCJhc3NldF9hZ2VfZGF5cyI6MCwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjgxLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=a1uNzK0VQFdFSax01oQ6cA&_nc_zt=28&vs=19dc75cae864a9d8&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC84QjRBRDQ0ODlDNkRCOEFFMzA0MkY2NTYyRTBENURCNl92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HSEtFTnlReWJUc2hab0lGQURqQ0JmOTUwRFFEYnN0VEFRQUYVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmgr_228nLlwMVAigCQzMsF0BUaIMSbpeNGBJkYXNoX2Jhc2VsaW5lXzFfdjERAHX-B2XmnQEA&oh=00_AfrRz3XajYvAD1ekXTNOkvWt3two_Gjn0p-FvHy_67dQpQ&oe=695DD2BD
 2026-01-05 13:24:32,864 - INFO - 192.168.1.50 - "GET /api/download?url=https%3A%2F%2Fscontent-eze1-2.cdninstagram.com%2Fo1%2Fv%2Ft2%2Ff2%2Fm86%2FAQOLePec--dHsMdoPLgOfkYkz48S3qaf1rlhg01BZ0vV6lsJPqKfee9p6qpkeAWRBZowVBhyYOZcL1ZL-z3O-JcBTE3cE7MIuddBa8Q.mp4%3F_nc_cat%3D108%26_nc_sid%3D5e9851%26_nc_ht%3Dscontent-eze1-2.cdninstagram.com%26_nc_ohc%3D8nOk7VcwQ-gQ7kNvwHD9Z-Q%26efg%3DeyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6ODk2MzAwODQ5NDgzNzEzLCJhc3NldF9hZ2VfZGF5cyI6MCwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjgxLCJ1cmxnZW5fc291cmNlIjoid3d3In0%253D%26ccb%3D17-1%26_nc_gid%3Da1uNzK0VQFdFSax01oQ6cA%26_nc_zt%3D28%26vs%3D19dc75cae864a9d8%26_nc_vs%3DHBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC84QjRBRDQ0ODlDNkRCOEFFMzA0MkY2NTYyRTBENURCNl92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HSEtFTnlReWJUc2hab0lGQURqQ0JmOTUwRFFEYnN0VEFRQUYVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmgr_228nLlwMVAigCQzMsF0BUaIMSbpeNGBJkYXNoX2Jhc2VsaW5lXzFfdjERAHX-B2XmnQEA%26oh%3D00_AfrRz3XajYvAD1ekXTNOkvWt3two_Gjn0p-FvHy_67dQpQ%26oe%3D695DD2BD&filename=instagram_video.mp4 HTTP/1.1" 200 -
 2026-01-05 13:25:02,503 - INFO - 192.168.1.50 - Request timed out: TimeoutError('timed out')
+2026-01-05 13:26:51,076 - INFO - 192.168.1.50 - "GET / HTTP/1.1" 200 -
+2026-01-05 13:26:51,174 - INFO - 192.168.1.50 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:26:51,179 - INFO - 192.168.1.50 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:26:51,180 - INFO - 192.168.1.50 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:26:51,180 - INFO - 192.168.1.50 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:26:51,180 - INFO - 192.168.1.50 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:26:51,181 - INFO - 192.168.1.50 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:26:51,183 - INFO - 192.168.1.50 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:26:51,917 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 13:27:01,093 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 13:27:01,097 - INFO - Extrayendo video de: https://x.com/PapiTrumpo/status/2007927104713933060?s=20
+2026-01-05 13:27:02,249 - INFO - ✅ Extracción exitosa para: https://x.com/PapiTrumpo/status/2007927104713933060?s=20
+2026-01-05 13:27:02,249 - INFO -    📺 Plataforma: x
+2026-01-05 13:27:02,249 - INFO -    🎬 Título: Sin título...
+2026-01-05 13:27:02,249 - INFO -    🎯 Resolución: N/A
+2026-01-05 13:27:02,250 - INFO -    📁 Tamaño: N/A
+2026-01-05 13:27:02,250 - INFO -    ⏱️ Duración: 0s
+2026-01-05 13:27:02,250 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 13:27:58,697 - INFO - 192.168.1.50 - "GET / HTTP/1.1" 200 -
+2026-01-05 13:27:58,818 - INFO - 192.168.1.50 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:27:58,822 - INFO - 192.168.1.50 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:27:58,822 - INFO - 192.168.1.50 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:27:58,822 - INFO - 192.168.1.50 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:27:58,822 - INFO - 192.168.1.50 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:27:58,824 - INFO - 192.168.1.50 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:27:58,826 - INFO - 192.168.1.50 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:27:59,171 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 13:28:12,069 - INFO - 192.168.1.50 - "GET / HTTP/1.1" 200 -
+2026-01-05 13:28:12,137 - INFO - 192.168.1.50 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:28:12,139 - INFO - 192.168.1.50 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:28:12,139 - INFO - 192.168.1.50 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:28:12,140 - INFO - 192.168.1.50 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:28:12,140 - INFO - 192.168.1.50 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:28:12,141 - INFO - 192.168.1.50 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:28:12,142 - INFO - 192.168.1.50 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:28:12,473 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 13:28:20,900 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 13:28:20,912 - INFO - Extrayendo video de: https://x.com/PapiTrumpo/status/2007927104713933060?s=20
+2026-01-05 13:28:22,044 - INFO - ✅ Extracción exitosa para: https://x.com/PapiTrumpo/status/2007927104713933060?s=20
+2026-01-05 13:28:22,045 - INFO -    📺 Plataforma: x
+2026-01-05 13:28:22,045 - INFO -    🎬 Título: Sin título...
+2026-01-05 13:28:22,045 - INFO -    🎯 Resolución: N/A
+2026-01-05 13:28:22,046 - INFO -    📁 Tamaño: N/A
+2026-01-05 13:28:22,046 - INFO -    ⏱️ Duración: 0s
+2026-01-05 13:28:22,046 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 13:28:50,675 - INFO - 192.168.1.50 - "GET / HTTP/1.1" 200 -
+2026-01-05 13:28:50,799 - INFO - 192.168.1.50 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:28:50,801 - INFO - 192.168.1.50 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:28:50,802 - INFO - 192.168.1.50 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:28:50,806 - INFO - 192.168.1.50 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:28:50,806 - INFO - 192.168.1.50 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:28:50,807 - INFO - 192.168.1.50 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:28:50,812 - INFO - 192.168.1.50 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:28:51,844 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 13:28:59,367 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 13:28:59,379 - INFO - Extrayendo video de: https://x.com/PapiTrumpo/status/2007927104713933060?s=20
+2026-01-05 13:29:00,150 - INFO - ✅ Extracción exitosa para: https://x.com/PapiTrumpo/status/2007927104713933060?s=20
+2026-01-05 13:29:00,150 - INFO -    📺 Plataforma: x
+2026-01-05 13:29:00,150 - INFO -    🎬 Título: Sin título...
+2026-01-05 13:29:00,150 - INFO -    🎯 Resolución: N/A
+2026-01-05 13:29:00,151 - INFO -    📁 Tamaño: N/A
+2026-01-05 13:29:00,151 - INFO -    ⏱️ Duración: 0s
+2026-01-05 13:29:00,151 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 13:33:41,460 - INFO - 192.168.1.50 - "GET / HTTP/1.1" 200 -
+2026-01-05 13:33:41,583 - INFO - 192.168.1.50 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:33:41,585 - INFO - 192.168.1.50 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:33:41,588 - INFO - 192.168.1.50 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:33:41,590 - INFO - 192.168.1.50 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:33:41,590 - INFO - 192.168.1.50 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:33:41,590 - INFO - 192.168.1.50 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:33:41,596 - INFO - 192.168.1.50 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:33:42,636 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 13:34:03,749 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 13:34:03,762 - INFO - Extrayendo video de: https://x.com/PapiTrumpo/status/2007927104713933060?s=20
+2026-01-05 13:34:04,795 - INFO - ✅ Extracción exitosa para: https://x.com/PapiTrumpo/status/2007927104713933060?s=20
+2026-01-05 13:34:04,795 - INFO -    📺 Plataforma: x
+2026-01-05 13:34:04,795 - INFO -    🎬 Título: Sin título...
+2026-01-05 13:34:04,795 - INFO -    🎯 Resolución: N/A
+2026-01-05 13:34:04,795 - INFO -    📁 Tamaño: N/A
+2026-01-05 13:34:04,796 - INFO -    ⏱️ Duración: 0s
+2026-01-05 13:34:04,796 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 13:34:09,889 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-05 13:34:09,889 - INFO -    🔗 URL: https://video.twimg.com/amplify_video/2007926876686184448/vid/avc1/1280x720/rxrJVD5d3d_VUlOP.mp4?tag...
+2026-01-05 13:34:09,889 - INFO -    📄 Filename: twitter_video.mp4
+2026-01-05 13:34:09,889 - INFO - Descarga proxy estándar para: https://video.twimg.com/amplify_video/2007926876686184448/vid/avc1/1280x720/rxrJVD5d3d_VUlOP.mp4?tag=21
+2026-01-05 13:34:10,282 - INFO - 192.168.1.50 - "GET /api/download?url=https%3A%2F%2Fvideo.twimg.com%2Famplify_video%2F2007926876686184448%2Fvid%2Favc1%2F1280x720%2FrxrJVD5d3d_VUlOP.mp4%3Ftag%3D21&filename=twitter_video.mp4 HTTP/1.1" 200 -
+2026-01-05 13:34:39,902 - INFO - 192.168.1.50 - Request timed out: TimeoutError('timed out')
+2026-01-05 13:40:53,743 - INFO - 192.168.1.50 - "GET / HTTP/1.1" 200 -
+2026-01-05 13:40:53,838 - INFO - 192.168.1.50 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:40:53,838 - INFO - 192.168.1.50 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:40:53,842 - INFO - 192.168.1.50 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:40:53,842 - INFO - 192.168.1.50 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:40:53,843 - INFO - 192.168.1.50 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:40:53,843 - INFO - 192.168.1.50 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:40:53,846 - INFO - 192.168.1.50 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:40:54,851 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 13:40:59,186 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 13:40:59,197 - INFO - Extrayendo video de: https://www.linkedin.com/posts/jos%C3%A9-ascoz-serrano-056b841_ai-ai-activity-7399211980898701312-ghJv?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-05 13:41:00,282 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/jos%C3%A9-ascoz-serrano-056b841_ai-ai-activity-7399211980898701312-ghJv?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-05 13:41:00,283 - INFO -    📺 Plataforma: linkedin
+2026-01-05 13:41:00,283 - INFO -    🎬 Título: Sin título...
+2026-01-05 13:41:00,283 - INFO -    🎯 Resolución: N/A
+2026-01-05 13:41:00,283 - INFO -    📁 Tamaño: N/A
+2026-01-05 13:41:00,283 - INFO -    ⏱️ Duración: 0s
+2026-01-05 13:41:00,283 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 13:42:08,781 - INFO - 192.168.1.50 - "GET / HTTP/1.1" 200 -
+2026-01-05 13:42:08,918 - INFO - 192.168.1.50 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:42:08,918 - INFO - 192.168.1.50 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:42:08,918 - INFO - 192.168.1.50 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:42:08,918 - INFO - 192.168.1.50 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:42:08,920 - INFO - 192.168.1.50 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:42:08,921 - INFO - 192.168.1.50 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:42:08,924 - INFO - 192.168.1.50 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:42:09,874 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 13:42:33,784 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 13:42:33,797 - INFO - Extrayendo video de: https://www.linkedin.com/posts/jos%C3%A9-ascoz-serrano-056b841_ai-ai-activity-7399211980898701312-ghJv?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-05 13:42:34,866 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/jos%C3%A9-ascoz-serrano-056b841_ai-ai-activity-7399211980898701312-ghJv?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-05 13:42:34,866 - INFO -    📺 Plataforma: linkedin
+2026-01-05 13:42:34,866 - INFO -    🎬 Título: Sin título...
+2026-01-05 13:42:34,866 - INFO -    🎯 Resolución: N/A
+2026-01-05 13:42:34,866 - INFO -    📁 Tamaño: N/A
+2026-01-05 13:42:34,867 - INFO -    ⏱️ Duración: 0s
+2026-01-05 13:42:34,867 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 13:44:51,197 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2026-01-05 13:44:51,247 - INFO - 192.168.1.150 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:44:51,255 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:44:51,255 - INFO - 192.168.1.150 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:44:51,256 - INFO - 192.168.1.150 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:44:51,256 - INFO - 192.168.1.150 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:44:51,265 - INFO - 192.168.1.150 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:44:51,273 - INFO - 192.168.1.150 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:44:51,510 - INFO - 192.168.1.150 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 13:45:44,998 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 13:45:45,016 - INFO - Extrayendo video de: https://www.linkedin.com/posts/shubhamsaboo_i-just-built-multi-agent-automated-vc-diligence-ugcPost-7413801216608120833-Ll58?utm_source=share&utm_medium=member_android&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-05 13:45:46,159 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/shubhamsaboo_i-just-built-multi-agent-automated-vc-diligence-ugcPost-7413801216608120833-Ll58?utm_source=share&utm_medium=member_android&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-05 13:45:46,159 - INFO -    📺 Plataforma: linkedin
+2026-01-05 13:45:46,159 - INFO -    🎬 Título: Sin título...
+2026-01-05 13:45:46,159 - INFO -    🎯 Resolución: N/A
+2026-01-05 13:45:46,160 - INFO -    📁 Tamaño: N/A
+2026-01-05 13:45:46,160 - INFO -    ⏱️ Duración: 0s
+2026-01-05 13:45:46,160 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 13:46:50,287 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2026-01-05 13:46:50,332 - INFO - 192.168.1.150 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:46:50,337 - INFO - 192.168.1.150 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:46:50,337 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:46:50,339 - INFO - 192.168.1.150 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:46:50,339 - INFO - 192.168.1.150 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:46:50,339 - INFO - 192.168.1.150 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:46:50,347 - INFO - 192.168.1.150 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:46:50,388 - INFO - 192.168.1.150 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 13:46:58,707 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 13:46:58,728 - INFO - Extrayendo video de: https://youtube.com/shorts/JY1vLYhlBak?si=LhfYIwHwVjcpArEp
+2026-01-05 13:47:00,414 - INFO - ✅ Extracción exitosa para: https://youtube.com/shorts/JY1vLYhlBak?si=LhfYIwHwVjcpArEp
+2026-01-05 13:47:00,414 - INFO -    📺 Plataforma: youtube
+2026-01-05 13:47:00,415 - INFO -    🎬 Título: Egipto y Pupito | La Gambeta #lagambeta #humor #co...
+2026-01-05 13:47:00,415 - INFO -    🎯 Resolución: 1920p
+2026-01-05 13:47:00,415 - INFO -    📁 Tamaño: N/A
+2026-01-05 13:47:00,415 - INFO -    ⏱️ Duración: 62s
+2026-01-05 13:47:00,415 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 13:47:09,422 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-05 13:47:09,422 - INFO -    🔗 URL: https://youtube.com/shorts/JY1vLYhlBak?si=LhfYIwHwVjcpArEp...
+2026-01-05 13:47:09,423 - INFO -    📄 Filename: Egipto y Pupito  La Gambeta #lagambeta #humor #comedia #lagambeta2025 #takawishi.mp4
+2026-01-05 13:47:09,423 - INFO - 🚀 Iniciando descarga HQ con librerías para: https://youtube.com/shorts/JY1vLYhlBak?si=LhfYIwHwVjcpArEp...
+2026-01-05 13:47:11,406 - INFO - 192.168.1.150 - "GET /api/download?url=https%3A%2F%2Fyoutube.com%2Fshorts%2FJY1vLYhlBak%3Fsi%3DLhfYIwHwVjcpArEp&filename=Egipto%20y%20Pupito%20%20La%20Gambeta%20%23lagambeta%20%23humor%20%23comedia%20%23lagambeta2025%20%23takawishi.mp4 HTTP/1.1" 200 -
+2026-01-05 13:47:12,161 - INFO - 📤 Video enviado (HQ): Egipto y Pupito  La Gambeta #lagambeta #humor #comedia #lagambeta2025 #takawishi.mp4
+2026-01-05 13:48:53,969 - INFO - 192.168.1.50 - "GET / HTTP/1.1" 200 -
+2026-01-05 13:48:54,107 - INFO - 192.168.1.50 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:48:54,109 - INFO - 192.168.1.50 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:48:54,109 - INFO - 192.168.1.50 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:48:54,109 - INFO - 192.168.1.50 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:48:54,109 - INFO - 192.168.1.50 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:48:54,111 - INFO - 192.168.1.50 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:48:54,115 - INFO - 192.168.1.50 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 13:48:55,138 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 13:49:06,117 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 13:49:06,130 - INFO - Extrayendo video de: https://www.linkedin.com/posts/jos%C3%A9-ascoz-serrano-056b841_ai-ai-activity-7399211980898701312-ghJv?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-05 13:49:07,255 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/jos%C3%A9-ascoz-serrano-056b841_ai-ai-activity-7399211980898701312-ghJv?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-05 13:49:07,256 - INFO -    📺 Plataforma: linkedin
+2026-01-05 13:49:07,256 - INFO -    🎬 Título: Sin título...
+2026-01-05 13:49:07,256 - INFO -    🎯 Resolución: N/A
+2026-01-05 13:49:07,256 - INFO -    📁 Tamaño: N/A
+2026-01-05 13:49:07,256 - INFO -    ⏱️ Duración: 0s
+2026-01-05 13:49:07,257 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 13:49:11,453 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-05 13:49:11,454 - INFO -    🔗 URL: https://dms.licdn.com/playlist/vid/v2/D4D05AQGG5QTw8UQEqg/mp4-720p-30fp-crf28/B4DZq9IEstJECI-/0/1764...
+2026-01-05 13:49:11,454 - INFO -    📄 Filename: linkedin_video.mp4
+2026-01-05 13:49:11,454 - INFO - Descarga proxy estándar para: https://dms.licdn.com/playlist/vid/v2/D4D05AQGG5QTw8UQEqg/mp4-720p-30fp-crf28/B4DZq9IEstJECI-/0/1764109604067?e=2147483647&v=beta&t=QMLOcXZxnOSTvQ5DFXB_dHzJofGotMswI8HogA8nzAA
+2026-01-05 13:49:11,827 - INFO - 192.168.1.50 - "GET /api/download?url=https%3A%2F%2Fdms.licdn.com%2Fplaylist%2Fvid%2Fv2%2FD4D05AQGG5QTw8UQEqg%2Fmp4-720p-30fp-crf28%2FB4DZq9IEstJECI-%2F0%2F1764109604067%3Fe%3D2147483647%26v%3Dbeta%26t%3DQMLOcXZxnOSTvQ5DFXB_dHzJofGotMswI8HogA8nzAA&filename=linkedin_video.mp4 HTTP/1.1" 200 -
+2026-01-05 13:49:25,799 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 13:54:14,373 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 13:54:14,380 - INFO - Extrayendo video de: https://www.linkedin.com/posts/midudev_este-es-el-para%C3%ADso-de-los-programadores-activity-7413941832058904576-S5aG?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-05 13:54:15,437 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/midudev_este-es-el-para%C3%ADso-de-los-programadores-activity-7413941832058904576-S5aG?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-05 13:54:15,437 - INFO -    📺 Plataforma: linkedin
+2026-01-05 13:54:15,437 - INFO -    🎬 Título: Sin título...
+2026-01-05 13:54:15,437 - INFO -    🎯 Resolución: N/A
+2026-01-05 13:54:15,437 - INFO -    📁 Tamaño: N/A
+2026-01-05 13:54:15,438 - INFO -    ⏱️ Duración: 0s
+2026-01-05 13:54:15,438 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 13:54:26,865 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-05 13:54:26,865 - INFO -    🔗 URL: https://dms.licdn.com/playlist/vid/v2/D4E10AQGZxGy8oKkhew/mp4-720p-30fp-crf28/B4EZuOcydMIMB0-/0/1767...
+2026-01-05 13:54:26,866 - INFO -    📄 Filename: video.mp4
+2026-01-05 13:54:26,866 - INFO - Descarga proxy estándar para: https://dms.licdn.com/playlist/vid/v2/D4E10AQGZxGy8oKkhew/mp4-720p-30fp-crf28/B4EZuOcydMIMB0-/0/1767621472136?e=2147483647&v=beta&t=bQkc5GcgPRY-5FU9Tydb4e_8suiJpvUs217ye4vrJes
+2026-01-05 13:54:27,327 - INFO - 192.168.1.50 - "GET /api/download?url=https%3A%2F%2Fdms.licdn.com%2Fplaylist%2Fvid%2Fv2%2FD4E10AQGZxGy8oKkhew%2Fmp4-720p-30fp-crf28%2FB4EZuOcydMIMB0-%2F0%2F1767621472136%3Fe%3D2147483647%26v%3Dbeta%26t%3DbQkc5GcgPRY-5FU9Tydb4e_8suiJpvUs217ye4vrJes&filename=video.mp4 HTTP/1.1" 200 -
+2026-01-05 13:54:56,863 - INFO - 192.168.1.50 - Request timed out: TimeoutError('timed out')
+2026-01-05 13:58:04,270 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 13:58:04,280 - INFO - Extrayendo video de: https://www.facebook.com/reel/2564416860599026
+2026-01-05 13:58:07,475 - INFO - ✅ Extracción exitosa para: https://www.facebook.com/reel/2564416860599026
+2026-01-05 13:58:07,475 - INFO -    📺 Plataforma: facebook
+2026-01-05 13:58:07,475 - INFO -    🎬 Título: 14M views · 66K reactions | Lamine Yamal dribble n...
+2026-01-05 13:58:07,475 - INFO -    🎯 Resolución: N/AxN/A
+2026-01-05 13:58:07,475 - INFO -    📁 Tamaño: N/A
+2026-01-05 13:58:07,475 - INFO -    ⏱️ Duración: 11.8s
+2026-01-05 13:58:07,476 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 13:58:10,014 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-05 13:58:10,015 - INFO -    🔗 URL: https://video-eze1-1.xx.fbcdn.net/o1/v/t2/f2/m412/AQOZvAjfyKw5H9Q9kL9vTUxTHr-h6q33qJ7gmBumG66MudAJ8A...
+2026-01-05 13:58:10,015 - INFO -    📄 Filename: facebook_video.mp4
+2026-01-05 13:58:10,015 - INFO - Descarga proxy estándar para: https://video-eze1-1.xx.fbcdn.net/o1/v/t2/f2/m412/AQOZvAjfyKw5H9Q9kL9vTUxTHr-h6q33qJ7gmBumG66MudAJ8A0evgvc57ExbW-8eFIkCkNA3FO28t4fl322HUYI_KCsEOx8H8IR4afbZg.mp4?_nc_cat=110&_nc_sid=8bf8fe&_nc_ht=video-eze1-1.xx.fbcdn.net&_nc_ohc=fS918ZNNgTkQ7kNvwHJ_wfk&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTQ4MzE5ODEwMjc1MTg0MSwiYXNzZXRfYWdlX2RheXMiOjE0LCJ2aV91c2VjYXNlX2lkIjoxMDEyMiwiZHVyYXRpb25fcyI6MTEsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&_nc_gid=htd-K0mDtN9uNQLi6PiPBw&_nc_zt=28&oh=00_Afql5jqgd4CT-Y8G0K5jexf7uZsHYo_NK8IPYAKG2vyfFg&oe=6961D1CC&bitrate=603604&tag=sve_sd
+2026-01-05 13:58:10,420 - INFO - 192.168.1.50 - "GET /api/download?url=https%3A%2F%2Fvideo-eze1-1.xx.fbcdn.net%2Fo1%2Fv%2Ft2%2Ff2%2Fm412%2FAQOZvAjfyKw5H9Q9kL9vTUxTHr-h6q33qJ7gmBumG66MudAJ8A0evgvc57ExbW-8eFIkCkNA3FO28t4fl322HUYI_KCsEOx8H8IR4afbZg.mp4%3F_nc_cat%3D110%26_nc_sid%3D8bf8fe%26_nc_ht%3Dvideo-eze1-1.xx.fbcdn.net%26_nc_ohc%3DfS918ZNNgTkQ7kNvwHJ_wfk%26efg%3DeyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTQ4MzE5ODEwMjc1MTg0MSwiYXNzZXRfYWdlX2RheXMiOjE0LCJ2aV91c2VjYXNlX2lkIjoxMDEyMiwiZHVyYXRpb25fcyI6MTEsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%253D%253D%26ccb%3D17-1%26_nc_gid%3Dhtd-K0mDtN9uNQLi6PiPBw%26_nc_zt%3D28%26oh%3D00_Afql5jqgd4CT-Y8G0K5jexf7uZsHYo_NK8IPYAKG2vyfFg%26oe%3D6961D1CC%26bitrate%3D603604%26tag%3Dsve_sd&filename=facebook_video.mp4 HTTP/1.1" 200 -
+2026-01-05 13:58:40,004 - INFO - 192.168.1.50 - Request timed out: TimeoutError('timed out')
+2026-01-05 14:03:18,923 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 14:03:18,929 - INFO - Extrayendo video de: https://www.facebook.com/reel/2564416860599026
+2026-01-05 14:03:22,216 - INFO - ✅ Extracción exitosa para: https://www.facebook.com/reel/2564416860599026
+2026-01-05 14:03:22,216 - INFO -    📺 Plataforma: facebook
+2026-01-05 14:03:22,216 - INFO -    🎬 Título: 14M views · 66K reactions | Lamine Yamal dribble n...
+2026-01-05 14:03:22,216 - INFO -    🎯 Resolución: N/AxN/A
+2026-01-05 14:03:22,217 - INFO -    📁 Tamaño: N/A
+2026-01-05 14:03:22,217 - INFO -    ⏱️ Duración: 11.8s
+2026-01-05 14:03:22,217 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 14:03:29,057 - INFO - 192.168.1.50 - "GET / HTTP/1.1" 200 -
+2026-01-05 14:03:29,169 - INFO - 192.168.1.50 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 14:03:29,172 - INFO - 192.168.1.50 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 14:03:29,172 - INFO - 192.168.1.50 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 14:03:29,172 - INFO - 192.168.1.50 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 14:03:29,172 - INFO - 192.168.1.50 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 14:03:29,175 - INFO - 192.168.1.50 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 14:03:29,177 - INFO - 192.168.1.50 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 14:03:30,186 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 14:03:34,909 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 14:03:34,915 - INFO - Extrayendo video de: https://www.facebook.com/reel/2564416860599026
+2026-01-05 14:03:38,040 - INFO - ✅ Extracción exitosa para: https://www.facebook.com/reel/2564416860599026
+2026-01-05 14:03:38,040 - INFO -    📺 Plataforma: facebook
+2026-01-05 14:03:38,040 - INFO -    🎬 Título: 14M views · 66K reactions | Lamine Yamal dribble n...
+2026-01-05 14:03:38,040 - INFO -    🎯 Resolución: N/AxN/A
+2026-01-05 14:03:38,040 - INFO -    📁 Tamaño: N/A
+2026-01-05 14:03:38,041 - INFO -    ⏱️ Duración: 11.8s
+2026-01-05 14:03:38,041 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 14:04:07,001 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 14:04:07,012 - INFO - Extrayendo video de: https://www.facebook.com/share/r/1S7L4WjVCB/
+2026-01-05 14:04:10,008 - WARNING - Error extrayendo https://www.facebook.com/share/r/1S7L4WjVCB/: Error: error: [facebook] 1787905208566913: cannot parse data; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appro
+2026-01-05 14:04:10,008 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 400 -
+2026-01-05 14:04:29,673 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 14:04:29,678 - INFO - Extrayendo video de: https://www.facebook.com/share/r/1S7L4WjVCB/
+2026-01-05 14:04:32,609 - WARNING - Error extrayendo https://www.facebook.com/share/r/1S7L4WjVCB/: Error: error: [facebook] 1787905208566913: cannot parse data; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appro
+2026-01-05 14:04:32,609 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 400 -

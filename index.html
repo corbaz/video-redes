@@ -1331,7 +1331,7 @@
                 } else if (url.includes('instagram')) {
                     showInstagramVideo(data, container);
                 } else if (url.includes('linkedin')) {
-                    const videoUrl = data.video_url || (data.data ? data.data.videoUrl : null);
+                    const videoUrl = data.video_url || data.videoUrl || (data.data ? data.data.videoUrl : null);
                     if (videoUrl) showLinkedinVideo({ videoUrl }, container);
                 } else if (url.includes('tiktok')) {
                     const videoUrl = data.video_url || (data.data ? data.data.videoUrl : null);
