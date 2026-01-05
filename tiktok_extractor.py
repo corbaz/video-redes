@@ -148,7 +148,8 @@ class TikTokExtractor:
                 "thumbnail": "",  # ssstik.io no proporciona thumbnail en este método
                 "view_count": 0,  # ssstik.io no proporciona vistas
                 "video_url": video_url,
-                "video_quality": "TikTok HD",
+                "original_url": original_url,  # Para descarga HQ con yt-dlp en backend
+                "video_quality": "TikTok HQ", # Asumimos HQ si usamos backend posteriormente
                 "platform": "TikTok",
                 "formats": [{"url": video_url, "quality": "HD"}]
             }
@@ -163,10 +164,15 @@ class TikTokExtractor:
 
 # Test del extractor
 if __name__ == "__main__":
+    import sys
+    # Asegurar que la consola soporte UTF-8 en Windows para emojis
+    if sys.platform == "win32":
+        sys.stdout.reconfigure(encoding='utf-8')
+
     extractor = TikTokExtractor()
 
     # URL de test
-    test_url = "https://www.tiktok.com/@eli.cocinaa/video/7436436767374413112"
+    test_url = "https://www.tiktok.com/@tech.tipsbyia/video/7577516435753553173?is_from_webapp=1&sender_device=pc"
 
     print(f"🎵 Probando extractor de TikTok con ssstik.io")
     print(f"📱 URL: {test_url}")

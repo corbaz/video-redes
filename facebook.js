@@ -61,6 +61,11 @@ function showFacebookVideo(data, container) {
         return;
     }
 
+    // Enable global download
+    if (window.enableGlobalDownload) {
+        window.enableGlobalDownload(data.videoUrl, "facebook_video.mp4");
+    }
+
     // Usar el mismo template unificado que Instagram, LinkedIn, X y TikTok
     const cardHtml = renderVideoCard({
         videoUrl: data.videoUrl,

@@ -100,10 +100,9 @@ function displayTikTokMetadata(videoInfo) {
                 <span class="creator">👤 ${videoInfo.creator}</span>
                 ${viewsText ? `<span class="views">👀 ${viewsText}</span>` : ""}
             </div>
-            ${
-                durationText
-                    ? `<div class="metadata-row"><span class="duration">⏱️ ${durationText}</span></div>`
-                    : ""
+            ${durationText
+                ? `<div class="metadata-row"><span class="duration">⏱️ ${durationText}</span></div>`
+                : ""
             }
         `;
     }
@@ -117,6 +116,13 @@ function showTikTokVideo(data, container) {
         console.error("❌ No se encontró URL del video de TikTok");
         container.innerHTML = `<div class="error"><h3>No se encontró URL del video de TikTok</h3></div>`;
         return;
+    }
+
+    // Enable global download
+    // Usamos original_url si existe para forzar descarga HQ por servidor, sino videoUrl directo
+    const downloadUrl = data.original_url || data.videoUrl;
+    if (window.enableGlobalDownload) {
+        window.enableGlobalDownload(downloadUrl, "tiktok_video.mp4");
     }
 
     // Usar el mismo template unificado que Instagram, LinkedIn y X

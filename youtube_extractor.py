@@ -40,7 +40,6 @@ class YouTubeExtractor:
             'youtube_include_dash_manifest': True,
             'youtube_include_hls_manifest': True,
             'extract_flat': False,
-            'player_client': ['web', 'android'],
         }
 
         try:
@@ -69,16 +68,22 @@ class YouTubeExtractor:
             preview_format = None
             best_preview_h = 0
             
-            # Buscamos el mejor formato progresivo (acodec y vcodec != none)
+            # Buscamos el mejor formato que tenga VIDEO Y AUDIO (Progresivo o HLS)
+            # Priorizamos calidad sobre protocolo
             for f in all_formats:
                 has_video = f.get('vcodec') != 'none' and f.get('vcodec') is not None
                 has_audio = f.get('acodec') != 'none' and f.get('acodec') is not None
-                is_http = f.get('protocol', '').startswith('http')
+                protocol = f.get('protocol', '')
+                # Algunos protocolos m3u8_native de YouTube ya traen audio y video mezclados
+                is_playable = protocol.startswith('http') or 'm3u8' in protocol
                 
-                if has_video and has_audio and is_http:
+                if has_video and has_audio and is_playable:
                     h = f.get('height', 0) or 0
+                    # Si es el mismo height, preferimos http sobre m3u8 por compatibilidad nativa
                     if h > best_preview_h:
                         best_preview_h = h
+                        preview_format = f
+                    elif h == best_preview_h and protocol.startswith('http'):
                         preview_format = f
 
             # Fallback Preview: Si no hay progresivo ideal, buscamos cualquier cosa con URL

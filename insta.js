@@ -7,6 +7,11 @@ function showInstagramVideo(data, container) {
     }
     const format = formats[0];
 
+    // Enable global download
+    if (window.enableGlobalDownload) {
+        window.enableGlobalDownload(format.url, "instagram_video.mp4");
+    }
+
     // Solo renderizar la card de video sin información adicional
     const cardHtml = renderVideoCard({
         videoUrl: format.url,

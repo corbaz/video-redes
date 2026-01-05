@@ -13,6 +13,7 @@ import requests
 import subprocess
 import uuid
 import imageio_ffmpeg
+from yt_dlp import YoutubeDL
 
 # Importar extractores
 from insta_extractor import InstagramExtractor
@@ -104,6 +105,18 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             
             url = params.get('url', [''])[0]
             filename = params.get('filename', ['video.mp4'])[0]
+
+            # SSRF Protection: Validate protocol and host
+            parsed_download = urlparse(url)
+            if parsed_download.scheme not in ('http', 'https'):
+                self.send_error(400, "Protocolo no soportado (SSRF Protection)")
+                return
+            
+            # Simple hostname blocklist for local dev env
+            blocked_hosts = ['localhost', '127.0.0.1', '0.0.0.0', '::1']
+            if parsed_download.hostname in blocked_hosts or (parsed_download.hostname and parsed_download.hostname.startswith('192.168.')):
+                 self.send_error(403, "Acceso a red local no permitido (SSRF Protection)")
+                 return
             
             logger.info(f"📥 Solicitud de descarga recibida:")
             logger.info(f"   🔗 URL: {url[:100]}...")
@@ -116,37 +129,48 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             # Detectar si es YouTube para usar yt-dlp CLI
             # IMPORTANTE: Los links de googlevideo.com NO son links de YouTube válidos para yt-dlp HQ.
             # Necesitamos la URL original de YouTube.
-            is_youtube = 'youtube.com' in url or 'youtu.be' in url
+            # Detectar si es YouTube o TikTok (ambos soportados por yt-dlp para mejor calidad)
+            # IMPORTANTE: Los links de googlevideo.com NO son links de YouTube válidos para yt-dlp HQ.
+            is_supported_hq = any(d in url for d in ['youtube.com', 'youtu.be', 'tiktok.com', 'vm.tiktok.com'])
             
-            if is_youtube:
-                logger.info(f"🚀 Iniciando descarga HQ con YT-DLP CLI para: {url[:100]}...")
+            if is_supported_hq:
+                logger.info(f"🚀 Iniciando descarga HQ con librerías para: {url[:100]}...")
                 
                 # Configuración de salida
                 unique_id = str(uuid.uuid4())
                 filename_base = f"yt_{unique_id}"
-                output_template = os.path.join(temp_dir, f"{filename_base}.%(ext)s")
                 final_path = os.path.join(temp_dir, f"{filename_base}.mp4")
                 
                 ffmpeg_exe = imageio_ffmpeg.get_ffmpeg_exe()
 
+                # Opciones para la librería YoutubeDL
+                ydl_opts = {
+                    'format': 'bestvideo+bestaudio/best',
+                    'merge_output_format': 'mp4',
+                    'ffmpeg_location': ffmpeg_exe,
+                    'outtmpl': os.path.join(temp_dir, f"{filename_base}.%(ext)s"),
+                    'quiet': True,
+                    'no_warnings': True,
+                    'nocheckcertificate': True
+                }
+
                 try:
-                    # Usamos el CLI directamente para asegurar el comportamiento de JDownloader
-                    # -f 'bv+ba/b' es el estándar para mejor calidad
-                    # --extractor-args ayuda a encontrar formatos HD
-                    cmd = [
-                        'yt-dlp',
-                        '-f', 'bv[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/bv+ba/b',
-                        '--merge-output-format', 'mp4',
-                        '--ffmpeg-location', ffmpeg_exe,
-                        '--extractor-args', 'youtube:player_client=ios,web,android',
-                        '--no-warnings',
-                        '--quiet',
-                        '-o', output_template,
-                        url
-                    ]
+                    with YoutubeDL(ydl_opts) as ydl:
+                        ydl.download([url])
                     
-                    logger.info(f"Ejecutando descarga: {' '.join(cmd)}")
-                    subprocess.run(cmd, check=True)
+                    # Verificación del archivo final
+                    if not os.path.exists(final_path):
+                        # Buscar archivos alternativos (ej. si no se pudo unir y quedó .mkv o algo así)
+                        files = [f for f in os.listdir(temp_dir) if f.startswith(filename_base)]
+                        if files:
+                            # Preferir el más grande que no sea .part
+                            files = [f for f in files if not f.endswith('.part')]
+                            if files:
+                                final_path = os.path.join(temp_dir, sorted(files, key=lambda x: os.path.getsize(os.path.join(temp_dir, x)), reverse=True)[0])
+                            else:
+                                raise Exception("Descarga incompleta")
+                        else:
+                            raise Exception("Archivo no encontrado tras la descarga.")
                     
                     # Verificación robusta del archivo resultante
                     if not os.path.exists(final_path):
@@ -231,14 +255,29 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 {'success': False, 'error': 'Error del servidor'}, 500)
 
     def serve_file(self, filename):
-        """Sirve archivos estáticos con headers apropiados"""
+        """Sirve archivos estáticos con headers apropiados y protección de Path Traversal"""
         try:
-            if not os.path.exists(filename):
+            # Protección estricta: No permitir navegación hacia arriba
+            if '..' in filename:
+                logger.warning(f"⛔ Intento de Path Traversal bloqueado (..): {filename}")
+                self.send_error(403)
+                return
+
+            # Protección contra Path Traversal (Resolución)
+            safe_base = os.path.abspath(os.getcwd())
+            requested_path = os.path.abspath(os.path.join(safe_base, filename))
+            
+            if not requested_path.startswith(safe_base):
+                logger.warning(f"⛔ Intento de Path Traversal bloqueado (scope): {filename}")
+                self.send_error(403, "Forbidden")
+                return
+
+            if not os.path.exists(requested_path):
                 logger.warning(f"Archivo no encontrado: {filename}")
                 self.send_error(404)
                 return
 
-            with open(filename, 'rb') as f:
+            with open(requested_path, 'rb') as f:
                 content = f.read()
 
             # Determinar content-type
@@ -277,7 +316,16 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             if not url:
                 self.send_json_response(
                     {'success': False, 'error': 'URL requerida'}, 400)
-                return            # Validar URL según plataforma
+                return
+
+            # Validación básica de protocolo
+            parsed = urlparse(url)
+            if parsed.scheme not in ('http', 'https'):
+                self.send_json_response(
+                    {'success': False, 'error': 'Protocolo no válido'}, 400)
+                return
+
+            # Validar URL según plataforma
             if any(domain in url for domain in ['instagram.com', 'linkedin.com', 'x.com', 'twitter.com', 'tiktok.com', 'facebook.com', 'fb.watch', 'youtube.com', 'youtu.be', 'm.youtube.com']):
                 self.send_json_response({
                     'success': True,
@@ -306,6 +354,12 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 self.send_json_response(
                     {'success': False, 'error': 'URL requerida'}, 400)
                 return
+            
+            # Validación básica de protocolo SSFR
+            parsed = urlparse(url)
+            if parsed.scheme not in ('http', 'https'):
+                 self.send_json_response({'success': False, 'error': 'URL inválida (protocolo)'}, 400)
+                 return
 
             logger.info(f"Extrayendo video de: {url}")
 
@@ -398,7 +452,11 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             self.send_response(status)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.send_header('Content-Length', str(len(response)))
-            self.send_header('Access-Control-Allow-Origin', '*')
+            
+            # CORS policy reflection
+            origin = self.headers.get('Origin', '*')
+            self.send_header('Access-Control-Allow-Origin', origin)
+            
             self.send_header('Access-Control-Allow-Methods',
                              'GET, POST, OPTIONS')
             self.send_header('Access-Control-Allow-Headers', 'Content-Type')
@@ -412,7 +470,11 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
     def do_OPTIONS(self):
         """Maneja requests CORS preflight"""
         self.send_response(200)
-        self.send_header('Access-Control-Allow-Origin', '*')
+        
+        # CORS policy reflection
+        origin = self.headers.get('Origin', '*')
+        self.send_header('Access-Control-Allow-Origin', origin)
+        
         self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
         self.send_header('Access-Control-Allow-Headers', 'Content-Type')
         self.end_headers()

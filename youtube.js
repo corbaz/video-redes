@@ -219,115 +219,123 @@ function hideLoading() {
 }
 
 /**
- * Mostrar video de YouTube usando el mismo template que las otras plataformas
+ * Mostrar video de YouTube con UI simplificada:
+ * - Imagen estática (sin video interactivo)
+ * - Botón de descargar junto a estadísticas
  */
 function showYouTubeVideo(data, container) {
-    console.log("🎥 Mostrando video de YouTube:", data);
+    console.log("🎥 Renderizando tarjeta HQ para YouTube:", data);
 
     if (!data.videoUrl && !data.video_url) {
-        console.error("❌ No se encontró URL del video de YouTube");
-        container.innerHTML = `<div class="error"><h3>No se encontró URL del video de YouTube</h3></div>`;
+        container.innerHTML = `<div class="error"><h3>No se encontró información del video</h3></div>`;
         return;
     }
 
-    // Preparar datos enriquecidos con información de calidad
-    const enrichedData = {
-        videoUrl: data.video_url || data.videoUrl,
-        originalUrl: data.original_url || data.originalUrl || data.video_url || data.videoUrl,
-        title: data.title || "Video de YouTube",
-        uploader: data.uploader || "Canal de YouTube",
-        platform: data.platform || "YouTube",
-        thumbnail: data.thumbnail || "",
-        // Información adicional de calidad
-        qualityInfo: {
-            selected: data.quality_label || data.video_quality || "Auto",
-            maxQuality: data.max_quality || "N/A",
-            available: data.available_qualities || [],
-            filesize: data.filesize || "N/A",
-            format: data.selected_format || {},
-        },
+    // Helper para escapar HTML
+    const escapeHTML = (str) => {
+        return str
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
     };
 
-    // Usar el mismo template unificado que todas las otras plataformas
-    const cardHtml = renderVideoCard(enrichedData);
+    // Datos procesados
+    const rawTitle = data.title || "Video de YouTube";
+    const title = escapeHTML(rawTitle);
 
-    container.innerHTML = cardHtml;
-
-    // Añadir información adicional de calidad si está disponible
-    if (data.available_qualities && data.available_qualities.length > 0) {
-        addQualityInfo(container, data);
+    // Thumbnail Fallback Logic
+    let thumbnail = data.thumbnail;
+    if (!thumbnail || thumbnail === "") {
+        // Try to construct high-res thumbnail if video_id is present
+        // (Assuming extract_video_info might pass id, otherwise generic)
+        if (data.id) {
+            thumbnail = `https://img.youtube.com/vi/${data.id}/maxresdefault.jpg`;
+        } else {
+            // Generic placeholder or low-res from data
+            thumbnail = "https://via.placeholder.com/800x450/000000/FFFFFF?text=No+Thumbnail";
+        }
+    } else {
+        // Fix for YouTube webp thumbnails which might not load in some contexts
+        // Convert https://i.ytimg.com/vi_webp/ID/maxresdefault.webp -> https://i.ytimg.com/vi/ID/maxresdefault.jpg
+        if (thumbnail.includes('i.ytimg.com')) {
+            thumbnail = thumbnail.replace('/vi_webp/', '/vi/').replace('.webp', '.jpg');
+        }
     }
 
-    // Log de éxito con información de calidad
-    console.log(
-        "✅ Video de YouTube mostrado exitosamente con template unificado"
-    );
-    console.log(`📊 Calidad seleccionada: ${data.quality_label || "Auto"}`);
-    console.log(
-        `📋 Calidades disponibles: ${data.available_qualities
-            ? data.available_qualities.join(", ")
-            : "N/A"
-        }`
-    );
+    console.log("📷 Thumbnail URL fixed:", thumbnail);
 
-    // Scroll hacia el video
+    const originalUrl = data.original_url || data.originalUrl || data.video_url;
+    // Sanitizar nombre de archivo
+    const safeTitle = rawTitle.replace(/[\\/:*?"<>|]/g, "").trim() || "video";
+    const filename = encodeURIComponent(safeTitle + ".mp4");
+
+    // Enable Global Download Button
+    if (window.enableGlobalDownload) {
+        window.enableGlobalDownload(originalUrl, filename);
+    }
+
+    // Check global download button status
+    const btnd = document.getElementById('mainDownloadBtn');
+    if (btnd) console.log("Download button href:", btnd.href);
+
+    // Force container display
+    if (container.style.display === 'none') {
+        container.style.display = 'block';
+    }
+
+    // Template Pro UI (Usa clases CSS robustas)
+    container.innerHTML = `
+        <div class="pro-video-card">
+            <div class="pro-video-card-inner">
+                <img src="${thumbnail}" alt="${title}" class="pro-video-card-img"
+                     onerror="if (this.src.includes('maxresdefault')) { this.src = this.src.replace('maxresdefault.jpg', 'hqdefault.jpg'); } else { this.src = 'https://via.placeholder.com/800x450/000000/FFFFFF?text=No+Thumbnail'; }">
+                
+                <!-- Play Icon / Preview Overlay -->
+                 <div style="
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 80px;
+                    height: 80px;
+                    background: rgba(255, 0, 0, 0.8);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                    pointer-events: none;
+                    z-index: 10;
+                ">
+                    <svg viewBox="0 0 24 24" width="40" height="40" fill="white">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </div>
+                
+                <!-- Glossy Overlay Effect -->
+                <div style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 50%;
+                    background: linear-gradient(to bottom, rgba(255,255,255,0.05), transparent);
+                    pointer-events: none;
+                    z-index: 5;
+                "></div>
+            </div>
+        </div>
+    `;
+
+    // Log
+    console.log("✅ UI de YouTube renderizada (Simplificada: Solo Calidad + Descarga)", container);
+
+    // Scroll
     setTimeout(() => {
         container.scrollIntoView({ behavior: "smooth", block: "center" });
     }, 100);
-}
-
-/**
- * Añade información adicional de calidad al contenedor
- */
-function addQualityInfo(container, data) {
-    const qualityInfoDiv = document.createElement("div");
-    qualityInfoDiv.className = "youtube-quality-info";
-    qualityInfoDiv.style.cssText = `
-        margin-top: 10px;
-        padding: 15px;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 8px;
-        border-left: 3px solid #ff0000;
-    `;
-
-    const qualitySelected = data.quality_label || "Auto";
-    const availableQualities = data.available_qualities || [];
-    const filesize = data.filesize !== "N/A" ? data.filesize : null;
-
-    qualityInfoDiv.innerHTML = `
-        <div style="display: flex; align-items: center; margin-bottom: 8px;">
-            <span style="color: #ff0000; margin-right: 8px;">🎯</span>
-            <strong style="color: #fff;">Calidad seleccionada: ${qualitySelected}</strong>
-        </div>
-        ${filesize
-            ? `
-        <div style="display: flex; align-items: center; margin-bottom: 8px;">
-            <span style="color: #ff0000; margin-right: 8px;">📁</span>
-            <span style="color: #ccc;">Tamaño: ${filesize}</span>
-        </div>
-        `
-            : ""
-        }
-        ${availableQualities.length > 0
-            ? `
-        <div style="display: flex; align-items: center;">
-            <span style="color: #ff0000; margin-right: 8px;">📊</span>
-            <span style="color: #ccc;">Calidades disponibles: ${availableQualities.join(
-                ", "
-            )}</span>
-        </div>
-        `
-            : ""
-        }
-    `;
-
-    // Insertar después del video
-    const videoCard =
-        container.querySelector(".video-card") ||
-        container.querySelector(".cinema-player");
-    if (videoCard) {
-        videoCard.appendChild(qualityInfoDiv);
-    }
 }
 
 // Exportar funciones para uso global
@@ -337,4 +345,4 @@ if (typeof window !== "undefined") {
     window.isYouTubeShort = isYouTubeShort;
 }
 
-console.log("📺 YouTube.js cargado - Soporte para videos y Shorts");
+console.log("📺 YouTube.js cargado - Modo HQ UI Simplificada");

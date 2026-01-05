@@ -3330,3 +3330,731 @@ yt-dlp: error: no such option: --extract-flat
 2026-01-05 08:01:40,130 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
 2026-01-05 08:02:13,884 - INFO - Servidor detenido por usuario
 2026-01-05 08:02:13,884 - INFO - Servidor cerrado correctamente
+2026-01-05 08:02:26,752 - INFO - ============================================================
+2026-01-05 08:02:26,753 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-05 08:02:26,753 - INFO - ============================================================
+2026-01-05 08:02:26,753 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-05 08:02:26,753 - INFO - Acceso local: http://localhost:8000
+2026-01-05 08:02:26,753 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-05 08:02:26,753 - INFO - Endpoints disponibles:
+2026-01-05 08:02:26,754 - INFO -   POST /api/validate - Validar URLs
+2026-01-05 08:02:26,754 - INFO -   POST /api/extract - Extraer videos
+2026-01-05 08:02:26,754 - INFO - Presiona Ctrl+C para detener
+2026-01-05 08:02:26,754 - INFO - ============================================================
+2026-01-05 08:02:30,149 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 08:02:30,256 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:02:30,409 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:02:30,582 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:02:30,583 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:02:30,583 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:02:30,582 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:02:30,586 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:02:31,408 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 08:02:33,161 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 08:02:33,471 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:02:35,691 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:02:35,691 - INFO -    📺 Plataforma: youtube
+2026-01-05 08:02:35,692 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 08:02:35,692 - INFO -    🎯 Resolución: 360p
+2026-01-05 08:02:35,692 - INFO -    📁 Tamaño: 28.86 MB
+2026-01-05 08:02:35,692 - INFO -    ⏱️ Duración: 956s
+2026-01-05 08:02:35,692 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 08:02:51,390 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 08:09:07,233 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 08:09:07,315 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:09:07,493 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:09:07,628 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:09:07,628 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:09:07,628 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:09:07,628 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:09:07,628 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:09:08,421 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 08:09:14,406 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-05 08:09:38,411 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 08:09:38,675 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:09:40,554 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:09:40,555 - INFO -    📺 Plataforma: youtube
+2026-01-05 08:09:40,555 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 08:09:40,555 - INFO -    🎯 Resolución: 360p
+2026-01-05 08:09:40,555 - INFO -    📁 Tamaño: 28.86 MB
+2026-01-05 08:09:40,555 - INFO -    ⏱️ Duración: 956s
+2026-01-05 08:09:40,556 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 08:09:53,006 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 08:09:59,291 - INFO - 🚀 Iniciando descarga HQ con YT-DLP para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:09:59,857 - INFO - Ejecutando descarga: yt-dlp -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best --merge-output-format mp4 --ffmpeg-location C:\www\video-redes\.venv\Lib\site-packages\imageio_ffmpeg\binaries\ffmpeg-win-x86_64-v7.1.exe --no-warnings --quiet -o temp_downloads\yt_b9cbfd84-81b9-4522-80e4-202882e866d9.%(ext)s https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:10:05,720 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgpWB9N39HEM&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-05 08:10:08,978 - INFO - 📤 Video enviado (HQ): Mis MCPs favoritos para programar más rápido con IA.mp4
+2026-01-05 08:10:29,505 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 08:10:29,568 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 08:11:17,619 - INFO - 🚀 Iniciando descarga HQ con YT-DLP para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:11:17,619 - INFO - Ejecutando descarga: yt-dlp -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best --merge-output-format mp4 --ffmpeg-location C:\www\video-redes\.venv\Lib\site-packages\imageio_ffmpeg\binaries\ffmpeg-win-x86_64-v7.1.exe --no-warnings --quiet -o temp_downloads\yt_475fd064-8bcd-4b5e-b75a-4aaecb3a91ce.%(ext)s https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:11:20,496 - ERROR - ❌ Error en descarga CLI: Command '['yt-dlp', '-f', 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best', '--merge-output-format', 'mp4', '--ffmpeg-location', 'C:\\www\\video-redes\\.venv\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe', '--no-warnings', '--quiet', '-o', 'temp_downloads\\yt_475fd064-8bcd-4b5e-b75a-4aaecb3a91ce.%(ext)s', 'https://www.youtube.com/watch?v=gpWB9N39HEM']' returned non-zero exit status 1.
+2026-01-05 08:11:20,496 - INFO - 127.0.0.1 - code 500, message Error en descarga: Command '['yt-dlp', '-f', 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best', '--merge-output-format', 'mp4', '--ffmpeg-location', 'C:\\www\\video-redes\\.venv\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe', '--no-warnings', '--quiet', '-o', 'temp_downloads\\yt_475fd064-8bcd-4b5e-b75a-4aaecb3a91ce.%(ext)s', 'https://www.youtube.com/watch?v=gpWB9N39HEM']' returned non-zero exit status 1.
+2026-01-05 08:11:20,497 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgpWB9N39HEM&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 500 -
+2026-01-05 08:11:21,233 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 08:11:31,927 - INFO - 🚀 Iniciando descarga HQ con YT-DLP para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:11:31,928 - INFO - Ejecutando descarga: yt-dlp -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best --merge-output-format mp4 --ffmpeg-location C:\www\video-redes\.venv\Lib\site-packages\imageio_ffmpeg\binaries\ffmpeg-win-x86_64-v7.1.exe --no-warnings --quiet -o temp_downloads\yt_0d2b0b91-addd-47cb-ac48-6d804636e3b0.%(ext)s https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:11:34,548 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 08:11:36,343 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgpWB9N39HEM&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-05 08:11:36,344 - ERROR - ❌ Error en descarga CLI: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host
+2026-01-05 08:11:36,344 - INFO - 127.0.0.1 - code 500, message Error en descarga: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host
+2026-01-05 08:11:36,344 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgpWB9N39HEM&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 500 -
+2026-01-05 08:11:36,349 - ERROR - Error general en descarga: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host
+2026-01-05 08:11:36,349 - INFO - 127.0.0.1 - code 500, message Error: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host
+2026-01-05 08:11:36,349 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgpWB9N39HEM&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 500 -
+2026-01-05 08:11:36,350 - ERROR - Error en do_GET: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host
+2026-01-05 08:11:36,350 - INFO - 127.0.0.1 - code 500, message Internal Server Error
+2026-01-05 08:11:36,350 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgpWB9N39HEM&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 500 -
+2026-01-05 08:11:36,646 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 08:11:36,951 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:11:37,030 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:11:37,030 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:11:37,031 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:11:37,031 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:11:37,031 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:11:37,262 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:11:37,794 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 08:11:39,329 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 08:11:39,641 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:11:41,280 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:11:41,280 - INFO -    📺 Plataforma: youtube
+2026-01-05 08:11:41,281 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 08:11:41,281 - INFO -    🎯 Resolución: 360p
+2026-01-05 08:11:41,281 - INFO -    📁 Tamaño: 28.86 MB
+2026-01-05 08:11:41,281 - INFO -    ⏱️ Duración: 956s
+2026-01-05 08:11:41,281 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 08:11:50,299 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 08:11:53,072 - INFO - 🚀 Iniciando descarga HQ con YT-DLP para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:11:53,072 - INFO - Ejecutando descarga: yt-dlp -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best --merge-output-format mp4 --ffmpeg-location C:\www\video-redes\.venv\Lib\site-packages\imageio_ffmpeg\binaries\ffmpeg-win-x86_64-v7.1.exe --no-warnings --quiet -o temp_downloads\yt_e9c60ed2-1eb9-477a-ab05-d9e0290d6512.%(ext)s https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:11:56,884 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgpWB9N39HEM&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-05 08:11:58,292 - INFO - 📤 Video enviado (HQ): Mis MCPs favoritos para programar más rápido con IA.mp4
+2026-01-05 08:12:23,299 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 08:12:23,346 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 08:13:27,016 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 08:13:27,115 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:13:27,271 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:13:27,431 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:13:27,431 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:13:27,432 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:13:27,432 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:13:27,434 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 08:13:27,997 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 08:13:37,844 - INFO - ============================================================
+2026-01-05 08:13:37,844 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-05 08:13:37,844 - INFO - ============================================================
+2026-01-05 08:13:37,844 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-05 08:13:37,844 - INFO - Acceso local: http://localhost:8000
+2026-01-05 08:13:37,844 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-05 08:13:37,845 - INFO - Endpoints disponibles:
+2026-01-05 08:13:37,845 - INFO -   POST /api/validate - Validar URLs
+2026-01-05 08:13:37,845 - INFO -   POST /api/extract - Extraer videos
+2026-01-05 08:13:37,845 - INFO - Presiona Ctrl+C para detener
+2026-01-05 08:13:37,845 - INFO - ============================================================
+2026-01-05 08:20:40,616 - INFO - ============================================================
+2026-01-05 08:20:40,616 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-05 08:20:40,617 - INFO - ============================================================
+2026-01-05 08:20:40,617 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-05 08:20:40,617 - INFO - Acceso local: http://localhost:8000
+2026-01-05 08:20:40,617 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-05 08:20:40,617 - INFO - Endpoints disponibles:
+2026-01-05 08:20:40,617 - INFO -   POST /api/validate - Validar URLs
+2026-01-05 08:20:40,618 - INFO -   POST /api/extract - Extraer videos
+2026-01-05 08:20:40,618 - INFO - Presiona Ctrl+C para detener
+2026-01-05 08:20:40,618 - INFO - ============================================================
+2026-01-05 08:21:04,672 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 08:21:04,942 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:21:07,302 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:21:07,303 - INFO -    📺 Plataforma: youtube
+2026-01-05 08:21:07,303 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 08:21:07,303 - INFO -    🎯 Resolución: 1080p
+2026-01-05 08:21:07,303 - INFO -    📁 Tamaño: N/A
+2026-01-05 08:21:07,303 - INFO -    ⏱️ Duración: 956s
+2026-01-05 08:21:07,304 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 08:21:16,779 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 08:21:25,057 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-05 08:21:25,057 - INFO -    🔗 URL: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 08:21:25,057 - INFO -    📄 Filename: Mis MCPs favoritos para programar más rápido con IA.mp4
+2026-01-05 08:21:25,058 - INFO - 🚀 Iniciando descarga HQ con YT-DLP CLI para: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 08:21:25,134 - INFO - Ejecutando descarga: yt-dlp -f bv[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/bv+ba/b --merge-output-format mp4 --ffmpeg-location C:\Users\Sancho\AppData\Local\Programs\Python\Python314\Lib\site-packages\imageio_ffmpeg\binaries\ffmpeg-win-x86_64-v7.1.exe --extractor-args youtube:player_client=ios,web,android --no-warnings --quiet -o temp_downloads\yt_766b1934-6e4b-4c49-bc4d-ab25c823101d.%(ext)s https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:21:27,935 - ERROR - ❌ Error en descarga CLI: Command '['yt-dlp', '-f', 'bv[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/bv+ba/b', '--merge-output-format', 'mp4', '--ffmpeg-location', 'C:\\Users\\Sancho\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe', '--extractor-args', 'youtube:player_client=ios,web,android', '--no-warnings', '--quiet', '-o', 'temp_downloads\\yt_766b1934-6e4b-4c49-bc4d-ab25c823101d.%(ext)s', 'https://www.youtube.com/watch?v=gpWB9N39HEM']' returned non-zero exit status 1.
+2026-01-05 08:21:27,936 - INFO - 127.0.0.1 - code 500, message Error en descarga: Command '['yt-dlp', '-f', 'bv[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/bv+ba/b', '--merge-output-format', 'mp4', '--ffmpeg-location', 'C:\\Users\\Sancho\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe', '--extractor-args', 'youtube:player_client=ios,web,android', '--no-warnings', '--quiet', '-o', 'temp_downloads\\yt_766b1934-6e4b-4c49-bc4d-ab25c823101d.%(ext)s', 'https://www.youtube.com/watch?v=gpWB9N39HEM']' returned non-zero exit status 1.
+2026-01-05 08:21:27,936 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgpWB9N39HEM&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 500 -
+2026-01-05 08:21:28,699 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 08:21:45,174 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 08:21:49,648 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 08:21:49,972 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:21:51,495 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:21:51,495 - INFO -    📺 Plataforma: youtube
+2026-01-05 08:21:51,496 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 08:21:51,496 - INFO -    🎯 Resolución: 1080p
+2026-01-05 08:21:51,496 - INFO -    📁 Tamaño: N/A
+2026-01-05 08:21:51,496 - INFO -    ⏱️ Duración: 956s
+2026-01-05 08:21:51,496 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 08:22:09,772 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-05 08:22:09,772 - INFO -    🔗 URL: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 08:22:09,772 - INFO -    📄 Filename: Mis MCPs favoritos para programar más rápido con IA.mp4
+2026-01-05 08:22:09,773 - INFO - 🚀 Iniciando descarga HQ con YT-DLP CLI para: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 08:22:09,773 - INFO - Ejecutando descarga: yt-dlp -f bv[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/bv+ba/b --merge-output-format mp4 --ffmpeg-location C:\Users\Sancho\AppData\Local\Programs\Python\Python314\Lib\site-packages\imageio_ffmpeg\binaries\ffmpeg-win-x86_64-v7.1.exe --extractor-args youtube:player_client=ios,web,android --no-warnings --quiet -o temp_downloads\yt_4ade6ca2-b75c-489d-9de7-d101946705ff.%(ext)s https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 08:22:12,481 - ERROR - ❌ Error en descarga CLI: Command '['yt-dlp', '-f', 'bv[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/bv+ba/b', '--merge-output-format', 'mp4', '--ffmpeg-location', 'C:\\Users\\Sancho\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe', '--extractor-args', 'youtube:player_client=ios,web,android', '--no-warnings', '--quiet', '-o', 'temp_downloads\\yt_4ade6ca2-b75c-489d-9de7-d101946705ff.%(ext)s', 'https://www.youtube.com/watch?v=gpWB9N39HEM']' returned non-zero exit status 1.
+2026-01-05 08:22:12,482 - INFO - 127.0.0.1 - code 500, message Error en descarga: Command '['yt-dlp', '-f', 'bv[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/bv+ba/b', '--merge-output-format', 'mp4', '--ffmpeg-location', 'C:\\Users\\Sancho\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe', '--extractor-args', 'youtube:player_client=ios,web,android', '--no-warnings', '--quiet', '-o', 'temp_downloads\\yt_4ade6ca2-b75c-489d-9de7-d101946705ff.%(ext)s', 'https://www.youtube.com/watch?v=gpWB9N39HEM']' returned non-zero exit status 1.
+2026-01-05 08:22:12,482 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgpWB9N39HEM&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 500 -
+2026-01-05 08:22:12,805 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 08:34:57,712 - INFO - ============================================================
+2026-01-05 08:34:57,712 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-05 08:34:57,712 - INFO - ============================================================
+2026-01-05 08:34:57,712 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-05 08:34:57,712 - INFO - Acceso local: http://localhost:8000
+2026-01-05 08:34:57,712 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-05 08:34:57,713 - INFO - Endpoints disponibles:
+2026-01-05 08:34:57,713 - INFO -   POST /api/validate - Validar URLs
+2026-01-05 08:34:57,713 - INFO -   POST /api/extract - Extraer videos
+2026-01-05 08:34:57,713 - INFO - Presiona Ctrl+C para detener
+2026-01-05 08:34:57,713 - INFO - ============================================================
+2026-01-05 10:32:48,159 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 10:32:48,328 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:32:48,402 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:32:48,639 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:32:48,639 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:32:48,650 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:32:48,654 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:32:48,672 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:32:49,786 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 10:33:01,959 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 10:33:02,279 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 10:33:04,580 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 10:33:04,580 - INFO -    📺 Plataforma: youtube
+2026-01-05 10:33:04,580 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 10:33:04,580 - INFO -    🎯 Resolución: 1080p
+2026-01-05 10:33:04,580 - INFO -    📁 Tamaño: N/A
+2026-01-05 10:33:04,580 - INFO -    ⏱️ Duración: 956s
+2026-01-05 10:33:04,581 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 10:33:32,615 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 10:34:05,538 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-05 10:34:05,538 - INFO -    🔗 URL: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 10:34:05,538 - INFO -    📄 Filename: Mis MCPs favoritos para programar más rápido con IA.mp4
+2026-01-05 10:34:05,538 - INFO - 🚀 Iniciando descarga HQ con librerías para: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 10:34:07,538 - ERROR - ❌ Error en descarga CLI: [0;31mERROR:[0m [youtube] gpWB9N39HEM: Requested format is not available. Use --list-formats for a list of available formats
+2026-01-05 10:34:07,539 - INFO - 127.0.0.1 - code 500, message Error en descarga: [0;31mERROR:[0m [youtube] gpWB9N39HEM: Requested format is not available. Use --list-formats for a list of available formats
+2026-01-05 10:34:07,539 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgpWB9N39HEM&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 500 -
+2026-01-05 10:34:08,257 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 10:34:35,796 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 10:38:16,712 - INFO - ============================================================
+2026-01-05 10:38:16,713 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-05 10:38:16,713 - INFO - ============================================================
+2026-01-05 10:38:16,713 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-05 10:38:16,713 - INFO - Acceso local: http://localhost:8000
+2026-01-05 10:38:16,714 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-05 10:38:16,714 - INFO - Endpoints disponibles:
+2026-01-05 10:38:16,714 - INFO -   POST /api/validate - Validar URLs
+2026-01-05 10:38:16,714 - INFO -   POST /api/extract - Extraer videos
+2026-01-05 10:38:16,714 - INFO - Presiona Ctrl+C para detener
+2026-01-05 10:38:16,714 - INFO - ============================================================
+2026-01-05 10:38:37,827 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 10:38:37,963 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:38:38,092 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:38:38,276 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:38:38,276 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:38:38,276 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:38:38,277 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:38:38,277 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:38:39,103 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 10:38:50,622 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 10:38:50,945 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 10:38:53,511 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 10:38:53,512 - INFO -    📺 Plataforma: youtube
+2026-01-05 10:38:53,512 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 10:38:53,512 - INFO -    🎯 Resolución: 1080p
+2026-01-05 10:38:53,512 - INFO -    📁 Tamaño: N/A
+2026-01-05 10:38:53,513 - INFO -    ⏱️ Duración: 956s
+2026-01-05 10:38:53,513 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 10:38:58,573 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-05 10:38:58,573 - INFO -    🔗 URL: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 10:38:58,573 - INFO -    📄 Filename: Mis MCPs favoritos para programar más rápido con IA.mp4
+2026-01-05 10:38:58,573 - INFO - 🚀 Iniciando descarga HQ con librerías para: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 10:39:00,203 - ERROR - ❌ Error en descarga CLI: [0;31mERROR:[0m [youtube] gpWB9N39HEM: Requested format is not available. Use --list-formats for a list of available formats
+2026-01-05 10:39:00,203 - INFO - 127.0.0.1 - code 500, message Error en descarga: [0;31mERROR:[0m [youtube] gpWB9N39HEM: Requested format is not available. Use --list-formats for a list of available formats
+2026-01-05 10:39:00,203 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgpWB9N39HEM&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 500 -
+2026-01-05 10:39:00,531 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 10:41:00,680 - INFO - ============================================================
+2026-01-05 10:41:00,680 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-05 10:41:00,680 - INFO - ============================================================
+2026-01-05 10:41:00,680 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-05 10:41:00,681 - INFO - Acceso local: http://localhost:8000
+2026-01-05 10:41:00,681 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-05 10:41:00,681 - INFO - Endpoints disponibles:
+2026-01-05 10:41:00,681 - INFO -   POST /api/validate - Validar URLs
+2026-01-05 10:41:00,681 - INFO -   POST /api/extract - Extraer videos
+2026-01-05 10:41:00,681 - INFO - Presiona Ctrl+C para detener
+2026-01-05 10:41:00,681 - INFO - ============================================================
+2026-01-05 10:51:03,181 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 10:51:03,312 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:51:03,439 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:51:03,632 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:51:03,632 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:51:03,632 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:51:03,633 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:51:03,633 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 10:51:04,430 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 10:51:17,994 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 10:51:18,321 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 10:51:20,836 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 10:51:20,836 - INFO -    📺 Plataforma: youtube
+2026-01-05 10:51:20,836 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 10:51:20,836 - INFO -    🎯 Resolución: 1080p
+2026-01-05 10:51:20,837 - INFO -    📁 Tamaño: N/A
+2026-01-05 10:51:20,837 - INFO -    ⏱️ Duración: 956s
+2026-01-05 10:51:20,837 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 10:51:24,653 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-05 10:51:24,653 - INFO -    🔗 URL: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 10:51:24,654 - INFO -    📄 Filename: Mis MCPs favoritos para programar más rápido con IA.mp4
+2026-01-05 10:51:24,654 - INFO - 🚀 Iniciando descarga HQ con librerías para: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 10:51:33,685 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgpWB9N39HEM&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-05 10:51:34,450 - INFO - 📤 Video enviado (HQ): Mis MCPs favoritos para programar más rápido con IA.mp4
+2026-01-05 10:51:54,975 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 11:06:20,468 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 11:06:20,565 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:06:20,731 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:06:20,871 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:06:20,871 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:06:20,871 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:06:20,871 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:06:20,873 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:06:21,197 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-05 11:06:21,197 - INFO - 127.0.0.1 - "GET /$%7BvideoUrl%7D HTTP/1.1" 404 -
+2026-01-05 11:06:21,441 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 11:06:42,986 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-05 11:14:18,236 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 11:14:18,332 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:14:18,501 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:14:18,637 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:14:18,637 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:14:18,637 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:14:18,637 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:14:18,639 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:14:18,960 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-05 11:14:18,960 - INFO - 127.0.0.1 - "GET /$%7BvideoUrl%7D HTTP/1.1" 404 -
+2026-01-05 11:14:19,224 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 11:14:49,493 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 11:15:09,798 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 11:15:09,895 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:15:10,059 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:15:10,214 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:15:10,215 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:15:10,215 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:15:10,216 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:15:10,216 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:15:10,537 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-05 11:15:10,538 - INFO - 127.0.0.1 - "GET /$%7BvideoUrl%7D HTTP/1.1" 404 -
+2026-01-05 11:15:10,802 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 11:15:15,157 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-05 11:15:15,157 - INFO - 127.0.0.1 - "GET /$%7BvideoUrl%7D HTTP/1.1" 404 -
+2026-01-05 11:15:16,086 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-05 11:15:16,086 - INFO - 127.0.0.1 - "GET /$%7BvideoUrl%7D HTTP/1.1" 404 -
+2026-01-05 11:15:17,262 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-05 11:15:17,262 - INFO - 127.0.0.1 - "GET /$%7BvideoUrl%7D HTTP/1.1" 404 -
+2026-01-05 11:19:02,889 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 11:19:02,999 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:19:03,157 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:19:03,306 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:19:03,306 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:19:03,306 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:19:03,306 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:19:03,306 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:19:03,873 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 11:19:23,476 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 11:19:23,795 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 11:19:25,839 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 11:19:25,839 - INFO -    📺 Plataforma: youtube
+2026-01-05 11:19:25,839 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 11:19:25,839 - INFO -    🎯 Resolución: 1080p
+2026-01-05 11:19:25,839 - INFO -    📁 Tamaño: N/A
+2026-01-05 11:19:25,840 - INFO -    ⏱️ Duración: 956s
+2026-01-05 11:19:25,840 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 11:19:40,122 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-05 11:19:40,122 - INFO -    🔗 URL: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 11:19:40,122 - INFO -    📄 Filename: Mis MCPs favoritos para programar más rápido con IA.mp4
+2026-01-05 11:19:40,122 - INFO - 🚀 Iniciando descarga HQ con librerías para: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 11:19:52,272 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgpWB9N39HEM&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-05 11:19:54,965 - INFO - 📤 Video enviado (HQ): Mis MCPs favoritos para programar más rápido con IA.mp4
+2026-01-05 11:20:10,433 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 11:39:16,536 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 11:39:16,634 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:39:16,783 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:39:16,944 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:39:16,944 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:39:16,944 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:39:16,944 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:39:16,945 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 11:39:17,755 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 11:39:20,213 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 11:39:20,524 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 11:39:22,465 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 11:39:22,465 - INFO -    📺 Plataforma: youtube
+2026-01-05 11:39:22,465 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 11:39:22,466 - INFO -    🎯 Resolución: 1080p
+2026-01-05 11:39:22,466 - INFO -    📁 Tamaño: N/A
+2026-01-05 11:39:22,466 - INFO -    ⏱️ Duración: 956s
+2026-01-05 11:39:22,466 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 11:39:50,801 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 12:07:18,248 - INFO - ============================================================
+2026-01-05 12:07:18,248 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-05 12:07:18,249 - INFO - ============================================================
+2026-01-05 12:07:18,249 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-05 12:07:18,249 - INFO - Acceso local: http://localhost:8000
+2026-01-05 12:07:18,249 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-05 12:07:18,249 - INFO - Endpoints disponibles:
+2026-01-05 12:07:18,249 - INFO -   POST /api/validate - Validar URLs
+2026-01-05 12:07:18,249 - INFO -   POST /api/extract - Extraer videos
+2026-01-05 12:07:18,249 - INFO - Presiona Ctrl+C para detener
+2026-01-05 12:07:18,250 - INFO - ============================================================
+2026-01-05 12:07:19,303 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 12:07:19,388 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:07:19,550 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:07:19,701 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:07:19,701 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:07:19,701 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:07:19,701 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:07:19,701 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:07:20,641 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 12:07:25,572 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 12:07:25,882 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:07:28,085 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:07:28,085 - INFO -    📺 Plataforma: youtube
+2026-01-05 12:07:28,085 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 12:07:28,086 - INFO -    🎯 Resolución: 1080p
+2026-01-05 12:07:28,086 - INFO -    📁 Tamaño: N/A
+2026-01-05 12:07:28,086 - INFO -    ⏱️ Duración: 956s
+2026-01-05 12:07:28,086 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 12:07:37,722 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 12:07:38,044 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:07:39,883 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:07:39,884 - INFO -    📺 Plataforma: youtube
+2026-01-05 12:07:39,884 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 12:07:39,884 - INFO -    🎯 Resolución: 1080p
+2026-01-05 12:07:39,884 - INFO -    📁 Tamaño: N/A
+2026-01-05 12:07:39,884 - INFO -    ⏱️ Duración: 956s
+2026-01-05 12:07:39,885 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 12:08:08,323 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 12:08:15,699 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-05 12:08:15,700 - INFO -    🔗 URL: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 12:08:15,700 - INFO -    📄 Filename: Mis MCPs favoritos para programar más rápido con IA.mp4
+2026-01-05 12:08:15,700 - INFO - 🚀 Iniciando descarga HQ con librerías para: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 12:08:22,293 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgpWB9N39HEM&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-05 12:08:24,334 - INFO - 📤 Video enviado (HQ): Mis MCPs favoritos para programar más rápido con IA.mp4
+2026-01-05 12:08:45,905 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 12:08:45,951 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 12:08:51,324 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 12:08:51,592 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:08:53,495 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:08:53,495 - INFO -    📺 Plataforma: youtube
+2026-01-05 12:08:53,496 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 12:08:53,496 - INFO -    🎯 Resolución: 1080p
+2026-01-05 12:08:53,496 - INFO -    📁 Tamaño: N/A
+2026-01-05 12:08:53,496 - INFO -    ⏱️ Duración: 956s
+2026-01-05 12:08:53,496 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 12:09:21,652 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 12:12:04,072 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 12:12:04,157 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:12:04,333 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:12:04,461 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:12:04,461 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:12:04,461 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:12:04,461 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:12:04,462 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:12:05,241 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 12:12:06,178 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 12:12:06,489 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:12:08,380 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:12:08,380 - INFO -    📺 Plataforma: youtube
+2026-01-05 12:12:08,380 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 12:12:08,380 - INFO -    🎯 Resolución: 1080p
+2026-01-05 12:12:08,381 - INFO -    📁 Tamaño: N/A
+2026-01-05 12:12:08,381 - INFO -    ⏱️ Duración: 956s
+2026-01-05 12:12:08,381 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 12:12:30,182 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-05 12:12:30,183 - INFO -    🔗 URL: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 12:12:30,183 - INFO -    📄 Filename: Mis MCPs favoritos para programar más rápido con IA.mp4
+2026-01-05 12:12:30,183 - INFO - 🚀 Iniciando descarga HQ con librerías para: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 12:12:37,109 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgpWB9N39HEM&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-05 12:12:38,542 - INFO - 📤 Video enviado (HQ): Mis MCPs favoritos para programar más rápido con IA.mp4
+2026-01-05 12:12:58,127 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-05 12:12:58,127 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-05 12:13:05,510 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 12:13:05,578 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-05 12:13:05,579 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-05 12:13:05,762 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:13:05,939 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:13:05,941 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:13:05,942 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:13:05,943 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:13:05,943 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:13:06,075 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:13:07,048 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 12:13:09,781 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 12:13:10,098 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:13:12,084 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:13:12,084 - INFO -    📺 Plataforma: youtube
+2026-01-05 12:13:12,084 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 12:13:12,084 - INFO -    🎯 Resolución: 1080p
+2026-01-05 12:13:12,084 - INFO -    📁 Tamaño: N/A
+2026-01-05 12:13:12,085 - INFO -    ⏱️ Duración: 956s
+2026-01-05 12:13:12,085 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 12:13:40,349 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 12:15:02,791 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 12:15:02,885 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-05 12:15:02,885 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-05 12:15:03,036 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:15:03,242 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:15:03,246 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:15:03,246 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:15:03,247 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:15:03,248 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:15:03,347 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:15:04,348 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 12:15:34,621 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 12:21:01,500 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 12:21:01,573 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-05 12:21:01,573 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-05 12:21:01,758 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:21:01,929 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:21:01,929 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:21:01,929 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:21:01,929 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:21:01,930 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:21:02,071 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:21:03,122 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 12:21:05,153 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-05 12:21:32,274 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 12:21:32,523 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:21:34,727 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:21:34,728 - INFO -    📺 Plataforma: youtube
+2026-01-05 12:21:34,728 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 12:21:34,728 - INFO -    🎯 Resolución: 1080p
+2026-01-05 12:21:34,728 - INFO -    📁 Tamaño: N/A
+2026-01-05 12:21:34,728 - INFO -    ⏱️ Duración: 956s
+2026-01-05 12:21:34,729 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 12:21:37,937 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 12:21:38,248 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:21:38,393 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:21:38,393 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:21:38,394 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:21:38,394 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:21:38,395 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:21:38,559 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:21:38,714 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-05 12:21:38,714 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-05 12:21:39,573 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 12:21:41,002 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 12:21:41,315 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:21:43,107 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:21:43,108 - INFO -    📺 Plataforma: youtube
+2026-01-05 12:21:43,108 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 12:21:43,108 - INFO -    🎯 Resolución: 1080p
+2026-01-05 12:21:43,108 - INFO -    📁 Tamaño: N/A
+2026-01-05 12:21:43,109 - INFO -    ⏱️ Duración: 956s
+2026-01-05 12:21:43,109 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 12:22:11,591 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 12:22:20,538 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-05 12:22:20,538 - INFO -    🔗 URL: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 12:22:20,538 - INFO -    📄 Filename: Mis MCPs favoritos para programar más rápido con IA.mp4
+2026-01-05 12:22:20,539 - INFO - 🚀 Iniciando descarga HQ con librerías para: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 12:22:27,982 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgpWB9N39HEM&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-05 12:22:30,367 - INFO - 📤 Video enviado (HQ): Mis MCPs favoritos para programar más rápido con IA.mp4
+2026-01-05 12:22:50,725 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 12:22:50,789 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 12:30:53,577 - INFO - ============================================================
+2026-01-05 12:30:53,577 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-05 12:30:53,577 - INFO - ============================================================
+2026-01-05 12:30:53,577 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-05 12:30:53,578 - INFO - Acceso local: http://localhost:8000
+2026-01-05 12:30:53,578 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-05 12:30:53,578 - INFO - Endpoints disponibles:
+2026-01-05 12:30:53,578 - INFO -   POST /api/validate - Validar URLs
+2026-01-05 12:30:53,578 - INFO -   POST /api/extract - Extraer videos
+2026-01-05 12:30:53,578 - INFO - Presiona Ctrl+C para detener
+2026-01-05 12:30:53,578 - INFO - ============================================================
+2026-01-05 12:31:01,078 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 12:31:01,143 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-05 12:31:01,143 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-05 12:31:01,339 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:31:01,497 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:31:01,498 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:31:01,498 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:31:01,498 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:31:01,498 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:31:01,644 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:31:02,674 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 12:31:32,916 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 12:31:33,226 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:31:35,680 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:31:35,680 - INFO -    📺 Plataforma: youtube
+2026-01-05 12:31:35,680 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 12:31:35,680 - INFO -    🎯 Resolución: 1080p
+2026-01-05 12:31:35,681 - INFO -    📁 Tamaño: N/A
+2026-01-05 12:31:35,681 - INFO -    ⏱️ Duración: 956s
+2026-01-05 12:31:35,681 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 12:31:43,846 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-05 12:31:43,846 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-05 12:32:07,324 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-05 12:32:07,325 - INFO -    🔗 URL: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 12:32:07,326 - INFO -    📄 Filename: Mis MCPs favoritos para programar más rápido con IA.mp4
+2026-01-05 12:32:07,327 - INFO - 🚀 Iniciando descarga HQ con librerías para: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 12:32:13,829 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgpWB9N39HEM&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-05 12:32:15,228 - INFO - 📤 Video enviado (HQ): Mis MCPs favoritos para programar más rápido con IA.mp4
+2026-01-05 12:32:30,858 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 12:32:30,924 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-05 12:32:30,924 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-05 12:32:31,260 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:32:31,264 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:32:31,264 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:32:31,264 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:32:31,264 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:32:31,265 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:32:31,585 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:32:32,611 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 12:32:36,236 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 12:32:36,545 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:32:38,299 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:32:38,300 - INFO -    📺 Plataforma: youtube
+2026-01-05 12:32:38,300 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 12:32:38,300 - INFO -    🎯 Resolución: 1080p
+2026-01-05 12:32:38,300 - INFO -    📁 Tamaño: N/A
+2026-01-05 12:32:38,300 - INFO -    ⏱️ Duración: 956s
+2026-01-05 12:32:38,301 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 12:33:06,814 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 12:34:02,845 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 12:34:02,941 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-05 12:34:02,942 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-05 12:34:03,103 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:34:03,269 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:34:03,270 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:34:03,270 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:34:03,270 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:34:03,270 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:34:03,437 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:34:04,418 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 12:34:34,685 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 12:40:56,303 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 12:40:56,368 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-05 12:40:56,368 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-05 12:40:56,568 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:40:56,723 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:40:56,726 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:40:56,727 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:40:56,728 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:40:56,728 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:40:56,875 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:40:57,951 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 12:41:06,687 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-05 12:41:39,104 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 12:41:39,367 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:41:41,271 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:41:41,271 - INFO -    📺 Plataforma: youtube
+2026-01-05 12:41:41,271 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 12:41:41,271 - INFO -    🎯 Resolución: 1080p
+2026-01-05 12:41:41,271 - INFO -    📁 Tamaño: N/A
+2026-01-05 12:41:41,272 - INFO -    ⏱️ Duración: 956s
+2026-01-05 12:41:41,272 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 12:41:52,722 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-05 12:41:53,030 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:41:53,157 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:41:53,159 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:41:53,160 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:41:53,161 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:41:53,161 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:41:53,343 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:41:53,467 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-05 12:41:53,467 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-05 12:41:54,326 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 12:41:55,048 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 12:41:55,370 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:41:57,285 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:41:57,285 - INFO -    📺 Plataforma: youtube
+2026-01-05 12:41:57,285 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 12:41:57,286 - INFO -    🎯 Resolución: 1080p
+2026-01-05 12:41:57,286 - INFO -    📁 Tamaño: N/A
+2026-01-05 12:41:57,286 - INFO -    ⏱️ Duración: 956s
+2026-01-05 12:41:57,286 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 12:42:25,626 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-05 12:48:50,367 - INFO - 192.168.1.50 - "GET / HTTP/1.1" 200 -
+2026-01-05 12:48:50,511 - INFO - 192.168.1.50 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:48:50,511 - INFO - 192.168.1.50 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:48:50,516 - INFO - 192.168.1.50 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:48:50,517 - INFO - 192.168.1.50 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:48:50,517 - INFO - 192.168.1.50 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:48:50,520 - INFO - 192.168.1.50 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:48:50,523 - INFO - 192.168.1.50 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:48:51,564 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 12:49:07,939 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 12:49:07,953 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:49:09,921 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=gpWB9N39HEM
+2026-01-05 12:49:09,921 - INFO -    📺 Plataforma: youtube
+2026-01-05 12:49:09,921 - INFO -    🎬 Título: Mis MCPs favoritos para programar más rápido con I...
+2026-01-05 12:49:09,922 - INFO -    🎯 Resolución: 1080p
+2026-01-05 12:49:09,922 - INFO -    📁 Tamaño: N/A
+2026-01-05 12:49:09,922 - INFO -    ⏱️ Duración: 956s
+2026-01-05 12:49:09,922 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 12:49:20,837 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-05 12:49:20,837 - INFO -    🔗 URL: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 12:49:20,838 - INFO -    📄 Filename: Mis MCPs favoritos para programar más rápido con IA.mp4
+2026-01-05 12:49:20,838 - INFO - 🚀 Iniciando descarga HQ con librerías para: https://www.youtube.com/watch?v=gpWB9N39HEM...
+2026-01-05 12:49:29,080 - INFO - 192.168.1.50 - "GET /api/download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgpWB9N39HEM&filename=Mis%20MCPs%20favoritos%20para%20programar%20m%C3%A1s%20r%C3%A1pido%20con%20IA.mp4 HTTP/1.1" 200 -
+2026-01-05 12:49:30,188 - INFO - 📤 Video enviado (HQ): Mis MCPs favoritos para programar más rápido con IA.mp4
+2026-01-05 12:49:50,849 - INFO - 192.168.1.50 - Request timed out: TimeoutError('timed out')
+2026-01-05 12:50:54,194 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 12:50:54,204 - INFO - Extrayendo video de: https://www.tiktok.com/@programadorsupremo/video/7591709922040057106?is_from_webapp=1&sender_device=pc
+2026-01-05 12:51:01,723 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@programadorsupremo/video/7591709922040057106?is_from_webapp=1&sender_device=pc
+2026-01-05 12:51:01,723 - INFO -    📺 Plataforma: tiktok
+2026-01-05 12:51:01,724 - INFO -    🎬 Título: Video de TikTok...
+2026-01-05 12:51:01,724 - INFO -    🎯 Resolución: TikTok HD
+2026-01-05 12:51:01,724 - INFO -    📁 Tamaño: N/A
+2026-01-05 12:51:01,724 - INFO -    ⏱️ Duración: 0s
+2026-01-05 12:51:01,724 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 12:51:05,816 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-05 12:51:05,817 - INFO -    🔗 URL: https://tikcdn.io/ssstik/7591709922040057106?st=bKK4a3Is-Iyaas2zMgLy9g&e=1767649863...
+2026-01-05 12:51:05,817 - INFO -    📄 Filename: tiktok_video.mp4
+2026-01-05 12:51:05,817 - INFO - Descarga proxy estándar para: https://tikcdn.io/ssstik/7591709922040057106?st=bKK4a3Is-Iyaas2zMgLy9g&e=1767649863
+2026-01-05 12:51:08,103 - INFO - 192.168.1.50 - "GET /api/download?url=https%3A%2F%2Ftikcdn.io%2Fssstik%2F7591709922040057106%3Fst%3DbKK4a3Is-Iyaas2zMgLy9g%26e%3D1767649863&filename=tiktok_video.mp4 HTTP/1.1" 200 -
+2026-01-05 12:51:35,811 - INFO - 192.168.1.50 - Request timed out: TimeoutError('timed out')
+2026-01-05 12:52:00,460 - INFO - 192.168.1.50 - "GET / HTTP/1.1" 200 -
+2026-01-05 12:52:00,581 - INFO - 192.168.1.50 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:52:00,585 - INFO - 192.168.1.50 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:52:00,585 - INFO - 192.168.1.50 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:52:00,585 - INFO - 192.168.1.50 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:52:00,585 - INFO - 192.168.1.50 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:52:00,586 - INFO - 192.168.1.50 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:52:00,589 - INFO - 192.168.1.50 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-05 12:52:01,320 - INFO - 192.168.1.50 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-05 12:52:11,354 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 12:52:11,370 - INFO - Extrayendo video de: https://www.tiktok.com/@programadorsupremo/video/7591709922040057106?is_from_webapp=1&sender_device=pc
+2026-01-05 12:52:13,178 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@programadorsupremo/video/7591709922040057106?is_from_webapp=1&sender_device=pc
+2026-01-05 12:52:13,179 - INFO -    📺 Plataforma: tiktok
+2026-01-05 12:52:13,179 - INFO -    🎬 Título: Video de TikTok...
+2026-01-05 12:52:13,179 - INFO -    🎯 Resolución: TikTok HD
+2026-01-05 12:52:13,179 - INFO -    📁 Tamaño: N/A
+2026-01-05 12:52:13,180 - INFO -    ⏱️ Duración: 0s
+2026-01-05 12:52:13,180 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 12:55:23,667 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 12:55:23,671 - INFO - Extrayendo video de: https://www.tiktok.com/@programadorsupremo/video/7591709922040057106?is_from_webapp=1&sender_device=pc
+2026-01-05 12:55:25,043 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@programadorsupremo/video/7591709922040057106?is_from_webapp=1&sender_device=pc
+2026-01-05 12:55:25,043 - INFO -    📺 Plataforma: tiktok
+2026-01-05 12:55:25,043 - INFO -    🎬 Título: Video de TikTok...
+2026-01-05 12:55:25,044 - INFO -    🎯 Resolución: TikTok HD
+2026-01-05 12:55:25,044 - INFO -    📁 Tamaño: N/A
+2026-01-05 12:55:25,044 - INFO -    ⏱️ Duración: 0s
+2026-01-05 12:55:25,044 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 12:55:36,928 - INFO - 192.168.1.50 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-05 12:55:36,937 - INFO - Extrayendo video de: https://www.instagram.com/reel/DTGDtITkdsJ/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2026-01-05 12:55:38,965 - INFO - ✅ Extracción exitosa para: https://www.instagram.com/reel/DTGDtITkdsJ/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2026-01-05 12:55:38,965 - INFO -    📺 Plataforma: instagram
+2026-01-05 12:55:38,965 - INFO -    🎬 Título: Sin título...
+2026-01-05 12:55:38,966 - INFO -    🎯 Resolución: N/A
+2026-01-05 12:55:38,966 - INFO -    📁 Tamaño: N/A
+2026-01-05 12:55:38,966 - INFO -    ⏱️ Duración: 0s
+2026-01-05 12:55:38,966 - INFO - 192.168.1.50 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-05 12:55:44,777 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-05 12:55:44,778 - INFO -    🔗 URL: https://scontent-eze1-2.cdninstagram.com/o1/v/t2/f2/m86/AQMCSS43Mc2cj9bU37Fn4rzTK2FyeWZa10CzhWJlLmdd...
+2026-01-05 12:55:44,778 - INFO -    📄 Filename: instagram_video.mp4
+2026-01-05 12:55:44,778 - INFO - Descarga proxy estándar para: https://scontent-eze1-2.cdninstagram.com/o1/v/t2/f2/m86/AQMCSS43Mc2cj9bU37Fn4rzTK2FyeWZa10CzhWJlLmddUVSfifgb8gkEp_zo7TMyZHIezJx2LJNfF5bSFqWhIVr5EFYV5P6QG_6bxRk.mp4?_nc_cat=108&_nc_sid=5e9851&_nc_ht=scontent-eze1-2.cdninstagram.com&_nc_ohc=ZzfHUq6wjfcQ7kNvwHWAF0G&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6OTQzNTU3MzE4MTEwMDg3LCJhc3NldF9hZ2VfZGF5cyI6MCwidmlfdXNlY2FzZV9pZCI6MTA4MjcsImR1cmF0aW9uX3MiOjExOCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=6a32bcd7cc778edc&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC9CODQ4NzNERDBCOEZBQzI5NTQ2RkU3ODA1NUNERDVCQl92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HQmdhWnlSM0lJblBkZThHQUczMEloU0U3b2x4YnN0VEFRQUYVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmjq6r7KGKrQMVAigCQzMsF0BdtU_fO2RaGBJkYXNoX2Jhc2VsaW5lXzFfdjERAHX-B2WWqQEA&_nc_gid=R2Zvflv9Q58CNBkSxBcBPw&_nc_zt=28&oh=00_AfrxAElZr5xoGO2-dcVAbn3zS_C89EseiBn4GKCHVXIeLQ&oe=695DA4E1
+2026-01-05 12:55:45,139 - INFO - 192.168.1.50 - "GET /api/download?url=https%3A%2F%2Fscontent-eze1-2.cdninstagram.com%2Fo1%2Fv%2Ft2%2Ff2%2Fm86%2FAQMCSS43Mc2cj9bU37Fn4rzTK2FyeWZa10CzhWJlLmddUVSfifgb8gkEp_zo7TMyZHIezJx2LJNfF5bSFqWhIVr5EFYV5P6QG_6bxRk.mp4%3F_nc_cat%3D108%26_nc_sid%3D5e9851%26_nc_ht%3Dscontent-eze1-2.cdninstagram.com%26_nc_ohc%3DZzfHUq6wjfcQ7kNvwHWAF0G%26efg%3DeyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6OTQzNTU3MzE4MTEwMDg3LCJhc3NldF9hZ2VfZGF5cyI6MCwidmlfdXNlY2FzZV9pZCI6MTA4MjcsImR1cmF0aW9uX3MiOjExOCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9%26ccb%3D17-1%26vs%3D6a32bcd7cc778edc%26_nc_vs%3DHBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC9CODQ4NzNERDBCOEZBQzI5NTQ2RkU3ODA1NUNERDVCQl92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYOnBhc3N0aHJvdWdoX2V2ZXJzdG9yZS9HQmdhWnlSM0lJblBkZThHQUczMEloU0U3b2x4YnN0VEFRQUYVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmjq6r7KGKrQMVAigCQzMsF0BdtU_fO2RaGBJkYXNoX2Jhc2VsaW5lXzFfdjERAHX-B2WWqQEA%26_nc_gid%3DR2Zvflv9Q58CNBkSxBcBPw%26_nc_zt%3D28%26oh%3D00_AfrxAElZr5xoGO2-dcVAbn3zS_C89EseiBn4GKCHVXIeLQ%26oe%3D695DA4E1&filename=instagram_video.mp4 HTTP/1.1" 200 -
+2026-01-05 12:56:14,779 - INFO - 192.168.1.50 - Request timed out: TimeoutError('timed out')

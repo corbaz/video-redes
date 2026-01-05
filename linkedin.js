@@ -6,6 +6,11 @@ function showLinkedinVideo(data, container) {
         container.innerHTML = `<div class="error"><h3>No se encontró video disponible</h3></div>`;
         return;
     }
+    // Enable global download
+    if (window.enableGlobalDownload) {
+        window.enableGlobalDownload(videoUrl, "linkedin_video.mp4");
+    }
+
     // Renderizar la tarjeta con preview igual que Instagram
     const videoCardHTML = renderVideoCard({
         videoUrl: videoUrl,
