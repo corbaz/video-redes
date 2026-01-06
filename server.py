@@ -6,7 +6,7 @@ import os
 import sys
 import traceback
 import logging
-from urllib.parse import parse_qs, urlparse
+from urllib.parse import parse_qs, urlparse, unquote
 from socketserver import ThreadingMixIn
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import requests
@@ -64,24 +64,9 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             # Servir index.html para la raíz
             if clean_path == '/' or clean_path == '/index.html':
                 self.serve_file('index.html')
-            elif clean_path.endswith('.js'):
+            elif clean_path.endswith(('.js', '.css', '.ico')):
                 filename = clean_path.lstrip('/')
-                if os.path.exists(filename):
-                    self.serve_file(filename)
-                else:
-                    self.send_error(404)
-            elif clean_path.endswith('.css'):
-                filename = clean_path.lstrip('/')
-                if os.path.exists(filename):
-                    self.serve_file(filename)
-                else:
-                    self.send_error(404)
-            elif clean_path.endswith('.ico'):
-                filename = clean_path.lstrip('/')
-                if os.path.exists(filename):
-                    self.serve_file(filename)
-                else:
-                    self.send_error(404)
+                self.serve_file(filename)
             # Proxy de descarga
             elif clean_path == '/api/download':
                 self.handle_download()
@@ -257,6 +242,9 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
     def serve_file(self, filename):
         """Sirve archivos estáticos con headers apropiados y protección de Path Traversal"""
         try:
+            # Decodificar URL (ej. %20 -> espacio)
+            filename = unquote(filename)
+
             # Protección estricta: No permitir navegación hacia arriba
             if '..' in filename:
                 logger.warning(f"⛔ Intento de Path Traversal bloqueado (..): {filename}")
@@ -264,11 +252,26 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 return
 
             # Protección contra Path Traversal (Resolución)
-            safe_base = os.path.abspath(os.getcwd())
-            requested_path = os.path.abspath(os.path.join(safe_base, filename))
+            safe_base = os.path.realpath(os.getcwd())
             
-            if not requested_path.startswith(safe_base):
-                logger.warning(f"⛔ Intento de Path Traversal bloqueado (scope): {filename}")
+            # Evitar rutas absolutas que ignoren safe_base en os.path.join
+            if os.path.isabs(filename):
+                 logger.warning(f"⛔ Intento de Path Traversal bloqueado (ruta absoluta): {filename}")
+                 self.send_error(403)
+                 return
+
+            requested_path = os.path.realpath(os.path.join(safe_base, filename))
+            
+            # Verificación robusta usando commonpath para evitar errores de prefijo
+            try:
+                common = os.path.commonpath([safe_base, requested_path])
+            except ValueError:
+                logger.warning(f"⛔ Intento de Path Traversal bloqueado (drive mismatch): {filename}")
+                self.send_error(403)
+                return
+
+            if common != safe_base:
+                logger.warning(f"⛔ Intento de Path Traversal bloqueado (scope/commonpath): {filename}")
                 self.send_error(403, "Forbidden")
                 return
 
@@ -276,6 +279,10 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 logger.warning(f"Archivo no encontrado: {filename}")
                 self.send_error(404)
                 return
+            
+            if not os.path.isfile(requested_path):
+                 self.send_error(403)
+                 return
 
             with open(requested_path, 'rb') as f:
                 content = f.read()

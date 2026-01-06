@@ -79,35 +79,38 @@
             transform: rotate(90deg);
         }
 
-        /* Laurel / Modern SaaS Dark Theme */
+        /* Evervault / Godly Dark Theme (Futuristic) */
         :root {
-            --bg-body: #0f172a;
-            /* Slate 900 */
-            --bg-card: #1e293b;
-            /* Slate 800 */
-            --text-main: #f8fafc;
-            /* Slate 50 */
-            --text-muted: #94a3b8;
-            /* Slate 400 */
-            --primary: #6366f1;
-            /* Indigo 500 */
-            --primary-hover: #4f46e5;
-            /* Indigo 600 */
-            --border: #334155;
-            /* Slate 700 */
+            --bg-body: #050505;
+            --bg-card: #0a0a0a;
+            --text-main: #ededed;
+            --text-muted: #888888;
+            --primary: #6E44FF;
+            --primary-hover: #5b37d8;
+            --border: rgba(255, 255, 255, 0.12);
+            --glow-shadow: 0 0 20px rgba(110, 68, 255, 0.15);
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             background-color: var(--bg-body);
-            background-image: radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0, transparent 50%);
+            background-image:
+                linear-gradient(var(--bg-body) 0%, transparent 20%, transparent 80%, var(--bg-body) 100%),
+                radial-gradient(circle at 50% 0%, rgba(110, 68, 255, 0.15) 0%, transparent 50%),
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
             background-attachment: fixed;
             color: var(--text-main);
             min-height: 100vh;
             margin: 0;
             padding: 20px;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .container {
@@ -125,54 +128,59 @@
 
         .header {
             margin-bottom: 3vh;
-            /* Usar viewport height */
             flex-shrink: 0;
             text-align: center;
-            /* Centering fix */
             width: 100%;
         }
 
         .header h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            letter-spacing: -0.025em;
-            background: linear-gradient(to right, #fff, #94a3b8);
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            background: linear-gradient(135deg, #fff 30%, #a5a5a5 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
+            text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
         }
 
         .header h2 {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: var(--primary);
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.2em;
             font-weight: 600;
-        }
-
-        .header p {
-            font-size: 1.1rem;
+            margin-top: 5px;
             opacity: 0.9;
         }
 
-        /* Solid, Visible Input Styles */
+        .header p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        /* Solid, Visible Input Styles - Godly Style */
         .input-section {
-            background: transparent;
+            background: rgba(10, 10, 10, 0.5);
+            /* Transparent dark */
             padding: 0;
-            backdrop-filter: none;
+            backdrop-filter: blur(10px);
         }
 
         .url-input {
             width: 100%;
-            padding: 18px 24px;
-            font-size: 1.1rem;
-            background-color: var(--bg-card) !important;
+            padding: 16px 24px;
+            font-size: 1rem;
+            font-family: 'Inter', monospace;
+            /* Monospace vibe for inputs is trendy */
+            background-color: #000 !important;
             border: 1px solid var(--border);
-            color: var(--text-main) !important;
-            border-radius: 9999px;
-            /* Pill shape */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            color: #fff !important;
+            border-radius: 12px;
+            /* Slightly squared for tech feel */
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
             transition: all 0.2s ease;
             appearance: none;
         }
@@ -180,79 +188,119 @@
         .url-input:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
-            transform: translateY(-1px);
+            box-shadow: 0 0 0 1px var(--primary), inset 0 2px 4px rgba(0, 0, 0, 0.8);
+            transform: translateY(0);
         }
 
         .url-input::placeholder {
-            color: var(--text-muted);
+            color: #444;
         }
 
-        /* Modern Pill Buttons */
+        /* Modern Tech Buttons */
         .buttons-container {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 10px;
+            margin-top: 15px;
+            width: 100%;
+            align-items: stretch;
+            /* Ensure equal height */
         }
 
         .btn {
-            padding: 12px 24px;
-            border-radius: 9999px;
+            width: 100%;
+            height: 100%;
+            min-height: 48px;
+            padding: 0 16px;
+            border-radius: 12px;
+            /* Slightly more rounded */
             font-weight: 600;
             font-size: 0.95rem;
             cursor: pointer;
-            border: 1px solid var(--border);
-            background: var(--bg-card);
-            color: var(--text-main);
-            transition: all 0.2s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.03);
+            color: #fff;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
-            display: inline-flex;
+            display: flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .btn:hover {
-            border-color: var(--text-muted);
-            transform: translateY(-2px);
-            background: #28364d;
+        /* Pro Styles: Gradients & Glows */
+        #pasteBtn {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
-        /* Primary Search Action */
+        #pasteBtn:hover {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
         #analyzeBtn {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            color: white;
-            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+            background: linear-gradient(135deg, var(--primary), #8a63ff);
+            border: none;
+            box-shadow: 0 4px 15px rgba(110, 68, 255, 0.3);
         }
 
         #analyzeBtn:hover {
-            background-color: var(--primary-hover);
-            border-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(110, 68, 255, 0.5);
+        }
+
+        .btn:hover {
+            border-color: var(--text-main);
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-1px);
+        }
+
+        /* Primary Search Action - Glowing Gradient */
+        #analyzeBtn {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            box-shadow: var(--glow-shadow);
+        }
+
+        #analyzeBtn:hover {
+            background: var(--primary-hover);
+            box-shadow: 0 0 30px rgba(110, 68, 255, 0.4);
         }
 
         /* Download Button Special State */
         .btn.download-main {
-            background: #10b981;
-            /* Emerald 500 */
-            border-color: #10b981;
-            color: white;
+            background: var(--success);
+            border-color: var(--success);
+            color: black;
+            font-weight: 700;
             opacity: 0.5;
             pointer-events: none;
-            width: 100%;
-            /* Full width download CTA */
+            width: auto;
+            /* Allow it to sit in line */
             justify-content: center;
-            margin-top: 1rem;
-            font-size: 1.2rem;
-            padding: 16px;
+            margin-top: 0;
+            /* Align with others */
+            font-size: 0.9rem;
+            /* Match other buttons */
+            padding: 12px 24px;
+            /* Match other buttons */
+            box-shadow: 0 0 20px rgba(0, 223, 154, 0.1);
         }
 
         .btn.download-main.active {
             opacity: 1;
             pointer-events: auto;
-            box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.3);
+            box-shadow: 0 0 30px rgba(0, 223, 154, 0.4);
         }
 
         /* Clear Button inside Input */
@@ -526,288 +574,195 @@
             margin-bottom: 10px;
         }
 
+        /* Nuevo CSS Móvil (Minimalista) */
+        /* Ajustes Móviles ESTÁNDAR (La mayoría de móviles hasta 768px de ancho) */
         @media (max-width: 768px) {
-            /* LAYOUT PROFESIONAL MÓVIL: Header fijo + Video flexible + Footer fijo */
-
             body {
-                padding: 0;
-                margin: 0;
-                height: 100vh;
                 overflow: hidden;
             }
 
             .container {
-                height: 100vh;
+                padding: 10px;
                 display: flex;
                 flex-direction: column;
-                max-width: 100%;
-                margin: 0;
+                height: 100dvh;
+                max-height: 100dvh;
+                justify-content: center;
                 overflow: hidden;
-                position: relative;
             }
 
-            /* HEADER FIJO ARRIBA */
             .header {
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                z-index: 100;
-                padding: 8px 16px;
-                text-align: center;
+                margin-bottom: 5px;
+                padding-bottom: 0;
                 flex-shrink: 0;
-                height: 80px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
             }
 
             .header h1 {
-                font-size: 16px;
-                margin-bottom: 2px;
+                font-size: 1.35rem;
+                /* Ajustado para una línea */
                 line-height: 1.2;
+                margin-bottom: 4px;
             }
 
             .header h2 {
-                font-size: 12px;
-                margin-bottom: 2px;
-                line-height: 1.2;
+                font-size: 0.8rem;
+                margin-top: 0;
+                margin-bottom: 8px;
+                display: block;
+                opacity: 0.8;
             }
 
             .header p {
-                font-size: 10px;
-                margin-bottom: 0;
-                line-height: 1.2;
+                display: none;
             }
 
-            /* SECCIÓN VIDEO CENTRADA Y FLEXIBLE */
+            /* Ocultar emoji del título y botones en móvil */
+            .header-icon,
+            .btn-icon {
+                display: none !important;
+            }
+
             .video-player-section {
-                flex: 1;
+                padding: 10px;
+                margin-bottom: 10px;
+                min-height: auto;
+                flex-shrink: 1;
+                margin-top: 0;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                margin-top: 80px;
-                /* Altura exacta del header */
-                margin-bottom: 120px;
-                /* Altura exacta del footer */
-                padding: 15px;
-                overflow: hidden;
-                height: calc(100vh - 200px);
-                /* Altura total disponible */
             }
 
-            /* FOOTER FIJO completamente pegado abajo */
+            /* Ensure video/placeholder doesn't force overflow */
+            .video-placeholder-content,
+            .netflix-loading-content,
+            .pro-video-card {
+                max-height: 48vh;
+                width: auto;
+                aspect-ratio: 9/16;
+                margin: 0 auto;
+            }
+
+            .video-placeholder-content {
+                width: 100% !important;
+            }
+
             .input-section {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                z-index: 100;
-                padding: 8px 12px;
-                /* Reducido padding */
-                margin: 0;
+                margin-top: 0;
+                padding-top: 0;
                 flex-shrink: 0;
-                height: 120px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                box-sizing: border-box;
+                position: static;
+                height: auto;
+                background: transparent;
+                border-top: none;
+                box-shadow: none;
+                padding: 0;
+                width: 100%;
             }
 
             .url-input {
-                padding: 10px 12px;
-                font-size: 14px;
+                padding: 10px 14px;
+                font-size: 0.9rem;
                 margin-bottom: 8px;
-                width: 100%;
-                max-width: 100%;
-                border-radius: 8px;
+                height: 44px;
+            }
+
+            .buttons-container {
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 8px;
+                margin-top: 5px;
+                width: 100% !important;
             }
 
             .btn {
-                padding: 8px 16px;
-                font-size: 13px;
-                margin: 2px 6px;
-                display: inline-block;
-                border-radius: 20px;
-            }
-
-            /* Contenedor para los botones centrados */
-            .buttons-container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 8px;
+                padding: 0 2px;
+                font-size: 0.75rem;
+                height: 44px;
+                min-height: 44px;
                 width: 100%;
-            }
-
-            /* Videos, placeholder y loading - ABSOLUTOS centrados (50% - diferencia header/footer) */
-
-            .video-card-container {
-                position: absolute !important;
-                top: calc(50% - 40px) !important;
-                left: 50% !important;
-                transform: translate(-50%, -50%) !important;
-                width: auto !important;
-                height: 350px !important;
-                max-width: 90vw !important;
-                aspect-ratio: 9/16 !important;
-                z-index: 50 !important;
-            }
-
-            .video-thumbnail-container.video-card-container {
-                position: absolute !important;
-                top: calc(50% - 40px) !important;
-                left: 50% !important;
-                transform: translate(-50%, -50%) !important;
-                width: auto !important;
-                height: 350px !important;
-                max-width: 90vw !important;
-                aspect-ratio: 9/16 !important;
-                margin: 0 !important;
-                display: block !important;
-                z-index: 50 !important;
-            }
-
-            .netflix-loading {
-                position: absolute !important;
-                top: calc(50% - 40px) !important;
-                left: 50% !important;
-                transform: translate(-50%, -50%) !important;
-                width: auto !important;
-                height: 350px !important;
-                max-width: 90vw !important;
-                aspect-ratio: 9/16 !important;
-                margin: 0 !important;
-                display: block !important;
-                z-index: 50 !important;
-            }
-
-            /* Video container TAMBIÉN con cálculo correcto (50% - 20px) */
-            #videoPlayerContainer {
-                position: absolute !important;
-                top: calc(50% - 40px) !important;
-                left: 50% !important;
-                transform: translate(-50%, -50%) !important;
-                width: auto !important;
-                height: 350px !important;
-                max-width: 90vw !important;
-                aspect-ratio: 9/16 !important;
-                display: flex !important;
-                justify-content: center !important;
-                align-items: center !important;
-                z-index: 50 !important;
-            }
-
-            /* Ajustar placeholder con tamaño consistente */
-            .video-placeholder-content {
-                min-height: auto !important;
-                padding-bottom: 177.78% !important;
-                /* Restaurar proporción correcta */
-                height: auto !important;
-            }
-
-            .video-placeholder-inner {
-                position: absolute !important;
-                top: 50% !important;
-                left: 50% !important;
-                transform: translate(-50%, -50%) !important;
-            }
-
-            .video-placeholder-icon {
-                font-size: 2rem !important;
-                /* Icono proporcionado al tamaño */
-            }
-
-            .video-placeholder-text {
-                font-size: 0.9rem !important;
-                /* Texto proporcionado al tamaño */
-            }
-
-            /* Ajustar loading Netflix para medidas idénticas al reproductor */
-            .netflix-loading-content {
-                padding-bottom: 177.78% !important;
-                /* Proporción exacta del reproductor */
-                min-height: auto !important;
-                height: auto !important;
-                width: 100% !important;
-                position: relative !important;
-            }
-
-            .netflix-platform-icon {
-                font-size: 2rem !important;
-                /* Tamaño proporcionado al tamaño general */
-            }
-
-            .platform-svg {
-                width: 2rem !important;
-                height: 2rem !important;
-            }
-
-            .netflix-loading-text {
-                font-size: 0.8rem !important;
-            }
-
-            /* Ajustar placeholder para 350px como TODOS */
-            .video-placeholder-content {
-                width: 100% !important;
-                height: 350px !important;
-                min-height: 350px !important;
-                padding-bottom: 0 !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                position: relative !important;
-                background: rgba(0, 0, 0, 0.2);
-                border-radius: 12px;
-                overflow: hidden;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-                border: 2px dashed rgba(255, 255, 255, 0.3);
-            }
-
-            .video-placeholder-inner {
-                position: static !important;
-                top: auto !important;
-                left: auto !important;
-                transform: none !important;
-                color: rgba(255, 255, 255, 0.7);
-                text-align: center;
+                white-space: nowrap;
+                min-width: 0 !important;
+                /* CRITICAL for grid shrinking */
                 display: flex;
-                flex-direction: column;
                 align-items: center;
-                gap: 8px;
+                justify-content: center;
             }
 
-            /* Ajustar loading Netflix para 350px como TODOS */
-            .netflix-loading-content {
+
+
+            .btn.download-main {
                 width: 100% !important;
-                height: 350px !important;
-                min-height: 350px !important;
-                padding-bottom: 0 !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                position: relative !important;
-                background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-                border-radius: 12px;
-                overflow: hidden;
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                z-index: 50;
+                /* Ensure it fills grid cell */
+                margin-top: 0 !important;
+                flex: unset;
+                /* Remove flex specific props */
             }
 
-            .netflix-loading-inner {
-                position: static !important;
-                top: auto !important;
-                left: auto !important;
-                transform: none !important;
-                text-align: center;
-                z-index: 60;
-            }
+            /* .btn svg eliminada porque ahora usamos spans */
         }
+
+        /* Ajustes COMPACTOS "Ultraligeros" (Específico para Galaxy S8 [360w] e iPhone SE [375w]) */
+        /* Se activa si: El ancho es <= 380px O si la altura es <= 740px */
+        @media (max-width: 380px),
+        (max-height: 740px) {
+            .container {
+                padding: 5px !important;
+                /* Mínimo padding */
+            }
+
+            .header {
+                margin-bottom: 2px !important;
+            }
+
+            .header h1 {
+                font-size: 1.2rem !important;
+                /* Título aún más pequeño para asegurar una línea */
+                margin-bottom: 2px !important;
+            }
+
+            .header h2 {
+                font-size: 0.7rem !important;
+                /* Subtítulo compacto */
+                margin-bottom: 2px !important;
+            }
+
+            .video-player-section {
+                padding: 4px !important;
+                margin-bottom: 4px !important;
+            }
+
+            /* Restricción fuerte en altura para que QUIPA TODO SIN SCROLL */
+            .video-placeholder-content,
+            .netflix-loading-content,
+            .pro-video-card {
+                max-height: 40vh !important;
+                /* Reducimos altura para dejar espacio a inputs */
+            }
+
+            .url-input {
+                padding: 6px 10px !important;
+                /* Input más "flaco" */
+                font-size: 0.85rem !important;
+                margin-bottom: 4px !important;
+                height: 34px !important;
+            }
+
+            .buttons-container {
+                gap: 4px !important;
+                margin-top: 4px !important;
+            }
+
+            .btn {
+                padding: 0 4px !important;
+                font-size: 0.72rem !important;
+                height: 34px !important;
+                /* Botones más delgados */
+            }
+
+            /* Remove .btn svg rule here too */
+        }
+
 
         /* Estilos para el reproductor de video siempre visible */
         .video-player-section {
@@ -830,21 +785,6 @@
             display: block;
         }
 
-        /* EN MÓVIL: Placeholder con centrado correcto (50% - 20px) */
-        @media (max-width: 768px) {
-            .video-placeholder {
-                position: absolute !important;
-                top: calc(50% - 40px) !important;
-                left: 50% !important;
-                transform: translate(-50%, -50%) !important;
-                width: auto !important;
-                height: 350px !important;
-                max-width: 90vw !important;
-                aspect-ratio: 9/16 !important;
-                z-index: 50 !important;
-                margin: 0 !important;
-            }
-        }
 
         .video-card-container {
             width: 200px;
@@ -958,16 +898,19 @@
         .url-input {
             width: 100%;
             padding: 15px 45px 15px 15px;
-            /* Extra padding right for clear button */
-            border: none;
-            border-radius: 10px;
+            /* Keep padding for clear button */
+            border: 1px solid var(--primary) !important;
+            /* Violet border ALWAYS */
+            border-radius: 12px;
             font-size: 1rem;
             margin-bottom: 0;
-            /* Margin handled by wrapper */
-            background: rgba(255, 255, 255, 0.9);
-            color: #333;
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            /* Enforce dark theme "tech" style */
+            background: #000 !important;
+            color: #fff !important;
+            font-family: 'Inter', monospace;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+            -webkit-backdrop-filter: none;
+            backdrop-filter: none;
         }
 
         .clear-input-btn {
@@ -991,13 +934,7 @@
             color: #ff0000;
         }
 
-        /* Updated Buttons Container */
-        .buttons-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+
 
         .btn.download-main {
             background: linear-gradient(45deg, #11998e, #38ef7d);
@@ -1022,7 +959,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>📹 Redes Sociales Downloader v21.0</h1>
+            <h1>Redes Sociales Downloader - v.21</h1>
             <h2>(Instagram, LinkedIn, X, TikTok, Facebook, YouTube)</h2>
             <p>Descarga videos MP4 de las Redes Sociales</p>
         </div>
@@ -1041,9 +978,10 @@
             </div>
 
             <div class="buttons-container">
-                <button id="pasteBtn" class="btn">📋 Pegar</button>
-                <button id="analyzeBtn" class="btn">🔍 Buscar</button>
-                <a id="mainDownloadBtn" href="#" class="btn download-main" target="_blank">⬇️ Descargar</a>
+                <button id="pasteBtn" class="btn"><span class="btn-icon">📋</span> Pegar</button>
+                <button id="analyzeBtn" class="btn"><span class="btn-icon">🔍</span> Buscar</button>
+                <a id="mainDownloadBtn" href="#" class="btn download-main" target="_blank"><span
+                        class="btn-icon">⬇️</span> Descargar</a>
             </div>
         </div>
     </div>
@@ -1213,11 +1151,9 @@
 
             clearResults() {
                 const videoPlayerContainer = document.getElementById('videoPlayerContainer');
-                const isLoadingActive = videoPlayerContainer.innerHTML.includes('netflix-loading');
+                // Always reset to placeholder (fixes stuck loading state on error)
+                videoPlayerContainer.innerHTML = generateVideoPlaceholder();
 
-                if (!isLoadingActive) {
-                    videoPlayerContainer.innerHTML = generateVideoPlaceholder();
-                }
                 // Also disable download button whenever we clear results (new search)
                 window.disableGlobalDownload();
             }
@@ -1285,7 +1221,7 @@
 
                 const container = document.getElementById('videoPlayerContainer');
                 if (show) {
-                    const url = this.urlInput.value;
+                    const url = this.urlInput.value.toLowerCase();
                     let platformName = 'Video';
                     let platformClass = 'youtube'; // default
 
@@ -1310,6 +1246,10 @@
             }
 
             showError(message) {
+                // Limpiar input y botón X al mostrar error
+                this.urlInput.value = '';
+                this.toggleClearButton();
+
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',

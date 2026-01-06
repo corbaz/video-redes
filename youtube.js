@@ -184,12 +184,25 @@ function showLoading(platform) {
  * Mostrar error específico para YouTube
  */
 function showError(message, platform) {
+    // Helper para escapar HTML y prevenir XSS
+    const escapeHTML = (str) => {
+        if (!str) return "";
+        return String(str)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    };
+
+    const safeMessage = escapeHTML(message);
+
     const errorHTML = `
         <div class="error-container">
             <div class="error-icon">❌</div>
             <div class="error-content">
                 <h3>Error con YouTube</h3>
-                <p>${message}</p>
+                <p>${safeMessage}</p>
                 <div class="error-suggestions">
                     <h4>💡 Sugerencias:</h4>
                     <ul>
