@@ -7467,3 +7467,929 @@ yt-dlp: error: no such option: --extract-flat
 2026-01-07 21:57:26,420 - INFO - 127.0.0.1 - "GET /api/download_status?id=4e1983c1-c6e5-464f-973b-5ebaf51e846d HTTP/1.1" 200 -
 2026-01-07 21:57:26,694 - INFO - 127.0.0.1 - "GET /api/download_file?id=4e1983c1-c6e5-464f-973b-5ebaf51e846d HTTP/1.1" 200 -
 2026-01-07 21:58:26,756 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 08:45:03,262 - INFO - ============================================================
+2026-01-08 08:45:03,262 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-08 08:45:03,262 - INFO - ============================================================
+2026-01-08 08:45:03,263 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-08 08:45:03,263 - INFO - Acceso local: http://localhost:8000
+2026-01-08 08:45:03,263 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-08 08:45:03,263 - INFO - Endpoints disponibles:
+2026-01-08 08:45:03,263 - INFO -   POST /api/validate - Validar URLs
+2026-01-08 08:45:03,263 - INFO -   POST /api/extract - Extraer videos
+2026-01-08 08:45:03,263 - INFO - Presiona Ctrl+C para detener
+2026-01-08 08:45:03,264 - INFO - ============================================================
+2026-01-08 08:45:09,712 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-08 08:45:09,804 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 08:45:09,976 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 08:45:10,110 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 08:45:10,110 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 08:45:10,213 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 08:45:10,214 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 08:45:10,214 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 08:45:11,254 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 08:45:22,574 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 08:45:22,888 - INFO - Extrayendo video de: https://www.linkedin.com/posts/edteam_programaciaejn-ia-inteligenciaartificial-activity-7414474806517243904-KuMZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 08:45:24,010 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/edteam_programaciaejn-ia-inteligenciaartificial-activity-7414474806517243904-KuMZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 08:45:24,010 - INFO -    📺 Plataforma: linkedin
+2026-01-08 08:45:24,010 - INFO -    🎬 Título: Sin título...
+2026-01-08 08:45:24,010 - INFO -    🎯 Resolución: N/A
+2026-01-08 08:45:24,010 - INFO -    📁 Tamaño: N/A
+2026-01-08 08:45:24,011 - INFO -    ⏱️ Duración: 0s
+2026-01-08 08:45:24,011 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 08:45:28,324 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 08:45:28,638 - INFO - Extrayendo video de: https://www.linkedin.com/posts/edteam_programaciaejn-ia-inteligenciaartificial-activity-7414474806517243904-KuMZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 08:45:29,488 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/edteam_programaciaejn-ia-inteligenciaartificial-activity-7414474806517243904-KuMZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 08:45:29,488 - INFO -    📺 Plataforma: linkedin
+2026-01-08 08:45:29,489 - INFO -    🎬 Título: Sin título...
+2026-01-08 08:45:29,489 - INFO -    🎯 Resolución: N/A
+2026-01-08 08:45:29,489 - INFO -    📁 Tamaño: N/A
+2026-01-08 08:45:29,489 - INFO -    ⏱️ Duración: 0s
+2026-01-08 08:45:29,489 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 08:45:39,525 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fdms.licdn.com%2Fplaylist%2Fvid%2Fv2%2FD4E10AQGTNNjMzsIKGw%2Fmp4-720p-30fp-crf28%2FB4EZuWBZTpHUB8-%2F0%2F1767748535304%3Fe%3D2147483647%26v%3Dbeta%26t%3DN5-7zC702QIGZY1wRvpp2uC4xXVQQZmHS0yTk1CLrFo&filename=linkedin_video.mp4 HTTP/1.1" 200 -
+2026-01-08 08:45:40,843 - INFO - 127.0.0.1 - "GET /api/download_status?id=051ca0e6-0efb-4007-aba6-71aa650fa169 HTTP/1.1" 200 -
+2026-01-08 08:45:41,113 - INFO - 127.0.0.1 - "GET /api/download_file?id=051ca0e6-0efb-4007-aba6-71aa650fa169 HTTP/1.1" 200 -
+2026-01-08 08:46:41,186 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 09:00:23,251 - INFO - 192.168.1.150 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 09:00:27,218 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2026-01-08 09:00:27,254 - INFO - 192.168.1.150 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:00:27,259 - INFO - 192.168.1.150 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:00:27,259 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:00:27,260 - INFO - 192.168.1.150 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:00:27,265 - INFO - 192.168.1.150 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:00:27,266 - INFO - 192.168.1.150 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:00:27,278 - INFO - 192.168.1.150 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:00:27,308 - INFO - 192.168.1.150 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 09:00:45,419 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 09:00:45,438 - INFO - Extrayendo video de: https://vm.tiktok.com/ZMSftR7qd/
+2026-01-08 09:00:47,283 - INFO - ✅ Extracción exitosa para: https://vm.tiktok.com/ZMSftR7qd/
+2026-01-08 09:00:47,284 - INFO -    📺 Plataforma: tiktok
+2026-01-08 09:00:47,284 - INFO -    🎬 Título: Sin título...
+2026-01-08 09:00:47,284 - INFO -    🎯 Resolución: N/A
+2026-01-08 09:00:47,284 - INFO -    📁 Tamaño: N/A
+2026-01-08 09:00:47,284 - INFO -    ⏱️ Duración: 0s
+2026-01-08 09:00:47,285 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 09:00:53,096 - INFO - 192.168.1.150 - "GET /api/download_start?url=https%3A%2F%2Fvm.tiktok.com%2FZMSftR7qd%2F&filename=tiktok_video.mp4 HTTP/1.1" 200 -
+2026-01-08 09:00:54,133 - INFO - 192.168.1.150 - "GET /api/download_status?id=ed1adc28-867d-4c0d-8786-d0b36cb203d7 HTTP/1.1" 200 -
+2026-01-08 09:00:55,153 - INFO - 192.168.1.150 - "GET /api/download_status?id=ed1adc28-867d-4c0d-8786-d0b36cb203d7 HTTP/1.1" 200 -
+2026-01-08 09:00:56,117 - INFO - 192.168.1.150 - "GET /api/download_status?id=ed1adc28-867d-4c0d-8786-d0b36cb203d7 HTTP/1.1" 200 -
+2026-01-08 09:00:57,132 - INFO - 192.168.1.150 - "GET /api/download_status?id=ed1adc28-867d-4c0d-8786-d0b36cb203d7 HTTP/1.1" 200 -
+2026-01-08 09:00:57,179 - INFO - 192.168.1.150 - "GET /api/download_file?id=ed1adc28-867d-4c0d-8786-d0b36cb203d7 HTTP/1.1" 200 -
+2026-01-08 09:21:18,061 - INFO - ============================================================
+2026-01-08 09:21:18,061 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-08 09:21:18,061 - INFO - ============================================================
+2026-01-08 09:21:18,062 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-08 09:21:18,062 - INFO - Acceso local: http://localhost:8000
+2026-01-08 09:21:18,062 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-08 09:21:18,062 - INFO - Endpoints disponibles:
+2026-01-08 09:21:18,062 - INFO -   POST /api/validate - Validar URLs
+2026-01-08 09:21:18,062 - INFO -   POST /api/extract - Extraer videos
+2026-01-08 09:21:18,062 - INFO - Presiona Ctrl+C para detener
+2026-01-08 09:21:18,063 - INFO - ============================================================
+2026-01-08 09:27:49,767 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-08 09:27:49,878 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:27:49,986 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:27:50,162 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:27:50,178 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:27:50,181 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:27:50,185 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:27:50,208 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:27:50,438 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:27:51,508 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 09:28:01,054 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 09:28:01,367 - INFO - Extrayendo video de: https://untwitch.com/
+2026-01-08 09:28:04,439 - WARNING - Error extrayendo https://untwitch.com/: Error al extraer video de Twitch: [0;31mERROR:[0m Unsupported URL: https://untwitch.com/
+2026-01-08 09:28:04,439 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-01-08 09:28:11,100 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 09:28:11,410 - INFO - Extrayendo video de: https://www.twitch.tv/videos/2663661756
+2026-01-08 09:28:13,107 - INFO - ✅ Extracción exitosa para: https://www.twitch.tv/videos/2663661756
+2026-01-08 09:28:13,107 - INFO -    📺 Plataforma: twitch
+2026-01-08 09:28:13,107 - INFO -    🎬 Título: Sin título...
+2026-01-08 09:28:13,107 - INFO -    🎯 Resolución: N/A
+2026-01-08 09:28:13,107 - INFO -    📁 Tamaño: N/A
+2026-01-08 09:28:13,108 - INFO -    ⏱️ Duración: 0s
+2026-01-08 09:28:13,108 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 09:28:20,219 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 09:28:20,537 - INFO - Extrayendo video de: https://www.twitch.tv/videos/2663661756
+2026-01-08 09:28:21,768 - INFO - ✅ Extracción exitosa para: https://www.twitch.tv/videos/2663661756
+2026-01-08 09:28:21,768 - INFO -    📺 Plataforma: twitch
+2026-01-08 09:28:21,768 - INFO -    🎬 Título: Sin título...
+2026-01-08 09:28:21,768 - INFO -    🎯 Resolución: N/A
+2026-01-08 09:28:21,768 - INFO -    📁 Tamaño: N/A
+2026-01-08 09:28:21,769 - INFO -    ⏱️ Duración: 0s
+2026-01-08 09:28:21,769 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 09:28:51,141 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fwww.twitch.tv%2Fvideos%2F2663661756&filename=twitch_video.mp4 HTTP/1.1" 200 -
+2026-01-08 09:28:52,461 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:28:53,145 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:28:54,463 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:28:55,157 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:28:56,455 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:28:57,155 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:28:58,459 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:28:59,153 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:00,464 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:01,159 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:02,464 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:03,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:04,463 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:05,159 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:06,466 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:07,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:08,464 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:09,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:10,466 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:11,153 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:12,469 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:13,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:14,471 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:15,157 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:16,460 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:17,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:18,462 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:19,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:20,466 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:21,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:22,453 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:23,155 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:24,468 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:25,154 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:26,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:27,160 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:28,468 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:29,146 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:30,466 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:31,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:32,471 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:33,150 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:34,469 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:35,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:36,460 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:37,145 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:38,462 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:39,146 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:40,465 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:41,146 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:42,463 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:43,150 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:44,466 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:45,151 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:46,471 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:47,156 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:48,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:49,156 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:50,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:51,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:52,461 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:53,154 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:54,470 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:55,156 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:56,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:57,153 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:58,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:29:59,159 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:00,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:01,146 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:02,462 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:03,146 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:04,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:05,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:06,469 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:07,159 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:08,459 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:09,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:10,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:11,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:12,460 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:13,159 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:14,472 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:15,156 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:16,461 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:17,156 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:18,452 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:19,149 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:20,465 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:21,149 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:22,468 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:23,149 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:24,460 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:25,157 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:26,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:27,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:28,459 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:29,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:30,469 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:31,156 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:32,457 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:33,154 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:34,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:35,157 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:36,460 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:37,159 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:38,460 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:39,159 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:40,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:41,151 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:42,468 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:43,150 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:44,460 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:45,150 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:46,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:47,154 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:48,464 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:49,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:50,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:51,151 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:52,471 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:53,151 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:54,468 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:55,155 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:56,452 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:57,150 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:58,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:30:59,150 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:00,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:01,153 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:02,470 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:03,153 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:04,466 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:05,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:06,455 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:07,154 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:08,454 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:09,153 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:10,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:11,155 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:12,454 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:13,156 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:14,460 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:15,159 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:16,471 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:17,156 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:18,461 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:19,145 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:20,452 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:21,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:22,464 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:23,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:24,465 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:25,151 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:26,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:27,155 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:28,461 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:29,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:30,453 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:31,156 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:32,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:33,157 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:34,454 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:35,153 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:36,457 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:37,154 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:38,459 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:39,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:40,459 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:41,155 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:42,459 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:43,157 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:44,457 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:45,146 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:46,450 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:47,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:48,459 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:49,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:50,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:51,154 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:52,465 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:53,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:54,460 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:55,147 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:56,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:57,153 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:58,462 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:31:59,146 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:00,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:01,155 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:02,461 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:03,149 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:04,456 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:05,157 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:06,464 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:07,147 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:08,456 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:09,155 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:10,470 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:11,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:12,460 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:13,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:14,470 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:15,153 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:16,461 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:17,151 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:18,455 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:19,157 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:20,464 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:21,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:22,468 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:23,153 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:24,468 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:25,151 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:26,460 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:27,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:28,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:29,147 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:30,470 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:31,153 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:32,469 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:33,157 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:34,464 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:35,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:36,459 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:37,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:38,459 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:39,160 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:40,468 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:41,156 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:42,465 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:43,155 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:44,460 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:45,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:46,466 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:47,146 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:48,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:49,153 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:50,461 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:51,150 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:52,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:53,156 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:54,464 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:55,150 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:56,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:57,149 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:58,470 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:32:59,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:00,468 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:01,156 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:02,462 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:03,147 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:04,469 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:05,157 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:06,469 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:07,155 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:08,462 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:09,150 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:10,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:11,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:12,466 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:13,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:14,455 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:15,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:16,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:17,154 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:18,464 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:19,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:20,455 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:21,157 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:22,453 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:23,154 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:24,465 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:25,154 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:26,461 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:27,154 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:28,462 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:29,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:30,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:31,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:32,460 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:33,149 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:34,459 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:35,150 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:36,455 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:37,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:38,465 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:39,154 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:40,464 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:41,150 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:42,456 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:43,159 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:44,468 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:45,153 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:46,460 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:47,157 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:48,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:49,157 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:50,455 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:51,154 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:52,456 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:53,155 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:54,461 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:55,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:56,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:57,157 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:58,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:33:59,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:00,463 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:01,150 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:02,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:03,159 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:04,465 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:05,149 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:06,465 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:07,145 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:08,460 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:09,151 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:10,456 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:11,159 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:12,470 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:13,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:14,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:15,144 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:16,461 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:17,147 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:18,470 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:19,156 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:20,465 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:21,153 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:22,464 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:23,145 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:24,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:25,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:26,457 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:27,157 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:28,460 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:29,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:30,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:31,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:32,469 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:33,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:34,466 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:35,155 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:36,465 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:37,149 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:38,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:39,147 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:40,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:41,153 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:42,462 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:43,147 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:44,468 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:45,155 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:46,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:47,149 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:48,469 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:49,151 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:50,459 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:51,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:52,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:53,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:54,463 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:55,151 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:56,460 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:57,147 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:58,456 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:34:59,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:00,466 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:01,150 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:02,459 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:03,147 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:04,469 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:05,154 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:06,464 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:07,146 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:08,468 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:09,155 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:10,466 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:11,151 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:12,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:13,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:14,471 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:15,159 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:16,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:17,151 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:18,472 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:19,157 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:20,469 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:21,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:22,459 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:23,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:24,466 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:25,157 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:26,470 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:27,153 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:28,457 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:29,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:30,465 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:31,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:32,459 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:33,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:34,469 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:35,154 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:36,461 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:37,145 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:38,466 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:39,153 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:40,461 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:41,144 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:42,470 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:43,155 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:44,457 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:45,155 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:46,462 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:47,157 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:48,466 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:49,146 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:50,469 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:51,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:52,468 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:53,155 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:54,463 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:55,150 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:56,459 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:57,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:58,468 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:35:59,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:00,459 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:01,145 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:02,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:03,157 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:04,464 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:05,151 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:06,470 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:07,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:08,465 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:09,151 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:10,459 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:11,146 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:12,468 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:13,154 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:14,461 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:15,146 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:16,465 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:17,147 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:18,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:19,155 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:20,463 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:21,151 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:22,469 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:23,156 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:24,461 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:25,149 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:26,460 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:27,145 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:28,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:29,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:30,461 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:31,150 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:32,452 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:33,154 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:34,461 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:35,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:36,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:37,155 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:38,462 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:39,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:40,465 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:41,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:42,456 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:43,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:44,456 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:45,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:46,465 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:47,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:48,463 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:49,146 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:50,455 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:51,145 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:52,457 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:53,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:54,460 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:55,148 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:56,456 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:57,157 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:58,465 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:36:59,149 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:00,461 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:01,149 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:02,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:03,146 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:04,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:05,156 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:06,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:07,152 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:08,457 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:09,156 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:10,461 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:11,150 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:12,456 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:13,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:14,465 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:15,154 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:16,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:17,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:18,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:19,155 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:20,455 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:21,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:22,464 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:23,149 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:24,457 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:25,156 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:26,456 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:27,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:28,466 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:29,154 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:30,460 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:31,147 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:32,471 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:33,158 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:34,461 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:35,150 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:36,458 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:37,145 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:38,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:39,153 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:40,459 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:41,146 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:42,463 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:43,151 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:44,466 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:45,149 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:46,467 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:47,150 - INFO - 127.0.0.1 - "GET /api/download_status?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:37:47,513 - INFO - 127.0.0.1 - "GET /api/download_file?id=66774106-2fd7-4fd0-bfcc-88726a581e85 HTTP/1.1" 200 -
+2026-01-08 09:38:47,492 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 09:38:47,759 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 09:39:20,007 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-08 09:39:20,127 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:39:20,270 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:39:20,435 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:39:20,435 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:39:20,436 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:39:20,436 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:39:20,437 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:39:20,596 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:39:21,566 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 09:40:21,817 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 09:45:35,288 - INFO - ============================================================
+2026-01-08 09:45:35,289 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-08 09:45:35,289 - INFO - ============================================================
+2026-01-08 09:45:35,289 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-08 09:45:35,289 - INFO - Acceso local: http://localhost:8000
+2026-01-08 09:45:35,289 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-08 09:45:35,289 - INFO - Endpoints disponibles:
+2026-01-08 09:45:35,290 - INFO -   POST /api/validate - Validar URLs
+2026-01-08 09:45:35,290 - INFO -   POST /api/extract - Extraer videos
+2026-01-08 09:45:35,290 - INFO - Presiona Ctrl+C para detener
+2026-01-08 09:45:35,290 - INFO - ============================================================
+2026-01-08 09:46:27,091 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-08 09:46:27,183 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:46:27,330 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:46:27,491 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:46:27,491 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:46:27,494 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:46:27,494 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:46:27,494 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:46:27,651 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:46:28,185 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 09:47:08,022 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-08 09:47:08,331 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:47:08,458 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:47:08,458 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:47:08,459 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:47:08,459 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:47:08,459 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:47:08,639 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:47:08,775 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:47:09,319 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 09:47:11,255 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-08 09:47:18,452 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 09:47:18,717 - INFO - Extrayendo video de: https://www.twitch.tv/videos/2663661756
+2026-01-08 09:47:20,610 - INFO - ✅ Extracción exitosa para: https://www.twitch.tv/videos/2663661756
+2026-01-08 09:47:20,610 - INFO -    📺 Plataforma: twitch
+2026-01-08 09:47:20,611 - INFO -    🎬 Título: Sin título...
+2026-01-08 09:47:20,611 - INFO -    🎯 Resolución: N/A
+2026-01-08 09:47:20,611 - INFO -    📁 Tamaño: N/A
+2026-01-08 09:47:20,611 - INFO -    ⏱️ Duración: 0s
+2026-01-08 09:47:20,611 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 09:47:23,791 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fwww.twitch.tv%2Fvideos%2F2663661756&filename=twitch_video.mp4 HTTP/1.1" 200 -
+2026-01-08 09:47:25,112 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:25,797 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:27,107 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:27,796 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:29,107 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:29,806 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:31,107 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:31,798 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:33,103 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:33,804 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:35,111 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:35,799 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:37,117 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:37,807 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:39,110 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:39,800 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:41,108 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:41,796 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:43,114 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:43,800 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:45,118 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:45,808 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:47,100 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:47,800 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:49,103 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:49,808 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:51,111 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:51,808 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:53,117 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:53,804 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:55,104 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:55,808 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:57,115 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:57,808 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:59,108 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:47:59,800 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:01,104 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:01,797 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:03,109 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:03,801 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:05,111 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:05,805 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:07,101 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:07,808 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:09,120 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:09,795 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:11,110 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:11,799 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:13,104 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:13,795 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:15,101 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:15,797 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:17,120 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:17,808 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:19,109 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:19,801 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:21,109 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:21,804 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:23,110 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:23,799 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:25,112 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:25,801 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:27,109 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:27,801 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:29,104 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:29,797 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:31,110 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:31,799 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:33,108 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:33,802 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:35,108 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:35,808 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:37,110 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:37,805 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:39,104 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:39,802 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:41,105 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:41,807 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:43,108 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:43,801 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:45,105 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:45,808 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:47,119 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:47,808 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:49,104 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:49,803 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:51,108 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:51,807 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:53,112 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:53,807 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:55,111 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:55,795 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:57,115 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:57,797 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:59,114 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:48:59,808 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:49:01,111 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:49:01,796 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:49:03,115 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:49:03,798 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:49:05,324 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:49:05,806 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:49:07,111 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:49:07,796 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:49:09,108 - INFO - 127.0.0.1 - "GET /api/download_status?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:49:09,371 - INFO - 127.0.0.1 - "GET /api/download_file?id=888955fb-073f-4fa9-a293-1ca4279ca8ed HTTP/1.1" 200 -
+2026-01-08 09:50:09,449 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 09:58:26,361 - INFO - ============================================================
+2026-01-08 09:58:26,361 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-08 09:58:26,361 - INFO - ============================================================
+2026-01-08 09:58:26,361 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-08 09:58:26,362 - INFO - Acceso local: http://localhost:8000
+2026-01-08 09:58:26,362 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-08 09:58:26,362 - INFO - Endpoints disponibles:
+2026-01-08 09:58:26,362 - INFO -   POST /api/validate - Validar URLs
+2026-01-08 09:58:26,362 - INFO -   POST /api/extract - Extraer videos
+2026-01-08 09:58:26,362 - INFO - Presiona Ctrl+C para detener
+2026-01-08 09:58:26,363 - INFO - ============================================================
+2026-01-08 09:58:33,503 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-08 09:58:33,627 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:58:33,759 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:58:33,932 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:58:33,932 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:58:33,933 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:58:33,933 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:58:33,934 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:58:34,067 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 09:58:34,897 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 09:59:35,164 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 10:03:36,138 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2026-01-08 10:03:36,178 - INFO - 192.168.1.150 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 10:03:36,187 - INFO - 192.168.1.150 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 10:03:36,189 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 10:03:36,192 - INFO - 192.168.1.150 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 10:03:36,193 - INFO - 192.168.1.150 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 10:03:36,193 - INFO - 192.168.1.150 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 10:03:36,201 - INFO - 192.168.1.150 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 10:03:36,207 - INFO - 192.168.1.150 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 10:03:36,298 - INFO - 192.168.1.150 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 10:04:04,216 - INFO - ============================================================
+2026-01-08 10:04:04,216 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-08 10:04:04,217 - INFO - ============================================================
+2026-01-08 10:04:04,217 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-08 10:04:04,217 - INFO - Acceso local: http://localhost:8000
+2026-01-08 10:04:04,217 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-08 10:04:04,217 - INFO - Endpoints disponibles:
+2026-01-08 10:04:04,217 - INFO -   POST /api/validate - Validar URLs
+2026-01-08 10:04:04,217 - INFO -   POST /api/extract - Extraer videos
+2026-01-08 10:04:04,218 - INFO - Presiona Ctrl+C para detener
+2026-01-08 10:04:04,218 - INFO - ============================================================
+2026-01-08 10:04:18,744 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-08 10:04:18,841 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 10:04:19,006 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 10:04:19,162 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 10:04:19,162 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 10:04:19,163 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 10:04:19,163 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 10:04:19,163 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 10:04:19,312 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 10:04:19,840 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 10:05:20,092 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 10:07:10,209 - INFO - ============================================================
+2026-01-08 10:07:10,210 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-08 10:07:10,210 - INFO - ============================================================
+2026-01-08 10:07:10,210 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-08 10:07:10,210 - INFO - Acceso local: http://localhost:8000
+2026-01-08 10:07:10,211 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-08 10:07:10,211 - INFO - Endpoints disponibles:
+2026-01-08 10:07:10,211 - INFO -   POST /api/validate - Validar URLs
+2026-01-08 10:07:10,211 - INFO -   POST /api/extract - Extraer videos
+2026-01-08 10:07:10,211 - INFO - Presiona Ctrl+C para detener
+2026-01-08 10:07:10,212 - INFO - ============================================================
+2026-01-08 14:10:09,734 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-08 14:10:09,841 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:10:09,988 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:10:10,153 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:10:10,153 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:10:10,153 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:10:10,153 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:10:10,155 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:10:10,296 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:10:11,202 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 14:10:32,909 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2026-01-08 14:10:33,118 - INFO - 192.168.1.150 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:10:33,118 - INFO - 192.168.1.150 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:10:33,118 - INFO - 192.168.1.150 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:10:33,118 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:10:33,119 - INFO - 192.168.1.150 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:10:33,120 - INFO - 192.168.1.150 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:10:33,164 - INFO - 192.168.1.150 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:10:33,171 - INFO - 192.168.1.150 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:10:33,271 - INFO - 192.168.1.150 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 14:11:11,466 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 14:11:27,737 - INFO - 192.168.1.160 - "GET / HTTP/1.1" 200 -
+2026-01-08 14:11:28,142 - INFO - 192.168.1.160 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:11:28,164 - INFO - 192.168.1.160 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:11:28,164 - INFO - 192.168.1.160 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:11:28,179 - INFO - 192.168.1.160 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:11:28,180 - INFO - 192.168.1.160 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:11:28,180 - INFO - 192.168.1.160 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:11:28,219 - INFO - 192.168.1.160 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:11:28,239 - INFO - 192.168.1.160 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:11:28,517 - INFO - 192.168.1.160 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 14:12:15,396 - INFO - 192.168.1.152 - "GET / HTTP/1.1" 200 -
+2026-01-08 14:12:15,682 - INFO - 192.168.1.152 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:12:15,732 - INFO - 192.168.1.152 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:12:15,768 - INFO - 192.168.1.152 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:12:15,769 - INFO - 192.168.1.152 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:12:15,769 - INFO - 192.168.1.152 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:12:15,784 - INFO - 192.168.1.152 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:12:15,789 - INFO - 192.168.1.152 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:12:15,800 - INFO - 192.168.1.152 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:12:16,537 - INFO - 192.168.1.152 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 14:12:21,854 - INFO - 192.168.1.152 - "GET / HTTP/1.1" 200 -
+2026-01-08 14:12:21,947 - INFO - 192.168.1.152 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:12:21,999 - INFO - 192.168.1.152 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:12:22,007 - INFO - 192.168.1.152 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:12:22,007 - INFO - 192.168.1.152 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:12:22,007 - INFO - 192.168.1.152 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:12:22,015 - INFO - 192.168.1.152 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:12:22,046 - INFO - 192.168.1.152 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:12:22,049 - INFO - 192.168.1.152 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 14:12:22,219 - INFO - 192.168.1.152 - "GET /favicon.ico HTTP/1.1" 200 -

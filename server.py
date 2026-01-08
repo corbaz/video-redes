@@ -22,7 +22,9 @@ from linkedin_extractor import LinkedInExtractor
 from x_extractor import XExtractor
 from tiktok_extractor import TikTokExtractor
 from facebook_extractor import FacebookExtractor
+from facebook_extractor import FacebookExtractor
 from youtube_extractor import YouTubeExtractor
+from twitch_extractor import TwitchExtractor
 
 # Fix Windows Unicode Output
 if sys.platform == 'win32':
@@ -148,9 +150,21 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             def progress_hook(d):
                 if d['status'] == 'downloading':
                     try:
-                        p = d.get('_percent_str', '0%').replace('%','')
+                        # Improved percentage calculation
+                        if d.get('total_bytes') and d.get('downloaded_bytes'):
+                           p = (d['downloaded_bytes'] / d['total_bytes']) * 100
+                        elif d.get('total_bytes_estimate') and d.get('downloaded_bytes'):
+                           p = (d['downloaded_bytes'] / d['total_bytes_estimate']) * 100
+                        else:
+                           # Fallback to string parsing, removing ANSI codes if present
+                           p_str = d.get('_percent_str', '0%').replace('%','')
+                           # Remove potential ANSI color codes like \x1b[0;94m
+                           import re
+                           ansi_escape = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
+                           p = ansi_escape.sub('', p_str)
+
                         download_tasks[task_id]['progress'] = float(p)
-                    except: 
+                    except Exception as e: 
                         pass
                 elif d['status'] == 'finished':
                      download_tasks[task_id]['status'] = 'download_complete'
@@ -163,7 +177,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                     download_tasks[task_id]['progress'] = 0
 
             # Validar e iniciar descarga similar a handle_download pero actualizando task
-            is_supported_hq = any(d in url for d in ['youtube.com', 'youtu.be', 'tiktok.com', 'vm.tiktok.com'])
+            is_supported_hq = any(d in url for d in ['youtube.com', 'youtu.be', 'tiktok.com', 'vm.tiktok.com', 'twitch.tv'])
             
             if is_supported_hq:
                 unique_id = str(uuid.uuid4())
@@ -181,14 +195,13 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                     'nocheckcertificate': True,
                     'progress_hooks': [progress_hook],
                     'postprocessor_hooks': [pp_hook],
-                    # AAC Force
+                    # Smart audio handling - convert only if needed by container, otherwise copy
+                    # Removed forced AAC encoding to speed up transcoding
                     'postprocessors': [{
                         'key': 'FFmpegVideoConvertor',
                         'preferedformat': 'mp4',
                     }],
-                    'postprocessor_args': {
-                        'ffmpeg': ['-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k']
-                    }
+                    # 'postprocessor_args': {'ffmpeg': ['-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k']} # REMOVED FOR SPEED
                 }
                 
                 with YoutubeDL(ydl_opts) as ydl:
@@ -294,7 +307,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             # Necesitamos la URL original de YouTube.
             # Detectar si es YouTube o TikTok (ambos soportados por yt-dlp para mejor calidad)
             # IMPORTANTE: Los links de googlevideo.com NO son links de YouTube válidos para yt-dlp HQ.
-            is_supported_hq = any(d in url for d in ['youtube.com', 'youtu.be', 'tiktok.com', 'vm.tiktok.com'])
+            is_supported_hq = any(d in url for d in ['youtube.com', 'youtu.be', 'tiktok.com', 'vm.tiktok.com', 'twitch.tv'])
             
             if is_supported_hq:
                 logger.info(f"🚀 Iniciando descarga HQ con librerías para: {url[:100]}...")
@@ -316,14 +329,13 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                     'quiet': True,
                     'no_warnings': True,
                     'nocheckcertificate': True,
-                    # Forzar conversión a AAC del audio si viene en Opus u otro formato
+                    # Smart audio handling - convert only if needed by container, otherwise copy
                     'postprocessors': [{
                         'key': 'FFmpegVideoConvertor',
                         'preferedformat': 'mp4',
                     }],
-                    'postprocessor_args': {
-                        'ffmpeg': ['-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k']
-                    }
+                    # Removed forced AAC encoding to speed up transcoding
+                    # 'postprocessor_args': {'ffmpeg': ['-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k']}
                 }
 
                 try:
@@ -520,7 +532,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 return
 
             # Validar URL según plataforma
-            if any(domain in url for domain in ['instagram.com', 'linkedin.com', 'x.com', 'twitter.com', 'tiktok.com', 'facebook.com', 'fb.watch', 'youtube.com', 'youtu.be', 'm.youtube.com']):
+            if any(domain in url for domain in ['instagram.com', 'linkedin.com', 'x.com', 'twitter.com', 'tiktok.com', 'facebook.com', 'fb.watch', 'youtube.com', 'youtu.be', 'm.youtube.com', 'twitch.tv', 'twitch.com']):
                 self.send_json_response({
                     'success': True,
                     'url': url,
@@ -529,7 +541,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             else:
                 self.send_json_response({
                     'success': False,
-                    'error': 'Plataforma no soportada. Usa Instagram, LinkedIn, X/Twitter, TikTok, Facebook o YouTube.'
+                    'error': 'Plataforma no soportada. Usa Instagram, LinkedIn, X/Twitter, TikTok, Facebook, YouTube o Twitch.'
                 }, 400)
 
         except Exception as e:
@@ -598,6 +610,9 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             if 'instagram.com' in url:
                 extractor = InstagramExtractor()
                 platform = 'instagram'
+            elif 'twitch.tv' in url or 'twitch.com' in url:
+                extractor = TwitchExtractor()
+                platform = 'twitch'
             elif 'linkedin.com' in url:
                 extractor = LinkedInExtractor()
                 platform = 'linkedin'
