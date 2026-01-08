@@ -14,6 +14,7 @@ function showLinkedinVideo(data, container) {
     // Renderizar la tarjeta con preview igual que Instagram
     const videoCardHTML = renderVideoCard({
         videoUrl: videoUrl,
+        thumbnail: data.thumbnail
     });
     container.innerHTML = videoCardHTML;
 }

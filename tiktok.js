@@ -128,6 +128,7 @@ function showTikTokVideo(data, container) {
     // Usar el mismo template unificado que Instagram, LinkedIn y X
     const cardHtml = renderVideoCard({
         videoUrl: data.videoUrl,
+        thumbnail: data.thumbnail
     });
 
     container.innerHTML = cardHtml;

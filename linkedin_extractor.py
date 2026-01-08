@@ -58,7 +58,8 @@ class LinkedInExtractor:
                             "title": info.get('title', 'Video de LinkedIn'),
                             "uploader": info.get('uploader', ''),
                             "duration": info.get('duration'),
-                            "description": info.get('description', '')
+                            "description": info.get('description', ''),
+                            "thumbnail": info.get('thumbnail')
                         }
                     }
                 else:

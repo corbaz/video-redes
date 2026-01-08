@@ -78,7 +78,12 @@ class XExtractor:
                     return {
                         "success": True,
                         "data": {
-                            "videoUrl": video_url
+                            "videoUrl": video_url,
+                            "title": info.get('title', 'Video de X/Twitter'),
+                            "uploader": info.get('uploader', ''),
+                            "duration": info.get('duration'),
+                            "thumbnail": info.get('thumbnail'),
+                            "description": info.get('description', '')
                         }
                     }
                 else:

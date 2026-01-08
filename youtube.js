@@ -305,27 +305,7 @@ function showYouTubeVideo(data, container) {
                 <img src="${thumbnail}" alt="${title}" class="pro-video-card-img"
                      onerror="if (this.src.includes('maxresdefault')) { this.src = this.src.replace('maxresdefault.jpg', 'hqdefault.jpg'); } else { this.src = 'https://via.placeholder.com/800x450/000000/FFFFFF?text=No+Thumbnail'; }">
                 
-                <!-- Play Icon / Preview Overlay -->
-                 <div style="
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    width: 80px;
-                    height: 80px;
-                    background: rgba(255, 0, 0, 0.8);
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-                    pointer-events: none;
-                    z-index: 10;
-                ">
-                    <svg viewBox="0 0 24 24" width="40" height="40" fill="white">
-                        <path d="M8 5v14l11-7z"/>
-                    </svg>
-                </div>
+
                 
                 <!-- Glossy Overlay Effect -->
                 <div style="

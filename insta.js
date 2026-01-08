@@ -15,6 +15,7 @@ function showInstagramVideo(data, container) {
     // Solo renderizar la card de video sin información adicional
     const cardHtml = renderVideoCard({
         videoUrl: format.url,
+        thumbnail: data.thumbnail
     });
     container.innerHTML = cardHtml;
 }

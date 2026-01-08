@@ -14,6 +14,7 @@ import subprocess
 import uuid
 import imageio_ffmpeg
 from yt_dlp import YoutubeDL
+import threading
 
 # Importar extractores
 from insta_extractor import InstagramExtractor
@@ -22,6 +23,10 @@ from x_extractor import XExtractor
 from tiktok_extractor import TikTokExtractor
 from facebook_extractor import FacebookExtractor
 from youtube_extractor import YouTubeExtractor
+
+# Fix Windows Unicode Output
+if sys.platform == 'win32':
+    sys.stdout.reconfigure(encoding='utf-8')
 
 # Configurar logging (sin emojis para Windows)
 logging.basicConfig(
@@ -42,9 +47,12 @@ class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
     timeout = 60
 
 
+# Global dictionary to store download tasks
+download_tasks = {}
+
 class VideoDownloaderHandler(BaseHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
-        self.timeout = 30
+        self.timeout = 60
         super().__init__(*args, **kwargs)
 
     def log_message(self, format, *args):
@@ -60,6 +68,10 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
 
             # Limpiar la ruta de parámetros de versión (?v=...)
             clean_path = self.path.split('?')[0]
+            
+            # Parsear query params
+            query = urlparse(self.path).query
+            params = parse_qs(query)
 
             # Servir index.html para la raíz
             if clean_path == '/' or clean_path == '/index.html':
@@ -67,7 +79,54 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             elif clean_path.endswith(('.js', '.css', '.ico')):
                 filename = clean_path.lstrip('/')
                 self.serve_file(filename)
-            # Proxy de descarga
+            
+            # API Endpoints
+            elif clean_path == '/api/download_start':
+                # Generate Task ID and start thread
+                url = params.get('url', [''])[0]
+                filename = params.get('filename', ['video.mp4'])[0]
+                
+                if not url:
+                    self.send_json_response({'error': 'URL required'}, 400)
+                    return
+                
+                task_id = str(uuid.uuid4())
+                download_tasks[task_id] = {
+                    'status': 'starting',
+                    'progress': 0,
+                    'file_path': None,
+                    'filename': filename,
+                    'error': None
+                }
+                
+                # Start background thread
+                thread = threading.Thread(target=self.process_download_task, args=(task_id, url, filename))
+                thread.daemon = True
+                thread.start()
+                
+                self.send_json_response({'task_id': task_id})
+
+            elif clean_path == '/api/download_status':
+                task_id = params.get('id', [''])[0]
+                if task_id in download_tasks:
+                    self.send_json_response(download_tasks[task_id])
+                else:
+                    self.send_json_response({'error': 'Task not found'}, 404)
+            
+            elif clean_path == '/api/download_file':
+                task_id = params.get('id', [''])[0]
+                if task_id in download_tasks and download_tasks[task_id]['status'] == 'completed':
+                    file_path = download_tasks[task_id]['file_path']
+                    filename = download_tasks[task_id]['filename']
+                    
+                    if os.path.exists(file_path):
+                        self.serve_downloaded_file(file_path, filename)
+                    else:
+                        self.send_error(404, "File not found on server")
+                else:
+                    self.send_error(404, "Download not ready")
+
+            # Legacy/Direct download (keep for fallback)
             elif clean_path == '/api/download':
                 self.handle_download()
             else:
@@ -76,6 +135,125 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
         except Exception as e:
             logger.error(f"Error en do_GET: {str(e)}")
             self.send_error(500)
+
+    def process_download_task(self, task_id, url, filename):
+        temp_dir = "temp_downloads"
+        if not os.path.exists(temp_dir):
+            os.makedirs(temp_dir)
+            
+        try:
+            download_tasks[task_id]['status'] = 'downloading'
+            
+            # Progress Hook for yt-dlp
+            def progress_hook(d):
+                if d['status'] == 'downloading':
+                    try:
+                        p = d.get('_percent_str', '0%').replace('%','')
+                        download_tasks[task_id]['progress'] = float(p)
+                    except: 
+                        pass
+                elif d['status'] == 'finished':
+                     download_tasks[task_id]['status'] = 'download_complete'
+                     download_tasks[task_id]['progress'] = 100
+
+            # Post-processor Hook
+            def pp_hook(d):
+                if d['status'] == 'started':
+                    download_tasks[task_id]['status'] = 'processing'
+                    download_tasks[task_id]['progress'] = 0
+
+            # Validar e iniciar descarga similar a handle_download pero actualizando task
+            is_supported_hq = any(d in url for d in ['youtube.com', 'youtu.be', 'tiktok.com', 'vm.tiktok.com'])
+            
+            if is_supported_hq:
+                unique_id = str(uuid.uuid4())
+                filename_base = f"yt_{unique_id}"
+                
+                ffmpeg_exe = imageio_ffmpeg.get_ffmpeg_exe()
+                
+                ydl_opts = {
+                    'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best',
+                    'merge_output_format': 'mp4',
+                    'ffmpeg_location': ffmpeg_exe,
+                    'outtmpl': os.path.join(temp_dir, f"{filename_base}.%(ext)s"),
+                    'quiet': True,
+                    'no_warnings': True,
+                    'nocheckcertificate': True,
+                    'progress_hooks': [progress_hook],
+                    'postprocessor_hooks': [pp_hook],
+                    # AAC Force
+                    'postprocessors': [{
+                        'key': 'FFmpegVideoConvertor',
+                        'preferedformat': 'mp4',
+                    }],
+                    'postprocessor_args': {
+                        'ffmpeg': ['-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k']
+                    }
+                }
+                
+                with YoutubeDL(ydl_opts) as ydl:
+                    ydl.download([url])
+                
+                # Encontrar archivo
+                final_path = os.path.join(temp_dir, f"{filename_base}.mp4")
+                if not os.path.exists(final_path):
+                     files = [f for f in os.listdir(temp_dir) if f.startswith(filename_base)]
+                     if files: final_path = os.path.join(temp_dir, files[0])
+                
+                if os.path.exists(final_path):
+                     download_tasks[task_id]['file_path'] = final_path
+                     download_tasks[task_id]['status'] = 'completed'
+                     download_tasks[task_id]['progress'] = 100
+                else:
+                     raise Exception("File not found after download")
+
+            else:
+                # Legacy Requests fallback
+                headers = {'User-Agent': 'Mozilla/5.0 ...'}
+                r = requests.get(url, stream=True, headers=headers, timeout=60)
+                final_path = os.path.join(temp_dir, f"direct_{task_id}.mp4")
+                
+                total_length = r.headers.get('content-length')
+                dl = 0
+                with open(final_path, 'wb') as f:
+                    for chunk in r.iter_content(chunk_size=8192):
+                        if chunk:
+                            dl += len(chunk)
+                            f.write(chunk)
+                            if total_length:
+                                download_tasks[task_id]['progress'] = int(dl * 100 / int(total_length))
+                
+                download_tasks[task_id]['file_path'] = final_path
+                download_tasks[task_id]['status'] = 'completed'
+        
+        except Exception as e:
+            logger.error(f"Task error {task_id}: {e}")
+            download_tasks[task_id]['status'] = 'error'
+            download_tasks[task_id]['error'] = str(e)
+
+    def serve_downloaded_file(self, path, filename):
+         try:
+            # Snyk Path Validation
+            safe_base = os.path.realpath(os.getcwd())
+            requested_path = os.path.realpath(path)
+            
+            if os.path.commonpath([safe_base, requested_path]) != safe_base:
+                 logger.warning(f"⛔ Attempt to serve file outside base: {path}")
+                 self.send_error(403)
+                 return
+            
+            with open(requested_path, 'rb') as f:
+                self.send_response(200)
+                self.send_header('Content-Type', 'video/mp4')
+                self.send_header('Content-Disposition', f'attachment; filename="{filename}"')
+                self.send_header('Content-Length', str(os.path.getsize(requested_path)))
+                self.end_headers()
+                while True:
+                    chunk = f.read(8192)
+                    if not chunk: break
+                    self.wfile.write(chunk)
+         except Exception as e:
+            logger.error(f"Error serving file: {e}")
 
     def handle_download(self):
         """Descarga video usando pytubefix para YouTube (720p+) o proxy para otros"""
@@ -129,14 +307,23 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 ffmpeg_exe = imageio_ffmpeg.get_ffmpeg_exe()
 
                 # Opciones para la librería YoutubeDL
+                # Opciones para la librería YoutubeDL
                 ydl_opts = {
-                    'format': 'bestvideo+bestaudio/best',
+                    'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best',
                     'merge_output_format': 'mp4',
                     'ffmpeg_location': ffmpeg_exe,
                     'outtmpl': os.path.join(temp_dir, f"{filename_base}.%(ext)s"),
                     'quiet': True,
                     'no_warnings': True,
-                    'nocheckcertificate': True
+                    'nocheckcertificate': True,
+                    # Forzar conversión a AAC del audio si viene en Opus u otro formato
+                    'postprocessors': [{
+                        'key': 'FFmpegVideoConvertor',
+                        'preferedformat': 'mp4',
+                    }],
+                    'postprocessor_args': {
+                        'ffmpeg': ['-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k']
+                    }
                 }
 
                 try:

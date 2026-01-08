@@ -264,6 +264,16 @@
             transform: translateY(-1px);
         }
 
+        .btn:disabled,
+        .btn[disabled] {
+            opacity: 0.6;
+            cursor: not-allowed;
+            pointer-events: none;
+            filter: grayscale(0.5);
+            box-shadow: none !important;
+            transform: none !important;
+        }
+
         /* Primary Search Action - Glowing Gradient */
         #analyzeBtn {
             background: var(--primary);
@@ -616,6 +626,11 @@
                 display: none;
             }
 
+            /* Make thumbnail vertical on mobile */
+            .pro-video-card-inner {
+                padding-bottom: 125% !important;
+            }
+
             /* Ocultar emoji del título y botones en móvil */
             .header-icon,
             .btn-icon {
@@ -897,7 +912,7 @@
 
         .url-input {
             width: 100%;
-            padding: 15px 45px 15px 15px;
+            padding: 15px 50px 15px 15px;
             /* Keep padding for clear button */
             border: 1px solid var(--primary) !important;
             /* Violet border ALWAYS */
@@ -911,6 +926,16 @@
             box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
             -webkit-backdrop-filter: none;
             backdrop-filter: none;
+        }
+
+        /* Fix Chrome Autofill White Background */
+        .url-input:-webkit-autofill,
+        .url-input:-webkit-autofill:hover,
+        .url-input:-webkit-autofill:focus,
+        .url-input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #000 inset !important;
+            -webkit-text-fill-color: white !important;
+            transition: background-color 5000s ease-in-out 0s;
         }
 
         .clear-input-btn {
@@ -959,7 +984,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Redes Sociales Downloader - v.21</h1>
+            <h1>Redes Sociales Downloader - v.22</h1>
             <h2>(Instagram, LinkedIn, X, TikTok, Facebook, YouTube)</h2>
             <p>Descarga videos MP4 de las Redes Sociales</p>
         </div>
@@ -974,7 +999,7 @@
         <div class="input-section">
             <div class="input-wrapper">
                 <input type="text" id="urlInput" class="url-input" placeholder="Pega aquí la URL..." value="">
-                <button id="clearInputBtn" class="clear-input-btn" title="Limpiar">✖</button>
+                <button id="clearInputBtn" class="clear-input-btn" title="Limpiar">🗑️</button>
             </div>
 
             <div class="buttons-container">
@@ -1000,25 +1025,18 @@
         window.enableGlobalDownload = function (url, filename) {
             const btn = document.getElementById('mainDownloadBtn');
             if (btn) {
-                // We keep the href for fallback, but onclick handles the UX
-                btn.href = `/api/download?url=${encodeURIComponent(url)}&filename=${filename}`;
+                // Remove href to prevent default navigation
+                btn.removeAttribute('href');
                 btn.classList.add('active');
 
-                // Add click listener for spinner
+                // Add click listener for smart download
                 btn.onclick = function (e) {
-                    // Start spinner animation
-                    showDownloadSpinner();
-
-                    // Allow default behavior (navigation to download link) 
-                    // process continues in background
-                    setTimeout(() => {
-                        // Optional: Reset spinner after a delay if you want
-                        // closeDownloadSpinner(); 
-                    }, 5000);
+                    e.preventDefault();
+                    startSmartDownload(url, filename);
                 };
 
-                btn.target = "_self";
-                console.log("✅ Botón de descarga habilitado globalmente");
+                btn.target = ""; // No target blank needed for async flow
+                console.log("✅ Botón de descarga habilitado globalmente (Modo Smart)");
             }
         };
 
@@ -1032,22 +1050,112 @@
             }
         };
 
-        function showDownloadSpinner() {
-            Swal.fire({
-                title: 'Preparando Descarga...',
-                html: 'Por favor espera mientras el servidor procesa tu video.',
-                allowOutsideClick: false,
-                didOpen: () => {
-                    Swal.showLoading();
-                }
-            });
-            // Auto close after some time or let browser handle the file save dialog
-            // usually browser dialog appears and we can close this? 
-            // It's tricky to know when download *starts* exactly without AJAX.
-            // For now, simple timeout to close it.
-            setTimeout(() => {
-                Swal.close();
-            }, 3000);
+        async function startSmartDownload(url, filename) {
+            let pollInterval = null;
+            try {
+                // 1. Show Progress Modal
+                Swal.fire({
+                    title: 'Procesando descarga',
+                    html: `
+                        <div style="margin-top: 20px;">
+                            <div style="background: rgba(255,255,255,0.1); border-radius: 10px; height: 16px; width: 100%; overflow: hidden; margin-bottom: 10px;">
+                                <div id="swal-progress-bar" style="width: 2%; background: linear-gradient(90deg, #00ff88, #00b3ff); height: 100%; transition: width 0.5s ease; border-radius: 10px;"></div>
+                            </div>
+                            <div id="swal-progress-text" style="color: #ccc; font-family: monospace; font-size: 14px;">Iniciando conexi&oacute;n...</div>
+                        </div>
+                    `,
+                    background: '#1a1a1a',
+                    color: '#fff',
+                    showConfirmButton: false,
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                        // Hide the default spinner if we have a custom bar? 
+                        // Actually keeping it is fine as "processing indicator"
+                    }
+                });
+
+                // 2. Start Download Task
+                const encodedUrl = encodeURIComponent(url);
+                const encodedFilename = encodeURIComponent(filename);
+
+                const startRes = await fetch(`/api/download_start?url=${encodedUrl}&filename=${encodedFilename}`);
+                const startData = await startRes.json();
+
+                if (!startRes.ok || !startData.task_id) throw new Error(startData.error || 'Error iniciando descarga');
+
+                const taskId = startData.task_id;
+
+                let fakeProcessingProgress = 0;
+
+                // 3. Poll Status
+                pollInterval = setInterval(async () => {
+                    try {
+                        const statusRes = await fetch(`/api/download_status?id=${taskId}`);
+                        if (!statusRes.ok) throw new Error("Error de red");
+                        const statusData = await statusRes.json();
+
+                        if (statusData.error) {
+                            clearInterval(pollInterval);
+                            throw new Error(statusData.error);
+                        }
+
+                        // Update UI
+                        const progress = statusData.progress || 0;
+                        const progressBar = document.getElementById('swal-progress-bar');
+                        const progressText = document.getElementById('swal-progress-text');
+
+                        if (statusData.status === 'processing') {
+                            if (fakeProcessingProgress < 95) fakeProcessingProgress += 1.0;
+                            if (progressBar) progressBar.style.width = `${fakeProcessingProgress}%`;
+                            if (progressText) progressText.innerText = `Transcodificando audio (AAC)... ${Math.floor(fakeProcessingProgress)}%`;
+                        } else {
+                            if (progressBar) progressBar.style.width = `${Math.max(5, progress)}%`;
+                            if (progressText) {
+                                if (statusData.status === 'starting') progressText.innerText = 'Precalentando motores...';
+                                else if (statusData.status === 'downloading') progressText.innerText = `Descargando: ${progress.toFixed(1)}%`;
+                                else if (statusData.status === 'download_complete') progressText.innerText = 'Descarga finalizada. Procesando...';
+                                else if (statusData.status === 'completed') progressText.innerText = '¡Listo!';
+                            }
+                        }
+
+                        if (statusData.status === 'completed') {
+                            clearInterval(pollInterval);
+
+                            if (progressBar) progressBar.style.width = '100%';
+
+                            // Trigger final download
+                            window.location.href = `/api/download_file?id=${taskId}`;
+
+                            // Close modal
+                            setTimeout(() => {
+                                Swal.close();
+                            }, 1000);
+                        }
+
+                        if (statusData.status === 'error') {
+                            clearInterval(pollInterval);
+                            throw new Error(statusData.error || 'Error desconocido');
+                        }
+
+                    } catch (pollErr) {
+                        // Don't stop polling immediately on one generic network error? 
+                        // But if it's persistent...
+                        // We'll log it for now
+                        console.warn("Polling error:", pollErr);
+                    }
+                }, 1000);
+
+            } catch (e) {
+                if (pollInterval) clearInterval(pollInterval);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: e.message,
+                    background: '#1a1a1a',
+                    color: '#fff'
+                });
+            }
         }
 
         function generateVideoPlaceholder() {
@@ -1082,89 +1190,53 @@
             }
 
             initEventListeners() {
+                this.abortController = null;
+            }
+
+            initEventListeners() {
                 this.analyzeBtn.addEventListener('click', () => this.analyzeVideo());
 
-                // New Clear Logic
+                // New Clear Logic with Abort
                 this.clearInputBtn.addEventListener('click', () => {
+                    this.abortAnalysis();
                     this.urlInput.value = '';
                     this.toggleClearButton();
+                    this.clearResults();
                     this.urlInput.focus();
                 });
 
                 // Show/Hide Clear Button on input
                 this.urlInput.addEventListener('input', () => this.toggleClearButton());
 
-                this.pasteBtn.addEventListener('click', () => this.pasteFromClipboard());
+                // Auto-analyze when selecting from history/autofill ('change' event)
+                this.urlInput.addEventListener('change', () => {
+                    if (this.urlInput.value.trim().length > 0) {
+                        this.analyzeVideo();
+                    }
+                });
 
+                // Auto-analyze on Paste matches existing behavior
+                this.urlInput.addEventListener('paste', () => {
+                    setTimeout(() => {
+                        if (this.urlInput.value.trim().length > 0) {
+                            this.analyzeVideo();
+                        }
+                    }, 100);
+                });
+
+                this.pasteBtn.addEventListener('click', () => this.pasteFromClipboard());
                 this.urlInput.addEventListener('keypress', (e) => {
                     if (e.key === 'Enter') this.analyzeVideo();
                 });
             }
 
-            toggleClearButton() {
-                if (this.urlInput.value.trim().length > 0) {
-                    this.clearInputBtn.style.display = 'block';
-                } else {
-                    this.clearInputBtn.style.display = 'none';
+            abortAnalysis() {
+                if (this.abortController) {
+                    this.abortController.abort();
+                    this.abortController = null;
                 }
+                this.showLoading(false);
             }
-
-            async pasteFromClipboard() {
-                try {
-                    this.urlInput.focus(); // Focus first
-                    const text = await navigator.clipboard.readText();
-                    const pasted = (text || '').trim();
-
-                    if (!pasted) {
-                        Swal.fire({
-                            icon: 'info',
-                            title: 'Portapapeles vacío',
-                            text: 'No hay texto para pegar.',
-                            timer: 2000
-                        });
-                        return;
-                    }
-
-                    this.urlInput.value = pasted;
-                    this.toggleClearButton();
-
-                    // Visual feedback
-                    const originalBtnText = this.pasteBtn.innerHTML;
-                    this.pasteBtn.innerHTML = '✅ Pegado!';
-                    setTimeout(() => {
-                        this.pasteBtn.innerHTML = originalBtnText;
-                        this.analyzeVideo(); // Auto-analyze
-                    }, 800);
-
-                } catch (e) {
-                    console.error("Paste error", e);
-                    Swal.fire({
-                        icon: 'warning',
-                        title: 'Permiso requerido',
-                        text: 'El navegador bloqueó el acceso. Pega manualmente con Ctrl+V.',
-                        timer: 3000
-                    });
-                }
-            }
-
-            // ... Result handling methods (clearResults, showLoading, analyzeVideo) ...
-
-            clearResults() {
-                const videoPlayerContainer = document.getElementById('videoPlayerContainer');
-                // Always reset to placeholder (fixes stuck loading state on error)
-                videoPlayerContainer.innerHTML = generateVideoPlaceholder();
-
-                // Also disable download button whenever we clear results (new search)
-                window.disableGlobalDownload();
-            }
-
-            // ... existing analyzeVideo, showLoading, etc ...
-            // We need to keep the original implementations but just update them where necessary.
-            // Since I am replacing the whole block, I need to be careful to implement analyzeVideo fully or 
-            // use the original code. 
-            // The tool ViewFile showed me lines up to 1422.
-
-            // RE-IMPLEMENTING analyzeVideo and others to ensure they match the class structure
 
             async analyzeVideo() {
                 const url = this.urlInput.value.trim();
@@ -1173,6 +1245,13 @@
                     return;
                 }
 
+                // Cancel previous request if any
+                this.abortAnalysis();
+
+                // Create new controller
+                this.abortController = new AbortController();
+                const signal = this.abortController.signal;
+
                 this.clearResults();
                 this.showLoading(true);
 
@@ -1180,14 +1259,16 @@
                 const startTime = Date.now();
 
                 try {
-                    const validateResponse = await this.makeRequest('/api/validate', { url });
+                    const validateResponse = await this.makeRequest('/api/validate', { url }, signal);
                     if (!validateResponse.success) throw new Error(validateResponse.error || 'URL inválida');
 
-                    const extractResponse = await this.makeRequest('/api/extract', { url: validateResponse.url });
+                    const extractResponse = await this.makeRequest('/api/extract', { url: validateResponse.url }, signal);
 
                     const elapsedTime = Date.now() - startTime;
                     const remainingTime = Math.max(0, minimumLoadingTime - elapsedTime);
                     if (remainingTime > 0) await new Promise(r => setTimeout(r, remainingTime));
+
+                    if (signal.aborted) return;
 
                     if (extractResponse.success) {
                         let data = extractResponse.data || extractResponse;
@@ -1196,21 +1277,32 @@
                         this.showInstagramError(extractResponse);
                     }
                 } catch (error) {
+                    if (error.name === 'AbortError') {
+                        console.log('Análisis cancelado por el usuario');
+                        return;
+                    }
                     const elapsedTime = Date.now() - startTime;
                     const remainingTime = Math.max(0, minimumLoadingTime - elapsedTime);
                     if (remainingTime > 0) await new Promise(r => setTimeout(r, remainingTime));
+
+                    if (signal.aborted) return;
+
                     this.showError(error.message);
                     this.clearResults(); // Reset on error
                 } finally {
-                    this.showLoading(false);
+                    if (!signal.aborted) {
+                        this.showLoading(false);
+                        this.abortController = null;
+                    }
                 }
             }
 
-            async makeRequest(endpoint, data) {
+            async makeRequest(endpoint, data, signal) {
                 const response = await fetch(endpoint, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify(data),
+                    signal: signal
                 });
                 return await response.json();
             }
@@ -1271,18 +1363,53 @@
                 } else if (url.includes('instagram')) {
                     showInstagramVideo(data, container);
                 } else if (url.includes('linkedin')) {
-                    const videoUrl = data.video_url || data.videoUrl || (data.data ? data.data.videoUrl : null);
-                    if (videoUrl) showLinkedinVideo({ videoUrl }, container);
+                    const videoData = data.data || data;
+                    showLinkedinVideo(videoData, container);
                 } else if (url.includes('tiktok')) {
-                    const videoUrl = data.video_url || (data.data ? data.data.videoUrl : null);
-                    if (videoUrl) showTikTokVideo({ videoUrl }, container);
+                    // Pass the full data object (normalized)
+                    const videoData = data.data || data;
+                    showTikTokVideo(videoData, container);
                 } else if (url.includes('facebook')) {
-                    const videoUrl = data.video_url || (data.data ? data.data.videoUrl : null);
-                    if (videoUrl) showFacebookVideo({ videoUrl }, container);
+                    const videoData = data.data || data;
+                    showFacebookVideo(videoData, container);
                 } else if (url.includes('x.com') || url.includes('twitter')) {
-                    const videoUrl = data.video_url || data.videoUrl || (data.data ? data.data.videoUrl : null);
-                    if (videoUrl) showXVideo({ videoUrl }, container);
+                    const videoData = data.data || data;
+                    showXVideo(videoData, container);
                 }
+            }
+            toggleClearButton() {
+                if (this.urlInput.value.trim().length > 0) {
+                    this.clearInputBtn.style.display = 'block';
+                } else {
+                    this.clearInputBtn.style.display = 'none';
+                }
+            }
+
+            async pasteFromClipboard() {
+                try {
+                    const text = await navigator.clipboard.readText();
+                    this.urlInput.value = text;
+                    this.toggleClearButton();
+                    this.urlInput.focus();
+
+                    // Auto-analyze if valid
+                    if (this.urlInput.value.trim().length > 0) {
+                        this.analyzeVideo();
+                    }
+                } catch (err) {
+                    console.error('Failed to read clipboard contents: ', err);
+                }
+            }
+
+            clearResults() {
+                this.initVideoPlaceholder();
+                this.toggleClearButton();
+                this.analyzeBtn.disabled = false;
+                this.pasteBtn.disabled = false;
+
+                // Clear any leftover modals if needed
+                const modal = document.querySelector('.video-modal');
+                if (modal) modal.remove();
             }
         }
 
