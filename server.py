@@ -15,6 +15,7 @@ import uuid
 import imageio_ffmpeg
 from yt_dlp import YoutubeDL
 import threading
+import mimetypes
 
 # Importar extractores
 from insta_extractor import InstagramExtractor
@@ -222,9 +223,21 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
 
             else:
                 # Legacy Requests fallback
-                headers = {'User-Agent': 'Mozilla/5.0 ...'}
+                headers = {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                    'Referer': 'https://www.linkedin.com/' 
+                }
+                
+                logger.info(f"Fallback download via requests: {url}")
                 r = requests.get(url, stream=True, headers=headers, timeout=60)
-                final_path = os.path.join(temp_dir, f"direct_{task_id}.mp4")
+                
+                if r.status_code != 200:
+                    logger.error(f"Failed to download: {r.status_code}")
+                    raise Exception(f"Error descarga HTTP: {r.status_code}")
+                # Determinar extensión basada en el nombre de archivo solicitado
+                ext = os.path.splitext(filename)[1]
+                if not ext: ext = ".mp4"
+                final_path = os.path.join(temp_dir, f"direct_{task_id}{ext}")
                 
                 total_length = r.headers.get('content-length')
                 dl = 0
@@ -257,7 +270,10 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             
             with open(requested_path, 'rb') as f:
                 self.send_response(200)
-                self.send_header('Content-Type', 'video/mp4')
+                # Adivinar MIME type
+                content_type, _ = mimetypes.guess_type(filename)
+                if not content_type: content_type = 'application/octet-stream'
+                self.send_header('Content-Type', content_type)
                 self.send_header('Content-Disposition', f'attachment; filename="{filename}"')
                 self.send_header('Content-Length', str(os.path.getsize(requested_path)))
                 self.end_headers()

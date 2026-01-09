@@ -1103,7 +1103,7 @@
     </svg>
     <div class="container">
         <div class="header">
-            <h1>Redes Sociales Downloader - v.23</h1>
+            <h1>Redes Sociales Downloader - v.24</h1>
             <div class="header-icons" style="display: flex; justify-content: center; gap: 8px; margin: 15px 0 25px;">
 
                 <!-- Instagram -->
@@ -1459,6 +1459,7 @@
                         this.showSuccess(data);
                     } else {
                         this.showInstagramError(extractResponse);
+                        this.clearResults();
                     }
                 } catch (error) {
                     if (error.name === 'AbortError') {

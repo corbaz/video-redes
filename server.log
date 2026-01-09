@@ -8393,3 +8393,600 @@ yt-dlp: error: no such option: --extract-flat
 2026-01-08 14:12:22,046 - INFO - 192.168.1.152 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
 2026-01-08 14:12:22,049 - INFO - 192.168.1.152 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
 2026-01-08 14:12:22,219 - INFO - 192.168.1.152 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 16:32:02,908 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-08 16:32:03,004 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 16:32:03,171 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 16:32:03,310 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 16:32:03,310 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 16:32:03,310 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 16:32:03,311 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 16:32:03,312 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 16:32:03,485 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 16:32:04,422 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 16:32:42,279 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 16:32:42,589 - INFO - Extrayendo video de: https://www.linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7415052210025357313-nHgZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 16:32:43,826 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7415052210025357313-nHgZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 16:32:43,827 - INFO -    📺 Plataforma: linkedin
+2026-01-08 16:32:43,827 - INFO -    🎬 Título: Sin título...
+2026-01-08 16:32:43,827 - INFO -    🎯 Resolución: N/A
+2026-01-08 16:32:43,827 - INFO -    📁 Tamaño: N/A
+2026-01-08 16:32:43,828 - INFO -    ⏱️ Duración: 0s
+2026-01-08 16:32:43,828 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 16:32:46,655 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fdms.licdn.com%2Fplaylist%2Fvid%2Fv2%2FD5605AQEWnALXX2fXRg%2Fmp4-720p-30fp-crf28%2FB56ZudD2ZCHMCE-%2F0%2F1767866599353%3Fe%3D2147483647%26v%3Dbeta%26t%3DuR3TOJimXdVVlvBLSGWMA2Sr_Q5UzySme5PMciiBSuo&filename=linkedin_video.mp4 HTTP/1.1" 200 -
+2026-01-08 16:32:47,979 - INFO - 127.0.0.1 - "GET /api/download_status?id=b84979c4-01bf-46c2-b3b9-1e696cbc0081 HTTP/1.1" 200 -
+2026-01-08 16:32:48,251 - INFO - 127.0.0.1 - "GET /api/download_file?id=b84979c4-01bf-46c2-b3b9-1e696cbc0081 HTTP/1.1" 200 -
+2026-01-08 16:33:48,326 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 16:34:08,650 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 16:34:08,896 - INFO - Extrayendo video de: https://www.linkedin.com/posts/ivan-aradillas_chatgpt-y-gemini-est%C3%A1n-bien-pero-no-son-activity-7414960848382828544-eCPO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 16:34:09,878 - WARNING - Error extrayendo https://www.linkedin.com/posts/ivan-aradillas_chatgpt-y-gemini-est%C3%A1n-bien-pero-no-son-activity-7414960848382828544-eCPO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc: Error al extraer video de LinkedIn: [0;31mERROR:[0m [LinkedIn] 7414960848382828544: Unable to extract [0;94mvideo[0m; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-08 16:34:09,879 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-01-08 16:35:08,971 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 16:37:19,208 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-08 16:37:19,281 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 16:37:19,475 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 16:37:19,600 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 16:37:19,600 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 16:37:19,600 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 16:37:19,601 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 16:37:19,601 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 16:37:19,784 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 16:37:20,656 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 16:37:21,549 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 16:37:21,869 - INFO - Extrayendo video de: https://www.linkedin.com/posts/csp-control-center_ebook-microsoft-csp-playbook-for-profit-activity-7312750739771011072-GCTg?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 16:37:22,761 - WARNING - Error extrayendo https://www.linkedin.com/posts/csp-control-center_ebook-microsoft-csp-playbook-for-profit-activity-7312750739771011072-GCTg?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc: Error al extraer video de LinkedIn: [0;31mERROR:[0m [LinkedIn] 7312750739771011072: Unable to extract [0;94mvideo[0m; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-08 16:37:22,761 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-01-08 16:38:22,129 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 16:41:41,351 - INFO - ============================================================
+2026-01-08 16:41:41,351 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-08 16:41:41,351 - INFO - ============================================================
+2026-01-08 16:41:41,352 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-08 16:41:41,352 - INFO - Acceso local: http://localhost:8000
+2026-01-08 16:41:41,352 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-08 16:41:41,352 - INFO - Endpoints disponibles:
+2026-01-08 16:41:41,352 - INFO -   POST /api/validate - Validar URLs
+2026-01-08 16:41:41,352 - INFO -   POST /api/extract - Extraer videos
+2026-01-08 16:41:41,352 - INFO - Presiona Ctrl+C para detener
+2026-01-08 16:41:41,353 - INFO - ============================================================
+2026-01-08 17:02:56,437 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-08 17:02:56,547 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:02:56,685 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:02:56,851 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:02:56,852 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:02:56,852 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:02:56,852 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:02:56,854 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:02:56,999 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:02:57,869 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 17:03:04,104 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 17:03:04,421 - INFO - Extrayendo video de: https://www.linkedin.com/posts/edteam_programaciaejn-ia-inteligenciaartificial-activity-7414474806517243904-KuMZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:03:05,624 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/edteam_programaciaejn-ia-inteligenciaartificial-activity-7414474806517243904-KuMZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:03:05,625 - INFO -    📺 Plataforma: linkedin
+2026-01-08 17:03:05,625 - INFO -    🎬 Título: Sin título...
+2026-01-08 17:03:05,625 - INFO -    🎯 Resolución: N/A
+2026-01-08 17:03:05,625 - INFO -    📁 Tamaño: N/A
+2026-01-08 17:03:05,626 - INFO -    ⏱️ Duración: 0s
+2026-01-08 17:03:05,626 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 17:03:20,497 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 17:03:20,813 - INFO - Extrayendo video de: https://www.linkedin.com/posts/ivan-aradillas_chatgpt-y-gemini-est%C3%A1n-bien-pero-no-son-activity-7414960848382828544-eCPO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:03:22,663 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/ivan-aradillas_chatgpt-y-gemini-est%C3%A1n-bien-pero-no-son-activity-7414960848382828544-eCPO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:03:22,663 - INFO -    📺 Plataforma: linkedin
+2026-01-08 17:03:22,663 - INFO -    🎬 Título: Sin título...
+2026-01-08 17:03:22,664 - INFO -    🎯 Resolución: N/A
+2026-01-08 17:03:22,664 - INFO -    📁 Tamaño: N/A
+2026-01-08 17:03:22,664 - INFO -    ⏱️ Duración: 0s
+2026-01-08 17:03:22,664 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 17:03:45,128 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 17:03:45,438 - INFO - Extrayendo video de: https://www.linkedin.com/posts/ivan-aradillas_chatgpt-y-gemini-est%C3%A1n-bien-pero-no-son-activity-7414960848382828544-eCPO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:03:47,399 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/ivan-aradillas_chatgpt-y-gemini-est%C3%A1n-bien-pero-no-son-activity-7414960848382828544-eCPO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:03:47,400 - INFO -    📺 Plataforma: linkedin
+2026-01-08 17:03:47,400 - INFO -    🎬 Título: Sin título...
+2026-01-08 17:03:47,400 - INFO -    🎯 Resolución: N/A
+2026-01-08 17:03:47,400 - INFO -    📁 Tamaño: N/A
+2026-01-08 17:03:47,400 - INFO -    ⏱️ Duración: 0s
+2026-01-08 17:03:47,400 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 17:04:23,047 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 17:04:23,372 - INFO - Extrayendo video de: https://www.linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7415052210025357313-nHgZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:04:24,472 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7415052210025357313-nHgZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:04:24,472 - INFO -    📺 Plataforma: linkedin
+2026-01-08 17:04:24,472 - INFO -    🎬 Título: Sin título...
+2026-01-08 17:04:24,472 - INFO -    🎯 Resolución: N/A
+2026-01-08 17:04:24,472 - INFO -    📁 Tamaño: N/A
+2026-01-08 17:04:24,473 - INFO -    ⏱️ Duración: 0s
+2026-01-08 17:04:24,473 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 17:04:30,108 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 17:04:30,434 - INFO - Extrayendo video de: https://www.linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7415052210025357313-nHgZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:04:31,439 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7415052210025357313-nHgZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:04:31,439 - INFO -    📺 Plataforma: linkedin
+2026-01-08 17:04:31,439 - INFO -    🎬 Título: Sin título...
+2026-01-08 17:04:31,439 - INFO -    🎯 Resolución: N/A
+2026-01-08 17:04:31,440 - INFO -    📁 Tamaño: N/A
+2026-01-08 17:04:31,440 - INFO -    ⏱️ Duración: 0s
+2026-01-08 17:04:31,440 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 17:04:48,245 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fdms.licdn.com%2Fplaylist%2Fvid%2Fv2%2FD5605AQEWnALXX2fXRg%2Fmp4-720p-30fp-crf28%2FB56ZudD2ZCHMCE-%2F0%2F1767866599353%3Fe%3D2147483647%26v%3Dbeta%26t%3DuR3TOJimXdVVlvBLSGWMA2Sr_Q5UzySme5PMciiBSuo&filename=linkedin_video.mp4 HTTP/1.1" 200 -
+2026-01-08 17:04:49,583 - INFO - 127.0.0.1 - "GET /api/download_status?id=3fa6dd95-f8ac-46a0-bfe8-d3a8a797062b HTTP/1.1" 200 -
+2026-01-08 17:04:49,858 - INFO - 127.0.0.1 - "GET /api/download_file?id=3fa6dd95-f8ac-46a0-bfe8-d3a8a797062b HTTP/1.1" 200 -
+2026-01-08 17:05:24,068 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 17:05:24,385 - INFO - Extrayendo video de: https://www.linkedin.com/posts/codewithalamin_html-semantic-elements-ugcPost-7410281508000919552-FqaR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:05:26,108 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/codewithalamin_html-semantic-elements-ugcPost-7410281508000919552-FqaR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:05:26,108 - INFO -    📺 Plataforma: linkedin
+2026-01-08 17:05:26,108 - INFO -    🎬 Título: Sin título...
+2026-01-08 17:05:26,108 - INFO -    🎯 Resolución: N/A
+2026-01-08 17:05:26,109 - INFO -    📁 Tamaño: N/A
+2026-01-08 17:05:26,109 - INFO -    ⏱️ Duración: 0s
+2026-01-08 17:05:26,109 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 17:05:31,389 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fstatic.licdn.com%2Faero-v1%2Fsc%2Fh%2Fc45fy346jw096z9pbphyyhdz7&filename=linkedin_image.jpg HTTP/1.1" 200 -
+2026-01-08 17:05:32,721 - INFO - 127.0.0.1 - "GET /api/download_status?id=f325cf4a-8ec5-4c89-be39-b15c3cd183dd HTTP/1.1" 200 -
+2026-01-08 17:05:32,978 - INFO - 127.0.0.1 - "GET /api/download_file?id=f325cf4a-8ec5-4c89-be39-b15c3cd183dd HTTP/1.1" 200 -
+2026-01-08 17:06:33,078 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 17:08:29,809 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 17:08:30,074 - INFO - Extrayendo video de: https://www.linkedin.com/posts/csp-control-center_ebook-microsoft-csp-playbook-for-profit-activity-7312750739771011072-GCTg?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:08:31,942 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/csp-control-center_ebook-microsoft-csp-playbook-for-profit-activity-7312750739771011072-GCTg?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:08:31,942 - INFO -    📺 Plataforma: linkedin
+2026-01-08 17:08:31,942 - INFO -    🎬 Título: Sin título...
+2026-01-08 17:08:31,943 - INFO -    🎯 Resolución: N/A
+2026-01-08 17:08:31,943 - INFO -    📁 Tamaño: N/A
+2026-01-08 17:08:31,943 - INFO -    ⏱️ Duración: 0s
+2026-01-08 17:08:31,943 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 17:08:36,566 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 17:08:36,885 - INFO - Extrayendo video de: https://www.linkedin.com/posts/csp-control-center_ebook-microsoft-csp-playbook-for-profit-activity-7312750739771011072-GCTg?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:08:38,589 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/csp-control-center_ebook-microsoft-csp-playbook-for-profit-activity-7312750739771011072-GCTg?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:08:38,589 - INFO -    📺 Plataforma: linkedin
+2026-01-08 17:08:38,589 - INFO -    🎬 Título: Sin título...
+2026-01-08 17:08:38,590 - INFO -    🎯 Resolución: N/A
+2026-01-08 17:08:38,590 - INFO -    📁 Tamaño: N/A
+2026-01-08 17:08:38,590 - INFO -    ⏱️ Duración: 0s
+2026-01-08 17:08:38,591 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 17:09:37,160 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 17:10:41,569 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-08 17:11:32,983 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 17:11:33,304 - INFO - Extrayendo video de: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:11:35,153 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:11:35,153 - INFO -    📺 Plataforma: linkedin
+2026-01-08 17:11:35,154 - INFO -    🎬 Título: Sin título...
+2026-01-08 17:11:35,154 - INFO -    🎯 Resolución: N/A
+2026-01-08 17:11:35,154 - INFO -    📁 Tamaño: N/A
+2026-01-08 17:11:35,154 - INFO -    ⏱️ Duración: 0s
+2026-01-08 17:11:35,154 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 17:11:41,170 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fstatic.licdn.com%2Faero-v1%2Fsc%2Fh%2Fc45fy346jw096z9pbphyyhdz7&filename=linkedin_image.jpg HTTP/1.1" 200 -
+2026-01-08 17:11:42,505 - INFO - 127.0.0.1 - "GET /api/download_status?id=cdb98dd9-eba0-4245-8660-a0ed17c87ec8 HTTP/1.1" 200 -
+2026-01-08 17:11:42,775 - INFO - 127.0.0.1 - "GET /api/download_file?id=cdb98dd9-eba0-4245-8660-a0ed17c87ec8 HTTP/1.1" 200 -
+2026-01-08 17:12:42,865 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 17:13:42,861 - INFO - ============================================================
+2026-01-08 17:13:42,862 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-08 17:13:42,862 - INFO - ============================================================
+2026-01-08 17:13:42,863 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-08 17:13:42,863 - INFO - Acceso local: http://localhost:8000
+2026-01-08 17:13:42,864 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-08 17:13:42,864 - INFO - Endpoints disponibles:
+2026-01-08 17:13:42,864 - INFO -   POST /api/validate - Validar URLs
+2026-01-08 17:13:42,865 - INFO -   POST /api/extract - Extraer videos
+2026-01-08 17:13:42,865 - INFO - Presiona Ctrl+C para detener
+2026-01-08 17:13:42,866 - INFO - ============================================================
+2026-01-08 17:16:22,227 - INFO - ============================================================
+2026-01-08 17:16:22,228 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-08 17:16:22,228 - INFO - ============================================================
+2026-01-08 17:16:22,228 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-08 17:16:22,228 - INFO - Acceso local: http://localhost:8000
+2026-01-08 17:16:22,228 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-08 17:16:22,229 - INFO - Endpoints disponibles:
+2026-01-08 17:16:22,229 - INFO -   POST /api/validate - Validar URLs
+2026-01-08 17:16:22,229 - INFO -   POST /api/extract - Extraer videos
+2026-01-08 17:16:22,229 - INFO - Presiona Ctrl+C para detener
+2026-01-08 17:16:22,230 - INFO - ============================================================
+2026-01-08 17:28:51,098 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-08 17:28:51,196 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:28:51,360 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:28:51,502 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:28:51,502 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:28:51,503 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:28:51,503 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:28:51,504 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:28:51,672 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:28:52,561 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 17:28:59,555 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 17:28:59,864 - INFO - Extrayendo video de: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:29:01,654 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:29:01,655 - INFO -    📺 Plataforma: linkedin
+2026-01-08 17:29:01,655 - INFO -    🎬 Título: Sin título...
+2026-01-08 17:29:01,656 - INFO -    🎯 Resolución: N/A
+2026-01-08 17:29:01,656 - INFO -    📁 Tamaño: N/A
+2026-01-08 17:29:01,656 - INFO -    ⏱️ Duración: 0s
+2026-01-08 17:29:01,656 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 17:30:00,137 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 17:45:15,202 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 17:45:15,462 - INFO - Extrayendo video de: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:45:17,121 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:45:17,121 - INFO -    📺 Plataforma: linkedin
+2026-01-08 17:45:17,121 - INFO -    🎬 Título: Sin título...
+2026-01-08 17:45:17,121 - INFO -    🎯 Resolución: N/A
+2026-01-08 17:45:17,122 - INFO -    📁 Tamaño: N/A
+2026-01-08 17:45:17,122 - INFO -    ⏱️ Duración: 0s
+2026-01-08 17:45:17,122 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 17:46:15,529 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 17:46:56,025 - INFO - ============================================================
+2026-01-08 17:46:56,026 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-08 17:46:56,026 - INFO - ============================================================
+2026-01-08 17:46:56,026 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-08 17:46:56,027 - INFO - Acceso local: http://localhost:8000
+2026-01-08 17:46:56,027 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-08 17:46:56,027 - INFO - Endpoints disponibles:
+2026-01-08 17:46:56,027 - INFO -   POST /api/validate - Validar URLs
+2026-01-08 17:46:56,028 - INFO -   POST /api/extract - Extraer videos
+2026-01-08 17:46:56,028 - INFO - Presiona Ctrl+C para detener
+2026-01-08 17:46:56,028 - INFO - ============================================================
+2026-01-08 17:49:48,232 - INFO - ============================================================
+2026-01-08 17:49:48,232 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-08 17:49:48,233 - INFO - ============================================================
+2026-01-08 17:49:48,233 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-08 17:49:48,233 - INFO - Acceso local: http://localhost:8000
+2026-01-08 17:49:48,233 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-08 17:49:48,233 - INFO - Endpoints disponibles:
+2026-01-08 17:49:48,233 - INFO -   POST /api/validate - Validar URLs
+2026-01-08 17:49:48,233 - INFO -   POST /api/extract - Extraer videos
+2026-01-08 17:49:48,233 - INFO - Presiona Ctrl+C para detener
+2026-01-08 17:49:48,234 - INFO - ============================================================
+2026-01-08 17:49:55,370 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-08 17:49:55,466 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:49:55,638 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:49:55,799 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:49:55,799 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:49:55,800 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:49:55,801 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:49:55,802 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:49:55,947 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 17:49:56,868 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 17:50:05,342 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 17:50:05,655 - INFO - Extrayendo video de: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:50:07,417 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 17:50:07,417 - INFO -    📺 Plataforma: linkedin
+2026-01-08 17:50:07,417 - INFO -    🎬 Título: Sin título...
+2026-01-08 17:50:07,418 - INFO -    🎯 Resolución: N/A
+2026-01-08 17:50:07,418 - INFO -    📁 Tamaño: N/A
+2026-01-08 17:50:07,418 - INFO -    ⏱️ Duración: 0s
+2026-01-08 17:50:07,418 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 17:50:13,199 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fstatic.licdn.com%2Faero-v1%2Fsc%2Fh%2Fc45fy346jw096z9pbphyyhdz7&filename=6_Array_Techniques_for_Coding_Interviews___NeetCod.jpg HTTP/1.1" 200 -
+2026-01-08 17:50:13,199 - INFO - Fallback download via requests: https://static.licdn.com/aero-v1/sc/h/c45fy346jw096z9pbphyyhdz7
+2026-01-08 17:50:14,536 - INFO - 127.0.0.1 - "GET /api/download_status?id=baf00b5f-74b4-4473-ab0f-dffb1fc0103e HTTP/1.1" 200 -
+2026-01-08 17:50:14,807 - INFO - 127.0.0.1 - "GET /api/download_file?id=baf00b5f-74b4-4473-ab0f-dffb1fc0103e HTTP/1.1" 200 -
+2026-01-08 17:51:14,892 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 17:53:07,256 - INFO - ============================================================
+2026-01-08 17:53:07,257 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-08 17:53:07,257 - INFO - ============================================================
+2026-01-08 17:53:07,257 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-08 17:53:07,257 - INFO - Acceso local: http://localhost:8000
+2026-01-08 17:53:07,257 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-08 17:53:07,258 - INFO - Endpoints disponibles:
+2026-01-08 17:53:07,258 - INFO -   POST /api/validate - Validar URLs
+2026-01-08 17:53:07,258 - INFO -   POST /api/extract - Extraer videos
+2026-01-08 17:53:07,258 - INFO - Presiona Ctrl+C para detener
+2026-01-08 17:53:07,258 - INFO - ============================================================
+2026-01-08 18:03:54,294 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-08 18:03:54,375 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:03:54,548 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:03:54,679 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:03:54,679 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:03:54,679 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:03:54,679 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:03:54,681 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:03:54,862 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:03:55,732 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 18:04:20,051 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 18:04:20,361 - INFO - Extrayendo video de: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:04:22,177 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:04:22,177 - INFO -    📺 Plataforma: linkedin
+2026-01-08 18:04:22,178 - INFO -    🎬 Título: Sin título...
+2026-01-08 18:04:22,178 - INFO -    🎯 Resolución: N/A
+2026-01-08 18:04:22,178 - INFO -    📁 Tamaño: N/A
+2026-01-08 18:04:22,178 - INFO -    ⏱️ Duración: 0s
+2026-01-08 18:04:22,178 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 18:04:24,499 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 18:04:24,813 - INFO - Extrayendo video de: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:04:26,286 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:04:26,286 - INFO -    📺 Plataforma: linkedin
+2026-01-08 18:04:26,286 - INFO -    🎬 Título: Sin título...
+2026-01-08 18:04:26,287 - INFO -    🎯 Resolución: N/A
+2026-01-08 18:04:26,287 - INFO -    📁 Tamaño: N/A
+2026-01-08 18:04:26,287 - INFO -    ⏱️ Duración: 0s
+2026-01-08 18:04:26,287 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 18:04:52,544 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-08 18:04:52,852 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:04:52,936 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:04:52,936 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:04:52,937 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:04:52,937 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:04:52,937 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:04:53,168 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:04:53,246 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:04:53,790 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 18:04:54,708 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 18:04:55,017 - INFO - Extrayendo video de: https://www.linkedin.com/posts/codewithalamin_5-in-demand-ui-libraries-in-2025-ugcPost-7410643422371475456-BQ8L?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:04:56,832 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/codewithalamin_5-in-demand-ui-libraries-in-2025-ugcPost-7410643422371475456-BQ8L?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:04:56,832 - INFO -    📺 Plataforma: linkedin
+2026-01-08 18:04:56,833 - INFO -    🎬 Título: Sin título...
+2026-01-08 18:04:56,833 - INFO -    🎯 Resolución: N/A
+2026-01-08 18:04:56,833 - INFO -    📁 Tamaño: N/A
+2026-01-08 18:04:56,833 - INFO -    ⏱️ Duración: 0s
+2026-01-08 18:04:56,833 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 18:05:55,285 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 18:11:06,522 - INFO - ============================================================
+2026-01-08 18:11:06,522 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-08 18:11:06,523 - INFO - ============================================================
+2026-01-08 18:11:06,523 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-08 18:11:06,523 - INFO - Acceso local: http://localhost:8000
+2026-01-08 18:11:06,523 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-08 18:11:06,524 - INFO - Endpoints disponibles:
+2026-01-08 18:11:06,524 - INFO -   POST /api/validate - Validar URLs
+2026-01-08 18:11:06,524 - INFO -   POST /api/extract - Extraer videos
+2026-01-08 18:11:06,524 - INFO - Presiona Ctrl+C para detener
+2026-01-08 18:11:06,525 - INFO - ============================================================
+2026-01-08 18:11:46,356 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-08 18:11:46,464 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:11:46,605 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:11:46,776 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:11:46,777 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:11:46,777 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:11:46,777 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:11:46,777 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:11:46,921 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:11:47,821 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 18:11:51,499 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 18:11:51,813 - INFO - Extrayendo video de: https://www.linkedin.com/posts/codewithalamin_5-in-demand-ui-libraries-in-2025-ugcPost-7410643422371475456-BQ8L?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:11:54,617 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/codewithalamin_5-in-demand-ui-libraries-in-2025-ugcPost-7410643422371475456-BQ8L?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:11:54,617 - INFO -    📺 Plataforma: linkedin
+2026-01-08 18:11:54,618 - INFO -    🎬 Título: Sin título...
+2026-01-08 18:11:54,618 - INFO -    🎯 Resolución: N/A
+2026-01-08 18:11:54,618 - INFO -    📁 Tamaño: N/A
+2026-01-08 18:11:54,618 - INFO -    ⏱️ Duración: 0s
+2026-01-08 18:11:54,618 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 18:12:00,413 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 18:12:00,731 - INFO - Extrayendo video de: https://www.linkedin.com/posts/codewithalamin_5-in-demand-ui-libraries-in-2025-ugcPost-7410643422371475456-BQ8L?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:12:03,007 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/codewithalamin_5-in-demand-ui-libraries-in-2025-ugcPost-7410643422371475456-BQ8L?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:12:03,007 - INFO -    📺 Plataforma: linkedin
+2026-01-08 18:12:03,008 - INFO -    🎬 Título: Sin título...
+2026-01-08 18:12:03,008 - INFO -    🎯 Resolución: N/A
+2026-01-08 18:12:03,008 - INFO -    📁 Tamaño: N/A
+2026-01-08 18:12:03,008 - INFO -    ⏱️ Duración: 0s
+2026-01-08 18:12:03,009 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 18:12:09,937 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fdocument%2Fmedia%2Fv2%2FD561FAQERXOYKq9OJIQ%2Ffeedshare-document-pdf-analyzed%2FB56ZtfkhU1JgAY-%2F0%2F1766834972241%3Fe%3D1769040000%26v%3Dbeta%26t%3DrmRlaEVyHFZNZG7UEDKhY6mNtpatls1oyxx0Cax3SNw&filename=5_In-demand_UI_libraries_in_2025___Alamin___.pdf HTTP/1.1" 200 -
+2026-01-08 18:12:09,937 - INFO - Fallback download via requests: https://media.licdn.com/dms/document/media/v2/D561FAQERXOYKq9OJIQ/feedshare-document-pdf-analyzed/B56ZtfkhU1JgAY-/0/1766834972241?e=1769040000&v=beta&t=rmRlaEVyHFZNZG7UEDKhY6mNtpatls1oyxx0Cax3SNw
+2026-01-08 18:12:11,277 - INFO - 127.0.0.1 - "GET /api/download_status?id=ef0523e9-80f5-4345-ba57-657942b28066 HTTP/1.1" 200 -
+2026-01-08 18:12:11,948 - INFO - 127.0.0.1 - "GET /api/download_status?id=ef0523e9-80f5-4345-ba57-657942b28066 HTTP/1.1" 200 -
+2026-01-08 18:12:12,308 - INFO - 127.0.0.1 - "GET /api/download_file?id=ef0523e9-80f5-4345-ba57-657942b28066 HTTP/1.1" 200 -
+2026-01-08 18:13:12,300 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 18:13:12,548 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 18:13:43,130 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 18:13:43,397 - INFO - Extrayendo video de: https://www.linkedin.com/posts/codewithalamin_async-and-await-in-javascript-ugcPost-7414666706469634048-HDFt?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:13:45,919 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/codewithalamin_async-and-await-in-javascript-ugcPost-7414666706469634048-HDFt?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:13:45,919 - INFO -    📺 Plataforma: linkedin
+2026-01-08 18:13:45,920 - INFO -    🎬 Título: Sin título...
+2026-01-08 18:13:45,920 - INFO -    🎯 Resolución: N/A
+2026-01-08 18:13:45,920 - INFO -    📁 Tamaño: N/A
+2026-01-08 18:13:45,921 - INFO -    ⏱️ Duración: 0s
+2026-01-08 18:13:45,921 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 18:13:55,139 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fdocument%2Fmedia%2Fv2%2FD4E1FAQHdOb1gzFmmhw%2Ffeedshare-document-pdf-analyzed%2FB4EZuYv43xLUAY-%2F0%2F1767794250975%3Fe%3D1768435200%26v%3Dbeta%26t%3DbzE72bxq7Xexrtqz6X-cAFQ3-p0sr6awJ-KRROi23Y8&filename=Async_and_Await_in_JavaScript___Alamin___.pdf HTTP/1.1" 200 -
+2026-01-08 18:13:55,139 - INFO - Fallback download via requests: https://media.licdn.com/dms/document/media/v2/D4E1FAQHdOb1gzFmmhw/feedshare-document-pdf-analyzed/B4EZuYv43xLUAY-/0/1767794250975?e=1768435200&v=beta&t=bzE72bxq7Xexrtqz6X-cAFQ3-p0sr6awJ-KRROi23Y8
+2026-01-08 18:13:56,454 - INFO - 127.0.0.1 - "GET /api/download_status?id=e6a6ced7-8017-4a78-b533-8d0735318a1b HTTP/1.1" 200 -
+2026-01-08 18:13:57,154 - INFO - 127.0.0.1 - "GET /api/download_status?id=e6a6ced7-8017-4a78-b533-8d0735318a1b HTTP/1.1" 200 -
+2026-01-08 18:13:57,529 - INFO - 127.0.0.1 - "GET /api/download_file?id=e6a6ced7-8017-4a78-b533-8d0735318a1b HTTP/1.1" 200 -
+2026-01-08 18:14:41,802 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-08 18:14:41,880 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:14:42,188 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:14:42,188 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:14:42,188 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:14:42,189 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:14:42,188 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:14:42,189 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:14:42,496 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:14:43,409 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 18:14:43,892 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 18:14:44,213 - INFO - Extrayendo video de: https://www.linkedin.com/posts/qwen_introducing-qwen3-vl-embedding-and-qwen3-activity-7415030611901509632-h1CJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:14:46,266 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/qwen_introducing-qwen3-vl-embedding-and-qwen3-activity-7415030611901509632-h1CJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:14:46,266 - INFO -    📺 Plataforma: linkedin
+2026-01-08 18:14:46,266 - INFO -    🎬 Título: Sin título...
+2026-01-08 18:14:46,266 - INFO -    🎯 Resolución: N/A
+2026-01-08 18:14:46,267 - INFO -    📁 Tamaño: N/A
+2026-01-08 18:14:46,267 - INFO -    ⏱️ Duración: 0s
+2026-01-08 18:14:46,267 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 18:15:03,538 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2Fv2%2FD5622AQGG0vgxZHfPtw%2Ffeedshare-shrink_800%2FB56Zud7Ct3KsAk-%2F0%2F1767881061668%3Fe%3D2147483647%26v%3Dbeta%26t%3DK_rEygQi8EBJptdITv5Ll6W_v10IBoBpXW_QTdu_M-g&filename=___Introducing_Qwen3-VL-Embedding_and_Qwen3-VL-Rer.jpg HTTP/1.1" 200 -
+2026-01-08 18:15:03,538 - INFO - Fallback download via requests: https://media.licdn.com/dms/image/v2/D5622AQGG0vgxZHfPtw/feedshare-shrink_800/B56Zud7Ct3KsAk-/0/1767881061668?e=2147483647&v=beta&t=K_rEygQi8EBJptdITv5Ll6W_v10IBoBpXW_QTdu_M-g
+2026-01-08 18:15:04,852 - INFO - 127.0.0.1 - "GET /api/download_status?id=7febe76d-cd88-46f0-a879-cf11357937fb HTTP/1.1" 200 -
+2026-01-08 18:15:05,111 - INFO - 127.0.0.1 - "GET /api/download_file?id=7febe76d-cd88-46f0-a879-cf11357937fb HTTP/1.1" 200 -
+2026-01-08 18:16:05,219 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 18:26:17,838 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 18:26:18,103 - INFO - Extrayendo video de: https://www.linkedin.com/posts/qwen_introducing-qwen3-vl-embedding-and-qwen3-activity-7415030611901509632-h1CJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:26:19,930 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/qwen_introducing-qwen3-vl-embedding-and-qwen3-activity-7415030611901509632-h1CJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:26:19,930 - INFO -    📺 Plataforma: linkedin
+2026-01-08 18:26:19,930 - INFO -    🎬 Título: Sin título...
+2026-01-08 18:26:19,931 - INFO -    🎯 Resolución: N/A
+2026-01-08 18:26:19,931 - INFO -    📁 Tamaño: N/A
+2026-01-08 18:26:19,931 - INFO -    ⏱️ Duración: 0s
+2026-01-08 18:26:19,931 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 18:26:22,848 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-08 18:26:23,158 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:26:23,254 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:26:23,254 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:26:23,254 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:26:23,254 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:26:23,254 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:26:23,472 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:26:23,565 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:26:24,453 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 18:26:26,624 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-08 18:26:35,778 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 18:26:36,043 - INFO - Extrayendo video de: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:26:38,012 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:26:38,013 - INFO -    📺 Plataforma: linkedin
+2026-01-08 18:26:38,013 - INFO -    🎬 Título: Sin título...
+2026-01-08 18:26:38,013 - INFO -    🎯 Resolución: N/A
+2026-01-08 18:26:38,013 - INFO -    📁 Tamaño: N/A
+2026-01-08 18:26:38,013 - INFO -    ⏱️ Duración: 0s
+2026-01-08 18:26:38,014 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 18:26:45,818 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fdocument%2Fmedia%2Fv2%2FD4E1FAQGel9bYPseHDA%2Ffeedshare-document-pdf-analyzed%2FB4EZueRYajK8AY-%2F0%2F1767886917539%3Fe%3D1769040000%26v%3Dbeta%26t%3DTwFhBSMgMjLLEwWuF8aMmzECEHswiRU9mbd9ZUhtfdM&filename=6_Array_Techniques_for_Coding_Interviews___NeetCod.pdf HTTP/1.1" 200 -
+2026-01-08 18:26:45,818 - INFO - Fallback download via requests: https://media.licdn.com/dms/document/media/v2/D4E1FAQGel9bYPseHDA/feedshare-document-pdf-analyzed/B4EZueRYajK8AY-/0/1767886917539?e=1769040000&v=beta&t=TwFhBSMgMjLLEwWuF8aMmzECEHswiRU9mbd9ZUhtfdM
+2026-01-08 18:26:47,145 - INFO - 127.0.0.1 - "GET /api/download_status?id=280b11f7-7be8-4bd8-8a95-cd5b37adbbe3 HTTP/1.1" 200 -
+2026-01-08 18:26:47,838 - INFO - 127.0.0.1 - "GET /api/download_status?id=280b11f7-7be8-4bd8-8a95-cd5b37adbbe3 HTTP/1.1" 200 -
+2026-01-08 18:26:48,190 - INFO - 127.0.0.1 - "GET /api/download_file?id=280b11f7-7be8-4bd8-8a95-cd5b37adbbe3 HTTP/1.1" 200 -
+2026-01-08 18:27:48,180 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 18:27:48,428 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 18:28:09,128 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 18:28:09,376 - INFO - Extrayendo video de: https://www.linkedin.com/posts/qwen_introducing-qwen3-vl-embedding-and-qwen3-activity-7415030611901509632-h1CJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:28:11,575 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/qwen_introducing-qwen3-vl-embedding-and-qwen3-activity-7415030611901509632-h1CJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:28:11,575 - INFO -    📺 Plataforma: linkedin
+2026-01-08 18:28:11,575 - INFO -    🎬 Título: Sin título...
+2026-01-08 18:28:11,575 - INFO -    🎯 Resolución: N/A
+2026-01-08 18:28:11,576 - INFO -    📁 Tamaño: N/A
+2026-01-08 18:28:11,576 - INFO -    ⏱️ Duración: 0s
+2026-01-08 18:28:11,576 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 18:29:01,868 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2026-01-08 18:29:01,922 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:29:01,922 - INFO - 192.168.1.150 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:29:01,922 - INFO - 192.168.1.150 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:29:01,927 - INFO - 192.168.1.150 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:29:01,928 - INFO - 192.168.1.150 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:29:01,928 - INFO - 192.168.1.150 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:29:01,937 - INFO - 192.168.1.150 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:29:01,937 - INFO - 192.168.1.150 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 18:29:02,027 - INFO - 192.168.1.150 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 18:29:09,442 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 18:29:37,426 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 18:29:37,459 - INFO - Extrayendo video de: https://www.linkedin.com/posts/qwen_introducing-qwen3-vl-embedding-and-qwen3-activity-7415030611901509632-h1CJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:29:39,326 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/qwen_introducing-qwen3-vl-embedding-and-qwen3-activity-7415030611901509632-h1CJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 18:29:39,327 - INFO -    📺 Plataforma: linkedin
+2026-01-08 18:29:39,327 - INFO -    🎬 Título: Sin título...
+2026-01-08 18:29:39,327 - INFO -    🎯 Resolución: N/A
+2026-01-08 18:29:39,327 - INFO -    📁 Tamaño: N/A
+2026-01-08 18:29:39,327 - INFO -    ⏱️ Duración: 0s
+2026-01-08 18:29:39,328 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 18:29:53,836 - INFO - 192.168.1.150 - "GET /api/download_start?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2Fv2%2FD5622AQGG0vgxZHfPtw%2Ffeedshare-shrink_800%2FB56Zud7Ct3KsAk-%2F0%2F1767881061668%3Fe%3D2147483647%26v%3Dbeta%26t%3DK_rEygQi8EBJptdITv5Ll6W_v10IBoBpXW_QTdu_M-g&filename=___Introducing_Qwen3-VL-Embedding_and_Qwen3-VL-Rer.jpg HTTP/1.1" 200 -
+2026-01-08 18:29:53,836 - INFO - Fallback download via requests: https://media.licdn.com/dms/image/v2/D5622AQGG0vgxZHfPtw/feedshare-shrink_800/B56Zud7Ct3KsAk-/0/1767881061668?e=2147483647&v=beta&t=K_rEygQi8EBJptdITv5Ll6W_v10IBoBpXW_QTdu_M-g
+2026-01-08 18:29:54,874 - INFO - 192.168.1.150 - "GET /api/download_status?id=9f422534-3f44-444b-bba7-f2a6c3de26d3 HTTP/1.1" 200 -
+2026-01-08 18:29:54,953 - INFO - 192.168.1.150 - "GET /api/download_file?id=9f422534-3f44-444b-bba7-f2a6c3de26d3 HTTP/1.1" 200 -
+2026-01-08 19:00:36,312 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2026-01-08 19:00:36,377 - INFO - 192.168.1.150 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:00:36,384 - INFO - 192.168.1.150 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:00:36,387 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:00:36,392 - INFO - 192.168.1.150 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:00:36,400 - INFO - 192.168.1.150 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:00:36,406 - INFO - 192.168.1.150 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:00:36,406 - INFO - 192.168.1.150 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:00:36,407 - INFO - 192.168.1.150 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:00:36,481 - INFO - 192.168.1.150 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 19:00:42,831 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 19:00:42,848 - INFO - Extrayendo video de: https://www.linkedin.com/posts/qwen_introducing-qwen3-vl-embedding-and-qwen3-activity-7415030611901509632-h1CJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 19:00:44,809 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/qwen_introducing-qwen3-vl-embedding-and-qwen3-activity-7415030611901509632-h1CJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 19:00:44,810 - INFO -    📺 Plataforma: linkedin
+2026-01-08 19:00:44,810 - INFO -    🎬 Título: Sin título...
+2026-01-08 19:00:44,810 - INFO -    🎯 Resolución: N/A
+2026-01-08 19:00:44,811 - INFO -    📁 Tamaño: N/A
+2026-01-08 19:00:44,811 - INFO -    ⏱️ Duración: 0s
+2026-01-08 19:00:44,811 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 19:02:01,372 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 19:02:01,393 - INFO - Extrayendo video de: https://www.linkedin.com/posts/codewithalamin_async-and-await-in-javascript-ugcPost-7414666706469634048-HDFt?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 19:02:03,778 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/codewithalamin_async-and-await-in-javascript-ugcPost-7414666706469634048-HDFt?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 19:02:03,779 - INFO -    📺 Plataforma: linkedin
+2026-01-08 19:02:03,779 - INFO -    🎬 Título: Sin título...
+2026-01-08 19:02:03,779 - INFO -    🎯 Resolución: N/A
+2026-01-08 19:02:03,779 - INFO -    📁 Tamaño: N/A
+2026-01-08 19:02:03,780 - INFO -    ⏱️ Duración: 0s
+2026-01-08 19:02:03,780 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 19:20:12,212 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-08 19:20:12,314 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:20:12,453 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:20:12,624 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:20:12,624 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:20:12,625 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:20:12,625 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:20:12,625 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:20:12,772 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:20:13,689 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 19:20:17,151 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 19:20:17,459 - INFO - Extrayendo video de: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 19:20:19,515 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 19:20:19,515 - INFO -    📺 Plataforma: linkedin
+2026-01-08 19:20:19,515 - INFO -    🎬 Título: Sin título...
+2026-01-08 19:20:19,515 - INFO -    🎯 Resolución: N/A
+2026-01-08 19:20:19,515 - INFO -    📁 Tamaño: N/A
+2026-01-08 19:20:19,516 - INFO -    ⏱️ Duración: 0s
+2026-01-08 19:20:19,516 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 19:20:25,693 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fdocument%2Fmedia%2Fv2%2FD4E1FAQGel9bYPseHDA%2Ffeedshare-document-pdf-analyzed%2FB4EZueRYajK8AY-%2F0%2F1767886917539%3Fe%3D1769040000%26v%3Dbeta%26t%3DTwFhBSMgMjLLEwWuF8aMmzECEHswiRU9mbd9ZUhtfdM&filename=6_Array_Techniques_for_Coding_Interviews___NeetCod.pdf HTTP/1.1" 200 -
+2026-01-08 19:20:25,693 - INFO - Fallback download via requests: https://media.licdn.com/dms/document/media/v2/D4E1FAQGel9bYPseHDA/feedshare-document-pdf-analyzed/B4EZueRYajK8AY-/0/1767886917539?e=1769040000&v=beta&t=TwFhBSMgMjLLEwWuF8aMmzECEHswiRU9mbd9ZUhtfdM
+2026-01-08 19:20:27,012 - INFO - 127.0.0.1 - "GET /api/download_status?id=67aaaf0c-7eac-4a21-8767-c37fc77b8b20 HTTP/1.1" 200 -
+2026-01-08 19:20:27,290 - INFO - 127.0.0.1 - "GET /api/download_file?id=67aaaf0c-7eac-4a21-8767-c37fc77b8b20 HTTP/1.1" 200 -
+2026-01-08 19:20:49,551 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2026-01-08 19:20:49,605 - INFO - 192.168.1.150 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:20:49,611 - INFO - 192.168.1.150 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:20:49,612 - INFO - 192.168.1.150 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:20:49,612 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:20:49,612 - INFO - 192.168.1.150 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:20:49,613 - INFO - 192.168.1.150 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:20:49,633 - INFO - 192.168.1.150 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:20:49,641 - INFO - 192.168.1.150 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:20:49,731 - INFO - 192.168.1.150 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 19:20:55,563 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 19:20:55,579 - INFO - Extrayendo video de: https://www.linkedin.com/posts/qwen_introducing-qwen3-vl-embedding-and-qwen3-activity-7415030611901509632-h1CJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 19:20:57,420 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/qwen_introducing-qwen3-vl-embedding-and-qwen3-activity-7415030611901509632-h1CJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 19:20:57,421 - INFO -    📺 Plataforma: linkedin
+2026-01-08 19:20:57,421 - INFO -    🎬 Título: Sin título...
+2026-01-08 19:20:57,421 - INFO -    🎯 Resolución: N/A
+2026-01-08 19:20:57,421 - INFO -    📁 Tamaño: N/A
+2026-01-08 19:20:57,421 - INFO -    ⏱️ Duración: 0s
+2026-01-08 19:20:57,421 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 19:21:18,473 - INFO - 192.168.1.150 - "GET /api/download_start?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2Fv2%2FD5622AQGG0vgxZHfPtw%2Ffeedshare-shrink_800%2FB56Zud7Ct3KsAk-%2F0%2F1767881061668%3Fe%3D2147483647%26v%3Dbeta%26t%3DK_rEygQi8EBJptdITv5Ll6W_v10IBoBpXW_QTdu_M-g&filename=___Introducing_Qwen3-VL-Embedding_and_Qwen3-VL-Rer.jpg HTTP/1.1" 200 -
+2026-01-08 19:21:18,474 - INFO - Fallback download via requests: https://media.licdn.com/dms/image/v2/D5622AQGG0vgxZHfPtw/feedshare-shrink_800/B56Zud7Ct3KsAk-/0/1767881061668?e=2147483647&v=beta&t=K_rEygQi8EBJptdITv5Ll6W_v10IBoBpXW_QTdu_M-g
+2026-01-08 19:21:19,524 - INFO - 192.168.1.150 - "GET /api/download_status?id=658e04fe-d34b-49f9-8c9e-7dbdd8538685 HTTP/1.1" 200 -
+2026-01-08 19:21:19,574 - INFO - 192.168.1.150 - "GET /api/download_file?id=658e04fe-d34b-49f9-8c9e-7dbdd8538685 HTTP/1.1" 200 -
+2026-01-08 19:21:27,356 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-08 19:22:15,772 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 19:22:15,804 - INFO - Extrayendo video de: https://www.linkedin.com/posts/codewithalamin_async-and-await-in-javascript-ugcPost-7414666706469634048-HDFt?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 19:22:17,951 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/codewithalamin_async-and-await-in-javascript-ugcPost-7414666706469634048-HDFt?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 19:22:17,951 - INFO -    📺 Plataforma: linkedin
+2026-01-08 19:22:17,951 - INFO -    🎬 Título: Sin título...
+2026-01-08 19:22:17,951 - INFO -    🎯 Resolución: N/A
+2026-01-08 19:22:17,951 - INFO -    📁 Tamaño: N/A
+2026-01-08 19:22:17,952 - INFO -    ⏱️ Duración: 0s
+2026-01-08 19:22:17,952 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 19:22:23,280 - INFO - 192.168.1.150 - "GET /api/download_start?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fdocument%2Fmedia%2Fv2%2FD4E1FAQHdOb1gzFmmhw%2Ffeedshare-document-pdf-analyzed%2FB4EZuYv43xLUAY-%2F0%2F1767794250975%3Fe%3D1768435200%26v%3Dbeta%26t%3DbzE72bxq7Xexrtqz6X-cAFQ3-p0sr6awJ-KRROi23Y8&filename=Async_and_Await_in_JavaScript___Alamin___.pdf HTTP/1.1" 200 -
+2026-01-08 19:22:23,280 - INFO - Fallback download via requests: https://media.licdn.com/dms/document/media/v2/D4E1FAQHdOb1gzFmmhw/feedshare-document-pdf-analyzed/B4EZuYv43xLUAY-/0/1767794250975?e=1768435200&v=beta&t=bzE72bxq7Xexrtqz6X-cAFQ3-p0sr6awJ-KRROi23Y8
+2026-01-08 19:22:24,312 - INFO - 192.168.1.150 - "GET /api/download_status?id=5688089b-fa4e-466c-b587-596ce38bb2ea HTTP/1.1" 200 -
+2026-01-08 19:22:24,369 - INFO - 192.168.1.150 - "GET /api/download_file?id=5688089b-fa4e-466c-b587-596ce38bb2ea HTTP/1.1" 200 -
+2026-01-08 19:22:30,845 - INFO - 192.168.1.150 - "GET /api/download_start?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fdocument%2Fmedia%2Fv2%2FD4E1FAQHdOb1gzFmmhw%2Ffeedshare-document-pdf-analyzed%2FB4EZuYv43xLUAY-%2F0%2F1767794250975%3Fe%3D1768435200%26v%3Dbeta%26t%3DbzE72bxq7Xexrtqz6X-cAFQ3-p0sr6awJ-KRROi23Y8&filename=Async_and_Await_in_JavaScript___Alamin___.pdf HTTP/1.1" 200 -
+2026-01-08 19:22:30,845 - INFO - Fallback download via requests: https://media.licdn.com/dms/document/media/v2/D4E1FAQHdOb1gzFmmhw/feedshare-document-pdf-analyzed/B4EZuYv43xLUAY-/0/1767794250975?e=1768435200&v=beta&t=bzE72bxq7Xexrtqz6X-cAFQ3-p0sr6awJ-KRROi23Y8
+2026-01-08 19:22:31,867 - INFO - 192.168.1.150 - "GET /api/download_status?id=1a31d9e6-ce7f-4d60-a87f-cca47a9e7eb9 HTTP/1.1" 200 -
+2026-01-08 19:22:31,906 - INFO - 192.168.1.150 - "GET /api/download_file?id=1a31d9e6-ce7f-4d60-a87f-cca47a9e7eb9 HTTP/1.1" 200 -
+2026-01-08 19:23:31,924 - INFO - 192.168.1.150 - Request timed out: TimeoutError('timed out')
+2026-01-08 19:23:48,979 - INFO - 192.168.1.150 - Request timed out: TimeoutError('timed out')
+2026-01-08 19:24:40,576 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2026-01-08 19:24:40,692 - INFO - 192.168.1.150 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:24:40,710 - INFO - 192.168.1.150 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:24:40,710 - INFO - 192.168.1.150 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:24:40,710 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:24:40,711 - INFO - 192.168.1.150 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:24:40,711 - INFO - 192.168.1.150 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:24:40,712 - INFO - 192.168.1.150 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:24:40,736 - INFO - 192.168.1.150 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-08 19:24:40,781 - INFO - 192.168.1.150 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-08 19:25:01,261 - INFO - 192.168.1.150 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-08 19:25:01,277 - INFO - Extrayendo video de: https://www.linkedin.com/posts/codewithalamin_async-and-await-in-javascript-ugcPost-7414666706469634048-HDFt?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 19:25:03,602 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/codewithalamin_async-and-await-in-javascript-ugcPost-7414666706469634048-HDFt?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-08 19:25:03,602 - INFO -    📺 Plataforma: linkedin
+2026-01-08 19:25:03,602 - INFO -    🎬 Título: Sin título...
+2026-01-08 19:25:03,603 - INFO -    🎯 Resolución: N/A
+2026-01-08 19:25:03,603 - INFO -    📁 Tamaño: N/A
+2026-01-08 19:25:03,603 - INFO -    ⏱️ Duración: 0s
+2026-01-08 19:25:03,603 - INFO - 192.168.1.150 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-08 19:25:06,288 - INFO - 192.168.1.150 - "GET /api/download_start?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fdocument%2Fmedia%2Fv2%2FD4E1FAQHdOb1gzFmmhw%2Ffeedshare-document-pdf-analyzed%2FB4EZuYv43xLUAY-%2F0%2F1767794250975%3Fe%3D1768435200%26v%3Dbeta%26t%3DbzE72bxq7Xexrtqz6X-cAFQ3-p0sr6awJ-KRROi23Y8&filename=Async_and_Await_in_JavaScript___Alamin___.pdf HTTP/1.1" 200 -
+2026-01-08 19:25:06,288 - INFO - Fallback download via requests: https://media.licdn.com/dms/document/media/v2/D4E1FAQHdOb1gzFmmhw/feedshare-document-pdf-analyzed/B4EZuYv43xLUAY-/0/1767794250975?e=1768435200&v=beta&t=bzE72bxq7Xexrtqz6X-cAFQ3-p0sr6awJ-KRROi23Y8
+2026-01-08 19:25:07,324 - INFO - 192.168.1.150 - "GET /api/download_status?id=eed2f81e-2264-48c3-bbe7-5805f962adb0 HTTP/1.1" 200 -
+2026-01-08 19:25:07,371 - INFO - 192.168.1.150 - "GET /api/download_file?id=eed2f81e-2264-48c3-bbe7-5805f962adb0 HTTP/1.1" 200 -
+2026-01-09 06:40:54,625 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2026-01-09 06:40:55,209 - INFO - 192.168.1.150 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 10:58:57,172 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 10:58:57,430 - INFO - Extrayendo video de: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-09 10:58:59,876 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-09 10:58:59,876 - INFO -    📺 Plataforma: linkedin
+2026-01-09 10:58:59,876 - INFO -    🎬 Título: Sin título...
+2026-01-09 10:58:59,876 - INFO -    🎯 Resolución: N/A
+2026-01-09 10:58:59,877 - INFO -    📁 Tamaño: N/A
+2026-01-09 10:58:59,877 - INFO -    ⏱️ Duración: 0s
+2026-01-09 10:58:59,877 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 10:59:57,514 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
