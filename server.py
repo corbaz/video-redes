@@ -192,12 +192,12 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                     download_tasks[task_id]['progress'] = 0
 
             # Validar e iniciar descarga similar a handle_download pero actualizando task
-            # Detectar si es una imagen por la extensión solicitada
-            is_image = any(filename.lower().endswith(ext) for ext in ['.jpg', '.jpeg', '.png', '.webp', '.gif'])
+            # Detectar si es una imagen o documento (PDF) por la extensión solicitada
+            is_direct_download = any(filename.lower().endswith(ext) for ext in ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.pdf'])
             
             is_supported_hq = any(d in url for d in ['youtube.com', 'youtu.be', 'tiktok.com', 'vm.tiktok.com', 'twitch.tv', 'pinterest.com', 'pin.it', 'pinimg.com', 'linkedin.com', 'facebook.com', 'fb.watch', 'twitter.com', 'x.com', 'instagram.com'])
             
-            if is_supported_hq and not is_image:
+            if is_supported_hq and not is_direct_download:
                 unique_id = str(uuid.uuid4())
                 filename_base = f"yt_{unique_id}"
                 
@@ -239,8 +239,8 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                      raise Exception("File not found after download")
 
             else:
-                # Manejo de imágenes o fallbacks
-                if is_image:
+                # Manejo de imágenes, PDFs o fallbacks
+                if is_direct_download:
                     headers = {'User-Agent': 'Mozilla/5.0'}
                     r = requests.get(url, stream=True, headers=headers, timeout=60)
                     if r.status_code == 200:
