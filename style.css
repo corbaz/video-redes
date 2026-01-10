@@ -795,13 +795,34 @@ body {
     border-radius: 12px;
 }
 
-.card-play-icon {
+/* Custom YouTube-style Play Button */
+.ytp-large-play-button {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 3rem;
-    opacity: 0.8;
+    border: none;
+    background: transparent;
+    padding: 0;
+    width: 68px;
+    height: 48px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+}
+
+.ytp-large-play-button:hover {
+    opacity: 1;
+}
+
+.ytp-large-play-button svg {
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.card-play-icon {
+    display: none;
 }
 
 /* YouTube Pro Styles */
