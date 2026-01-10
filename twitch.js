@@ -26,6 +26,7 @@ function showTwitchVideo(data, container) {
         videoUrl: data.videoUrl, // En el caso de Twitch, esto puede ser un m3u8, pero renderVideoCard prioriza thumbnail
         thumbnail: data.thumbnail,
         title: data.title,
+        originalUrl: downloadUrl, // Important: Pass original URL for smart download
         duration: data.duration,
         platform: 'twitch',
         views: data.view_count,

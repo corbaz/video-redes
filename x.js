@@ -14,7 +14,8 @@ function showXVideo(data, container) {
     // Renderizar la tarjeta con preview igual que LinkedIn
     const videoCardHTML = renderVideoCard({
         videoUrl: videoUrl,
-        thumbnail: data.thumbnail
+        thumbnail: data.thumbnail,
+        originalUrl: videoUrl // Pass URL for smart download
     });
     container.innerHTML = videoCardHTML;
 }

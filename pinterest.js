@@ -25,7 +25,10 @@ function showPinterestVideo(data, container) {
     const cardHtml = renderVideoCard({
         videoUrl: url,
         thumbnail: thumbnail,
-        title: title
+        title: title,
+        originalUrl: url, // Pinterest usually works with direct URL, but keeping consistent
+        filename: filename, // Pass the correct filename (with .jpg for images)
+        type: type // Pass type to handle play icon
     });
     container.innerHTML = cardHtml;
 }

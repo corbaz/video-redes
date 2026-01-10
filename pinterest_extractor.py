@@ -114,6 +114,10 @@ class PinterestExtractor:
             title = og_title.group(1).replace("Pinterest", "").strip() if og_title else "Pinterest Pin"
             if not title: title = "Pinterest Media"
 
+            # Global OG Image extraction (High Reliability for Images)
+            og_image_match = re.search(r'<meta property="og:image" content="([^"]+)"', html)
+            og_image_url = og_image_match.group(1) if og_image_match else ""
+
             # 0. Check for Login Wall redirection
             if "login/" in final_url or "Log in" in html[:1000]:
                  logger.warning("Pinterest redirected to Login page. Try checking cookies or IP.")
@@ -225,6 +229,7 @@ class PinterestExtractor:
                             for k, v in data.items():
                                 if k == 'images' and isinstance(v, dict):
                                     if 'orig' in v: found_imgs.append(v['orig']['url'])
+                                    elif 'originals' in v: found_imgs.append(v['originals']['url'])
                                     elif '736x' in v: found_imgs.append(v['736x']['url'])
                                 if k == 'url' and isinstance(v, str) and 'i.pinimg.com' in v:
                                     found_imgs.append(v)
@@ -237,13 +242,11 @@ class PinterestExtractor:
 
                     if pws_video:
                          logger.info(f"PWS_DATA Video Found: {pws_video}")
-                         og_image = re.search(r'<meta property="og:image" content="([^"]+)"', html)
-                         thumbnail = og_image.group(1) if og_image else ""
                          return {
                             "success": True,
                             "title": title,
                             "video_url": pws_video,
-                            "thumbnail": thumbnail,
+                            "thumbnail": og_image_url,
                             "uploader": "Pinterest User",
                             "platform": "pinterest",
                             "type": "video"
@@ -252,6 +255,21 @@ class PinterestExtractor:
                 except Exception as e:
                     logger.warning(f"Error parsing PWS_DATA: {e}")
 
+            # 3. Priority Image Source: OG:IMAGE
+            # This is the most reliable source for the main pin image if no video was found.
+            if og_image_url and "i.pinimg.com" in og_image_url:
+                logger.info(f"OG Image Selected: {og_image_url}")
+                return {
+                    "success": True,
+                    "title": title,
+                    "video_url": og_image_url,
+                    "thumbnail": og_image_url,
+                    "uploader": "Pinterest User",
+                    "platform": "pinterest",
+                    "type": "image"
+                }
+
+            # 4. Fallback Image Source: PWS_DATA
             if pws_images:
                 # Prefer originals
                 best_img = pws_images[0]
@@ -273,27 +291,38 @@ class PinterestExtractor:
                     "type": "image"
                 }
 
-            # 3. Buscar IMAGEN (Regex)
+            # 5. Fallback Image Source: Generic Regex
             # Regex más permisivo (basado en debug exitoso)
-            # Primero buscamos originales
-            img_matches = re.findall(r'(https?://i\.pinimg\.com/originals/[^"\'\s]+\.(?:jpg|png|jpeg|webp))', html, re.IGNORECASE)
             
-            # Si no, buscamos cualquier imagen de pinimg
-            if not img_matches:
-                 img_matches = re.findall(r'(https?://i\.pinimg\.com/[^"\'\s]+\.(?:jpg|png|jpeg|webp))', html, re.IGNORECASE)
+            # Buscar cualquier imagen de pinimg
+            img_matches = re.findall(r'(https?://i\.pinimg\.com/[^"\'\s]+\.(?:jpg|png|jpeg|webp))', html, re.IGNORECASE)
             
-            # Filtrar íconos o avatares de 75x75 si es posible, quedándonos con los más grandes
-            # (Por ahora tomamos el primero que no sea miniatura obvia si hay lista)
+            # Filter out known UI assets/bad images
+            filtered_matches = []
+            for img in img_matches:
+                if "d53b014d86a6b6761bf649a0ed813c2b" in img: continue # Pinterest UI Gradient
+                if "75x75" in img: continue # Avatars
+                filtered_matches.append(img)
             
-            if img_matches:
-                image_url = img_matches[0]
-                # Intentar encontrar uno mejor si el primero es pequeño (ej: 75x75)
-                for img in img_matches:
-                    if 'originals' in img or '736x' in img:
-                        image_url = img
-                        break
-
-                logger.info(f"Manual Image Found: {image_url}")
+            if filtered_matches:
+                # Prioritize: 
+                # 1. Originals + JPG
+                # 2. Originals
+                # 3. 736x (High Res)
+                # 4. JPG
+                
+                def score_image(url):
+                    score = 0
+                    if "originals" in url: score += 10
+                    if "736x" in url: score += 5
+                    if ".jpg" in url.lower(): score += 2
+                    return score
+                
+                # Sort descending by score
+                filtered_matches.sort(key=score_image, reverse=True)
+                
+                image_url = filtered_matches[0]
+                logger.info(f"Manual Image Found (Sorted): {image_url}")
                 
                 return {
                     "success": True,

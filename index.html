@@ -24,7 +24,7 @@
     </svg>
     <div class="container">
         <div class="header">
-            <h1>Redes Sociales Downloader - v.24</h1>
+            <h1>Redes Sociales Downloader - v.25</h1>
             <div class="header-icons">
 
                 <!-- Instagram -->
@@ -124,15 +124,15 @@
     </div>
 
     <!-- Scripts -->
-    <script src="card.js?v=20260105"></script>
-    <script src="insta.js?v=20260105"></script>
-    <script src="linkedin.js?v=20260105"></script>
-    <script src="x.js?v=20260105"></script>
-    <script src="tiktok.js?v=20260105"></script>
-    <script src="facebook.js?v=20260105"></script>
-    <script src="youtube.js?v=20260105"></script>
-    <script src="twitch.js?v=20260105"></script>
-    <script src="pinterest.js?v=20260105"></script>
+    <script src="card.js?v=20260110"></script>
+    <script src="insta.js?v=20260110"></script>
+    <script src="linkedin.js?v=20260110"></script>
+    <script src="x.js?v=20260110"></script>
+    <script src="tiktok.js?v=20260110"></script>
+    <script src="facebook.js?v=20260110"></script>
+    <script src="youtube.js?v=20260110"></script>
+    <script src="twitch.js?v=20260110"></script>
+    <script src="pinterest.js?v=20260110"></script>
 
     <script>
         // Global helpers for Download Button Logic
@@ -168,7 +168,7 @@
             let pollInterval = null;
             try {
                 // 1. Show Progress Modal
-                Swal.fire({
+                const swalInstance = Swal.fire({
                     title: 'Procesando descarga',
                     html: `
                         <div class="swal-progress-container">
@@ -181,11 +181,21 @@
                     background: '#1a1a1a',
                     color: '#fff',
                     showConfirmButton: false,
+                    showCloseButton: true, // Add Close "X" Button
                     allowOutsideClick: false,
                     didOpen: () => {
                         Swal.showLoading();
-                        // Hide the default spinner if we have a custom bar? 
-                        // Actually keeping it is fine as "processing indicator"
+                    },
+                    willClose: () => {
+                        // Interrupt download polling on close
+                        if (pollInterval) {
+                            clearInterval(pollInterval);
+                            console.log('Descarga interrumpida por el usuario');
+                        }
+                        // Send cancel signal to server
+                        if (typeof taskId !== 'undefined' && taskId) {
+                            fetch(`/api/download_cancel?id=${taskId}`).catch(err => console.error('Error cancelling task:', err));
+                        }
                     }
                 });
 
@@ -222,41 +232,37 @@
                         if (statusData.status === 'processing') {
                             if (fakeProcessingProgress < 95) fakeProcessingProgress += 1.0;
                             if (progressBar) progressBar.style.width = `${fakeProcessingProgress}%`;
-                            if (progressText) progressText.innerText = `Transcodificando audio (AAC)... ${Math.floor(fakeProcessingProgress)}%`;
+                            if (progressText) progressText.innerText = `Procesando... ${Math.floor(fakeProcessingProgress)}%`;
                         } else {
                             if (progressBar) progressBar.style.width = `${Math.max(5, progress)}%`;
                             if (progressText) {
-                                if (statusData.status === 'starting') progressText.innerText = 'Precalentando motores...';
+                                if (statusData.status === 'starting') progressText.innerText = 'Iniciando...';
                                 else if (statusData.status === 'downloading') progressText.innerText = `Descargando: ${progress.toFixed(1)}%`;
-                                else if (statusData.status === 'download_complete') progressText.innerText = 'Descarga finalizada. Procesando...';
+                                else if (statusData.status === 'download_complete') progressText.innerText = 'Finalizando...';
                                 else if (statusData.status === 'completed') progressText.innerText = '¡Listo!';
                             }
                         }
 
                         if (statusData.status === 'completed') {
                             clearInterval(pollInterval);
-
                             if (progressBar) progressBar.style.width = '100%';
-
-                            // Trigger final download
+                            
+                            // Download triggers via redirect
                             window.location.href = `/api/download_file?id=${taskId}`;
 
-                            // Close modal
                             setTimeout(() => {
-                                Swal.close();
+                                swalInstance.close();
                             }, 1000);
                         }
-
-                        if (statusData.status === 'error') {
-                            clearInterval(pollInterval);
-                            throw new Error(statusData.error || 'Error desconocido');
+                    } catch (err) {
+                        clearInterval(pollInterval);
+                        if (err.message !== 'Task not found') {
+                             Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: err.message
+                            });
                         }
-
-                    } catch (pollErr) {
-                        // Don't stop polling immediately on one generic network error? 
-                        // But if it's persistent...
-                        // We'll log it for now
-                        console.warn("Polling error:", pollErr);
                     }
                 }, 1000);
 
@@ -320,7 +326,9 @@
 
                 // Auto-analyze when selecting from history/autofill ('change' event)
                 this.urlInput.addEventListener('change', () => {
-                    if (this.urlInput.value.trim().length > 0) {
+                    // Prevent re-analysis if URL hasn't changed (fixes issue where clicking result triggers blur -> change -> re-analyze)
+                    const currentUrl = this.urlInput.value.trim();
+                    if (currentUrl.length > 0 && currentUrl !== this.lastAnalyzedUrl) {
                         this.analyzeVideo();
                     }
                 });
@@ -354,6 +362,11 @@
                     this.showError('Por favor ingresa una URL de video');
                     return;
                 }
+
+                // Prevent re-analyzing same URL if called manually, 
+                // BUT allow if it's a retry (user explicitly clicked button)
+                // For now, we just update the tracker.
+                this.lastAnalyzedUrl = url;
 
                 // Cancel previous request if any
                 this.abortAnalysis();

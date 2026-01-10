@@ -110,6 +110,15 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 
                 self.send_json_response({'task_id': task_id})
 
+            elif clean_path == '/api/download_cancel':
+                task_id = params.get('id', [''])[0]
+                if task_id in download_tasks:
+                    download_tasks[task_id]['status'] = 'cancelled'
+                    download_tasks[task_id]['error'] = 'Descarga cancelada por el usuario'
+                    self.send_json_response({'status': 'cancelled'})
+                else:
+                    self.send_json_response({'error': 'Task not found'}, 404)
+
             elif clean_path == '/api/download_status':
                 task_id = params.get('id', [''])[0]
                 if task_id in download_tasks:
@@ -150,6 +159,10 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             
             # Progress Hook for yt-dlp
             def progress_hook(d):
+                # Check for cancellation
+                if download_tasks.get(task_id, {}).get('status') == 'cancelled':
+                    raise Exception('DownloadCancelled')
+
                 if d['status'] == 'downloading':
                     try:
                         # Improved percentage calculation
@@ -182,7 +195,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             # Detectar si es una imagen por la extensión solicitada
             is_image = any(filename.lower().endswith(ext) for ext in ['.jpg', '.jpeg', '.png', '.webp', '.gif'])
             
-            is_supported_hq = any(d in url for d in ['youtube.com', 'youtu.be', 'tiktok.com', 'vm.tiktok.com', 'twitch.tv', 'pinterest.com', 'pin.it', 'pinimg.com'])
+            is_supported_hq = any(d in url for d in ['youtube.com', 'youtu.be', 'tiktok.com', 'vm.tiktok.com', 'twitch.tv', 'pinterest.com', 'pin.it', 'pinimg.com', 'linkedin.com', 'facebook.com', 'fb.watch', 'twitter.com', 'x.com', 'instagram.com'])
             
             if is_supported_hq and not is_image:
                 unique_id = str(uuid.uuid4())
@@ -226,40 +239,71 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                      raise Exception("File not found after download")
 
             else:
-                # Legacy Requests fallback
-                headers = {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                    'Referer': 'https://www.linkedin.com/' 
-                }
-                
-                logger.info(f"Fallback download via requests: {url}")
-                r = requests.get(url, stream=True, headers=headers, timeout=60)
-                
-                if r.status_code != 200:
-                    logger.error(f"Failed to download: {r.status_code}")
-                    raise Exception(f"Error descarga HTTP: {r.status_code}")
-                # Determinar extensión basada en el nombre de archivo solicitado
-                ext = os.path.splitext(filename)[1]
-                if not ext: ext = ".mp4"
-                final_path = os.path.join(temp_dir, f"direct_{task_id}{ext}")
-                
-                total_length = r.headers.get('content-length')
-                dl = 0
-                with open(final_path, 'wb') as f:
-                    for chunk in r.iter_content(chunk_size=8192):
-                        if chunk:
-                            dl += len(chunk)
-                            f.write(chunk)
-                            if total_length:
-                                download_tasks[task_id]['progress'] = int(dl * 100 / int(total_length))
-                
-                download_tasks[task_id]['file_path'] = final_path
-                download_tasks[task_id]['status'] = 'completed'
+                # Manejo de imágenes o fallbacks
+                if is_image:
+                    headers = {'User-Agent': 'Mozilla/5.0'}
+                    r = requests.get(url, stream=True, headers=headers, timeout=60)
+                    if r.status_code == 200:
+                        file_path = os.path.join(temp_dir, filename)
+                        total_length = r.headers.get('content-length')
+                        dl = 0
+                        with open(file_path, 'wb') as f:
+                            for chunk in r.iter_content(chunk_size=8192):
+                                if download_tasks.get(task_id, {}).get('status') == 'cancelled':
+                                    r.close()
+                                    raise Exception('DownloadCancelled')
+                                f.write(chunk)
+                                dl += len(chunk)
+                                if total_length:
+                                    download_tasks[task_id]['progress'] = int(dl * 100 / int(total_length))
+                        
+                        download_tasks[task_id]['file_path'] = file_path
+                        download_tasks[task_id]['status'] = 'completed'
+                        download_tasks[task_id]['progress'] = 100
+                    else:
+                        raise Exception(f"Error descargando imagen: {r.status_code}")
+
+                else:
+                    # Legacy Requests fallback
+                    headers = {
+                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                        'Referer': 'https://www.linkedin.com/' 
+                    }
+                    
+                    logger.info(f"Fallback download via requests: {url}")
+                    r = requests.get(url, stream=True, headers=headers, timeout=60)
+                    
+                    if r.status_code != 200:
+                        logger.error(f"Failed to download: {r.status_code}")
+                        raise Exception(f"Error descarga HTTP: {r.status_code}")
+                    # Determinar extensión basada en el nombre de archivo solicitado
+                    ext = os.path.splitext(filename)[1]
+                    if not ext: ext = ".mp4"
+                    final_path = os.path.join(temp_dir, f"direct_{task_id}{ext}")
+                    
+                    total_length = r.headers.get('content-length')
+                    dl = 0
+                    with open(final_path, 'wb') as f:
+                        for chunk in r.iter_content(chunk_size=8192):
+                            if download_tasks.get(task_id, {}).get('status') == 'cancelled':
+                                r.close()
+                                raise Exception('DownloadCancelled')
+                            if chunk:
+                                dl += len(chunk)
+                                f.write(chunk)
+                                if total_length:
+                                    download_tasks[task_id]['progress'] = int(dl * 100 / int(total_length))
+                    
+                    download_tasks[task_id]['file_path'] = final_path
+                    download_tasks[task_id]['status'] = 'completed'
         
         except Exception as e:
-            logger.error(f"Task error {task_id}: {e}")
-            download_tasks[task_id]['status'] = 'error'
-            download_tasks[task_id]['error'] = str(e)
+            if str(e) == 'DownloadCancelled':
+                logger.info(f"Tarea {task_id} cancelada.")
+            else:
+                logger.error(f"Task error {task_id}: {e}")
+                download_tasks[task_id]['status'] = 'error'
+                download_tasks[task_id]['error'] = str(e)
 
     def serve_downloaded_file(self, path, filename):
          try:

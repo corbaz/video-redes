@@ -21,8 +21,14 @@ function showLinkedinVideo(data, container) {
         window.enableGlobalDownload(url, filename);
     }
 
+    // Prepare Click Handler for Preview
+    // Use encodeURIComponent for robustness
+    const encodedUrl = encodeURIComponent(url);
+    const encodedFilename = encodeURIComponent(filename);
+    const clickHandler = `onclick="if(window.startSmartDownload) { window.startSmartDownload(decodeURIComponent('${encodedUrl}'), decodeURIComponent('${encodedFilename}')); } else { console.error('SmartDownload not found'); }"`;
+
     const renderProCard = (contentHtml, badgeLabel, title) => `
-        <div class="video-card linkedin-video-card">
+        <div class="video-card linkedin-video-card" style="cursor: pointer;" ${clickHandler} title="Clic para descargar">
             <div class="video-preview-container linkedin-preview-container">
                 <!-- Badge Overlay -->
                 <div class="linkedin-badge">
@@ -74,8 +80,10 @@ function showLinkedinVideo(data, container) {
     }
 
     // Default Video render
+    // IMPORTANT: Pass originalUrl so card.js can set up the click handler for smart download
     const videoCardHTML = renderVideoCard({
         videoUrl: url,
+        originalUrl: url, 
         thumbnail: data.thumbnail,
         title: data.title,
         platform: 'linkedin'
