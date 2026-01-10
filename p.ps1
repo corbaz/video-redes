@@ -6,5 +6,5 @@ Get-Process -Name "pythonw" -ErrorAction SilentlyContinue | Stop-Process -Force
 Write-Host "Procesos Python terminados."
 Write-Host ""
 Write-Host "Iniciando servidor..."
-python server.py
+python src/server.py
 Read-Host "Presione Enter para continuar..."

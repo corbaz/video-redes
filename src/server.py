@@ -18,15 +18,14 @@ import threading
 import mimetypes
 
 # Importar extractores
-from insta_extractor import InstagramExtractor
-from linkedin_extractor import LinkedInExtractor
-from x_extractor import XExtractor
-from tiktok_extractor import TikTokExtractor
-from facebook_extractor import FacebookExtractor
-from facebook_extractor import FacebookExtractor
-from youtube_extractor import YouTubeExtractor
-from twitch_extractor import TwitchExtractor
-from pinterest_extractor import PinterestExtractor
+from instagram.insta_extractor import InstagramExtractor
+from linkedin.linkedin_extractor import LinkedInExtractor
+from x.x_extractor import XExtractor
+from tiktok.tiktok_extractor import TikTokExtractor
+from facebook.facebook_extractor import FacebookExtractor
+from youtube.youtube_extractor import YouTubeExtractor
+from twitch.twitch_extractor import TwitchExtractor
+from pinterest.pinterest_extractor import PinterestExtractor
 
 # Fix Windows Unicode Output
 if sys.platform == 'win32':

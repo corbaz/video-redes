@@ -34,6 +34,16 @@ El extractor de YouTube implementa un sistema de múltiples formatos para garant
 - 🎯 **480p** (Calidad estándar)
 - 🎯 **Auto** (Mejor disponible)
 
+## 📂 Estructura del Proyecto
+
+El proyecto se ha reestructurado para mejorar la organización y mantenibilidad:
+
+- `src/`: Contiene todo el código fuente del servidor y la lógica de la aplicación.
+  - `common/`: Archivos compartidos (estilos, utilidades JS).
+  - `[red_social]/`: Carpetas específicas para cada plataforma (JS, extractores Python).
+  - `server.py`: Punto de entrada del servidor.
+- `index.html`: Página principal de la aplicación.
+
 ## 🚀 Instalación y Uso
 
 ### 1. Requisitos
@@ -49,11 +59,8 @@ python -m pip install yt-dlp
 ### 2. Ejecutar el Servidor
 
 ```bash
-# Opción 1: Puerto por defecto (8000)
-python server.py
-
-# Opción 2: Puerto personalizado
-python server.py 8080
+# Ejecutar desde la raíz del proyecto
+python src/server.py
 ```
 
 ### 3. Acceder a la Aplicación

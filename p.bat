@@ -7,5 +7,5 @@ echo Procesos Python terminados.
 echo.
 echo Iniciando servidor...
 rem cd /d c:\www\insta
-python server.py
+python src/server.py
 pause

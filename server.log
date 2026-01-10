@@ -12979,3 +12979,314 @@ yt-dlp: error: no such option: --extract-flat
 2026-01-10 17:28:39,139 - INFO - 127.0.0.1 - "GET /api/download_status?id=bd698f74-2667-498f-a01c-4f6516115868 HTTP/1.1" 200 -
 2026-01-10 17:28:39,414 - INFO - 127.0.0.1 - "GET /api/download_file?id=bd698f74-2667-498f-a01c-4f6516115868 HTTP/1.1" 200 -
 2026-01-10 17:28:40,155 - INFO - 127.0.0.1 - "GET /api/download_cancel?id=bd698f74-2667-498f-a01c-4f6516115868 HTTP/1.1" 200 -
+2026-01-10 17:30:42,915 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 17:30:43,183 - INFO - Extrayendo video de: https://www.linkedin.com/posts/smitsjoshi_types-of-apis-ugcPost-7414043113712939008-BL-W?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-10 17:30:47,294 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/smitsjoshi_types-of-apis-ugcPost-7414043113712939008-BL-W?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-10 17:30:47,294 - INFO -    📺 Plataforma: linkedin
+2026-01-10 17:30:47,294 - INFO -    🎬 Título: Sin título...
+2026-01-10 17:30:47,294 - INFO -    🎯 Resolución: N/A
+2026-01-10 17:30:47,294 - INFO -    📁 Tamaño: N/A
+2026-01-10 17:30:47,295 - INFO -    ⏱️ Duración: 0s
+2026-01-10 17:30:47,295 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 17:30:51,147 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fdocument%2Fmedia%2Fv2%2FD561FAQH3NlE_JtyyiA%2Ffeedshare-document-pdf-analyzed%2FB56ZuP40CcKsAY-%2F0%2F1767645596251%3Fe%3D1769040000%26v%3Dbeta%26t%3DxvTxIKnb6TTkdHIlvTaL2ZMo4EWmM2FCWPcei9aD3rY&filename=types_of_apis___Smit_Joshi.pdf HTTP/1.1" 200 -
+2026-01-10 17:30:52,474 - INFO - 127.0.0.1 - "GET /api/download_status?id=4c4d71c3-b06b-4820-8958-8adee28fc0d8 HTTP/1.1" 200 -
+2026-01-10 17:30:52,741 - INFO - 127.0.0.1 - "GET /api/download_file?id=4c4d71c3-b06b-4820-8958-8adee28fc0d8 HTTP/1.1" 200 -
+2026-01-10 17:30:53,484 - INFO - 127.0.0.1 - "GET /api/download_cancel?id=4c4d71c3-b06b-4820-8958-8adee28fc0d8 HTTP/1.1" 200 -
+2026-01-10 17:33:41,106 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 17:33:41,348 - INFO - Extrayendo video de: https://www.linkedin.com/posts/rammcodes_html-ai-javascript-ugcPost-7415744759874600961-Lgrm?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-10 17:33:42,264 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/rammcodes_html-ai-javascript-ugcPost-7415744759874600961-Lgrm?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-10 17:33:42,264 - INFO -    📺 Plataforma: linkedin
+2026-01-10 17:33:42,264 - INFO -    🎬 Título: Sin título...
+2026-01-10 17:33:42,265 - INFO -    🎯 Resolución: N/A
+2026-01-10 17:33:42,265 - INFO -    📁 Tamaño: N/A
+2026-01-10 17:33:42,265 - INFO -    ⏱️ Duración: 0s
+2026-01-10 17:33:42,265 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 17:34:03,140 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fdms.licdn.com%2Fplaylist%2Fvid%2Fv2%2FD4D05AQEXsm5PNFN7Gw%2Fmp4-720p-30fp-crf28%2FB4DZuoE1ToKACM-%2F0%2F1768051404260%3Fe%3D2147483647%26v%3Dbeta%26t%3D4nR-L_4gMsIaYS7a0f6QQ6YR3VO97ekjQ6wF-xyqoWY&filename=_html__ai__javascript__webdevelopment__coding___Ra.mp4 HTTP/1.1" 200 -
+2026-01-10 17:34:03,141 - INFO - Fallback download via requests: https://dms.licdn.com/playlist/vid/v2/D4D05AQEXsm5PNFN7Gw/mp4-720p-30fp-crf28/B4DZuoE1ToKACM-/0/1768051404260?e=2147483647&v=beta&t=4nR-L_4gMsIaYS7a0f6QQ6YR3VO97ekjQ6wF-xyqoWY
+2026-01-10 17:34:04,471 - INFO - 127.0.0.1 - "GET /api/download_status?id=4b841778-e0d4-4cb2-af47-0217b4e900fd HTTP/1.1" 200 -
+2026-01-10 17:34:04,732 - INFO - 127.0.0.1 - "GET /api/download_file?id=4b841778-e0d4-4cb2-af47-0217b4e900fd HTTP/1.1" 200 -
+2026-01-10 17:34:05,489 - INFO - 127.0.0.1 - "GET /api/download_cancel?id=4b841778-e0d4-4cb2-af47-0217b4e900fd HTTP/1.1" 200 -
+2026-01-10 17:34:43,063 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fdms.licdn.com%2Fplaylist%2Fvid%2Fv2%2FD4D05AQEXsm5PNFN7Gw%2Fmp4-720p-30fp-crf28%2FB4DZuoE1ToKACM-%2F0%2F1768051404260%3Fe%3D2147483647%26v%3Dbeta%26t%3D4nR-L_4gMsIaYS7a0f6QQ6YR3VO97ekjQ6wF-xyqoWY&filename=_html__ai__javascript__webdevelopment__coding___Ra.mp4 HTTP/1.1" 200 -
+2026-01-10 17:34:43,063 - INFO - Fallback download via requests: https://dms.licdn.com/playlist/vid/v2/D4D05AQEXsm5PNFN7Gw/mp4-720p-30fp-crf28/B4DZuoE1ToKACM-/0/1768051404260?e=2147483647&v=beta&t=4nR-L_4gMsIaYS7a0f6QQ6YR3VO97ekjQ6wF-xyqoWY
+2026-01-10 17:34:44,074 - INFO - 127.0.0.1 - "GET /api/download_status?id=6dc32934-ab22-4ea8-93dd-d1634b492572 HTTP/1.1" 200 -
+2026-01-10 17:34:44,435 - INFO - 127.0.0.1 - "GET /api/download_file?id=6dc32934-ab22-4ea8-93dd-d1634b492572 HTTP/1.1" 200 -
+2026-01-10 17:34:45,094 - INFO - 127.0.0.1 - "GET /api/download_cancel?id=6dc32934-ab22-4ea8-93dd-d1634b492572 HTTP/1.1" 200 -
+2026-01-10 17:35:44,692 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 18:06:46,726 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2026-01-10 18:06:46,790 - INFO - 192.168.1.150 - "GET /card.js?v=20260110_3 HTTP/1.1" 200 -
+2026-01-10 18:06:46,790 - INFO - 192.168.1.150 - "GET /style.css HTTP/1.1" 200 -
+2026-01-10 18:06:46,790 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20260110_5 HTTP/1.1" 200 -
+2026-01-10 18:06:46,790 - INFO - 192.168.1.150 - "GET /insta.js?v=20260110_3 HTTP/1.1" 200 -
+2026-01-10 18:06:46,791 - INFO - 192.168.1.150 - "GET /x.js?v=20260110_3 HTTP/1.1" 200 -
+2026-01-10 18:06:46,791 - INFO - 192.168.1.150 - "GET /tiktok.js?v=20260110_3 HTTP/1.1" 200 -
+2026-01-10 18:06:46,810 - INFO - 192.168.1.150 - "GET /facebook.js?v=20260110_3 HTTP/1.1" 200 -
+2026-01-10 18:06:46,810 - INFO - 192.168.1.150 - "GET /twitch.js?v=20260110_3 HTTP/1.1" 200 -
+2026-01-10 18:06:46,811 - INFO - 192.168.1.150 - "GET /youtube.js?v=20260110_5 HTTP/1.1" 200 -
+2026-01-10 18:06:46,814 - INFO - 192.168.1.150 - "GET /pinterest.js?v=20260110_3 HTTP/1.1" 200 -
+2026-01-10 18:06:46,907 - INFO - 192.168.1.150 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 18:37:26,988 - INFO - ============================================================
+2026-01-10 18:37:26,988 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-10 18:37:26,988 - INFO - ============================================================
+2026-01-10 18:37:26,988 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-10 18:37:26,988 - INFO - Acceso local: http://localhost:8000
+2026-01-10 18:37:26,989 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-10 18:37:26,989 - INFO - Endpoints disponibles:
+2026-01-10 18:37:26,989 - INFO -   POST /api/validate - Validar URLs
+2026-01-10 18:37:26,989 - INFO -   POST /api/extract - Extraer videos
+2026-01-10 18:37:26,989 - INFO - Presiona Ctrl+C para detener
+2026-01-10 18:37:26,989 - INFO - ============================================================
+2026-01-10 18:37:46,689 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 18:37:46,783 - INFO - 127.0.0.1 - "GET /src/common/style.css HTTP/1.1" 200 -
+2026-01-10 18:37:46,953 - WARNING - Archivo no encontrado: card.js
+2026-01-10 18:37:46,953 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 18:37:46,953 - INFO - 127.0.0.1 - "GET /card.js?v=20260110_3 HTTP/1.1" 404 -
+2026-01-10 18:37:47,089 - WARNING - Archivo no encontrado: insta.js
+2026-01-10 18:37:47,089 - WARNING - Archivo no encontrado: linkedin.js
+2026-01-10 18:37:47,089 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 18:37:47,090 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 18:37:47,090 - WARNING - Archivo no encontrado: x.js
+2026-01-10 18:37:47,090 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 18:37:47,090 - INFO - 127.0.0.1 - "GET /insta.js?v=20260110_3 HTTP/1.1" 404 -
+2026-01-10 18:37:47,091 - WARNING - Archivo no encontrado: tiktok.js
+2026-01-10 18:37:47,091 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260110_5 HTTP/1.1" 404 -
+2026-01-10 18:37:47,091 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 18:37:47,091 - INFO - 127.0.0.1 - "GET /x.js?v=20260110_3 HTTP/1.1" 404 -
+2026-01-10 18:37:47,092 - WARNING - Archivo no encontrado: facebook.js
+2026-01-10 18:37:47,092 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260110_3 HTTP/1.1" 404 -
+2026-01-10 18:37:47,093 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 18:37:47,094 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260110_3 HTTP/1.1" 404 -
+2026-01-10 18:37:47,261 - WARNING - Archivo no encontrado: youtube.js
+2026-01-10 18:37:47,261 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 18:37:47,261 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260110_5 HTTP/1.1" 404 -
+2026-01-10 18:37:47,403 - WARNING - Archivo no encontrado: twitch.js
+2026-01-10 18:37:47,403 - WARNING - Archivo no encontrado: pinterest.js
+2026-01-10 18:37:47,403 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 18:37:47,403 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 18:37:47,404 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260110_3 HTTP/1.1" 404 -
+2026-01-10 18:37:47,404 - INFO - 127.0.0.1 - "GET /pinterest.js?v=20260110_3 HTTP/1.1" 404 -
+2026-01-10 18:37:48,277 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 18:37:54,307 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 18:37:54,614 - INFO - Extrayendo video de: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-10 18:37:57,215 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-10 18:37:57,216 - INFO -    📺 Plataforma: linkedin
+2026-01-10 18:37:57,216 - INFO -    🎬 Título: Sin título...
+2026-01-10 18:37:57,216 - INFO -    🎯 Resolución: N/A
+2026-01-10 18:37:57,216 - INFO -    📁 Tamaño: N/A
+2026-01-10 18:37:57,216 - INFO -    ⏱️ Duración: 0s
+2026-01-10 18:37:57,216 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 18:38:06,307 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 18:38:06,611 - INFO - Extrayendo video de: https://pin.it/2nIBQYqih
+2026-01-10 18:38:06,611 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-10 18:38:09,613 - INFO - ✅ Extracción exitosa para: https://pin.it/2nIBQYqih
+2026-01-10 18:38:09,614 - INFO -    📺 Plataforma: pinterest
+2026-01-10 18:38:09,614 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-10 18:38:09,614 - INFO -    🎯 Resolución: N/A
+2026-01-10 18:38:09,614 - INFO -    📁 Tamaño: N/A
+2026-01-10 18:38:09,614 - INFO -    ⏱️ Duración: 23.967s
+2026-01-10 18:38:09,615 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 18:38:17,558 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 18:38:17,863 - INFO - Extrayendo video de: https://www.tiktok.com/@aibysora20/video/7581489170586012941?is_from_webapp=1&sender_device=pc
+2026-01-10 18:38:18,805 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@aibysora20/video/7581489170586012941?is_from_webapp=1&sender_device=pc
+2026-01-10 18:38:18,806 - INFO -    📺 Plataforma: tiktok
+2026-01-10 18:38:18,806 - INFO -    🎬 Título: Sin título...
+2026-01-10 18:38:18,806 - INFO -    🎯 Resolución: N/A
+2026-01-10 18:38:18,806 - INFO -    📁 Tamaño: N/A
+2026-01-10 18:38:18,806 - INFO -    ⏱️ Duración: 0s
+2026-01-10 18:38:18,807 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 18:38:25,904 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 18:38:26,218 - INFO - Extrayendo video de: https://www.twitch.tv/videos/2663661756
+2026-01-10 18:38:27,702 - INFO - ✅ Extracción exitosa para: https://www.twitch.tv/videos/2663661756
+2026-01-10 18:38:27,702 - INFO -    📺 Plataforma: twitch
+2026-01-10 18:38:27,702 - INFO -    🎬 Título: Sin título...
+2026-01-10 18:38:27,702 - INFO -    🎯 Resolución: N/A
+2026-01-10 18:38:27,703 - INFO -    📁 Tamaño: N/A
+2026-01-10 18:38:27,703 - INFO -    ⏱️ Duración: 0s
+2026-01-10 18:38:27,703 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 18:38:38,385 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 18:38:38,702 - INFO - Extrayendo video de: https://youtu.be/Mu-ijc76QGg?si=Q8cFjKs3YZd3fW64
+2026-01-10 18:38:40,612 - INFO - ✅ Extracción exitosa para: https://youtu.be/Mu-ijc76QGg?si=Q8cFjKs3YZd3fW64
+2026-01-10 18:38:40,612 - INFO -    📺 Plataforma: youtube
+2026-01-10 18:38:40,613 - INFO -    🎬 Título: Google Antigravity + n8n: Crea Apps Brutales con A...
+2026-01-10 18:38:40,613 - INFO -    🎯 Resolución: 1080p
+2026-01-10 18:38:40,613 - INFO -    📁 Tamaño: N/A
+2026-01-10 18:38:40,613 - INFO -    ⏱️ Duración: 2111s
+2026-01-10 18:38:40,614 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 18:38:46,602 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 18:38:46,912 - INFO - Extrayendo video de: https://x.com/GustavoBolsa/status/2008488703484715271?s=20
+2026-01-10 18:38:48,194 - INFO - ✅ Extracción exitosa para: https://x.com/GustavoBolsa/status/2008488703484715271?s=20
+2026-01-10 18:38:48,194 - INFO -    📺 Plataforma: x
+2026-01-10 18:38:48,194 - INFO -    🎬 Título: Sin título...
+2026-01-10 18:38:48,195 - INFO -    🎯 Resolución: N/A
+2026-01-10 18:38:48,195 - INFO -    📁 Tamaño: N/A
+2026-01-10 18:38:48,195 - INFO -    ⏱️ Duración: 0s
+2026-01-10 18:38:48,195 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 18:39:47,176 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 18:40:57,121 - INFO - ============================================================
+2026-01-10 18:40:57,121 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-10 18:40:57,121 - INFO - ============================================================
+2026-01-10 18:40:57,122 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-10 18:40:57,122 - INFO - Acceso local: http://localhost:8000
+2026-01-10 18:40:57,122 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-10 18:40:57,122 - INFO - Endpoints disponibles:
+2026-01-10 18:40:57,122 - INFO -   POST /api/validate - Validar URLs
+2026-01-10 18:40:57,122 - INFO -   POST /api/extract - Extraer videos
+2026-01-10 18:40:57,122 - INFO - Presiona Ctrl+C para detener
+2026-01-10 18:40:57,122 - INFO - ============================================================
+2026-01-10 18:41:01,054 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 18:41:01,138 - INFO - 127.0.0.1 - "GET /src/common/card.js?v=20260110_6 HTTP/1.1" 200 -
+2026-01-10 18:41:01,314 - INFO - 127.0.0.1 - "GET /src/common/style.css HTTP/1.1" 200 -
+2026-01-10 18:41:01,439 - INFO - 127.0.0.1 - "GET /src/linkedin/linkedin.js?v=20260110_6 HTTP/1.1" 200 -
+2026-01-10 18:41:01,439 - INFO - 127.0.0.1 - "GET /src/instagram/insta.js?v=20260110_6 HTTP/1.1" 200 -
+2026-01-10 18:41:01,440 - INFO - 127.0.0.1 - "GET /src/x/x.js?v=20260110_6 HTTP/1.1" 200 -
+2026-01-10 18:41:01,440 - INFO - 127.0.0.1 - "GET /src/tiktok/tiktok.js?v=20260110_6 HTTP/1.1" 200 -
+2026-01-10 18:41:01,442 - INFO - 127.0.0.1 - "GET /src/facebook/facebook.js?v=20260110_6 HTTP/1.1" 200 -
+2026-01-10 18:41:01,626 - INFO - 127.0.0.1 - "GET /src/youtube/youtube.js?v=20260110_6 HTTP/1.1" 200 -
+2026-01-10 18:41:01,743 - INFO - 127.0.0.1 - "GET /src/pinterest/pinterest.js?v=20260110_6 HTTP/1.1" 200 -
+2026-01-10 18:41:01,744 - INFO - 127.0.0.1 - "GET /src/twitch/twitch.js?v=20260110_6 HTTP/1.1" 200 -
+2026-01-10 18:41:02,521 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 18:41:04,218 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 18:41:04,523 - INFO - Extrayendo video de: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-10 18:41:06,734 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-10 18:41:06,734 - INFO -    📺 Plataforma: linkedin
+2026-01-10 18:41:06,734 - INFO -    🎬 Título: Sin título...
+2026-01-10 18:41:06,734 - INFO -    🎯 Resolución: N/A
+2026-01-10 18:41:06,734 - INFO -    📁 Tamaño: N/A
+2026-01-10 18:41:06,735 - INFO -    ⏱️ Duración: 0s
+2026-01-10 18:41:06,735 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 18:41:09,083 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fdocument%2Fmedia%2Fv2%2FD4E1FAQGel9bYPseHDA%2Ffeedshare-document-pdf-analyzed%2FB4EZueRYajK8AY-%2F0%2F1767886917539%3Fe%3D1769040000%26v%3Dbeta%26t%3DTwFhBSMgMjLLEwWuF8aMmzECEHswiRU9mbd9ZUhtfdM&filename=Array_Techniques_for_Coding_Interviews___NeetCode_.pdf HTTP/1.1" 200 -
+2026-01-10 18:41:10,393 - INFO - 127.0.0.1 - "GET /api/download_status?id=9aa7a1f5-4dac-4e2f-8a02-09d8eacb36f2 HTTP/1.1" 200 -
+2026-01-10 18:41:10,657 - INFO - 127.0.0.1 - "GET /api/download_file?id=9aa7a1f5-4dac-4e2f-8a02-09d8eacb36f2 HTTP/1.1" 200 -
+2026-01-10 18:41:11,400 - INFO - 127.0.0.1 - "GET /api/download_cancel?id=9aa7a1f5-4dac-4e2f-8a02-09d8eacb36f2 HTTP/1.1" 200 -
+2026-01-10 18:41:57,758 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 18:41:58,028 - INFO - Extrayendo video de: https://pin.it/2nIBQYqih
+2026-01-10 18:41:58,029 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-10 18:42:01,044 - INFO - ✅ Extracción exitosa para: https://pin.it/2nIBQYqih
+2026-01-10 18:42:01,044 - INFO -    📺 Plataforma: pinterest
+2026-01-10 18:42:01,044 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-10 18:42:01,045 - INFO -    🎯 Resolución: N/A
+2026-01-10 18:42:01,045 - INFO -    📁 Tamaño: N/A
+2026-01-10 18:42:01,045 - INFO -    ⏱️ Duración: 23.967s
+2026-01-10 18:42:01,045 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 18:42:02,952 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fv1.pinimg.com%2Fvideos%2Fiht%2Fhls%2Fbe%2F3d%2F5c%2Fbe3d5cb3bf417085544b952533ff223a_720w.m3u8&filename=Kaise__jiunga_kaise_.mp4 HTTP/1.1" 200 -
+2026-01-10 18:42:04,273 - INFO - 127.0.0.1 - "GET /api/download_status?id=398dade4-da1e-4555-85f5-16256769631c HTTP/1.1" 200 -
+2026-01-10 18:42:04,533 - INFO - 127.0.0.1 - "GET /api/download_file?id=398dade4-da1e-4555-85f5-16256769631c HTTP/1.1" 200 -
+2026-01-10 18:42:05,283 - INFO - 127.0.0.1 - "GET /api/download_cancel?id=398dade4-da1e-4555-85f5-16256769631c HTTP/1.1" 200 -
+2026-01-10 18:42:42,474 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 18:42:42,728 - INFO - Extrayendo video de: https://www.tiktok.com/@aibysora20/video/7581489170586012941?is_from_webapp=1&sender_device=pc
+2026-01-10 18:42:43,744 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@aibysora20/video/7581489170586012941?is_from_webapp=1&sender_device=pc
+2026-01-10 18:42:43,744 - INFO -    📺 Plataforma: tiktok
+2026-01-10 18:42:43,744 - INFO -    🎬 Título: Sin título...
+2026-01-10 18:42:43,744 - INFO -    🎯 Resolución: N/A
+2026-01-10 18:42:43,744 - INFO -    📁 Tamaño: N/A
+2026-01-10 18:42:43,745 - INFO -    ⏱️ Duración: 0s
+2026-01-10 18:42:43,745 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 18:42:53,055 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fwww.tiktok.com%2F%40aibysora20%2Fvideo%2F7581489170586012941%3Fis_from_webapp%3D1%26sender_device%3Dpc&filename=video.mp4 HTTP/1.1" 200 -
+2026-01-10 18:42:54,391 - INFO - 127.0.0.1 - "GET /api/download_status?id=c636596d-d58d-4ee2-bccf-016de50f7d72 HTTP/1.1" 200 -
+2026-01-10 18:42:54,652 - INFO - 127.0.0.1 - "GET /api/download_file?id=c636596d-d58d-4ee2-bccf-016de50f7d72 HTTP/1.1" 200 -
+2026-01-10 18:42:55,408 - INFO - 127.0.0.1 - "GET /api/download_cancel?id=c636596d-d58d-4ee2-bccf-016de50f7d72 HTTP/1.1" 200 -
+2026-01-10 18:43:04,502 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fwww.tiktok.com%2F%40aibysora20%2Fvideo%2F7581489170586012941%3Fis_from_webapp%3D1%26sender_device%3Dpc&filename=video.mp4 HTTP/1.1" 200 -
+2026-01-10 18:43:05,515 - INFO - 127.0.0.1 - "GET /api/download_status?id=38f25812-1c45-451b-99ec-e0de68ab05fa HTTP/1.1" 200 -
+2026-01-10 18:43:06,824 - INFO - 127.0.0.1 - "GET /api/download_status?id=38f25812-1c45-451b-99ec-e0de68ab05fa HTTP/1.1" 200 -
+2026-01-10 18:43:07,087 - INFO - 127.0.0.1 - "GET /api/download_file?id=38f25812-1c45-451b-99ec-e0de68ab05fa HTTP/1.1" 200 -
+2026-01-10 18:43:07,832 - INFO - 127.0.0.1 - "GET /api/download_cancel?id=38f25812-1c45-451b-99ec-e0de68ab05fa HTTP/1.1" 200 -
+2026-01-10 18:43:23,755 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fwww.tiktok.com%2F%40aibysora20%2Fvideo%2F7581489170586012941%3Fis_from_webapp%3D1%26sender_device%3Dpc&filename=video.mp4 HTTP/1.1" 200 -
+2026-01-10 18:43:24,770 - INFO - 127.0.0.1 - "GET /api/download_status?id=fc847fae-39e5-44bc-921c-51c630bd46bf HTTP/1.1" 200 -
+2026-01-10 18:43:26,064 - INFO - 127.0.0.1 - "GET /api/download_status?id=fc847fae-39e5-44bc-921c-51c630bd46bf HTTP/1.1" 200 -
+2026-01-10 18:43:26,338 - INFO - 127.0.0.1 - "GET /api/download_file?id=fc847fae-39e5-44bc-921c-51c630bd46bf HTTP/1.1" 200 -
+2026-01-10 18:43:27,071 - INFO - 127.0.0.1 - "GET /api/download_cancel?id=fc847fae-39e5-44bc-921c-51c630bd46bf HTTP/1.1" 200 -
+2026-01-10 18:44:02,476 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 18:44:02,739 - INFO - Extrayendo video de: https://youtu.be/Mu-ijc76QGg?si=Q8cFjKs3YZd3fW64
+2026-01-10 18:44:04,546 - INFO - ✅ Extracción exitosa para: https://youtu.be/Mu-ijc76QGg?si=Q8cFjKs3YZd3fW64
+2026-01-10 18:44:04,546 - INFO -    📺 Plataforma: youtube
+2026-01-10 18:44:04,546 - INFO -    🎬 Título: Google Antigravity + n8n: Crea Apps Brutales con A...
+2026-01-10 18:44:04,547 - INFO -    🎯 Resolución: 1080p
+2026-01-10 18:44:04,547 - INFO -    📁 Tamaño: N/A
+2026-01-10 18:44:04,547 - INFO -    ⏱️ Duración: 2111s
+2026-01-10 18:44:04,547 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 18:44:08,375 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fyoutu.be%2FMu-ijc76QGg%3Fsi%3DQ8cFjKs3YZd3fW64&filename=Google%20Antigravity%20%2B%20n8n%20Crea%20Apps%20Brutales%20con%20Agentes%20IA%20GRATIS%20(sin%20c%C3%B3digo).mp4 HTTP/1.1" 200 -
+2026-01-10 18:44:09,703 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:10,398 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:11,700 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:12,391 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:13,708 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:14,392 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:15,707 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:16,398 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:17,707 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:18,398 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:19,705 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:20,389 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:21,703 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:22,394 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:23,696 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:24,392 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:25,689 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:26,388 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:27,694 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:28,388 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:29,696 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:30,394 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:31,698 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:32,396 - INFO - 127.0.0.1 - "GET /api/download_status?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:32,741 - INFO - 127.0.0.1 - "GET /api/download_file?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:44:33,412 - INFO - 127.0.0.1 - "GET /api/download_cancel?id=74c3077a-bb3f-4066-846d-6b202824cc4f HTTP/1.1" 200 -
+2026-01-10 18:45:29,598 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 18:45:29,908 - INFO - Extrayendo video de: https://x.com/GustavoBolsa/status/2008488703484715271?s=20
+2026-01-10 18:45:31,017 - INFO - ✅ Extracción exitosa para: https://x.com/GustavoBolsa/status/2008488703484715271?s=20
+2026-01-10 18:45:31,017 - INFO -    📺 Plataforma: x
+2026-01-10 18:45:31,017 - INFO -    🎬 Título: Sin título...
+2026-01-10 18:45:31,017 - INFO -    🎯 Resolución: N/A
+2026-01-10 18:45:31,017 - INFO -    📁 Tamaño: N/A
+2026-01-10 18:45:31,018 - INFO -    ⏱️ Duración: 0s
+2026-01-10 18:45:31,018 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 18:45:33,878 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fvideo.twimg.com%2Famplify_video%2F2008488581816303616%2Fvid%2Favc1%2F720x1280%2FeGy3YMpxzVlKnbjF.mp4%3Ftag%3D21&filename=video.mp4 HTTP/1.1" 200 -
+2026-01-10 18:45:33,878 - INFO - Fallback download via requests: https://video.twimg.com/amplify_video/2008488581816303616/vid/avc1/720x1280/eGy3YMpxzVlKnbjF.mp4?tag=21
+2026-01-10 18:45:34,278 - ERROR - Failed to download: 403
+2026-01-10 18:45:34,278 - ERROR - Task error 00a6d7cd-b9e2-480d-a7b5-8dfff832417b: Error descarga HTTP: 403
+2026-01-10 18:45:35,188 - INFO - 127.0.0.1 - "GET /api/download_status?id=00a6d7cd-b9e2-480d-a7b5-8dfff832417b HTTP/1.1" 200 -
+2026-01-10 18:45:43,198 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fvideo.twimg.com%2Famplify_video%2F2008488581816303616%2Fvid%2Favc1%2F720x1280%2FeGy3YMpxzVlKnbjF.mp4%3Ftag%3D21&filename=twitter_video.mp4 HTTP/1.1" 200 -
+2026-01-10 18:45:43,198 - INFO - Fallback download via requests: https://video.twimg.com/amplify_video/2008488581816303616/vid/avc1/720x1280/eGy3YMpxzVlKnbjF.mp4?tag=21
+2026-01-10 18:45:43,585 - ERROR - Failed to download: 403
+2026-01-10 18:45:43,585 - ERROR - Task error 1c011ac9-f5d1-44d7-9fa5-10f17aeccc45: Error descarga HTTP: 403
+2026-01-10 18:45:44,507 - INFO - 127.0.0.1 - "GET /api/download_status?id=1c011ac9-f5d1-44d7-9fa5-10f17aeccc45 HTTP/1.1" 200 -
+2026-01-10 18:46:02,935 - INFO - ============================================================
+2026-01-10 18:46:02,935 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-10 18:46:02,935 - INFO - ============================================================
+2026-01-10 18:46:02,935 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-10 18:46:02,936 - INFO - Acceso local: http://localhost:8000
+2026-01-10 18:46:02,936 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-10 18:46:02,936 - INFO - Endpoints disponibles:
+2026-01-10 18:46:02,936 - INFO -   POST /api/validate - Validar URLs
+2026-01-10 18:46:02,936 - INFO -   POST /api/extract - Extraer videos
+2026-01-10 18:46:02,936 - INFO - Presiona Ctrl+C para detener
+2026-01-10 18:46:02,936 - INFO - ============================================================
+2026-01-10 18:46:29,330 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 18:46:29,585 - INFO - Extrayendo video de: https://x.com/GustavoBolsa/status/2008488703484715271?s=20
+2026-01-10 18:46:30,759 - INFO - ✅ Extracción exitosa para: https://x.com/GustavoBolsa/status/2008488703484715271?s=20
+2026-01-10 18:46:30,759 - INFO -    📺 Plataforma: x
+2026-01-10 18:46:30,759 - INFO -    🎬 Título: Sin título...
+2026-01-10 18:46:30,760 - INFO -    🎯 Resolución: N/A
+2026-01-10 18:46:30,760 - INFO -    📁 Tamaño: N/A
+2026-01-10 18:46:30,760 - INFO -    ⏱️ Duración: 0s
+2026-01-10 18:46:30,760 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 18:46:35,320 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fvideo.twimg.com%2Famplify_video%2F2008488581816303616%2Fvid%2Favc1%2F720x1280%2FeGy3YMpxzVlKnbjF.mp4%3Ftag%3D21&filename=twitter_video.mp4 HTTP/1.1" 200 -
+2026-01-10 18:46:35,320 - INFO - Fallback download via requests: https://video.twimg.com/amplify_video/2008488581816303616/vid/avc1/720x1280/eGy3YMpxzVlKnbjF.mp4?tag=21
+2026-01-10 18:46:35,705 - ERROR - Failed to download: 403
+2026-01-10 18:46:35,705 - ERROR - Task error 41d897c3-3672-4776-9558-796b0a5c304c: Error descarga HTTP: 403
+2026-01-10 18:46:36,653 - INFO - 127.0.0.1 - "GET /api/download_status?id=41d897c3-3672-4776-9558-796b0a5c304c HTTP/1.1" 200 -
+2026-01-10 18:46:55,000 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 18:46:55,331 - INFO - Extrayendo video de: https://x.com/GustavoBolsa/status/2008488703484715271?s=20
+2026-01-10 18:46:56,355 - INFO - ✅ Extracción exitosa para: https://x.com/GustavoBolsa/status/2008488703484715271?s=20
+2026-01-10 18:46:56,355 - INFO -    📺 Plataforma: x
+2026-01-10 18:46:56,355 - INFO -    🎬 Título: Sin título...
+2026-01-10 18:46:56,355 - INFO -    🎯 Resolución: N/A
+2026-01-10 18:46:56,356 - INFO -    📁 Tamaño: N/A
+2026-01-10 18:46:56,356 - INFO -    ⏱️ Duración: 0s
+2026-01-10 18:46:56,356 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 18:47:02,008 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fvideo.twimg.com%2Famplify_video%2F2008488581816303616%2Fvid%2Favc1%2F720x1280%2FeGy3YMpxzVlKnbjF.mp4%3Ftag%3D21&filename=video.mp4 HTTP/1.1" 200 -
+2026-01-10 18:47:02,009 - INFO - Fallback download via requests: https://video.twimg.com/amplify_video/2008488581816303616/vid/avc1/720x1280/eGy3YMpxzVlKnbjF.mp4?tag=21
+2026-01-10 18:47:02,424 - ERROR - Failed to download: 403
+2026-01-10 18:47:02,424 - ERROR - Task error daa73786-b6ed-4c8b-bf98-e370be2c0c1d: Error descarga HTTP: 403
+2026-01-10 18:47:03,342 - INFO - 127.0.0.1 - "GET /api/download_status?id=daa73786-b6ed-4c8b-bf98-e370be2c0c1d HTTP/1.1" 200 -
+2026-01-10 18:47:09,717 - INFO - Servidor detenido por usuario
+2026-01-10 18:47:09,718 - INFO - Servidor cerrado correctamente
