@@ -44,6 +44,7 @@ function isValidFacebookUrl(url) {
         /^https?:\/\/(www\.)?facebook\.com\/.*\/posts?\//,
         /^https?:\/\/(www\.)?facebook\.com\/share\//,
         /^https?:\/\/(www\.)?facebook\.com\/watch\//,
+        /^https?:\/\/(www\.)?facebook\.com\/reel\//,
         /^https?:\/\/fb\.watch\//,
         /^https?:\/\/m\.facebook\.com\//,
     ];
@@ -54,8 +55,11 @@ function isValidFacebookUrl(url) {
 // Mostrar video de Facebook usando el mismo template que las otras plataformas
 function showFacebookVideo(data, container) {
     console.log("📘 Mostrando video de Facebook:", data);
+    
+    // Normalizar URL (backend envía video_url, frontend espera videoUrl)
+    const url = data.video_url || data.videoUrl || "";
 
-    if (!data.videoUrl) {
+    if (!url) {
         console.error("❌ No se encontró URL del video de Facebook");
         container.innerHTML = `<div class="error"><h3>No se encontró URL del video de Facebook</h3></div>`;
         return;
@@ -63,12 +67,12 @@ function showFacebookVideo(data, container) {
 
     // Enable global download
     if (window.enableGlobalDownload) {
-        window.enableGlobalDownload(data.videoUrl, "facebook_video.mp4");
+        window.enableGlobalDownload(url, "facebook_video.mp4");
     }
 
     // Usar el mismo template unificado que Instagram, LinkedIn, X y TikTok
     const cardHtml = renderVideoCard({
-        videoUrl: data.videoUrl,
+        videoUrl: url,
         thumbnail: data.thumbnail
     });
 

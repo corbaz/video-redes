@@ -26,6 +26,7 @@ from facebook_extractor import FacebookExtractor
 from facebook_extractor import FacebookExtractor
 from youtube_extractor import YouTubeExtractor
 from twitch_extractor import TwitchExtractor
+from pinterest_extractor import PinterestExtractor
 
 # Fix Windows Unicode Output
 if sys.platform == 'win32':
@@ -178,9 +179,12 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                     download_tasks[task_id]['progress'] = 0
 
             # Validar e iniciar descarga similar a handle_download pero actualizando task
-            is_supported_hq = any(d in url for d in ['youtube.com', 'youtu.be', 'tiktok.com', 'vm.tiktok.com', 'twitch.tv'])
+            # Detectar si es una imagen por la extensión solicitada
+            is_image = any(filename.lower().endswith(ext) for ext in ['.jpg', '.jpeg', '.png', '.webp', '.gif'])
             
-            if is_supported_hq:
+            is_supported_hq = any(d in url for d in ['youtube.com', 'youtu.be', 'tiktok.com', 'vm.tiktok.com', 'twitch.tv', 'pinterest.com', 'pin.it', 'pinimg.com'])
+            
+            if is_supported_hq and not is_image:
                 unique_id = str(uuid.uuid4())
                 filename_base = f"yt_{unique_id}"
                 
@@ -322,10 +326,14 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             # IMPORTANTE: Los links de googlevideo.com NO son links de YouTube válidos para yt-dlp HQ.
             # Necesitamos la URL original de YouTube.
             # Detectar si es YouTube o TikTok (ambos soportados por yt-dlp para mejor calidad)
+            # Detectar si es YouTube o TikTok (ambos soportados por yt-dlp para mejor calidad)
             # IMPORTANTE: Los links de googlevideo.com NO son links de YouTube válidos para yt-dlp HQ.
-            is_supported_hq = any(d in url for d in ['youtube.com', 'youtu.be', 'tiktok.com', 'vm.tiktok.com', 'twitch.tv'])
+            is_supported_hq = any(d in url for d in ['youtube.com', 'youtu.be', 'tiktok.com', 'vm.tiktok.com', 'twitch.tv', 'pinterest.com', 'pin.it', 'pinimg.com'])
             
-            if is_supported_hq:
+            # Detectar si es una imagen
+            is_image = any(filename.lower().endswith(ext) for ext in ['.jpg', '.jpeg', '.png', '.webp', '.gif'])
+            
+            if is_supported_hq and not is_image:
                 logger.info(f"🚀 Iniciando descarga HQ con librerías para: {url[:100]}...")
                 
                 # Configuración de salida
@@ -548,7 +556,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 return
 
             # Validar URL según plataforma
-            if any(domain in url for domain in ['instagram.com', 'linkedin.com', 'x.com', 'twitter.com', 'tiktok.com', 'facebook.com', 'fb.watch', 'youtube.com', 'youtu.be', 'm.youtube.com', 'twitch.tv', 'twitch.com']):
+            if any(domain in url for domain in ['instagram.com', 'linkedin.com', 'x.com', 'twitter.com', 'tiktok.com', 'facebook.com', 'fb.watch', 'youtube.com', 'youtu.be', 'm.youtube.com', 'twitch.tv', 'twitch.com', 'pinterest.com', 'pin.it']):
                 self.send_json_response({
                     'success': True,
                     'url': url,
@@ -557,7 +565,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             else:
                 self.send_json_response({
                     'success': False,
-                    'error': 'Plataforma no soportada. Usa Instagram, LinkedIn, X/Twitter, TikTok, Facebook, YouTube o Twitch.'
+                    'error': 'Enlace no reconocido. Verifica que sea de una plataforma soportada (Instagram, TikTok, YouTube, Pinterest, etc.).'
                 }, 400)
 
         except Exception as e:
@@ -644,10 +652,13 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             elif 'youtube.com' in url or 'youtu.be' in url or 'm.youtube.com' in url:
                 extractor = YouTubeExtractor()
                 platform = 'youtube'
+            elif 'pinterest.com' in url or 'pin.it' in url:
+                extractor = PinterestExtractor()
+                platform = 'pinterest'
             else:
                 return {
                     'success': False,
-                    'error': 'Plataforma no soportada. Usa Instagram, LinkedIn, X/Twitter, TikTok, Facebook o YouTube.'
+                    'error': 'Plataforma no soportada. Verifica que el enlace sea correcto.'
                 }
 
             # Extraer video usando el método extract_info del extractor
@@ -781,6 +792,18 @@ if __name__ == '__main__':
         print("Facebook extractor: OK")
     except Exception as e:
         print(f"Facebook extractor error: {e}")
+
+    try:
+        from twitch_extractor import TwitchExtractor
+        print("Twitch extractor: OK")
+    except Exception as e:
+        print(f"Twitch extractor error: {e}")
+
+    try:
+        from pinterest_extractor import PinterestExtractor
+        print("Pinterest extractor: OK")
+    except Exception as e:
+        print(f"Pinterest extractor error: {e}")
 
     print()
     run_server()

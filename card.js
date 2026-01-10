@@ -6,11 +6,11 @@ function renderVideoCard({ videoUrl = "", thumbnail = "", title = "video", origi
   if (thumbnail) {
     return `
         <div class="video-thumbnail-container video-card-container">
-          <div style="position:relative; width:100%; padding-bottom:177.78%; background:#000; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+          <div class="card-video-container">
             <img src="${thumbnail}" alt="${title.replace(/"/g, '&quot;')}"
-                 style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; border-radius:12px;">
+                 class="card-video-element">
              <!-- Play icon overlay to indicate it is a video -->
-             <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; opacity: 0.8;">▶️</div>
+             <div class="card-play-icon">▶️</div>
           </div>
         </div>
       `;
@@ -18,9 +18,9 @@ function renderVideoCard({ videoUrl = "", thumbnail = "", title = "video", origi
     // Fallback: Use HTML5 Video to show first frame
     return `
         <div class="video-thumbnail-container video-card-container">
-          <div style="position:relative; width:100%; padding-bottom:177.78%; background:#000; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+          <div class="card-video-container">
             <video src="${videoUrl}#t=0.01" preload="metadata" muted playsinline controls
-                   style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; border-radius:12px;">
+                   class="card-video-element">
             </video>
           </div>
         </div>

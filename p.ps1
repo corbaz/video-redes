@@ -1,4 +1,5 @@
 Clear-Host
+c:/www/video-redes/.venv/Scripts/Activate.ps1
 Write-Host "Matando procesos Python existentes..."
 Get-Process -Name "python" -ErrorAction SilentlyContinue | Stop-Process -Force
 Get-Process -Name "pythonw" -ErrorAction SilentlyContinue | Stop-Process -Force

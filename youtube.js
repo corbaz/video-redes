@@ -308,16 +308,8 @@ function showYouTubeVideo(data, container) {
 
                 
                 <!-- Glossy Overlay Effect -->
-                <div style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    height: 50%;
-                    background: linear-gradient(to bottom, rgba(255,255,255,0.05), transparent);
-                    pointer-events: none;
-                    z-index: 5;
-                "></div>
+                <div class="pro-video-glossy-overlay">
+                </div>
             </div>
         </div>
     `;

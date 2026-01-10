@@ -8990,3 +8990,1890 @@ yt-dlp: error: no such option: --extract-flat
 2026-01-09 10:58:59,877 - INFO -    ⏱️ Duración: 0s
 2026-01-09 10:58:59,877 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
 2026-01-09 10:59:57,514 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-09 12:06:40,556 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 12:06:40,668 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:06:40,812 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:06:40,982 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:06:40,982 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:06:40,982 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:06:40,983 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:06:41,002 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:06:41,182 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:06:42,217 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 12:07:42,470 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-09 12:08:01,808 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2026-01-09 12:08:01,871 - INFO - 192.168.1.150 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:08:01,882 - INFO - 192.168.1.150 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:08:01,886 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:08:01,890 - INFO - 192.168.1.150 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:08:01,890 - INFO - 192.168.1.150 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:08:01,890 - INFO - 192.168.1.150 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:08:01,900 - INFO - 192.168.1.150 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:08:01,906 - INFO - 192.168.1.150 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:08:02,022 - INFO - 192.168.1.150 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 12:08:08,827 - INFO - 192.168.1.150 - "GET / HTTP/1.1" 200 -
+2026-01-09 12:08:08,877 - INFO - 192.168.1.150 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:08:08,883 - INFO - 192.168.1.150 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:08:08,884 - INFO - 192.168.1.150 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:08:08,885 - INFO - 192.168.1.150 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:08:08,886 - INFO - 192.168.1.150 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:08:08,886 - INFO - 192.168.1.150 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:08:08,891 - INFO - 192.168.1.150 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:08:08,905 - INFO - 192.168.1.150 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 12:08:08,938 - INFO - 192.168.1.150 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 13:13:30,537 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 13:13:30,652 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:13:30,800 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:13:30,957 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:13:30,957 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:13:30,958 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:13:30,959 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:13:30,969 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:13:31,109 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:13:32,102 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 13:14:32,371 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-09 13:15:15,991 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-09 13:16:16,261 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-09 13:18:06,476 - INFO - ============================================================
+2026-01-09 13:18:06,477 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-09 13:18:06,477 - INFO - ============================================================
+2026-01-09 13:18:06,477 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-09 13:18:06,478 - INFO - Acceso local: http://localhost:8000
+2026-01-09 13:18:06,478 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-09 13:18:06,478 - INFO - Endpoints disponibles:
+2026-01-09 13:18:06,479 - INFO -   POST /api/validate - Validar URLs
+2026-01-09 13:18:06,479 - INFO -   POST /api/extract - Extraer videos
+2026-01-09 13:18:06,479 - INFO - Presiona Ctrl+C para detener
+2026-01-09 13:18:06,479 - INFO - ============================================================
+2026-01-09 13:20:28,919 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 13:20:29,020 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:20:29,171 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:20:29,332 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:20:29,332 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:20:29,332 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:20:29,333 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:20:29,333 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:20:29,483 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:20:30,355 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 13:20:38,371 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-09 13:20:45,970 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 13:20:46,217 - INFO - Extrayendo video de: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-09 13:20:48,637 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-09 13:20:48,637 - INFO -    📺 Plataforma: linkedin
+2026-01-09 13:20:48,637 - INFO -    🎬 Título: Sin título...
+2026-01-09 13:20:48,637 - INFO -    🎯 Resolución: N/A
+2026-01-09 13:20:48,637 - INFO -    📁 Tamaño: N/A
+2026-01-09 13:20:48,638 - INFO -    ⏱️ Duración: 0s
+2026-01-09 13:20:48,638 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 13:20:52,875 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 13:20:53,186 - INFO - Extrayendo video de: https://youtu.be/Mu-ijc76QGg?si=Q8cFjKs3YZd3fW64
+2026-01-09 13:20:55,402 - INFO - ✅ Extracción exitosa para: https://youtu.be/Mu-ijc76QGg?si=Q8cFjKs3YZd3fW64
+2026-01-09 13:20:55,402 - INFO -    📺 Plataforma: youtube
+2026-01-09 13:20:55,402 - INFO -    🎬 Título: Google Antigravity + n8n: Crea Apps Brutales con A...
+2026-01-09 13:20:55,402 - INFO -    🎯 Resolución: 1080p
+2026-01-09 13:20:55,403 - INFO -    📁 Tamaño: N/A
+2026-01-09 13:20:55,403 - INFO -    ⏱️ Duración: 2111s
+2026-01-09 13:20:55,404 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 13:21:00,532 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 13:21:00,841 - INFO - Extrayendo video de: https://www.tiktok.com/@aibysora20/video/7581489170586012941?is_from_webapp=1&sender_device=pc
+2026-01-09 13:21:02,045 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@aibysora20/video/7581489170586012941?is_from_webapp=1&sender_device=pc
+2026-01-09 13:21:02,046 - INFO -    📺 Plataforma: tiktok
+2026-01-09 13:21:02,046 - INFO -    🎬 Título: Sin título...
+2026-01-09 13:21:02,046 - INFO -    🎯 Resolución: N/A
+2026-01-09 13:21:02,046 - INFO -    📁 Tamaño: N/A
+2026-01-09 13:21:02,046 - INFO -    ⏱️ Duración: 0s
+2026-01-09 13:21:02,047 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 13:21:07,962 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 13:21:08,268 - INFO - Extrayendo video de: https://x.com/GustavoBolsa/status/2008488703484715271?s=20
+2026-01-09 13:21:09,399 - INFO - ✅ Extracción exitosa para: https://x.com/GustavoBolsa/status/2008488703484715271?s=20
+2026-01-09 13:21:09,400 - INFO -    📺 Plataforma: x
+2026-01-09 13:21:09,400 - INFO -    🎬 Título: Sin título...
+2026-01-09 13:21:09,400 - INFO -    🎯 Resolución: N/A
+2026-01-09 13:21:09,400 - INFO -    📁 Tamaño: N/A
+2026-01-09 13:21:09,400 - INFO -    ⏱️ Duración: 0s
+2026-01-09 13:21:09,401 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 13:21:15,136 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 13:21:15,447 - INFO - Extrayendo video de: https://www.twitch.tv/videos/2663661756
+2026-01-09 13:21:17,549 - INFO - ✅ Extracción exitosa para: https://www.twitch.tv/videos/2663661756
+2026-01-09 13:21:17,549 - INFO -    📺 Plataforma: twitch
+2026-01-09 13:21:17,549 - INFO -    🎬 Título: Sin título...
+2026-01-09 13:21:17,550 - INFO -    🎯 Resolución: N/A
+2026-01-09 13:21:17,550 - INFO -    📁 Tamaño: N/A
+2026-01-09 13:21:17,550 - INFO -    ⏱️ Duración: 0s
+2026-01-09 13:21:17,550 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 13:21:22,611 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 13:21:22,928 - INFO - Extrayendo video de: https://youtu.be/KHiwBh7lO2I?si=oTQ9BDDqLLYs6wGW
+2026-01-09 13:21:24,627 - INFO - ✅ Extracción exitosa para: https://youtu.be/KHiwBh7lO2I?si=oTQ9BDDqLLYs6wGW
+2026-01-09 13:21:24,627 - INFO -    📺 Plataforma: youtube
+2026-01-09 13:21:24,627 - INFO -    🎬 Título: Así Uso Claude Code Profesionalmente - Mis Tips de...
+2026-01-09 13:21:24,627 - INFO -    🎯 Resolución: 1080p
+2026-01-09 13:21:24,627 - INFO -    📁 Tamaño: N/A
+2026-01-09 13:21:24,628 - INFO -    ⏱️ Duración: 876s
+2026-01-09 13:21:24,628 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 13:21:33,437 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-09 13:21:57,020 - INFO - Servidor detenido por usuario
+2026-01-09 13:21:57,020 - INFO - Servidor cerrado correctamente
+2026-01-09 13:22:04,104 - INFO - ============================================================
+2026-01-09 13:22:04,104 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-09 13:22:04,105 - INFO - ============================================================
+2026-01-09 13:22:04,105 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-09 13:22:04,105 - INFO - Acceso local: http://localhost:8000
+2026-01-09 13:22:04,105 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-09 13:22:04,106 - INFO - Endpoints disponibles:
+2026-01-09 13:22:04,106 - INFO -   POST /api/validate - Validar URLs
+2026-01-09 13:22:04,106 - INFO -   POST /api/extract - Extraer videos
+2026-01-09 13:22:04,106 - INFO - Presiona Ctrl+C para detener
+2026-01-09 13:22:04,106 - INFO - ============================================================
+2026-01-09 13:22:16,662 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 13:22:16,752 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:22:16,901 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:22:17,082 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:22:17,083 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:22:17,084 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:22:17,084 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:22:17,086 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:22:17,210 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:22:18,056 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 13:22:24,744 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 13:22:25,055 - INFO - Extrayendo video de: https://pin.it/6fDctLug0
+2026-01-09 13:22:25,056 - INFO - 🔍 Analizando Pinterest con YT-DLP: https://pin.it/6fDctLug0
+2026-01-09 13:22:28,265 - ERROR - Error yt-dlp Pinterest: [0;31mERROR:[0m [Pinterest] 69102175528508574: No video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-09 13:22:28,266 - WARNING - Error extrayendo https://pin.it/6fDctLug0: Error procesando Pinterest: [0;31mERROR:[0m [Pinterest] 69102175528508574: No video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-09 13:22:28,266 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-01-09 13:23:25,387 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-09 13:25:27,721 - INFO - ============================================================
+2026-01-09 13:25:27,721 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-09 13:25:27,721 - INFO - ============================================================
+2026-01-09 13:25:27,721 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-09 13:25:27,722 - INFO - Acceso local: http://localhost:8000
+2026-01-09 13:25:27,722 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-09 13:25:27,722 - INFO - Endpoints disponibles:
+2026-01-09 13:25:27,722 - INFO -   POST /api/validate - Validar URLs
+2026-01-09 13:25:27,722 - INFO -   POST /api/extract - Extraer videos
+2026-01-09 13:25:27,722 - INFO - Presiona Ctrl+C para detener
+2026-01-09 13:25:27,723 - INFO - ============================================================
+2026-01-09 13:28:36,162 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 13:28:36,256 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:28:36,427 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:28:36,559 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:28:36,559 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:28:36,562 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:28:36,562 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:28:36,562 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:28:36,737 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:28:37,619 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 13:29:03,061 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-09 13:29:15,570 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 13:29:15,833 - INFO - Extrayendo video de: https://pin.it/6fDctLug0
+2026-01-09 13:29:15,834 - INFO - 🔍 Analizando Pinterest con YT-DLP: https://pin.it/6fDctLug0
+2026-01-09 13:29:18,289 - ERROR - Error yt-dlp Pinterest: [0;31mERROR:[0m [Pinterest] 69102175528508574: No video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-09 13:29:18,289 - WARNING - Error extrayendo https://pin.it/6fDctLug0: Error procesando Pinterest: [0;31mERROR:[0m [Pinterest] 69102175528508574: No video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-09 13:29:18,289 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-01-09 13:30:15,905 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-09 13:32:59,870 - INFO - ============================================================
+2026-01-09 13:32:59,871 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-09 13:32:59,871 - INFO - ============================================================
+2026-01-09 13:32:59,871 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-09 13:32:59,871 - INFO - Acceso local: http://localhost:8000
+2026-01-09 13:32:59,871 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-09 13:32:59,872 - INFO - Endpoints disponibles:
+2026-01-09 13:32:59,872 - INFO -   POST /api/validate - Validar URLs
+2026-01-09 13:32:59,872 - INFO -   POST /api/extract - Extraer videos
+2026-01-09 13:32:59,872 - INFO - Presiona Ctrl+C para detener
+2026-01-09 13:32:59,872 - INFO - ============================================================
+2026-01-09 13:34:14,719 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-09 13:34:25,016 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 13:34:25,326 - INFO - Extrayendo video de: https://pin.it/6fDctLug0
+2026-01-09 13:34:25,326 - INFO - 🔍 Analizando Pinterest con YT-DLP: https://pin.it/6fDctLug0
+2026-01-09 13:34:27,575 - ERROR - Error yt-dlp Pinterest: [0;31mERROR:[0m [Pinterest] 69102175528508574: No video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-09 13:34:27,575 - WARNING - Error extrayendo https://pin.it/6fDctLug0: Error procesando Pinterest: [0;31mERROR:[0m [Pinterest] 69102175528508574: No video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-09 13:34:27,576 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-01-09 13:34:34,413 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 13:34:34,729 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:34:34,815 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:34:34,815 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:34:34,815 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:34:34,815 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:34:34,815 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:34:35,040 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:34:35,133 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:34:36,033 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 13:34:37,069 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 13:34:37,382 - INFO - Extrayendo video de: https://pin.it/6fDctLug0
+2026-01-09 13:34:37,383 - INFO - 🔍 Analizando Pinterest con YT-DLP: https://pin.it/6fDctLug0
+2026-01-09 13:34:39,590 - ERROR - Error yt-dlp Pinterest: [0;31mERROR:[0m [Pinterest] 69102175528508574: No video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-09 13:34:39,590 - WARNING - Error extrayendo https://pin.it/6fDctLug0: Error procesando Pinterest: [0;31mERROR:[0m [Pinterest] 69102175528508574: No video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-09 13:34:39,591 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-01-09 13:35:01,553 - INFO - Servidor detenido por usuario
+2026-01-09 13:35:01,554 - INFO - Servidor cerrado correctamente
+2026-01-09 13:36:24,077 - INFO - ============================================================
+2026-01-09 13:36:24,077 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-09 13:36:24,077 - INFO - ============================================================
+2026-01-09 13:36:24,078 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-09 13:36:24,078 - INFO - Acceso local: http://localhost:8000
+2026-01-09 13:36:24,078 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-09 13:36:24,078 - INFO - Endpoints disponibles:
+2026-01-09 13:36:24,079 - INFO -   POST /api/validate - Validar URLs
+2026-01-09 13:36:24,079 - INFO -   POST /api/extract - Extraer videos
+2026-01-09 13:36:24,079 - INFO - Presiona Ctrl+C para detener
+2026-01-09 13:36:24,079 - INFO - ============================================================
+2026-01-09 13:37:03,107 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 13:37:03,210 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:37:03,369 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:37:03,513 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:37:03,513 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:37:03,513 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:37:03,513 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:37:03,522 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:37:03,710 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:37:04,269 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 13:37:05,989 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-09 13:37:12,667 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-09 13:37:47,445 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 13:37:47,767 - INFO - Extrayendo video de: https://pin.it/6fDctLug0
+2026-01-09 13:37:47,767 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-09 13:37:50,696 - WARNING - yt-dlp falló para Pinterest, intentando fallback manual... Error: [0;31mERROR:[0m [Pinterest] 69102175528508574: No video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-09 13:37:50,696 - INFO - 🕵️‍♂️ Ejecutando extracción manual (Regex) para: https://pin.it/6fDctLug0
+2026-01-09 13:37:53,231 - INFO - ✅ Extracción exitosa para: https://pin.it/6fDctLug0
+2026-01-09 13:37:53,232 - INFO -    📺 Plataforma: pinterest
+2026-01-09 13:37:53,232 - INFO -    🎬 Título: Pin by Wallpapers by Andrrey on Wallpapers | Galax...
+2026-01-09 13:37:53,233 - INFO -    🎯 Resolución: N/A
+2026-01-09 13:37:53,233 - INFO -    📁 Tamaño: N/A
+2026-01-09 13:37:53,233 - INFO -    ⏱️ Duración: 0s
+2026-01-09 13:37:53,234 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 13:38:48,077 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-09 13:46:15,081 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 13:46:15,185 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:46:15,313 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:46:15,490 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:46:15,491 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:46:15,490 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:46:15,491 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:46:15,490 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:46:15,630 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:46:16,546 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 13:46:18,733 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 13:46:19,054 - INFO - Extrayendo video de: https://pin.it/3Yl66Pcgj
+2026-01-09 13:46:19,054 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-09 13:46:22,082 - WARNING - yt-dlp falló para Pinterest, intentando fallback manual... Error: [0;31mERROR:[0m [Pinterest] 69102175528508574: No video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-09 13:46:22,082 - INFO - 🕵️‍♂️ Ejecutando extracción manual (Regex) para: https://pin.it/3Yl66Pcgj
+2026-01-09 13:46:24,698 - INFO - ✅ Extracción exitosa para: https://pin.it/3Yl66Pcgj
+2026-01-09 13:46:24,698 - INFO -    📺 Plataforma: pinterest
+2026-01-09 13:46:24,698 - INFO -    🎬 Título: Pin by Wallpapers by Andrrey on Wallpapers | Galax...
+2026-01-09 13:46:24,698 - INFO -    🎯 Resolución: N/A
+2026-01-09 13:46:24,698 - INFO -    📁 Tamaño: N/A
+2026-01-09 13:46:24,698 - INFO -    ⏱️ Duración: 0s
+2026-01-09 13:46:24,699 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 13:47:19,319 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-09 13:49:39,789 - INFO - ============================================================
+2026-01-09 13:49:39,789 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-09 13:49:39,789 - INFO - ============================================================
+2026-01-09 13:49:39,789 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-09 13:49:39,790 - INFO - Acceso local: http://localhost:8000
+2026-01-09 13:49:39,790 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-09 13:49:39,790 - INFO - Endpoints disponibles:
+2026-01-09 13:49:39,790 - INFO -   POST /api/validate - Validar URLs
+2026-01-09 13:49:39,790 - INFO -   POST /api/extract - Extraer videos
+2026-01-09 13:49:39,791 - INFO - Presiona Ctrl+C para detener
+2026-01-09 13:49:39,791 - INFO - ============================================================
+2026-01-09 13:52:30,181 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 13:52:30,282 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:52:30,444 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:52:30,598 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:52:30,598 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:52:30,598 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:52:30,598 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:52:30,598 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:52:30,757 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:52:31,642 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 13:52:39,353 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 13:52:39,663 - INFO - Extrayendo video de: https://pin.it/3Yl66Pcgj
+2026-01-09 13:52:39,664 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-09 13:52:42,331 - WARNING - yt-dlp falló para Pinterest, intentando fallback manual... Error: [0;31mERROR:[0m [Pinterest] 69102175528508574: No video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-09 13:52:42,332 - INFO - 🕵️‍♂️ Ejecutando extracción manual (Regex) para: https://pin.it/3Yl66Pcgj
+2026-01-09 13:52:44,852 - INFO - ✅ Extracción exitosa para: https://pin.it/3Yl66Pcgj
+2026-01-09 13:52:44,853 - INFO -    📺 Plataforma: pinterest
+2026-01-09 13:52:44,853 - INFO -    🎬 Título: Pin by Wallpapers by Andrrey on Wallpapers | Galax...
+2026-01-09 13:52:44,854 - INFO -    🎯 Resolución: N/A
+2026-01-09 13:52:44,854 - INFO -    📁 Tamaño: N/A
+2026-01-09 13:52:44,854 - INFO -    ⏱️ Duración: 0s
+2026-01-09 13:52:44,854 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 13:52:51,002 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 13:52:51,305 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:52:51,382 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:52:51,383 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:52:51,383 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:52:51,384 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:52:51,384 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:52:51,613 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:52:51,690 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:52:52,216 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 13:52:53,416 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 13:52:53,743 - INFO - Extrayendo video de: https://pin.it/3Yl66Pcgj
+2026-01-09 13:52:53,744 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-09 13:52:56,564 - WARNING - yt-dlp falló para Pinterest, intentando fallback manual... Error: [0;31mERROR:[0m [Pinterest] 69102175528508574: No video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-09 13:52:56,564 - INFO - 🕵️‍♂️ Ejecutando extracción manual (Regex) para: https://pin.it/3Yl66Pcgj
+2026-01-09 13:52:59,064 - INFO - ✅ Extracción exitosa para: https://pin.it/3Yl66Pcgj
+2026-01-09 13:52:59,064 - INFO -    📺 Plataforma: pinterest
+2026-01-09 13:52:59,065 - INFO -    🎬 Título: Pin by Wallpapers by Andrrey on Wallpapers | Galax...
+2026-01-09 13:52:59,065 - INFO -    🎯 Resolución: N/A
+2026-01-09 13:52:59,065 - INFO -    📁 Tamaño: N/A
+2026-01-09 13:52:59,065 - INFO -    ⏱️ Duración: 0s
+2026-01-09 13:52:59,065 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 13:53:00,630 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-09 13:53:00,630 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-09 13:55:44,799 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 13:55:44,856 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-09 13:55:44,856 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-09 13:55:45,057 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:55:45,208 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:55:45,208 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:55:45,208 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:55:45,208 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:55:45,208 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:55:45,372 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:55:45,514 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:55:46,711 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 13:55:47,312 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 13:55:47,625 - INFO - Extrayendo video de: https://pin.it/17Xl0DoOS
+2026-01-09 13:55:47,625 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-09 13:55:50,090 - WARNING - yt-dlp falló para Pinterest, intentando fallback manual... Error: [0;31mERROR:[0m [Pinterest] 4591701405344620544: No video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-09 13:55:50,091 - INFO - 🕵️‍♂️ Ejecutando extracción manual (Regex) para: https://pin.it/17Xl0DoOS
+2026-01-09 13:55:52,757 - INFO - ✅ Extracción exitosa para: https://pin.it/17Xl0DoOS
+2026-01-09 13:55:52,757 - INFO -    📺 Plataforma: pinterest
+2026-01-09 13:55:52,757 - INFO -    🎬 Título: Shop our Influencers&#x27; top picks on Amazon | G...
+2026-01-09 13:55:52,757 - INFO -    🎯 Resolución: N/A
+2026-01-09 13:55:52,757 - INFO -    📁 Tamaño: N/A
+2026-01-09 13:55:52,757 - INFO -    ⏱️ Duración: 0s
+2026-01-09 13:55:52,758 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 13:56:21,316 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 13:56:21,624 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:56:21,744 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:56:21,746 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:56:21,747 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:56:21,749 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:56:21,749 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:56:21,940 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:56:22,065 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-09 13:56:22,066 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-09 13:56:22,066 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 13:56:23,108 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 13:56:29,113 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 13:56:29,422 - INFO - Extrayendo video de: https://pin.it/17Xl0DoOS
+2026-01-09 13:56:29,422 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-09 13:56:31,718 - WARNING - yt-dlp falló para Pinterest, intentando fallback manual... Error: [0;31mERROR:[0m [Pinterest] 4591701405344620544: No video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-09 13:56:31,718 - INFO - 🕵️‍♂️ Ejecutando extracción manual (Regex) para: https://pin.it/17Xl0DoOS
+2026-01-09 13:56:34,266 - INFO - ✅ Extracción exitosa para: https://pin.it/17Xl0DoOS
+2026-01-09 13:56:34,267 - INFO -    📺 Plataforma: pinterest
+2026-01-09 13:56:34,267 - INFO -    🎬 Título: Shop our Influencers&#x27; top picks on Amazon | G...
+2026-01-09 13:56:34,267 - INFO -    🎯 Resolución: N/A
+2026-01-09 13:56:34,268 - INFO -    📁 Tamaño: N/A
+2026-01-09 13:56:34,268 - INFO -    ⏱️ Duración: 0s
+2026-01-09 13:56:34,268 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 13:57:29,686 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-09 14:00:04,643 - INFO - ============================================================
+2026-01-09 14:00:04,644 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-09 14:00:04,644 - INFO - ============================================================
+2026-01-09 14:00:04,645 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-09 14:00:04,645 - INFO - Acceso local: http://localhost:8000
+2026-01-09 14:00:04,646 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-09 14:00:04,646 - INFO - Endpoints disponibles:
+2026-01-09 14:00:04,646 - INFO -   POST /api/validate - Validar URLs
+2026-01-09 14:00:04,647 - INFO -   POST /api/extract - Extraer videos
+2026-01-09 14:00:04,647 - INFO - Presiona Ctrl+C para detener
+2026-01-09 14:00:04,648 - INFO - ============================================================
+2026-01-09 14:38:17,360 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 14:38:17,433 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 14:38:17,616 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 14:38:17,741 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 14:38:17,741 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 14:38:17,741 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 14:38:17,742 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 14:38:17,742 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 14:38:17,920 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 14:38:18,812 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 14:38:20,062 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-09 14:38:26,576 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 14:38:26,841 - INFO - Extrayendo video de: https://pin.it/17Xl0DoOS
+2026-01-09 14:38:26,841 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-09 14:38:29,171 - WARNING - yt-dlp falló para Pinterest, intentando fallback manual... Error: [0;31mERROR:[0m [Pinterest] 4591701405344620544: No video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-09 14:38:29,171 - INFO - 🕵️‍♂️ Ejecutando extracción manual (Regex) para: https://pin.it/17Xl0DoOS
+2026-01-09 14:38:31,941 - INFO - ✅ Extracción exitosa para: https://pin.it/17Xl0DoOS
+2026-01-09 14:38:31,942 - INFO -    📺 Plataforma: pinterest
+2026-01-09 14:38:31,942 - INFO -    🎬 Título: Shop our Influencers&#x27; top picks on Amazon | G...
+2026-01-09 14:38:31,942 - INFO -    🎯 Resolución: N/A
+2026-01-09 14:38:31,942 - INFO -    📁 Tamaño: N/A
+2026-01-09 14:38:31,943 - INFO -    ⏱️ Duración: 0s
+2026-01-09 14:38:31,943 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 14:38:35,650 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 14:38:35,958 - INFO - Extrayendo video de: https://pin.it/17Xl0DoOS
+2026-01-09 14:38:35,958 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-09 14:38:37,142 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-09 14:38:37,142 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-09 14:38:38,165 - WARNING - yt-dlp falló para Pinterest, intentando fallback manual... Error: [0;31mERROR:[0m [Pinterest] 4591701405344620544: No video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-09 14:38:38,165 - INFO - 🕵️‍♂️ Ejecutando extracción manual (Regex) para: https://pin.it/17Xl0DoOS
+2026-01-09 14:38:40,873 - INFO - ✅ Extracción exitosa para: https://pin.it/17Xl0DoOS
+2026-01-09 14:38:40,873 - INFO -    📺 Plataforma: pinterest
+2026-01-09 14:38:40,873 - INFO -    🎬 Título: Shop our Influencers&#x27; top picks on Amazon | G...
+2026-01-09 14:38:40,873 - INFO -    🎯 Resolución: N/A
+2026-01-09 14:38:40,874 - INFO -    📁 Tamaño: N/A
+2026-01-09 14:38:40,874 - INFO -    ⏱️ Duración: 0s
+2026-01-09 14:38:40,874 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 14:39:19,007 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 14:39:19,271 - INFO - Extrayendo video de: https://pin.it/17Xl0DoOS
+2026-01-09 14:39:19,271 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-09 14:39:21,508 - WARNING - yt-dlp falló para Pinterest, intentando fallback manual... Error: [0;31mERROR:[0m [Pinterest] 4591701405344620544: No video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-09 14:39:21,508 - INFO - 🕵️‍♂️ Ejecutando extracción manual (Regex) para: https://pin.it/17Xl0DoOS
+2026-01-09 14:39:24,032 - INFO - ✅ Extracción exitosa para: https://pin.it/17Xl0DoOS
+2026-01-09 14:39:24,032 - INFO -    📺 Plataforma: pinterest
+2026-01-09 14:39:24,032 - INFO -    🎬 Título: Shop our Influencers&#x27; top picks on Amazon | G...
+2026-01-09 14:39:24,032 - INFO -    🎯 Resolución: N/A
+2026-01-09 14:39:24,032 - INFO -    📁 Tamaño: N/A
+2026-01-09 14:39:24,033 - INFO -    ⏱️ Duración: 0s
+2026-01-09 14:39:24,033 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 14:40:08,624 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 14:40:08,942 - INFO - Extrayendo video de: https://pin.it/17Xl0DoOS
+2026-01-09 14:40:08,942 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-09 14:40:11,317 - WARNING - yt-dlp falló para Pinterest, intentando fallback manual... Error: [0;31mERROR:[0m [Pinterest] 4591701405344620544: No video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-09 14:40:11,317 - INFO - 🕵️‍♂️ Ejecutando extracción manual (Regex) para: https://pin.it/17Xl0DoOS
+2026-01-09 14:40:13,713 - INFO - ✅ Extracción exitosa para: https://pin.it/17Xl0DoOS
+2026-01-09 14:40:13,714 - INFO -    📺 Plataforma: pinterest
+2026-01-09 14:40:13,714 - INFO -    🎬 Título: Shop our Influencers&#x27; top picks on Amazon | G...
+2026-01-09 14:40:13,714 - INFO -    🎯 Resolución: N/A
+2026-01-09 14:40:13,714 - INFO -    📁 Tamaño: N/A
+2026-01-09 14:40:13,714 - INFO -    ⏱️ Duración: 0s
+2026-01-09 14:40:13,715 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 14:41:09,221 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-09 14:46:33,039 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 14:46:33,285 - INFO - Extrayendo video de: https://ar.pinterest.com/pin/7529524373215825/
+2026-01-09 14:46:33,285 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-09 14:46:34,490 - WARNING - yt-dlp falló para Pinterest, intentando fallback manual... Error: [0;31mERROR:[0m [Pinterest] 7529524373215825: No video formats found!; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+2026-01-09 14:46:34,491 - INFO - 🕵️‍♂️ Ejecutando extracción manual (Regex) para: https://ar.pinterest.com/pin/7529524373215825/
+2026-01-09 14:46:35,509 - INFO - ✅ Extracción exitosa para: https://ar.pinterest.com/pin/7529524373215825/
+2026-01-09 14:46:35,509 - INFO -    📺 Plataforma: pinterest
+2026-01-09 14:46:35,510 - INFO -    🎬 Título: Pin by Bárbara Bianca on Cδffεε &amp; Sτudiεs | Be...
+2026-01-09 14:46:35,510 - INFO -    🎯 Resolución: N/A
+2026-01-09 14:46:35,510 - INFO -    📁 Tamaño: N/A
+2026-01-09 14:46:35,510 - INFO -    ⏱️ Duración: 0s
+2026-01-09 14:46:35,511 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 14:47:33,354 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-09 15:04:42,196 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 15:04:42,259 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-09 15:04:42,260 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-09 15:04:42,460 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 15:04:42,642 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 15:04:42,643 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 15:04:42,643 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 15:04:42,643 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 15:04:42,643 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 15:04:42,763 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 15:04:42,958 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 15:04:43,999 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 15:04:57,075 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 15:04:57,386 - INFO - Extrayendo video de: https://pin.it/4uPy0e10B
+2026-01-09 15:04:57,387 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-09 15:05:00,026 - INFO - ✅ Extracción exitosa para: https://pin.it/4uPy0e10B
+2026-01-09 15:05:00,027 - INFO -    📺 Plataforma: pinterest
+2026-01-09 15:05:00,027 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-09 15:05:00,027 - INFO -    🎯 Resolución: N/A
+2026-01-09 15:05:00,027 - INFO -    📁 Tamaño: N/A
+2026-01-09 15:05:00,027 - INFO -    ⏱️ Duración: 23.967s
+2026-01-09 15:05:00,028 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 15:05:57,660 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-09 16:15:22,260 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 16:15:22,354 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-09 16:15:22,355 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-09 16:15:22,695 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:15:22,711 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:15:22,711 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:15:22,711 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:15:22,711 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:15:22,712 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:15:22,999 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:15:23,020 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:15:23,828 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 16:46:21,613 - INFO - ============================================================
+2026-01-09 16:46:21,613 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-09 16:46:21,614 - INFO - ============================================================
+2026-01-09 16:46:21,614 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-09 16:46:21,614 - INFO - Acceso local: http://localhost:8000
+2026-01-09 16:46:21,614 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-09 16:46:21,615 - INFO - Endpoints disponibles:
+2026-01-09 16:46:21,615 - INFO -   POST /api/validate - Validar URLs
+2026-01-09 16:46:21,615 - INFO -   POST /api/extract - Extraer videos
+2026-01-09 16:46:21,615 - INFO - Presiona Ctrl+C para detener
+2026-01-09 16:46:21,615 - INFO - ============================================================
+2026-01-09 16:47:27,161 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 16:47:27,231 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:47:27,423 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:47:27,542 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:47:27,543 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:47:27,542 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:47:27,543 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:47:27,552 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:47:27,730 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:47:27,853 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-09 16:47:27,853 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-09 16:47:28,761 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 16:47:35,846 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-09 16:47:43,289 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-09 16:48:43,551 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-09 16:48:56,787 - INFO - ============================================================
+2026-01-09 16:48:56,787 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-09 16:48:56,787 - INFO - ============================================================
+2026-01-09 16:48:56,787 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-09 16:48:56,787 - INFO - Acceso local: http://localhost:8000
+2026-01-09 16:48:56,787 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-09 16:48:56,788 - INFO - Endpoints disponibles:
+2026-01-09 16:48:56,788 - INFO -   POST /api/validate - Validar URLs
+2026-01-09 16:48:56,788 - INFO -   POST /api/extract - Extraer videos
+2026-01-09 16:48:56,788 - INFO - Presiona Ctrl+C para detener
+2026-01-09 16:48:56,788 - INFO - ============================================================
+2026-01-09 16:49:20,930 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 16:49:20,997 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-09 16:49:20,997 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-09 16:49:21,186 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:49:21,352 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:49:21,352 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:49:21,353 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:49:21,353 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:49:21,353 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:49:21,490 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:49:21,664 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:49:22,693 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 16:49:27,656 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-09 16:50:15,531 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 16:50:15,795 - INFO - Extrayendo video de: https://pin.it/4uPy0e10B
+2026-01-09 16:50:15,795 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-09 16:50:18,518 - INFO - ✅ Extracción exitosa para: https://pin.it/4uPy0e10B
+2026-01-09 16:50:18,518 - INFO -    📺 Plataforma: pinterest
+2026-01-09 16:50:18,518 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-09 16:50:18,519 - INFO -    🎯 Resolución: N/A
+2026-01-09 16:50:18,519 - INFO -    📁 Tamaño: N/A
+2026-01-09 16:50:18,519 - INFO -    ⏱️ Duración: 23.967s
+2026-01-09 16:50:18,519 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 16:50:25,891 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 16:50:26,199 - INFO - Extrayendo video de: https://pin.it/4uPy0e10B
+2026-01-09 16:50:26,199 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-09 16:50:28,602 - INFO - ✅ Extracción exitosa para: https://pin.it/4uPy0e10B
+2026-01-09 16:50:28,603 - INFO -    📺 Plataforma: pinterest
+2026-01-09 16:50:28,603 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-09 16:50:28,603 - INFO -    🎯 Resolución: N/A
+2026-01-09 16:50:28,603 - INFO -    📁 Tamaño: N/A
+2026-01-09 16:50:28,604 - INFO -    ⏱️ Duración: 23.967s
+2026-01-09 16:50:28,604 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 16:51:26,460 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-09 16:52:41,514 - INFO - ============================================================
+2026-01-09 16:52:41,515 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-09 16:52:41,515 - INFO - ============================================================
+2026-01-09 16:52:41,515 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-09 16:52:41,515 - INFO - Acceso local: http://localhost:8000
+2026-01-09 16:52:41,516 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-09 16:52:41,516 - INFO - Endpoints disponibles:
+2026-01-09 16:52:41,516 - INFO -   POST /api/validate - Validar URLs
+2026-01-09 16:52:41,516 - INFO -   POST /api/extract - Extraer videos
+2026-01-09 16:52:41,517 - INFO - Presiona Ctrl+C para detener
+2026-01-09 16:52:41,517 - INFO - ============================================================
+2026-01-09 16:53:03,826 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 16:53:03,927 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:04,084 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:04,237 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:04,237 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:04,237 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:04,238 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:04,237 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:04,392 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:05,294 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 16:53:08,607 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 16:53:08,923 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:09,002 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:09,003 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:09,004 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:09,004 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:09,006 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:09,232 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:09,311 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:09,838 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 16:53:11,946 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 16:53:12,265 - INFO - Extrayendo video de: https://pin.it/4uPy0e10B
+2026-01-09 16:53:12,265 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-09 16:53:15,119 - INFO - ✅ Extracción exitosa para: https://pin.it/4uPy0e10B
+2026-01-09 16:53:15,119 - INFO -    📺 Plataforma: pinterest
+2026-01-09 16:53:15,119 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-09 16:53:15,119 - INFO -    🎯 Resolución: N/A
+2026-01-09 16:53:15,120 - INFO -    📁 Tamaño: N/A
+2026-01-09 16:53:15,120 - INFO -    ⏱️ Duración: 23.967s
+2026-01-09 16:53:15,120 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 16:53:22,783 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-09 16:53:22,784 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-09 16:53:35,485 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 16:53:35,528 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-09 16:53:35,529 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-09 16:53:35,750 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:35,861 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:35,862 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:35,862 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:35,862 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:35,862 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:36,057 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:36,181 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:53:37,184 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 16:53:46,276 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-09 16:53:55,640 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 16:53:55,903 - INFO - Extrayendo video de: https://pin.it/4uPy0e10B
+2026-01-09 16:53:55,903 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-09 16:53:58,759 - INFO - ✅ Extracción exitosa para: https://pin.it/4uPy0e10B
+2026-01-09 16:53:58,760 - INFO -    📺 Plataforma: pinterest
+2026-01-09 16:53:58,760 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-09 16:53:58,760 - INFO -    🎯 Resolución: N/A
+2026-01-09 16:53:58,760 - INFO -    📁 Tamaño: N/A
+2026-01-09 16:53:58,761 - INFO -    ⏱️ Duración: 23.967s
+2026-01-09 16:53:58,761 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 16:54:02,995 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 16:54:03,314 - INFO - Extrayendo video de: https://pin.it/4uPy0e10B
+2026-01-09 16:54:03,314 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-09 16:54:05,850 - INFO - ✅ Extracción exitosa para: https://pin.it/4uPy0e10B
+2026-01-09 16:54:05,850 - INFO -    📺 Plataforma: pinterest
+2026-01-09 16:54:05,850 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-09 16:54:05,850 - INFO -    🎯 Resolución: N/A
+2026-01-09 16:54:05,850 - INFO -    📁 Tamaño: N/A
+2026-01-09 16:54:05,851 - INFO -    ⏱️ Duración: 23.967s
+2026-01-09 16:54:05,851 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 16:55:03,575 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-09 16:55:43,013 - INFO - ============================================================
+2026-01-09 16:55:43,014 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-09 16:55:43,015 - INFO - ============================================================
+2026-01-09 16:55:43,015 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-09 16:55:43,016 - INFO - Acceso local: http://localhost:8000
+2026-01-09 16:55:43,016 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-09 16:55:43,017 - INFO - Endpoints disponibles:
+2026-01-09 16:55:43,017 - INFO -   POST /api/validate - Validar URLs
+2026-01-09 16:55:43,017 - INFO -   POST /api/extract - Extraer videos
+2026-01-09 16:55:43,018 - INFO - Presiona Ctrl+C para detener
+2026-01-09 16:55:43,018 - INFO - ============================================================
+2026-01-09 16:56:15,806 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-09 16:56:15,879 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-09 16:56:15,880 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-09 16:56:16,046 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:56:16,241 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:56:16,245 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:56:16,245 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:56:16,247 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:56:16,247 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:56:16,357 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:56:16,568 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-09 16:56:17,560 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-09 16:56:29,429 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 16:56:29,737 - INFO - Extrayendo video de: https://pin.it/4uPy0e10B
+2026-01-09 16:56:29,738 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-09 16:56:32,745 - INFO - ✅ Extracción exitosa para: https://pin.it/4uPy0e10B
+2026-01-09 16:56:32,745 - INFO -    📺 Plataforma: pinterest
+2026-01-09 16:56:32,746 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-09 16:56:32,746 - INFO -    🎯 Resolución: N/A
+2026-01-09 16:56:32,746 - INFO -    📁 Tamaño: N/A
+2026-01-09 16:56:32,746 - INFO -    ⏱️ Duración: 23.967s
+2026-01-09 16:56:32,747 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 16:56:41,054 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-09 16:56:41,371 - INFO - Extrayendo video de: https://pin.it/4uPy0e10B
+2026-01-09 16:56:41,371 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-09 16:56:43,793 - INFO - ✅ Extracción exitosa para: https://pin.it/4uPy0e10B
+2026-01-09 16:56:43,793 - INFO -    📺 Plataforma: pinterest
+2026-01-09 16:56:43,794 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-09 16:56:43,794 - INFO -    🎯 Resolución: N/A
+2026-01-09 16:56:43,794 - INFO -    📁 Tamaño: N/A
+2026-01-09 16:56:43,794 - INFO -    ⏱️ Duración: 23.967s
+2026-01-09 16:56:43,794 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-09 16:57:41,628 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-09 16:59:26,446 - INFO - ============================================================
+2026-01-09 16:59:26,446 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-09 16:59:26,446 - INFO - ============================================================
+2026-01-09 16:59:26,446 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-09 16:59:26,446 - INFO - Acceso local: http://localhost:8000
+2026-01-09 16:59:26,447 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-09 16:59:26,447 - INFO - Endpoints disponibles:
+2026-01-09 16:59:26,447 - INFO -   POST /api/validate - Validar URLs
+2026-01-09 16:59:26,447 - INFO -   POST /api/extract - Extraer videos
+2026-01-09 16:59:26,447 - INFO - Presiona Ctrl+C para detener
+2026-01-09 16:59:26,447 - INFO - ============================================================
+2026-01-09 17:00:59,007 - INFO - ============================================================
+2026-01-09 17:00:59,008 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-09 17:00:59,008 - INFO - ============================================================
+2026-01-09 17:00:59,009 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-09 17:00:59,009 - INFO - Acceso local: http://localhost:8000
+2026-01-09 17:00:59,009 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-09 17:00:59,009 - INFO - Endpoints disponibles:
+2026-01-09 17:00:59,010 - INFO -   POST /api/validate - Validar URLs
+2026-01-09 17:00:59,010 - INFO -   POST /api/extract - Extraer videos
+2026-01-09 17:00:59,010 - INFO - Presiona Ctrl+C para detener
+2026-01-09 17:00:59,011 - INFO - ============================================================
+2026-01-09 17:01:26,806 - INFO - ============================================================
+2026-01-09 17:01:26,806 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-09 17:01:26,806 - INFO - ============================================================
+2026-01-09 17:01:26,807 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-09 17:01:26,807 - INFO - Acceso local: http://localhost:8000
+2026-01-09 17:01:26,807 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-09 17:01:26,807 - INFO - Endpoints disponibles:
+2026-01-09 17:01:26,807 - INFO -   POST /api/validate - Validar URLs
+2026-01-09 17:01:26,808 - INFO -   POST /api/extract - Extraer videos
+2026-01-09 17:01:26,808 - INFO - Presiona Ctrl+C para detener
+2026-01-09 17:01:26,808 - INFO - ============================================================
+2026-01-09 17:02:06,444 - INFO - ============================================================
+2026-01-09 17:02:06,446 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-09 17:02:06,447 - INFO - ============================================================
+2026-01-09 17:02:06,449 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-09 17:02:06,450 - INFO - Acceso local: http://localhost:8000
+2026-01-09 17:02:06,451 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-09 17:02:06,454 - INFO - Endpoints disponibles:
+2026-01-09 17:02:06,455 - INFO -   POST /api/validate - Validar URLs
+2026-01-09 17:02:06,456 - INFO -   POST /api/extract - Extraer videos
+2026-01-09 17:02:06,464 - INFO - Presiona Ctrl+C para detener
+2026-01-09 17:02:06,465 - INFO - ============================================================
+2026-01-09 17:02:42,142 - INFO - ============================================================
+2026-01-09 17:02:42,142 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-09 17:02:42,143 - INFO - ============================================================
+2026-01-09 17:02:42,143 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-09 17:02:42,143 - INFO - Acceso local: http://localhost:8000
+2026-01-09 17:02:42,143 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-09 17:02:42,144 - INFO - Endpoints disponibles:
+2026-01-09 17:02:42,144 - INFO -   POST /api/validate - Validar URLs
+2026-01-09 17:02:42,144 - INFO -   POST /api/extract - Extraer videos
+2026-01-09 17:02:42,144 - INFO - Presiona Ctrl+C para detener
+2026-01-09 17:02:42,144 - INFO - ============================================================
+2026-01-10 04:48:08,243 - INFO - ============================================================
+2026-01-10 04:48:08,243 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-10 04:48:08,243 - INFO - ============================================================
+2026-01-10 04:48:08,243 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-10 04:48:08,243 - INFO - Acceso local: http://localhost:8000
+2026-01-10 04:48:08,243 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-10 04:48:08,244 - INFO - Endpoints disponibles:
+2026-01-10 04:48:08,244 - INFO -   POST /api/validate - Validar URLs
+2026-01-10 04:48:08,244 - INFO -   POST /api/extract - Extraer videos
+2026-01-10 04:48:08,244 - INFO - Presiona Ctrl+C para detener
+2026-01-10 04:48:08,244 - INFO - ============================================================
+2026-01-10 04:48:13,661 - INFO - 127.0.0.1 - "GET /?ide_webview_request_time=1768031293277 HTTP/1.1" 200 -
+2026-01-10 04:48:13,899 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 04:48:13,990 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 04:48:13,990 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 04:48:13,990 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 04:48:13,990 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 04:48:13,991 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 04:48:14,220 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 04:48:14,301 - WARNING - Archivo no encontrado: x_extractor_ui.js
+2026-01-10 04:48:14,301 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 04:48:14,301 - INFO - 127.0.0.1 - "GET /pinterest.js HTTP/1.1" 200 -
+2026-01-10 04:48:14,301 - INFO - 127.0.0.1 - "GET /x_extractor_ui.js HTTP/1.1" 404 -
+2026-01-10 04:48:14,301 - INFO - 127.0.0.1 - "GET /twitch.js HTTP/1.1" 200 -
+2026-01-10 04:48:14,302 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 04:48:14,684 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 04:48:14,685 - INFO - 127.0.0.1 - "GET /@vite/client HTTP/1.1" 404 -
+2026-01-10 04:49:14,949 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 04:49:21,140 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 04:49:21,262 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 04:49:21,402 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 04:49:21,576 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 04:49:21,577 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 04:49:21,577 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 04:49:21,577 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 04:49:21,577 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 04:49:21,714 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 04:49:21,891 - WARNING - Archivo no encontrado: x_extractor_ui.js
+2026-01-10 04:49:21,892 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 04:49:21,892 - INFO - 127.0.0.1 - "GET /pinterest.js HTTP/1.1" 200 -
+2026-01-10 04:49:21,893 - INFO - 127.0.0.1 - "GET /x_extractor_ui.js HTTP/1.1" 404 -
+2026-01-10 04:49:21,894 - INFO - 127.0.0.1 - "GET /twitch.js HTTP/1.1" 200 -
+2026-01-10 04:49:22,851 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 04:49:26,858 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 04:49:27,170 - INFO - Extrayendo video de: https://youtu.be/KHiwBh7lO2I?si=oTQ9BDDqLLYs6wGW
+2026-01-10 04:49:29,257 - INFO - ✅ Extracción exitosa para: https://youtu.be/KHiwBh7lO2I?si=oTQ9BDDqLLYs6wGW
+2026-01-10 04:49:29,257 - INFO -    📺 Plataforma: youtube
+2026-01-10 04:49:29,258 - INFO -    🎬 Título: Así Uso Claude Code Profesionalmente - Mis Tips de...
+2026-01-10 04:49:29,258 - INFO -    🎯 Resolución: 1080p
+2026-01-10 04:49:29,258 - INFO -    📁 Tamaño: N/A
+2026-01-10 04:49:29,258 - INFO -    ⏱️ Duración: 876s
+2026-01-10 04:49:29,258 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 04:49:36,901 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 04:49:37,219 - INFO - Extrayendo video de: https://www.twitch.tv/videos/2663661756
+2026-01-10 04:49:39,357 - INFO - ✅ Extracción exitosa para: https://www.twitch.tv/videos/2663661756
+2026-01-10 04:49:39,357 - INFO -    📺 Plataforma: twitch
+2026-01-10 04:49:39,357 - INFO -    🎬 Título: Sin título...
+2026-01-10 04:49:39,358 - INFO -    🎯 Resolución: N/A
+2026-01-10 04:49:39,358 - INFO -    📁 Tamaño: N/A
+2026-01-10 04:49:39,358 - INFO -    ⏱️ Duración: 0s
+2026-01-10 04:49:39,358 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 04:49:45,158 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 04:49:45,472 - INFO - Extrayendo video de: https://x.com/GustavoBolsa/status/2008488703484715271?s=20
+2026-01-10 04:49:46,517 - INFO - ✅ Extracción exitosa para: https://x.com/GustavoBolsa/status/2008488703484715271?s=20
+2026-01-10 04:49:46,517 - INFO -    📺 Plataforma: x
+2026-01-10 04:49:46,517 - INFO -    🎬 Título: Sin título...
+2026-01-10 04:49:46,517 - INFO -    🎯 Resolución: N/A
+2026-01-10 04:49:46,517 - INFO -    📁 Tamaño: N/A
+2026-01-10 04:49:46,517 - INFO -    ⏱️ Duración: 0s
+2026-01-10 04:49:46,518 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 04:49:51,536 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 04:49:51,854 - INFO - Extrayendo video de: https://www.tiktok.com/@aibysora20/video/7581489170586012941?is_from_webapp=1&sender_device=pc
+2026-01-10 04:49:52,830 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@aibysora20/video/7581489170586012941?is_from_webapp=1&sender_device=pc
+2026-01-10 04:49:52,830 - INFO -    📺 Plataforma: tiktok
+2026-01-10 04:49:52,831 - INFO -    🎬 Título: Sin título...
+2026-01-10 04:49:52,831 - INFO -    🎯 Resolución: N/A
+2026-01-10 04:49:52,831 - INFO -    📁 Tamaño: N/A
+2026-01-10 04:49:52,832 - INFO -    ⏱️ Duración: 0s
+2026-01-10 04:49:52,832 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 04:49:59,633 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 04:49:59,949 - INFO - Extrayendo video de: https://youtu.be/Mu-ijc76QGg?si=Q8cFjKs3YZd3fW64
+2026-01-10 04:50:01,563 - INFO - ✅ Extracción exitosa para: https://youtu.be/Mu-ijc76QGg?si=Q8cFjKs3YZd3fW64
+2026-01-10 04:50:01,563 - INFO -    📺 Plataforma: youtube
+2026-01-10 04:50:01,564 - INFO -    🎬 Título: Google Antigravity + n8n: Crea Apps Brutales con A...
+2026-01-10 04:50:01,564 - INFO -    🎯 Resolución: 1080p
+2026-01-10 04:50:01,564 - INFO -    📁 Tamaño: N/A
+2026-01-10 04:50:01,564 - INFO -    ⏱️ Duración: 2111s
+2026-01-10 04:50:01,564 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 04:50:06,616 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 04:50:06,930 - INFO - Extrayendo video de: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-10 04:50:09,399 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-10 04:50:09,400 - INFO -    📺 Plataforma: linkedin
+2026-01-10 04:50:09,400 - INFO -    🎬 Título: Sin título...
+2026-01-10 04:50:09,400 - INFO -    🎯 Resolución: N/A
+2026-01-10 04:50:09,400 - INFO -    📁 Tamaño: N/A
+2026-01-10 04:50:09,400 - INFO -    ⏱️ Duración: 0s
+2026-01-10 04:50:09,401 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 04:50:36,979 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 04:50:37,289 - INFO - Extrayendo video de: https://www.linkedin.com/posts/codewithalamin_learn-api-architecture-styles-ugcPost-7414231845409730560-k46w?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-10 04:50:39,471 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/codewithalamin_learn-api-architecture-styles-ugcPost-7414231845409730560-k46w?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-10 04:50:39,471 - INFO -    📺 Plataforma: linkedin
+2026-01-10 04:50:39,472 - INFO -    🎬 Título: Sin título...
+2026-01-10 04:50:39,472 - INFO -    🎯 Resolución: N/A
+2026-01-10 04:50:39,472 - INFO -    📁 Tamaño: N/A
+2026-01-10 04:50:39,472 - INFO -    ⏱️ Duración: 0s
+2026-01-10 04:50:39,472 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 04:50:42,913 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fdocument%2Fmedia%2Fv2%2FD561FAQFvSm9yuC1oRQ%2Ffeedshare-document-pdf-analyzed%2FB56ZuSkILWKsAY-%2F0%2F1767690504212%3Fe%3D1769040000%26v%3Dbeta%26t%3D111qrp52AgVVQ_n_FLsyjW1Sv9GQdeRuB5V4xehmULg&filename=Learn_API_Architecture_Styles___Alamin___.pdf HTTP/1.1" 200 -
+2026-01-10 04:50:42,913 - INFO - Fallback download via requests: https://media.licdn.com/dms/document/media/v2/D561FAQFvSm9yuC1oRQ/feedshare-document-pdf-analyzed/B56ZuSkILWKsAY-/0/1767690504212?e=1769040000&v=beta&t=111qrp52AgVVQ_n_FLsyjW1Sv9GQdeRuB5V4xehmULg
+2026-01-10 04:50:44,231 - INFO - 127.0.0.1 - "GET /api/download_status?id=1364654c-1946-4ae5-84f3-2f876f54fabb HTTP/1.1" 200 -
+2026-01-10 04:50:44,511 - INFO - 127.0.0.1 - "GET /api/download_file?id=1364654c-1946-4ae5-84f3-2f876f54fabb HTTP/1.1" 200 -
+2026-01-10 04:51:44,574 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 08:41:47,588 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 08:41:47,838 - INFO - Extrayendo video de: https://pin.it/3PTuJYVKh
+2026-01-10 08:41:47,839 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-10 08:41:50,510 - INFO - ✅ Extracción exitosa para: https://pin.it/3PTuJYVKh
+2026-01-10 08:41:50,510 - INFO -    📺 Plataforma: pinterest
+2026-01-10 08:41:50,510 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-10 08:41:50,510 - INFO -    🎯 Resolución: N/A
+2026-01-10 08:41:50,511 - INFO -    📁 Tamaño: N/A
+2026-01-10 08:41:50,511 - INFO -    ⏱️ Duración: 23.967s
+2026-01-10 08:41:50,511 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 08:42:47,918 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 08:48:20,164 - INFO - 192.168.1.160 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 08:48:29,549 - INFO - 192.168.1.160 - "GET / HTTP/1.1" 200 -
+2026-01-10 08:48:29,642 - INFO - 192.168.1.160 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:48:29,676 - INFO - 192.168.1.160 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:48:29,688 - INFO - 192.168.1.160 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:48:29,693 - INFO - 192.168.1.160 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:48:29,693 - INFO - 192.168.1.160 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:48:29,697 - INFO - 192.168.1.160 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:48:29,698 - INFO - 192.168.1.160 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:48:29,724 - INFO - 192.168.1.160 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:48:29,751 - WARNING - Archivo no encontrado: x_extractor_ui.js
+2026-01-10 08:48:29,752 - INFO - 192.168.1.160 - code 404, message Not Found
+2026-01-10 08:48:29,752 - INFO - 192.168.1.160 - "GET /x_extractor_ui.js HTTP/1.1" 404 -
+2026-01-10 08:48:29,753 - INFO - 192.168.1.160 - "GET /twitch.js HTTP/1.1" 200 -
+2026-01-10 08:48:29,759 - INFO - 192.168.1.160 - "GET /pinterest.js HTTP/1.1" 200 -
+2026-01-10 08:48:30,035 - INFO - 192.168.1.160 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 08:51:43,325 - INFO - ============================================================
+2026-01-10 08:51:43,325 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-10 08:51:43,325 - INFO - ============================================================
+2026-01-10 08:51:43,325 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-10 08:51:43,325 - INFO - Acceso local: http://localhost:8000
+2026-01-10 08:51:43,325 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-10 08:51:43,325 - INFO - Endpoints disponibles:
+2026-01-10 08:51:43,326 - INFO -   POST /api/validate - Validar URLs
+2026-01-10 08:51:43,326 - INFO -   POST /api/extract - Extraer videos
+2026-01-10 08:51:43,326 - INFO - Presiona Ctrl+C para detener
+2026-01-10 08:51:43,326 - INFO - ============================================================
+2026-01-10 08:51:50,341 - INFO - 127.0.0.1 - "GET /?ide_webview_request_time=1768031293277 HTTP/1.1" 200 -
+2026-01-10 08:51:50,363 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:51:50,671 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:51:50,671 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:51:50,671 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:51:50,671 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:51:50,671 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:51:50,699 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:51:50,985 - WARNING - Archivo no encontrado: x_extractor_ui.js
+2026-01-10 08:51:50,985 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:51:50,985 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 08:51:50,985 - INFO - 127.0.0.1 - "GET /twitch.js HTTP/1.1" 200 -
+2026-01-10 08:51:50,985 - INFO - 127.0.0.1 - "GET /x_extractor_ui.js HTTP/1.1" 404 -
+2026-01-10 08:51:50,986 - INFO - 127.0.0.1 - "GET /pinterest.js HTTP/1.1" 200 -
+2026-01-10 08:51:51,364 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 08:51:51,364 - INFO - 127.0.0.1 - "GET /@vite/client HTTP/1.1" 404 -
+2026-01-10 08:51:59,104 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 08:51:59,415 - INFO - Extrayendo video de: https://pin.it/3PTuJYVKh
+2026-01-10 08:51:59,415 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-10 08:52:02,480 - INFO - ✅ Extracción exitosa para: https://pin.it/3PTuJYVKh
+2026-01-10 08:52:02,480 - INFO -    📺 Plataforma: pinterest
+2026-01-10 08:52:02,480 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-10 08:52:02,480 - INFO -    🎯 Resolución: N/A
+2026-01-10 08:52:02,480 - INFO -    📁 Tamaño: N/A
+2026-01-10 08:52:02,481 - INFO -    ⏱️ Duración: 23.967s
+2026-01-10 08:52:02,481 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 08:52:06,214 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 08:52:06,539 - INFO - 127.0.0.1 - "GET /?ide_webview_request_time=1768031293277 HTTP/1.1" 200 -
+2026-01-10 08:52:06,674 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:52:06,792 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:52:06,858 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:52:06,858 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:52:06,858 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:52:06,858 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:52:06,981 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:52:07,105 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:52:07,168 - WARNING - Archivo no encontrado: x_extractor_ui.js
+2026-01-10 08:52:07,168 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 08:52:07,168 - INFO - 127.0.0.1 - "GET /x_extractor_ui.js HTTP/1.1" 404 -
+2026-01-10 08:52:07,168 - INFO - 127.0.0.1 - "GET /twitch.js HTTP/1.1" 200 -
+2026-01-10 08:52:07,169 - INFO - 127.0.0.1 - "GET /pinterest.js HTTP/1.1" 200 -
+2026-01-10 08:52:07,490 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 08:52:07,490 - INFO - 127.0.0.1 - "GET /@vite/client HTTP/1.1" 404 -
+2026-01-10 08:52:24,836 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 08:52:25,144 - INFO - Extrayendo video de: https://pin.it/3PTuJYVKh
+2026-01-10 08:52:25,145 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-10 08:52:27,751 - INFO - ✅ Extracción exitosa para: https://pin.it/3PTuJYVKh
+2026-01-10 08:52:27,751 - INFO -    📺 Plataforma: pinterest
+2026-01-10 08:52:27,751 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-10 08:52:27,752 - INFO -    🎯 Resolución: N/A
+2026-01-10 08:52:27,752 - INFO -    📁 Tamaño: N/A
+2026-01-10 08:52:27,752 - INFO -    ⏱️ Duración: 23.967s
+2026-01-10 08:52:27,752 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 08:53:26,888 - INFO - ============================================================
+2026-01-10 08:53:26,889 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-10 08:53:26,889 - INFO - ============================================================
+2026-01-10 08:53:26,889 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-10 08:53:26,889 - INFO - Acceso local: http://localhost:8000
+2026-01-10 08:53:26,889 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-10 08:53:26,889 - INFO - Endpoints disponibles:
+2026-01-10 08:53:26,890 - INFO -   POST /api/validate - Validar URLs
+2026-01-10 08:53:26,890 - INFO -   POST /api/extract - Extraer videos
+2026-01-10 08:53:26,890 - INFO - Presiona Ctrl+C para detener
+2026-01-10 08:53:26,890 - INFO - ============================================================
+2026-01-10 08:53:43,577 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 08:53:43,658 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:53:43,845 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:53:43,970 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:53:43,970 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:53:43,971 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:53:43,971 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:53:43,972 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:53:44,150 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:53:44,276 - WARNING - Archivo no encontrado: x_extractor_ui.js
+2026-01-10 08:53:44,277 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 08:53:44,277 - INFO - 127.0.0.1 - "GET /x_extractor_ui.js HTTP/1.1" 404 -
+2026-01-10 08:53:44,277 - INFO - 127.0.0.1 - "GET /pinterest.js HTTP/1.1" 200 -
+2026-01-10 08:53:44,277 - INFO - 127.0.0.1 - "GET /twitch.js HTTP/1.1" 200 -
+2026-01-10 08:53:45,176 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 08:53:47,901 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 08:53:48,216 - INFO - Extrayendo video de: https://pin.it/3PTuJYVKh
+2026-01-10 08:53:48,216 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-10 08:53:51,311 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 08:53:51,455 - INFO - ✅ Extracción exitosa para: https://pin.it/3PTuJYVKh
+2026-01-10 08:53:51,456 - INFO -    📺 Plataforma: pinterest
+2026-01-10 08:53:51,456 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-10 08:53:51,456 - INFO -    🎯 Resolución: N/A
+2026-01-10 08:53:51,456 - INFO -    📁 Tamaño: N/A
+2026-01-10 08:53:51,456 - INFO -    ⏱️ Duración: 23.967s
+2026-01-10 08:53:51,457 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 08:53:51,458 - ERROR - Error enviando respuesta JSON: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host
+2026-01-10 08:53:51,618 - INFO - Extrayendo video de: https://pin.it/3PTuJYVKh
+2026-01-10 08:53:51,618 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-10 08:53:53,892 - INFO - ✅ Extracción exitosa para: https://pin.it/3PTuJYVKh
+2026-01-10 08:53:53,893 - INFO -    📺 Plataforma: pinterest
+2026-01-10 08:53:53,893 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-10 08:53:53,893 - INFO -    🎯 Resolución: N/A
+2026-01-10 08:53:53,893 - INFO -    📁 Tamaño: N/A
+2026-01-10 08:53:53,893 - INFO -    ⏱️ Duración: 23.967s
+2026-01-10 08:53:53,893 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 08:54:51,884 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 08:55:07,922 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 08:55:08,160 - INFO - Extrayendo video de: https://pin.it/2nIBQYqih
+2026-01-10 08:55:08,160 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-10 08:55:10,785 - INFO - ✅ Extracción exitosa para: https://pin.it/2nIBQYqih
+2026-01-10 08:55:10,786 - INFO -    📺 Plataforma: pinterest
+2026-01-10 08:55:10,786 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-10 08:55:10,786 - INFO -    🎯 Resolución: N/A
+2026-01-10 08:55:10,786 - INFO -    📁 Tamaño: N/A
+2026-01-10 08:55:10,787 - INFO -    ⏱️ Duración: 23.967s
+2026-01-10 08:55:10,787 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 08:56:08,246 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 08:58:50,832 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 08:58:50,930 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:58:51,084 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:58:51,256 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:58:51,256 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:58:51,257 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:58:51,259 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:58:51,260 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:58:51,396 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:58:51,567 - WARNING - Archivo no encontrado: x_extractor_ui.js
+2026-01-10 08:58:51,567 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 08:58:51,568 - INFO - 127.0.0.1 - "GET /x_extractor_ui.js HTTP/1.1" 404 -
+2026-01-10 08:58:51,571 - INFO - 127.0.0.1 - "GET /twitch.js HTTP/1.1" 200 -
+2026-01-10 08:58:51,573 - INFO - 127.0.0.1 - "GET /pinterest.js HTTP/1.1" 200 -
+2026-01-10 08:58:52,421 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 08:58:53,662 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 08:58:53,983 - INFO - Extrayendo video de: https://pin.it/2nIBQYqih
+2026-01-10 08:58:53,983 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-10 08:58:56,719 - INFO - ✅ Extracción exitosa para: https://pin.it/2nIBQYqih
+2026-01-10 08:58:56,719 - INFO -    📺 Plataforma: pinterest
+2026-01-10 08:58:56,719 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-10 08:58:56,719 - INFO -    🎯 Resolución: N/A
+2026-01-10 08:58:56,719 - INFO -    📁 Tamaño: N/A
+2026-01-10 08:58:56,719 - INFO -    ⏱️ Duración: 23.967s
+2026-01-10 08:58:56,720 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 08:59:39,773 - INFO - Servidor detenido por usuario
+2026-01-10 08:59:39,774 - INFO - Servidor cerrado correctamente
+2026-01-10 08:59:43,606 - INFO - ============================================================
+2026-01-10 08:59:43,606 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-10 08:59:43,606 - INFO - ============================================================
+2026-01-10 08:59:43,606 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-10 08:59:43,607 - INFO - Acceso local: http://localhost:8000
+2026-01-10 08:59:43,607 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-10 08:59:43,607 - INFO - Endpoints disponibles:
+2026-01-10 08:59:43,607 - INFO -   POST /api/validate - Validar URLs
+2026-01-10 08:59:43,607 - INFO -   POST /api/extract - Extraer videos
+2026-01-10 08:59:43,607 - INFO - Presiona Ctrl+C para detener
+2026-01-10 08:59:43,607 - INFO - ============================================================
+2026-01-10 08:59:49,363 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 08:59:49,464 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:59:49,628 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:59:49,776 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:59:49,777 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:59:49,777 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:59:49,777 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:59:49,777 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:59:49,948 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 08:59:50,098 - WARNING - Archivo no encontrado: x_extractor_ui.js
+2026-01-10 08:59:50,099 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 08:59:50,100 - INFO - 127.0.0.1 - "GET /x_extractor_ui.js HTTP/1.1" 404 -
+2026-01-10 08:59:50,101 - INFO - 127.0.0.1 - "GET /twitch.js HTTP/1.1" 200 -
+2026-01-10 08:59:50,100 - INFO - 127.0.0.1 - "GET /pinterest.js HTTP/1.1" 200 -
+2026-01-10 08:59:50,667 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 08:59:53,629 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 08:59:53,948 - INFO - Extrayendo video de: https://pin.it/2nIBQYqih
+2026-01-10 08:59:53,948 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-10 08:59:57,044 - INFO - ✅ Extracción exitosa para: https://pin.it/2nIBQYqih
+2026-01-10 08:59:57,044 - INFO -    📺 Plataforma: pinterest
+2026-01-10 08:59:57,044 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-10 08:59:57,045 - INFO -    🎯 Resolución: N/A
+2026-01-10 08:59:57,045 - INFO -    📁 Tamaño: N/A
+2026-01-10 08:59:57,045 - INFO -    ⏱️ Duración: 23.967s
+2026-01-10 08:59:57,045 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 09:00:54,271 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 09:01:40,010 - INFO - Servidor detenido por usuario
+2026-01-10 09:01:40,011 - INFO - Servidor cerrado correctamente
+2026-01-10 09:02:05,882 - INFO - ============================================================
+2026-01-10 09:02:05,882 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-10 09:02:05,882 - INFO - ============================================================
+2026-01-10 09:02:05,883 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-10 09:02:05,883 - INFO - Acceso local: http://localhost:8000
+2026-01-10 09:02:05,883 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-10 09:02:05,883 - INFO - Endpoints disponibles:
+2026-01-10 09:02:05,883 - INFO -   POST /api/validate - Validar URLs
+2026-01-10 09:02:05,883 - INFO -   POST /api/extract - Extraer videos
+2026-01-10 09:02:05,883 - INFO - Presiona Ctrl+C para detener
+2026-01-10 09:02:05,883 - INFO - ============================================================
+2026-01-10 09:02:33,309 - INFO - 127.0.0.1 - "GET /?ide_webview_request_time=1768046552993 HTTP/1.1" 200 -
+2026-01-10 09:02:33,563 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:02:33,629 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:02:33,629 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:02:33,630 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:02:33,630 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:02:33,630 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:02:33,882 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:02:33,946 - INFO - 127.0.0.1 - "GET /twitch.js HTTP/1.1" 200 -
+2026-01-10 09:02:33,946 - INFO - 127.0.0.1 - "GET /pinterest.js HTTP/1.1" 200 -
+2026-01-10 09:02:33,946 - WARNING - Archivo no encontrado: x_extractor_ui.js
+2026-01-10 09:02:33,946 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:02:33,946 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 09:02:33,947 - INFO - 127.0.0.1 - "GET /x_extractor_ui.js HTTP/1.1" 404 -
+2026-01-10 09:02:34,339 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 09:02:34,340 - INFO - 127.0.0.1 - "GET /@vite/client HTTP/1.1" 404 -
+2026-01-10 09:03:04,526 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 09:03:04,526 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-10 09:03:34,614 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 09:04:04,792 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 09:07:59,970 - INFO - 127.0.0.1 - "GET /?ide_webview_request_time=1768046552993 HTTP/1.1" 200 -
+2026-01-10 09:08:00,221 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:08:00,288 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:08:00,288 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:08:00,288 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:08:00,289 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:08:00,289 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:08:00,537 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:08:00,600 - INFO - 127.0.0.1 - "GET /pinterest.js HTTP/1.1" 200 -
+2026-01-10 09:08:00,600 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:08:00,601 - INFO - 127.0.0.1 - "GET /twitch.js HTTP/1.1" 200 -
+2026-01-10 09:08:00,925 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 09:08:00,926 - INFO - 127.0.0.1 - "GET /@vite/client HTTP/1.1" 404 -
+2026-01-10 09:08:06,795 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 09:08:06,850 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 09:08:06,850 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-10 09:08:07,044 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:08:07,203 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:08:07,203 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:08:07,203 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:08:07,204 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:08:07,204 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:08:07,351 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:08:07,512 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:08:07,512 - INFO - 127.0.0.1 - "GET /twitch.js HTTP/1.1" 200 -
+2026-01-10 09:08:07,512 - INFO - 127.0.0.1 - "GET /pinterest.js HTTP/1.1" 200 -
+2026-01-10 09:08:08,539 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 09:08:17,697 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 09:08:18,023 - INFO - Extrayendo video de: https://pin.it/2nIBQYqih
+2026-01-10 09:08:18,024 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-10 09:08:21,358 - INFO - ✅ Extracción exitosa para: https://pin.it/2nIBQYqih
+2026-01-10 09:08:21,358 - INFO -    📺 Plataforma: pinterest
+2026-01-10 09:08:21,358 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-10 09:08:21,358 - INFO -    🎯 Resolución: N/A
+2026-01-10 09:08:21,359 - INFO -    📁 Tamaño: N/A
+2026-01-10 09:08:21,359 - INFO -    ⏱️ Duración: 23.967s
+2026-01-10 09:08:21,359 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 09:08:28,373 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 09:08:28,684 - INFO - Extrayendo video de: https://pin.it/2nIBQYqih
+2026-01-10 09:08:28,684 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-10 09:08:31,063 - INFO - ✅ Extracción exitosa para: https://pin.it/2nIBQYqih
+2026-01-10 09:08:31,063 - INFO -    📺 Plataforma: pinterest
+2026-01-10 09:08:31,063 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-10 09:08:31,063 - INFO -    🎯 Resolución: N/A
+2026-01-10 09:08:31,063 - INFO -    📁 Tamaño: N/A
+2026-01-10 09:08:31,063 - INFO -    ⏱️ Duración: 23.967s
+2026-01-10 09:08:31,064 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 09:09:01,205 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 09:09:20,091 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-10 09:09:20,092 - INFO -    🔗 URL: https://v1.pinimg.com/videos/iht/hls/be/3d/5c/be3d5cb3bf417085544b952533ff223a_720w.m3u8...
+2026-01-10 09:09:20,092 - INFO -    📄 Filename: Kaise__jiunga_kaise_.mp4
+2026-01-10 09:09:20,092 - INFO - Descarga proxy estándar para: https://v1.pinimg.com/videos/iht/hls/be/3d/5c/be3d5cb3bf417085544b952533ff223a_720w.m3u8
+2026-01-10 09:09:20,413 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fv1.pinimg.com%2Fvideos%2Fiht%2Fhls%2Fbe%2F3d%2F5c%2Fbe3d5cb3bf417085544b952533ff223a_720w.m3u8&filename=Kaise__jiunga_kaise_.mp4 HTTP/1.1" 200 -
+2026-01-10 09:10:20,408 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 09:12:06,086 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 09:12:06,156 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 09:12:06,156 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-10 09:12:06,347 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:12:06,505 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:12:06,506 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:12:06,506 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:12:06,506 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:12:06,506 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:12:06,658 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:12:06,815 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:12:06,815 - INFO - 127.0.0.1 - "GET /pinterest.js HTTP/1.1" 200 -
+2026-01-10 09:12:06,815 - INFO - 127.0.0.1 - "GET /twitch.js HTTP/1.1" 200 -
+2026-01-10 09:12:07,868 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 09:12:18,702 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 09:12:19,016 - INFO - Extrayendo video de: https://pin.it/2nIBQYqih
+2026-01-10 09:12:19,016 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-10 09:12:22,091 - INFO - ✅ Extracción exitosa para: https://pin.it/2nIBQYqih
+2026-01-10 09:12:22,091 - INFO -    📺 Plataforma: pinterest
+2026-01-10 09:12:22,091 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-10 09:12:22,092 - INFO -    🎯 Resolución: N/A
+2026-01-10 09:12:22,092 - INFO -    📁 Tamaño: N/A
+2026-01-10 09:12:22,092 - INFO -    ⏱️ Duración: 23.967s
+2026-01-10 09:12:22,092 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 09:12:26,930 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 09:12:27,250 - INFO - Extrayendo video de: https://pin.it/2nIBQYqih
+2026-01-10 09:12:27,251 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-10 09:12:29,810 - INFO - ✅ Extracción exitosa para: https://pin.it/2nIBQYqih
+2026-01-10 09:12:29,811 - INFO -    📺 Plataforma: pinterest
+2026-01-10 09:12:29,811 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-10 09:12:29,811 - INFO -    🎯 Resolución: N/A
+2026-01-10 09:12:29,811 - INFO -    📁 Tamaño: N/A
+2026-01-10 09:12:29,811 - INFO -    ⏱️ Duración: 23.967s
+2026-01-10 09:12:29,812 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 09:12:34,918 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-10 09:12:34,918 - INFO -    🔗 URL: https://v1.pinimg.com/videos/iht/hls/be/3d/5c/be3d5cb3bf417085544b952533ff223a_720w.m3u8...
+2026-01-10 09:12:34,919 - INFO -    📄 Filename: Kaise__jiunga_kaise_.mp4
+2026-01-10 09:12:34,919 - INFO - Descarga proxy estándar para: https://v1.pinimg.com/videos/iht/hls/be/3d/5c/be3d5cb3bf417085544b952533ff223a_720w.m3u8
+2026-01-10 09:12:35,249 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fv1.pinimg.com%2Fvideos%2Fiht%2Fhls%2Fbe%2F3d%2F5c%2Fbe3d5cb3bf417085544b952533ff223a_720w.m3u8&filename=Kaise__jiunga_kaise_.mp4 HTTP/1.1" 200 -
+2026-01-10 09:13:02,855 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-10 09:13:02,855 - INFO -    🔗 URL: https://v1.pinimg.com/videos/iht/hls/be/3d/5c/be3d5cb3bf417085544b952533ff223a_720w.m3u8...
+2026-01-10 09:13:02,856 - INFO -    📄 Filename: Kaise__jiunga_kaise_.mp4
+2026-01-10 09:13:02,856 - INFO - Descarga proxy estándar para: https://v1.pinimg.com/videos/iht/hls/be/3d/5c/be3d5cb3bf417085544b952533ff223a_720w.m3u8
+2026-01-10 09:13:03,426 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fv1.pinimg.com%2Fvideos%2Fiht%2Fhls%2Fbe%2F3d%2F5c%2Fbe3d5cb3bf417085544b952533ff223a_720w.m3u8&filename=Kaise__jiunga_kaise_.mp4 HTTP/1.1" 200 -
+2026-01-10 09:13:20,501 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 09:13:20,807 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:13:20,888 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:13:20,888 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:13:20,888 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:13:20,889 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:13:20,889 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:13:21,118 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:13:21,196 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 09:13:21,197 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-10 09:13:21,198 - INFO - 127.0.0.1 - "GET /pinterest.js HTTP/1.1" 200 -
+2026-01-10 09:13:21,198 - INFO - 127.0.0.1 - "GET /twitch.js HTTP/1.1" 200 -
+2026-01-10 09:13:21,198 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:13:22,226 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 09:13:24,492 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 09:13:24,813 - INFO - Extrayendo video de: https://pin.it/2nIBQYqih
+2026-01-10 09:13:24,813 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-10 09:13:27,430 - INFO - ✅ Extracción exitosa para: https://pin.it/2nIBQYqih
+2026-01-10 09:13:27,430 - INFO -    📺 Plataforma: pinterest
+2026-01-10 09:13:27,431 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-10 09:13:27,431 - INFO -    🎯 Resolución: N/A
+2026-01-10 09:13:27,431 - INFO -    📁 Tamaño: N/A
+2026-01-10 09:13:27,431 - INFO -    ⏱️ Duración: 23.967s
+2026-01-10 09:13:27,431 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 09:13:32,069 - INFO - 📥 Solicitud de descarga recibida:
+2026-01-10 09:13:32,069 - INFO -    🔗 URL: https://v1.pinimg.com/videos/iht/hls/be/3d/5c/be3d5cb3bf417085544b952533ff223a_720w.m3u8...
+2026-01-10 09:13:32,069 - INFO -    📄 Filename: Kaise__jiunga_kaise_.mp4
+2026-01-10 09:13:32,069 - INFO - Descarga proxy estándar para: https://v1.pinimg.com/videos/iht/hls/be/3d/5c/be3d5cb3bf417085544b952533ff223a_720w.m3u8
+2026-01-10 09:13:32,372 - INFO - 127.0.0.1 - "GET /api/download?url=https%3A%2F%2Fv1.pinimg.com%2Fvideos%2Fiht%2Fhls%2Fbe%2F3d%2F5c%2Fbe3d5cb3bf417085544b952533ff223a_720w.m3u8&filename=Kaise__jiunga_kaise_.mp4 HTTP/1.1" 200 -
+2026-01-10 09:14:28,985 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 09:14:29,287 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:14:29,392 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:14:29,392 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:14:29,392 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:14:29,392 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:14:29,393 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:14:29,591 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:14:29,700 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 09:14:29,700 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-10 09:14:29,701 - INFO - 127.0.0.1 - "GET /pinterest.js HTTP/1.1" 200 -
+2026-01-10 09:14:29,701 - INFO - 127.0.0.1 - "GET /twitch.js HTTP/1.1" 200 -
+2026-01-10 09:14:29,701 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:14:30,731 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 09:15:30,986 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 09:18:11,959 - INFO - ============================================================
+2026-01-10 09:18:11,959 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-10 09:18:11,959 - INFO - ============================================================
+2026-01-10 09:18:11,959 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-10 09:18:11,959 - INFO - Acceso local: http://localhost:8000
+2026-01-10 09:18:11,959 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-10 09:18:11,959 - INFO - Endpoints disponibles:
+2026-01-10 09:18:11,960 - INFO -   POST /api/validate - Validar URLs
+2026-01-10 09:18:11,960 - INFO -   POST /api/extract - Extraer videos
+2026-01-10 09:18:11,960 - INFO - Presiona Ctrl+C para detener
+2026-01-10 09:18:11,960 - INFO - ============================================================
+2026-01-10 09:19:10,721 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 09:19:10,785 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 09:19:10,786 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-10 09:19:10,986 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:19:11,129 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:19:11,129 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:19:11,129 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:19:11,129 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:19:11,129 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:19:11,289 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:19:11,442 - INFO - 127.0.0.1 - "GET /twitch.js HTTP/1.1" 200 -
+2026-01-10 09:19:11,442 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:19:11,442 - INFO - 127.0.0.1 - "GET /pinterest.js HTTP/1.1" 200 -
+2026-01-10 09:19:12,446 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 09:20:12,706 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 09:20:20,282 - INFO - 192.168.1.160 - "GET / HTTP/1.1" 200 -
+2026-01-10 09:20:20,526 - INFO - 192.168.1.160 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:20:20,569 - INFO - 192.168.1.160 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:20:20,570 - INFO - 192.168.1.160 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:20:20,570 - INFO - 192.168.1.160 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:20:20,582 - INFO - 192.168.1.160 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:20:20,583 - INFO - 192.168.1.160 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:20:20,617 - INFO - 192.168.1.160 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:20:20,620 - INFO - 192.168.1.160 - "GET /pinterest.js HTTP/1.1" 200 -
+2026-01-10 09:20:20,621 - INFO - 192.168.1.160 - "GET /twitch.js HTTP/1.1" 200 -
+2026-01-10 09:20:20,625 - INFO - 192.168.1.160 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:20:20,832 - INFO - 192.168.1.160 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 09:20:34,413 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 09:20:34,676 - INFO - Extrayendo video de: https://pin.it/2nIBQYqih
+2026-01-10 09:20:34,676 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-10 09:20:38,087 - INFO - ✅ Extracción exitosa para: https://pin.it/2nIBQYqih
+2026-01-10 09:20:38,088 - INFO -    📺 Plataforma: pinterest
+2026-01-10 09:20:38,088 - INFO -    🎬 Título: Kaise, jiunga kaise?...
+2026-01-10 09:20:38,088 - INFO -    🎯 Resolución: N/A
+2026-01-10 09:20:38,088 - INFO -    📁 Tamaño: N/A
+2026-01-10 09:20:38,089 - INFO -    ⏱️ Duración: 23.967s
+2026-01-10 09:20:38,089 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 09:20:43,300 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fv1.pinimg.com%2Fvideos%2Fiht%2Fhls%2Fbe%2F3d%2F5c%2Fbe3d5cb3bf417085544b952533ff223a_720w.m3u8&filename=Kaise__jiunga_kaise_.mp4 HTTP/1.1" 200 -
+2026-01-10 09:20:44,624 - INFO - 127.0.0.1 - "GET /api/download_status?id=eae39895-6959-4dc0-aa70-0adf9bfc00e0 HTTP/1.1" 200 -
+2026-01-10 09:20:44,866 - INFO - 127.0.0.1 - "GET /api/download_file?id=eae39895-6959-4dc0-aa70-0adf9bfc00e0 HTTP/1.1" 200 -
+2026-01-10 09:21:44,957 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 09:21:59,259 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 09:21:59,526 - INFO - Extrayendo video de: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-10 09:22:01,974 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-10 09:22:01,975 - INFO -    📺 Plataforma: linkedin
+2026-01-10 09:22:01,975 - INFO -    🎬 Título: Sin título...
+2026-01-10 09:22:01,976 - INFO -    🎯 Resolución: N/A
+2026-01-10 09:22:01,976 - INFO -    📁 Tamaño: N/A
+2026-01-10 09:22:01,977 - INFO -    ⏱️ Duración: 0s
+2026-01-10 09:22:01,977 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 09:22:12,263 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 09:22:12,568 - INFO - Extrayendo video de: https://youtu.be/Mu-ijc76QGg?si=Q8cFjKs3YZd3fW64
+2026-01-10 09:22:14,338 - INFO - ✅ Extracción exitosa para: https://youtu.be/Mu-ijc76QGg?si=Q8cFjKs3YZd3fW64
+2026-01-10 09:22:14,338 - INFO -    📺 Plataforma: youtube
+2026-01-10 09:22:14,339 - INFO -    🎬 Título: Google Antigravity + n8n: Crea Apps Brutales con A...
+2026-01-10 09:22:14,339 - INFO -    🎯 Resolución: 1080p
+2026-01-10 09:22:14,339 - INFO -    📁 Tamaño: N/A
+2026-01-10 09:22:14,339 - INFO -    ⏱️ Duración: 2111s
+2026-01-10 09:22:14,339 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 09:22:25,736 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 09:22:26,045 - INFO - Extrayendo video de: https://www.tiktok.com/@aibysora20/video/7581489170586012941?is_from_webapp=1&sender_device=pc
+2026-01-10 09:22:27,078 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@aibysora20/video/7581489170586012941?is_from_webapp=1&sender_device=pc
+2026-01-10 09:22:27,078 - INFO -    📺 Plataforma: tiktok
+2026-01-10 09:22:27,078 - INFO -    🎬 Título: Sin título...
+2026-01-10 09:22:27,078 - INFO -    🎯 Resolución: N/A
+2026-01-10 09:22:27,078 - INFO -    📁 Tamaño: N/A
+2026-01-10 09:22:27,079 - INFO -    ⏱️ Duración: 0s
+2026-01-10 09:22:27,079 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 09:22:33,862 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 09:22:34,168 - INFO - Extrayendo video de: https://x.com/GustavoBolsa/status/2008488703484715271?s=20
+2026-01-10 09:22:35,466 - INFO - ✅ Extracción exitosa para: https://x.com/GustavoBolsa/status/2008488703484715271?s=20
+2026-01-10 09:22:35,466 - INFO -    📺 Plataforma: x
+2026-01-10 09:22:35,467 - INFO -    🎬 Título: Sin título...
+2026-01-10 09:22:35,467 - INFO -    🎯 Resolución: N/A
+2026-01-10 09:22:35,467 - INFO -    📁 Tamaño: N/A
+2026-01-10 09:22:35,467 - INFO -    ⏱️ Duración: 0s
+2026-01-10 09:22:35,468 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 09:23:34,441 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 09:23:53,838 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 09:23:54,106 - INFO - Extrayendo video de: https://www.facebook.com/share/r/1FswcSKeX8/
+2026-01-10 09:23:58,067 - INFO - ✅ Extracción exitosa para: https://www.facebook.com/share/r/1FswcSKeX8/
+2026-01-10 09:23:58,067 - INFO -    📺 Plataforma: facebook
+2026-01-10 09:23:58,067 - INFO -    🎬 Título: 10x1🎁🎄...
+2026-01-10 09:23:58,068 - INFO -    🎯 Resolución: N/AxN/A
+2026-01-10 09:23:58,068 - INFO -    📁 Tamaño: N/A
+2026-01-10 09:23:58,068 - INFO -    ⏱️ Duración: 17.5s
+2026-01-10 09:23:58,068 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 09:24:54,165 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 09:27:01,589 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 09:27:01,859 - INFO - Extrayendo video de: https://www.facebook.com/reel/1225050812875337
+2026-01-10 09:27:04,611 - INFO - ✅ Extracción exitosa para: https://www.facebook.com/reel/1225050812875337
+2026-01-10 09:27:04,611 - INFO -    📺 Plataforma: facebook
+2026-01-10 09:27:04,612 - INFO -    🎬 Título: Original...
+2026-01-10 09:27:04,612 - INFO -    🎯 Resolución: N/AxN/A
+2026-01-10 09:27:04,612 - INFO -    📁 Tamaño: N/A
+2026-01-10 09:27:04,612 - INFO -    ⏱️ Duración: 12.49s
+2026-01-10 09:27:04,612 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 09:27:27,594 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 09:27:27,847 - INFO - Extrayendo video de: https://www.facebook.com/reel/1225050812875337
+2026-01-10 09:27:30,225 - INFO - ✅ Extracción exitosa para: https://www.facebook.com/reel/1225050812875337
+2026-01-10 09:27:30,225 - INFO -    📺 Plataforma: facebook
+2026-01-10 09:27:30,226 - INFO -    🎬 Título: Original...
+2026-01-10 09:27:30,226 - INFO -    🎯 Resolución: N/AxN/A
+2026-01-10 09:27:30,226 - INFO -    📁 Tamaño: N/A
+2026-01-10 09:27:30,226 - INFO -    ⏱️ Duración: 12.49s
+2026-01-10 09:27:30,226 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 09:27:36,177 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 09:27:36,495 - INFO - Extrayendo video de: https://www.facebook.com/reel/1225050812875337
+2026-01-10 09:27:38,956 - INFO - ✅ Extracción exitosa para: https://www.facebook.com/reel/1225050812875337
+2026-01-10 09:27:38,957 - INFO -    📺 Plataforma: facebook
+2026-01-10 09:27:38,957 - INFO -    🎬 Título: Original...
+2026-01-10 09:27:38,957 - INFO -    🎯 Resolución: N/AxN/A
+2026-01-10 09:27:38,957 - INFO -    📁 Tamaño: N/A
+2026-01-10 09:27:38,957 - INFO -    ⏱️ Duración: 12.49s
+2026-01-10 09:27:38,957 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 09:28:01,906 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 09:28:36,773 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 09:30:27,353 - INFO - 127.0.0.1 - "GET /?ide_webview_request_time=1768046552993 HTTP/1.1" 200 -
+2026-01-10 09:30:27,600 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:30:27,680 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:30:27,680 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:30:27,680 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:30:27,680 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:30:27,680 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:30:27,909 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:30:27,992 - INFO - 127.0.0.1 - "GET /pinterest.js HTTP/1.1" 200 -
+2026-01-10 09:30:27,992 - INFO - 127.0.0.1 - "GET /twitch.js HTTP/1.1" 200 -
+2026-01-10 09:30:27,992 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:30:28,382 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 09:30:28,382 - INFO - 127.0.0.1 - "GET /@vite/client HTTP/1.1" 404 -
+2026-01-10 09:31:28,640 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 09:33:37,553 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 09:33:37,821 - INFO - Extrayendo video de: https://pin.it/1LBCv0QxB
+2026-01-10 09:33:37,821 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-10 09:33:40,547 - WARNING - yt-dlp falló para Pinterest, intentando fallback manual... Error: No info returned form yt-dlp
+2026-01-10 09:33:40,547 - INFO - 🕵️‍♂️ Ejecutando extracción manual (Regex) para: https://pin.it/1LBCv0QxB
+2026-01-10 09:33:42,896 - INFO - Status Code: 200, Length: 847953
+2026-01-10 09:33:42,914 - INFO - Manual Image Found: https://i.pinimg.com/originals/d5/3b/01/d53b014d86a6b6761bf649a0ed813c2b.png
+2026-01-10 09:33:42,914 - INFO - ✅ Extracción exitosa para: https://pin.it/1LBCv0QxB
+2026-01-10 09:33:42,915 - INFO -    📺 Plataforma: pinterest
+2026-01-10 09:33:42,915 - INFO -    🎬 Título: Wallpaper 4k lockscreen | Spiderman pictures, Spid...
+2026-01-10 09:33:42,915 - INFO -    🎯 Resolución: N/A
+2026-01-10 09:33:42,915 - INFO -    📁 Tamaño: N/A
+2026-01-10 09:33:42,915 - INFO -    ⏱️ Duración: 0s
+2026-01-10 09:33:42,916 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 09:33:48,200 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fd5%2F3b%2F01%2Fd53b014d86a6b6761bf649a0ed813c2b.png&filename=Wallpaper_4k_lockscreen___Spiderman_pictures__Spid.jpg HTTP/1.1" 200 -
+2026-01-10 09:33:49,526 - INFO - 127.0.0.1 - "GET /api/download_status?id=751c2383-be4e-4d0c-b356-29065f622025 HTTP/1.1" 200 -
+2026-01-10 09:33:49,779 - INFO - 127.0.0.1 - "GET /api/download_file?id=751c2383-be4e-4d0c-b356-29065f622025 HTTP/1.1" 200 -
+2026-01-10 09:34:49,885 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 09:38:43,422 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 09:38:43,690 - INFO - Extrayendo video de: https://pin.it/1LBCv0QxB
+2026-01-10 09:38:43,690 - INFO - PinterestExtractor v2.1 (Manual Fallback Enabled) Initialized
+2026-01-10 09:38:45,880 - WARNING - yt-dlp falló para Pinterest, intentando fallback manual... Error: No info returned form yt-dlp
+2026-01-10 09:38:45,880 - INFO - 🕵️‍♂️ Ejecutando extracción manual (Regex) para: https://pin.it/1LBCv0QxB
+2026-01-10 09:38:48,429 - INFO - Status Code: 200, Length: 848036
+2026-01-10 09:38:48,446 - INFO - Manual Image Found: https://i.pinimg.com/originals/d5/3b/01/d53b014d86a6b6761bf649a0ed813c2b.png
+2026-01-10 09:38:48,446 - INFO - ✅ Extracción exitosa para: https://pin.it/1LBCv0QxB
+2026-01-10 09:38:48,446 - INFO -    📺 Plataforma: pinterest
+2026-01-10 09:38:48,447 - INFO -    🎬 Título: Wallpaper 4k lockscreen | Spiderman pictures, Spid...
+2026-01-10 09:38:48,447 - INFO -    🎯 Resolución: N/A
+2026-01-10 09:38:48,447 - INFO -    📁 Tamaño: N/A
+2026-01-10 09:38:48,447 - INFO -    ⏱️ Duración: 0s
+2026-01-10 09:38:48,447 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 09:38:55,078 - INFO - ============================================================
+2026-01-10 09:38:55,079 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-10 09:38:55,079 - INFO - ============================================================
+2026-01-10 09:38:55,079 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-10 09:38:55,079 - INFO - Acceso local: http://localhost:8000
+2026-01-10 09:38:55,079 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-10 09:38:55,079 - INFO - Endpoints disponibles:
+2026-01-10 09:38:55,080 - INFO -   POST /api/validate - Validar URLs
+2026-01-10 09:38:55,080 - INFO -   POST /api/extract - Extraer videos
+2026-01-10 09:38:55,080 - INFO - Presiona Ctrl+C para detener
+2026-01-10 09:38:55,080 - INFO - ============================================================
+2026-01-10 09:38:55,232 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fd5%2F3b%2F01%2Fd53b014d86a6b6761bf649a0ed813c2b.png&filename=Wallpaper_4k_lockscreen___Spiderman_pictures__Spid.jpg HTTP/1.1" 200 -
+2026-01-10 09:38:55,233 - INFO - Fallback download via requests: https://i.pinimg.com/originals/d5/3b/01/d53b014d86a6b6761bf649a0ed813c2b.png
+2026-01-10 09:38:56,239 - INFO - 127.0.0.1 - "GET /api/download_status?id=bdf4e9d2-6548-49b4-bdd3-f7732f092591 HTTP/1.1" 200 -
+2026-01-10 09:38:56,590 - INFO - 127.0.0.1 - "GET /api/download_file?id=bdf4e9d2-6548-49b4-bdd3-f7732f092591 HTTP/1.1" 200 -
+2026-01-10 09:39:56,589 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 09:39:56,857 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 09:46:10,009 - INFO - ============================================================
+2026-01-10 09:46:10,009 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-10 09:46:10,009 - INFO - ============================================================
+2026-01-10 09:46:10,009 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-10 09:46:10,010 - INFO - Acceso local: http://localhost:8000
+2026-01-10 09:46:10,010 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-10 09:46:10,010 - INFO - Endpoints disponibles:
+2026-01-10 09:46:10,010 - INFO -   POST /api/validate - Validar URLs
+2026-01-10 09:46:10,010 - INFO -   POST /api/extract - Extraer videos
+2026-01-10 09:46:10,010 - INFO - Presiona Ctrl+C para detener
+2026-01-10 09:46:10,011 - INFO - ============================================================
+2026-01-10 09:46:16,417 - INFO - 127.0.0.1 - "GET /?ide_webview_request_time=1768046552993 HTTP/1.1" 200 -
+2026-01-10 09:46:16,474 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:46:16,763 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:46:16,763 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:46:16,763 - INFO - 127.0.0.1 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:46:16,764 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:46:16,764 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:46:16,788 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:46:17,069 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:46:17,070 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:46:17,415 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 09:46:17,415 - INFO - 127.0.0.1 - "GET /@vite/client HTTP/1.1" 404 -
+2026-01-10 09:46:20,486 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 09:46:20,549 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 09:46:20,549 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-10 09:46:20,751 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:46:20,894 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:46:20,894 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:46:20,895 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:46:20,895 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:46:20,895 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:46:21,057 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:46:21,201 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:46:21,202 - INFO - 127.0.0.1 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:46:22,244 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 09:47:03,197 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 09:47:03,499 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:47:03,612 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:47:03,612 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:47:03,613 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:47:03,613 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:47:03,614 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:47:03,809 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:47:03,919 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:47:03,921 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 09:47:03,921 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-10 09:47:03,922 - INFO - 127.0.0.1 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:47:04,950 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 09:47:17,688 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 09:48:05,213 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 09:49:45,909 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 09:49:45,981 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 09:49:45,981 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-10 09:49:46,170 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:49:46,330 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:49:46,330 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:49:46,330 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:49:46,331 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:49:46,331 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:49:46,474 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:49:46,644 - INFO - 127.0.0.1 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:49:46,645 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:49:47,729 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 09:49:52,404 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 09:49:52,724 - INFO - Extrayendo video de: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-10 09:49:55,319 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/neetcodeio_6-array-techniques-for-coding-interviews-activity-7415060968377884672-yFn6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-10 09:49:55,319 - INFO -    📺 Plataforma: linkedin
+2026-01-10 09:49:55,319 - INFO -    🎬 Título: Sin título...
+2026-01-10 09:49:55,319 - INFO -    🎯 Resolución: N/A
+2026-01-10 09:49:55,319 - INFO -    📁 Tamaño: N/A
+2026-01-10 09:49:55,320 - INFO -    ⏱️ Duración: 0s
+2026-01-10 09:49:55,320 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 09:50:02,629 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-01-10 09:52:54,332 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 09:52:54,401 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 09:52:54,402 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-10 09:52:54,598 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:52:54,750 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:52:54,750 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:52:54,750 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:52:54,751 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:52:54,751 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:52:54,910 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:52:55,065 - INFO - 127.0.0.1 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:52:55,065 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:52:56,131 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 09:53:40,246 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 09:53:40,547 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:53:40,666 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:53:40,666 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:53:40,666 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:53:40,666 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:53:40,667 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:53:40,858 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:53:40,986 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 09:53:40,986 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-10 09:53:40,987 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:53:40,987 - INFO - 127.0.0.1 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 09:53:42,037 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 09:54:42,295 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 10:01:04,481 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 10:01:04,545 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 10:01:04,545 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-10 10:01:04,745 - INFO - 127.0.0.1 - "GET /style.css HTTP/1.1" 200 -
+2026-01-10 10:01:04,887 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:01:04,888 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:01:04,888 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:01:04,889 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:01:04,889 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:01:05,055 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:01:05,193 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:01:05,193 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:01:05,194 - INFO - 127.0.0.1 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:01:06,208 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 10:02:06,471 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 10:18:44,132 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 10:18:44,196 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 10:18:44,196 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-10 10:18:44,438 - INFO - 127.0.0.1 - "GET /style.css HTTP/1.1" 200 -
+2026-01-10 10:18:44,553 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:18:44,554 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:18:44,554 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:18:44,554 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:18:44,554 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:18:44,822 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:18:44,864 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:18:44,865 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:18:44,868 - INFO - 127.0.0.1 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:18:45,992 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 10:42:29,862 - INFO - ============================================================
+2026-01-10 10:42:29,862 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-10 10:42:29,862 - INFO - ============================================================
+2026-01-10 10:42:29,862 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-10 10:42:29,862 - INFO - Acceso local: http://localhost:8000
+2026-01-10 10:42:29,862 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-10 10:42:29,863 - INFO - Endpoints disponibles:
+2026-01-10 10:42:29,863 - INFO -   POST /api/validate - Validar URLs
+2026-01-10 10:42:29,863 - INFO -   POST /api/extract - Extraer videos
+2026-01-10 10:42:29,863 - INFO - Presiona Ctrl+C para detener
+2026-01-10 10:42:29,863 - INFO - ============================================================
+2026-01-10 10:43:52,911 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 10:43:52,977 - INFO - 127.0.0.1 - code 404, message Not Found
+2026-01-10 10:43:52,977 - INFO - 127.0.0.1 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 -
+2026-01-10 10:43:53,171 - INFO - 127.0.0.1 - "GET /style.css HTTP/1.1" 200 -
+2026-01-10 10:43:53,321 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:43:53,321 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:43:53,321 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:43:53,321 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:43:53,322 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:43:53,475 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:43:53,629 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:43:53,629 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:43:53,629 - INFO - 127.0.0.1 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:43:54,678 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 10:44:19,705 - INFO - 192.168.1.160 - "GET / HTTP/1.1" 200 -
+2026-01-10 10:44:19,906 - INFO - 192.168.1.160 - "GET /style.css HTTP/1.1" 200 -
+2026-01-10 10:44:20,164 - INFO - 192.168.1.160 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:44:20,167 - INFO - 192.168.1.160 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:44:20,167 - INFO - 192.168.1.160 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:44:20,169 - INFO - 192.168.1.160 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:44:20,169 - INFO - 192.168.1.160 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:44:20,172 - INFO - 192.168.1.160 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:44:20,217 - INFO - 192.168.1.160 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:44:20,217 - INFO - 192.168.1.160 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:44:20,219 - INFO - 192.168.1.160 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:44:20,436 - INFO - 192.168.1.160 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 10:48:00,343 - INFO - ============================================================
+2026-01-10 10:48:00,343 - INFO - Video Downloader Server v2.3 - High Quality Fix
+2026-01-10 10:48:00,344 - INFO - ============================================================
+2026-01-10 10:48:00,344 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-10 10:48:00,344 - INFO - Acceso local: http://localhost:8000
+2026-01-10 10:48:00,344 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-10 10:48:00,344 - INFO - Endpoints disponibles:
+2026-01-10 10:48:00,344 - INFO -   POST /api/validate - Validar URLs
+2026-01-10 10:48:00,344 - INFO -   POST /api/extract - Extraer videos
+2026-01-10 10:48:00,345 - INFO - Presiona Ctrl+C para detener
+2026-01-10 10:48:00,345 - INFO - ============================================================
+2026-01-10 10:48:02,357 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 10:48:02,436 - INFO - 127.0.0.1 - "GET /style.css HTTP/1.1" 200 -
+2026-01-10 10:48:02,622 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:02,745 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:02,745 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:02,745 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:02,746 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:02,746 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:02,940 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:03,060 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:03,061 - INFO - 127.0.0.1 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:03,951 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 10:48:08,340 - INFO - 192.168.1.160 - "GET / HTTP/1.1" 200 -
+2026-01-10 10:48:08,403 - INFO - 192.168.1.160 - "GET /style.css HTTP/1.1" 200 -
+2026-01-10 10:48:08,465 - INFO - 192.168.1.160 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:08,466 - INFO - 192.168.1.160 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:08,475 - INFO - 192.168.1.160 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:08,476 - INFO - 192.168.1.160 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:08,495 - INFO - 192.168.1.160 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:08,515 - INFO - 192.168.1.160 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:08,526 - INFO - 192.168.1.160 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:08,527 - INFO - 192.168.1.160 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:08,536 - INFO - 192.168.1.160 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:08,821 - INFO - 192.168.1.160 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 10:48:17,324 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 10:48:17,634 - INFO - Extrayendo video de: https://www.twitch.tv/videos/2663661756
+2026-01-10 10:48:20,100 - INFO - ✅ Extracción exitosa para: https://www.twitch.tv/videos/2663661756
+2026-01-10 10:48:20,100 - INFO -    📺 Plataforma: twitch
+2026-01-10 10:48:20,101 - INFO -    🎬 Título: Sin título...
+2026-01-10 10:48:20,101 - INFO -    🎯 Resolución: N/A
+2026-01-10 10:48:20,101 - INFO -    📁 Tamaño: N/A
+2026-01-10 10:48:20,101 - INFO -    ⏱️ Duración: 0s
+2026-01-10 10:48:20,101 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 10:48:37,672 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 10:48:37,975 - INFO - 127.0.0.1 - "GET /style.css HTTP/1.1" 200 -
+2026-01-10 10:48:38,082 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:38,082 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:38,083 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:38,083 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:38,083 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:38,288 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:38,396 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:38,396 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:38,396 - INFO - 127.0.0.1 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:48:38,926 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 10:49:39,175 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 10:53:54,624 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 10:53:54,720 - INFO - 127.0.0.1 - "GET /style.css HTTP/1.1" 200 -
+2026-01-10 10:53:54,876 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:53:55,050 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:53:55,051 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:53:55,052 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:53:55,053 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:53:55,054 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:53:55,192 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:53:55,368 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:53:55,368 - INFO - 127.0.0.1 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:53:55,885 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 10:53:59,636 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 10:53:59,944 - INFO - 127.0.0.1 - "GET /style.css HTTP/1.1" 200 -
+2026-01-10 10:54:00,011 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:54:00,011 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:54:00,012 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:54:00,012 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:54:00,012 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:54:00,248 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:54:00,328 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:54:00,329 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:54:00,329 - INFO - 127.0.0.1 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:54:00,846 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 10:54:05,269 - INFO - 192.168.1.160 - "GET / HTTP/1.1" 200 -
+2026-01-10 10:54:05,336 - INFO - 192.168.1.160 - "GET /style.css HTTP/1.1" 200 -
+2026-01-10 10:54:05,395 - INFO - 192.168.1.160 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:54:05,395 - INFO - 192.168.1.160 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:54:05,396 - INFO - 192.168.1.160 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:54:05,397 - INFO - 192.168.1.160 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:54:05,397 - INFO - 192.168.1.160 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:54:05,448 - INFO - 192.168.1.160 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:54:05,451 - INFO - 192.168.1.160 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:54:05,452 - INFO - 192.168.1.160 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:54:05,453 - INFO - 192.168.1.160 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:54:05,567 - INFO - 192.168.1.160 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 10:55:01,116 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 10:56:30,843 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 10:56:30,938 - INFO - 127.0.0.1 - "GET /style.css HTTP/1.1" 200 -
+2026-01-10 10:56:31,096 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:56:31,247 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:56:31,247 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:56:31,247 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:56:31,247 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:56:31,248 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:56:31,415 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:56:31,557 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:56:31,557 - INFO - 127.0.0.1 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:56:32,095 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 10:57:32,355 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 10:58:19,065 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 10:58:19,166 - INFO - 127.0.0.1 - "GET /style.css HTTP/1.1" 200 -
+2026-01-10 10:58:19,318 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:58:19,504 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:58:19,505 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:58:19,506 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:58:19,507 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:58:19,508 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:58:19,624 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:58:19,820 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:58:19,821 - INFO - 127.0.0.1 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:58:20,393 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 10:58:27,832 - INFO - 192.168.1.160 - "GET / HTTP/1.1" 200 -
+2026-01-10 10:58:27,890 - INFO - 192.168.1.160 - "GET /style.css HTTP/1.1" 200 -
+2026-01-10 10:58:27,942 - INFO - 192.168.1.160 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:58:27,952 - INFO - 192.168.1.160 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:58:27,954 - INFO - 192.168.1.160 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:58:27,954 - INFO - 192.168.1.160 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:58:27,957 - INFO - 192.168.1.160 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:58:27,990 - INFO - 192.168.1.160 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:58:27,992 - INFO - 192.168.1.160 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:58:27,993 - INFO - 192.168.1.160 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:58:27,994 - INFO - 192.168.1.160 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 10:58:28,095 - INFO - 192.168.1.160 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 10:58:48,538 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 10:58:48,852 - INFO - Extrayendo video de: https://www.twitch.tv/videos/2663661756
+2026-01-10 10:58:50,395 - INFO - ✅ Extracción exitosa para: https://www.twitch.tv/videos/2663661756
+2026-01-10 10:58:50,396 - INFO -    📺 Plataforma: twitch
+2026-01-10 10:58:50,396 - INFO -    🎬 Título: Sin título...
+2026-01-10 10:58:50,396 - INFO -    🎯 Resolución: N/A
+2026-01-10 10:58:50,396 - INFO -    📁 Tamaño: N/A
+2026-01-10 10:58:50,396 - INFO -    ⏱️ Duración: 0s
+2026-01-10 10:58:50,396 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 10:59:00,262 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 10:59:00,571 - INFO - Extrayendo video de: https://www.tiktok.com/@aibysora20/video/7581489170586012941?is_from_webapp=1&sender_device=pc
+2026-01-10 10:59:01,920 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@aibysora20/video/7581489170586012941?is_from_webapp=1&sender_device=pc
+2026-01-10 10:59:01,920 - INFO -    📺 Plataforma: tiktok
+2026-01-10 10:59:01,921 - INFO -    🎬 Título: Sin título...
+2026-01-10 10:59:01,921 - INFO -    🎯 Resolución: N/A
+2026-01-10 10:59:01,921 - INFO -    📁 Tamaño: N/A
+2026-01-10 10:59:01,921 - INFO -    ⏱️ Duración: 0s
+2026-01-10 10:59:01,921 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 11:00:00,847 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 11:09:16,899 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 11:09:16,969 - INFO - 127.0.0.1 - "GET /style.css HTTP/1.1" 200 -
+2026-01-10 11:09:17,162 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:09:17,288 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:09:17,289 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:09:17,289 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:09:17,289 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:09:17,289 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:09:17,470 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:09:17,597 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:09:17,597 - INFO - 127.0.0.1 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:09:18,418 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 11:09:25,509 - INFO - 192.168.1.160 - "GET / HTTP/1.1" 200 -
+2026-01-10 11:09:25,555 - INFO - 192.168.1.160 - "GET /style.css HTTP/1.1" 200 -
+2026-01-10 11:09:25,599 - INFO - 192.168.1.160 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:09:25,600 - INFO - 192.168.1.160 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:09:25,602 - INFO - 192.168.1.160 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:09:25,602 - INFO - 192.168.1.160 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:09:25,613 - INFO - 192.168.1.160 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:09:25,644 - INFO - 192.168.1.160 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:09:25,649 - INFO - 192.168.1.160 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:09:25,649 - INFO - 192.168.1.160 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:09:25,649 - INFO - 192.168.1.160 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:09:25,753 - INFO - 192.168.1.160 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 11:09:45,705 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 11:09:46,022 - INFO - Extrayendo video de: https://www.twitch.tv/videos/2663661756
+2026-01-10 11:09:47,496 - INFO - ✅ Extracción exitosa para: https://www.twitch.tv/videos/2663661756
+2026-01-10 11:09:47,496 - INFO -    📺 Plataforma: twitch
+2026-01-10 11:09:47,496 - INFO -    🎬 Título: Sin título...
+2026-01-10 11:09:47,497 - INFO -    🎯 Resolución: N/A
+2026-01-10 11:09:47,497 - INFO -    📁 Tamaño: N/A
+2026-01-10 11:09:47,497 - INFO -    ⏱️ Duración: 0s
+2026-01-10 11:09:47,497 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 11:09:54,223 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fwww.twitch.tv%2Fvideos%2F2663661756&filename=twitch_video.mp4 HTTP/1.1" 200 -
+2026-01-10 11:09:55,539 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:09:56,232 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:09:57,547 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:09:58,239 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:09:59,545 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:00,232 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:01,539 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:02,233 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:03,551 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:04,232 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:05,546 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:06,232 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:07,549 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:08,238 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:09,535 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:10,230 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:11,551 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:12,232 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:13,548 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:14,232 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:15,547 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:16,232 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:17,540 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:18,232 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:19,535 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:20,233 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:21,545 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:22,233 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:23,541 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:24,231 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:25,537 - INFO - 127.0.0.1 - "GET /api/download_status?id=bc122e5a-27a0-4ecb-afa1-8aba4d8daa48 HTTP/1.1" 200 -
+2026-01-10 11:10:26,069 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 11:10:26,377 - INFO - 127.0.0.1 - "GET /style.css HTTP/1.1" 200 -
+2026-01-10 11:10:26,470 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:10:26,470 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:10:26,471 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:10:26,471 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:10:26,471 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:10:26,694 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:10:26,792 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:10:26,793 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:10:26,793 - INFO - 127.0.0.1 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:10:27,323 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-10 11:10:38,484 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 11:10:38,803 - INFO - Extrayendo video de: https://x.com/GustavoBolsa/status/2008488703484715271?s=20
+2026-01-10 11:10:39,890 - INFO - ✅ Extracción exitosa para: https://x.com/GustavoBolsa/status/2008488703484715271?s=20
+2026-01-10 11:10:39,891 - INFO -    📺 Plataforma: x
+2026-01-10 11:10:39,891 - INFO -    🎬 Título: Sin título...
+2026-01-10 11:10:39,891 - INFO -    🎯 Resolución: N/A
+2026-01-10 11:10:39,892 - INFO -    📁 Tamaño: N/A
+2026-01-10 11:10:39,892 - INFO -    ⏱️ Duración: 0s
+2026-01-10 11:10:39,892 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 11:10:46,472 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 11:10:46,785 - INFO - Extrayendo video de: https://www.tiktok.com/@aibysora20/video/7581489170586012941?is_from_webapp=1&sender_device=pc
+2026-01-10 11:10:47,845 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@aibysora20/video/7581489170586012941?is_from_webapp=1&sender_device=pc
+2026-01-10 11:10:47,845 - INFO -    📺 Plataforma: tiktok
+2026-01-10 11:10:47,846 - INFO -    🎬 Título: Sin título...
+2026-01-10 11:10:47,846 - INFO -    🎯 Resolución: N/A
+2026-01-10 11:10:47,846 - INFO -    📁 Tamaño: N/A
+2026-01-10 11:10:47,846 - INFO -    ⏱️ Duración: 0s
+2026-01-10 11:10:47,846 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 11:11:08,556 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 11:11:08,869 - INFO - Extrayendo video de: https://www.linkedin.com/posts/devtalles_youtube-activity-7414465008299872256-ZPdX?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-10 11:11:10,598 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/devtalles_youtube-activity-7414465008299872256-ZPdX?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-10 11:11:10,598 - INFO -    📺 Plataforma: linkedin
+2026-01-10 11:11:10,599 - INFO -    🎬 Título: Sin título...
+2026-01-10 11:11:10,599 - INFO -    🎯 Resolución: N/A
+2026-01-10 11:11:10,600 - INFO -    📁 Tamaño: N/A
+2026-01-10 11:11:10,600 - INFO -    ⏱️ Duración: 0s
+2026-01-10 11:11:10,600 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 11:11:18,321 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-01-10 11:11:18,654 - INFO - Extrayendo video de: https://www.linkedin.com/posts/devtalles_youtube-activity-7414465008299872256-ZPdX?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-10 11:11:20,174 - INFO - ✅ Extracción exitosa para: https://www.linkedin.com/posts/devtalles_youtube-activity-7414465008299872256-ZPdX?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG7i2kBJYOUUL_TjWJ0s_rD6_LBPtqzDEc
+2026-01-10 11:11:20,174 - INFO -    📺 Plataforma: linkedin
+2026-01-10 11:11:20,175 - INFO -    🎬 Título: Sin título...
+2026-01-10 11:11:20,175 - INFO -    🎯 Resolución: N/A
+2026-01-10 11:11:20,175 - INFO -    📁 Tamaño: N/A
+2026-01-10 11:11:20,176 - INFO -    ⏱️ Duración: 0s
+2026-01-10 11:11:20,176 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-01-10 11:11:27,228 - INFO - 127.0.0.1 - "GET /api/download_start?url=undefined&filename=%2523youtube%2520%2520DevTalles.mp4 HTTP/1.1" 200 -
+2026-01-10 11:11:27,228 - INFO - Fallback download via requests: undefined
+2026-01-10 11:11:27,229 - ERROR - Task error e8547886-9310-495a-8ef7-265da79459cb: Invalid URL 'undefined': No scheme supplied. Perhaps you meant https://undefined?
+2026-01-10 11:11:28,555 - INFO - 127.0.0.1 - "GET /api/download_status?id=e8547886-9310-495a-8ef7-265da79459cb HTTP/1.1" 200 -
+2026-01-10 11:12:28,821 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-01-10 11:12:37,434 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-10 11:12:37,524 - INFO - 127.0.0.1 - "GET /style.css HTTP/1.1" 200 -
+2026-01-10 11:12:37,672 - INFO - 127.0.0.1 - "GET /card.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:12:37,836 - INFO - 127.0.0.1 - "GET /facebook.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:12:37,836 - INFO - 127.0.0.1 - "GET /insta.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:12:37,836 - INFO - 127.0.0.1 - "GET /linkedin.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:12:37,836 - INFO - 127.0.0.1 - "GET /tiktok.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:12:37,837 - INFO - 127.0.0.1 - "GET /x.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:12:37,978 - INFO - 127.0.0.1 - "GET /youtube.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:12:38,153 - INFO - 127.0.0.1 - "GET /twitch.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:12:38,154 - INFO - 127.0.0.1 - "GET /pinterest.js?v=20260105 HTTP/1.1" 200 -
+2026-01-10 11:12:38,941 - INFO - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
