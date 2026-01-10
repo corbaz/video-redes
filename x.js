@@ -15,7 +15,8 @@ function showXVideo(data, container) {
     const videoCardHTML = renderVideoCard({
         videoUrl: videoUrl,
         thumbnail: data.thumbnail,
-        originalUrl: videoUrl // Pass URL for smart download
+        originalUrl: videoUrl, // Pass URL for smart download
+        platform: 'x'
     });
     container.innerHTML = videoCardHTML;
 }

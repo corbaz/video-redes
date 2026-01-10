@@ -73,7 +73,8 @@ function showFacebookVideo(data, container) {
     // Usar el mismo template unificado que Instagram, LinkedIn, X y TikTok
     const cardHtml = renderVideoCard({
         videoUrl: url,
-        thumbnail: data.thumbnail
+        thumbnail: data.thumbnail,
+        platform: 'facebook'
     });
 
     container.innerHTML = cardHtml;

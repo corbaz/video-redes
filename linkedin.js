@@ -86,6 +86,7 @@ function showLinkedinVideo(data, container) {
         originalUrl: url, 
         thumbnail: data.thumbnail,
         title: data.title,
+        filename: filename,
         platform: 'linkedin'
     });
     container.innerHTML = videoCardHTML;

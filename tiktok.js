@@ -129,7 +129,8 @@ function showTikTokVideo(data, container) {
     const cardHtml = renderVideoCard({
         videoUrl: data.videoUrl,
         thumbnail: data.thumbnail,
-        originalUrl: downloadUrl // Important: Pass original URL for smart download
+        originalUrl: downloadUrl, // Important: Pass original URL for smart download
+        platform: 'tiktok'
     });
 
     container.innerHTML = cardHtml;

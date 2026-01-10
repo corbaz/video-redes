@@ -28,7 +28,8 @@ function showPinterestVideo(data, container) {
         title: title,
         originalUrl: url, // Pinterest usually works with direct URL, but keeping consistent
         filename: filename, // Pass the correct filename (with .jpg for images)
-        type: type // Pass type to handle play icon
+        type: type, // Pass type to handle play icon
+        platform: 'pinterest'
     });
     container.innerHTML = cardHtml;
 }

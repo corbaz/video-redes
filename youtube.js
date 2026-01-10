@@ -298,25 +298,17 @@ function showYouTubeVideo(data, container) {
         container.style.display = 'block';
     }
 
-    // Template Pro UI (Usa clases CSS robustas)
-    // Add onclick handler to trigger smart download
-    const clickHandler = `onclick="if(window.startSmartDownload) { window.startSmartDownload('${originalUrl}', '${filename}'); } else { console.error('SmartDownload not found'); }"`;
-
-    container.innerHTML = `
-        <div class="pro-video-card">
-            <div class="pro-video-card-inner" style="cursor: pointer;" ${clickHandler} title="Clic para descargar">
-                <img src="${thumbnail}" alt="${title}" class="pro-video-card-img"
-                     onerror="if (this.src.includes('maxresdefault')) { this.src = this.src.replace('maxresdefault.jpg', 'hqdefault.jpg'); } else { this.src = 'https://via.placeholder.com/800x450/000000/FFFFFF?text=No+Thumbnail'; }">
-                
-                <!-- Play Icon Overlay -->
-                <div class="card-play-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3em; color: rgba(255, 255, 255, 0.9); z-index: 20; text-shadow: 0 4px 8px rgba(0,0,0,0.5);">▶️</div>
-                
-                <!-- Glossy Overlay Effect -->
-                <div class="pro-video-glossy-overlay">
-                </div>
-            </div>
-        </div>
-    `;
+    // Use renderVideoCard for consistent UI with platform icon
+    const cardHtml = renderVideoCard({
+        videoUrl: originalUrl, 
+        thumbnail: thumbnail,
+        title: title,
+        originalUrl: originalUrl,
+        filename: safeTitle + ".mp4",
+        platform: 'youtube'
+    });
+    
+    container.innerHTML = cardHtml;
 
     // Log
     console.log("✅ UI de YouTube renderizada (Simplificada: Solo Calidad + Descarga)", container);
