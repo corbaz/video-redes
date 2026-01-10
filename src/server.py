@@ -194,7 +194,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             # Detectar si es una imagen o documento (PDF) por la extensión solicitada
             is_direct_download = any(filename.lower().endswith(ext) for ext in ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.pdf'])
             
-            is_supported_hq = any(d in url for d in ['youtube.com', 'youtu.be', 'tiktok.com', 'vm.tiktok.com', 'twitch.tv', 'pinterest.com', 'pin.it', 'pinimg.com', 'linkedin.com', 'facebook.com', 'fb.watch', 'twitter.com', 'x.com', 'instagram.com'])
+            is_supported_hq = any(d in url for d in ['youtube.com', 'youtu.be', 'tiktok.com', 'vm.tiktok.com', 'twitch.tv', 'pinterest.com', 'pin.it', 'pinimg.com', 'linkedin.com', 'facebook.com', 'fb.watch', 'twitter.com', 'x.com', 'instagram.com', 'twimg.com'])
             
             if is_supported_hq and not is_direct_download:
                 unique_id = str(uuid.uuid4())
