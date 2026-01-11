@@ -66,6 +66,52 @@ function showLinkedinVideo(data, container) {
         return;
     }
 
+    if (type === 'gallery') {
+        const images = data.images || [];
+        const count = images.length;
+        const firstImage = images[0] || '';
+        
+        // JSON stringify the array of URLs to pass as the "url" parameter
+        const imagesJson = JSON.stringify(images);
+        const zipFilename = `${safeTitle}.zip`;
+        
+        // Override the default click handler for this card to pass the JSON string
+        const encodedJson = encodeURIComponent(imagesJson);
+        const encodedZipName = encodeURIComponent(zipFilename);
+        const galleryClickHandler = `onclick="if(window.startSmartDownload) { window.startSmartDownload(decodeURIComponent('${encodedJson}'), decodeURIComponent('${encodedZipName}')); } else { console.error('SmartDownload not found'); }"`;
+
+        const galleryContent = `
+            <div class="linkedin-gallery-wrapper" style="position: relative;">
+                <img src="${firstImage}" class="linkedin-thumb-img" alt="Gallery Cover">
+                <div class="gallery-count-badge" style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; display: flex; align-items: center; gap: 4px;">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="white"><path d="M22 16V4c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2zm-11-4l2.03 2.71L16 11l4 5H8l3-4zM2 6v14c0 1.1.9 2 2 2h14v-2H4V6H2z"/></svg>
+                    <span>${count} Imágenes</span>
+                </div>
+                ${iconOverlay}
+            </div>`;
+
+        // We reconstruct the card manually because renderProCard uses the outer scope 'clickHandler' 
+        // which points to single URL. We need 'galleryClickHandler'.
+        
+        container.innerHTML = `
+        <div class="video-card linkedin-video-card" style="cursor: pointer;" ${galleryClickHandler} title="Descargar ${count} imágenes (ZIP)">
+            <div class="video-preview-container linkedin-preview-container">
+                <div class="linkedin-badge">
+                    <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M22 16V4c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2zm-11-4l2.03 2.71L16 11l4 5H8l3-4zM2 6v14c0 1.1.9 2 2 2h14v-2H4V6H2z"/></svg>
+                    Galería
+                </div>
+                
+                ${galleryContent}
+
+                <div class="linkedin-title-overlay">
+                    <h3 class="linkedin-title">${data.title || 'Galería de LinkedIn'}</h3>
+                </div>
+            </div>
+        </div>
+        `;
+        return;
+    }
+
     if (type === 'document') {
         const hasThumbnail = data.thumbnail && !data.thumbnail.includes('flaticon');
         let content;

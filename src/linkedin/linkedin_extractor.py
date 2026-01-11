@@ -76,6 +76,57 @@ class LinkedInExtractor:
                 og_image_match = re.search(r'<meta property="og:image" content="([^"]+)"', html)
                 thumbnail = og_image_match.group(1).replace('&amp;', '&') if og_image_match else "https://cdn-icons-png.flaticon.com/512/337/337946.png"
 
+                # 0. Buscar múltiples imágenes en JSON-LD (Estrategia Prioritaria para Galerías)
+                try:
+                    import json
+                    # Buscar todos los bloques script type="application/ld+json"
+                    ld_json_blocks = re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.DOTALL)
+                    
+                    for block in ld_json_blocks:
+                        try:
+                            data = json.loads(block)
+                            # A veces es una lista de objetos, a veces un objeto
+                            if isinstance(data, list):
+                                # Buscar si alguno es SocialMediaPosting
+                                for item in data:
+                                    if item.get('@type') == 'SocialMediaPosting' and 'image' in item:
+                                        images = item['image']
+                                        if isinstance(images, list) and len(images) > 1:
+                                            image_urls = [img['url'] for img in images if 'url' in img]
+                                            if image_urls:
+                                                print(f"✅ Galería encontrada ({len(image_urls)} imágenes)")
+                                                return {
+                                                    "success": True,
+                                                    "data": {
+                                                        "videoUrl": image_urls, # Lista de URLs
+                                                        "title": title,
+                                                        "type": "gallery",
+                                                        "thumbnail": thumbnail,
+                                                        "images": image_urls
+                                                    }
+                                                }
+                            elif isinstance(data, dict):
+                                if data.get('@type') == 'SocialMediaPosting' and 'image' in data:
+                                    images = data['image']
+                                    if isinstance(images, list) and len(images) > 1:
+                                        image_urls = [img['url'] for img in images if 'url' in img]
+                                        if image_urls:
+                                            print(f"✅ Galería encontrada ({len(image_urls)} imágenes)")
+                                            return {
+                                                "success": True,
+                                                "data": {
+                                                    "videoUrl": image_urls, # Lista de URLs
+                                                    "title": title,
+                                                    "type": "gallery",
+                                                    "thumbnail": thumbnail,
+                                                    "images": image_urls
+                                                }
+                                            }
+                        except json.JSONDecodeError:
+                            continue
+                except Exception as e:
+                    print(f"⚠️ Error intentando extraer galería JSON-LD: {str(e)}")
+
                 # 1. Buscar PDF (Estrategia Manifesto Nativo)
                 # Esta es la forma más robusta para "carousels" que son realmente PDFs.
                 try:

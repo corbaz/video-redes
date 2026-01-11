@@ -16,6 +16,7 @@ import imageio_ffmpeg
 from yt_dlp import YoutubeDL
 import threading
 import mimetypes
+import zipfile
 
 # Importar extractores
 from instagram.insta_extractor import InstagramExtractor
@@ -189,6 +190,92 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 if d['status'] == 'started':
                     download_tasks[task_id]['status'] = 'processing'
                     download_tasks[task_id]['progress'] = 0
+
+            # ------------------------------------------------------------------
+            # Gallery Download Logic (JSON List of URLs)
+            # ------------------------------------------------------------------
+            is_gallery = False
+            gallery_urls = []
+            try:
+                # Basic check to avoid json.loads on normal URLs
+                # JS encoded arrays might start with %5B or just be [ if decoded
+                if url.strip().startswith('[') and 'http' in url:
+                    gallery_urls = json.loads(url)
+                    if isinstance(gallery_urls, list) and len(gallery_urls) > 0:
+                        is_gallery = True
+            except:
+                pass
+                
+            if is_gallery:
+                logger.info(f"📦 Processing Gallery Download: {len(gallery_urls)} items")
+                # Ensure base filename doesn't have extension
+                base_name = os.path.splitext(filename)[0]
+                zip_filename = f"{base_name}.zip"
+                zip_path = os.path.join(temp_dir, zip_filename)
+                
+                downloaded_files = []
+                total_items = len(gallery_urls)
+                
+                try:
+                    for idx, img_url in enumerate(gallery_urls):
+                        if download_tasks.get(task_id, {}).get('status') == 'cancelled':
+                             raise Exception('DownloadCancelled')
+                             
+                        # Determine extension
+                        parsed_url = urlparse(img_url)
+                        ext = os.path.splitext(parsed_url.path)[1]
+                        if not ext: ext = ".jpg"
+                        
+                        # Naming: base-1.jpg, base-2.jpg ...
+                        item_filename = f"{base_name}-{idx+1}{ext}"
+                        item_path = os.path.join(temp_dir, item_filename)
+                        
+                        # Download item
+                        # Use generic headers or platform specific if needed
+                        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
+                        
+                        # Special handling for X/Twitter/LinkedIn if needed
+                        if 'twimg.com' in img_url:
+                             pass 
+                        
+                        r = requests.get(img_url, stream=True, headers=headers, timeout=30)
+                        
+                        if r.status_code == 200:
+                            with open(item_path, 'wb') as f:
+                                for chunk in r.iter_content(chunk_size=8192):
+                                    if chunk: f.write(chunk)
+                            downloaded_files.append((item_path, item_filename))
+                        else:
+                            logger.warning(f"Failed to download gallery item {idx}: {img_url} ({r.status_code})")
+                        
+                        # Update progress
+                        progress = int(((idx + 1) / total_items) * 90) # Leave 10% for zipping
+                        download_tasks[task_id]['progress'] = progress
+                    
+                    # Create Zip
+                    if downloaded_files:
+                        with zipfile.ZipFile(zip_path, 'w') as zipf:
+                            for file_p, file_n in downloaded_files:
+                                zipf.write(file_p, file_n)
+                        
+                        # Cleanup individual files
+                        for file_p, _ in downloaded_files:
+                            try:
+                                os.remove(file_p)
+                            except:
+                                pass
+                                
+                        download_tasks[task_id]['file_path'] = zip_path
+                        download_tasks[task_id]['filename'] = zip_filename
+                        download_tasks[task_id]['status'] = 'completed'
+                        download_tasks[task_id]['progress'] = 100
+                        return
+                    else:
+                        raise Exception("No images could be downloaded from gallery")
+                        
+                except Exception as e:
+                     logger.error(f"Gallery download error: {str(e)}")
+                     raise e
 
             # Validar e iniciar descarga similar a handle_download pero actualizando task
             # Detectar si es una imagen o documento (PDF) por la extensión solicitada
