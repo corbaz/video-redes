@@ -10,18 +10,69 @@ class InstagramExtractor:
         """
         try:
             print(f"🔍 Extrayendo video de Instagram: {url}")
+            
+            # 0. Soporte directo para URLs de CDN (scontent-*.cdninstagram.com)
+            if 'cdninstagram.com' in url or '.mp4' in url:
+                print("✅ URL directa de CDN detectada. Omitiendo extracción yt-dlp.")
+                return {
+                    "success": True,
+                    "data": {
+                        "title": "Instagram Story/Video (CDN Direct)",
+                        "uploader": "Instagram User",
+                        "duration": 0,
+                        "description": "Video directo de Instagram",
+                        "video_formats": [{
+                            "url": url,
+                            "width": 720,
+                            "height": 1280,
+                            "format_note": "CDN Source"
+                        }]
+                    }
+                }
 
-            # Usar yt-dlp para extraer información del video
-            cmd = [
-                'yt-dlp',
-                '--dump-json',
-                '--no-download',
-                '--format', 'best[ext=mp4]/best',
-                url
-            ]
+            def run_ytdlp(extra_args=None):
+                cmd = [
+                    'yt-dlp',
+                    '--dump-json',
+                    '--no-download',
+                    '--format', 'best[ext=mp4]/best',
+                    url
+                ]
+                if extra_args:
+                    cmd.extend(extra_args)
+                
+                return subprocess.run(
+                    cmd, capture_output=True, text=True, timeout=60)
 
-            result = subprocess.run(
-                cmd, capture_output=True, text=True, timeout=30)
+            # 1. Intentar método estándar
+            result = run_ytdlp()
+
+            # 2. Si falla y es una historia o error de usuario, intentar con cookies del navegador
+            needs_cookies = result.returncode != 0 and (
+                'stories' in url or 
+                'unable to extract user info' in result.stderr or
+                'private' in result.stderr.lower()
+            )
+
+            if needs_cookies:
+                print("⚠️ Contenido privado/historia detectado. Intentando con cookies de Chrome...")
+                # Note: If Chrome is open, this might fail with Permission Error on Windows.
+                # User should ideally close the browser or run as admin, but we can't force that.
+                # We can try to copy the cookie file to a temp location if possible, but yt-dlp handles this internally usually.
+                # The error reported is "Could not copy Chrome cookie database".
+                # This often means the browser has the file locked.
+                
+                # Try Chrome first
+                result = run_ytdlp(['--cookies-from-browser', 'chrome'])
+                
+                if result.returncode != 0:
+                     # Check if it was a permission error
+                     if "Permission denied" in result.stderr or "Could not copy" in result.stderr:
+                         print("⚠️ Error de permisos con cookies de Chrome (¿Navegador abierto?). Intentando Edge...")
+                     else:
+                         print("⚠️ Chrome falló. Intentando con cookies de Edge...")
+                         
+                     result = run_ytdlp(['--cookies-from-browser', 'edge'])
 
             if result.returncode != 0:
                 error_msg = result.stderr.strip()
@@ -36,6 +87,12 @@ class InstagramExtractor:
                         "success": False,
                         "error": "El video no está disponible o fue eliminado",
                         "suggestion": "Verifica que el enlace sea correcto y el video esté público"
+                    }
+                elif "could not copy" in error_msg.lower() or "permission denied" in error_msg.lower():
+                    return {
+                        "success": False,
+                        "error": "El navegador bloqueó el acceso a las cookies.",
+                        "suggestion": "⚠️ CIERRA COMPLETAMENTE CHROME/EDGE y vuelve a intentarlo. El navegador tiene bloqueado el archivo de sesión."
                     }
                 else:
                     return {

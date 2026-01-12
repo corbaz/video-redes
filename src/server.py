@@ -281,7 +281,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             # Detectar si es una imagen o documento (PDF) por la extensión solicitada
             is_direct_download = any(filename.lower().endswith(ext) for ext in ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.pdf'])
             
-            is_supported_hq = any(d in url for d in ['youtube.com', 'youtu.be', 'tiktok.com', 'vm.tiktok.com', 'twitch.tv', 'pinterest.com', 'pin.it', 'pinimg.com', 'linkedin.com', 'facebook.com', 'fb.watch', 'twitter.com', 'x.com', 'instagram.com', 'twimg.com'])
+            is_supported_hq = any(d in url for d in ['youtube.com', 'youtu.be', 'tiktok.com', 'vm.tiktok.com', 'twitch.tv', 'pinterest.com', 'pin.it', 'pinimg.com', 'linkedin.com', 'facebook.com', 'fb.watch', 'twitter.com', 'x.com', 'instagram.com', 'cdninstagram.com', 'twimg.com'])
             
             if is_supported_hq and not is_direct_download:
                 unique_id = str(uuid.uuid4())
@@ -308,8 +308,26 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                     # 'postprocessor_args': {'ffmpeg': ['-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k']} # REMOVED FOR SPEED
                 }
                 
-                with YoutubeDL(ydl_opts) as ydl:
-                    ydl.download([url])
+                try:
+                    with YoutubeDL(ydl_opts) as ydl:
+                        ydl.download([url])
+                except Exception as e:
+                    # Retry logic for Instagram Private/Stories
+                    is_insta_issue = 'instagram.com' in url and ('stories' in url or 'private' in str(e).lower() or 'user info' in str(e).lower())
+                    
+                    if is_insta_issue:
+                        logger.info("⚠️ Instagram download failed. Retrying with Chrome cookies...")
+                        ydl_opts['cookiesfrombrowser'] = ('chrome', )
+                        try:
+                            with YoutubeDL(ydl_opts) as ydl:
+                                ydl.download([url])
+                        except Exception as e2:
+                            logger.info("⚠️ Chrome cookies failed. Retrying with Edge cookies...")
+                            ydl_opts['cookiesfrombrowser'] = ('edge', )
+                            with YoutubeDL(ydl_opts) as ydl:
+                                ydl.download([url])
+                    else:
+                        raise e
                 
                 # Encontrar archivo
                 final_path = os.path.join(temp_dir, f"{filename_base}.mp4")
@@ -458,7 +476,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             # Detectar si es YouTube o TikTok (ambos soportados por yt-dlp para mejor calidad)
             # Detectar si es YouTube o TikTok (ambos soportados por yt-dlp para mejor calidad)
             # IMPORTANTE: Los links de googlevideo.com NO son links de YouTube válidos para yt-dlp HQ.
-            is_supported_hq = any(d in url for d in ['youtube.com', 'youtu.be', 'tiktok.com', 'vm.tiktok.com', 'twitch.tv', 'pinterest.com', 'pin.it', 'pinimg.com'])
+            is_supported_hq = any(d in url for d in ['youtube.com', 'youtu.be', 'tiktok.com', 'vm.tiktok.com', 'twitch.tv', 'pinterest.com', 'pin.it', 'pinimg.com', 'instagram.com', 'cdninstagram.com'])
             
             # Detectar si es una imagen
             is_image = any(filename.lower().endswith(ext) for ext in ['.jpg', '.jpeg', '.png', '.webp', '.gif'])
@@ -493,8 +511,36 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 }
 
                 try:
-                    with YoutubeDL(ydl_opts) as ydl:
-                        ydl.download([url])
+                    try:
+                        with YoutubeDL(ydl_opts) as ydl:
+                            ydl.download([url])
+                    except Exception as e:
+                        # Retry logic for Instagram Private/Stories
+                        is_insta_issue = 'instagram.com' in url and ('stories' in url or 'private' in str(e).lower() or 'user info' in str(e).lower())
+                        
+                        if is_insta_issue:
+                            logger.info("⚠️ Instagram download failed. Retrying with Chrome cookies...")
+                            ydl_opts['cookiesfrombrowser'] = ('chrome', )
+                            try:
+                                with YoutubeDL(ydl_opts) as ydl:
+                                    ydl.download([url])
+                            except Exception as e2:
+                                logger.info("⚠️ Chrome cookies failed. Retrying with Edge cookies...")
+                                # On Windows, ensure Edge is not running or use --cookies-from-browser edge
+                                # Sometimes 'permission denied' happens if browser is open.
+                                # Try a fallback to 'firefox' if available or just log error.
+                                try:
+                                    ydl_opts['cookiesfrombrowser'] = ('edge', )
+                                    with YoutubeDL(ydl_opts) as ydl:
+                                        ydl.download([url])
+                                except Exception as e3:
+                                    # If both failed and it's a permission/copy error, raise a clear message
+                                    err_str = str(e3).lower()
+                                    if "could not copy" in err_str or "permission denied" in err_str:
+                                        raise Exception("BROWSER_LOCK_ERROR: Cierra Chrome/Edge para permitir el acceso a las cookies.")
+                                    raise e3
+                        else:
+                            raise e
                     
                     # Verificación del archivo final
                     if not os.path.exists(final_path):
@@ -686,7 +732,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 return
 
             # Validar URL según plataforma
-            if any(domain in url for domain in ['instagram.com', 'linkedin.com', 'x.com', 'twitter.com', 'tiktok.com', 'facebook.com', 'fb.watch', 'youtube.com', 'youtu.be', 'm.youtube.com', 'twitch.tv', 'twitch.com', 'pinterest.com', 'pin.it']):
+            if any(domain in url for domain in ['instagram.com', 'cdninstagram.com', 'linkedin.com', 'x.com', 'twitter.com', 'tiktok.com', 'facebook.com', 'fb.watch', 'youtube.com', 'youtu.be', 'm.youtube.com', 'twitch.tv', 'twitch.com', 'pinterest.com', 'pin.it']):
                 self.send_json_response({
                     'success': True,
                     'url': url,
@@ -761,7 +807,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
         """Extrae información del video según la plataforma"""
         try:
             # Detectar plataforma e inicializar extractor
-            if 'instagram.com' in url:
+            if 'instagram.com' in url or 'cdninstagram.com' in url:
                 extractor = InstagramExtractor()
                 platform = 'instagram'
             elif 'twitch.tv' in url or 'twitch.com' in url:
@@ -851,13 +897,13 @@ def run_server():
     try:
         # Configuración del servidor
         host = '0.0.0.0'  # Escucha en todas las interfaces
-        port = 8000  # Puerto estándar
+        port = int(os.environ.get('PORT', 8000))  # Puerto dinámico para Railway/Heroku
 
         server = ThreadedHTTPServer((host, port), VideoDownloaderHandler)
         server.timeout = 60
 
         logger.info("=" * 60)
-        logger.info("Video Downloader Server v2.3 - High Quality Fix")
+        logger.info("Video Downloader Server - High Quality Fix")
         logger.info("=" * 60)
         logger.info(f"Servidor iniciado en http://{host}:{port}")
         logger.info(f"Acceso local: http://localhost:{port}")
