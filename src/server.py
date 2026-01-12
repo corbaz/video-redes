@@ -940,46 +940,52 @@ if __name__ == '__main__':
     print("Verificando extractores...")
 
     try:
-        from insta_extractor import InstagramExtractor
+        from instagram.insta_extractor import InstagramExtractor
         print("Instagram extractor: OK")
     except Exception as e:
         print(f"Instagram extractor error: {e}")
 
     try:
-        from linkedin_extractor import LinkedInExtractor
+        from linkedin.linkedin_extractor import LinkedInExtractor
         print("LinkedIn extractor: OK")
     except Exception as e:
         print(f"LinkedIn extractor error: {e}")
 
     try:
-        from x_extractor import XExtractor
+        from x.x_extractor import XExtractor
         print("X/Twitter extractor: OK")
     except Exception as e:
         print(f"X/Twitter extractor error: {e}")
 
     try:
-        from tiktok_extractor import TikTokExtractor
+        from tiktok.tiktok_extractor import TikTokExtractor
         print("TikTok extractor: OK")
     except Exception as e:
         print(f"TikTok extractor error: {e}")
 
     try:
-        from facebook_extractor import FacebookExtractor
+        from facebook.facebook_extractor import FacebookExtractor
         print("Facebook extractor: OK")
     except Exception as e:
         print(f"Facebook extractor error: {e}")
 
     try:
-        from twitch_extractor import TwitchExtractor
+        from twitch.twitch_extractor import TwitchExtractor
         print("Twitch extractor: OK")
     except Exception as e:
         print(f"Twitch extractor error: {e}")
 
     try:
-        from pinterest_extractor import PinterestExtractor
+        from pinterest.pinterest_extractor import PinterestExtractor
         print("Pinterest extractor: OK")
     except Exception as e:
         print(f"Pinterest extractor error: {e}")
+
+    try:
+        from youtube.youtube_extractor import YouTubeExtractor
+        print("YouTube extractor: OK")
+    except Exception as e:
+        print(f"YouTube extractor error: {e}")
 
     print()
     run_server()

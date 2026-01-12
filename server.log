@@ -22,3 +22,27 @@
 2026-01-12 18:46:36,864 - INFO -   POST /api/extract - Extraer videos
 2026-01-12 18:46:36,864 - INFO - Presiona Ctrl+C para detener
 2026-01-12 18:46:36,864 - INFO - ============================================================
+2026-01-12 19:12:29,408 - INFO - ============================================================
+2026-01-12 19:12:29,409 - INFO - Video Downloader Server - High Quality Fix
+2026-01-12 19:12:29,409 - INFO - ============================================================
+2026-01-12 19:12:29,409 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-12 19:12:29,409 - INFO - Acceso local: http://localhost:8000
+2026-01-12 19:12:29,409 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-12 19:12:29,410 - INFO - Endpoints disponibles:
+2026-01-12 19:12:29,410 - INFO -   POST /api/validate - Validar URLs
+2026-01-12 19:12:29,410 - INFO -   POST /api/extract - Extraer videos
+2026-01-12 19:12:29,410 - INFO - Presiona Ctrl+C para detener
+2026-01-12 19:12:29,410 - INFO - ============================================================
+2026-01-12 19:12:58,815 - INFO - Servidor detenido por usuario
+2026-01-12 19:12:58,815 - INFO - Servidor cerrado correctamente
+2026-01-12 19:15:12,843 - INFO - ============================================================
+2026-01-12 19:15:12,844 - INFO - Video Downloader Server - High Quality Fix
+2026-01-12 19:15:12,845 - INFO - ============================================================
+2026-01-12 19:15:12,845 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-01-12 19:15:12,846 - INFO - Acceso local: http://localhost:8000
+2026-01-12 19:15:12,846 - INFO - Acceso red: http://192.168.1.50:8000
+2026-01-12 19:15:12,847 - INFO - Endpoints disponibles:
+2026-01-12 19:15:12,847 - INFO -   POST /api/validate - Validar URLs
+2026-01-12 19:15:12,848 - INFO -   POST /api/extract - Extraer videos
+2026-01-12 19:15:12,848 - INFO - Presiona Ctrl+C para detener
+2026-01-12 19:15:12,849 - INFO - ============================================================
