@@ -1,32 +1,15 @@
-<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Fondo: Círculo sólido de alto contraste (Gradiente simple y vibrante para visibilidad) -->
   <defs>
-    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#FF0050;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#00F2EA;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF3B30;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF2D55;stop-opacity:1" />
     </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.3"/>
-    </filter>
   </defs>
+  <circle cx="256" cy="256" r="240" fill="url(#bg-gradient)" />
   
-  <!-- Background Circle with Gradient -->
-  <circle cx="256" cy="256" r="240" fill="url(#gradient)" filter="url(#shadow)"/>
-  
-  <!-- Inner White Circle for Contrast -->
-  <circle cx="256" cy="256" r="180" fill="white" fill-opacity="0.15"/>
-  
-  <!-- Download Arrow Icon -->
-  <path d="M256 130V320M256 320L166 230M256 320L346 230" 
-        stroke="white" 
-        stroke-width="48" 
-        stroke-linecap="round" 
-        stroke-linejoin="round"/>
-        
-  <!-- Bottom Platform Curve -->
-  <path d="M156 382H356" 
-        stroke="white" 
-        stroke-width="48" 
-        stroke-linecap="round"
-        stroke-opacity="0.9"/>
+  <!-- Icono: Flecha de descarga blanca, gruesa y simple para máxima legibilidad a 16x16px -->
+  <!-- La forma es una flecha hacia abajo con una barra debajo, clásico símbolo de descarga -->
+  <path d="M256 368 L128 208 L192 208 L192 96 L320 96 L320 208 L384 208 Z" fill="#FFFFFF"/>
+  <rect x="128" y="384" width="256" height="48" rx="24" fill="#FFFFFF"/>
 </svg>
