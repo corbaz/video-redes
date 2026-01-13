@@ -2,248 +2,147 @@
 
 ## 🌟 Plataformas Soportadas
 
-✅ **Instagram** - Posts y Reels  
-✅ **LinkedIn** - Videos de posts  
-✅ **X/Twitter** - Videos de tweets  
-✅ **TikTok** - Videos y contenido  
-✅ **Facebook** - Videos públicos  
-✅ **YouTube** - Videos y Shorts (CALIDAD OPTIMIZADA)  
+✅ **Instagram** - Posts, Reels, Stories y Videos Privados (con manejo de cookies)
+✅ **LinkedIn** - Videos de posts y Galerías de imágenes (descarga secuencial)
+✅ **X (Twitter)** - Videos de tweets (alta calidad garantizada)
+✅ **TikTok** - Videos sin marca de agua
+✅ **Facebook** - Videos públicos y Reels
+✅ **YouTube** - Videos y Shorts (Calidad Optimizada hasta 1080p + Audio)
+✅ **Pinterest** - Videos e Imágenes (Pin original)
+✅ **Twitch** - Clips y VODs
 
 ## 🚀 Características Principales
 
-- **UI/UX Unificada**: Misma experiencia para todas las plataformas
-- **Calidad Optimizada**: YouTube descarga automáticamente la mejor calidad disponible (hasta 1080p) con audio incluido
-- **Extractores Robustos**: Sistema de fallback para máxima compatibilidad
-- **Logging Detallado**: Información completa de resolución, bitrate y calidad
-- **Interfaz Responsiva**: Diseño moderno y adaptable
-- **API REST**: Endpoints para validación y extracción
-
-## 🎥 YouTube - Calidad Optimizada
-
-El extractor de YouTube implementa un sistema de múltiples formatos para garantizar la mejor calidad:
-
-1. **bestvideo[height<=1080]+bestaudio** - Máxima calidad con audio
-2. **best[height<=1080][ext=mp4]** - Formato MP4 de alta calidad  
-3. **bestvideo[height>=720]+bestaudio** - Calidad HD con audio
-4. **bestvideo[height>=480]+bestaudio** - Calidad media con audio
-5. **best** - Mejor calidad disponible como último recurso
-
-### Resoluciones Objetivo
-- 🎯 **1080p** (Preferido)
-- 🎯 **720p** (Muy buena calidad)
-- 🎯 **480p** (Calidad estándar)
-- 🎯 **Auto** (Mejor disponible)
+- **UI/UX Unificada**: Misma experiencia para todas las plataformas desde una sola interfaz.
+- **Calidad Optimizada**:
+  - YouTube: Selección inteligente de video (1080p/720p) + audio fusionado.
+  - X/Twitter: Enrutamiento especial para evitar errores 403.
+  - Instagram: Soporte para historias y cuentas privadas (usando cookies del navegador).
+- **Descargas Inteligentes**:
+  - LinkedIn: Detecta si es video o galería. Si es galería, descarga imágenes secuencialmente (img-1, img-2...).
+  - Archivos ZIP: Empaquetado automático para descargas múltiples.
+- **Interfaz Responsiva**: Diseño moderno, adaptable a móviles y escritorio.
+- **Logging Detallado**: Información completa de resolución, bitrate y errores en consola.
+- **API REST Local**: Endpoints para validación y extracción, listos para integración.
 
 ## 📂 Estructura del Proyecto
 
-El proyecto se ha reestructurado para mejorar la organización y mantenibilidad:
-
-- `src/`: Contiene todo el código fuente del servidor y la lógica de la aplicación.
-  - `common/`: Archivos compartidos (estilos, utilidades JS).
-  - `[red_social]/`: Carpetas específicas para cada plataforma (JS, extractores Python).
-  - `server.py`: Punto de entrada del servidor.
-- `index.html`: Página principal de la aplicación.
-
-## 🚀 Instalación y Uso
-
-### 1. Requisitos
+El proyecto está modularizado para facilitar el mantenimiento:
 
 ```bash
-# Instalar Python 3.7+ y yt-dlp
-pip install yt-dlp
-
-# O si no tienes pip:
-python -m pip install yt-dlp
+c:\www\video-redes\
+├── src/
+│   ├── common/             # Estilos y scripts compartidos
+│   ├── facebook/           # Módulo Facebook
+│   ├── instagram/          # Módulo Instagram (incluye soporte Cookies)
+│   ├── linkedin/           # Módulo LinkedIn (incluye soporte Galerías)
+│   ├── pinterest/          # Módulo Pinterest
+│   ├── tiktok/             # Módulo TikTok
+│   ├── twitch/             # Módulo Twitch
+│   ├── x/                  # Módulo X (Twitter)
+│   ├── youtube/            # Módulo YouTube
+│   └── server.py           # Servidor principal (Entry Point)
+├── .venv/                  # Entorno virtual (no incluido en git)
+├── index.html              # Frontend principal
+├── p.ps1                   # Script de inicio rápido (PowerShell)
+├── Procfile                # Configuración para despliegue (Railway/Heroku)
+├── requirements.txt        # Dependencias del proyecto
+└── runtime.txt             # Versión de Python para la nube
 ```
 
-### 2. Ejecutar el Servidor
+## �️ Instalación y Uso Local
 
-```bash
-# Ejecutar desde la raíz del proyecto
+### 1. Prerrequisitos
+
+*   **Python 3.11+**: Asegúrate de tener Python instalado y agregado al PATH.
+*   **FFmpeg**: Necesario para unir video y audio en alta calidad (especialmente para YouTube).
+    *   *Windows*: Descargar de [ffmpeg.org](https://ffmpeg.org/download.html) y agregar `bin` al PATH.
+
+### 2. Configuración Inicial
+
+1.  **Clonar/Descargar** el repositorio en tu carpeta de trabajo (ej: `c:\www\video-redes`).
+2.  **Crear entorno virtual** (Recomendado):
+    ```powershell
+    python -m venv .venv
+    ```
+3.  **Activar entorno**:
+    ```powershell
+    # Windows (PowerShell)
+    .\.venv\Scripts\Activate.ps1
+    ```
+4.  **Instalar dependencias**:
+    ```powershell
+    pip install -r requirements.txt
+    ```
+
+### 3. Ejecutar el Servidor
+
+Tienes dos opciones:
+
+**Opción A: Script Automático (Recomendado)**
+Ejecuta el script `p.ps1` en PowerShell. Este script limpia procesos antiguos, activa el entorno y lanza el servidor.
+```powershell
+.\p.ps1
+```
+
+**Opción B: Manual**
+```powershell
+# Asegúrate de tener el entorno activado
 python src/server.py
 ```
 
-### 3. Acceder a la Aplicación
+### 4. Usar la Aplicación
 
-```
-http://localhost:8000
-```
+1.  Abre tu navegador y ve a:
+    ```
+    http://localhost:8000
+    ```
+2.  Pega el enlace de la red social (Instagram, TikTok, YouTube, etc.).
+3.  El sistema detectará automáticamente la plataforma.
+4.  Haz clic en **"Buscar Video"** para ver la vista previa.
+5.  Haz clic en **"Descargar Video"** (o "Descargar Imágenes" en caso de galerías).
 
-## 🧪 Probar con CURL
+---
 
-### Verificar que el servidor funciona
+## ☁️ Despliegue en la Nube (Railway/Heroku)
 
-```bash
-curl http://localhost:8000/api/health
-```
+El proyecto está configurado para desplegarse fácilmente ("Deploy Ready").
 
-### Probar con la URL problemática
+1.  **Archivos Clave**:
+    *   `Procfile`: Indica el comando de inicio (`web: python src/server.py`).
+    *   `runtime.txt`: Fija la versión de Python (`python-3.11`).
+    *   `requirements.txt`: Lista de librerías necesarias.
+    *   `server.py`: Configurado para leer el puerto de la variable de entorno `PORT`.
 
-```bash
-curl -X POST http://localhost:8000/api/extract \
-  -H "Content-Type: application/json" \
-  -d '{"url":"https://www.instagram.com/reel/DC2s8l_R-jr/"}' \
-  | python3 -m json.tool
-```
+2.  **Pasos para Railway**:
+    *   Sube tu código a GitHub.
+    *   Crea nuevo proyecto en Railway desde GitHub.
+    *   Railway detectará el `Procfile` y desplegará automáticamente.
 
-**Resultado esperado** (JSON válido, NO error XML):
+---
 
-```json
-{
-  "success": false,
-  "error": "Instagram authentication required",
-  "error_type": "auth_required",
-  "suggestion": "This content requires login. Try with public videos from verified accounts."
-}
-```
+## 🆘 Solución de Problemas Comunes
 
-## 🔧 Qué Se Arregló
+### Error: "Instagram authentication required" / "Private account"
+*   **Causa**: Estás intentando bajar una historia o un video de una cuenta privada.
+*   **Solución**: El servidor intentará usar las cookies de tu navegador (Chrome/Edge) localmente. Asegúrate de haber iniciado sesión en Instagram en tu navegador predeterminado.
+*   *Nota*: Si el error persiste ("Permission denied"), cierra el navegador completamente para liberar el archivo de cookies y reintenta.
 
-### Antes (Roto)
+### Error: "403 Forbidden" en X/Twitter
+*   **Solución**: Ya está parchado internamente. El sistema usa `twimg.com` para evitar el bloqueo de `x.com`.
 
-- ❌ Error: "Unexpected token '<', \"<?xml vers\"... is not valid JSON"
-- ❌ Aplicación crasheaba con errores técnicos
-- ❌ No había manera de entender qué pasaba
+### Error: "FFmpeg not found"
+*   **Solución**: Instala FFmpeg y agrégalo a tus variables de entorno. Sin esto, los videos de YouTube de alta calidad (1080p) se descargarán sin audio o en baja resolución.
 
-### Ahora (Arreglado)
+### La descarga es lenta en local
+*   **Causa**: El video se descarga primero a tu carpeta temporal y luego se te envía.
+*   **Normalidad**: Es el comportamiento esperado para garantizar que el archivo final esté limpio y tenga el nombre correcto.
 
-- ✅ **Respuestas JSON garantizadas** en todos los casos
-- ✅ **Manejo elegante de errores** con mensajes útiles
-- ✅ **Múltiples capas de protección** contra crashes
-- ✅ **Detección de tipo de respuesta** antes de parsear
-- ✅ **Mensajes específicos** según el tipo de error
-
-## 💡 URLs que Funcionan Mejor
-
-### ✅ Recomendadas
-
-- Videos de cuentas públicas populares
-- Contenido de cuentas verificadas (✓)
-- Videos antiguos con muchas interacciones
-- Videos educativos o promocionales
-
-### ⚠️ Pueden fallar
-
-- Videos muy recientes (menos de 24h)
-- Contenido de cuentas privadas
-- Videos con restricciones especiales
-- URLs con muchos parámetros de tracking
-
-## 🆘 Resolución de Problemas
-
-### Error: "yt-dlp not found"
-
-```bash
-pip install yt-dlp
-# o
-python3 -m pip install yt-dlp
-```
-
-### Error: "Port already in use"
-
-```bash
-# Usar otro puerto
-python3 server.py 8001
-```
-
-### Error: "Permission denied"
-
-```bash
-# En Linux/Mac, dar permisos:
-chmod +x server.py
-```
-
-## 📊 Características Técnicas
-
-- **Backend**: Python 3 con manejo bulletproof de errores
-- **Frontend**: HTML5 + JavaScript moderno
-- **Extractor**: yt-dlp con múltiples estrategias de fallback
-- **Respuestas**: JSON garantizado en 100% de casos
-- **Errores**: Categorizados y con sugerencias específicas
-
-## 🎯 Endpoints de API
-
-- `GET /api/health` - Estado del servidor
-- `POST /api/validate` - Validar URL de Instagram  
-- `POST /api/extract` - Extraer información del video
+---
 
 ## ⚠️ Aviso Legal
 
-Esta herramienta es para uso personal únicamente:
-
-- Respeta los derechos de autor
-- Cumple con las políticas de Instagram
-- No redistribuyas contenido sin permiso
-- Usa responsablemente
-
----
-
-**Versión**: 1.0.0-fixed  
-**Estado**: ✅ Error XML completamente eliminado  
-**Garantía**: 100% respuestas JSON válidas
-
-```json
-{
-  "id": "DC2s8l_R-jr",
-  "title": "¿QUE OPINAS DE ESTO? 🤯 La IA está fuera de control, ya es capaz de crear videos híper realistas en cuestión de MINUTOS 🤖🔥 PASO A PASO: 1. Comenta \"VIDEO\" y te comparto el enlace de esta IA 2. Créate una cuenta gratis 3. Pon un Prompt o imagen de referencia 4. Dale a generar (6 videos gratis po",
-  "description": "¿QUE OPINAS DE ESTO? 🤯\n\nLa IA está fuera de control, ya es capaz de crear videos híper realistas en cuestión de MINUTOS 🤖🔥\n\nPASO A PASO:\n\n1. Comenta \"VIDEO\" y te comparto el enlace de esta IA\n2. Créate una cuenta gratis\n3. Pon un Prompt o imagen de referencia\n4. Dale a generar (6 videos gratis po",
-  "uploader": "Melisa Escobar | Vender con IA 🤖",
-  "uploader_id": "melisaescobart",
-  "uploader_url": "https://www.instagram.com/melisaescobart",
-  "duration": 44.8,
-  "view_count": 23614,
-  "like_count": 23614,
-  "tags": [
-    "ia", "data", "bigdata", "inteligenciaartificial", "chatgpt", "openai", "automatizacion", "eficiencia", "bilbao", "inspiracion", "motivacion"
-  ],
-  "formats": [
-    {
-      "format_id": "1333p",
-      "url": "https://scontent-...mp4",
-      "ext": "mp4",
-      "width": 750,
-      "height": 1333,
-      "filesize": null,
-      "vcodec": "avc1.64001F",
-      "acodec": "mp4a.40.2",
-      "abr": null,
-      "audio_channels": 2,
-      "fps": 30,
-      "format_note": "1333p",
-      "audio_ext": "m4a"
-    }
-  ],
-  "thumbnail": "https://instagram.fxyz1-1.fna.fbcdn.net/v/t51.2885-15/...",
-  "webpage_url": "https://www.instagram.com/reel/DC2s8l_R-jr/",
-  "timestamp": 1717950000,
-  "upload_date": "20250609"
-}
-```
----
-``` bash
-c:\www\insta\
-├── .git/                   # Control de versiones
-├── .gitignore              # Exclusiones (temporales, logs, videos)
-├── card.js                 # Template unificado de video
-├── facebook.js             # Frontend Facebook
-├── facebook_extractor.py   # Backend Facebook
-├── favicon.ico             # Icono de la app
-├── index.html              # Frontend principal
-├── insta.js                # Frontend Instagram
-├── insta_extractor.py      # Backend Instagram
-├── linkedin.js             # Frontend LinkedIn
-├── linkedin_extractor.py   # Backend LinkedIn
-├── p.bat                   # Script de inicio
-├── README.md               # Documentación completa
-├── requirements.txt        # Dependencias Python
-├── server.log              # Log del servidor (excluido en git)
-├── server.py               # Servidor principal
-├── tiktok.js               # Frontend TikTok
-├── tiktok_extractor.py     # Backend TikTok
-├── x.js                    # Frontend X/Twitter
-├── x_extractor.py          # Backend X/Twitter
-├── youtube.js              # Frontend YouTube
-└── youtube_extractor.py    # Backend YouTube (OPTIMIZADO)
-```
----
-
+Esta herramienta ha sido creada con fines educativos y de uso personal.
+*   Respeta los derechos de autor y la propiedad intelectual.
+*   No descargues ni redistribuyas contenido privado sin consentimiento.
+*   El usuario es responsable del uso que le dé a esta herramienta.
