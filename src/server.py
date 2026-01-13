@@ -80,7 +80,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             # Servir index.html para la raíz
             if clean_path == '/' or clean_path == '/index.html':
                 self.serve_file('index.html')
-            elif clean_path.endswith(('.js', '.css', '.ico')):
+            elif clean_path.endswith(('.js', '.css', '.ico', '.svg')):
                 filename = clean_path.lstrip('/')
                 self.serve_file(filename)
             
@@ -695,6 +695,8 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 content_type = 'text/css; charset=utf-8'
             elif filename.endswith('.ico'):
                 content_type = 'image/x-icon'
+            elif filename.endswith('.svg'):
+                content_type = 'image/svg+xml'
             else:
                 content_type = 'application/octet-stream'
 
