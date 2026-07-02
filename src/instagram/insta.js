@@ -7,15 +7,19 @@ function showInstagramVideo(data, container) {
     }
     const format = formats[0];
 
+    const filename = buildFilename('instagram', data.title, 'mp4');
+
     // Enable global download
     if (window.enableGlobalDownload) {
-        window.enableGlobalDownload(format.url, "instagram_video.mp4");
+        window.enableGlobalDownload(format.url, filename);
     }
 
     // Solo renderizar la card de video sin información adicional
     const cardHtml = renderVideoCard({
         videoUrl: format.url,
         thumbnail: data.thumbnail,
+        filename: filename,
+        title: data.title || '',
         platform: 'instagram'
     });
     container.innerHTML = cardHtml;

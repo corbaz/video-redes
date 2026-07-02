@@ -121,8 +121,9 @@ function showTikTokVideo(data, container) {
     // Enable global download
     // Usamos original_url si existe para forzar descarga HQ por servidor, sino videoUrl directo
     const downloadUrl = data.original_url || data.videoUrl;
+    const filename = buildFilename('tiktok', data.title, 'mp4');
     if (window.enableGlobalDownload) {
-        window.enableGlobalDownload(downloadUrl, "tiktok_video.mp4");
+        window.enableGlobalDownload(downloadUrl, filename);
     }
 
     // Usar el mismo template unificado que Instagram, LinkedIn y X
@@ -130,6 +131,8 @@ function showTikTokVideo(data, container) {
         videoUrl: data.videoUrl,
         thumbnail: data.thumbnail,
         originalUrl: downloadUrl, // Important: Pass original URL for smart download
+        filename: filename,
+        title: data.title || '',
         platform: 'tiktok'
     });
 

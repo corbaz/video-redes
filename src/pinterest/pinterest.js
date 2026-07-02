@@ -11,10 +11,9 @@ function showPinterestVideo(data, container) {
         return;
     }
 
-    // Dynamic filename
-    const safeTitle = title.replace(/[^a-z0-9áéíóúñ_-]/gi, '_').substring(0, 50);
+    // Dynamic filename: pinterest_titulo_fecha.(mp4|jpg)
     const extension = type === 'image' ? 'jpg' : 'mp4';
-    const filename = `${safeTitle}.${extension}`;
+    const filename = buildFilename('pinterest', title, extension);
 
     // Enable auto-download hook
     if (window.enableGlobalDownload) {

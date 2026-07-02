@@ -24,7 +24,7 @@
 
 body {
     background-color: #050505;
-    background-image: 
+    background-image:
         linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 40px 40px;
@@ -51,14 +51,16 @@ body {
     position: relative;
     z-index: 1;
     width: 100%;
-    margin-bottom: 1vh; /* Reduce margin */
+    margin-bottom: 1vh;
+    /* Reduce margin */
     flex-shrink: 0;
     text-align: center;
     width: 100%;
 }
 
 .header h1 {
-    font-size: 1.8rem; /* Smaller title */
+    font-size: 1.8rem;
+    /* Smaller title */
     font-weight: 700;
     letter-spacing: -0.04em;
     background: linear-gradient(135deg, #fff 30%, #a5a5a5 100%);
@@ -93,8 +95,10 @@ body {
 
 .url-input {
     width: 100%;
-    padding: 15px 50px 15px 15px; /* Keep padding for clear button */
-    border: 1px solid var(--primary) !important; /* Violet border ALWAYS */
+    padding: 15px;
+    /* Padding simétrico, sin espacio extra para el botón */
+    border: 1px solid var(--primary) !important;
+    /* Violet border ALWAYS */
     border-radius: 12px;
     font-size: 1rem;
     background: #000 !important;
@@ -211,30 +215,33 @@ body {
     box-shadow: 0 0 30px rgba(0, 223, 154, 0.4);
 }
 
-.input-wrapper {
-    position: relative;
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
 .clear-input-btn {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: #666;
     font-size: 1.2rem;
     cursor: pointer;
-    padding: 5px;
+    padding: 12px 16px;
     display: none;
-    transition: color 0.2s;
-    z-index: 10;
+    transition: all 0.2s ease;
+    border-radius: 12px;
+    flex-shrink: 0;
+    height: 48px;
+    min-width: 48px;
 }
 
 .clear-input-btn:hover {
     color: #ff0000;
+    background: rgba(255, 0, 0, 0.1);
+    border-color: rgba(255, 0, 0, 0.3);
 }
 
 /* Restore original preview styles from HEAD */
@@ -247,7 +254,8 @@ body {
 .netflix-loading-content {
     position: relative;
     width: 100%;
-    padding-bottom: 177.78%; /* 9:16 Aspect Ratio */
+    padding-bottom: 177.78%;
+    /* 9:16 Aspect Ratio */
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     border-radius: 12px;
     overflow: hidden;
@@ -279,9 +287,17 @@ body {
     background-clip: text;
 }
 
-.netflix-platform-icon.linkedin { color: #0077B5; }
-.netflix-platform-icon.twitter { color: #1DA1F2; }
-.netflix-platform-icon.twitch { color: #9146FF; }
+.netflix-platform-icon.linkedin {
+    color: #0077B5;
+}
+
+.netflix-platform-icon.twitter {
+    color: #1DA1F2;
+}
+
+.netflix-platform-icon.twitch {
+    color: #9146FF;
+}
 
 .platform-svg {
     width: 4rem;
@@ -291,12 +307,29 @@ body {
     filter: drop-shadow(0 0 20px currentColor);
 }
 
-.platform-svg.instagram { fill: url(#instagram-gradient); }
-.platform-svg.linkedin { fill: #0077B5; }
-.platform-svg.twitter { fill: #000000; }
-.platform-svg.tiktok { fill: #ff0050; }
-.platform-svg.facebook { fill: #1877f2; }
-.platform-svg.youtube { fill: #ff0000; }
+.platform-svg.instagram {
+    fill: url(#instagram-gradient);
+}
+
+.platform-svg.linkedin {
+    fill: #0077B5;
+}
+
+.platform-svg.twitter {
+    fill: #000000;
+}
+
+.platform-svg.tiktok {
+    fill: #ff0050;
+}
+
+.platform-svg.facebook {
+    fill: #1877f2;
+}
+
+.platform-svg.youtube {
+    fill: #ff0000;
+}
 
 .netflix-loading-text {
     color: rgba(255, 255, 255, 0.9);
@@ -326,19 +359,46 @@ body {
 }
 
 @keyframes netflixPulse {
-    0%, 100% { transform: scale(1); opacity: 0.8; }
-    50% { transform: scale(1.1); opacity: 1; }
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
 }
 
 @keyframes netflixProgress {
-    0% { width: 0%; background-position: 0% 50%; }
-    50% { width: 70%; background-position: 100% 50%; }
-    100% { width: 100%; background-position: 0% 50%; }
+    0% {
+        width: 0%;
+        background-position: 0% 50%;
+    }
+
+    50% {
+        width: 70%;
+        background-position: 100% 50%;
+    }
+
+    100% {
+        width: 100%;
+        background-position: 0% 50%;
+    }
 }
 
 @keyframes textFade {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 .error-modal {
@@ -378,13 +438,27 @@ body {
 }
 
 @keyframes errorSlideIn {
-    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
-    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
 }
 
 @keyframes errorSlideOut {
-    0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-    100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
 }
 
 .spinner {
@@ -398,8 +472,13 @@ body {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .error {
@@ -417,7 +496,10 @@ body {
 }
 
 @media (max-width: 768px) {
-    body { overflow: hidden; }
+    body {
+        overflow: hidden;
+    }
+
     .container {
         padding: 10px;
         display: flex;
@@ -427,16 +509,19 @@ body {
         justify-content: center;
         overflow: hidden;
     }
+
     .header {
         margin-bottom: 5px;
         padding-bottom: 0;
         flex-shrink: 0;
     }
+
     .header h1 {
         font-size: 1.35rem;
         line-height: 1.2;
         margin-bottom: 4px;
     }
+
     .header h2 {
         font-size: 0.8rem;
         margin-top: 0;
@@ -444,12 +529,21 @@ body {
         display: block;
         opacity: 0.8;
     }
-    .header p { display: none; }
-    .pro-video-card-inner { 
+
+    .header p {
+        display: none;
+    }
+
+    .pro-video-card-inner {
         padding-bottom: 0 !important;
         height: 100%;
     }
-    .header-icon, .btn-icon { display: none !important; }
+
+    .header-icon,
+    .btn-icon {
+        display: none !important;
+    }
+
     .video-player-section {
         padding: 10px;
         margin-bottom: 5px;
@@ -462,6 +556,7 @@ body {
         justify-content: center;
         overflow: hidden;
     }
+
     .video-placeholder-content,
     .netflix-loading-content,
     .pro-video-card {
@@ -471,7 +566,11 @@ body {
         aspect-ratio: 9/16;
         margin: 0 auto;
     }
-    .video-placeholder-content { width: 100% !important; }
+
+    .video-placeholder-content {
+        width: 100% !important;
+    }
+
     .input-section {
         margin-top: 0;
         padding-top: 0;
@@ -484,6 +583,7 @@ body {
         padding: 0;
         width: 100%;
     }
+
     .header p {
         font-size: 0.8rem;
         margin-top: 2px;
@@ -491,12 +591,25 @@ body {
         display: block;
         line-height: 1.2;
     }
+
+    .input-container {
+        gap: 6px;
+        margin-bottom: 8px;
+    }
+
     .url-input {
         padding: 10px 14px;
         font-size: 0.9rem;
-        margin-bottom: 8px;
         height: 44px;
     }
+
+    .clear-input-btn {
+        padding: 10px 12px;
+        font-size: 1rem;
+        height: 44px;
+        min-width: 44px;
+    }
+
     .buttons-container {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
@@ -504,6 +617,7 @@ body {
         margin-top: 5px;
         width: 100% !important;
     }
+
     .btn {
         padding: 0 2px;
         font-size: 0.75rem;
@@ -516,6 +630,7 @@ body {
         align-items: center;
         justify-content: center;
     }
+
     .btn.download-main {
         width: 100% !important;
         margin-top: 0 !important;
@@ -523,29 +638,66 @@ body {
     }
 }
 
-@media (max-width: 380px), (max-height: 740px) {
-    .container { padding: 5px !important; }
-    .header { margin-bottom: 2px !important; }
-    .header h1 { font-size: 1.2rem !important; margin-bottom: 2px !important; }
-    .header h2 { font-size: 0.7rem !important; margin-bottom: 2px !important; }
+@media (max-width: 380px),
+(max-height: 740px) {
+    .container {
+        padding: 5px !important;
+    }
+
+    .header {
+        margin-bottom: 2px !important;
+    }
+
+    .header h1 {
+        font-size: 1.2rem !important;
+        margin-bottom: 2px !important;
+    }
+
+    .header h2 {
+        font-size: 0.7rem !important;
+        margin-bottom: 2px !important;
+    }
+
     .header p {
         font-size: 0.65rem !important;
         margin: 2px 0 4px 0 !important;
         display: block !important;
     }
-    .video-player-section { padding: 4px !important; margin-bottom: 4px !important; }
+
+    .video-player-section {
+        padding: 4px !important;
+        margin-bottom: 4px !important;
+    }
+
     .video-placeholder-content,
     .netflix-loading-content,
     .pro-video-card {
         max-height: 40vh !important;
     }
+
+    .input-container {
+        gap: 4px !important;
+        margin-bottom: 4px !important;
+    }
+
     .url-input {
         padding: 6px 10px !important;
         font-size: 0.85rem !important;
-        margin-bottom: 4px !important;
         height: 34px !important;
     }
-    .buttons-container { gap: 4px !important; margin-top: 4px !important; }
+
+    .clear-input-btn {
+        padding: 6px 8px !important;
+        font-size: 0.9rem !important;
+        height: 34px !important;
+        min-width: 34px !important;
+    }
+
+    .buttons-container {
+        gap: 4px !important;
+        margin-top: 4px !important;
+    }
+
     .btn {
         padding: 0 4px !important;
         font-size: 0.72rem !important;
@@ -559,7 +711,8 @@ body {
     padding: 2vh 2vw;
     margin-bottom: 3vh;
     backdrop-filter: blur(10px);
-    min-height: 25vh; /* Usar 25% del viewport height */
+    min-height: 25vh;
+    /* Usar 25% del viewport height */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -575,7 +728,8 @@ body {
 .video-placeholder-content {
     position: relative;
     width: 100%;
-    padding-bottom: 177.78%; /* 9:16 Aspect Ratio */
+    padding-bottom: 177.78%;
+    /* 9:16 Aspect Ratio */
     background: rgba(0, 0, 0, 0.2);
     border-radius: 12px;
     overflow: hidden;
@@ -687,14 +841,37 @@ body {
     filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
 }
 
-.icon-item[data-label="Instagram"]:hover svg { filter: drop-shadow(0 0 15px rgba(225, 48, 108, 0.6)); }
-.icon-item[data-label="LinkedIn"]:hover svg { filter: drop-shadow(0 0 15px rgba(0, 119, 181, 0.6)); }
-.icon-item[data-label="X"]:hover svg { filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8)); }
-.icon-item[data-label="TikTok"]:hover svg { filter: drop-shadow(0 0 15px rgba(255, 0, 80, 0.6)); }
-.icon-item[data-label="Facebook"]:hover svg { filter: drop-shadow(0 0 15px rgba(24, 119, 242, 0.6)); }
-.icon-item[data-label="YouTube"]:hover svg { filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.6)); }
-.icon-item[data-label="Twitch"]:hover svg { filter: drop-shadow(0 0 15px rgba(145, 70, 255, 0.6)); }
-.icon-item[data-label="Pinterest"]:hover svg { filter: drop-shadow(0 0 15px rgba(230, 0, 35, 0.6)); }
+.icon-item[data-label="Instagram"]:hover svg {
+    filter: drop-shadow(0 0 15px rgba(225, 48, 108, 0.6));
+}
+
+.icon-item[data-label="LinkedIn"]:hover svg {
+    filter: drop-shadow(0 0 15px rgba(0, 119, 181, 0.6));
+}
+
+.icon-item[data-label="X"]:hover svg {
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+}
+
+.icon-item[data-label="TikTok"]:hover svg {
+    filter: drop-shadow(0 0 15px rgba(255, 0, 80, 0.6));
+}
+
+.icon-item[data-label="Facebook"]:hover svg {
+    filter: drop-shadow(0 0 15px rgba(24, 119, 242, 0.6));
+}
+
+.icon-item[data-label="YouTube"]:hover svg {
+    filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.6));
+}
+
+.icon-item[data-label="Twitch"]:hover svg {
+    filter: drop-shadow(0 0 15px rgba(145, 70, 255, 0.6));
+}
+
+.icon-item[data-label="Pinterest"]:hover svg {
+    filter: drop-shadow(0 0 15px rgba(230, 0, 35, 0.6));
+}
 
 .icon-item::after {
     content: attr(data-label);
@@ -777,7 +954,8 @@ body {
 .card-video-container {
     width: 100%;
     height: 100%;
-    padding-bottom: 177.78%; /* 9:16 Aspect Ratio */
+    padding-bottom: 177.78%;
+    /* 9:16 Aspect Ratio */
     position: relative;
     background: #000;
     border-radius: 12px;
@@ -827,7 +1005,7 @@ body {
 
 /* Ensure YouTube-style button is hidden or removed if still present */
 .ytp-large-play-button {
-    display: none !important; 
+    display: none !important;
 }
 
 /* YouTube Pro Styles */
@@ -956,7 +1134,7 @@ body {
     font-size: 3em;
     color: rgba(255, 255, 255, 0.9);
     z-index: 20;
-    text-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     pointer-events: none;
 }
 
@@ -975,7 +1153,8 @@ body {
     padding: 20px;
     box-sizing: border-box;
     backdrop-filter: blur(10px);
-    transform: translateX(0) !important; /* Forzar centrado */
+    transform: translateX(0) !important;
+    /* Forzar centrado */
 }
 
 .video-modal-content {

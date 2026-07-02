@@ -16,8 +16,9 @@ function showTwitchVideo(data, container) {
     // Enable global download
     // Usamos original_url para forzar descarga HQ por servidor a través de yt-dlp
     const downloadUrl = data.original_url || data.videoUrl;
+    const filename = buildFilename('twitch', data.title, 'mp4');
     if (window.enableGlobalDownload) {
-        window.enableGlobalDownload(downloadUrl, "twitch_video.mp4");
+        window.enableGlobalDownload(downloadUrl, filename);
     }
 
     // Usar el mismo template unificado
@@ -26,6 +27,7 @@ function showTwitchVideo(data, container) {
         videoUrl: data.videoUrl, // En el caso de Twitch, esto puede ser un m3u8, pero renderVideoCard prioriza thumbnail
         thumbnail: data.thumbnail,
         title: data.title,
+        filename: filename,
         originalUrl: downloadUrl, // Important: Pass original URL for smart download
         duration: data.duration,
         platform: 'twitch',

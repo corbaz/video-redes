@@ -6,6 +6,8 @@ import json
 import sys
 import os
 
+from common.ytdlp_cmd import YTDLP_CMD
+
 
 class YouTubeExtractor:
     def __init__(self):
@@ -157,8 +159,7 @@ class YouTubeExtractor:
         try:
             print("🔄 Usando extracción básica como fallback...")
 
-            cmd = [
-                'yt-dlp',
+            cmd = YTDLP_CMD + [
                 '--dump-json',
                 '--no-warnings',
                 '--no-playlist',

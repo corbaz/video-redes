@@ -1,9 +1,52 @@
+import os
+import re
 import subprocess
 import json
-from typing import Dict, Any
+from typing import Dict, Any, Optional
+
+import requests
+
+from common.ytdlp_cmd import YTDLP_CMD
+
+# Optional Netscape-format cookies file (export with a browser extension while
+# logged into Instagram). Checked before browser cookies since it works even
+# when the browser is open and locking its cookie database.
+COOKIES_FILE = os.environ.get(
+    'INSTAGRAM_COOKIES_FILE',
+    os.path.join(os.path.dirname(__file__), '..', '..', 'cookies', 'instagram.txt')
+)
 
 
 class InstagramExtractor:
+    def _extract_via_embed_proxy(self, url: str) -> Optional[str]:
+        """Anonymous fallback via kkinstagram (InstaFix-style embed proxy).
+
+        With a bot User-Agent, /reel/{shortcode} responds with a 302 redirect
+        to the video file on Instagram's own CDN. Returns the CDN URL, or
+        None if the proxy could not resolve the video (it may respond with
+        a jpeg thumbnail instead).
+        """
+        match = re.search(r'(?:reel|reels|p)/([A-Za-z0-9_-]+)', url)
+        if not match:
+            return None
+        shortcode = match.group(1)
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (compatible; Discordbot/2.0; +https://discordapp.com)'
+        }
+        try:
+            r = requests.get(
+                f'https://kkinstagram.com/reel/{shortcode}/',
+                headers=headers, timeout=30, allow_redirects=True, stream=True
+            )
+            content_type = r.headers.get('Content-Type', '')
+            final_url = r.url
+            r.close()
+            if 'video' in content_type and 'cdninstagram.com' in final_url:
+                return final_url
+        except requests.RequestException as e:
+            print(f"⚠️ Fallback embed proxy falló: {e}")
+        return None
+
     def extract_info(self, url: str) -> Dict[str, Any]:
         """
         Extrae video de Instagram usando yt-dlp.
@@ -31,8 +74,7 @@ class InstagramExtractor:
                 }
 
             def run_ytdlp(extra_args=None):
-                cmd = [
-                    'yt-dlp',
+                cmd = YTDLP_CMD + [
                     '--dump-json',
                     '--no-download',
                     '--format', 'best[ext=mp4]/best',
@@ -47,36 +89,78 @@ class InstagramExtractor:
             # 1. Intentar método estándar
             result = run_ytdlp()
 
-            # 2. Si falla y es una historia o error de usuario, intentar con cookies del navegador
+            # 2. Si falla por contenido que requiere autenticación, reintentar con cookies.
+            # Instagram devuelve "empty media response" cuando exige login (comportamiento
+            # desde 2026 para la mayoría de los reels).
+            stderr_lower = result.stderr.lower()
             needs_cookies = result.returncode != 0 and (
-                'stories' in url or 
-                'unable to extract user info' in result.stderr or
-                'private' in result.stderr.lower()
+                'stories' in url or
+                'unable to extract user info' in stderr_lower or
+                'private' in stderr_lower or
+                'empty media response' in stderr_lower or
+                'login required' in stderr_lower or
+                'rate-limit' in stderr_lower or
+                'use --cookies' in stderr_lower
             )
 
             if needs_cookies:
-                print("⚠️ Contenido privado/historia detectado. Intentando con cookies de Chrome...")
-                # Note: If Chrome is open, this might fail with Permission Error on Windows.
-                # User should ideally close the browser or run as admin, but we can't force that.
-                # We can try to copy the cookie file to a temp location if possible, but yt-dlp handles this internally usually.
-                # The error reported is "Could not copy Chrome cookie database".
-                # This often means the browser has the file locked.
-                
-                # Try Chrome first
-                result = run_ytdlp(['--cookies-from-browser', 'chrome'])
-                
-                if result.returncode != 0:
-                     # Check if it was a permission error
-                     if "Permission denied" in result.stderr or "Could not copy" in result.stderr:
-                         print("⚠️ Error de permisos con cookies de Chrome (¿Navegador abierto?). Intentando Edge...")
-                     else:
-                         print("⚠️ Chrome falló. Intentando con cookies de Edge...")
-                         
-                     result = run_ytdlp(['--cookies-from-browser', 'edge'])
+                print("⚠️ Instagram requiere autenticación. Reintentando con cookies...")
+
+                # 2a. Archivo de cookies exportado (funciona aunque el navegador esté abierto)
+                if os.path.isfile(COOKIES_FILE):
+                    print(f"🍪 Usando archivo de cookies: {COOKIES_FILE}")
+                    result = run_ytdlp(['--cookies', COOKIES_FILE])
+
+            # 3. Fallback anónimo rápido: proxy de embeds (kkinstagram).
+            # Va antes que las cookies del navegador porque estas suelen fallar
+            # con el navegador abierto (base de cookies bloqueada en Windows).
+            if result.returncode != 0:
+                print("🔁 Intentando fallback vía proxy de embeds...")
+                cdn_url = self._extract_via_embed_proxy(url)
+                if cdn_url:
+                    print("✅ Video obtenido vía proxy de embeds (CDN directo).")
+                    return {
+                        "success": True,
+                        "data": {
+                            "title": "Instagram Reel",
+                            "uploader": "Instagram User",
+                            "duration": 0,
+                            "description": "Video obtenido vía proxy de embeds",
+                            "video_formats": [{
+                                "url": cdn_url,
+                                "width": 720,
+                                "height": 1280,
+                                "format_note": "CDN (embed proxy)"
+                            }]
+                        }
+                    }
+
+            # 4. Último recurso: cookies del navegador. Nota: en Windows el
+            # navegador abierto bloquea su base de cookies ("Could not copy
+            # ... cookie database").
+            if result.returncode != 0 and needs_cookies:
+                for browser in ('chrome', 'edge', 'firefox'):
+                    if result.returncode == 0:
+                        break
+                    print(f"🍪 Intentando con cookies de {browser}...")
+                    result = run_ytdlp(['--cookies-from-browser', browser])
 
             if result.returncode != 0:
                 error_msg = result.stderr.strip()
-                if 'private' in error_msg.lower():
+                if needs_cookies:
+                    # El contenido requiere login y ningún método de cookies funcionó.
+                    return {
+                        "success": False,
+                        "error": "Instagram exige iniciar sesión para ver este contenido y no se pudieron obtener cookies válidas del navegador.",
+                        "suggestion": "Cierra completamente Chrome/Edge y reintenta, o exporta tus cookies de Instagram a 'cookies/instagram.txt' (formato Netscape) con una extensión como 'Get cookies.txt LOCALLY'."
+                    }
+                if 'empty media response' in error_msg.lower():
+                    return {
+                        "success": False,
+                        "error": "Instagram exige iniciar sesión para ver este contenido y no se pudieron obtener cookies válidas.",
+                        "suggestion": "Cierra completamente Chrome/Edge y reintenta, o exporta tus cookies de Instagram a 'cookies/instagram.txt' (formato Netscape) con una extensión como 'Get cookies.txt LOCALLY'."
+                    }
+                elif 'private' in error_msg.lower():
                     return {
                         "success": False,
                         "error": "Este contenido es privado o requiere autenticación",

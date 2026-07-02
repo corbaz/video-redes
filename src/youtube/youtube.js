@@ -280,9 +280,8 @@ function showYouTubeVideo(data, container) {
     console.log("📷 Thumbnail URL fixed:", thumbnail);
 
     const originalUrl = data.original_url || data.originalUrl || data.video_url;
-    // Sanitizar nombre de archivo
-    const safeTitle = rawTitle.replace(/[\\/:*?"<>|]/g, "").trim() || "video";
-    const filename = encodeURIComponent(safeTitle + ".mp4");
+    // Nombre de archivo unificado: youtube_titulo_fecha.mp4
+    const filename = buildFilename('youtube', rawTitle, 'mp4');
 
     // Enable Global Download Button
     if (window.enableGlobalDownload) {
@@ -304,7 +303,7 @@ function showYouTubeVideo(data, container) {
         thumbnail: thumbnail,
         title: title,
         originalUrl: originalUrl,
-        filename: safeTitle + ".mp4",
+        filename: filename,
         platform: 'youtube'
     });
     

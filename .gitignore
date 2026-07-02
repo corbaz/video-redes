@@ -245,3 +245,4 @@ yarn.lock
 # !*.js              # Scripts del frontend
 # !*.bat             # Scripts de inicio
 # !favicon.ico       # Icono de la aplicación
+cookies/

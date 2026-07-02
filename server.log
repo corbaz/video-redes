@@ -461,3 +461,433 @@
 2026-01-13 08:54:34,476 - INFO - 192.168.1.50 - "GET /src/facebook/facebook.js?v=20260110_6 HTTP/1.1" 200 -
 2026-01-13 08:54:34,482 - INFO - 192.168.1.50 - "GET /src/twitch/twitch.js?v=20260110_6 HTTP/1.1" 200 -
 2026-01-13 08:54:34,483 - INFO - 192.168.1.50 - "GET /src/pinterest/pinterest.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 12:57:59,464 - INFO - ============================================================
+2026-07-02 12:57:59,464 - INFO - Video Downloader Server - High Quality Fix
+2026-07-02 12:57:59,465 - INFO - ============================================================
+2026-07-02 12:57:59,465 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-07-02 12:57:59,465 - INFO - Acceso local: http://localhost:8000
+2026-07-02 12:57:59,465 - INFO - Acceso red: http://192.168.1.50:8000
+2026-07-02 12:57:59,465 - INFO - Endpoints disponibles:
+2026-07-02 12:57:59,466 - INFO -   POST /api/validate - Validar URLs
+2026-07-02 12:57:59,466 - INFO -   POST /api/extract - Extraer videos
+2026-07-02 12:57:59,466 - INFO - Presiona Ctrl+C para detener
+2026-07-02 12:57:59,466 - INFO - ============================================================
+2026-07-02 12:58:06,331 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-07-02 12:58:06,402 - INFO - 127.0.0.1 - "GET /src/common/style.css HTTP/1.1" 200 -
+2026-07-02 12:58:06,528 - INFO - 127.0.0.1 - "GET /src/common/card.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 12:58:06,711 - INFO - 127.0.0.1 - "GET /src/instagram/insta.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 12:58:06,711 - INFO - 127.0.0.1 - "GET /src/x/x.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 12:58:06,711 - INFO - 127.0.0.1 - "GET /src/linkedin/linkedin.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 12:58:06,711 - INFO - 127.0.0.1 - "GET /src/tiktok/tiktok.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 12:58:06,712 - INFO - 127.0.0.1 - "GET /src/facebook/facebook.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 12:58:06,849 - INFO - 127.0.0.1 - "GET /src/youtube/youtube.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 12:58:07,018 - INFO - 127.0.0.1 - "GET /src/twitch/twitch.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 12:58:07,018 - INFO - 127.0.0.1 - "GET /src/pinterest/pinterest.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 12:58:08,298 - INFO - 127.0.0.1 - "GET /favicon.svg HTTP/1.1" 200 -
+2026-07-02 12:58:36,405 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 12:58:36,733 - INFO - Extrayendo video de: https://x.com/midudev/status/2015851105192673548?s=20
+2026-07-02 12:58:39,284 - INFO - ✅ Extracción exitosa para: https://x.com/midudev/status/2015851105192673548?s=20
+2026-07-02 12:58:39,284 - INFO -    📺 Plataforma: x
+2026-07-02 12:58:39,284 - INFO -    🎬 Título: Sin título...
+2026-07-02 12:58:39,284 - INFO -    🎯 Resolución: N/A
+2026-07-02 12:58:39,284 - INFO -    📁 Tamaño: N/A
+2026-07-02 12:58:39,284 - INFO -    ⏱️ Duración: 0s
+2026-07-02 12:58:39,285 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-07-02 12:58:55,515 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 12:58:55,826 - INFO - Extrayendo video de: https://www.instagram.com/reel/DZ4nJCdx-w_/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2026-07-02 12:58:57,661 - WARNING - Error extrayendo https://www.instagram.com/reel/DZ4nJCdx-w_/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==: Error al acceder al video: ERROR: [Instagram] DZ4nJCdx-w_: Instagram sent an empty media response. Check if this post is access...
+2026-07-02 12:58:57,662 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-07-02 12:59:56,084 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-07-02 13:00:01,610 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 13:00:01,878 - INFO - Extrayendo video de: https://www.instagram.com/reel/DaOa6X-BTXV/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2026-07-02 13:00:03,531 - WARNING - Error extrayendo https://www.instagram.com/reel/DaOa6X-BTXV/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==: Error al acceder al video: ERROR: [Instagram] DaOa6X-BTXV: Instagram sent an empty media response. Check if this post is access...
+2026-07-02 13:00:03,531 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-07-02 13:00:52,230 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 13:00:52,553 - INFO - Extrayendo video de: https://www.facebook.com/reel/938208445255889
+2026-07-02 13:00:56,272 - INFO - ✅ Extracción exitosa para: https://www.facebook.com/reel/938208445255889
+2026-07-02 13:00:56,272 - INFO -    📺 Plataforma: facebook
+2026-07-02 13:00:56,272 - INFO -    🎬 Título: 527K views · 15K reactions | Así puedes utilizar C...
+2026-07-02 13:00:56,273 - INFO -    🎯 Resolución: N/AxN/A
+2026-07-02 13:00:56,273 - INFO -    📁 Tamaño: N/A
+2026-07-02 13:00:56,273 - INFO -    ⏱️ Duración: 51.013s
+2026-07-02 13:00:56,273 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-07-02 13:01:00,070 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fvideo-eze1-1.xx.fbcdn.net%2Fo1%2Fv%2Ft2%2Ff2%2Fm412%2FAQMB6eh_K1W1isqn_Jq6bAmA7-gpEZZBkexkI5sGGZt8exF-J7olP-0BIOEuREP7EYmesEkI1FhRPrryyJXOKTZXyvskjZR3WCMh-wt9dQ.mp4%3F_nc_cat%3D110%26_nc_sid%3D8bf8fe%26_nc_ht%3Dvideo-eze1-1.xx.fbcdn.net%26_nc_ohc%3DwJr0YXFeOqIQ7kNvwEb1yYN%26efg%3DeyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTgwNTMxMTYxMzQ2NTI5MSwiYXNzZXRfYWdlX2RheXMiOjEzOCwidmlfdXNlY2FzZV9pZCI6MTAxMjIsImR1cmF0aW9uX3MiOjUxLCJ1cmxnZW5fc291cmNlIjoid3d3In0%253D%26ccb%3D17-1%26_nc_gid%3DRGS4qSxuum5Qc1L0Lx-_zA%26_nc_ss%3D7c289%26_nc_zt%3D28%26oh%3D00_AQDTfb_G_QbIMufBh6Gew6khFPu-07xNk-m5rdlflgS5VA%26oe%3D6A4C78A4%26bitrate%3D225775%26tag%3Dsve_sd&filename=video.mp4 HTTP/1.1" 200 -
+2026-07-02 13:01:00,070 - INFO - Fallback download via requests: https://video-eze1-1.xx.fbcdn.net/o1/v/t2/f2/m412/AQMB6eh_K1W1isqn_Jq6bAmA7-gpEZZBkexkI5sGGZt8exF-J7olP-0BIOEuREP7EYmesEkI1FhRPrryyJXOKTZXyvskjZR3WCMh-wt9dQ.mp4?_nc_cat=110&_nc_sid=8bf8fe&_nc_ht=video-eze1-1.xx.fbcdn.net&_nc_ohc=wJr0YXFeOqIQ7kNvwEb1yYN&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTgwNTMxMTYxMzQ2NTI5MSwiYXNzZXRfYWdlX2RheXMiOjEzOCwidmlfdXNlY2FzZV9pZCI6MTAxMjIsImR1cmF0aW9uX3MiOjUxLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=RGS4qSxuum5Qc1L0Lx-_zA&_nc_ss=7c289&_nc_zt=28&oh=00_AQDTfb_G_QbIMufBh6Gew6khFPu-07xNk-m5rdlflgS5VA&oe=6A4C78A4&bitrate=225775&tag=sve_sd
+2026-07-02 13:01:01,388 - INFO - 127.0.0.1 - "GET /api/download_status?id=a5584a9e-4722-40a7-ad11-e1d1cdcbdbb4 HTTP/1.1" 200 -
+2026-07-02 13:01:01,659 - INFO - 127.0.0.1 - "GET /api/download_file?id=a5584a9e-4722-40a7-ad11-e1d1cdcbdbb4 HTTP/1.1" 200 -
+2026-07-02 13:01:02,403 - INFO - 127.0.0.1 - "GET /api/download_cancel?id=a5584a9e-4722-40a7-ad11-e1d1cdcbdbb4 HTTP/1.1" 200 -
+2026-07-02 13:01:15,629 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 13:01:15,876 - INFO - Extrayendo video de: https://x.com/anujcodes_21/status/2068694185335742529
+2026-07-02 13:01:16,870 - INFO - ✅ Extracción exitosa para: https://x.com/anujcodes_21/status/2068694185335742529
+2026-07-02 13:01:16,871 - INFO -    📺 Plataforma: x
+2026-07-02 13:01:16,871 - INFO -    🎬 Título: Sin título...
+2026-07-02 13:01:16,871 - INFO -    🎯 Resolución: N/A
+2026-07-02 13:01:16,871 - INFO -    📁 Tamaño: N/A
+2026-07-02 13:01:16,871 - INFO -    ⏱️ Duración: 0s
+2026-07-02 13:01:16,871 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-07-02 13:02:15,941 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-07-02 15:10:10,138 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-07-02 15:10:10,222 - INFO - 127.0.0.1 - "GET /src/common/style.css HTTP/1.1" 200 -
+2026-07-02 15:10:10,395 - INFO - 127.0.0.1 - "GET /src/common/card.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:10:10,540 - INFO - 127.0.0.1 - "GET /src/instagram/insta.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:10:10,541 - INFO - 127.0.0.1 - "GET /src/linkedin/linkedin.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:10:10,543 - INFO - 127.0.0.1 - "GET /src/x/x.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:10:10,544 - INFO - 127.0.0.1 - "GET /src/tiktok/tiktok.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:10:10,545 - INFO - 127.0.0.1 - "GET /src/facebook/facebook.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:10:10,709 - INFO - 127.0.0.1 - "GET /src/youtube/youtube.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:10:10,850 - INFO - 127.0.0.1 - "GET /src/twitch/twitch.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:10:10,851 - INFO - 127.0.0.1 - "GET /src/pinterest/pinterest.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:10:12,034 - INFO - 127.0.0.1 - "GET /favicon.svg HTTP/1.1" 200 -
+2026-07-02 15:10:13,649 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 15:10:13,968 - INFO - Extrayendo video de: https://www.instagram.com/reel/DZ4nJCdx-w_/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2026-07-02 15:10:15,754 - WARNING - Error extrayendo https://www.instagram.com/reel/DZ4nJCdx-w_/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==: Error al acceder al video: ERROR: [Instagram] DZ4nJCdx-w_: Instagram sent an empty media response. Check if this post is access...
+2026-07-02 15:10:15,754 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-07-02 15:11:14,233 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-07-02 15:11:18,112 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 400 -
+2026-07-02 15:12:18,389 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-07-02 15:22:31,045 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 15:22:31,310 - INFO - Extrayendo video de: https://www.instagram.com/reel/DZ4nJCdx-w_/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2026-07-02 15:22:33,111 - WARNING - Error extrayendo https://www.instagram.com/reel/DZ4nJCdx-w_/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==: Error al acceder al video: ERROR: [Instagram] DZ4nJCdx-w_: Instagram sent an empty media response. Check if this post is access...
+2026-07-02 15:22:33,111 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-07-02 15:22:38,363 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-07-02 15:22:38,666 - INFO - 127.0.0.1 - "GET /src/common/style.css HTTP/1.1" 200 -
+2026-07-02 15:22:38,815 - INFO - 127.0.0.1 - "GET /src/instagram/insta.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:22:38,815 - INFO - 127.0.0.1 - "GET /src/x/x.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:22:38,815 - INFO - 127.0.0.1 - "GET /src/common/card.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:22:38,815 - INFO - 127.0.0.1 - "GET /src/tiktok/tiktok.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:22:38,816 - INFO - 127.0.0.1 - "GET /src/linkedin/linkedin.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:22:38,982 - INFO - 127.0.0.1 - "GET /src/facebook/facebook.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:22:39,124 - INFO - 127.0.0.1 - "GET /src/pinterest/pinterest.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:22:39,124 - INFO - 127.0.0.1 - "GET /src/twitch/twitch.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:22:39,124 - INFO - 127.0.0.1 - "GET /src/youtube/youtube.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:22:40,272 - INFO - 127.0.0.1 - "GET /favicon.svg HTTP/1.1" 200 -
+2026-07-02 15:22:41,280 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 15:22:41,599 - INFO - Extrayendo video de: https://www.instagram.com/reel/DZ4nJCdx-w_/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2026-07-02 15:22:43,356 - WARNING - Error extrayendo https://www.instagram.com/reel/DZ4nJCdx-w_/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==: Error al acceder al video: ERROR: [Instagram] DZ4nJCdx-w_: Instagram sent an empty media response. Check if this post is access...
+2026-07-02 15:22:43,356 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-07-02 15:23:41,860 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-07-02 15:24:47,585 - INFO - Servidor detenido por usuario
+2026-07-02 15:24:47,586 - INFO - Servidor cerrado correctamente
+2026-07-02 15:24:55,866 - INFO - ============================================================
+2026-07-02 15:24:55,866 - INFO - Video Downloader Server - High Quality Fix
+2026-07-02 15:24:55,867 - INFO - ============================================================
+2026-07-02 15:24:55,867 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-07-02 15:24:55,867 - INFO - Acceso local: http://localhost:8000
+2026-07-02 15:24:55,867 - INFO - Acceso red: http://192.168.1.50:8000
+2026-07-02 15:24:55,867 - INFO - Endpoints disponibles:
+2026-07-02 15:24:55,867 - INFO -   POST /api/validate - Validar URLs
+2026-07-02 15:24:55,867 - INFO -   POST /api/extract - Extraer videos
+2026-07-02 15:24:55,868 - INFO - Presiona Ctrl+C para detener
+2026-07-02 15:24:55,868 - INFO - ============================================================
+2026-07-02 15:24:57,472 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-07-02 15:24:57,590 - INFO - 127.0.0.1 - "GET /src/common/style.css HTTP/1.1" 200 -
+2026-07-02 15:24:57,712 - INFO - 127.0.0.1 - "GET /src/common/card.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:24:57,912 - INFO - 127.0.0.1 - "GET /src/linkedin/linkedin.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:24:57,912 - INFO - 127.0.0.1 - "GET /src/x/x.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:24:57,912 - INFO - 127.0.0.1 - "GET /src/tiktok/tiktok.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:24:57,912 - INFO - 127.0.0.1 - "GET /src/instagram/insta.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:24:57,913 - INFO - 127.0.0.1 - "GET /src/facebook/facebook.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:24:58,031 - INFO - 127.0.0.1 - "GET /src/youtube/youtube.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:24:58,220 - INFO - 127.0.0.1 - "GET /src/pinterest/pinterest.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:24:58,220 - INFO - 127.0.0.1 - "GET /src/twitch/twitch.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:24:59,123 - INFO - 127.0.0.1 - "GET /favicon.svg HTTP/1.1" 200 -
+2026-07-02 15:25:03,973 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 15:25:04,282 - INFO - Extrayendo video de: https://www.instagram.com/reel/DZ4nJCdx-w_/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2026-07-02 15:25:10,404 - WARNING - Error extrayendo https://www.instagram.com/reel/DZ4nJCdx-w_/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==: Instagram exige iniciar sesión para ver este contenido y no se pudieron obtener cookies válidas del navegador.
+2026-07-02 15:25:10,405 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-07-02 15:26:04,551 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-07-02 15:51:11,637 - INFO - Servidor detenido por usuario
+2026-07-02 15:51:11,638 - INFO - Servidor cerrado correctamente
+2026-07-02 15:51:19,647 - INFO - ============================================================
+2026-07-02 15:51:19,647 - INFO - Video Downloader Server - High Quality Fix
+2026-07-02 15:51:19,647 - INFO - ============================================================
+2026-07-02 15:51:19,648 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-07-02 15:51:19,648 - INFO - Acceso local: http://localhost:8000
+2026-07-02 15:51:19,648 - INFO - Acceso red: http://192.168.1.50:8000
+2026-07-02 15:51:19,648 - INFO - Endpoints disponibles:
+2026-07-02 15:51:19,648 - INFO -   POST /api/validate - Validar URLs
+2026-07-02 15:51:19,649 - INFO -   POST /api/extract - Extraer videos
+2026-07-02 15:51:19,649 - INFO - Presiona Ctrl+C para detener
+2026-07-02 15:51:19,649 - INFO - ============================================================
+2026-07-02 15:51:23,956 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-07-02 15:51:24,066 - INFO - 127.0.0.1 - "GET /src/common/style.css HTTP/1.1" 200 -
+2026-07-02 15:51:24,242 - INFO - 127.0.0.1 - "GET /src/common/card.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:51:24,376 - INFO - 127.0.0.1 - "GET /src/instagram/insta.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:51:24,379 - INFO - 127.0.0.1 - "GET /src/linkedin/linkedin.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:51:24,379 - INFO - 127.0.0.1 - "GET /src/x/x.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:51:24,381 - INFO - 127.0.0.1 - "GET /src/tiktok/tiktok.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:51:24,440 - INFO - 127.0.0.1 - "GET /src/facebook/facebook.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:51:24,568 - INFO - 127.0.0.1 - "GET /src/youtube/youtube.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:51:24,691 - INFO - 127.0.0.1 - "GET /src/twitch/twitch.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:51:24,692 - INFO - 127.0.0.1 - "GET /src/pinterest/pinterest.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 15:51:26,201 - INFO - 127.0.0.1 - "GET /favicon.svg HTTP/1.1" 200 -
+2026-07-02 15:51:33,096 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 15:51:33,408 - INFO - Extrayendo video de: https://www.instagram.com/reel/DZ4nJCdx-w_/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2026-07-02 15:51:35,959 - INFO - ✅ Extracción exitosa para: https://www.instagram.com/reel/DZ4nJCdx-w_/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2026-07-02 15:51:35,959 - INFO -    📺 Plataforma: instagram
+2026-07-02 15:51:35,959 - INFO -    🎬 Título: Sin título...
+2026-07-02 15:51:35,960 - INFO -    🎯 Resolución: N/A
+2026-07-02 15:51:35,960 - INFO -    📁 Tamaño: N/A
+2026-07-02 15:51:35,960 - INFO -    ⏱️ Duración: 0s
+2026-07-02 15:51:35,960 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-07-02 15:51:42,082 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fscontent.cdninstagram.com%2Fo1%2Fv%2Ft2%2Ff2%2Fm86%2FAQOlDa4jRxYxvhpRWipCHwCpZAW_vuk4cOP3OshBdHHlqdgK9yzHmkFVsm72-VkFTnXdzN1oP9X71b0KEoQEzeKj9EmJ-0ungtWF2nM.mp4%3F_nc_cat%3D104%26_nc_sid%3D5e9851%26_nc_ht%3Dscontent.cdninstagram.com%26_nc_ohc%3D8QB7B8GZL5cQ7kNvwFHmltW%26efg%3DeyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6MTU3MzMzMDk5Nzg0NjE3OSwiYXNzZXRfYWdlX2RheXMiOjEwLCJ2aV91c2VjYXNlX2lkIjoxMDA5OSwiZHVyYXRpb25fcyI6MTYwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%253D%26ccb%3D17-1%26vs%3D2edcade33bab9487%26_nc_vs%3DHBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8wRjQzOEU1NEMyQzI3MDYxOUVEQTQ1MzY2NEQ0QzhBQV92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyL0E0NDVDNDYwODg5NEFENjRERkZBRDRCOTQ4QjFGMEE3X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbGgu2z9bvLBRUCKAJDMywXQGQczMzMzM0YEmRhc2hfYmFzZWxpbmVfMV92MREAdf4HZeadAQA%26_nc_gid%3DC0HcZ8F0z9tHzzv1OXcdwA%26_nc_ss%3D7b60f%26_nc_zt%3D28%26oh%3D00_AQAGALPwrD-Z-HAf9NLrDLuQqhcsBZgOp-co5yJmIr2y9w%26oe%3D6A487FA5&filename=video.mp4 HTTP/1.1" 200 -
+2026-07-02 15:51:43,499 - INFO - 127.0.0.1 - "GET /api/download_status?id=768882a1-55c1-4a4a-9524-31a7cfd0bc57 HTTP/1.1" 200 -
+2026-07-02 15:51:44,100 - INFO - 127.0.0.1 - "GET /api/download_status?id=768882a1-55c1-4a4a-9524-31a7cfd0bc57 HTTP/1.1" 200 -
+2026-07-02 15:51:45,409 - INFO - 127.0.0.1 - "GET /api/download_status?id=768882a1-55c1-4a4a-9524-31a7cfd0bc57 HTTP/1.1" 200 -
+2026-07-02 15:51:45,681 - INFO - 127.0.0.1 - "GET /api/download_file?id=768882a1-55c1-4a4a-9524-31a7cfd0bc57 HTTP/1.1" 200 -
+2026-07-02 15:51:46,422 - INFO - 127.0.0.1 - "GET /api/download_cancel?id=768882a1-55c1-4a4a-9524-31a7cfd0bc57 HTTP/1.1" 200 -
+2026-07-02 15:52:44,460 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 15:52:44,724 - INFO - Extrayendo video de: https://www.instagram.com/reel/DaSwTAGE_3s/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2026-07-02 15:52:48,121 - INFO - ✅ Extracción exitosa para: https://www.instagram.com/reel/DaSwTAGE_3s/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2026-07-02 15:52:48,121 - INFO -    📺 Plataforma: instagram
+2026-07-02 15:52:48,121 - INFO -    🎬 Título: Sin título...
+2026-07-02 15:52:48,122 - INFO -    🎯 Resolución: N/A
+2026-07-02 15:52:48,122 - INFO -    📁 Tamaño: N/A
+2026-07-02 15:52:48,122 - INFO -    ⏱️ Duración: 0s
+2026-07-02 15:52:48,122 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-07-02 15:53:44,771 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-07-02 15:59:45,730 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 15:59:45,993 - INFO - Extrayendo video de: https://www.instagram.com/reel/DaSmI7eujCP/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2026-07-02 15:59:49,774 - INFO - ✅ Extracción exitosa para: https://www.instagram.com/reel/DaSmI7eujCP/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2026-07-02 15:59:49,775 - INFO -    📺 Plataforma: instagram
+2026-07-02 15:59:49,775 - INFO -    🎬 Título: Sin título...
+2026-07-02 15:59:49,775 - INFO -    🎯 Resolución: N/A
+2026-07-02 15:59:49,775 - INFO -    📁 Tamaño: N/A
+2026-07-02 15:59:49,775 - INFO -    ⏱️ Duración: 0s
+2026-07-02 15:59:49,776 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-07-02 16:00:44,420 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 16:00:44,739 - INFO - Extrayendo video de: https://www.tiktok.com/@thito.mimi/video/7647739371184983318?is_from_webapp=1&sender_device=pc
+2026-07-02 16:00:46,093 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@thito.mimi/video/7647739371184983318?is_from_webapp=1&sender_device=pc
+2026-07-02 16:00:46,093 - INFO -    📺 Plataforma: tiktok
+2026-07-02 16:00:46,094 - INFO -    🎬 Título: Sin título...
+2026-07-02 16:00:46,094 - INFO -    🎯 Resolución: N/A
+2026-07-02 16:00:46,094 - INFO -    📁 Tamaño: N/A
+2026-07-02 16:00:46,094 - INFO -    ⏱️ Duración: 0s
+2026-07-02 16:00:46,094 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-07-02 16:00:49,807 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fwww.tiktok.com%2F%40thito.mimi%2Fvideo%2F7647739371184983318%3Fis_from_webapp%3D1%26sender_device%3Dpc&filename=video.mp4 HTTP/1.1" 200 -
+2026-07-02 16:00:51,149 - INFO - 127.0.0.1 - "GET /api/download_status?id=a519b442-0678-4953-a68e-76b049fd19a5 HTTP/1.1" 200 -
+2026-07-02 16:00:51,836 - INFO - 127.0.0.1 - "GET /api/download_status?id=a519b442-0678-4953-a68e-76b049fd19a5 HTTP/1.1" 200 -
+2026-07-02 16:00:52,181 - INFO - 127.0.0.1 - "GET /api/download_file?id=a519b442-0678-4953-a68e-76b049fd19a5 HTTP/1.1" 200 -
+2026-07-02 16:00:52,856 - INFO - 127.0.0.1 - "GET /api/download_cancel?id=a519b442-0678-4953-a68e-76b049fd19a5 HTTP/1.1" 200 -
+2026-07-02 16:01:52,448 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-07-02 16:02:05,993 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 16:02:06,258 - INFO - Extrayendo video de: https://www.tiktok.com/@eltito_arg/live
+2026-07-02 16:02:09,004 - INFO - ✅ Extracción exitosa para: https://www.tiktok.com/@eltito_arg/live
+2026-07-02 16:02:09,004 - INFO -    📺 Plataforma: tiktok
+2026-07-02 16:02:09,004 - INFO -    🎬 Título: Sin título...
+2026-07-02 16:02:09,004 - INFO -    🎯 Resolución: N/A
+2026-07-02 16:02:09,005 - INFO -    📁 Tamaño: N/A
+2026-07-02 16:02:09,005 - INFO -    ⏱️ Duración: 0s
+2026-07-02 16:02:09,005 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-07-02 16:02:11,892 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fwww.tiktok.com%2F%40eltito_arg%2Flive&filename=video.mp4 HTTP/1.1" 200 -
+2026-07-02 16:02:13,216 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:13,917 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:15,209 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:15,918 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:17,213 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:17,912 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:19,216 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:19,908 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:21,227 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:21,911 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:23,233 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:23,918 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:25,223 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:25,913 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:27,227 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:27,914 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:29,220 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:29,918 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:31,227 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:31,913 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:33,229 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:33,919 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:35,228 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:35,911 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:37,229 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:37,925 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:39,222 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:39,910 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:42,047 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:42,734 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:44,055 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:44,747 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:46,046 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:46,746 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:48,044 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:48,738 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:50,042 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:50,749 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:52,053 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:52,741 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:54,057 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:54,748 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:56,049 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:56,778 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:58,052 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:02:58,768 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:00,080 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:00,758 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:02,054 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:02,744 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:04,062 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:04,733 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:06,055 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:06,747 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:08,052 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:08,737 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:10,044 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:10,747 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:12,045 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:12,748 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:14,056 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:14,742 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:16,048 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:16,749 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:18,048 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:18,735 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:20,054 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:20,748 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:22,049 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:22,738 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:24,054 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:24,745 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:26,048 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:26,737 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:28,051 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:28,738 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:30,038 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:30,743 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:32,039 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:32,741 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:34,045 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:34,736 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:36,057 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:36,743 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:38,052 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:38,738 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:40,053 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:03:56,778 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:04:21,618 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:04:21,913 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:04:23,218 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:04:23,907 - INFO - 127.0.0.1 - "GET /api/download_status?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:04:24,573 - INFO - 127.0.0.1 - "GET /api/download_cancel?id=98dc71ec-b1bc-49d7-9300-0d493a2d4e85 HTTP/1.1" 200 -
+2026-07-02 16:04:27,623 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 16:04:27,931 - INFO - Extrayendo video de: https://www.instagram.com/reel/DaOa6X-BTXV/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2026-07-02 16:04:35,876 - WARNING - Error extrayendo https://www.instagram.com/reel/DaOa6X-BTXV/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==: Instagram exige iniciar sesión para ver este contenido y no se pudieron obtener cookies válidas del navegador.
+2026-07-02 16:04:35,876 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-07-02 16:04:45,461 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-07-02 16:04:45,766 - INFO - 127.0.0.1 - "GET /src/common/style.css HTTP/1.1" 200 -
+2026-07-02 16:04:45,876 - INFO - 127.0.0.1 - "GET /src/common/card.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 16:04:45,876 - INFO - 127.0.0.1 - "GET /src/instagram/insta.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 16:04:45,876 - INFO - 127.0.0.1 - "GET /src/linkedin/linkedin.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 16:04:45,877 - INFO - 127.0.0.1 - "GET /src/x/x.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 16:04:45,877 - INFO - 127.0.0.1 - "GET /src/tiktok/tiktok.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 16:04:46,074 - INFO - 127.0.0.1 - "GET /src/facebook/facebook.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 16:04:46,181 - INFO - 127.0.0.1 - "GET /src/youtube/youtube.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 16:04:46,186 - INFO - 127.0.0.1 - "GET /src/twitch/twitch.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 16:04:46,186 - INFO - 127.0.0.1 - "GET /src/pinterest/pinterest.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 16:04:47,379 - INFO - 127.0.0.1 - "GET /favicon.svg HTTP/1.1" 200 -
+2026-07-02 16:04:48,289 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 16:04:48,605 - INFO - Extrayendo video de: https://www.instagram.com/reel/DaOa6X-BTXV/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2026-07-02 16:04:54,874 - WARNING - Error extrayendo https://www.instagram.com/reel/DaOa6X-BTXV/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==: Instagram exige iniciar sesión para ver este contenido y no se pudieron obtener cookies válidas del navegador.
+2026-07-02 16:04:54,874 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-07-02 16:05:48,867 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-07-02 16:07:03,399 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 16:07:03,665 - INFO - Extrayendo video de: https://www.instagram.com/reel/DaOa6X-BTXV/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2026-07-02 16:07:10,456 - WARNING - Error extrayendo https://www.instagram.com/reel/DaOa6X-BTXV/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==: Instagram exige iniciar sesión para ver este contenido y no se pudieron obtener cookies válidas del navegador.
+2026-07-02 16:07:10,457 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-07-02 16:08:03,717 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-07-02 16:08:43,929 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 16:08:44,180 - INFO - Extrayendo video de: https://www.instagram.com/reel/DaOa6X-BTXV/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2026-07-02 16:08:50,989 - WARNING - Error extrayendo https://www.instagram.com/reel/DaOa6X-BTXV/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==: Instagram exige iniciar sesión para ver este contenido y no se pudieron obtener cookies válidas del navegador.
+2026-07-02 16:08:50,989 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-07-02 16:09:44,257 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-07-02 16:10:29,393 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 16:10:29,657 - INFO - Extrayendo video de: https://www.youtube.com/watch?v=uYxcodcOLdo
+2026-07-02 16:10:31,668 - INFO - ✅ Extracción exitosa para: https://www.youtube.com/watch?v=uYxcodcOLdo
+2026-07-02 16:10:31,668 - INFO -    📺 Plataforma: youtube
+2026-07-02 16:10:31,668 - INFO -    🎬 Título: 5 features nuevas de Docker que no estás usando...
+2026-07-02 16:10:31,668 - INFO -    🎯 Resolución: 360p
+2026-07-02 16:10:31,669 - INFO -    📁 Tamaño: 35.62 MB
+2026-07-02 16:10:31,669 - INFO -    ⏱️ Duración: 1011s
+2026-07-02 16:10:31,669 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-07-02 16:10:34,098 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DuYxcodcOLdo&filename=5%2520features%2520nuevas%2520de%2520Docker%2520que%2520no%2520est%25C3%25A1s%2520usando.mp4 HTTP/1.1" 200 -
+2026-07-02 16:10:35,426 - INFO - 127.0.0.1 - "GET /api/download_status?id=1f844767-fdd3-4256-b02d-fe43176097b4 HTTP/1.1" 200 -
+2026-07-02 16:10:36,119 - INFO - 127.0.0.1 - "GET /api/download_status?id=1f844767-fdd3-4256-b02d-fe43176097b4 HTTP/1.1" 200 -
+2026-07-02 16:10:37,426 - INFO - 127.0.0.1 - "GET /api/download_status?id=1f844767-fdd3-4256-b02d-fe43176097b4 HTTP/1.1" 200 -
+2026-07-02 16:10:38,117 - INFO - 127.0.0.1 - "GET /api/download_status?id=1f844767-fdd3-4256-b02d-fe43176097b4 HTTP/1.1" 200 -
+2026-07-02 16:10:39,428 - INFO - 127.0.0.1 - "GET /api/download_status?id=1f844767-fdd3-4256-b02d-fe43176097b4 HTTP/1.1" 200 -
+2026-07-02 16:10:40,120 - INFO - 127.0.0.1 - "GET /api/download_status?id=1f844767-fdd3-4256-b02d-fe43176097b4 HTTP/1.1" 200 -
+2026-07-02 16:10:41,426 - INFO - 127.0.0.1 - "GET /api/download_status?id=1f844767-fdd3-4256-b02d-fe43176097b4 HTTP/1.1" 200 -
+2026-07-02 16:10:42,119 - INFO - 127.0.0.1 - "GET /api/download_status?id=1f844767-fdd3-4256-b02d-fe43176097b4 HTTP/1.1" 200 -
+2026-07-02 16:10:43,426 - INFO - 127.0.0.1 - "GET /api/download_status?id=1f844767-fdd3-4256-b02d-fe43176097b4 HTTP/1.1" 200 -
+2026-07-02 16:10:44,109 - INFO - 127.0.0.1 - "GET /api/download_status?id=1f844767-fdd3-4256-b02d-fe43176097b4 HTTP/1.1" 200 -
+2026-07-02 16:10:45,424 - INFO - 127.0.0.1 - "GET /api/download_status?id=1f844767-fdd3-4256-b02d-fe43176097b4 HTTP/1.1" 200 -
+2026-07-02 16:10:45,683 - INFO - 127.0.0.1 - "GET /api/download_file?id=1f844767-fdd3-4256-b02d-fe43176097b4 HTTP/1.1" 200 -
+2026-07-02 16:10:46,437 - INFO - 127.0.0.1 - "GET /api/download_cancel?id=1f844767-fdd3-4256-b02d-fe43176097b4 HTTP/1.1" 200 -
+2026-07-02 16:21:08,569 - INFO - Tarea 98dc71ec-b1bc-49d7-9300-0d493a2d4e85 cancelada.
+2026-07-02 18:13:49,325 - INFO - Servidor detenido por usuario
+2026-07-02 18:13:49,326 - INFO - Servidor cerrado correctamente
+2026-07-02 18:13:57,933 - INFO - ============================================================
+2026-07-02 18:13:57,934 - INFO - Video Downloader Server - High Quality Fix
+2026-07-02 18:13:57,934 - INFO - ============================================================
+2026-07-02 18:13:57,934 - INFO - Servidor iniciado en http://0.0.0.0:8000
+2026-07-02 18:13:57,934 - INFO - Acceso local: http://localhost:8000
+2026-07-02 18:13:57,935 - INFO - Acceso red: http://192.168.1.50:8000
+2026-07-02 18:13:57,935 - INFO - Endpoints disponibles:
+2026-07-02 18:13:57,935 - INFO -   POST /api/validate - Validar URLs
+2026-07-02 18:13:57,935 - INFO -   POST /api/extract - Extraer videos
+2026-07-02 18:13:57,935 - INFO - Presiona Ctrl+C para detener
+2026-07-02 18:13:57,936 - INFO - ============================================================
+2026-07-02 18:14:07,113 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-07-02 18:14:07,193 - INFO - 127.0.0.1 - "GET /src/common/style.css HTTP/1.1" 200 -
+2026-07-02 18:14:07,323 - INFO - 127.0.0.1 - "GET /src/common/card.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 18:14:07,511 - INFO - 127.0.0.1 - "GET /src/instagram/insta.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 18:14:07,513 - INFO - 127.0.0.1 - "GET /src/x/x.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 18:14:07,528 - INFO - 127.0.0.1 - "GET /src/tiktok/tiktok.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 18:14:07,531 - INFO - 127.0.0.1 - "GET /src/linkedin/linkedin.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 18:14:07,543 - INFO - 127.0.0.1 - "GET /src/facebook/facebook.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 18:14:07,677 - INFO - 127.0.0.1 - "GET /src/youtube/youtube.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 18:14:07,856 - INFO - 127.0.0.1 - "GET /src/twitch/twitch.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 18:14:07,857 - INFO - 127.0.0.1 - "GET /src/pinterest/pinterest.js?v=20260110_6 HTTP/1.1" 200 -
+2026-07-02 18:14:18,568 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 18:14:18,833 - INFO - Extrayendo video de: https://www.instagram.com/reel/DaOa6X-BTXV/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2026-07-02 18:14:22,243 - INFO - ✅ Extracción exitosa para: https://www.instagram.com/reel/DaOa6X-BTXV/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==
+2026-07-02 18:14:22,243 - INFO -    📺 Plataforma: instagram
+2026-07-02 18:14:22,244 - INFO -    🎬 Título: Sin título...
+2026-07-02 18:14:22,244 - INFO -    🎯 Resolución: N/A
+2026-07-02 18:14:22,244 - INFO -    📁 Tamaño: N/A
+2026-07-02 18:14:22,244 - INFO -    ⏱️ Duración: 0s
+2026-07-02 18:14:22,245 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 200 -
+2026-07-02 18:14:24,948 - INFO - 127.0.0.1 - "GET /api/download_start?url=https%3A%2F%2Fscontent-eze1-1.cdninstagram.com%2Fo1%2Fv%2Ft2%2Ff2%2Fm86%2FAQP9d5KfQin774DzerJ6mi_AEf2b-RaihBblBbQkN5N5tM_7wWIpOxIpwL2rL830dVnHfZr7mTmYN4xnb59PrHUht2ysFQVCvkTS2ls.mp4%3F_nc_cat%3D102%26_nc_sid%3D5e9851%26_nc_ht%3Dscontent-eze1-1.cdninstagram.com%26_nc_ohc%3D0lVatmshhyEQ7kNvwFE3r5K%26efg%3DeyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNzIwLmRhc2hfYmFzZWxpbmVfMV92MSIsInhwdl9hc3NldF9pZCI6MTAzMDg2NzAyNjE2NjgyNSwiYXNzZXRfYWdlX2RheXMiOjEsInZpX3VzZWNhc2VfaWQiOjEwODI3LCJkdXJhdGlvbl9zIjoxMywidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9%26ccb%3D17-1%26vs%3D3655b8f4f3382e26%26_nc_vs%3DHBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8xRjQ2NEJCNDdCOTY3MTE3MDlGQUU1NkY2NUQzMENBRl92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYUWlnX3hwdl9wbGFjZW1lbnRfcGVybWFuZW50X3YyL0E0NEIwRDA0QTgzM0E5NTUzQkI0OUNDNDYzRUE5NEFDX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbSkL7ureTUAxUCKAJDMywXQCsQ5WBBiTcYEmRhc2hfYmFzZWxpbmVfMV92MREAdf4HZZapAQA%26_nc_gid%3DxLkW5zxy4hUEOBYcENoqGw%26_nc_zt%3D28%26_nc_ss%3D7a22e%26oh%3D00_AQD_aNpYwZZ2okDc8UHpmgPTNDQuIIuFQx7SAclJr8K0yA%26oe%3D6A489E1B&filename=instagram_video.mp4 HTTP/1.1" 200 -
+2026-07-02 18:14:26,368 - INFO - 127.0.0.1 - "GET /api/download_status?id=fab99416-4256-4880-874c-c0b2ac980c0a HTTP/1.1" 200 -
+2026-07-02 18:14:26,961 - INFO - 127.0.0.1 - "GET /api/download_status?id=fab99416-4256-4880-874c-c0b2ac980c0a HTTP/1.1" 200 -
+2026-07-02 18:14:27,297 - INFO - 127.0.0.1 - "GET /api/download_file?id=fab99416-4256-4880-874c-c0b2ac980c0a HTTP/1.1" 200 -
+2026-07-02 18:14:27,969 - INFO - 127.0.0.1 - "GET /api/download_cancel?id=fab99416-4256-4880-874c-c0b2ac980c0a HTTP/1.1" 200 -
+2026-07-02 18:15:27,556 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-07-02 18:17:54,629 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 18:17:54,891 - INFO - Extrayendo video de: https://www.facebook.com/share/v/17d4LqPvj2/
+2026-07-02 18:18:01,684 - WARNING - Error extrayendo https://www.facebook.com/share/v/17d4LqPvj2/: No se pudo extraer la URL del video manualmente ni con servicios externos.
+2026-07-02 18:18:01,684 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-07-02 18:18:54,943 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-07-02 18:24:45,349 - INFO - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-07-02 18:24:45,417 - INFO - 127.0.0.1 - "GET /src/common/style.css HTTP/1.1" 200 -
+2026-07-02 18:24:45,615 - INFO - 127.0.0.1 - "GET /src/common/card.js?v=20260702_1 HTTP/1.1" 200 -
+2026-07-02 18:24:45,727 - INFO - 127.0.0.1 - "GET /src/instagram/insta.js?v=20260702_1 HTTP/1.1" 200 -
+2026-07-02 18:24:45,727 - INFO - 127.0.0.1 - "GET /src/linkedin/linkedin.js?v=20260702_1 HTTP/1.1" 200 -
+2026-07-02 18:24:45,727 - INFO - 127.0.0.1 - "GET /src/x/x.js?v=20260702_1 HTTP/1.1" 200 -
+2026-07-02 18:24:45,728 - INFO - 127.0.0.1 - "GET /src/tiktok/tiktok.js?v=20260702_1 HTTP/1.1" 200 -
+2026-07-02 18:24:45,730 - INFO - 127.0.0.1 - "GET /src/facebook/facebook.js?v=20260702_1 HTTP/1.1" 200 -
+2026-07-02 18:24:45,927 - INFO - 127.0.0.1 - "GET /src/youtube/youtube.js?v=20260702_1 HTTP/1.1" 200 -
+2026-07-02 18:24:46,037 - INFO - 127.0.0.1 - "GET /src/twitch/twitch.js?v=20260702_1 HTTP/1.1" 200 -
+2026-07-02 18:24:46,038 - INFO - 127.0.0.1 - "GET /src/pinterest/pinterest.js?v=20260702_1 HTTP/1.1" 200 -
+2026-07-02 18:24:47,121 - INFO - 127.0.0.1 - "GET /favicon.svg HTTP/1.1" 200 -
+2026-07-02 18:24:49,193 - INFO - 127.0.0.1 - "POST /api/validate HTTP/1.1" 200 -
+2026-07-02 18:24:49,512 - INFO - Extrayendo video de: https://www.facebook.com/share/v/17d4LqPvj2/
+2026-07-02 18:24:55,022 - WARNING - Error extrayendo https://www.facebook.com/share/v/17d4LqPvj2/: No se pudo extraer la URL del video manualmente ni con servicios externos.
+2026-07-02 18:24:55,022 - INFO - 127.0.0.1 - "POST /api/extract HTTP/1.1" 400 -
+2026-07-02 18:25:49,766 - INFO - 127.0.0.1 - Request timed out: TimeoutError('timed out')
+2026-07-02 18:34:31,766 - INFO - Servidor detenido por usuario
+2026-07-02 18:34:31,767 - INFO - Servidor cerrado correctamente

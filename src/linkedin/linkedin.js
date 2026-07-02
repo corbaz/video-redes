@@ -9,12 +9,11 @@ function showLinkedinVideo(data, container) {
         return;
     }
 
-    // Nombre de archivo dinámico
-    const safeTitle = (data.title || "linkedin_content").replace(/[^a-z0-9áéíóúñ_-]/gi, '_').substring(0, 50);
-
-    let filename = `${safeTitle}.mp4`;
-    if (type === 'image') filename = `${safeTitle}.jpg`;
-    if (type === 'document') filename = `${safeTitle}.pdf`;
+    // Nombre de archivo dinámico: linkedin_titulo_fecha.(mp4|jpg|pdf)
+    let extension = 'mp4';
+    if (type === 'image') extension = 'jpg';
+    if (type === 'document') extension = 'pdf';
+    const filename = buildFilename('linkedin', data.title, extension);
 
     // Enable global download
     if (window.enableGlobalDownload) {
@@ -73,7 +72,7 @@ function showLinkedinVideo(data, container) {
         
         // JSON stringify the array of URLs to pass as the "url" parameter
         const imagesJson = JSON.stringify(images);
-        const zipFilename = `${safeTitle}.zip`;
+        const zipFilename = buildFilename('linkedin', data.title, 'zip');
         
         // Override the default click handler for this card to pass the JSON string
         const encodedJson = encodeURIComponent(imagesJson);

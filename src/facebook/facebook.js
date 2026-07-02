@@ -65,15 +65,18 @@ function showFacebookVideo(data, container) {
         return;
     }
 
+    const filename = buildFilename('facebook', data.title, 'mp4');
     // Enable global download
     if (window.enableGlobalDownload) {
-        window.enableGlobalDownload(url, "facebook_video.mp4");
+        window.enableGlobalDownload(url, filename);
     }
 
     // Usar el mismo template unificado que Instagram, LinkedIn, X y TikTok
     const cardHtml = renderVideoCard({
         videoUrl: url,
         thumbnail: data.thumbnail,
+        filename: filename,
+        title: data.title || '',
         platform: 'facebook'
     });
 

@@ -7,6 +7,8 @@ import sys
 import os
 import re
 
+from common.ytdlp_cmd import YTDLP_CMD
+
 
 class FacebookExtractor:
     def __init__(self):
@@ -88,8 +90,7 @@ class FacebookExtractor:
                     print(f"⚠️ No se pudo resolver redirección: {e}")
 
             # Comando yt-dlp optimizado para Facebook
-            cmd = [
-                'yt-dlp',
+            cmd = YTDLP_CMD + [
                 '--dump-json',
                 '--no-warnings',
                 '--no-playlist',
@@ -395,6 +396,43 @@ class FacebookExtractor:
                         }
                 except Exception as e_ext:
                     print(f"⚠️ Fallo servicio externo: {e_ext}")
+
+            # 5. ÚLTIMO RECURSO: getmyfb.com (servicio externo, maneja URLs share/v/)
+            if not video_url:
+                try:
+                    print("🕵️ Intentando con servicio externo (getmyfb.com)...")
+                    r_gmf = requests.post(
+                        'https://getmyfb.com/process',
+                        data={'id': url, 'locale': 'es'},
+                        headers={
+                            'User-Agent': headers.get('User-Agent', 'Mozilla/5.0'),
+                            'Origin': 'https://getmyfb.com',
+                            'Referer': 'https://getmyfb.com/es/facebook-to-mp4',
+                            'HX-Request': 'true',
+                        },
+                        timeout=30,
+                    )
+                    gmf_links = re.findall(r'href="(https://ssscdn\.io/[^"]+)"', r_gmf.text)
+                    gmf_title_match = re.search(r'class="results-item-text"[^>]*>([^<]+)<', r_gmf.text)
+                    if gmf_links:
+                        video_url = gmf_links[0].replace('&amp;', '&')
+                        gmf_title = gmf_title_match.group(1).strip() if gmf_title_match else "Facebook Video (External)"
+                        print("✅ Encontrado enlace getmyfb")
+                        return {
+                            "success": True,
+                            "title": gmf_title,
+                            "description": "Extraído vía getmyfb.com",
+                            "duration": 0,
+                            "uploader": "Facebook User",
+                            "thumbnail": "",
+                            "view_count": 0,
+                            "video_url": video_url,
+                            "video_quality": "HD",
+                            "platform": "Facebook",
+                            "formats": [{"url": video_url, "ext": "mp4"}]
+                        }
+                except Exception as e_ext:
+                    print(f"⚠️ Fallo servicio externo (getmyfb): {e_ext}")
 
             return {
                 "success": False,

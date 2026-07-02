@@ -54,6 +54,61 @@ class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
 # Global dictionary to store download tasks
 download_tasks = {}
 
+# Optional Netscape-format cookies file for Instagram authenticated downloads.
+# Works even when the browser is open and locking its cookie database.
+INSTAGRAM_COOKIES_FILE = os.environ.get(
+    'INSTAGRAM_COOKIES_FILE',
+    os.path.join(os.path.dirname(__file__), '..', 'cookies', 'instagram.txt')
+)
+
+
+def download_with_instagram_auth(ydl_opts, url, error):
+    """Retry an Instagram download with authentication after an anonymous failure.
+
+    Instagram requires login cookies for most content. Tries a cookies file
+    first (works with browsers open), then browser cookie stores.
+    Re-raises the original error if the failure is not auth-related.
+    """
+    err = str(error).lower()
+    needs_auth = 'instagram.com' in url and (
+        'stories' in url or 'private' in err or 'user info' in err or
+        'empty media response' in err or 'login required' in err or
+        'use --cookies' in err or 'rate-limit' in err
+    )
+    if not needs_auth:
+        raise error
+
+    attempts = []
+    if os.path.isfile(INSTAGRAM_COOKIES_FILE):
+        attempts.append(('cookiefile', INSTAGRAM_COOKIES_FILE))
+    attempts += [
+        ('cookiesfrombrowser', ('chrome',)),
+        ('cookiesfrombrowser', ('edge',)),
+        ('cookiesfrombrowser', ('firefox',)),
+    ]
+
+    last_error = error
+    for key, value in attempts:
+        opts = dict(ydl_opts)
+        opts.pop('cookiefile', None)
+        opts.pop('cookiesfrombrowser', None)
+        opts[key] = value
+        logger.info(f"⚠️ Instagram download failed. Retrying with {key}={value}...")
+        try:
+            with YoutubeDL(opts) as ydl:
+                ydl.download([url])
+            return
+        except Exception as e:
+            last_error = e
+
+    err_str = str(last_error).lower()
+    if 'could not copy' in err_str or 'permission denied' in err_str:
+        raise Exception(
+            "BROWSER_LOCK_ERROR: Cierra Chrome/Edge para permitir el acceso a las cookies, "
+            "o exporta tus cookies de Instagram a 'cookies/instagram.txt'."
+        )
+    raise last_error
+
 class VideoDownloaderHandler(BaseHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         self.timeout = 60
@@ -312,22 +367,8 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                     with YoutubeDL(ydl_opts) as ydl:
                         ydl.download([url])
                 except Exception as e:
-                    # Retry logic for Instagram Private/Stories
-                    is_insta_issue = 'instagram.com' in url and ('stories' in url or 'private' in str(e).lower() or 'user info' in str(e).lower())
-                    
-                    if is_insta_issue:
-                        logger.info("⚠️ Instagram download failed. Retrying with Chrome cookies...")
-                        ydl_opts['cookiesfrombrowser'] = ('chrome', )
-                        try:
-                            with YoutubeDL(ydl_opts) as ydl:
-                                ydl.download([url])
-                        except Exception as e2:
-                            logger.info("⚠️ Chrome cookies failed. Retrying with Edge cookies...")
-                            ydl_opts['cookiesfrombrowser'] = ('edge', )
-                            with YoutubeDL(ydl_opts) as ydl:
-                                ydl.download([url])
-                    else:
-                        raise e
+                    # Instagram requires authentication for most content
+                    download_with_instagram_auth(ydl_opts, url, e)
                 
                 # Encontrar archivo
                 final_path = os.path.join(temp_dir, f"{filename_base}.mp4")
@@ -515,32 +556,8 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                         with YoutubeDL(ydl_opts) as ydl:
                             ydl.download([url])
                     except Exception as e:
-                        # Retry logic for Instagram Private/Stories
-                        is_insta_issue = 'instagram.com' in url and ('stories' in url or 'private' in str(e).lower() or 'user info' in str(e).lower())
-                        
-                        if is_insta_issue:
-                            logger.info("⚠️ Instagram download failed. Retrying with Chrome cookies...")
-                            ydl_opts['cookiesfrombrowser'] = ('chrome', )
-                            try:
-                                with YoutubeDL(ydl_opts) as ydl:
-                                    ydl.download([url])
-                            except Exception as e2:
-                                logger.info("⚠️ Chrome cookies failed. Retrying with Edge cookies...")
-                                # On Windows, ensure Edge is not running or use --cookies-from-browser edge
-                                # Sometimes 'permission denied' happens if browser is open.
-                                # Try a fallback to 'firefox' if available or just log error.
-                                try:
-                                    ydl_opts['cookiesfrombrowser'] = ('edge', )
-                                    with YoutubeDL(ydl_opts) as ydl:
-                                        ydl.download([url])
-                                except Exception as e3:
-                                    # If both failed and it's a permission/copy error, raise a clear message
-                                    err_str = str(e3).lower()
-                                    if "could not copy" in err_str or "permission denied" in err_str:
-                                        raise Exception("BROWSER_LOCK_ERROR: Cierra Chrome/Edge para permitir el acceso a las cookies.")
-                                    raise e3
-                        else:
-                            raise e
+                        # Instagram requires authentication for most content
+                        download_with_instagram_auth(ydl_opts, url, e)
                     
                     # Verificación del archivo final
                     if not os.path.exists(final_path):

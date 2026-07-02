@@ -1,3 +1,18 @@
+// Build a consistent download filename: platform_title_date.ext
+// Example: instagram_Mar_del_Plata_Drone_20260702.mp4
+// Falls back to "video" when no title is available.
+function buildFilename(platform, title, extension = "mp4") {
+  const safePlatform = (platform || "video").toLowerCase().replace(/[^a-z0-9]/g, "");
+  const safeTitle = (title || "")
+    .replace(/[^a-z0-9áéíóúñ_-]/gi, "_")
+    .replace(/_+/g, "_")
+    .replace(/^_+|_+$/g, "")
+    .substring(0, 50);
+  const date = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+  const middle = safeTitle ? `${safeTitle}_` : "video_";
+  return `${safePlatform}_${middle}${date}.${extension}`;
+}
+
 function renderVideoCard({ videoUrl = "", thumbnail = "", title = "video", originalUrl = "", filename = "", type = "video", platform = "" }) {
   if (!videoUrl) {
     return `<div class='error'><h3>No se encontró video disponible</h3></div>`;

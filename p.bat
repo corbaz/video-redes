@@ -7,5 +7,6 @@ echo Procesos Python terminados.
 echo.
 echo Iniciando servidor...
 rem cd /d c:\www\insta
+call .venv\Scripts\activate.bat
 python src/server.py
 pause
