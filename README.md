@@ -2,11 +2,11 @@
 
 ## 🌟 Plataformas Soportadas
 
-✅ **Instagram** - Posts, Reels, Stories y Videos Privados (con manejo de cookies)  
+✅ **Instagram** - Posts, Reels, Stories y Videos Privados (cookies + proxy de embeds)  
 ✅ **LinkedIn** - Videos de posts y Galerías de imágenes (descarga secuencial)  
 ✅ **X (Twitter)** - Videos de tweets (alta calidad garantizada)  
 ✅ **TikTok** - Videos sin marca de agua  
-✅ **Facebook** - Videos públicos y Reels  
+✅ **Facebook** - Videos públicos, Reels y enlaces `share/v/` (múltiples fallbacks)  
 ✅ **YouTube** - Videos y Shorts (Calidad Optimizada hasta 1080p + Audio)  
 ✅ **Pinterest** - Videos e Imágenes (Pin original)  
 ✅ **Twitch** - Clips y VODs  
@@ -23,6 +23,8 @@
 - **Descargas Inteligentes**:
   - LinkedIn: Detecta si es video o galería. Si es galería, descarga imágenes secuencialmente (img-1, img-2...).
   - Archivos ZIP: Empaquetado automático para descargas múltiples.
+- **Nombres de Archivo Unificados**: Todas las descargas siguen el formato `plataforma_titulo_fecha.ext` (ej. `instagram_Mar_del_Plata_Drone_20260702.mp4`). Generado por `buildFilename()` en `src/common/card.js`.
+- **Autenticación con Cookies (Instagram)**: Soporte para archivo de cookies Netscape en `cookies/instagram.txt` (o variable de entorno `INSTAGRAM_COOKIES_FILE`). Necesario porque Instagram exige login para la mayoría de los reels. Exportar con la extensión "Get cookies.txt LOCALLY". El directorio `cookies/` está en `.gitignore`.
 - **Interfaz Responsiva**: Diseño moderno, adaptable a móviles y escritorio.
 - **Logging Detallado**: Información completa de resolución, bitrate y errores en consola.
 - **API REST Local**: Endpoints para validación y extracción, listos para integración.
@@ -36,7 +38,8 @@ c:\www\video-redes\
 ├── src/
 │   ├── server.py                 # Servidor principal (Entry Point)
 │   ├── common/                   # Recursos compartidos
-│   │   ├── card.js               # Componente de tarjeta de video
+│   │   ├── card.js               # Tarjeta de video + buildFilename()
+│   │   ├── ytdlp_cmd.py          # Resolución del ejecutable yt-dlp (venv/PATH/módulo)
 │   │   └── style.css             # Estilos globales
 │   ├── youtube/                  # Módulo YouTube
 │   │   ├── youtube_extractor.py  # Extracción de videos/shorts
@@ -62,8 +65,10 @@ c:\www\video-redes\
 │   └── twitch/                   # Módulo Twitch
 │       ├── twitch_extractor.py
 │       └── twitch.js
+├── cookies/                      # (no versionado) instagram.txt para contenido con login
 ├── index.html                    # Frontend principal
 ├── p.ps1                         # Script de inicio rápido (PowerShell)
+├── p.bat                         # Script de inicio rápido (CMD, activa .venv)
 ├── Procfile                      # Configuración para despliegue
 ├── requirements.txt              # Dependencias del proyecto
 ├── runtime.txt                   # Versión de Python
@@ -282,9 +287,14 @@ El proyecto está configurado para desplegarse fácilmente ("Deploy Ready").
 - Calcula tamaño estimado
 
 ### Instagram Extractor
-- URLs directas de CDN (cdninstagram.com)
-- Fallback a yt-dlp con cookies del navegador
-- Manejo de contenido privado/stories
+Cadena de extracción (de más rápido a más lento):
+1. URLs directas de CDN (cdninstagram.com) — sin extracción
+2. yt-dlp anónimo
+3. Archivo de cookies `cookies/instagram.txt` (recomendado — Instagram exige login para la mayoría de los reels desde 2026)
+4. Proxy de embeds (kkinstagram, estilo InstaFix) — resuelve reels públicos sin login, redirige al mp4 del CDN oficial
+5. Cookies del navegador Chrome/Edge/Firefox (último recurso; falla si el navegador está abierto, y Chrome moderno usa App-Bound Encryption que yt-dlp no puede desencriptar)
+
+Detecta los errores de autenticación modernos ("empty media response", "login required", "rate-limit").
 
 ### LinkedIn Extractor
 - Videos (yt-dlp)
@@ -292,9 +302,11 @@ El proyecto está configurado para desplegarse fácilmente ("Deploy Ready").
 - Documentos PDFs (native document config)
 
 ### Facebook Extractor
-- yt-dlp como método principal
-- Fallback: scraping og:video + playable_url
-- Tercer fallback: servicio externo (fdown.net)
+Cadena de extracción:
+1. yt-dlp como método principal
+2. Scraping manual: og:video + playable_url (web y móvil)
+3. Servicio externo fdown.net
+4. Servicio externo getmyfb.com (endpoint `/process`) — resuelve enlaces `share/v/` que exigen login y devuelve el título real del video
 
 ### TikTok Extractor
 - yt-dlp con formato bestvideo+bestaudio
@@ -313,10 +325,15 @@ El proyecto está configurado para desplegarse fácilmente ("Deploy Ready").
 
 ## 🆘 Solución de Problemas Comunes
 
-### Error: "Instagram authentication required" / "Private account"
-- **Causa**: Estás intentando bajar una historia o un video de una cuenta privada.
-- **Solución**: El servidor intentará usar las cookies de tu navegador (Chrome/Edge) localmente. Asegúrate de haber iniciado sesión en Instagram.
-- *Nota*: Si el error persiste ("Permission denied"), cierra el navegador completamente.
+### Error: "Instagram exige iniciar sesión" / "empty media response"
+- **Causa**: Instagram exige login para la mayoría de los reels (comportamiento desde 2026). No es un bug de la app.
+- **Solución recomendada (permanente)**: Exportar cookies con la extensión "Get cookies.txt LOCALLY" en Chrome (logueado en Instagram) y guardarlas como `cookies/instagram.txt`. Funciona local y en Railway.
+- **Alternativa**: Cerrar completamente Chrome/Edge para que yt-dlp lea las cookies del navegador. *Nota*: Chrome moderno (v127+) cifra las cookies con App-Bound Encryption y yt-dlp puede fallar con "Failed to decrypt with DPAPI" — en ese caso la extensión es la única vía.
+- Las cookies caducan: si el error reaparece tras semanas, re-exportar el archivo.
+
+### Error: Facebook "No se pudo extraer la URL del video"
+- **Causa**: Los enlaces `facebook.com/share/v/...` suelen exigir login.
+- **Solución**: Ya está cubierto — el extractor cae automáticamente en getmyfb.com como último recurso. Si aun así falla, el video puede ser privado o de un grupo cerrado.
 
 ### Error: "403 Forbidden" en X/Twitter
 - **Solución**: Ya está parchado internamente. El sistema usa `twimg.com` para evitar el bloqueo.
@@ -339,7 +356,20 @@ Esta herramienta ha sido creada con fines educativos y de uso personal.
 
 ---
 
-*Documentación actualizada: Enero 2025*  
+## 📋 Novedades v.33 (Julio 2026)
+
+- **yt-dlp actualizado** a 2026.6.9 (corrige el aviso "version older than 90 days") junto con todas las dependencias. `pydub` eliminada (sin uso e incompatible con Python 3.13+).
+- **Instagram**: nueva cadena de fallbacks — archivo de cookies (`cookies/instagram.txt`) + proxy de embeds (kkinstagram) para reels públicos sin login. Detección de los errores de autenticación modernos.
+- **Facebook**: nuevo fallback getmyfb.com para enlaces `share/v/` que exigen login.
+- **Nombres de archivo unificados**: `plataforma_titulo_fecha.ext` en las 8 plataformas (helper `buildFilename()` compartido).
+- **Resolución robusta de yt-dlp**: `src/common/ytdlp_cmd.py` localiza el ejecutable (venv → PATH → módulo Python); los extractores ya no dependen del PATH.
+- **server.py**: lógica de reintentos de Instagram unificada en `download_with_instagram_auth()` (archivo de cookies → Chrome → Edge → Firefox).
+- **p.bat** ahora activa el entorno virtual antes de arrancar (igual que p.ps1).
+- **server.log** fuera del control de versiones (queda solo local).
+
+---
+
+*Documentación actualizada: Julio 2026*  
 📧 Contacto: [julio.corbaz@gmail.com](mailto:julio.corbaz@gmail.com)
 🌐 **Página Web Oficial**: [https://redes-download.up.railway.app/](https://redes-download.up.railway.app/)
-*Versión del proyecto: 32*
+*Versión del proyecto: 33*
