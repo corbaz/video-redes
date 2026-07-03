@@ -270,11 +270,14 @@ El proyecto está configurado para desplegarse fácilmente ("Deploy Ready").
 - `Procfile`: `web: python src/server.py`
 - `runtime.txt`: `python-3.11`
 - `requirements.txt`: Lista de librerías necesarias
+- `nixpacks.toml`: Agrega `deno` al build — requerido por yt-dlp 2026+ para YouTube
 
 **Pasos para Railway:**
 1. Sube tu código a GitHub
 2. Crea nuevo proyecto en Railway desde GitHub
 3. Railway detectará el `Procfile` y desplegará automáticamente
+
+**Instagram en Railway:** el servidor no tiene navegador, así que el contenido que exige login necesita el archivo de cookies. Opciones: incluir `cookies/instagram.txt` como variable/volumen, o configurar `INSTAGRAM_COOKIES_FILE` apuntando a la ruta del archivo. Sin esto, solo funcionan los reels públicos (vía proxy de embeds).
 
 ---
 

@@ -1,0 +1,5 @@
+# Railway/Nixpacks build configuration.
+# "..." keeps the default packages detected by the Python provider;
+# deno is required by yt-dlp 2026+ to solve YouTube's JS challenges.
+[phases.setup]
+nixPkgs = ["...", "deno"]
