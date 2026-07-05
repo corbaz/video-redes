@@ -17,6 +17,22 @@ from yt_dlp import YoutubeDL
 import threading
 import mimetypes
 import zipfile
+import base64
+import tempfile
+
+# En despliegues sin filesystem persistente (Railway, Heroku), el archivo de
+# cookies de Instagram se pasa como variable de entorno en Base64
+# (INSTAGRAM_COOKIES_B64). Lo decodificamos a un archivo temporal y apuntamos
+# INSTAGRAM_COOKIES_FILE ahi, para que insta_extractor.py lo use sin cambios.
+_cookies_b64 = os.environ.get('INSTAGRAM_COOKIES_B64')
+if _cookies_b64 and not os.environ.get('INSTAGRAM_COOKIES_FILE'):
+    try:
+        _cookies_path = os.path.join(tempfile.gettempdir(), 'instagram_cookies.txt')
+        with open(_cookies_path, 'wb') as _f:
+            _f.write(base64.b64decode(_cookies_b64))
+        os.environ['INSTAGRAM_COOKIES_FILE'] = _cookies_path
+    except Exception as _e:
+        print(f"⚠️ No se pudo decodificar INSTAGRAM_COOKIES_B64: {_e}")
 
 # Importar extractores
 from instagram.insta_extractor import InstagramExtractor

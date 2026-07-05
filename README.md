@@ -277,7 +277,16 @@ El proyecto está configurado para desplegarse fácilmente ("Deploy Ready").
 2. Crea nuevo proyecto en Railway desde GitHub
 3. Railway detectará el `Procfile` y desplegará automáticamente
 
-**Instagram en Railway:** el servidor no tiene navegador, así que el contenido que exige login necesita el archivo de cookies. Opciones: incluir `cookies/instagram.txt` como variable/volumen, o configurar `INSTAGRAM_COOKIES_FILE` apuntando a la ruta del archivo. Sin esto, solo funcionan los reels públicos (vía proxy de embeds).
+**Instagram en Railway:** el servidor no tiene navegador ni filesystem persistente, así que el contenido que exige login necesita las cookies vía variable de entorno:
+
+1. Codificar el archivo local en Base64 (PowerShell):
+   ```powershell
+   [Convert]::ToBase64String([IO.File]::ReadAllBytes("cookies\instagram.txt")) | Set-Clipboard
+   ```
+2. En Railway → tu proyecto → **Variables** → crear `INSTAGRAM_COOKIES_B64` y pegar el valor (queda en el portapapeles).
+3. Al arrancar, `server.py` decodifica esa variable a un archivo temporal y configura `INSTAGRAM_COOKIES_FILE` automáticamente — no requiere más pasos.
+
+Sin esta variable, en Railway solo funcionan los reels públicos (vía proxy de embeds); el resto necesita cookies.
 
 ---
 
