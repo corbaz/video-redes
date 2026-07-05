@@ -277,16 +277,24 @@ El proyecto está configurado para desplegarse fácilmente ("Deploy Ready").
 2. Crea nuevo proyecto en Railway desde GitHub
 3. Railway detectará el `Procfile` y desplegará automáticamente
 
-**Instagram en Railway:** el servidor no tiene navegador ni filesystem persistente, así que el contenido que exige login necesita las cookies vía variable de entorno:
+**Instagram en Railway:** el servidor no tiene navegador ni filesystem persistente, así que el contenido que exige login necesita una cookie compartida (una sola sesión de Instagram usada para todos los visitantes — nadie inicia sesión con su propia cuenta).
 
+**Configuración inicial (una vez):**
 1. Codificar el archivo local en Base64 (PowerShell):
    ```powershell
    [Convert]::ToBase64String([IO.File]::ReadAllBytes("cookies\instagram.txt")) | Set-Clipboard
    ```
 2. En Railway → tu proyecto → **Variables** → crear `INSTAGRAM_COOKIES_B64` y pegar el valor (queda en el portapapeles).
-3. Al arrancar, `server.py` decodifica esa variable a un archivo temporal y configura `INSTAGRAM_COOKIES_FILE` automáticamente — no requiere más pasos.
+3. Al arrancar, `server.py` decodifica esa variable a un archivo temporal y configura `INSTAGRAM_COOKIES_FILE` automáticamente.
 
-Sin esta variable, en Railway solo funcionan los reels públicos (vía proxy de embeds); el resto necesita cookies.
+**Panel admin para renovarla sin volver a tocar Railway:**
+- Configurar la variable `ADMIN_SECRET` (una contraseña elegida por vos) en Railway.
+- Entrar a `https://tu-app.up.railway.app/admin/cookies`, poner la clave, pegar el contenido nuevo de `cookies/instagram.txt` y guardar. Se actualiza al instante, sin reiniciar el server.
+- Sin `ADMIN_SECRET` configurada, el panel queda deshabilitado (403) — no expone nada si no lo activás.
+
+**Refresco automático:** el servidor usa la cookie compartida cada 6 horas en segundo plano para extender su vigencia. Esto no la hace eterna — Instagram igual la vence eventualmente — pero reduce cuánto hay que estar pendiente de renovarla a mano.
+
+Sin cookie configurada, en Railway solo funcionan los reels públicos (vía proxy de embeds); el resto necesita la cookie compartida.
 
 ---
 

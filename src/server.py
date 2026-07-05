@@ -19,6 +19,8 @@ import mimetypes
 import zipfile
 import base64
 import tempfile
+import time
+import hmac
 
 # En despliegues sin filesystem persistente (Railway, Heroku), el archivo de
 # cookies de Instagram se pasa como variable de entorno en Base64
@@ -125,6 +127,52 @@ def download_with_instagram_auth(ydl_opts, url, error):
         )
     raise last_error
 
+
+# Contraseña del panel de administración para actualizar la cookie compartida
+# de Instagram sin acceder a Railway/terminal. Si no está configurada, el
+# panel queda deshabilitado (no se acepta ninguna clave).
+ADMIN_SECRET = os.environ.get('ADMIN_SECRET', '')
+
+# Intervalo de refresco de la sesión de Instagram (segundos). Usar la cookie
+# periódicamente extiende su vigencia; no la hace eterna, pero reduce cuánto
+# hay que estar pendiente de renovarla a mano.
+INSTAGRAM_SESSION_REFRESH_INTERVAL = 6 * 60 * 60  # 6 horas
+
+
+def refresh_instagram_session():
+    """Realiza una petición autenticada liviana a Instagram para mantener
+    la sesión de la cookie compartida activa el mayor tiempo posible."""
+    if not os.path.isfile(INSTAGRAM_COOKIES_FILE):
+        return
+    try:
+        from http.cookiejar import MozillaCookieJar
+        jar = MozillaCookieJar(INSTAGRAM_COOKIES_FILE)
+        jar.load(ignore_discard=True, ignore_expires=True)
+        resp = requests.get(
+            'https://www.instagram.com/',
+            cookies=jar,
+            headers={
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+                              '(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'
+            },
+            timeout=15,
+        )
+        logger.info(f"🔄 Refresco de sesión de Instagram: HTTP {resp.status_code}")
+    except Exception as e:
+        logger.warning(f"⚠️ No se pudo refrescar la sesión de Instagram: {e}")
+
+
+def _instagram_session_refresh_loop():
+    while True:
+        time.sleep(INSTAGRAM_SESSION_REFRESH_INTERVAL)
+        refresh_instagram_session()
+
+
+def start_instagram_session_refresh():
+    thread = threading.Thread(target=_instagram_session_refresh_loop, daemon=True)
+    thread.start()
+
+
 class VideoDownloaderHandler(BaseHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         self.timeout = 60
@@ -213,6 +261,11 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             # Legacy/Direct download (keep for fallback)
             elif clean_path == '/api/download':
                 self.handle_download()
+
+            # Panel admin: actualizar la cookie compartida de Instagram sin
+            # tocar Railway/terminal. Deshabilitado si no hay ADMIN_SECRET.
+            elif clean_path == '/admin/cookies':
+                self.serve_admin_cookies_page()
             else:
                 self.send_error(404)
 
@@ -661,6 +714,8 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 self.handle_validate()
             elif path == 'api/extract':
                 self.handle_extract()
+            elif path == 'api/admin/cookies':
+                self.handle_admin_cookies_save()
             else:
                 logger.warning(f"Endpoint no encontrado: {path}")
                 self.send_error(404)
@@ -838,6 +893,86 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             self.send_json_response(
                 {'success': False, 'error': f'Error del servidor: {str(e)}'}, 500)
 
+    def serve_admin_cookies_page(self):
+        """Sirve un formulario simple para actualizar la cookie compartida
+        de Instagram sin necesitar acceso a Railway/terminal."""
+        if not ADMIN_SECRET:
+            self.send_error(403, "Panel admin deshabilitado (falta ADMIN_SECRET)")
+            return
+
+        html = """<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8">
+<title>Admin - Cookies de Instagram</title>
+<style>
+body{font-family:sans-serif;max-width:640px;margin:40px auto;padding:0 16px;background:#111;color:#eee}
+h1{font-size:1.3rem} textarea{width:100%;height:220px;font-family:monospace;font-size:0.85rem}
+input,button{padding:8px;margin:6px 0;width:100%;box-sizing:border-box}
+button{cursor:pointer;background:#0077B5;color:#fff;border:none;border-radius:4px}
+#msg{margin-top:10px;font-weight:bold}
+</style></head><body>
+<h1>Actualizar cookies de Instagram</h1>
+<p>Exportá <code>cookies/instagram.txt</code> con la extensión "Get cookies.txt LOCALLY" y pegá el contenido completo.</p>
+<input type="password" id="secret" placeholder="Clave de administrador">
+<textarea id="cookies" placeholder="# Netscape HTTP Cookie File..."></textarea>
+<button onclick="save()">Guardar</button>
+<div id="msg"></div>
+<script>
+async function save() {
+  const secret = document.getElementById('secret').value;
+  const cookies = document.getElementById('cookies').value;
+  const msg = document.getElementById('msg');
+  msg.textContent = 'Guardando...';
+  try {
+    const res = await fetch('/api/admin/cookies', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({secret, cookies})
+    });
+    const data = await res.json();
+    msg.textContent = data.success ? '✅ Cookies actualizadas' : ('❌ ' + (data.error || 'Error'));
+  } catch (e) {
+    msg.textContent = '❌ Error de red: ' + e.message;
+  }
+}
+</script></body></html>"""
+        self.send_response(200)
+        self.send_header('Content-Type', 'text/html; charset=utf-8')
+        self.send_header('Content-Length', str(len(html.encode('utf-8'))))
+        self.end_headers()
+        self.wfile.write(html.encode('utf-8'))
+
+    def handle_admin_cookies_save(self):
+        """Guarda el contenido de cookies pegado en el panel admin,
+        protegido por ADMIN_SECRET (comparación en tiempo constante)."""
+        try:
+            content_length = int(self.headers['Content-Length'])
+            post_data = self.rfile.read(content_length).decode('utf-8')
+            data = json.loads(post_data)
+
+            secret = data.get('secret', '')
+            cookies_content = data.get('cookies', '')
+
+            if not ADMIN_SECRET or not hmac.compare_digest(secret, ADMIN_SECRET):
+                logger.warning("⛔ Intento de acceso al panel admin con clave incorrecta")
+                self.send_json_response({'success': False, 'error': 'Clave incorrecta'}, 403)
+                return
+
+            if not cookies_content.strip():
+                self.send_json_response({'success': False, 'error': 'Contenido de cookies vacío'}, 400)
+                return
+
+            os.makedirs(os.path.dirname(INSTAGRAM_COOKIES_FILE), exist_ok=True)
+            with open(INSTAGRAM_COOKIES_FILE, 'w', encoding='utf-8') as f:
+                f.write(cookies_content)
+
+            logger.info("✅ Cookies de Instagram actualizadas vía panel admin")
+            self.send_json_response({'success': True})
+        except json.JSONDecodeError:
+            self.send_json_response({'success': False, 'error': 'JSON inválido'}, 400)
+        except Exception as e:
+            logger.error(f"Error en handle_admin_cookies_save: {str(e)}")
+            self.send_json_response({'success': False, 'error': 'Error del servidor'}, 500)
+
     def extract_video_info(self, url):
         """Extrae información del video según la plataforma"""
         try:
@@ -936,6 +1071,8 @@ def run_server():
 
         server = ThreadedHTTPServer((host, port), VideoDownloaderHandler)
         server.timeout = 60
+
+        start_instagram_session_refresh()
 
         logger.info("=" * 60)
         logger.info("Video Downloader Server - High Quality Fix")
