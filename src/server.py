@@ -1089,6 +1089,9 @@ async function pollFrame() {
         self.send_response(200)
         self.send_header('Content-Type', 'text/html; charset=utf-8')
         self.send_header('Content-Length', str(len(html.encode('utf-8'))))
+        # Nunca cachear: esta página refleja estado del servidor en vivo
+        # (login en curso, etc.) y su JS cambia con cada deploy.
+        self.send_header('Cache-Control', 'no-store, no-cache, must-revalidate')
         self.end_headers()
         self.wfile.write(html.encode('utf-8'))
 
