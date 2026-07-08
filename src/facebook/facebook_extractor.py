@@ -9,6 +9,14 @@ import re
 
 from common.ytdlp_cmd import YTDLP_CMD
 
+# Archivo de cookies compartido (Netscape). Aunque el nombre histórico dice
+# "instagram", el export incluye cookies de todos los dominios visitados,
+# incluido facebook.com — sirve para reels/videos que exigen login.
+COOKIES_FILE = os.environ.get(
+    'INSTAGRAM_COOKIES_FILE',
+    os.path.join(os.path.dirname(__file__), '..', '..', 'cookies', 'instagram.txt')
+)
+
 
 class FacebookExtractor:
     def __init__(self):
@@ -143,8 +151,17 @@ class FacebookExtractor:
                      if result.returncode != 0:
                          # Solo sobreescribir error si hay nuevo error explicito
                          if result.stderr:
-                            error_msg = result.stderr.lower() 
-                
+                            error_msg = result.stderr.lower()
+
+                # Si sigue fallando (típicamente reels que exigen login), reintentar
+                # con las cookies compartidas antes de rendirse.
+                if result.returncode != 0 and os.path.isfile(COOKIES_FILE):
+                    print("🍪 Reintentando con cookies compartidas (reel puede requerir login)...")
+                    cmd_with_cookies = cmd[:-1] + ['--cookies', COOKIES_FILE, cmd[-1]]
+                    result = subprocess.run(cmd_with_cookies, capture_output=True, text=True, timeout=30, encoding='utf-8')
+                    if result.returncode != 0 and result.stderr:
+                        error_msg = result.stderr.lower()
+
                 if result.returncode != 0:
                     ret = {
                         "success": False,

@@ -323,10 +323,11 @@ Detecta los errores de autenticación modernos ("empty media response", "login r
 
 ### Facebook Extractor
 Cadena de extracción:
-1. yt-dlp como método principal
-2. Scraping manual: og:video + playable_url (web y móvil)
-3. Servicio externo fdown.net
-4. Servicio externo getmyfb.com (endpoint `/process`) — resuelve enlaces `share/v/` que exigen login y devuelve el título real del video
+1. yt-dlp (web, luego reintenta con ID de reel y modo móvil si falla)
+2. yt-dlp con la cookie compartida (`cookies/instagram.txt`) — resuelve reels/videos que exigen login, incluidos `facebook.com/reel/...`
+3. Scraping manual: og:video + playable_url (web y móvil)
+4. Servicio externo fdown.net
+5. Servicio externo getmyfb.com (endpoint `/process`) — resuelve enlaces `share/v/` que exigen login y devuelve el título real del video
 
 ### TikTok Extractor
 - yt-dlp con formato bestvideo+bestaudio
