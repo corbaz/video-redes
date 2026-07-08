@@ -1,5 +1,21 @@
 # Railway/Nixpacks build configuration.
 # "..." keeps the default packages detected by the Python provider;
 # deno is required by yt-dlp 2026+ to solve YouTube's JS challenges.
+# The rest are Chromium runtime shared libs, required by Playwright
+# (login en vivo por visitante) -- Playwright's own installer downloads the
+# Chromium binary itself in [phases.install], these just satisfy its
+# dynamic-linking dependencies on a Nix-based image.
 [phases.setup]
-nixPkgs = ["...", "deno"]
+nixPkgs = [
+  "...", "deno",
+  "nss", "nspr", "atk", "at-spi2-atk", "cups", "dbus", "libdrm", "mesa",
+  "pango", "cairo", "alsa-lib", "gtk3", "libxkbcommon", "libxshmfence",
+  "xorg.libX11", "xorg.libXcomposite", "xorg.libXdamage", "xorg.libXext",
+  "xorg.libXfixes", "xorg.libXrandr", "xorg.libxcb"
+]
+
+[phases.install]
+cmds = [
+  "pip install -r requirements.txt",
+  "python -m playwright install chromium"
+]

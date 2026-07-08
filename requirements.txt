@@ -2,5 +2,6 @@ yt-dlp>=2026.6.9
 requests>=2.34.2
 imageio-ffmpeg>=0.6.0
 python-dotenv>=1.2.2
+playwright>=1.45
 # pydub removed: unused and incompatible with Python 3.13+ (stdlib audioop was removed)
 # moviepy>=2.2.1 # Descomentar si se usa para edición de video futura

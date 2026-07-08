@@ -151,14 +151,18 @@ class InstagramExtractor:
                     # El contenido requiere login y ningún método de cookies funcionó.
                     return {
                         "success": False,
+                        "needs_login": True,
+                        "login_platform": "instagram",
                         "error": "Instagram exige iniciar sesión para ver este contenido y no se pudieron obtener cookies válidas del navegador.",
-                        "suggestion": "Cierra completamente Chrome/Edge y reintenta, o exporta tus cookies de Instagram a 'cookies/instagram.txt' (formato Netscape) con una extensión como 'Get cookies.txt LOCALLY'."
+                        "suggestion": "Inicia sesión para este video, o exporta tus cookies de Instagram a 'cookies/instagram.txt' (formato Netscape) con una extensión como 'Get cookies.txt LOCALLY'."
                     }
                 if 'empty media response' in error_msg.lower():
                     return {
                         "success": False,
+                        "needs_login": True,
+                        "login_platform": "instagram",
                         "error": "Instagram exige iniciar sesión para ver este contenido y no se pudieron obtener cookies válidas.",
-                        "suggestion": "Cierra completamente Chrome/Edge y reintenta, o exporta tus cookies de Instagram a 'cookies/instagram.txt' (formato Netscape) con una extensión como 'Get cookies.txt LOCALLY'."
+                        "suggestion": "Inicia sesión para este video, o exporta tus cookies de Instagram a 'cookies/instagram.txt' (formato Netscape) con una extensión como 'Get cookies.txt LOCALLY'."
                     }
                 elif 'private' in error_msg.lower():
                     return {

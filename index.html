@@ -25,7 +25,7 @@
     </svg>
     <div class="container">
         <div class="header">
-            <h1>Redes Sociales Downloader - v.37</h1>
+            <h1>Redes Sociales Downloader - v.38</h1>
             <div class="header-icons">
 
                 <!-- Instagram -->
@@ -379,7 +379,18 @@
                     const validateResponse = await this.makeRequest('/api/validate', { url }, signal);
                     if (!validateResponse.success) throw new Error(validateResponse.error || 'URL inválida');
 
-                    const extractResponse = await this.makeRequest('/api/extract', { url: validateResponse.url }, signal);
+                    let extractResponse = await this.makeRequest('/api/extract', { url: validateResponse.url }, signal);
+
+                    // Este contenido exige sesión y la cookie compartida del
+                    // servidor no alcanzó. No se ofrece login al visitante --
+                    // solo el administrador del sitio puede refrescar esa
+                    // sesión (panel /admin/cookies).
+                    if (!extractResponse.success && extractResponse.needs_login) {
+                        extractResponse = {
+                            ...extractResponse,
+                            error: 'Este contenido requiere iniciar sesión y no está disponible por el momento.'
+                        };
+                    }
 
                     const elapsedTime = Date.now() - startTime;
                     const remainingTime = Math.max(0, minimumLoadingTime - elapsedTime);

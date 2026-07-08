@@ -32,7 +32,7 @@ class FacebookExtractor:
             result = self._extract_with_ytdlp(url)
             if result.get('success'):
                 return result
-            
+
             # 2. Si falló yt-dlp, ver si podemos extraer un ID del error para reintentar con URL canónica
             # Revisar si _extract_with_ytdlp nos devolvió un detected_id
             if result.get('detected_id'):
@@ -453,8 +453,10 @@ class FacebookExtractor:
 
             return {
                 "success": False,
+                "needs_login": True,
+                "login_platform": "facebook",
                 "error": "No se pudo extraer la URL del video manualmente ni con servicios externos.",
-                "suggestion": "Facebook ha cambiado su estructura o requiere login."
+                "suggestion": "Este contenido probablemente exige iniciar sesión. Inicia sesión para este video, o actualiza la cookie compartida."
             }
 
         except Exception as e:
