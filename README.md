@@ -276,7 +276,7 @@ El proyecto está configurado para desplegarse fácilmente ("Deploy Ready").
 - `runtime.txt`: `python-3.11`
 - `requirements.txt`: Lista de librerías necesarias
 - Railway usa **Railpack** como builder (no Nixpacks -- `nixpacks.toml` quedó obsoleto y se eliminó, nunca se leyó). La instalación de Chromium (Playwright) se controla con variables de entorno oficiales de Railpack, configuradas en Railway → Variables:
-  - `RAILPACK_INSTALL_CMD`: agrega `python -m playwright install --with-deps chromium` al paso de instalación, con `PLAYWRIGHT_BROWSERS_PATH` fijado dentro de `/app` (para que sobreviva al split build→runtime de Railpack -- el cache por defecto en `~/.cache` no persiste al contenedor final).
+  - `RAILPACK_BUILD_CMD`: corre `python -m playwright install --with-deps chromium` usando el venv que el proveedor de Python ya crea (`/app/.venv/bin/python`), con `PLAYWRIGHT_BROWSERS_PATH` fijado dentro de `/app` (para que sobreviva al split build→runtime de Railpack -- el cache por defecto en `~/.cache` no persiste al contenedor final). Se usa `RAILPACK_BUILD_CMD` y no `RAILPACK_INSTALL_CMD` porque este último reemplaza el paso de instalación del proveedor entero -- incluida la creación del venv -- rompiendo el resto del build.
   - `RAILPACK_DEPLOY_APT_PACKAGES`: librerías de sistema que Chromium necesita en tiempo de ejecución (`libnss3`, `libatk1.0-0`, etc.).
   - `PLAYWRIGHT_BROWSERS_PATH`: la misma ruta, disponible para la app en runtime.
 
