@@ -275,7 +275,7 @@ El proyecto está configurado para desplegarse fácilmente ("Deploy Ready").
 - `Procfile`: `web: python src/server.py`
 - `runtime.txt`: `python-3.11`
 - `requirements.txt`: Lista de librerías necesarias
-- `nixpacks.toml`: Agrega `deno` al build — requerido por yt-dlp 2026+ para YouTube
+- `railpack.json`: Instala `deno` (requerido por yt-dlp 2026+ para YouTube) y Chromium para Playwright, con `PLAYWRIGHT_BROWSERS_PATH` fijado dentro de `/app` para que sobreviva al split build→runtime de Railpack (el builder que usa Railway hoy; `nixpacks.toml` quedó obsoleto y se eliminó -- Railway ya no lo lee)
 
 **Pasos para Railway:**
 1. Sube tu código a GitHub
