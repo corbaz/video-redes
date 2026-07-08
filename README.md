@@ -275,7 +275,10 @@ El proyecto está configurado para desplegarse fácilmente ("Deploy Ready").
 - `Procfile`: `web: python src/server.py`
 - `runtime.txt`: `python-3.11`
 - `requirements.txt`: Lista de librerías necesarias
-- `railpack.json`: Instala `deno` (requerido por yt-dlp 2026+ para YouTube) y Chromium para Playwright, con `PLAYWRIGHT_BROWSERS_PATH` fijado dentro de `/app` para que sobreviva al split build→runtime de Railpack (el builder que usa Railway hoy; `nixpacks.toml` quedó obsoleto y se eliminó -- Railway ya no lo lee)
+- Railway usa **Railpack** como builder (no Nixpacks -- `nixpacks.toml` quedó obsoleto y se eliminó, nunca se leyó). La instalación de Chromium (Playwright) se controla con variables de entorno oficiales de Railpack, configuradas en Railway → Variables:
+  - `RAILPACK_INSTALL_CMD`: agrega `python -m playwright install --with-deps chromium` al paso de instalación, con `PLAYWRIGHT_BROWSERS_PATH` fijado dentro de `/app` (para que sobreviva al split build→runtime de Railpack -- el cache por defecto en `~/.cache` no persiste al contenedor final).
+  - `RAILPACK_DEPLOY_APT_PACKAGES`: librerías de sistema que Chromium necesita en tiempo de ejecución (`libnss3`, `libatk1.0-0`, etc.).
+  - `PLAYWRIGHT_BROWSERS_PATH`: la misma ruta, disponible para la app en runtime.
 
 **Pasos para Railway:**
 1. Sube tu código a GitHub
