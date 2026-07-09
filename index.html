@@ -25,7 +25,7 @@
     </svg>
     <div class="container">
         <div class="header">
-            <h1>Redes Sociales Downloader - v.44</h1>
+            <h1>Redes Sociales Downloader - v.45</h1>
             <div class="header-icons">
 
                 <!-- Instagram -->
@@ -472,6 +472,29 @@
                 // Limpiar input y botón X al mostrar error
                 this.urlInput.value = '';
                 this.toggleClearButton();
+
+                // Errores que indican que la sesión compartida falta o venció.
+                const needsLogin = /iniciar sesi|requiere login|login required|empty media response|registered users|servicios externos|no se pudo extraer la url/i
+                    .test(message);
+
+                if (needsLogin) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Este video requiere sesión',
+                        html: `<p>La red social pide iniciar sesión para acceder a este contenido.</p>
+                               <p style="font-size:0.9em;opacity:0.75">Si sos el administrador, actualizá las cookies para habilitarlo.</p>`,
+                        background: 'rgba(255, 255, 255, 0.9)',
+                        showCancelButton: true,
+                        confirmButtonText: 'Actualizar cookies',
+                        cancelButtonText: 'Cerrar',
+                        confirmButtonColor: '#0077B5',
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.open('/admin/cookies', '_blank');
+                        }
+                    });
+                    return;
+                }
 
                 Swal.fire({
                     icon: 'error',
