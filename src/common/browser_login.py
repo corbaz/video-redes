@@ -157,22 +157,36 @@ class LoginSession:
 
     def _run(self):
         try:
+            print(f"🌐 [login {self.platform}] lanzando Chromium (perfil {self._profile_dir})...")
             with sync_playwright() as p:
                 context = p.chromium.launch_persistent_context(
                     self._profile_dir,
                     headless=True,
-                    args=['--disable-blink-features=AutomationControlled'],
+                    args=[
+                        '--disable-blink-features=AutomationControlled',
+                        '--no-sandbox',
+                        '--disable-dev-shm-usage',
+                        '--disable-gpu',
+                    ],
                     viewport={'width': 1280, 'height': 800},
                 )
                 context.add_init_script(_STEALTH_INIT_SCRIPT)
                 page = context.pages[0] if context.pages else context.new_page()
+                print(f"🌐 [login {self.platform}] navegando a la página de login...")
                 page.goto(LOGIN_TARGET_URLS[self.platform], timeout=30000)
+                try:
+                    print(f"🌐 [login {self.platform}] cargó: url={page.url!r} title={page.title()!r}")
+                except Exception:
+                    pass
                 self._autofill_credentials(page)
                 self.status = 'active'
+                print(f"🌐 [login {self.platform}] status=active, listo para stream/interacción")
 
+                first_shot_logged = False
                 while not self._stop_event.is_set():
                     self._check_login_cookie(context)
                     if self.status == 'success':
+                        print(f"✅ [login {self.platform}] cookie de sesión detectada")
                         break
                     try:
                         kind, payload, result_holder = self._cmd_queue.get(timeout=0.3)
@@ -180,8 +194,13 @@ class LoginSession:
                         continue
                     try:
                         result_holder['result'] = self._execute(kind, payload, page)
+                        if kind == 'screenshot' and not first_shot_logged:
+                            size = len(result_holder['result']) if result_holder['result'] else 0
+                            print(f"📸 [login {self.platform}] primer screenshot: {size} bytes")
+                            first_shot_logged = True
                     except Exception as e:
                         result_holder['error'] = e
+                        print(f"⚠️ [login {self.platform}] error ejecutando {kind}: {e}")
                     finally:
                         result_holder['event'].set()
 
@@ -189,6 +208,7 @@ class LoginSession:
         except Exception as e:
             self.status = 'error'
             self.error = str(e)
+            print(f"❌ [login {self.platform}] FALLO en _run: {type(e).__name__}: {e}")
 
     def _autofill_credentials(self, page):
         """Rellena usuario y contraseña del admin si vinieron por env.
