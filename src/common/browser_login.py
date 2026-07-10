@@ -52,6 +52,22 @@ LOGIN_TARGET_URLS = {
     'facebook': 'https://www.facebook.com/login/',
 }
 
+# Selectores candidatos de los campos usuario/contraseña por plataforma, para
+# autocompletar las credenciales del administrador. Instagram/Facebook sirven
+# variantes del formulario según región/IP (a veces username/password, a veces
+# email/pass), así que probamos varios. El envío (Enter) lo hace la persona a
+# mano -- mantiene un humano en el lazo y reduce (no elimina) la detección.
+LOGIN_FIELD_SELECTORS = {
+    'instagram': {
+        'user': ["input[name='username']", "input[name='email']"],
+        'pass': ["input[name='password']", "input[name='pass']"],
+    },
+    'facebook': {
+        'user': ["input[name='email']", "input[name='username']", "#email"],
+        'pass': ["input[name='pass']", "input[name='password']", "#pass"],
+    },
+}
+
 # Cookie que solo existe una vez el login fue exitoso -- señal confiable,
 # a diferencia de intentar parsear el DOM de una pantalla de login que
 # cambia seguido.
@@ -79,12 +95,14 @@ class LoginSessionError(Exception):
 
 
 class LoginSession:
-    def __init__(self, platform: str):
+    def __init__(self, platform: str, username: str = '', password: str = ''):
         if platform not in LOGIN_TARGET_URLS:
             raise LoginSessionError(f"Plataforma no soportada: {platform}")
 
         self.id = str(uuid.uuid4())
         self.platform = platform
+        self._username = username
+        self._password = password
         self.status = 'loading'  # loading | active | success | error | expired
         self.error = None
         self.cookies = None
@@ -149,6 +167,7 @@ class LoginSession:
                 context.add_init_script(_STEALTH_INIT_SCRIPT)
                 page = context.pages[0] if context.pages else context.new_page()
                 page.goto(LOGIN_TARGET_URLS[self.platform], timeout=30000)
+                self._autofill_credentials(page)
                 self.status = 'active'
 
                 while not self._stop_event.is_set():
@@ -170,6 +189,35 @@ class LoginSession:
         except Exception as e:
             self.status = 'error'
             self.error = str(e)
+
+    def _autofill_credentials(self, page):
+        """Rellena usuario y contraseña del admin si vinieron por env.
+        No envía el formulario: el Enter lo hace la persona a mano."""
+        if not self._username or not self._password:
+            return
+        selectors = LOGIN_FIELD_SELECTORS.get(self.platform)
+        if not selectors:
+            return
+        # Descartar banner de cookies si aparece (varía por región).
+        try:
+            page.click("text=/Allow all cookies|Permitir todas|Only allow essential/i", timeout=4000)
+        except Exception:
+            pass
+        if not self._fill_first(page, selectors['user'], self._username):
+            print("⚠️ No se encontró el campo de usuario para autocompletar.")
+        if not self._fill_first(page, selectors['pass'], self._password):
+            print("⚠️ No se encontró el campo de contraseña para autocompletar.")
+
+    @staticmethod
+    def _fill_first(page, candidate_selectors, value) -> bool:
+        """Prueba cada selector candidato y rellena el primero que exista."""
+        for selector in candidate_selectors:
+            try:
+                page.fill(selector, value, timeout=5000)
+                return True
+            except Exception:
+                continue
+        return False
 
     def _execute(self, kind: str, payload: dict, page):
         if kind == 'screenshot':

@@ -181,6 +181,12 @@ def start_instagram_session_refresh():
 # correr dos Chromium a la vez arriesga un OOM que tumbaría el proceso
 # completo en el plan hobby de Railway, afectando a usuarios ajenos al login.
 login_sessions = {}
+# Variables de entorno con las credenciales del admin por red, para
+# autocompletar el login en vivo. Nunca se loguean ni se devuelven al cliente.
+_CRED_ENV = {
+    'instagram': {'user': 'IG_USER', 'pass': 'IG_PASS'},
+    'facebook': {'user': 'FB_USER', 'pass': 'FB_PASS'},
+}
 MAX_LOGIN_SESSIONS = int(os.environ.get('MAX_LOGIN_SESSIONS', '1'))
 _login_session_semaphore = threading.Semaphore(MAX_LOGIN_SESSIONS)
 LOGIN_SESSION_WATCHDOG_INTERVAL = 15  # segundos
@@ -193,6 +199,15 @@ def _close_login_session(session_id):
             session.close()
         finally:
             _login_session_semaphore.release()
+
+
+def _reclaim_all_login_sessions():
+    """Cierra TODAS las sesiones de login en curso y libera sus cupos.
+    Se usa al arrancar una sesión nueva: como el cupo es 1 y esto es solo
+    para el admin, una sesión previa colgada (pestaña cerrada sin cancelar)
+    no debe bloquear un reintento durante 2 minutos."""
+    for session_id in list(login_sessions.keys()):
+        _close_login_session(session_id)
 
 
 def _login_session_watchdog_loop():
@@ -1005,6 +1020,7 @@ async function save() {
 
 let loginPoll = null;
 let loginSessionId = null;
+let loginStartedAt = 0;
 let pageWidth = 1280, pageHeight = 800;
 
 async function startLogin(platform) {
@@ -1029,7 +1045,8 @@ async function startLogin(platform) {
       return;
     }
     loginSessionId = data.session_id;
-    loginMsg.textContent = 'Cargando página de login...';
+    loginStartedAt = Date.now();
+    loginMsg.textContent = 'Arrancando navegador en el servidor... (la primera vez puede tardar ~20s)';
 
     img.onclick = (e) => {
       const rect = img.getBoundingClientRect();
@@ -1072,7 +1089,13 @@ async function pollFrame() {
 
     if (data.width) pageWidth = data.width;
     if (data.height) pageHeight = data.height;
-    if (data.image) img.src = 'data:image/jpeg;base64,' + data.image;
+    if (data.image) {
+      img.src = 'data:image/jpeg;base64,' + data.image;
+      loginMsg.textContent = 'Listo: usuario y contraseña ya cargados. Apretá Enter para entrar.';
+    } else if (data.status === 'loading' || !data.image) {
+      const secs = Math.round((Date.now() - loginStartedAt) / 1000);
+      loginMsg.textContent = `Arrancando navegador en el servidor... ${secs}s (la primera vez puede tardar ~20s)`;
+    }
 
     if (data.status === 'success') {
       clearInterval(loginPoll);
@@ -1153,12 +1176,20 @@ async function pollFrame() {
             return
 
         if not _login_session_semaphore.acquire(blocking=False):
-            self.send_json_response(
-                {'success': False, 'error': 'Ya hay un login en curso. Probá de nuevo en un minuto.'}, 429)
-            return
+            # El cupo está tomado por una sesión previa (probablemente colgada
+            # porque el admin cerró la pestaña sin cancelar). La reclamamos y
+            # reintentamos una vez, en vez de hacerlo esperar el timeout.
+            logger.info("♻️ Cupo de login ocupado; reclamando sesión previa...")
+            _reclaim_all_login_sessions()
+            if not _login_session_semaphore.acquire(blocking=False):
+                self.send_json_response(
+                    {'success': False, 'error': 'Ya hay un login en curso. Probá de nuevo en un minuto.'}, 429)
+                return
 
         try:
-            session = LoginSession(platform)
+            username = os.environ.get(_CRED_ENV[platform]['user'], '')
+            password = os.environ.get(_CRED_ENV[platform]['pass'], '')
+            session = LoginSession(platform, username=username, password=password)
             login_sessions[session.id] = session
             self.send_json_response({'success': True, 'session_id': session.id})
         except LoginSessionError as e:
