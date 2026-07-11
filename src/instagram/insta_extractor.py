@@ -108,19 +108,8 @@ class InstagramExtractor:
 
                 # 2a. Archivo de cookies exportado (funciona aunque el navegador esté abierto)
                 if os.path.isfile(COOKIES_FILE):
-                    # --- DIAGNÓSTICO TEMPORAL: estado real del archivo de cookies ---
-                    try:
-                        _txt = open(COOKIES_FILE, encoding='utf-8').read()
-                        _lines = [l for l in _txt.splitlines() if l.strip() and not l.startswith('#')]
-                        _sess = [l for l in _lines if '\tsessionid\t' in l or ' sessionid ' in l]
-                        _tabs = _sess[0].count('\t') if _sess else -1
-                        print(f"🔎 DIAG cookie: {len(_txt)} bytes, {len(_lines)} lineas, sessionid={'si' if _sess else 'NO'}, tabs_en_sessionid={_tabs}")
-                    except Exception as _e:
-                        print(f"🔎 DIAG cookie error: {_e}")
                     print(f"🍪 Usando archivo de cookies: {COOKIES_FILE}")
                     result = run_ytdlp(['--cookies', COOKIES_FILE])
-                    if result.returncode != 0:
-                        print(f"🔎 DIAG yt-dlp stderr (crudo): {result.stderr.strip()[:250]}")
 
             # 3. Fallback anónimo rápido: proxy de embeds (kkinstagram).
             # Va antes que las cookies del navegador porque estas suelen fallar
