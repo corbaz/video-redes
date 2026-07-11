@@ -25,7 +25,6 @@
   - Archivos ZIP: Empaquetado automático para descargas múltiples.
 - **Nombres de Archivo Unificados**: Todas las descargas siguen el formato `plataforma_titulo_fecha.ext` (ej. `instagram_Mar_del_Plata_Drone_20260702.mp4`). Generado por `buildFilename()` en `src/common/card.js`.
 - **Autenticación con Cookies (Instagram)**: Soporte para archivo de cookies Netscape en `cookies/instagram.txt` (o variable de entorno `INSTAGRAM_COOKIES_FILE`). Necesario porque Instagram exige login para la mayoría de los reels. Exportar con la extensión "Get cookies.txt LOCALLY". El directorio `cookies/` está en `.gitignore`.
-- **Login en vivo (Playwright), exclusivo del administrador**: alternativa al copy-paste manual de cookies -- un botón en `/admin/cookies` abre un navegador real (Playwright) con la página REAL de login, y al completarlo la cookie se guarda sola en el archivo compartido. No se ofrece a visitantes públicos (ver sección dedicada más abajo, incluida la razón de por qué).
 - **Interfaz Responsiva**: Diseño moderno, adaptable a móviles y escritorio.
 - **Logging Detallado**: Información completa de resolución, bitrate y errores en consola.
 - **API REST Local**: Endpoints para validación y extracción, listos para integración.
@@ -180,7 +179,7 @@ sequenceDiagram
 | `/api/download_status?id=task_id` | Consultar estado |
 | `/api/download_file?id=task_id` | Descargar archivo completado |
 | `/api/download?url=...&filename=...` | Descarga directa legacy |
-| `/api/login/frame?id=session_id` | Captura de pantalla + estado de la sesión de login (admin) |
+| `/admin/cookies` | Panel para actualizar la cookie compartida (requiere ADMIN_SECRET) |
 
 ### POST Endpoints
 
@@ -188,9 +187,7 @@ sequenceDiagram
 |----------|-------------|
 | `/api/validate` | Validar formato de URL |
 | `/api/extract` | Extraer información de video |
-| `/api/login/start` | Inicia un login en vivo (Playwright). Requiere `secret` (ADMIN_SECRET). 429 si ya hay uno en curso |
-| `/api/login/input` | Reenvía click/tecla/scroll al navegador de la sesión de login (admin) |
-| `/api/login/cancel` | Cierra una sesión de login antes de tiempo (admin) |
+| `/api/admin/cookies` | Actualizar la cookie compartida (requiere `secret` = ADMIN_SECRET) |
 
 ### Ejemplo de Respuesta (extract)
 
@@ -275,10 +272,7 @@ El proyecto está configurado para desplegarse fácilmente ("Deploy Ready").
 - `Procfile`: `web: python src/server.py`
 - `runtime.txt`: `python-3.11`
 - `requirements.txt`: Lista de librerías necesarias
-- Railway usa **Railpack** como builder (no Nixpacks -- `nixpacks.toml` quedó obsoleto y se eliminó, nunca se leyó). La instalación de Chromium (Playwright) se controla con variables de entorno oficiales de Railpack, configuradas en Railway → Variables:
-  - `RAILPACK_BUILD_CMD`: corre `python -m playwright install --with-deps chromium` usando el venv que el proveedor de Python ya crea (`/app/.venv/bin/python`), con `PLAYWRIGHT_BROWSERS_PATH` fijado dentro de `/app` (para que sobreviva al split build→runtime de Railpack -- el cache por defecto en `~/.cache` no persiste al contenedor final). Se usa `RAILPACK_BUILD_CMD` y no `RAILPACK_INSTALL_CMD` porque este último reemplaza el paso de instalación del proveedor entero -- incluida la creación del venv -- rompiendo el resto del build.
-  - `RAILPACK_DEPLOY_APT_PACKAGES`: librerías de sistema que Chromium necesita en tiempo de ejecución (`libnss3`, `libatk1.0-0`, etc.).
-  - `PLAYWRIGHT_BROWSERS_PATH`: la misma ruta, disponible para la app en runtime.
+- Railway usa **Railpack** como builder. Con solo `Procfile` + `requirements.txt` + `runtime.txt` alcanza; no requiere config de build extra.
 
 **Pasos para Railway:**
 1. Sube tu código a GitHub
@@ -304,40 +298,7 @@ El proyecto está configurado para desplegarse fácilmente ("Deploy Ready").
 
 Sin cookie configurada, en Railway solo funcionan los reels públicos (vía proxy de embeds); el resto necesita la cookie compartida.
 
----
-
-## 🔐 Login en vivo (Playwright) -- exclusivo del administrador
-
-Alternativa a exportar `cookies.txt` a mano y pegarlo en `/admin/cookies`:
-un botón en ese mismo panel abre un navegador real (Playwright) del lado
-del servidor, mostrando la página REAL de login de Instagram/Facebook
-(streaming por captura de pantalla). Al completar el login, la cookie se
-guarda sola en el archivo compartido (`cookies/instagram.txt`).
-
-**Por qué es exclusivo del administrador, y no una opción para cualquier
-visitante:** el servidor retransmite cada tecla que se escribe hacia el
-navegador controlado por Playwright -- así que ve la contraseña en tránsito,
-aunque nunca la guarde. Ofrecer esto a un visitante anónimo significaría que
-un desconocido escriba su contraseña real en un flujo que nuestro propio
-servidor puede observar, sin forma de dar consentimiento informado real para
-ese riesgo. Esa variante (login público por visitante) se evaluó y se
-descartó explícitamente por eso. Acá la única persona logueándose es quien
-ya conoce `ADMIN_SECRET` -- su propia cuenta, su propio riesgo, igual que si
-lo hiciera manualmente.
-
-**Riesgos que siguen aplicando (ahora acotados a vos, no a terceros):**
-- Meta detecta y bloquea logins automatizados (fingerprint de navegador,
-  reputación de IP de datacenter) — en Railway, el intento puede terminar en
-  un checkpoint que Playwright no puede resolver.
-- Viola los Términos de Servicio de Meta (automatizar el login está prohibido).
-- Costo de recursos: cada sesión corre un Chromium completo (~150-300MB de
-  RAM). Límite de concurrencia (`MAX_LOGIN_SESSIONS`, default `1`) — un
-  segundo Chromium simultáneo puede provocar un OOM que tumbe el proceso
-  completo en el plan hobby de Railway, afectando descargas de otros
-  usuarios ajenos al login.
-
-**Variables de entorno:**
-- `MAX_LOGIN_SESSIONS` (default `1`): sesiones de login concurrentes permitidas.
+> **Nota sobre login automático (descartado):** se probó un login en vivo con Playwright (navegador automatizado en el server) para refrescar la cookie sin exportar/pegar a mano. No funciona: Instagram/Facebook detectan el navegador automatizado (reCAPTCHA con loop infinito de captchas) y además desconfían de la IP de datacenter de Railway. La única vía confiable es cargar una cookie nacida en un navegador real y logueado (IP residencial) vía la extensión "Get cookies.txt LOCALLY" y pegarla en `/admin/cookies`.
 
 ---
 
@@ -439,7 +400,6 @@ Esta herramienta ha sido creada con fines educativos y de uso personal.
 - **Refresco automático de sesión**: la cookie compartida se usa cada 6 horas en segundo plano para extender su vigencia.
 - **Cookies compartidas vía `INSTAGRAM_COOKIES_B64`**: soporte para pasar el archivo de cookies como variable de entorno Base64 en despliegues sin filesystem persistente (Railway).
 - **Facebook**: nuevo reintento con la cookie compartida antes de rendirse, arregla `facebook.com/reel/...` que exigen login.
-- **Login en vivo (Playwright), exclusivo del administrador**: alternativa al copy-paste manual de cookies en `/admin/cookies` -- un botón abre un navegador real con la página REAL de login, y la cookie se guarda sola en el archivo compartido al terminar. Se evaluó explícitamente ofrecerlo a visitantes públicos y se descartó: el servidor retransmite cada tecla al navegador controlado, así que vería la contraseña de un tercero en tránsito -- un riesgo que ningún visitante anónimo puede consentir de forma informada. Ver sección dedicada más arriba.
 
 ---
 

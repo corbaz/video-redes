@@ -36,7 +36,6 @@ if _cookies_b64 and not os.environ.get('INSTAGRAM_COOKIES_FILE'):
     except Exception as _e:
         print(f"⚠️ No se pudo decodificar INSTAGRAM_COOKIES_B64: {_e}")
 
-from common.browser_login import LoginSession, LoginSessionError, cookies_to_netscape
 
 # Importar extractores
 from instagram.insta_extractor import InstagramExtractor
@@ -175,56 +174,6 @@ def start_instagram_session_refresh():
     thread.start()
 
 
-# Login en vivo por visitante (Playwright). La cookie capturada NUNCA se
-# escribe en el servidor -- se devuelve al navegador del visitante para que
-# la guarde en su propio localStorage. Un solo cupo concurrente por defecto:
-# correr dos Chromium a la vez arriesga un OOM que tumbaría el proceso
-# completo en el plan hobby de Railway, afectando a usuarios ajenos al login.
-login_sessions = {}
-# Variables de entorno con las credenciales del admin por red, para
-# autocompletar el login en vivo. Nunca se loguean ni se devuelven al cliente.
-_CRED_ENV = {
-    'instagram': {'user': 'IG_USER', 'pass': 'IG_PASS'},
-    'facebook': {'user': 'FB_USER', 'pass': 'FB_PASS'},
-}
-MAX_LOGIN_SESSIONS = int(os.environ.get('MAX_LOGIN_SESSIONS', '1'))
-_login_session_semaphore = threading.Semaphore(MAX_LOGIN_SESSIONS)
-LOGIN_SESSION_WATCHDOG_INTERVAL = 15  # segundos
-
-
-def _close_login_session(session_id):
-    session = login_sessions.pop(session_id, None)
-    if session is not None:
-        try:
-            session.close()
-        finally:
-            _login_session_semaphore.release()
-
-
-def _reclaim_all_login_sessions():
-    """Cierra TODAS las sesiones de login en curso y libera sus cupos.
-    Se usa al arrancar una sesión nueva: como el cupo es 1 y esto es solo
-    para el admin, una sesión previa colgada (pestaña cerrada sin cancelar)
-    no debe bloquear un reintento durante 2 minutos."""
-    for session_id in list(login_sessions.keys()):
-        _close_login_session(session_id)
-
-
-def _login_session_watchdog_loop():
-    while True:
-        time.sleep(LOGIN_SESSION_WATCHDOG_INTERVAL)
-        for session_id in list(login_sessions.keys()):
-            session = login_sessions.get(session_id)
-            if session is not None and session.is_expired():
-                logger.info(f"⏱️ Sesión de login expirada, cerrando: {session_id}")
-                _close_login_session(session_id)
-
-
-def start_login_session_watchdog():
-    thread = threading.Thread(target=_login_session_watchdog_loop, daemon=True)
-    thread.start()
-
-
 class VideoDownloaderHandler(BaseHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         self.timeout = 60
@@ -318,15 +267,6 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             # tocar Railway/terminal. Deshabilitado si no hay ADMIN_SECRET.
             elif clean_path == '/admin/cookies':
                 self.serve_admin_cookies_page()
-
-            # Login en vivo (Playwright), exclusivo del administrador -- lo usa
-            # SOLO quien conoce ADMIN_SECRET, para refrescar la cookie
-            # compartida sin exportar/pegar el archivo a mano. Nunca se ofrece
-            # a visitantes: la contraseña de un tercero no puede pasar por
-            # este servidor bajo ninguna forma (ver /admin/cookies).
-            elif clean_path == '/api/login/frame':
-                session_id = params.get('id', [''])[0]
-                self.handle_login_frame(session_id)
             else:
                 self.send_error(404)
 
@@ -777,12 +717,6 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 self.handle_extract()
             elif path == 'api/admin/cookies':
                 self.handle_admin_cookies_save()
-            elif path == 'api/login/start':
-                self.handle_login_start()
-            elif path == 'api/login/input':
-                self.handle_login_input()
-            elif path == 'api/login/cancel':
-                self.handle_login_cancel()
             else:
                 logger.warning(f"Endpoint no encontrado: {path}")
                 self.send_error(404)
@@ -969,35 +903,23 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
 
         html = """<!DOCTYPE html>
 <html lang="es"><head><meta charset="UTF-8">
-<title>Admin - Cookies de Instagram</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin - Cookies</title>
 <style>
 body{font-family:sans-serif;max-width:640px;margin:40px auto;padding:0 16px;background:#111;color:#eee}
 h1{font-size:1.3rem} textarea{width:100%;height:220px;font-family:monospace;font-size:0.85rem}
-input,button{padding:8px;margin:6px 0;width:100%;box-sizing:border-box}
-button{cursor:pointer;background:#0077B5;color:#fff;border:none;border-radius:4px}
+input,button{padding:10px;margin:6px 0;width:100%;box-sizing:border-box}
+button{cursor:pointer;background:#0077B5;color:#fff;border:none;border-radius:4px;font-weight:600}
 #msg{margin-top:10px;font-weight:bold}
+code{background:#222;padding:1px 5px;border-radius:3px}
 </style></head><body>
-<h1>Actualizar cookies de Instagram</h1>
-<p>Exportá <code>cookies/instagram.txt</code> con la extensión "Get cookies.txt LOCALLY" y pegá el contenido completo.</p>
+<h1>Actualizar cookies</h1>
+<p>Exportá tus cookies con la extensión "Get cookies.txt LOCALLY" (desde tu
+navegador logueado en Instagram/Facebook) y pegá el contenido completo acá.</p>
 <input type="password" id="secret" placeholder="Clave de administrador">
 <textarea id="cookies" placeholder="# Netscape HTTP Cookie File..."></textarea>
 <button onclick="save()">Guardar</button>
 <div id="msg"></div>
-
-<hr style="margin:24px 0;border-color:#333">
-
-<h1>O loguearte en vivo (Playwright)</h1>
-<p>Alternativa a exportar el archivo a mano: se abre un navegador real del
-lado del servidor con la página REAL de login. Sos vos quien escribe tu
-usuario y contraseña -- nadie más ve ese navegador. Al terminar, la cookie
-se guarda sola en <code>cookies/instagram.txt</code>.</p>
-<button onclick="startLogin('instagram')">Loguearme en Instagram</button>
-<button onclick="startLogin('facebook')">Loguearme en Facebook</button>
-<div id="loginArea" style="display:none;margin-top:12px;">
-  <img id="loginFrameImg" tabindex="0"
-       style="max-width:100%;border:1px solid #444;cursor:text;outline:none;" />
-  <div id="loginMsg" style="margin-top:8px;font-weight:bold;"></div>
-</div>
 
 <script>
 async function save() {
@@ -1015,97 +937,6 @@ async function save() {
     msg.textContent = data.success ? '✅ Cookies actualizadas' : ('❌ ' + (data.error || 'Error'));
   } catch (e) {
     msg.textContent = '❌ Error de red: ' + e.message;
-  }
-}
-
-let loginPoll = null;
-let loginSessionId = null;
-let loginStartedAt = 0;
-let pageWidth = 1280, pageHeight = 800;
-
-async function startLogin(platform) {
-  const secret = document.getElementById('secret').value;
-  const loginMsg = document.getElementById('loginMsg');
-  const loginArea = document.getElementById('loginArea');
-  const img = document.getElementById('loginFrameImg');
-
-  loginArea.style.display = 'block';
-  loginMsg.textContent = 'Iniciando navegador...';
-  img.src = '';
-
-  try {
-    const res = await fetch('/api/login/start', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({secret, platform})
-    });
-    const data = await res.json();
-    if (!data.success) {
-      loginMsg.textContent = '❌ ' + (data.error || 'Error');
-      return;
-    }
-    loginSessionId = data.session_id;
-    loginStartedAt = Date.now();
-    loginMsg.textContent = 'Arrancando navegador en el servidor... (la primera vez puede tardar ~20s)';
-
-    img.onclick = (e) => {
-      const rect = img.getBoundingClientRect();
-      const x = (e.clientX - rect.left) * (pageWidth / rect.width);
-      const y = (e.clientY - rect.top) * (pageHeight / rect.height);
-      img.focus();
-      sendInput({ type: 'click', x, y });
-    };
-    img.onkeydown = (e) => {
-      e.preventDefault();
-      if (e.key.length === 1) sendInput({ type: 'type', text: e.key });
-      else sendInput({ type: 'key', key: e.key });
-    };
-    img.onwheel = (e) => {
-      e.preventDefault();
-      sendInput({ type: 'scroll', deltaY: e.deltaY });
-    };
-
-    if (loginPoll) clearInterval(loginPoll);
-    loginPoll = setInterval(pollFrame, 700);
-  } catch (e) {
-    loginMsg.textContent = '❌ Error de red: ' + e.message;
-  }
-}
-
-function sendInput(payload) {
-  fetch('/api/login/input', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({ id: loginSessionId, ...payload })
-  }).catch(() => {});
-}
-
-async function pollFrame() {
-  const img = document.getElementById('loginFrameImg');
-  const loginMsg = document.getElementById('loginMsg');
-  try {
-    const res = await fetch(`/api/login/frame?id=${loginSessionId}`);
-    const data = await res.json();
-
-    if (data.width) pageWidth = data.width;
-    if (data.height) pageHeight = data.height;
-    if (data.image) {
-      img.src = 'data:image/jpeg;base64,' + data.image;
-      loginMsg.textContent = 'Listo: usuario y contraseña ya cargados. Apretá Enter para entrar.';
-    } else if (data.status === 'loading' || !data.image) {
-      const secs = Math.round((Date.now() - loginStartedAt) / 1000);
-      loginMsg.textContent = `Arrancando navegador en el servidor... ${secs}s (la primera vez puede tardar ~20s)`;
-    }
-
-    if (data.status === 'success') {
-      clearInterval(loginPoll);
-      loginMsg.textContent = '✅ Cookie guardada en cookies/instagram.txt';
-    } else if (data.status === 'error' || data.status === 'expired' || res.status === 404) {
-      clearInterval(loginPoll);
-      loginMsg.textContent = '❌ ' + (data.error || 'El login expiró o falló.');
-    }
-  } catch (e) {
-    // Error de red puntual: se reintenta en el próximo tick.
   }
 }
 </script></body></html>"""
@@ -1148,135 +979,6 @@ async function pollFrame() {
             self.send_json_response({'success': False, 'error': 'JSON inválido'}, 400)
         except Exception as e:
             logger.error(f"Error en handle_admin_cookies_save: {str(e)}")
-            self.send_json_response({'success': False, 'error': 'Error del servidor'}, 500)
-
-    def handle_login_start(self):
-        """Arranca una sesión de login en vivo (Playwright) -- EXCLUSIVO del
-        administrador, protegido por ADMIN_SECRET. Sirve para que vos mismo
-        refresques la cookie compartida sin exportar/pegar el archivo a
-        mano. Nunca se ofrece a visitantes públicos. Limitada por semáforo --
-        429 si ya hay una en curso (ver MAX_LOGIN_SESSIONS)."""
-        try:
-            content_length = int(self.headers['Content-Length'])
-            post_data = self.rfile.read(content_length).decode('utf-8')
-            data = json.loads(post_data)
-        except (json.JSONDecodeError, KeyError, ValueError):
-            self.send_json_response({'success': False, 'error': 'JSON inválido'}, 400)
-            return
-
-        secret = data.get('secret', '')
-        if not ADMIN_SECRET or not hmac.compare_digest(secret, ADMIN_SECRET):
-            logger.warning("⛔ Intento de login en vivo con clave de admin incorrecta")
-            self.send_json_response({'success': False, 'error': 'Clave incorrecta'}, 403)
-            return
-
-        platform = data.get('platform', '')
-        if platform not in ('instagram', 'facebook'):
-            self.send_json_response({'success': False, 'error': 'Plataforma no soportada'}, 400)
-            return
-
-        if not _login_session_semaphore.acquire(blocking=False):
-            # El cupo está tomado por una sesión previa (probablemente colgada
-            # porque el admin cerró la pestaña sin cancelar). La reclamamos y
-            # reintentamos una vez, en vez de hacerlo esperar el timeout.
-            logger.info("♻️ Cupo de login ocupado; reclamando sesión previa...")
-            _reclaim_all_login_sessions()
-            if not _login_session_semaphore.acquire(blocking=False):
-                self.send_json_response(
-                    {'success': False, 'error': 'Ya hay un login en curso. Probá de nuevo en un minuto.'}, 429)
-                return
-
-        try:
-            username = os.environ.get(_CRED_ENV[platform]['user'], '')
-            password = os.environ.get(_CRED_ENV[platform]['pass'], '')
-            session = LoginSession(platform, username=username, password=password)
-            login_sessions[session.id] = session
-            self.send_json_response({'success': True, 'session_id': session.id})
-        except LoginSessionError as e:
-            _login_session_semaphore.release()
-            self.send_json_response({'success': False, 'error': str(e)}, 400)
-        except Exception as e:
-            _login_session_semaphore.release()
-            logger.error(f"Error iniciando sesión de login: {e}")
-            self.send_json_response({'success': False, 'error': 'No se pudo iniciar el navegador'}, 500)
-
-    def handle_login_frame(self, session_id):
-        """Devuelve una captura de pantalla de la sesión de login en curso.
-        Cuando el login fue exitoso, la cookie capturada se escribe DIRECTO
-        al archivo compartido (INSTAGRAM_COOKIES_FILE) -- nunca viaja de
-        vuelta al navegador. Este endpoint solo tiene sentido junto a un
-        session_id ya emitido por /api/login/start (protegido por
-        ADMIN_SECRET), así que no requiere autenticación propia."""
-        session = login_sessions.get(session_id)
-        if session is None:
-            self.send_json_response({'status': 'expired'}, 404)
-            return
-
-        session.touch()
-        response = {'status': session.status}
-
-        if session.status == 'active':
-            try:
-                image_bytes = session.screenshot()
-                response['image'] = base64.b64encode(image_bytes).decode('ascii')
-                response['width'] = 1280
-                response['height'] = 800
-            except LoginSessionError:
-                pass
-        elif session.status == 'success':
-            try:
-                os.makedirs(os.path.dirname(INSTAGRAM_COOKIES_FILE), exist_ok=True)
-                with open(INSTAGRAM_COOKIES_FILE, 'w', encoding='utf-8') as f:
-                    f.write(cookies_to_netscape(session.cookies))
-                logger.info(f"✅ Cookie compartida actualizada vía login en vivo ({session.platform})")
-            except Exception as e:
-                logger.error(f"Error guardando cookie de login en vivo: {e}")
-                response['status'] = 'error'
-                response['error'] = 'No se pudo guardar la cookie en el servidor'
-            _close_login_session(session_id)
-        elif session.status == 'error':
-            response['error'] = session.error
-            _close_login_session(session_id)
-
-        self.send_json_response(response)
-
-    def handle_login_input(self):
-        """Reenvía un evento de mouse/teclado del visitante al navegador
-        real controlado por Playwright."""
-        try:
-            content_length = int(self.headers['Content-Length'])
-            post_data = self.rfile.read(content_length).decode('utf-8')
-            data = json.loads(post_data)
-
-            session_id = data.get('id', '')
-            session = login_sessions.get(session_id)
-            if session is None:
-                self.send_json_response({'success': False, 'error': 'Sesión no encontrada'}, 404)
-                return
-
-            session.replay_input(data)
-            self.send_json_response({'success': True})
-        except json.JSONDecodeError:
-            self.send_json_response({'success': False, 'error': 'JSON inválido'}, 400)
-        except LoginSessionError as e:
-            self.send_json_response({'success': False, 'error': str(e)}, 400)
-        except Exception as e:
-            logger.error(f"Error en handle_login_input: {e}")
-            self.send_json_response({'success': False, 'error': 'Error del servidor'}, 500)
-
-    def handle_login_cancel(self):
-        """Cierra una sesión de login antes de tiempo (el visitante cerró
-        el modal) y libera el cupo de concurrencia de inmediato."""
-        try:
-            content_length = int(self.headers['Content-Length'])
-            post_data = self.rfile.read(content_length).decode('utf-8')
-            data = json.loads(post_data)
-
-            session_id = data.get('id', '')
-            _close_login_session(session_id)
-            self.send_json_response({'success': True})
-        except Exception as e:
-            logger.error(f"Error en handle_login_cancel: {e}")
             self.send_json_response({'success': False, 'error': 'Error del servidor'}, 500)
 
     def extract_video_info(self, url):
@@ -1381,7 +1083,6 @@ def run_server():
         server.timeout = 60
 
         start_instagram_session_refresh()
-        start_login_session_watchdog()
 
         logger.info("=" * 60)
         logger.info("Video Downloader Server - High Quality Fix")
