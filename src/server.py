@@ -3,6 +3,7 @@
 
 import json
 import os
+import re
 import sys
 import traceback
 import logging
@@ -949,6 +950,34 @@ async function save() {
         self.end_headers()
         self.wfile.write(html.encode('utf-8'))
 
+    @staticmethod
+    def _normalize_netscape_cookies(text):
+        """Repara cookies pegadas donde los TABS se convirtieron en espacios.
+
+        El formato Netscape es estricto: separa sus 7 campos con tabs. Al
+        copiar/pegar (editor, textarea, portapapeles) los tabs suelen volverse
+        espacios, y entonces yt-dlp no parsea la cookie y devuelve "empty media
+        response" -- indistinguible de un rechazo real. Acá reconstruimos los
+        tabs para que la cookie sea válida sin importar cómo se pegó.
+        """
+        out = []
+        for raw in text.splitlines():
+            line = raw.rstrip('\r')
+            if not line.strip() or line.lstrip().startswith('#'):
+                out.append(line)
+                continue
+            # Si ya tiene los 7 campos tabulados, no la tocamos.
+            if line.count('\t') >= 6:
+                out.append(line)
+                continue
+            parts = re.split(r'\s+', line.strip())
+            if len(parts) >= 7:
+                # Los primeros 6 campos no llevan espacios; el valor (7º) sí puede.
+                out.append('\t'.join(parts[:6] + [' '.join(parts[6:])]))
+            else:
+                out.append(line)  # no reparable: yt-dlp la ignora sola
+        return '\n'.join(out) + '\n'
+
     def handle_admin_cookies_save(self):
         """Guarda el contenido de cookies pegado en el panel admin,
         protegido por ADMIN_SECRET (comparación en tiempo constante)."""
@@ -968,6 +997,9 @@ async function save() {
             if not cookies_content.strip():
                 self.send_json_response({'success': False, 'error': 'Contenido de cookies vacío'}, 400)
                 return
+
+            # Reparar tabs perdidos en el copiar/pegar (ver _normalize...).
+            cookies_content = self._normalize_netscape_cookies(cookies_content)
 
             os.makedirs(os.path.dirname(INSTAGRAM_COOKIES_FILE), exist_ok=True)
             with open(INSTAGRAM_COOKIES_FILE, 'w', encoding='utf-8') as f:
