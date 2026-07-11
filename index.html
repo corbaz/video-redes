@@ -25,7 +25,7 @@
     </svg>
     <div class="container">
         <div class="header">
-            <h1>Redes Sociales Downloader - v.47</h1>
+            <h1>Redes Sociales Downloader - v.48</h1>
             <div class="header-icons">
 
                 <!-- Instagram -->
@@ -478,19 +478,22 @@
                     .test(message);
 
                 if (needsLogin) {
+                    // Guardar la URL pendiente para reintentar la descarga
+                    // apenas se actualice la cookie, sin cambiar de pestaña.
+                    const pendingUrl = this.lastAnalyzedUrl || '';
                     Swal.fire({
                         icon: 'warning',
                         title: 'Este video requiere sesión',
                         html: `<p>La red social pide iniciar sesión para acceder a este contenido.</p>
-                               <p style="font-size:0.9em;opacity:0.75">Si sos el administrador, actualizá las cookies para habilitarlo.</p>`,
+                               <p style="font-size:0.9em;opacity:0.75">¿Sos el administrador del sitio?</p>`,
                         background: 'rgba(255, 255, 255, 0.9)',
                         showCancelButton: true,
-                        confirmButtonText: 'Actualizar cookies',
-                        cancelButtonText: 'Cerrar',
+                        confirmButtonText: 'Sí, soy admin',
+                        cancelButtonText: 'No',
                         confirmButtonColor: '#0077B5',
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            window.open('/admin/cookies', '_blank');
+                            this.openLoginModal(pendingUrl);
                         }
                     });
                     return;
@@ -502,6 +505,36 @@
                     text: message,
                     background: 'rgba(255, 255, 255, 0.9)',
                 });
+            }
+
+            openLoginModal(pendingUrl) {
+                // Modal a pantalla completa con el panel /admin/cookies embebido
+                // en un iframe -- todo dentro de la app, sin abrir otra pestaña.
+                const overlay = document.createElement('div');
+                overlay.id = 'loginModalOverlay';
+                overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;display:flex;flex-direction:column;padding:12px;';
+                overlay.innerHTML = `
+                    <div style="display:flex;justify-content:space-between;align-items:center;color:#fff;padding:8px 4px;gap:8px;">
+                        <span style="font-weight:600;">Login de administrador — la cookie se guarda sola al terminar</span>
+                        <div style="display:flex;gap:8px;">
+                            <button id="loginRetryBtn" style="background:#0077B5;color:#fff;border:none;border-radius:6px;padding:8px 14px;cursor:pointer;font-weight:600;">Ya me logueé — reintentar descarga</button>
+                            <button id="loginCloseBtn" style="background:#444;color:#fff;border:none;border-radius:6px;padding:8px 14px;cursor:pointer;">Cerrar</button>
+                        </div>
+                    </div>
+                    <iframe src="/admin/cookies" style="flex:1;width:100%;border:none;border-radius:8px;background:#111;"></iframe>
+                `;
+                document.body.appendChild(overlay);
+
+                const close = () => overlay.remove();
+                document.getElementById('loginCloseBtn').onclick = close;
+                document.getElementById('loginRetryBtn').onclick = () => {
+                    close();
+                    if (pendingUrl) {
+                        this.urlInput.value = pendingUrl;
+                        this.toggleClearButton();
+                        this.analyzeVideo();
+                    }
+                };
             }
 
             showInstagramError(response) {

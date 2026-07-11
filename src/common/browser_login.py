@@ -68,13 +68,18 @@ LOGIN_FIELD_SELECTORS = {
     },
 }
 
-# Cookie que solo existe una vez el login fue exitoso -- señal confiable,
+# Cookies que solo existen una vez el login fue exitoso -- señal confiable,
 # a diferencia de intentar parsear el DOM de una pantalla de login que
-# cambia seguido.
+# cambia seguido. Requerimos TODAS las de la lista para no capturar un set
+# incompleto (yt-dlp necesita el juego completo para autenticar la descarga).
 AUTH_COOKIE_NAMES = {
-    'instagram': 'sessionid',
-    'facebook': 'c_user',
+    'instagram': ['sessionid', 'ds_user_id'],
+    'facebook': ['c_user', 'xs'],
 }
+
+# Tras detectar las cookies de auth, esperar a que Instagram/Facebook terminen
+# de asentar todo el juego (evita capturar a mitad de la navegación).
+_COOKIE_SETTLE_SECONDS = 2.5
 
 # Evasiones básicas de fingerprinting (no garantizan evitar detección de
 # Meta, en especial por reputación de IP de datacenter -- ver README).
@@ -108,6 +113,7 @@ class LoginSession:
         self.cookies = None
         self.created_at = time.time()
         self.last_activity = time.time()
+        self._auth_first_seen = None
 
         self._profile_dir = tempfile.mkdtemp(prefix='pw_login_')
         self._cmd_queue = queue.Queue()
@@ -261,8 +267,19 @@ class LoginSession:
             page.mouse.wheel(0, event.get('deltaY', 0))
 
     def _check_login_cookie(self, context):
-        auth_cookie_name = AUTH_COOKIE_NAMES[self.platform]
-        cookies = context.cookies()
-        if any(c['name'] == auth_cookie_name for c in cookies):
-            self.cookies = cookies
-            self.status = 'success'
+        required = AUTH_COOKIE_NAMES[self.platform]
+        names = {c['name'] for c in context.cookies()}
+        if not all(n in names for n in required):
+            # Todavía no está el juego completo de cookies de auth.
+            self._auth_first_seen = None
+            return
+        now = time.time()
+        if self._auth_first_seen is None:
+            # Primera vez que vemos el set completo: esperar a que se asiente.
+            self._auth_first_seen = now
+            return
+        if now - self._auth_first_seen < _COOKIE_SETTLE_SECONDS:
+            return
+        # Ya asentado: capturar el juego completo y marcar éxito.
+        self.cookies = context.cookies()
+        self.status = 'success'
