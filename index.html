@@ -25,7 +25,7 @@
     </svg>
     <div class="container">
         <div class="header">
-            <h1>Redes Sociales Downloader - v.61</h1>
+            <h1>Redes Sociales Downloader - v.62</h1>
             <div class="header-icons">
 
                 <!-- Instagram -->
@@ -303,67 +303,65 @@
         // original ya venció, mostramos un botón "Compartir ahora" y llamamos a
         // share() dentro de SU click (gesto fresco). Al terminar borra el temporal.
         async function shareTaskFile(taskId, filename, swalInstance) {
+            let blob, file;
             try {
                 const res = await fetch(`/api/download_file?id=${taskId}`);
                 if (!res.ok) throw new Error('No se pudo obtener el archivo');
-                const blob = await res.blob();
-                const file = new File([blob], filename, { type: blob.type || 'video/mp4' });
-                swalInstance.close();
-
-                const canShare = navigator.canShare && navigator.canShare({ files: [file] });
-                if (canShare) {
-                    await promptShareNow(file, filename);
-                } else {
-                    // El dispositivo no permite compartir archivos: descarga normal.
-                    const a = document.createElement('a');
-                    a.href = URL.createObjectURL(blob);
-                    a.download = filename;
-                    document.body.appendChild(a);
-                    a.click();
-                    a.remove();
-                    Swal.fire({
-                        icon: 'info',
-                        title: 'Compartir no disponible acá',
-                        text: 'Tu navegador no permite compartir archivos, así que se descargó. Desde el celular sí vas a poder compartir.',
-                        background: '#1a1a1a', color: '#fff'
-                    });
-                }
+                blob = await res.blob();
+                file = new File([blob], filename, { type: blob.type || 'video/mp4' });
             } catch (e) {
-                if (e && e.name !== 'AbortError') {
-                    Swal.fire({ icon: 'error', title: 'Error al compartir', text: e.message,
-                                background: '#1a1a1a', color: '#fff' });
-                }
-            } finally {
-                // Borrar el temporal del servidor pase lo que pase.
+                swalInstance.close();
+                Swal.fire({ icon: 'error', title: 'Error al preparar', text: e.message,
+                            background: '#1a1a1a', color: '#fff' });
                 fetch(`/api/download_delete?id=${taskId}`).catch(() => {});
+                return;
+            }
+            // Ya tenemos el archivo en memoria del navegador: borramos el
+            // temporal del servidor (compartir usa el blob, no el temporal).
+            fetch(`/api/download_delete?id=${taskId}`).catch(() => {});
+            swalInstance.close();
+
+            if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                showShareOverlay(file, filename);
+            } else {
+                // El dispositivo no permite compartir archivos: descarga normal.
+                const a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Compartir no disponible acá',
+                    text: 'Tu navegador no permite compartir archivos, así que se descargó. Desde el celular sí vas a poder compartir.',
+                    background: '#1a1a1a', color: '#fff'
+                });
             }
         }
 
-        // Muestra un botón "Compartir ahora" y llama a navigator.share() DENTRO
-        // de su click (gesto de usuario fresco, requisito de la Web Share API).
-        function promptShareNow(file, filename) {
-            return new Promise((resolve) => {
-                const overlay = document.createElement('div');
-                overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;color:#fff;padding:24px;text-align:center;';
-                overlay.innerHTML = `
-                    <div style="font-size:1.15rem;font-weight:700;">Video listo ✅</div>
-                    <div style="opacity:.8;">Tocá para abrir tus apps de compartir</div>
-                    <button id="doShareBtn" style="background:#0077B5;color:#fff;border:none;border-radius:12px;padding:16px 30px;font-size:1.1rem;font-weight:700;cursor:pointer;">📤 Compartir ahora</button>
-                    <button id="cancelShareBtn" style="background:#444;color:#fff;border:none;border-radius:8px;padding:10px 22px;cursor:pointer;">Cancelar</button>
-                `;
-                document.body.appendChild(overlay);
-                const cleanup = () => { overlay.remove(); resolve(); };
-                document.getElementById('doShareBtn').onclick = async () => {
-                    try {
-                        await navigator.share({ files: [file], title: filename });
-                    } catch (e) {
-                        // AbortError = el usuario cerró el menú de compartir.
-                    } finally {
-                        cleanup();
-                    }
-                };
-                document.getElementById('cancelShareBtn').onclick = cleanup;
-            });
+        // Modal PERSISTENTE: se queda abierto para compartir el mismo video a
+        // varias apps/redes (WhatsApp, Telegram, etc.) sin volver a preparar.
+        // navigator.share() se llama dentro del click (gesto de usuario fresco).
+        function showShareOverlay(file, filename) {
+            const overlay = document.createElement('div');
+            overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;color:#fff;padding:24px;text-align:center;';
+            overlay.innerHTML = `
+                <div style="font-size:1.15rem;font-weight:700;">Video listo ✅</div>
+                <div style="opacity:.8;max-width:320px;">Compartilo en las apps que quieras. El menú vuelve acá para mandarlo a otra.</div>
+                <button id="doShareBtn" style="background:#0077B5;color:#fff;border:none;border-radius:12px;padding:16px 30px;font-size:1.1rem;font-weight:700;cursor:pointer;">📤 Compartir</button>
+                <button id="closeShareBtn" style="background:#444;color:#fff;border:none;border-radius:8px;padding:10px 22px;cursor:pointer;">Listo</button>
+            `;
+            document.body.appendChild(overlay);
+            document.getElementById('doShareBtn').onclick = async () => {
+                try {
+                    await navigator.share({ files: [file], title: filename });
+                } catch (e) {
+                    // AbortError = cerró el menú sin elegir; no hacemos nada.
+                }
+                // NO cerramos el overlay: queda para compartir a otra app.
+            };
+            document.getElementById('closeShareBtn').onclick = () => overlay.remove();
         }
 
         function generateVideoPlaceholder() {
