@@ -48,6 +48,7 @@ from facebook.facebook_extractor import FacebookExtractor
 from youtube.youtube_extractor import YouTubeExtractor
 from twitch.twitch_extractor import TwitchExtractor
 from pinterest.pinterest_extractor import PinterestExtractor
+from threads.threads_extractor import ThreadsExtractor
 
 # Fix Windows Unicode Output
 if sys.platform == 'win32':
@@ -837,7 +838,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 return
 
             # Validar URL según plataforma
-            if any(domain in url for domain in ['instagram.com', 'cdninstagram.com', 'linkedin.com', 'x.com', 'twitter.com', 'tiktok.com', 'facebook.com', 'fb.watch', 'youtube.com', 'youtu.be', 'm.youtube.com', 'twitch.tv', 'twitch.com', 'pinterest.com', 'pin.it']):
+            if any(domain in url for domain in ['threads.com', 'threads.net', 'instagram.com', 'cdninstagram.com', 'linkedin.com', 'x.com', 'twitter.com', 'tiktok.com', 'facebook.com', 'fb.watch', 'youtube.com', 'youtu.be', 'm.youtube.com', 'twitch.tv', 'twitch.com', 'pinterest.com', 'pin.it']):
                 self.send_json_response({
                     'success': True,
                     'url': url,
@@ -877,12 +878,13 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             # Determinar plataforma y extraer
             result = self.extract_video_info(url)
 
-            # Si falló por exigir login y hay un backend residencial vigente
-            # (la PC de casa), reenviamos el pedido allá y usamos su resultado.
-            # El header X-No-Forward evita que la casa reenvíe de vuelta (loop).
+            # Si falló por exigir login (o es Threads, que necesita el navegador
+            # de casa) y hay un backend residencial vigente, reenviamos el pedido
+            # allá. El header X-No-Forward evita que la casa reenvíe de vuelta.
             if (not result.get('success')
                     and self.headers.get('X-No-Forward') != '1'
-                    and self._looks_login_gated(result.get('error', ''))):
+                    and (result.get('needs_remote')
+                         or self._looks_login_gated(result.get('error', '')))):
                 forwarded = self._forward_to_remote(url)
                 if forwarded is not None:
                     result = forwarded
@@ -1096,7 +1098,10 @@ async function save() {
         """Extrae información del video según la plataforma"""
         try:
             # Detectar plataforma e inicializar extractor
-            if 'instagram.com' in url or 'cdninstagram.com' in url:
+            if 'threads.com' in url or 'threads.net' in url:
+                extractor = ThreadsExtractor()
+                platform = 'threads'
+            elif 'instagram.com' in url or 'cdninstagram.com' in url:
                 extractor = InstagramExtractor()
                 platform = 'instagram'
             elif 'twitch.tv' in url or 'twitch.com' in url:

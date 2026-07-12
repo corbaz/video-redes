@@ -25,7 +25,7 @@
     </svg>
     <div class="container">
         <div class="header">
-            <h1>Redes Sociales Downloader - v.55</h1>
+            <h1>Redes Sociales Downloader - v.56</h1>
             <div class="header-icons">
 
                 <!-- Instagram -->
@@ -92,6 +92,14 @@
                             d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.399.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.173 0 7.41 2.967 7.41 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.62 0 12.017 0z" />
                     </svg>
                 </a>
+
+                <!-- Threads -->
+                <a href="https://www.threads.com/" target="_blank" class="icon-item" data-label="Threads">
+                    <svg viewBox="0 0 24 24" class="social-icon-svg" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.512-.58-1.305-.875-2.359-.882h-.032c-.846 0-1.995.234-2.727 1.325L7.752 7.708c.981-1.457 2.545-2.234 4.32-2.234h.045c2.976.024 4.729 1.844 4.9 5.011.098.042.196.086.294.132 1.383.65 2.395 1.634 2.933 2.842.749 1.688.822 4.443-1.415 6.63-1.699 1.66-3.755 2.371-6.673 2.401z" />
+                    </svg>
+                </a>
             </div>
             <p>Descarga videos MP4 de las Redes Sociales</p>
         </div>
@@ -118,15 +126,16 @@
     </div>
 
     <!-- Scripts -->
-    <script src="src/common/card.js?v=20260702_1"></script>
-    <script src="src/instagram/insta.js?v=20260702_1"></script>
-    <script src="src/linkedin/linkedin.js?v=20260702_1"></script>
-    <script src="src/x/x.js?v=20260702_1"></script>
-    <script src="src/tiktok/tiktok.js?v=20260702_1"></script>
-    <script src="src/facebook/facebook.js?v=20260702_1"></script>
-    <script src="src/youtube/youtube.js?v=20260702_1"></script>
-    <script src="src/twitch/twitch.js?v=20260702_1"></script>
-    <script src="src/pinterest/pinterest.js?v=20260702_1"></script>
+    <script src="src/common/card.js?v=20260712_1"></script>
+    <script src="src/instagram/insta.js?v=20260712_1"></script>
+    <script src="src/linkedin/linkedin.js?v=20260712_1"></script>
+    <script src="src/x/x.js?v=20260712_1"></script>
+    <script src="src/tiktok/tiktok.js?v=20260712_1"></script>
+    <script src="src/facebook/facebook.js?v=20260712_1"></script>
+    <script src="src/youtube/youtube.js?v=20260712_1"></script>
+    <script src="src/twitch/twitch.js?v=20260712_1"></script>
+    <script src="src/pinterest/pinterest.js?v=20260712_1"></script>
+    <script src="src/threads/threads.js?v=20260712_1"></script>
 
     <script>
         // Global helpers for Download Button Logic
@@ -446,7 +455,8 @@
                     let platformName = 'Video';
                     let platformClass = 'youtube'; // default
 
-                    if (urlToCheck.includes('instagram')) { platformName = 'Instagram'; platformClass = 'instagram'; }
+                    if (urlToCheck.includes('threads')) { platformName = 'Threads'; platformClass = 'threads'; }
+                    else if (urlToCheck.includes('instagram')) { platformName = 'Instagram'; platformClass = 'instagram'; }
                     else if (urlToCheck.includes('tiktok')) { platformName = 'TikTok'; platformClass = 'tiktok'; }
                     else if (urlToCheck.includes('facebook') || urlToCheck.includes('fb.watch')) { platformName = 'Facebook'; platformClass = 'facebook'; }
                     else if (urlToCheck.includes('linkedin')) { platformName = 'LinkedIn'; platformClass = 'linkedin'; }
@@ -545,7 +555,10 @@
                 const container = document.getElementById('videoPlayerContainer');
                 const url = this.urlInput.value;
 
-                if (url.includes('youtube') || url.includes('youtu.be')) {
+                if (url.includes('threads')) {
+                    const videoData = data.data || data;
+                    showThreadsVideo(videoData, container);
+                } else if (url.includes('youtube') || url.includes('youtu.be')) {
                     showYouTubeVideo(data, container);
                 } else if (url.includes('instagram')) {
                     showInstagramVideo(data, container);
