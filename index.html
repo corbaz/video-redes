@@ -25,7 +25,7 @@
     </svg>
     <div class="container">
         <div class="header">
-            <h1>Redes Sociales Downloader - v.59</h1>
+            <h1>Redes Sociales Downloader - v.60</h1>
             <div class="header-icons">
 
                 <!-- Instagram -->
@@ -121,6 +121,7 @@
                 <button id="pasteBtn" class="btn"><span class="btn-icon">📎</span> Pegar</button>
                 <button id="analyzeBtn" class="btn"><span class="btn-icon">🔍</span> Buscar</button>
                 <button id="mainDownloadBtn" class="btn"><span class="btn-icon">⬇️</span> Descargar</button>
+                <button id="mainShareBtn" class="btn"><span class="btn-icon">📤</span> Compartir</button>
             </div>
         </div>
     </div>
@@ -155,6 +156,15 @@
                 btn.target = ""; // No target blank needed for async flow
                 console.log("✅ Botón de descarga habilitado globalmente (Modo Smart)");
             }
+            // También habilitar el botón Compartir con la misma URL/nombre.
+            const sbtn = document.getElementById('mainShareBtn');
+            if (sbtn) {
+                sbtn.classList.add('active');
+                sbtn.onclick = function (e) {
+                    e.preventDefault();
+                    startSmartDownload(url, filename, 'share');
+                };
+            }
         };
 
         window.disableGlobalDownload = function () {
@@ -165,14 +175,19 @@
                 btn.target = "";
                 btn.onclick = null;
             }
+            const sbtn = document.getElementById('mainShareBtn');
+            if (sbtn) {
+                sbtn.classList.remove('active');
+                sbtn.onclick = null;
+            }
         };
 
-        async function startSmartDownload(url, filename) {
+        async function startSmartDownload(url, filename, mode = 'download') {
             let pollInterval = null;
             try {
                 // 1. Show Progress Modal
                 const swalInstance = Swal.fire({
-                    title: 'Procesando descarga',
+                    title: mode === 'share' ? 'Preparando para compartir' : 'Procesando descarga',
                     html: `
                         <div class="swal-progress-container">
                             <div class="swal-progress-track">
@@ -250,12 +265,13 @@
                             clearInterval(pollInterval);
                             if (progressBar) progressBar.style.width = '100%';
 
-                            // Download triggers via redirect
-                            window.location.href = `/api/download_file?id=${taskId}`;
-
-                            setTimeout(() => {
-                                swalInstance.close();
-                            }, 1000);
+                            if (mode === 'share') {
+                                await shareTaskFile(taskId, filename, swalInstance);
+                            } else {
+                                // Descargar: el navegador guarda en el dispositivo
+                                window.location.href = `/api/download_file?id=${taskId}`;
+                                setTimeout(() => swalInstance.close(), 1000);
+                            }
                         }
                     } catch (err) {
                         clearInterval(pollInterval);
@@ -278,6 +294,47 @@
                     background: '#1a1a1a',
                     color: '#fff'
                 });
+            }
+        }
+
+        // Comparte el archivo ya bajado a temporal usando el menú nativo del
+        // dispositivo (apps del celular o de la PC). Al terminar borra el
+        // temporal del servidor para no acumular descargas.
+        async function shareTaskFile(taskId, filename, swalInstance) {
+            try {
+                const res = await fetch(`/api/download_file?id=${taskId}`);
+                if (!res.ok) throw new Error('No se pudo obtener el archivo');
+                const blob = await res.blob();
+                const file = new File([blob], filename, { type: blob.type || 'video/mp4' });
+
+                if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                    swalInstance.close();
+                    await navigator.share({ files: [file], title: filename });
+                } else {
+                    // El dispositivo no permite compartir archivos: descarga normal.
+                    swalInstance.close();
+                    const a = document.createElement('a');
+                    a.href = URL.createObjectURL(blob);
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'Compartir no disponible acá',
+                        text: 'Tu navegador no permite compartir archivos, así que se descargó. Desde el celular sí vas a poder compartir.',
+                        background: '#1a1a1a', color: '#fff'
+                    });
+                }
+            } catch (e) {
+                // AbortError = el usuario cerró el menú de compartir (no es error).
+                if (e && e.name !== 'AbortError') {
+                    Swal.fire({ icon: 'error', title: 'Error al compartir', text: e.message,
+                                background: '#1a1a1a', color: '#fff' });
+                }
+            } finally {
+                // Borrar el temporal del servidor pase lo que pase.
+                fetch(`/api/download_delete?id=${taskId}`).catch(() => {});
             }
         }
 

@@ -264,13 +264,28 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 if task_id in download_tasks and download_tasks[task_id]['status'] == 'completed':
                     file_path = download_tasks[task_id]['file_path']
                     filename = download_tasks[task_id]['filename']
-                    
+
                     if os.path.exists(file_path):
                         self.serve_downloaded_file(file_path, filename)
                     else:
                         self.send_error(404, "File not found on server")
                 else:
                     self.send_error(404, "Download not ready")
+
+            # Borra el archivo temporal tras compartir (el navegador ya lo tomó
+            # como blob). Así el temporal no se acumula cuando solo se comparte.
+            elif clean_path == '/api/download_delete':
+                task_id = params.get('id', [''])[0]
+                task = download_tasks.get(task_id)
+                if task:
+                    fp = task.get('file_path')
+                    try:
+                        if fp and os.path.exists(fp):
+                            os.remove(fp)
+                    except Exception as e:
+                        logger.warning(f"No se pudo borrar temporal {task_id}: {e}")
+                    download_tasks.pop(task_id, None)
+                self.send_json_response({'success': True})
 
             # Legacy/Direct download (keep for fallback)
             elif clean_path == '/api/download':
