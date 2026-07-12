@@ -25,7 +25,7 @@
     </svg>
     <div class="container">
         <div class="header">
-            <h1>Redes Sociales Downloader - v.60</h1>
+            <h1>Redes Sociales Downloader - v.61</h1>
             <div class="header-icons">
 
                 <!-- Instagram -->
@@ -298,21 +298,23 @@
         }
 
         // Comparte el archivo ya bajado a temporal usando el menú nativo del
-        // dispositivo (apps del celular o de la PC). Al terminar borra el
-        // temporal del servidor para no acumular descargas.
+        // dispositivo. La Web Share API EXIGE que navigator.share() se llame
+        // dentro de un gesto del usuario; como la descarga es async y el gesto
+        // original ya venció, mostramos un botón "Compartir ahora" y llamamos a
+        // share() dentro de SU click (gesto fresco). Al terminar borra el temporal.
         async function shareTaskFile(taskId, filename, swalInstance) {
             try {
                 const res = await fetch(`/api/download_file?id=${taskId}`);
                 if (!res.ok) throw new Error('No se pudo obtener el archivo');
                 const blob = await res.blob();
                 const file = new File([blob], filename, { type: blob.type || 'video/mp4' });
+                swalInstance.close();
 
-                if (navigator.canShare && navigator.canShare({ files: [file] })) {
-                    swalInstance.close();
-                    await navigator.share({ files: [file], title: filename });
+                const canShare = navigator.canShare && navigator.canShare({ files: [file] });
+                if (canShare) {
+                    await promptShareNow(file, filename);
                 } else {
                     // El dispositivo no permite compartir archivos: descarga normal.
-                    swalInstance.close();
                     const a = document.createElement('a');
                     a.href = URL.createObjectURL(blob);
                     a.download = filename;
@@ -327,7 +329,6 @@
                     });
                 }
             } catch (e) {
-                // AbortError = el usuario cerró el menú de compartir (no es error).
                 if (e && e.name !== 'AbortError') {
                     Swal.fire({ icon: 'error', title: 'Error al compartir', text: e.message,
                                 background: '#1a1a1a', color: '#fff' });
@@ -336,6 +337,33 @@
                 // Borrar el temporal del servidor pase lo que pase.
                 fetch(`/api/download_delete?id=${taskId}`).catch(() => {});
             }
+        }
+
+        // Muestra un botón "Compartir ahora" y llama a navigator.share() DENTRO
+        // de su click (gesto de usuario fresco, requisito de la Web Share API).
+        function promptShareNow(file, filename) {
+            return new Promise((resolve) => {
+                const overlay = document.createElement('div');
+                overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;color:#fff;padding:24px;text-align:center;';
+                overlay.innerHTML = `
+                    <div style="font-size:1.15rem;font-weight:700;">Video listo ✅</div>
+                    <div style="opacity:.8;">Tocá para abrir tus apps de compartir</div>
+                    <button id="doShareBtn" style="background:#0077B5;color:#fff;border:none;border-radius:12px;padding:16px 30px;font-size:1.1rem;font-weight:700;cursor:pointer;">📤 Compartir ahora</button>
+                    <button id="cancelShareBtn" style="background:#444;color:#fff;border:none;border-radius:8px;padding:10px 22px;cursor:pointer;">Cancelar</button>
+                `;
+                document.body.appendChild(overlay);
+                const cleanup = () => { overlay.remove(); resolve(); };
+                document.getElementById('doShareBtn').onclick = async () => {
+                    try {
+                        await navigator.share({ files: [file], title: filename });
+                    } catch (e) {
+                        // AbortError = el usuario cerró el menú de compartir.
+                    } finally {
+                        cleanup();
+                    }
+                };
+                document.getElementById('cancelShareBtn').onclick = cleanup;
+            });
         }
 
         function generateVideoPlaceholder() {
