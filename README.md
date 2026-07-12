@@ -10,6 +10,37 @@
 ✅ **YouTube** - Videos y Shorts (Calidad Optimizada hasta 1080p + Audio)  
 ✅ **Pinterest** - Videos e Imágenes (Pin original)  
 ✅ **Twitch** - Clips y VODs  
+✅ **Threads** - Videos de posts (vía navegador headless en el backend residencial)  
+
+---
+
+## 🏗️ Arquitectura híbrida (Railway + backend residencial)
+
+Es **un solo código** (este repo). GitHub lo guarda; corre en dos lugares a la vez:
+
+```
+        Usuarios (celular / web)
+                │
+                ▼
+   Railway (nube, URL pública fija)  ── contenido público → lo baja directo
+                │
+                │ contenido con login (Instagram/Facebook) o Threads
+                ▼
+   Tu PC (backend residencial, vía Cloudflare Tunnel)
+     IP de casa + cookie de Meta + navegador (Playwright)
+```
+
+**Por qué:** Meta (Instagram/Facebook/Threads) bloquea las IPs de datacenter como la de Railway (HTTP 400 aunque la cookie sea válida). El pedido tiene que salir de una **IP residencial**. Entonces:
+
+- **Railway** es la única URL pública, siempre online. Sirve todo el contenido público (YouTube, TikTok, X, Pinterest, Twitch, LinkedIn, reels públicos).
+- Cuando un contenido exige login **o es de Threads**, Railway **reenvía el pedido a tu PC** (registrada vía Cloudflare Tunnel). Tu PC lo resuelve con IP residencial + cookie y devuelve el resultado. Transparente para el usuario.
+- Si tu PC está apagada: lo público sigue andando; lo de login/Threads no, hasta que la prendas.
+
+Componentes:
+- `src/server.py` — endpoint `/api/admin/set-fallback` (tu PC registra su URL, protegido por `ADMIN_SECRET`) y reenvío automático en `handle_extract` cuando el resultado trae `needs_remote` o es login-gated.
+- `home_tunnel.py` — corre en tu PC: abre el túnel Cloudflare, captura la URL pública y la registra en Railway (re-registra cada 2 min y cuando la URL cambia).
+- `tunnel.bat` — un clic: levanta la app local + `home_tunnel.py`.
+- Playwright NO está en `requirements.txt` (Railway no lo instala); tu venv local sí lo tiene → por eso Threads corre solo en tu PC.
 
 ---
 
@@ -40,6 +71,7 @@ c:\www\video-redes\
 │   ├── common/                   # Recursos compartidos
 │   │   ├── card.js               # Tarjeta de video + buildFilename()
 │   │   ├── ytdlp_cmd.py          # Resolución del ejecutable yt-dlp (venv/PATH/módulo)
+│   │   ├── cookies_util.py       # Combina todos los .txt de cookies/ en uno
 │   │   └── style.css             # Estilos globales
 │   ├── youtube/                  # Módulo YouTube
 │   │   ├── youtube_extractor.py  # Extracción de videos/shorts
@@ -62,15 +94,20 @@ c:\www\video-redes\
 │   ├── pinterest/                # Módulo Pinterest
 │   │   ├── pinterest_extractor.py
 │   │   └── pinterest.js
-│   └── twitch/                   # Módulo Twitch
-│       ├── twitch_extractor.py
-│       └── twitch.js
-├── cookies/                      # (no versionado) instagram.txt para contenido con login
+│   ├── twitch/                   # Módulo Twitch
+│   │   ├── twitch_extractor.py
+│   │   └── twitch.js
+│   └── threads/                  # Módulo Threads (navegador headless)
+│       ├── threads_extractor.py  # Playwright + intercepción de GraphQL
+│       └── threads.js
+├── cookies/                      # (no versionado) *.txt de la extensión; se combinan solos
+├── home_tunnel.py                # Backend residencial: túnel Cloudflare + registro en Railway
+├── tunnel.bat                    # Un clic: app local + túnel (para usar tu PC de backend)
 ├── index.html                    # Frontend principal
 ├── p.ps1                         # Script de inicio rápido (PowerShell)
 ├── p.bat                         # Script de inicio rápido (CMD, activa .venv)
 ├── Procfile                      # Configuración para despliegue
-├── requirements.txt              # Dependencias del proyecto
+├── requirements.txt              # Dependencias (Playwright NO está: queda fuera de Railway)
 ├── runtime.txt                   # Versión de Python
 └── README.md                     # Esta documentación
 ```
@@ -244,23 +281,38 @@ pip install -r requirements.txt
 
 ### 3. Ejecutar el Servidor
 
-**Opción A: Script Automático (Recomendado)**
+**Opción A: Solo local (sin backend residencial)**
 ```powershell
 .\p.ps1
 ```
 
-**Opción B: Manual**
+**Opción B: Como backend residencial de Railway (recomendado)**
 ```powershell
-python src/server.py
+.\tunnel.bat
 ```
+Esto levanta la app local **y** abre el túnel Cloudflare que la registra en
+Railway. Con esto andando en tu PC, el contenido con login (Instagram/Facebook)
+y Threads funciona desde la URL pública de Railway (celular incluido).
+Requiere `cloudflared` instalado (`winget install Cloudflare.cloudflared`) y la
+variable `ADMIN_SECRET` (la misma clave del panel admin de Railway).
 
 ### 4. Usar la Aplicación
 
-1. Abre tu navegador en `http://localhost:8000`
+1. Abre tu navegador en `http://localhost:8000` (o la URL de Railway)
 2. Pega el enlace de la red social
 3. El sistema detectará automáticamente la plataforma
-4. Haz clic en **"Buscar Video"** para ver la vista previa
-5. Haz clic en **"Descargar Video"**
+4. Haz clic en **"Buscar"** para ver la vista previa
+5. Haz clic en la tarjeta para descargar
+
+### Cookies (para contenido con login)
+
+- Exportá tus cookies con la extensión **"Get cookies.txt LOCALLY"** desde tu
+  Chrome logueado en Instagram/Facebook/Threads.
+- Soltá los archivos tal cual (`www.instagram.com_cookies.txt`,
+  `www.facebook.com_cookies.txt`, `www.threads.com_cookies.txt`) en la carpeta
+  `cookies/`. La app **combina todos los `.txt`** en uno solo automáticamente
+  (`src/common/cookies_util.py`); ante duplicados gana el archivo más nuevo.
+- La carpeta `cookies/` está en `.gitignore` — nunca se sube a GitHub.
 
 ---
 
@@ -346,6 +398,12 @@ Cadena de extracción:
 ### Twitch Extractor
 - Clips y VODs via yt-dlp
 
+### Threads Extractor
+- yt-dlp NO soporta Threads y el video no está en el HTML (lo carga por GraphQL autenticado).
+- Se abre el post en un **Chromium headless** (Playwright) con la cookie de Meta y se **intercepta la respuesta de red** buscando `browser_native_hd_url` / `browser_native_sd_url` / `video_versions` (la URL `.mp4` del CDN).
+- Playwright se importa perezosamente: en Railway (sin Playwright) devuelve `needs_remote=True` y el servidor reenvía al backend residencial (tu PC), que sí lo tiene. Por eso Threads **siempre corre en tu PC**.
+- Es la red más lenta (~10-15 s por video: abrir navegador + cargar + capturar).
+
 ---
 
 ## 🆘 Solución de Problemas Comunes
@@ -403,7 +461,18 @@ Esta herramienta ha sido creada con fines educativos y de uso personal.
 
 ---
 
+## 📋 Novedades v.58 (Julio 2026)
+
+- **Arquitectura híbrida (Railway + backend residencial):** Railway reenvía el contenido con login (Instagram/Facebook) y Threads a tu PC vía Cloudflare Tunnel, porque Meta bloquea las IPs de datacenter (HTTP 400 aun con cookie válida). Tu PC lo resuelve con IP residencial. Una sola URL pública para todos. Ver sección "Arquitectura híbrida".
+- **Threads:** soporte nuevo vía navegador headless (Playwright) que intercepta el GraphQL de Meta. Corre solo en tu PC (Playwright no está en Railway). Logo agregado.
+- **Cookies multi-archivo:** la app combina TODOS los `.txt` de `cookies/` (soporta los per-dominio de la extensión: `www.instagram.com_cookies.txt`, etc.). Ante duplicados gana el más nuevo.
+- **Reparación de cookies pegadas:** `/admin/cookies` arregla tabs→espacios (causa de "empty media response" falsos).
+- **`home_tunnel.py` + `tunnel.bat`:** un clic levanta la app + túnel y la registra en Railway (re-registra cuando la URL del quick tunnel cambia).
+- **Playwright eliminado de Railway:** el login-en-vivo automatizado se descartó (Instagram/Facebook lo bloquean con reCAPTCHA); la carga de cookies es por pegado/archivo.
+
+---
+
 *Documentación actualizada: Julio 2026*  
 📧 Contacto: [julio.corbaz@gmail.com](mailto:julio.corbaz@gmail.com)
 🌐 **Página Web Oficial**: [https://redes-download.up.railway.app/](https://redes-download.up.railway.app/)
-*Versión del proyecto: 38*
+*Versión del proyecto: 58*
