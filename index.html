@@ -11,7 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@500;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="src/common/style.css">
+    <link rel="stylesheet" href="src/common/style.css?v=20260712_2">
 </head>
 
 <body>
@@ -25,7 +25,7 @@
     </svg>
     <div class="container">
         <div class="header">
-            <h1>Redes Sociales Downloader - v.62</h1>
+            <h1>Redes Sociales Downloader - v.63</h1>
             <div class="header-icons">
 
                 <!-- Instagram -->
@@ -118,10 +118,22 @@
             </div>
 
             <div class="buttons-container">
-                <button id="pasteBtn" class="btn"><span class="btn-icon">📎</span> Pegar</button>
-                <button id="analyzeBtn" class="btn"><span class="btn-icon">🔍</span> Buscar</button>
-                <button id="mainDownloadBtn" class="btn"><span class="btn-icon">⬇️</span> Descargar</button>
-                <button id="mainShareBtn" class="btn"><span class="btn-icon">📤</span> Compartir</button>
+                <button id="pasteBtn" class="btn">
+                    <svg class="btn-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>
+                    <span class="btn-label">Pegar</span>
+                </button>
+                <button id="analyzeBtn" class="btn">
+                    <svg class="btn-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span class="btn-label">Buscar</span>
+                </button>
+                <button id="mainDownloadBtn" class="btn">
+                    <svg class="btn-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span class="btn-label">Descargar</span>
+                </button>
+                <button id="mainShareBtn" class="btn">
+                    <svg class="btn-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                    <span class="btn-label">Compartir</span>
+                </button>
             </div>
         </div>
     </div>
@@ -345,12 +357,20 @@
         // navigator.share() se llama dentro del click (gesto de usuario fresco).
         function showShareOverlay(file, filename) {
             const overlay = document.createElement('div');
-            overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;color:#fff;padding:24px;text-align:center;';
+            overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.72);backdrop-filter:blur(6px);z-index:10000;display:flex;align-items:center;justify-content:center;padding:24px;';
             overlay.innerHTML = `
-                <div style="font-size:1.15rem;font-weight:700;">Video listo ✅</div>
-                <div style="opacity:.8;max-width:320px;">Compartilo en las apps que quieras. El menú vuelve acá para mandarlo a otra.</div>
-                <button id="doShareBtn" style="background:#0077B5;color:#fff;border:none;border-radius:12px;padding:16px 30px;font-size:1.1rem;font-weight:700;cursor:pointer;">📤 Compartir</button>
-                <button id="closeShareBtn" style="background:#444;color:#fff;border:none;border-radius:8px;padding:10px 22px;cursor:pointer;">Listo</button>
+                <div style="background:#16181c;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:28px 24px;max-width:340px;width:100%;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,0.6);">
+                    <div style="width:56px;height:56px;margin:0 auto 14px;border-radius:50%;background:rgba(0,223,154,0.12);display:flex;align-items:center;justify-content:center;">
+                        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#00df9a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                    </div>
+                    <div style="font-size:1.15rem;font-weight:700;color:#fff;">Video listo</div>
+                    <div style="opacity:.65;color:#fff;font-size:0.9rem;margin:6px 0 20px;">Compartilo en las apps que quieras. El menú vuelve acá para mandarlo a otra.</div>
+                    <button id="doShareBtn" style="width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(145deg,#2b8fff,#1c6fe0);color:#fff;border:none;border-radius:12px;padding:15px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(43,143,255,0.3);">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        Compartir
+                    </button>
+                    <button id="closeShareBtn" style="width:100%;background:transparent;color:#aaa;border:none;border-radius:10px;padding:12px;margin-top:8px;cursor:pointer;font-weight:600;">Listo</button>
+                </div>
             `;
             document.body.appendChild(overlay);
             document.getElementById('doShareBtn').onclick = async () => {

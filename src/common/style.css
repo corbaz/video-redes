@@ -124,11 +124,18 @@ body {
 
 .buttons-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
     margin-top: 15px;
     width: 100%;
     align-items: stretch;
+}
+
+.btn-svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    stroke-width: 2;
 }
 
 .btn {
@@ -180,6 +187,41 @@ body {
     background: var(--primary-hover);
     box-shadow: 0 0 30px rgba(110, 68, 255, 0.4);
     transform: translateY(-2px);
+}
+
+/* Descargar = verde (acción de guardar) */
+#mainDownloadBtn.active {
+    background: linear-gradient(145deg, #00c37a, #00a768);
+    border-color: #00df9a;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(0, 223, 154, 0.28);
+}
+
+#mainDownloadBtn.active:hover {
+    background: linear-gradient(145deg, #00d488, #00b874);
+    box-shadow: 0 0 26px rgba(0, 223, 154, 0.45);
+    transform: translateY(-2px);
+}
+
+/* Compartir = azul */
+#mainShareBtn.active {
+    background: linear-gradient(145deg, #2b8fff, #1c6fe0);
+    border-color: #4aa3ff;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(43, 143, 255, 0.28);
+}
+
+#mainShareBtn.active:hover {
+    background: linear-gradient(145deg, #3d9bff, #2b80ec);
+    box-shadow: 0 0 26px rgba(43, 143, 255, 0.45);
+    transform: translateY(-2px);
+}
+
+/* Botones de acción aún sin video activo: apagados */
+#mainDownloadBtn:not(.active),
+#mainShareBtn:not(.active) {
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .btn:hover {
@@ -612,17 +654,27 @@ body {
 
     .buttons-container {
         display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important;
+        grid-template-columns: repeat(4, 1fr) !important;
         gap: 8px;
         margin-top: 5px;
         width: 100% !important;
     }
 
+    /* En mobile, botones solo con ícono (el texto no entra en 4 columnas) */
+    .btn-label {
+        display: none;
+    }
+
+    .btn-svg {
+        width: 22px;
+        height: 22px;
+    }
+
     .btn {
         padding: 0 2px;
         font-size: 0.75rem;
-        height: 44px;
-        min-height: 44px;
+        height: 46px;
+        min-height: 46px;
         width: 100%;
         white-space: nowrap;
         min-width: 0 !important;
