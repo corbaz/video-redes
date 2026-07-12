@@ -164,56 +164,50 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* --- Botones de acción: paleta viva y alegre --- */
+
+/* Pegar = coral/rosa cálido (siempre activo) */
 #pasteBtn {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(145deg, #f093fb, #f5576c);
+    border-color: rgba(245, 87, 108, 0.5);
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 16px rgba(245, 87, 108, 0.3);
 }
 
 #pasteBtn:hover {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
-    border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-}
-
-#analyzeBtn {
-    background: var(--primary);
-    border-color: var(--primary);
-    color: white;
-    box-shadow: var(--glow-shadow);
-}
-
-#analyzeBtn:hover {
-    background: var(--primary-hover);
-    box-shadow: 0 0 30px rgba(110, 68, 255, 0.4);
+    background: linear-gradient(145deg, #f6a6ff, #ff6b7f);
+    box-shadow: 0 0 26px rgba(245, 87, 108, 0.5);
     transform: translateY(-2px);
 }
 
-/* Descargar = verde (acción de guardar) */
+/* Descargar = verde menta */
 #mainDownloadBtn.active {
-    background: linear-gradient(145deg, #00c37a, #00a768);
-    border-color: #00df9a;
+    background: linear-gradient(145deg, #43e97b, #14c98e);
+    border-color: rgba(67, 233, 123, 0.6);
     color: #fff;
-    box-shadow: 0 4px 16px rgba(0, 223, 154, 0.28);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 16px rgba(20, 201, 142, 0.32);
 }
 
 #mainDownloadBtn.active:hover {
-    background: linear-gradient(145deg, #00d488, #00b874);
-    box-shadow: 0 0 26px rgba(0, 223, 154, 0.45);
+    background: linear-gradient(145deg, #55f58c, #1ad79b);
+    box-shadow: 0 0 26px rgba(20, 201, 142, 0.5);
     transform: translateY(-2px);
 }
 
-/* Compartir = azul */
+/* Compartir = celeste/cyan */
 #mainShareBtn.active {
-    background: linear-gradient(145deg, #2b8fff, #1c6fe0);
-    border-color: #4aa3ff;
+    background: linear-gradient(145deg, #4facfe, #00c6fb);
+    border-color: rgba(79, 172, 254, 0.6);
     color: #fff;
-    box-shadow: 0 4px 16px rgba(43, 143, 255, 0.28);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 198, 251, 0.3);
 }
 
 #mainShareBtn.active:hover {
-    background: linear-gradient(145deg, #3d9bff, #2b80ec);
-    box-shadow: 0 0 26px rgba(43, 143, 255, 0.45);
+    background: linear-gradient(145deg, #62b8ff, #1ad0ff);
+    box-shadow: 0 0 26px rgba(0, 198, 251, 0.5);
     transform: translateY(-2px);
 }
 
@@ -238,23 +232,6 @@ body {
     filter: grayscale(0.5);
     box-shadow: none !important;
     transform: none !important;
-}
-
-#mainDownloadBtn {
-    background: var(--success);
-    border-color: var(--success);
-    color: black;
-    font-weight: 700;
-    opacity: 0.5;
-    pointer-events: none;
-    font-size: 0.9rem;
-    box-shadow: 0 0 20px rgba(0, 223, 154, 0.1);
-}
-
-#mainDownloadBtn.active {
-    opacity: 1;
-    pointer-events: auto;
-    box-shadow: 0 0 30px rgba(0, 223, 154, 0.4);
 }
 
 .input-container {
