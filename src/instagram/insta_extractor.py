@@ -7,6 +7,7 @@ from typing import Dict, Any, Optional
 import requests
 
 from common.ytdlp_cmd import YTDLP_CMD
+from common.cookies_util import combined_cookies_file
 
 # Optional Netscape-format cookies file (export with a browser extension while
 # logged into Instagram). Checked before browser cookies since it works even
@@ -106,10 +107,12 @@ class InstagramExtractor:
             if needs_cookies:
                 print("⚠️ Instagram requiere autenticación. Reintentando con cookies...")
 
-                # 2a. Archivo de cookies exportado (funciona aunque el navegador esté abierto)
-                if os.path.isfile(COOKIES_FILE):
-                    print(f"🍪 Usando archivo de cookies: {COOKIES_FILE}")
-                    result = run_ytdlp(['--cookies', COOKIES_FILE])
+                # 2a. Archivo de cookies exportado. Combina todos los .txt de
+                # la carpeta cookies/ (soporta los per-dominio de la extensión).
+                cookies_path = combined_cookies_file()
+                if cookies_path:
+                    print(f"🍪 Usando archivo de cookies: {cookies_path}")
+                    result = run_ytdlp(['--cookies', cookies_path])
 
             # 3. Fallback anónimo rápido: proxy de embeds (kkinstagram).
             # Va antes que las cookies del navegador porque estas suelen fallar

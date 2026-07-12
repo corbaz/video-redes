@@ -38,7 +38,8 @@ if _cookies_b64 and not os.environ.get('INSTAGRAM_COOKIES_FILE'):
         print(f"⚠️ No se pudo decodificar INSTAGRAM_COOKIES_B64: {_e}")
 
 
-# Importar extractores
+# Importar utilidades y extractores
+from common.cookies_util import combined_cookies_file
 from instagram.insta_extractor import InstagramExtractor
 from linkedin.linkedin_extractor import LinkedInExtractor
 from x.x_extractor import XExtractor
@@ -108,8 +109,9 @@ def download_with_instagram_auth(ydl_opts, url, error):
         raise error
 
     attempts = []
-    if os.path.isfile(INSTAGRAM_COOKIES_FILE):
-        attempts.append(('cookiefile', INSTAGRAM_COOKIES_FILE))
+    _cookies_path = combined_cookies_file()
+    if _cookies_path:
+        attempts.append(('cookiefile', _cookies_path))
     attempts += [
         ('cookiesfrombrowser', ('chrome',)),
         ('cookiesfrombrowser', ('edge',)),
