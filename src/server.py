@@ -74,6 +74,15 @@ class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
 # Global dictionary to store download tasks
 download_tasks = {}
 
+# Backend residencial (tu PC vía túnel): cuando un video exige login y esta
+# instancia no puede (ej. Railway con IP de datacenter), reenvía el pedido a
+# esta URL, que la máquina de casa registra y refresca sola. En memoria: se
+# pierde si el proceso reinicia, y la máquina de casa la vuelve a mandar.
+_remote_fallback = {'url': None, 'updated_at': 0.0}
+# Vigencia de la URL registrada (segundos). Si la casa dejó de latir hace más
+# que esto, dejamos de reenviar (la PC probablemente está apagada).
+REMOTE_FALLBACK_TTL = 600
+
 # Optional Netscape-format cookies file for Instagram authenticated downloads.
 # Works even when the browser is open and locking its cookie database.
 INSTAGRAM_COOKIES_FILE = os.environ.get(
@@ -718,6 +727,8 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 self.handle_extract()
             elif path == 'api/admin/cookies':
                 self.handle_admin_cookies_save()
+            elif path == 'api/admin/set-fallback':
+                self.handle_set_fallback()
             else:
                 logger.warning(f"Endpoint no encontrado: {path}")
                 self.send_error(404)
@@ -864,6 +875,16 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             # Determinar plataforma y extraer
             result = self.extract_video_info(url)
 
+            # Si falló por exigir login y hay un backend residencial vigente
+            # (la PC de casa), reenviamos el pedido allá y usamos su resultado.
+            # El header X-No-Forward evita que la casa reenvíe de vuelta (loop).
+            if (not result.get('success')
+                    and self.headers.get('X-No-Forward') != '1'
+                    and self._looks_login_gated(result.get('error', ''))):
+                forwarded = self._forward_to_remote(url)
+                if forwarded is not None:
+                    result = forwarded
+
             if result['success']:
                 # Log detallado con información de video
                 platform = result.get('platform', 'Desconocida')
@@ -894,6 +915,62 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             logger.error(traceback.format_exc())
             self.send_json_response(
                 {'success': False, 'error': f'Error del servidor: {str(e)}'}, 500)
+
+    @staticmethod
+    def _looks_login_gated(error_msg):
+        """True si el error indica que el contenido exige iniciar sesión."""
+        e = (error_msg or '').lower()
+        return any(s in e for s in (
+            'iniciar sesi', 'requiere login', 'login required',
+            'no se pudieron obtener cookies', 'empty media response',
+            'registered users', 'requiere sesión', 'requiere sesion',
+        ))
+
+    def _forward_to_remote(self, url):
+        """Reenvía la extracción al backend residencial (PC de casa) si hay una
+        URL vigente registrada. Devuelve el JSON de resultado o None."""
+        fb_url = _remote_fallback.get('url')
+        fresh = (time.time() - _remote_fallback.get('updated_at', 0)) < REMOTE_FALLBACK_TTL
+        if not fb_url or not fresh:
+            return None
+        try:
+            logger.info(f"↪️ Reenviando a backend residencial: {fb_url}")
+            r = requests.post(
+                fb_url.rstrip('/') + '/api/extract',
+                json={'url': url},
+                headers={'X-No-Forward': '1'},
+                timeout=90,
+            )
+            return r.json()
+        except Exception as e:
+            logger.warning(f"⚠️ Falló el reenvío al backend residencial: {e}")
+            return None
+
+    def handle_set_fallback(self):
+        """La PC de casa registra/renueva su URL de túnel acá (protegido por
+        ADMIN_SECRET). Railway la usa para reenviar el contenido con login."""
+        try:
+            content_length = int(self.headers['Content-Length'])
+            data = json.loads(self.rfile.read(content_length).decode('utf-8'))
+        except (json.JSONDecodeError, KeyError, ValueError):
+            self.send_json_response({'success': False, 'error': 'JSON inválido'}, 400)
+            return
+
+        secret = data.get('secret', '')
+        if not ADMIN_SECRET or not hmac.compare_digest(secret, ADMIN_SECRET):
+            self.send_json_response({'success': False, 'error': 'Clave incorrecta'}, 403)
+            return
+
+        fb_url = (data.get('url') or '').strip()
+        _is_local = fb_url.startswith(('http://localhost', 'http://127.0.0.1'))
+        if not (fb_url.startswith('https://') or _is_local):
+            self.send_json_response({'success': False, 'error': 'URL inválida'}, 400)
+            return
+
+        _remote_fallback['url'] = fb_url
+        _remote_fallback['updated_at'] = time.time()
+        logger.info(f"🏠 Backend residencial registrado: {fb_url}")
+        self.send_json_response({'success': True})
 
     def serve_admin_cookies_page(self):
         """Sirve un formulario simple para actualizar la cookie compartida
