@@ -36,9 +36,11 @@ class ThreadsExtractor:
             from playwright.sync_api import sync_playwright
         except Exception:
             # Sin Playwright (ej. Railway): que el servidor reenvíe a la casa.
+            # El texto NO debe contener frases de "login" para no disparar el
+            # modal de cookies del frontend; el reenvío se activa por needs_remote.
             return {
                 "success": False,
-                "error": "Este contenido requiere iniciar sesión (backend residencial).",
+                "error": "Threads no está disponible ahora mismo. El servidor de descargas está apagado; probá de nuevo en un rato.",
                 "needs_remote": True,
             }
 

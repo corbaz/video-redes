@@ -62,14 +62,22 @@ def register(url):
 
 import threading
 
+CHECK_SECONDS = 30           # cada cuánto verificar que el túnel siga vivo
+_URL_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.tunnel_url')
 _state = {'url': None}
 _state_lock = threading.Lock()
 
 
+def _write_url_file(url):
+    try:
+        with open(_URL_FILE, 'w', encoding='utf-8') as f:
+            f.write(url or '')
+    except Exception:
+        pass
+
+
 def _watch_cloudflared(proc):
-    """Lee la salida de cloudflared de forma continua. Los quick tunnels de
-    Cloudflare se caen y reconectan con OTRA URL: cada vez que aparece una URL
-    nueva, la registramos. (El bug original capturaba solo la primera.)"""
+    """Lee la salida de cloudflared y registra cada URL nueva que aparezca."""
     for line in proc.stdout:
         m = _URL_RE.search(line)
         if m:
@@ -79,7 +87,40 @@ def _watch_cloudflared(proc):
                 _state['url'] = new_url
             if changed:
                 print(f"\nURL pública: {new_url}")
+                _write_url_file(new_url)
                 register(new_url)
+
+
+def _tunnel_alive(url):
+    """Verifica que el túnel responda de verdad (no solo que cloudflared corra)."""
+    if not url:
+        return False
+    try:
+        requests.get(url, timeout=8)
+        return True
+    except Exception:
+        return False
+
+
+def _launch_cloudflared(cloudflared):
+    print(f"Abriendo túnel hacia http://localhost:{LOCAL_PORT} ...")
+    proc = subprocess.Popen(
+        [cloudflared, 'tunnel', '--url', f'http://localhost:{LOCAL_PORT}'],
+        stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding='utf-8',
+    )
+    threading.Thread(target=_watch_cloudflared, args=(proc,), daemon=True).start()
+    return proc
+
+
+def _wait_for_url(proc, seconds=40):
+    for _ in range(seconds * 2):
+        with _state_lock:
+            if _state['url']:
+                return True
+        if proc.poll() is not None:
+            return False
+        time.sleep(0.5)
+    return False
 
 
 def main():
@@ -87,48 +128,57 @@ def main():
     globals()['ADMIN_SECRET'] = secret
 
     cloudflared = _find_cloudflared()
-    print(f"Abriendo túnel hacia http://localhost:{LOCAL_PORT} ...")
-    proc = subprocess.Popen(
-        [cloudflared, 'tunnel', '--url', f'http://localhost:{LOCAL_PORT}'],
-        stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding='utf-8',
-    )
-
-    watcher = threading.Thread(target=_watch_cloudflared, args=(proc,), daemon=True)
-    watcher.start()
-
-    # Esperar la primera URL (hasta ~30s).
-    for _ in range(60):
-        with _state_lock:
-            if _state['url']:
-                break
-        if proc.poll() is not None:
-            print("[X] cloudflared se cerró antes de dar una URL.")
-            sys.exit(1)
-        time.sleep(0.5)
-
-    with _state_lock:
-        if not _state['url']:
-            print("[X] No se capturó la URL del túnel. Revisá cloudflared.")
-            proc.terminate()
-            sys.exit(1)
+    proc = _launch_cloudflared(cloudflared)
+    if not _wait_for_url(proc):
+        print("[X] No se capturó la URL del túnel. Revisá cloudflared.")
+        proc.terminate()
+        sys.exit(1)
 
     print("Listo. Dejá esta ventana abierta. (Ctrl+C para cortar)\n")
 
-    # Heartbeat: re-registrar la URL vigente cada tanto (por si Railway reinicia).
+    fails = 0
     try:
         while True:
+            time.sleep(CHECK_SECONDS)
+            # ¿cloudflared murió? relanzarlo.
             if proc.poll() is not None:
-                print("[!] cloudflared se cerró. Salgo.")
-                break
-            time.sleep(HEARTBEAT_SECONDS)
+                print("[!] cloudflared se cerró; relanzando...")
+                with _state_lock:
+                    _state['url'] = None
+                proc = _launch_cloudflared(cloudflared)
+                _wait_for_url(proc)
+                fails = 0
+                continue
+
             with _state_lock:
-                current = _state['url']
-            if current:
-                register(current)
+                url = _state['url']
+
+            if _tunnel_alive(url):
+                fails = 0
+                register(url)  # renovar en Railway (por si reinició)
+            else:
+                fails += 1
+                print(f"[!] El túnel no responde (intento {fails}/2)")
+                if fails >= 2:
+                    print("[!] Túnel muerto: reinicio cloudflared para una URL nueva...")
+                    try:
+                        proc.terminate()
+                    except Exception:
+                        pass
+                    time.sleep(2)
+                    with _state_lock:
+                        _state['url'] = None
+                    proc = _launch_cloudflared(cloudflared)
+                    _wait_for_url(proc)
+                    fails = 0
     except KeyboardInterrupt:
         print("\nCortando túnel...")
     finally:
-        proc.terminate()
+        try:
+            proc.terminate()
+        except Exception:
+            pass
+        _write_url_file('')
 
 
 if __name__ == '__main__':

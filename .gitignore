@@ -246,3 +246,4 @@ yarn.lock
 # !*.bat             # Scripts de inicio
 # !favicon.ico       # Icono de la aplicación
 cookies/
+.tunnel_url
