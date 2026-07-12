@@ -11,7 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@500;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="src/common/style.css?v=20260712_2">
+    <link rel="stylesheet" href="src/common/style.css?v=20260712_3">
 </head>
 
 <body>
@@ -25,7 +25,7 @@
     </svg>
     <div class="container">
         <div class="header">
-            <h1>Redes Sociales Downloader - v.63</h1>
+            <h1>Redes Sociales Downloader - v.64</h1>
             <div class="header-icons">
 
                 <!-- Instagram -->
@@ -121,10 +121,6 @@
                 <button id="pasteBtn" class="btn">
                     <svg class="btn-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>
                     <span class="btn-label">Pegar</span>
-                </button>
-                <button id="analyzeBtn" class="btn">
-                    <svg class="btn-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                    <span class="btn-label">Buscar</span>
                 </button>
                 <button id="mainDownloadBtn" class="btn">
                     <svg class="btn-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -416,7 +412,7 @@
             }
 
             initEventListeners() {
-                this.analyzeBtn.addEventListener('click', () => this.analyzeVideo());
+                // Botón "Buscar" eliminado: el input auto-busca al pegar, con Enter y al cambiar.
 
                 // New Clear Logic with Abort
                 this.clearInputBtn.addEventListener('click', () => {
@@ -549,7 +545,7 @@
             }
 
             showLoading(show, url = '') {
-                this.analyzeBtn.disabled = show;
+                if (this.analyzeBtn) this.analyzeBtn.disabled = show;
                 this.pasteBtn.disabled = show; // Disable paste too during load
 
                 const container = document.getElementById('videoPlayerContainer');
@@ -726,7 +722,7 @@
             clearResults() {
                 this.initVideoPlaceholder();
                 this.toggleClearButton();
-                this.analyzeBtn.disabled = false;
+                if (this.analyzeBtn) this.analyzeBtn.disabled = false;
                 this.pasteBtn.disabled = false;
 
                 // Clear any leftover modals if needed

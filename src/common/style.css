@@ -124,7 +124,7 @@ body {
 
 .buttons-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin-top: 15px;
     width: 100%;
@@ -654,25 +654,21 @@ body {
 
     .buttons-container {
         display: grid !important;
-        grid-template-columns: repeat(4, 1fr) !important;
+        grid-template-columns: repeat(3, 1fr) !important;
         gap: 8px;
         margin-top: 5px;
         width: 100% !important;
     }
 
-    /* En mobile, botones solo con ícono (el texto no entra en 4 columnas) */
-    .btn-label {
-        display: none;
-    }
-
+    /* Con 3 botones entra el ícono + la etiqueta también en mobile */
     .btn-svg {
-        width: 22px;
-        height: 22px;
+        width: 18px;
+        height: 18px;
     }
 
     .btn {
-        padding: 0 2px;
-        font-size: 0.75rem;
+        padding: 0 4px;
+        font-size: 0.8rem;
         height: 46px;
         min-height: 46px;
         width: 100%;
@@ -681,6 +677,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 6px;
     }
 
     .btn.download-main {
