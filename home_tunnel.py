@@ -63,7 +63,9 @@ def register(url):
 import threading
 
 CHECK_SECONDS = 30           # cada cuánto verificar que el túnel siga vivo
-_URL_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.tunnel_url')
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_URL_FILE = os.path.join(_HERE, '.tunnel_url')
+_PID_FILE = os.path.join(_HERE, '.tunnel_pid')
 _state = {'url': None}
 _state_lock = threading.Lock()
 
@@ -127,6 +129,14 @@ def main():
     secret = ADMIN_SECRET or input("Clave admin (ADMIN_SECRET): ").strip()
     globals()['ADMIN_SECRET'] = secret
 
+    # Guardar el PID para que tunnel-off.bat pueda detenerlo con seguridad
+    # (si no, la auto-reparación relanza cloudflared y nunca se apaga).
+    try:
+        with open(_PID_FILE, 'w', encoding='utf-8') as f:
+            f.write(str(os.getpid()))
+    except Exception:
+        pass
+
     cloudflared = _find_cloudflared()
     proc = _launch_cloudflared(cloudflared)
     if not _wait_for_url(proc):
@@ -179,6 +189,11 @@ def main():
         except Exception:
             pass
         _write_url_file('')
+        for f in (_PID_FILE,):
+            try:
+                os.remove(f)
+            except Exception:
+                pass
 
 
 if __name__ == '__main__':

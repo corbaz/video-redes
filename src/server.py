@@ -903,6 +903,11 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 forwarded = self._forward_to_remote(url)
                 if forwarded is not None:
                     result = forwarded
+                else:
+                    # Se necesitaba el backend residencial (PC de casa) y no está
+                    # disponible: marcarlo explícito para que el front muestre
+                    # "Servidor OFF" en vez de un error genérico.
+                    result['server_off'] = True
 
             if result['success']:
                 # Log detallado con información de video

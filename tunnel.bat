@@ -1,18 +1,20 @@
 @echo off
 cls
 echo ============================================
-echo   Video-Redes: App + Tunel + Backend casa
+echo   Video-Redes: App + Tunel (backend casa)
 echo ============================================
 echo.
-echo Levantando la app en tu PC (IP residencial)...
 cd /d c:\www\video-redes
+echo Levantando la app local...
 start "Video-Redes App" cmd /c ".venv\Scripts\activate.bat && python src/server.py"
 echo Esperando a que la app arranque...
 timeout /t 5 >nul
+echo Abriendo tunel y registrandolo en Railway...
+start "Video-Redes Tunnel" cmd /c ".venv\Scripts\activate.bat && python -u home_tunnel.py"
 echo.
-echo Abriendo tunel y avisandole la URL a Railway...
-echo (deja esta ventana abierta. Para cortar: cerrala)
+echo Listo. Se abrieron 2 ventanas: "Video-Redes App" y "Video-Redes Tunnel".
+echo   - Para apagar todo:  tunnel-off.bat
+echo   - Para chequear:     tunnel-status.bat
 echo.
-call .venv\Scripts\activate.bat
-python home_tunnel.py
-pause
+echo (Podes cerrar esta ventana; las otras dos siguen corriendo.)
+timeout /t 6 >nul

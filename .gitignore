@@ -247,3 +247,4 @@ yarn.lock
 # !favicon.ico       # Icono de la aplicación
 cookies/
 .tunnel_url
+.tunnel_pid
