@@ -11,7 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@500;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="src/common/style.css?v=20260712_4">
+    <link rel="stylesheet" href="src/common/style.css?v=20260712_5">
 </head>
 
 <body>
@@ -25,7 +25,7 @@
     </svg>
     <div class="container">
         <div class="header">
-            <h1>Redes Sociales Downloader - v.66</h1>
+            <h1>Redes Sociales Downloader - v.67</h1>
             <div class="header-icons">
 
                 <!-- Instagram -->
@@ -192,118 +192,66 @@
 
         async function startSmartDownload(url, filename, mode = 'download') {
             let pollInterval = null;
-            try {
-                // 1. Show Progress Modal
-                const swalInstance = Swal.fire({
-                    title: mode === 'share' ? 'Preparando para compartir' : 'Procesando descarga',
-                    html: `
-                        <div class="swal-progress-container">
-                            <div class="swal-progress-track">
-                                <div id="swal-progress-bar" class="swal-progress-bar"></div>
-                            </div>
-                            <div id="swal-progress-text" class="swal-progress-text">Iniciando conexi&oacute;n...</div>
-                        </div>
-                    `,
-                    width: 340,
-                    padding: '1.5em 1.2em',
-                    background: '#16181c',
-                    color: '#fff',
-                    showConfirmButton: false,
-                    showCloseButton: true, // Add Close "X" Button
-                    allowOutsideClick: false,
-                    didOpen: () => {
-                        Swal.showLoading();
-                    },
-                    willClose: () => {
-                        // Interrupt download polling on close
-                        if (pollInterval) {
-                            clearInterval(pollInterval);
-                            console.log('Descarga interrumpida por el usuario');
-                        }
-                        // Send cancel signal to server
-                        if (typeof taskId !== 'undefined' && taskId) {
-                            fetch(`/api/download_cancel?id=${taskId}`).catch(err => console.error('Error cancelling task:', err));
-                        }
-                    }
-                });
+            let taskId = null;
+            const errorIcon = '<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#ff6b6b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
+            const showErr = (msg) => darkModal({ iconSvg: errorIcon, iconBg: 'rgba(255,107,107,0.12)', title: 'Error', text: msg, secondaryLabel: 'Cerrar' });
 
-                // 2. Start Download Task
+            // Modal de progreso (misma tarjeta oscura que el de compartir)
+            const pm = progressModal(mode === 'share' ? 'Preparando para compartir' : 'Procesando descarga');
+            pm.onCancel(() => {
+                if (pollInterval) clearInterval(pollInterval);
+                if (taskId) fetch(`/api/download_cancel?id=${taskId}`).catch(() => {});
+            });
+
+            try {
                 const encodedUrl = encodeURIComponent(url);
                 const encodedFilename = encodeURIComponent(filename);
-
                 const startRes = await fetch(`/api/download_start?url=${encodedUrl}&filename=${encodedFilename}`);
                 const startData = await startRes.json();
-
                 if (!startRes.ok || !startData.task_id) throw new Error(startData.error || 'Error iniciando descarga');
-
-                const taskId = startData.task_id;
+                taskId = startData.task_id;
 
                 let fakeProcessingProgress = 0;
-
-                // 3. Poll Status
                 pollInterval = setInterval(async () => {
                     try {
                         const statusRes = await fetch(`/api/download_status?id=${taskId}`);
                         if (!statusRes.ok) throw new Error("Error de red");
                         const statusData = await statusRes.json();
+                        if (statusData.error) { clearInterval(pollInterval); throw new Error(statusData.error); }
 
-                        if (statusData.error) {
-                            clearInterval(pollInterval);
-                            throw new Error(statusData.error);
-                        }
-
-                        // Update UI
                         const progress = statusData.progress || 0;
-                        const progressBar = document.getElementById('swal-progress-bar');
-                        const progressText = document.getElementById('swal-progress-text');
-
                         if (statusData.status === 'processing') {
                             if (fakeProcessingProgress < 95) fakeProcessingProgress += 1.0;
-                            if (progressBar) progressBar.style.width = `${fakeProcessingProgress}%`;
-                            if (progressText) progressText.innerText = `Procesando... ${Math.floor(fakeProcessingProgress)}%`;
-                        } else {
-                            if (progressBar) progressBar.style.width = `${Math.max(5, progress)}%`;
-                            if (progressText) {
-                                if (statusData.status === 'starting') progressText.innerText = 'Iniciando...';
-                                else if (statusData.status === 'downloading') progressText.innerText = `Descargando: ${progress.toFixed(1)}%`;
-                                else if (statusData.status === 'download_complete') progressText.innerText = 'Finalizando...';
-                                else if (statusData.status === 'completed') progressText.innerText = '¡Listo!';
-                            }
+                            pm.setProgress(fakeProcessingProgress, `Procesando… ${Math.floor(fakeProcessingProgress)}%`);
+                        } else if (statusData.status === 'starting') {
+                            pm.setProgress(5, 'Iniciando…');
+                        } else if (statusData.status === 'downloading') {
+                            pm.setProgress(progress, `Descargando: ${progress.toFixed(1)}%`);
+                        } else if (statusData.status === 'download_complete') {
+                            pm.setProgress(progress, 'Finalizando…');
                         }
 
                         if (statusData.status === 'completed') {
                             clearInterval(pollInterval);
-                            if (progressBar) progressBar.style.width = '100%';
-
+                            pm.setProgress(100, '¡Listo!');
                             if (mode === 'share') {
-                                await shareTaskFile(taskId, filename, swalInstance);
+                                await shareTaskFile(taskId, filename, pm);
                             } else {
-                                // Descargar: el navegador guarda en el dispositivo
                                 window.location.href = `/api/download_file?id=${taskId}`;
-                                setTimeout(() => swalInstance.close(), 1000);
+                                setTimeout(() => pm.close(), 900);
                             }
                         }
                     } catch (err) {
                         clearInterval(pollInterval);
-                        if (err.message !== 'Task not found') {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Error',
-                                text: err.message
-                            });
-                        }
+                        pm.close();
+                        if (err.message !== 'Task not found') showErr(err.message);
                     }
                 }, 1000);
 
             } catch (e) {
                 if (pollInterval) clearInterval(pollInterval);
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: e.message,
-                    background: '#1a1a1a',
-                    color: '#fff'
-                });
+                pm.close();
+                showErr(e.message);
             }
         }
 
@@ -321,8 +269,7 @@
                 file = new File([blob], filename, { type: blob.type || 'video/mp4' });
             } catch (e) {
                 swalInstance.close();
-                Swal.fire({ icon: 'error', title: 'Error al preparar', text: e.message,
-                            background: '#1a1a1a', color: '#fff' });
+                darkModal({ iconSvg: '<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#ff6b6b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>', iconBg: 'rgba(255,107,107,0.12)', title: 'Error al preparar', text: e.message, secondaryLabel: 'Cerrar' });
                 fetch(`/api/download_delete?id=${taskId}`).catch(() => {});
                 return;
             }
@@ -341,11 +288,12 @@
                 document.body.appendChild(a);
                 a.click();
                 a.remove();
-                Swal.fire({
-                    icon: 'info',
+                darkModal({
+                    iconSvg: '<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#4facfe" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
+                    iconBg: 'rgba(79,172,254,0.12)',
                     title: 'Compartir no disponible acá',
                     text: 'Tu navegador no permite compartir archivos, así que se descargó. Desde el celular sí vas a poder compartir.',
-                    background: '#1a1a1a', color: '#fff'
+                    secondaryLabel: 'Entendido'
                 });
             }
         }
@@ -410,6 +358,39 @@
                 document.getElementById('dmPrimary').onclick = () => { close(); if (o.onPrimary) o.onPrimary(); };
             }
             return { close };
+        }
+
+        // Modal de progreso con la MISMA tarjeta oscura (spinner + barra + Cancelar).
+        function progressModal(title) {
+            const overlay = document.createElement('div');
+            overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.72);backdrop-filter:blur(6px);z-index:10000;display:flex;align-items:center;justify-content:center;padding:24px;';
+            overlay.innerHTML = `
+                <div style="background:#16181c;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:26px 22px;max-width:330px;width:100%;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,0.6);">
+                    <div style="width:56px;height:56px;margin:0 auto 14px;border-radius:50%;background:rgba(79,172,254,0.12);display:flex;align-items:center;justify-content:center;">
+                        <svg class="pm-spin" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#4facfe" stroke-width="2.4" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+                    </div>
+                    <div style="font-size:1.12rem;font-weight:700;color:#fff;">${title}</div>
+                    <div style="width:100%;height:10px;background:rgba(255,255,255,0.08);border-radius:8px;overflow:hidden;margin:16px 0 8px;">
+                        <div id="pm-bar" style="height:100%;width:2%;background:linear-gradient(90deg,#4facfe,#00df9a);border-radius:8px;transition:width .4s ease;"></div>
+                    </div>
+                    <div id="pm-text" style="opacity:.7;color:#fff;font-size:0.85rem;font-family:monospace;">Iniciando…</div>
+                    <button id="pm-cancel" style="width:100%;background:transparent;color:#aaa;border:none;border-radius:10px;padding:11px;margin-top:14px;cursor:pointer;font-weight:600;">Cancelar</button>
+                </div>
+            `;
+            document.body.appendChild(overlay);
+            let cancelCb = null, closed = false;
+            const close = () => { if (!closed) { closed = true; overlay.remove(); } };
+            document.getElementById('pm-cancel').onclick = () => { if (cancelCb) cancelCb(); close(); };
+            return {
+                setProgress(pct, text) {
+                    const bar = overlay.querySelector('#pm-bar');
+                    const t = overlay.querySelector('#pm-text');
+                    if (bar) bar.style.width = Math.max(2, pct) + '%';
+                    if (t && text) t.textContent = text;
+                },
+                onCancel(cb) { cancelCb = cb; },
+                close
+            };
         }
 
         function generateVideoPlaceholder() {
