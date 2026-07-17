@@ -534,10 +534,15 @@ body {
 @media (max-width: 768px) {
     body {
         overflow: hidden;
+        /* En mobile el .container maneja la zona segura (es 100dvh); el body
+           no debe agregar padding o empujaría el contenido fuera de pantalla. */
+        padding: 0 !important;
     }
 
     .container {
         padding: 10px;
+        padding-top: max(10px, env(safe-area-inset-top));
+        padding-bottom: max(10px, env(safe-area-inset-bottom));
         display: flex;
         flex-direction: column;
         height: 100dvh;
