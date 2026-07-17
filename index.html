@@ -25,7 +25,7 @@
     </svg>
     <div class="container">
         <div class="header">
-            <h1>Redes Sociales Downloader - v.70</h1>
+            <h1>Redes Sociales Downloader - v.71</h1>
             <div class="header-icons">
 
                 <!-- Instagram -->
@@ -236,7 +236,27 @@
                             pm.setProgress(100, '¡Listo!');
                             if (mode === 'share') {
                                 await shareTaskFile(taskId, filename, pm);
+                            } else if (isNativeApp()) {
+                                // App Android: guardar en la galería (DCIM) con el plugin nativo.
+                                try {
+                                    const res = await fetch(`/api/download_file?id=${taskId}`);
+                                    const blob = await res.blob();
+                                    pm.close();
+                                    await nativeSaveToGallery(blob, filename);
+                                    fetch(`/api/download_delete?id=${taskId}`).catch(() => {});
+                                    darkModal({
+                                        iconSvg: '<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#00df9a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>',
+                                        iconBg: 'rgba(0,223,154,0.12)',
+                                        title: 'Video guardado',
+                                        text: 'Quedó en DCIM/RedesDownloader. Buscalo en tu galería o en el gestor de archivos.',
+                                        secondaryLabel: 'Listo'
+                                    });
+                                } catch (e) {
+                                    pm.close();
+                                    showErr('No se pudo guardar el video: ' + (e.message || e));
+                                }
                             } else {
+                                // Web: el navegador guarda en el dispositivo
                                 window.location.href = `/api/download_file?id=${taskId}`;
                                 setTimeout(() => pm.close(), 900);
                             }
@@ -277,6 +297,17 @@
             // temporal del servidor (compartir usa el blob, no el temporal).
             fetch(`/api/download_delete?id=${taskId}`).catch(() => {});
             swalInstance.close();
+
+            // App Android: usar el menú NATIVO de compartir (el WebView no
+            // soporta la Web Share API con archivos).
+            if (isNativeApp()) {
+                try {
+                    await nativeShareFile(blob, filename);
+                } catch (e) {
+                    darkModal({ iconSvg: '<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#ff6b6b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>', iconBg: 'rgba(255,107,107,0.12)', title: 'No se pudo compartir', text: (e.message || String(e)), secondaryLabel: 'Cerrar' });
+                }
+                return;
+            }
 
             if (navigator.canShare && navigator.canShare({ files: [file] })) {
                 showShareOverlay(file, filename);
@@ -389,6 +420,42 @@
                 onCancel(cb) { cancelCb = cb; },
                 close
             };
+        }
+
+        // --- Integración nativa (app Android con Capacitor). En el sitio web
+        //     window.Capacitor no existe, así que estas ramas NO afectan la web. ---
+        function isNativeApp() {
+            return !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+        }
+
+        function blobToBase64(blob) {
+            return new Promise((resolve, reject) => {
+                const r = new FileReader();
+                r.onloadend = () => resolve(String(r.result).split(',')[1]);
+                r.onerror = reject;
+                r.readAsDataURL(blob);
+            });
+        }
+
+        // Guarda el video en DCIM/RedesDownloader (aparece en la galería/archivos).
+        async function nativeSaveToGallery(blob, filename) {
+            const data = await blobToBase64(blob);
+            const res = await window.Capacitor.Plugins.Filesystem.writeFile({
+                path: 'DCIM/RedesDownloader/' + filename,
+                data: data,
+                directory: 'EXTERNAL_STORAGE',
+                recursive: true
+            });
+            return res.uri;
+        }
+
+        // Escribe a caché y abre el menú NATIVO de compartir de Android.
+        async function nativeShareFile(blob, filename) {
+            const data = await blobToBase64(blob);
+            const w = await window.Capacitor.Plugins.Filesystem.writeFile({
+                path: filename, data: data, directory: 'CACHE'
+            });
+            await window.Capacitor.Plugins.Share.share({ title: filename, url: w.uri });
         }
 
         function generateVideoPlaceholder() {
