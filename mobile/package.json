@@ -1,0 +1,14 @@
+{
+  "name": "redes-downloader-mobile",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Envoltorio Capacitor (Android) de Redes Downloader",
+  "dependencies": {
+    "@capacitor/android": "^8.4.2",
+    "@capacitor/cli": "^8.4.2",
+    "@capacitor/clipboard": "^8.0.1",
+    "@capacitor/core": "^8.4.2",
+    "@capacitor/filesystem": "^8.1.2",
+    "@capacitor/share": "^8.0.1"
+  }
+}

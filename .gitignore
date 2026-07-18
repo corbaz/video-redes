@@ -248,3 +248,7 @@ yarn.lock
 cookies/
 .tunnel_url
 .tunnel_pid
+mobile/node_modules/
+# El proyecto android/ SÍ se versiona (respaldo). Su .gitignore interno ya
+# excluye build/, .gradle/, local.properties y *.apk. El APK distribuible
+# vive en mobile/RedesDownloader-debug.apk y se versiona aparte.

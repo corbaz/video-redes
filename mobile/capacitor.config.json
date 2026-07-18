@@ -1,0 +1,10 @@
+{
+  "appId": "com.corbaz.redesdownloader",
+  "appName": "Redes Downloader",
+  "webDir": "www",
+  "server": {
+    "url": "https://redes-download.up.railway.app",
+    "androidScheme": "https",
+    "cleartext": true
+  }
+}

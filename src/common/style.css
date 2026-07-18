@@ -181,51 +181,48 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* --- Botones de acción: paleta viva y alegre --- */
+/* --- Botones de acción: colores de marca (como los íconos de arriba) --- */
 
-/* Pegar = coral/rosa cálido (siempre activo) */
+/* Pegar = rojo YouTube (siempre activo) */
 #pasteBtn {
-    background: linear-gradient(145deg, #f093fb, #f5576c);
-    border-color: rgba(245, 87, 108, 0.5);
+    background: linear-gradient(145deg, #ff4d4d, #e60000);
+    border-color: rgba(255, 0, 0, 0.5);
     color: #fff;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 4px 16px rgba(245, 87, 108, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 16px rgba(255, 0, 0, 0.3);
 }
 
 #pasteBtn:hover {
-    background: linear-gradient(145deg, #f6a6ff, #ff6b7f);
-    box-shadow: 0 0 26px rgba(245, 87, 108, 0.5);
-    transform: translateY(-2px);
+    background: linear-gradient(145deg, #ff6666, #ff1a1a);
+    box-shadow: 0 0 26px rgba(255, 0, 0, 0.5);
 }
 
-/* Descargar = verde menta */
+/* Descargar = violeta Twitch */
 #mainDownloadBtn.active {
-    background: linear-gradient(145deg, #43e97b, #14c98e);
-    border-color: rgba(67, 233, 123, 0.6);
+    background: linear-gradient(145deg, #a970ff, #7c2cf2);
+    border-color: rgba(145, 70, 255, 0.6);
     color: #fff;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 4px 16px rgba(20, 201, 142, 0.32);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 16px rgba(145, 70, 255, 0.32);
 }
 
 #mainDownloadBtn.active:hover {
-    background: linear-gradient(145deg, #55f58c, #1ad79b);
-    box-shadow: 0 0 26px rgba(20, 201, 142, 0.5);
-    transform: translateY(-2px);
+    background: linear-gradient(145deg, #b98bff, #8a44ff);
+    box-shadow: 0 0 26px rgba(145, 70, 255, 0.5);
 }
 
-/* Compartir = celeste/cyan */
+/* Compartir = azul Facebook */
 #mainShareBtn.active {
-    background: linear-gradient(145deg, #4facfe, #00c6fb);
-    border-color: rgba(79, 172, 254, 0.6);
+    background: linear-gradient(145deg, #4293ff, #1877f2);
+    border-color: rgba(24, 119, 242, 0.6);
     color: #fff;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 4px 16px rgba(0, 198, 251, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 16px rgba(24, 119, 242, 0.32);
 }
 
 #mainShareBtn.active:hover {
-    background: linear-gradient(145deg, #62b8ff, #1ad0ff);
-    box-shadow: 0 0 26px rgba(0, 198, 251, 0.5);
-    transform: translateY(-2px);
+    background: linear-gradient(145deg, #5aa3ff, #2b86ff);
+    box-shadow: 0 0 26px rgba(24, 119, 242, 0.5);
 }
 
 /* Botones de acción aún sin video activo: apagados */
@@ -238,7 +235,6 @@ body {
 .btn:hover {
     border-color: var(--text-main);
     background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-1px);
 }
 
 .btn:disabled,
@@ -542,7 +538,8 @@ body {
     .container {
         padding: 10px;
         padding-top: max(10px, env(safe-area-inset-top));
-        padding-bottom: max(10px, env(safe-area-inset-bottom));
+        /* Más aire abajo para que los botones no queden pegados al borde/barra */
+        padding-bottom: max(22px, calc(env(safe-area-inset-bottom) + 14px));
         display: flex;
         flex-direction: column;
         height: 100dvh;

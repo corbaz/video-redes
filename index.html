@@ -25,7 +25,7 @@
     </svg>
     <div class="container">
         <div class="header">
-            <h1>Redes Sociales Downloader - v.71</h1>
+            <h1>Redes Sociales Downloader - v.1</h1>
             <div class="header-icons">
 
                 <!-- Instagram -->
@@ -775,12 +775,20 @@
 
             async pasteFromClipboard() {
                 try {
-                    if (!navigator.clipboard || !navigator.clipboard.readText) {
-                        this.urlInput.focus();
-                        this.showError('El portapapeles no está disponible en este navegador. Usa Ctrl+V para pegar.');
-                        return;
+                    let text = '';
+                    // En la app Android usamos el plugin nativo de Capacitor (el
+                    // navigator.clipboard del WebView suele estar bloqueado).
+                    if (isNativeApp() && window.Capacitor.Plugins.Clipboard) {
+                        const res = await window.Capacitor.Plugins.Clipboard.read();
+                        text = (res && res.value) || '';
+                    } else {
+                        if (!navigator.clipboard || !navigator.clipboard.readText) {
+                            this.urlInput.focus();
+                            this.showError('El portapapeles no está disponible en este navegador. Usa Ctrl+V para pegar.');
+                            return;
+                        }
+                        text = await navigator.clipboard.readText();
                     }
-                    const text = await navigator.clipboard.readText();
                     const pasted = (text || '').trim();
 
                     if (!pasted) {
