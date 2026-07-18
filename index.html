@@ -25,7 +25,7 @@
     </svg>
     <div class="container">
         <div class="header">
-            <h1>Redes Sociales Downloader - v.2</h1>
+            <h1>Redes Sociales Downloader - v.3</h1>
             <div class="header-icons">
 
                 <!-- Instagram -->
@@ -309,7 +309,14 @@
                 return;
             }
 
-            if (navigator.canShare && navigator.canShare({ files: [file] })) {
+            // Edge de escritorio MIENTE: canShare({files}) devuelve true pero
+            // navigator.share nunca abre el menú del sistema (bug confirmado por
+            // web.dev/MDN). No hay feature-detect que lo pesque, así que lo
+            // detectamos por UserAgent y saltamos directo a la descarga.
+            const ua = navigator.userAgent;
+            const isDesktopEdge = /Edg\//.test(ua) && !/Android|Mobile/i.test(ua);
+
+            if (!isDesktopEdge && navigator.canShare && navigator.canShare({ files: [file] })) {
                 showShareOverlay(file, filename);
             } else {
                 // El dispositivo no permite compartir archivos: descarga normal.
