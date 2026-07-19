@@ -25,7 +25,7 @@
     </svg>
     <div class="container">
         <div class="header">
-            <h1>Redes Sociales Downloader - v.3</h1>
+            <h1>Redes Sociales Downloader - v.4</h1>
             <div class="header-icons">
 
                 <!-- Instagram -->
@@ -309,14 +309,10 @@
                 return;
             }
 
-            // Edge de escritorio MIENTE: canShare({files}) devuelve true pero
-            // navigator.share nunca abre el menú del sistema (bug confirmado por
-            // web.dev/MDN). No hay feature-detect que lo pesque, así que lo
-            // detectamos por UserAgent y saltamos directo a la descarga.
-            const ua = navigator.userAgent;
-            const isDesktopEdge = /Edg\//.test(ua) && !/Android|Mobile/i.test(ua);
-
-            if (!isDesktopEdge && navigator.canShare && navigator.canShare({ files: [file] })) {
+            // Dejamos que el navegador INTENTE compartir (si abre el menú, genial).
+            // Si navigator.share falla de verdad, el catch del botón descarga el
+            // video como fallback. Así no bloqueamos a ningún Edge que sí funcione.
+            if (navigator.canShare && navigator.canShare({ files: [file] })) {
                 showShareOverlay(file, filename);
             } else {
                 // El dispositivo no permite compartir archivos: descarga normal.
