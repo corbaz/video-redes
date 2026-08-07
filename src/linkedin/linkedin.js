@@ -1,7 +1,7 @@
 // Funciones específicas para LinkedIn - Updated 2025-06-10
 function showLinkedinVideo(data, container) {
     container.innerHTML = "";
-    const url = data.videoUrl || "";
+    const url = data.preview_url || data.videoUrl || "";
     const type = data.type || 'video';
 
     if (!url) {
@@ -13,18 +13,20 @@ function showLinkedinVideo(data, container) {
     let extension = 'mp4';
     if (type === 'image') extension = 'jpg';
     if (type === 'document') extension = 'pdf';
+    if (type === 'gallery') extension = 'zip';
     const filename = buildFilename('linkedin', data.title, extension);
+    const downloadTarget = getDownloadTarget(data, url, type === 'gallery' ? 'gallery' : 'direct');
 
     // Enable global download
     if (window.enableGlobalDownload) {
-        window.enableGlobalDownload(url, filename);
+        window.enableGlobalDownload(downloadTarget, filename);
     }
 
     // Prepare Click Handler for Preview
     // Use encodeURIComponent for robustness
-    const encodedUrl = encodeURIComponent(url);
+    const encodedTarget = encodeDownloadTarget(downloadTarget);
     const encodedFilename = encodeURIComponent(filename);
-    const clickHandler = `onclick="if(window.startSmartDownload) { window.startSmartDownload(decodeURIComponent('${encodedUrl}'), decodeURIComponent('${encodedFilename}')); } else { console.error('SmartDownload not found'); }"`;
+    const clickHandler = `onclick="if(window.startSmartDownload) { window.startSmartDownload(JSON.parse(decodeURIComponent('${encodedTarget}')), decodeURIComponent('${encodedFilename}')); } else { console.error('SmartDownload not found'); }"`;
 
     const linkedinIcon = `<svg viewBox="0 0 24 24" class="platform-icon-svg" fill="#0077B5" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>`;
     
@@ -71,13 +73,13 @@ function showLinkedinVideo(data, container) {
         const firstImage = images[0] || '';
         
         // JSON stringify the array of URLs to pass as the "url" parameter
-        const imagesJson = JSON.stringify(images);
         const zipFilename = buildFilename('linkedin', data.title, 'zip');
         
         // Override the default click handler for this card to pass the JSON string
-        const encodedJson = encodeURIComponent(imagesJson);
+        const galleryTarget = getDownloadTarget(data, images, 'gallery');
+        const encodedGalleryTarget = encodeDownloadTarget(galleryTarget);
         const encodedZipName = encodeURIComponent(zipFilename);
-        const galleryClickHandler = `onclick="if(window.startSmartDownload) { window.startSmartDownload(decodeURIComponent('${encodedJson}'), decodeURIComponent('${encodedZipName}')); } else { console.error('SmartDownload not found'); }"`;
+        const galleryClickHandler = `onclick="if(window.startSmartDownload) { window.startSmartDownload(JSON.parse(decodeURIComponent('${encodedGalleryTarget}')), decodeURIComponent('${encodedZipName}')); } else { console.error('SmartDownload not found'); }"`;
 
         const galleryContent = `
             <div class="linkedin-gallery-wrapper" style="position: relative;">
@@ -136,7 +138,7 @@ function showLinkedinVideo(data, container) {
     // IMPORTANT: Pass originalUrl so card.js can set up the click handler for smart download
     const videoCardHTML = renderVideoCard({
         videoUrl: url,
-        originalUrl: url, 
+        downloadTarget: downloadTarget,
         thumbnail: data.thumbnail,
         title: data.title,
         filename: filename,

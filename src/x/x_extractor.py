@@ -83,6 +83,8 @@ class XExtractor:
                             "uploader": info.get('uploader', ''),
                             "duration": info.get('duration'),
                             "thumbnail": info.get('thumbnail'),
+                            "original_url": info.get('webpage_url', url),
+                            "_download_mode": "source",
                             "description": info.get('description', '')
                         }
                     }

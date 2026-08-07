@@ -25,7 +25,7 @@
     </svg>
     <div class="container">
         <div class="header">
-            <h1>Redes Sociales Downloader - v.4</h1>
+            <h1>Redes Sociales Downloader<span class="app-version">v.26.0807 build(15.10)</span></h1>
             <div class="header-icons">
 
                 <!-- Instagram -->
@@ -148,7 +148,8 @@
 
     <script>
         // Global helpers for Download Button Logic
-        window.enableGlobalDownload = function (url, filename) {
+        window.enableGlobalDownload = function (downloadTarget, filename) {
+            const target = normalizeDownloadTarget(downloadTarget);
             const btn = document.getElementById('mainDownloadBtn');
             if (btn) {
                 // Remove href to prevent default navigation
@@ -158,7 +159,7 @@
                 // Add click listener for smart download
                 btn.onclick = function (e) {
                     e.preventDefault();
-                    startSmartDownload(url, filename);
+                    startSmartDownload(target, filename);
                 };
 
                 btn.target = ""; // No target blank needed for async flow
@@ -170,7 +171,7 @@
                 sbtn.classList.add('active');
                 sbtn.onclick = function (e) {
                     e.preventDefault();
-                    startSmartDownload(url, filename, 'share');
+                    startSmartDownload(target, filename, 'share');
                 };
             }
         };
@@ -190,7 +191,7 @@
             }
         };
 
-        async function startSmartDownload(url, filename, mode = 'download') {
+        async function startSmartDownload(downloadTarget, filename, mode = 'download') {
             let pollInterval = null;
             let taskId = null;
             const errorIcon = '<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#ff6b6b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
@@ -204,9 +205,14 @@
             });
 
             try {
-                const encodedUrl = encodeURIComponent(url);
+                const target = normalizeDownloadTarget(downloadTarget);
+                const targetUrl = target.mode === 'gallery'
+                    ? JSON.stringify(target.url)
+                    : target.url;
+                const encodedUrl = encodeURIComponent(targetUrl);
                 const encodedFilename = encodeURIComponent(filename);
-                const startRes = await fetch(`/api/download_start?url=${encodedUrl}&filename=${encodedFilename}`);
+                const encodedDownloadMode = encodeURIComponent(target.mode);
+                const startRes = await fetch(`/api/download_start?url=${encodedUrl}&filename=${encodedFilename}&download_mode=${encodedDownloadMode}`);
                 const startData = await startRes.json();
                 if (!startRes.ok || !startData.task_id) throw new Error(startData.error || 'Error iniciando descarga');
                 taskId = startData.task_id;
@@ -765,7 +771,8 @@
                 } else if (url.includes('youtube') || url.includes('youtu.be')) {
                     showYouTubeVideo(data, container);
                 } else if (url.includes('instagram')) {
-                    showInstagramVideo(data, container);
+                    const videoData = data.data || data;
+                    showInstagramVideo(videoData, container);
                 } else if (url.includes('linkedin')) {
                     const videoData = data.data || data;
                     showLinkedinVideo(videoData, container);

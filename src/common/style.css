@@ -62,16 +62,30 @@ body {
 }
 
 .header h1 {
-    font-size: 1.8rem;
-    /* Smaller title */
+    font-size: 2rem;
+    /* Larger app name; the version sits on its own second line */
     font-weight: 700;
     letter-spacing: -0.04em;
+    white-space: nowrap;
     background: linear-gradient(135deg, #fff 30%, #a5a5a5 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 0.25rem;
     text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+}
+
+.header h1 .app-version {
+    display: block;
+    font-size: 0.975rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    margin-top: 2px;
+    /* Opt out of the h1 gradient so the version stays legible */
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    color: var(--primary);
+    opacity: 0.85;
 }
 
 .header h2 {
@@ -555,9 +569,14 @@ body {
     }
 
     .header h1 {
-        font-size: 1.35rem;
+        font-size: 1.5rem;
         line-height: 1.2;
         margin-bottom: 4px;
+        white-space: nowrap;
+    }
+
+    .header h1 .app-version {
+        font-size: 0.875rem;
     }
 
     .header h2 {
@@ -694,8 +713,13 @@ body {
     }
 
     .header h1 {
-        font-size: 1.2rem !important;
+        font-size: 1.25rem !important;
         margin-bottom: 2px !important;
+        white-space: nowrap !important;
+    }
+
+    .header h1 .app-version {
+        font-size: 0.825rem !important;
     }
 
     .header h2 {

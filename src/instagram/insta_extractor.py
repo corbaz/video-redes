@@ -65,6 +65,7 @@ class InstagramExtractor:
                         "uploader": "Instagram User",
                         "duration": 0,
                         "description": "Video directo de Instagram",
+                        "_download_mode": "direct",
                         "video_formats": [{
                             "url": url,
                             "width": 720,
@@ -129,6 +130,7 @@ class InstagramExtractor:
                             "uploader": "Instagram User",
                             "duration": 0,
                             "description": "Video obtenido vía proxy de embeds",
+                            "_download_mode": "direct",
                             "video_formats": [{
                                 "url": cdn_url,
                                 "width": 720,
@@ -236,7 +238,9 @@ class InstagramExtractor:
                 "view_count": video_info.get('view_count'),
                 "description": video_info.get('description', ''),
                 "tags": video_info.get('tags', []),
-                "video_formats": video_formats
+                "video_formats": video_formats,
+                "original_url": url,
+                "_download_mode": "source"
             }
 
             print(

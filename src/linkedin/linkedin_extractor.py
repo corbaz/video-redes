@@ -51,6 +51,8 @@ class LinkedInExtractor:
                                 "duration": info.get('duration'),
                                 "description": info.get('description', ''),
                                 "thumbnail": info.get('thumbnail'),
+                                "original_url": info.get('webpage_url', url),
+                                "_download_mode": "source",
                                 "type": "video"
                             }
                         }

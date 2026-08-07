@@ -221,6 +221,8 @@ class FacebookExtractor:
                 "thumbnail": thumbnail,
                 "view_count": view_count,
                 "video_url": best_format["url"],
+                "original_url": cmd[-1],
+                "_download_mode": "source",
                 "video_quality": f"{best_format.get('width', 'N/A')}x{best_format.get('height', 'N/A')}",
                 "platform": "Facebook",
                 "formats": [best_format]

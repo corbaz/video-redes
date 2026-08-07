@@ -1,7 +1,7 @@
 
 function showPinterestVideo(data, container) {
     container.innerHTML = "";
-    const url = data.video_url || data.videoUrl || "";
+    const url = data.preview_url || data.video_url || data.videoUrl || "";
     const type = data.type || 'video';
     const title = data.title || "Pinterest Pin";
     const thumbnail = data.thumbnail || "";
@@ -14,10 +14,11 @@ function showPinterestVideo(data, container) {
     // Dynamic filename: pinterest_titulo_fecha.(mp4|jpg)
     const extension = type === 'image' ? 'jpg' : 'mp4';
     const filename = buildFilename('pinterest', title, extension);
+    const downloadTarget = getDownloadTarget(data, url);
 
     // Enable auto-download hook
     if (window.enableGlobalDownload) {
-        window.enableGlobalDownload(url, filename);
+        window.enableGlobalDownload(downloadTarget, filename);
     }
 
     // Solo renderizar la card de video sin información adicional
@@ -25,7 +26,7 @@ function showPinterestVideo(data, container) {
         videoUrl: url,
         thumbnail: thumbnail,
         title: title,
-        originalUrl: url, // Pinterest usually works with direct URL, but keeping consistent
+        downloadTarget: downloadTarget,
         filename: filename, // Pass the correct filename (with .jpg for images)
         type: type, // Pass type to handle play icon
         platform: 'pinterest'

@@ -6,15 +6,18 @@ function showThreadsVideo(data, container) {
         return;
     }
     const format = formats[0];
+    const previewUrl = data.preview_url || format.url;
+    const downloadTarget = getDownloadTarget(data, previewUrl, 'direct');
 
     const filename = buildFilename('threads', data.title, 'mp4');
 
     if (window.enableGlobalDownload) {
-        window.enableGlobalDownload(format.url, filename);
+        window.enableGlobalDownload(downloadTarget, filename);
     }
 
     const cardHtml = renderVideoCard({
-        videoUrl: format.url,
+        videoUrl: previewUrl,
+        downloadTarget: downloadTarget,
         thumbnail: data.thumbnail,
         filename: filename,
         title: data.title || '',

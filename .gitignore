@@ -252,3 +252,9 @@ mobile/node_modules/
 # El proyecto android/ SÍ se versiona (respaldo). Su .gitignore interno ya
 # excluye build/, .gradle/, local.properties y *.apk. El APK distribuible
 # vive en mobile/RedesDownloader-debug.apk y se versiona aparte.
+
+# graphify-axet
+.graphify/
+
+# CodeGraph index — machine-local, must never be shared between checkouts
+.codegraph/

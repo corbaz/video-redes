@@ -6,17 +6,20 @@ function showInstagramVideo(data, container) {
         return;
     }
     const format = formats[0];
+    const previewUrl = data.preview_url || format.url;
+    const downloadTarget = getDownloadTarget(data, previewUrl);
 
     const filename = buildFilename('instagram', data.title, 'mp4');
 
     // Enable global download
     if (window.enableGlobalDownload) {
-        window.enableGlobalDownload(format.url, filename);
+        window.enableGlobalDownload(downloadTarget, filename);
     }
 
     // Solo renderizar la card de video sin información adicional
     const cardHtml = renderVideoCard({
-        videoUrl: format.url,
+        videoUrl: previewUrl,
+        downloadTarget: downloadTarget,
         thumbnail: data.thumbnail,
         filename: filename,
         title: data.title || '',

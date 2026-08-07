@@ -13,7 +13,46 @@ function buildFilename(platform, title, extension = "mp4") {
   return `${safePlatform}_${middle}${date}.${extension}`;
 }
 
-function renderVideoCard({ videoUrl = "", thumbnail = "", title = "video", originalUrl = "", filename = "", type = "video", platform = "" }) {
+function inferLegacyDownloadMode(url) {
+  const sourceHosts = [
+    "youtube.com", "youtu.be", "tiktok.com", "twitch.tv",
+    "facebook.com", "fb.watch", "instagram.com", "linkedin.com",
+    "pinterest.com", "pin.it", "twitter.com", "x.com"
+  ];
+  return sourceHosts.some((host) => String(url || "").includes(host)) ? "source" : "direct";
+}
+
+function normalizeDownloadTarget(target, fallbackUrl = "", fallbackMode = "direct") {
+  if (target && typeof target === "object" && !Array.isArray(target)) {
+    const mode = ["source", "direct", "gallery"].includes(target.mode)
+      ? target.mode
+      : fallbackMode;
+    return { url: target.url || fallbackUrl, mode };
+  }
+
+  const url = target || fallbackUrl;
+  return { url, mode: fallbackMode };
+}
+
+function getDownloadTarget(data, previewUrl = "", fallbackMode = "direct") {
+  if (data && data.download_target) {
+    return normalizeDownloadTarget(data.download_target, previewUrl, fallbackMode);
+  }
+  if (data && data.original_url) {
+    return normalizeDownloadTarget(
+      data.original_url,
+      previewUrl,
+      inferLegacyDownloadMode(data.original_url)
+    );
+  }
+  return normalizeDownloadTarget(previewUrl, previewUrl, fallbackMode);
+}
+
+function encodeDownloadTarget(target) {
+  return encodeURIComponent(JSON.stringify(target));
+}
+
+function renderVideoCard({ videoUrl = "", downloadTarget = null, thumbnail = "", title = "video", originalUrl = "", filename = "", type = "video", platform = "" }) {
   if (!videoUrl) {
     return `<div class='error'><h3>No se encontró video disponible</h3></div>`;
   }
@@ -27,12 +66,19 @@ function renderVideoCard({ videoUrl = "", thumbnail = "", title = "video", origi
   const safeVideoUrl = videoUrl.replace(/"/g, '&quot;').replace(/'/g, "\\'");
 
   // Use encodeURIComponent for the onclick handler parameters to avoid ALL quoting issues
-  const encodedUrl = encodeURIComponent(originalUrl || videoUrl);
+  const target = downloadTarget
+    ? normalizeDownloadTarget(downloadTarget, videoUrl)
+    : normalizeDownloadTarget(
+        originalUrl || videoUrl,
+        videoUrl,
+        originalUrl ? inferLegacyDownloadMode(originalUrl) : "direct"
+      );
+  const encodedTarget = encodeDownloadTarget(target);
   const encodedFilename = encodeURIComponent(finalFilename);
 
   // Add onclick handler to trigger smart download
   // We use decodeURIComponent inside the onclick to restore the original values before passing to the function
-  const clickHandler = `onclick="if(window.startSmartDownload) { window.startSmartDownload(decodeURIComponent('${encodedUrl}'), decodeURIComponent('${encodedFilename}')); } else { console.error('SmartDownload not found'); }"`;
+  const clickHandler = `onclick="if(window.startSmartDownload) { window.startSmartDownload(JSON.parse(decodeURIComponent('${encodedTarget}')), decodeURIComponent('${encodedFilename}')); } else { console.error('SmartDownload not found'); }"`;
 
   // Platform Icons Definitions
   const platformIcons = {

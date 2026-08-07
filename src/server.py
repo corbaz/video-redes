@@ -93,31 +93,37 @@ INSTAGRAM_COOKIES_FILE = os.environ.get(
 )
 
 
-def download_with_instagram_auth(ydl_opts, url, error):
-    """Retry an Instagram download with authentication after an anonymous failure.
+def download_with_source_auth(ydl_opts, url, error):
+    """Retry a source download with shared authentication when appropriate.
 
-    Instagram requires login cookies for most content. Tries a cookies file
-    first (works with browsers open), then browser cookie stores.
-    Re-raises the original error if the failure is not auth-related.
+    Instagram retries authentication-related failures with the shared cookie
+    file and browser stores. Facebook retries with the combined shared cookie
+    file because extraction and download can require the same session.
     """
     err = str(error).lower()
-    needs_auth = 'instagram.com' in url and (
+    is_instagram = 'instagram.com' in url
+    is_facebook = 'facebook.com' in url or 'fb.watch' in url
+    needs_instagram_auth = is_instagram and (
         'stories' in url or 'private' in err or 'user info' in err or
         'empty media response' in err or 'login required' in err or
         'use --cookies' in err or 'rate-limit' in err
     )
-    if not needs_auth:
+    if not needs_instagram_auth and not is_facebook:
         raise error
 
     attempts = []
     _cookies_path = combined_cookies_file()
     if _cookies_path:
         attempts.append(('cookiefile', _cookies_path))
-    attempts += [
-        ('cookiesfrombrowser', ('chrome',)),
-        ('cookiesfrombrowser', ('edge',)),
-        ('cookiesfrombrowser', ('firefox',)),
-    ]
+    if is_instagram:
+        attempts += [
+            ('cookiesfrombrowser', ('chrome',)),
+            ('cookiesfrombrowser', ('edge',)),
+            ('cookiesfrombrowser', ('firefox',)),
+        ]
+
+    if not attempts:
+        raise error
 
     last_error = error
     for key, value in attempts:
@@ -125,7 +131,7 @@ def download_with_instagram_auth(ydl_opts, url, error):
         opts.pop('cookiefile', None)
         opts.pop('cookiesfrombrowser', None)
         opts[key] = value
-        logger.info(f"⚠️ Instagram download failed. Retrying with {key}={value}...")
+        logger.info(f"⚠️ Source download failed. Retrying with {key}={value}...")
         try:
             with YoutubeDL(opts) as ydl:
                 ydl.download([url])
@@ -140,6 +146,65 @@ def download_with_instagram_auth(ydl_opts, url, error):
             "o exporta tus cookies de Instagram a 'cookies/instagram.txt'."
         )
     raise last_error
+
+
+def download_with_instagram_auth(ydl_opts, url, error):
+    """Backward-compatible alias for older callers."""
+    return download_with_source_auth(ydl_opts, url, error)
+
+
+DOWNLOAD_MODES = {'source', 'direct', 'gallery'}
+
+
+def normalize_download_mode(mode):
+    """Return a supported explicit download mode or ``None``."""
+    normalized = (mode or '').strip().lower()
+    return normalized if normalized in DOWNLOAD_MODES else None
+
+
+def select_download_route(download_mode, filename):
+    """Select the server path exclusively from the explicit target mode."""
+    mode = normalize_download_mode(download_mode)
+    if not mode:
+        raise ValueError(f"Unsupported download mode: {download_mode}")
+    is_direct_file = any(
+        filename.lower().endswith(ext)
+        for ext in ('.jpg', '.jpeg', '.png', '.webp', '.gif', '.pdf')
+    )
+    if mode == 'source' and is_direct_file:
+        return 'direct'
+    return mode
+
+
+def normalize_extraction_result(result, source_url, platform):
+    """Add separate preview and download routing fields to extractor output."""
+    if not result.get('success'):
+        return result
+
+    payload = result.get('data') if isinstance(result.get('data'), dict) else result
+    video_formats = payload.get('video_formats') or []
+    preview_url = payload.get('preview_url') or payload.get('video_url') or payload.get('videoUrl')
+    if not preview_url and video_formats:
+        preview_url = video_formats[0].get('url')
+
+    content_type = payload.get('type', 'video')
+    explicit_mode = payload.pop('_download_mode', None)
+    if content_type == 'gallery':
+        download_mode = 'gallery'
+        download_url = payload.get('images') or payload.get('videoUrl') or []
+        if isinstance(download_url, list) and download_url:
+            preview_url = preview_url if isinstance(preview_url, str) else download_url[0]
+    else:
+        source_platforms = {'youtube', 'tiktok', 'twitch'}
+        download_mode = explicit_mode or ('source' if platform in source_platforms else 'direct')
+        if download_mode == 'source':
+            download_url = payload.get('original_url') or source_url
+        else:
+            download_url = preview_url
+
+    payload['preview_url'] = preview_url
+    payload['download_target'] = {'url': download_url, 'mode': download_mode}
+    return result
 
 
 # Contraseña del panel de administración para actualizar la cookie compartida
@@ -222,9 +287,10 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 # Generate Task ID and start thread
                 url = params.get('url', [''])[0]
                 filename = params.get('filename', ['video.mp4'])[0]
+                download_mode = normalize_download_mode(params.get('download_mode', [''])[0])
                 
-                if not url:
-                    self.send_json_response({'error': 'URL required'}, 400)
+                if not url or not download_mode:
+                    self.send_json_response({'error': 'URL and valid download_mode required'}, 400)
                     return
                 
                 task_id = str(uuid.uuid4())
@@ -237,7 +303,10 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 }
                 
                 # Start background thread
-                thread = threading.Thread(target=self.process_download_task, args=(task_id, url, filename))
+                thread = threading.Thread(
+                    target=self.process_download_task,
+                    args=(task_id, url, filename, download_mode),
+                )
                 thread.daemon = True
                 thread.start()
                 
@@ -302,13 +371,14 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             logger.error(f"Error en do_GET: {str(e)}")
             self.send_error(500)
 
-    def process_download_task(self, task_id, url, filename):
+    def process_download_task(self, task_id, url, filename, download_mode):
         temp_dir = "temp_downloads"
         if not os.path.exists(temp_dir):
             os.makedirs(temp_dir)
             
         try:
             download_tasks[task_id]['status'] = 'downloading'
+            download_route = select_download_route(download_mode, filename)
             
             # Progress Hook for yt-dlp
             def progress_hook(d):
@@ -347,17 +417,17 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
             # ------------------------------------------------------------------
             # Gallery Download Logic (JSON List of URLs)
             # ------------------------------------------------------------------
-            is_gallery = False
+            is_gallery = download_route == 'gallery'
             gallery_urls = []
             try:
-                # Basic check to avoid json.loads on normal URLs
-                # JS encoded arrays might start with %5B or just be [ if decoded
-                if url.strip().startswith('[') and 'http' in url:
+                if is_gallery:
                     gallery_urls = json.loads(url)
-                    if isinstance(gallery_urls, list) and len(gallery_urls) > 0:
-                        is_gallery = True
+                    is_gallery = isinstance(gallery_urls, list) and bool(gallery_urls)
             except:
-                pass
+                is_gallery = False
+
+            if download_route == 'gallery' and not is_gallery:
+                raise ValueError("Gallery target must contain a non-empty URL list")
                 
             if is_gallery:
                 logger.info(f"📦 Processing Gallery Download: {len(gallery_urls)} items")
@@ -432,11 +502,9 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
 
             # Validar e iniciar descarga similar a handle_download pero actualizando task
             # Detectar si es una imagen o documento (PDF) por la extensión solicitada
-            is_direct_download = any(filename.lower().endswith(ext) for ext in ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.pdf'])
+            is_direct_download = download_route == 'direct' and any(filename.lower().endswith(ext) for ext in ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.pdf'])
             
-            is_supported_hq = any(d in url for d in ['youtube.com', 'youtu.be', 'tiktok.com', 'vm.tiktok.com', 'twitch.tv', 'pinterest.com', 'pin.it', 'pinimg.com', 'linkedin.com', 'facebook.com', 'fb.watch', 'twitter.com', 'x.com', 'instagram.com', 'cdninstagram.com', 'twimg.com'])
-            
-            if is_supported_hq and not is_direct_download:
+            if download_route == 'source':
                 unique_id = str(uuid.uuid4())
                 filename_base = f"yt_{unique_id}"
                 
@@ -466,7 +534,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                         ydl.download([url])
                 except Exception as e:
                     # Instagram requires authentication for most content
-                    download_with_instagram_auth(ydl_opts, url, e)
+                    download_with_source_auth(ydl_opts, url, e)
                 
                 # Encontrar archivo
                 final_path = os.path.join(temp_dir, f"{filename_base}.mp4")
@@ -481,7 +549,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 else:
                      raise Exception("File not found after download")
 
-            else:
+            elif download_route == 'direct':
                 # Manejo de imágenes, PDFs o fallbacks
                 if is_direct_download:
                     headers = {'User-Agent': 'Mozilla/5.0'}
@@ -507,7 +575,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                         raise Exception(f"Error descargando imagen: {r.status_code}")
 
                 else:
-                    # Legacy Requests fallback
+                    # Direct CDN/external/manual fallback download.
                     headers = {
                         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
                         'Referer': 'https://www.linkedin.com/' 
@@ -539,6 +607,8 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                     
                     download_tasks[task_id]['file_path'] = final_path
                     download_tasks[task_id]['status'] = 'completed'
+            else:
+                raise ValueError(f"Unsupported download mode: {download_mode}")
         
         except Exception as e:
             if str(e) == 'DownloadCancelled':
@@ -1156,7 +1226,7 @@ async function save() {
 
             if result.get('success'):
                 result['platform'] = platform
-                return result
+                return normalize_extraction_result(result, url, platform)
             else:
                 # Se preservan needs_login/login_platform/suggestion si el
                 # extractor los puso -- el frontend los usa para mostrar un

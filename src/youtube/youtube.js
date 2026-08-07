@@ -279,13 +279,14 @@ function showYouTubeVideo(data, container) {
 
     console.log("📷 Thumbnail URL fixed:", thumbnail);
 
-    const originalUrl = data.original_url || data.originalUrl || data.video_url;
+    const previewUrl = data.preview_url || data.videoUrl || data.video_url;
+    const downloadTarget = getDownloadTarget(data, previewUrl, 'source');
     // Nombre de archivo unificado: youtube_titulo_fecha.mp4
     const filename = buildFilename('youtube', rawTitle, 'mp4');
 
     // Enable Global Download Button
     if (window.enableGlobalDownload) {
-        window.enableGlobalDownload(originalUrl, filename);
+        window.enableGlobalDownload(downloadTarget, filename);
     }
 
     // Check global download button status
@@ -299,10 +300,10 @@ function showYouTubeVideo(data, container) {
 
     // Use renderVideoCard for consistent UI with platform icon
     const cardHtml = renderVideoCard({
-        videoUrl: originalUrl, 
+        videoUrl: previewUrl,
         thumbnail: thumbnail,
         title: title,
-        originalUrl: originalUrl,
+        downloadTarget: downloadTarget,
         filename: filename,
         platform: 'youtube'
     });

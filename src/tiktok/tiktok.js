@@ -112,7 +112,8 @@ function displayTikTokMetadata(videoInfo) {
 function showTikTokVideo(data, container) {
     console.log("🎵 Mostrando video de TikTok:", data);
 
-    if (!data.videoUrl) {
+    const previewUrl = data.preview_url || data.videoUrl;
+    if (!previewUrl) {
         console.error("❌ No se encontró URL del video de TikTok");
         container.innerHTML = `<div class="error"><h3>No se encontró URL del video de TikTok</h3></div>`;
         return;
@@ -120,17 +121,17 @@ function showTikTokVideo(data, container) {
 
     // Enable global download
     // Usamos original_url si existe para forzar descarga HQ por servidor, sino videoUrl directo
-    const downloadUrl = data.original_url || data.videoUrl;
+    const downloadTarget = getDownloadTarget(data, previewUrl, 'source');
     const filename = buildFilename('tiktok', data.title, 'mp4');
     if (window.enableGlobalDownload) {
-        window.enableGlobalDownload(downloadUrl, filename);
+        window.enableGlobalDownload(downloadTarget, filename);
     }
 
     // Usar el mismo template unificado que Instagram, LinkedIn y X
     const cardHtml = renderVideoCard({
-        videoUrl: data.videoUrl,
+        videoUrl: previewUrl,
         thumbnail: data.thumbnail,
-        originalUrl: downloadUrl, // Important: Pass original URL for smart download
+        downloadTarget: downloadTarget,
         filename: filename,
         title: data.title || '',
         platform: 'tiktok'

@@ -79,6 +79,8 @@ class PinterestExtractor:
             "success": True,
             "title": title,
             "video_url": video_url,
+            "original_url": info.get('webpage_url', url),
+            "_download_mode": "source",
             "thumbnail": thumbnail,
             "uploader": uploader,
             "platform": "pinterest",

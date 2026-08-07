@@ -7,7 +7,8 @@ function isValidTwitchUrl(url) {
 function showTwitchVideo(data, container) {
     console.log("💜 Mostrando video de Twitch:", data);
 
-    if (!data.videoUrl) {
+    const previewUrl = data.preview_url || data.videoUrl;
+    if (!previewUrl) {
         console.error("❌ No se encontró URL del video de Twitch");
         container.innerHTML = `<div class="error"><h3>No se encontró URL del video de Twitch</h3></div>`;
         return;
@@ -15,20 +16,20 @@ function showTwitchVideo(data, container) {
 
     // Enable global download
     // Usamos original_url para forzar descarga HQ por servidor a través de yt-dlp
-    const downloadUrl = data.original_url || data.videoUrl;
+    const downloadTarget = getDownloadTarget(data, previewUrl, 'source');
     const filename = buildFilename('twitch', data.title, 'mp4');
     if (window.enableGlobalDownload) {
-        window.enableGlobalDownload(downloadUrl, filename);
+        window.enableGlobalDownload(downloadTarget, filename);
     }
 
     // Usar el mismo template unificado
     // data.thumbnail debería venir del extractor
     const cardHtml = renderVideoCard({
-        videoUrl: data.videoUrl, // En el caso de Twitch, esto puede ser un m3u8, pero renderVideoCard prioriza thumbnail
+        videoUrl: previewUrl, // En el caso de Twitch, esto puede ser un m3u8, pero renderVideoCard prioriza thumbnail
         thumbnail: data.thumbnail,
         title: data.title,
         filename: filename,
-        originalUrl: downloadUrl, // Important: Pass original URL for smart download
+        downloadTarget: downloadTarget,
         duration: data.duration,
         platform: 'twitch',
         views: data.view_count,

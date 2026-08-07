@@ -57,7 +57,7 @@ function showFacebookVideo(data, container) {
     console.log("📘 Mostrando video de Facebook:", data);
     
     // Normalizar URL (backend envía video_url, frontend espera videoUrl)
-    const url = data.video_url || data.videoUrl || "";
+    const url = data.preview_url || data.video_url || data.videoUrl || "";
 
     if (!url) {
         console.error("❌ No se encontró URL del video de Facebook");
@@ -66,14 +66,16 @@ function showFacebookVideo(data, container) {
     }
 
     const filename = buildFilename('facebook', data.title, 'mp4');
+    const downloadTarget = getDownloadTarget(data, url);
     // Enable global download
     if (window.enableGlobalDownload) {
-        window.enableGlobalDownload(url, filename);
+        window.enableGlobalDownload(downloadTarget, filename);
     }
 
     // Usar el mismo template unificado que Instagram, LinkedIn, X y TikTok
     const cardHtml = renderVideoCard({
         videoUrl: url,
+        downloadTarget: downloadTarget,
         thumbnail: data.thumbnail,
         filename: filename,
         title: data.title || '',
