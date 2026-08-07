@@ -1,0 +1,48 @@
+#!/bin/sh
+#
+# Stamps the app version in index.html as v.YY.MMDD build(HH.MM) using the
+# machine's LOCAL clock (already Argentina/UTC-3), then re-stages the file so
+# the stamp travels inside this very commit.
+#
+# Do NOT force TZ=America/Argentina/Buenos_Aires here: Git Bash on Windows
+# ships no tzdata, silently falls back to UTC, and stamps 3 hours ahead.
+
+set -e
+
+REPO_ROOT=$(git rev-parse --show-toplevel)
+INDEX_HTML="$REPO_ROOT/index.html"
+
+[ -f "$INDEX_HTML" ] || exit 0
+
+VERSION=$(date +"v.%y.%m%d build(%H.%M)")
+
+PYTHON=python
+command -v python >/dev/null 2>&1 || PYTHON=python3
+
+"$PYTHON" - "$INDEX_HTML" "$VERSION" <<'PY'
+import re
+import sys
+
+path, version = sys.argv[1], sys.argv[2]
+
+with open(path, encoding="utf-8") as handle:
+    html = handle.read()
+
+pattern = r'(<span class="app-version">)[^<]*(</span>)'
+stamped, count = re.subn(pattern, lambda m: m.group(1) + version + m.group(2), html)
+
+if count == 0:
+    sys.stderr.write(
+        "pre-commit: no <span class=\"app-version\"> found in index.html; "
+        "version not stamped\n"
+    )
+    sys.exit(1)
+
+if stamped != html:
+    with open(path, "w", encoding="utf-8") as handle:
+        handle.write(stamped)
+
+print("pre-commit: stamped " + version)
+PY
+
+git add "$INDEX_HTML"

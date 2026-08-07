@@ -100,6 +100,8 @@ c:\www\video-redes\
 │   └── threads/                  # Módulo Threads (navegador headless)
 │       ├── threads_extractor.py  # Playwright + intercepción de GraphQL
 │       └── threads.js
+├── tests/
+│   └── routing_checks.py         # Tests del enrutado preview_url / download_target
 ├── cookies/                      # (no versionado) *.txt de la extensión; se combinan solos
 ├── home_tunnel.py                # Backend residencial: túnel Cloudflare + registro en Railway
 ├── tunnel.bat                    # Un clic: app local + túnel (para usar tu PC de backend)
@@ -188,12 +190,21 @@ sequenceDiagram
     S-->>B: URL válida ✓
     B->>S: POST /api/extract
     S->>Y: Extraer info
-    Y-->>S: Metadatos + video_url
-    S-->>B: JSON con datos
-    B->>B: Renderizar tarjeta
+    Y-->>S: Metadatos + formatos
+    S-->>B: JSON: preview_url + download_target{url, mode}
+    B->>B: Renderizar tarjeta (usa preview_url)
     U->>B: Click en "Descargar"
-    B->>S: GET /api/download_start
+    B->>S: GET /api/download_start (manda download_target)
     S->>S: Crear thread
+    alt mode = source
+        S->>Y: Descargar desde URL original
+        Y->>F: Fusionar pistas separadas (si las hay)
+        F-->>S: MP4 con audio ✓
+    else mode = direct
+        S->>S: Descarga progresiva del CDN
+    else mode = gallery
+        S->>S: Empaquetar en ZIP
+    end
     loop Progreso
         B->>S: GET /api/download_status
         S-->>B: {progress: 45%}
@@ -234,6 +245,11 @@ sequenceDiagram
   "title": "Video Title",
   "uploader": "Channel Name",
   "thumbnail": "https://...",
+  "preview_url": "https://...mp4",
+  "download_target": {
+    "url": "https://www.youtube.com/watch?v=...",
+    "mode": "source"
+  },
   "video_url": "https://...mp4",
   "video_quality": "1080p",
   "duration": 120,
@@ -241,6 +257,23 @@ sequenceDiagram
   "platform": "YouTube"
 }
 ```
+
+**`preview_url` vs `download_target` (importante):** son dos cosas distintas a
+propósito. `preview_url` es la rendición del CDN que se usa para *previsualizar*
+en la tarjeta; `download_target` es lo que se *descarga*. Confundirlos es lo que
+producía videos mudos: si se descargaba la rendición del CDN tal cual, en las
+plataformas que sirven video y audio como pistas separadas el archivo salía sin
+sonido.
+
+| `mode` | Qué hace | Cuándo |
+|--------|----------|--------|
+| `source` | Pasa la URL original a yt-dlp: si hay pistas separadas las fusiona con FFmpeg; si ya viene muxeado lo deja intacto | YouTube, TikTok, Twitch, Facebook (cuando yt-dlp resuelve) |
+| `direct` | Descarga progresiva directa del CDN/servicio externo | Fallbacks manuales, fdown, getmyfb, CDN ya muxeado |
+| `gallery` | Lista de URLs empaquetada en ZIP | LinkedIn/Pinterest con galerías de imágenes |
+
+El frontend normaliza siempre vía `normalizeDownloadTarget()` /
+`getDownloadTarget()` en `src/common/card.js`, que además acepta el formato
+viejo (`original_url` suelto) para no romper respuestas previas.
 
 ---
 
@@ -277,7 +310,19 @@ python -m venv .venv
 
 # Instalar dependencias
 pip install -r requirements.txt
+
+# Instalar el hook que estampa la versión en cada commit
+copy scripts\hooks\pre-commit .git\hooks\pre-commit
 ```
+
+> **El hook hay que instalarlo en cada clon.** Git nunca versiona `.git/hooks/`,
+> así que un clon nuevo arranca sin él y los commits salen con la versión vieja
+> sin avisar. Por eso el fuente vive en `scripts/hooks/` y se copia a mano.
+>
+> **Ojo con la zona horaria si lo tocás:** el hook usa `date` a secas porque el
+> reloj de la máquina ya está en hora argentina. **No** le pongas
+> `TZ='America/Argentina/Buenos_Aires'`: Git Bash en Windows no trae tzdata, cae a
+> UTC en silencio y estampa 3 horas adelantado.
 
 ### 3. Ejecutar el Servidor
 
@@ -472,7 +517,34 @@ Esta herramienta ha sido creada con fines educativos y de uso personal.
 
 ---
 
-*Documentación actualizada: Julio 2026*  
+## 📋 Novedades v.26.0807 (Agosto 2026)
+
+- **Audio arreglado en todas las plataformas:** se separó `preview_url` (lo que se
+  previsualiza) de `download_target {url, mode}` (lo que se descarga). Antes, las
+  plataformas que sirven video y audio como **pistas separadas** se descargaban
+  copiando la rendición del CDN tal cual → el archivo salía **mudo**. Ahora el modo
+  `source` pasa la URL original a yt-dlp, que fusiona las pistas con FFmpeg y deja
+  intacto lo que ya viene muxeado. Los fallbacks directos (fdown, getmyfb, CDN) y
+  el ZIP de galerías siguen igual.
+- **Facebook:** reintento de descarga con la cookie combinada.
+- **Tests:** `tests/routing_checks.py` cubre el enrutado de los tres modos.
+- **Nuevo esquema de versión:** el header pasó de un contador (`v.4`, `v.58`) a un
+  **timestamp** `v.YY.MMDD build(HH.MM)` en hora argentina, en dos líneas (nombre
+  grande arriba, versión abajo). Así se ve de un vistazo **cuándo** se cortó el
+  build que está vivo en Railway, no solo que cambió.
+- **Hook `pre-commit`:** estampa la versión y re-stagea `index.html` en cada commit,
+  para que el sello viaje dentro de ese mismo commit. El fuente versionado está en
+  `scripts/hooks/pre-commit`; se instala copiándolo a `.git/hooks/` (ver "Instalación").
+- **`.codegraph/` ignorado:** índice local por máquina, nunca se comparte entre checkouts.
+
+> **Sobre el timestamp:** no se puede meter la fecha/hash de un commit *dentro* de
+> ese commit — el hash se calcula sobre el contenido, así que escribirlo adentro lo
+> cambia. El hook estampa justo antes de crear el commit; la diferencia es de
+> segundos y alcanza de sobra para confirmar qué build está desplegado.
+
+---
+
+*Documentación actualizada: Agosto 2026*  
 📧 Contacto: [julio.corbaz@gmail.com](mailto:julio.corbaz@gmail.com)
 🌐 **Página Web Oficial**: [https://redes-download.up.railway.app/](https://redes-download.up.railway.app/)
-*Versión del proyecto: 58*
+*Versión del proyecto: v.YY.MMDD build(HH.MM) — ver el header de la app*
