@@ -82,7 +82,10 @@ class YouTubeExtractor:
                 return self._extract_basic_format(url)
 
             # 1. Detectar máxima calidad (DASH includo)
-            all_formats = video_info.get('formats', [])
+            # `or []` y no `get('formats', [])`: el default de get() solo aplica si
+            # la clave FALTA. Si yt-dlp devuelve {'formats': None} —pasa con algunos
+            # videos— get() entrega None y los `for` de abajo revientan.
+            all_formats = video_info.get('formats') or []
             max_height = 0
             for f in all_formats:
                 h = f.get('height')
@@ -133,8 +136,8 @@ class YouTubeExtractor:
             quality_label = f"{h_val}p" if h_val else "Auto"
             
             # Datos generales
-            title = video_info.get('title', 'Video de YouTube')
-            uploader = video_info.get('uploader') or video_info.get('channel', 'Desconocido')
+            title = video_info.get('title') or 'Video de YouTube'
+            uploader = video_info.get('uploader') or video_info.get('channel') or 'Desconocido'
             duration = video_info.get('duration', 0)
             thumbnail = video_info.get('thumbnail', '')
             
@@ -246,8 +249,8 @@ class YouTubeExtractor:
             is_short = self._is_youtube_short(url, video_info)
 
             # Metadatos básicos
-            title = video_info.get('title', 'Video de YouTube')
-            uploader = video_info.get('uploader', 'Canal de YouTube')
+            title = video_info.get('title') or 'Video de YouTube'
+            uploader = video_info.get('uploader') or 'Canal de YouTube'
             thumbnail = video_info.get('thumbnail', '')
             duration = video_info.get('duration', 0)
 

@@ -1,0 +1,29 @@
+[MAIN]
+# El Procfile arranca con `python src/server.py`, así que Python agrega src/ al
+# sys.path automáticamente. Sin esto Pylint marca ~20 falsos import-error en
+# `from common.cookies_util import ...`, `from youtube.youtube_extractor ...`, etc.
+init-hook='import sys, os; sys.path.insert(0, os.path.join(os.getcwd(), "src"))'
+
+[MESSAGES CONTROL]
+# Se silencia el ruido de estilo que no cambia el comportamiento y que, al ser
+# tan abundante, tapaba los diagnósticos que SÍ importan (los de Pylance sobre
+# valores None). Si algo de esto se limpia alguna vez, sacarlo de la lista.
+disable =
+    C0114,  # missing-module-docstring
+    C0115,  # missing-class-docstring
+    C0116,  # missing-function-docstring
+    C0415,  # import-outside-toplevel (lazy imports deliberados: Playwright, yt_dlp)
+    W0718,  # broad-exception-caught (los extractores fallan de mil formas a propósito)
+    W0719,  # broad-exception-raised
+    W1203,  # logging-fstring-interpolation
+    R0801,  # duplicate-code (los extractores comparten forma por diseño)
+
+[FORMAT]
+max-line-length = 120
+
+[DESIGN]
+max-args = 10
+max-locals = 30
+max-branches = 30
+max-statements = 80
+max-attributes = 15
