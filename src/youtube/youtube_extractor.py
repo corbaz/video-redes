@@ -9,6 +9,35 @@ import os
 from common.ytdlp_cmd import YTDLP_CMD
 
 
+# Motivos concretos por los que YouTube rechaza una extracción. El primero que
+# coincide gana. Se buscan en el stderr crudo de yt-dlp para poder distinguir
+# un bloqueo por IP de datacenter (reenviable al backend residencial) de un
+# video realmente privado o borrado (que no tiene arreglo del lado del server).
+_YTDLP_ERROR_SIGNATURES = (
+    ("confirm you're not a bot", "YouTube pide verificación anti-bot (requiere sesión)"),
+    ("confirm you are not a bot", "YouTube pide verificación anti-bot (requiere sesión)"),
+    ("sign in to confirm", "YouTube pide verificación anti-bot (requiere sesión)"),
+    ("failed to extract any player response", "YouTube rechazó la petición (requiere sesión)"),
+    ("private video", "El video es privado"),
+    ("this video is private", "El video es privado"),
+    ("video unavailable", "El video no está disponible"),
+    ("has been removed", "El video fue eliminado"),
+    ("age-restricted", "El video tiene restricción de edad (requiere sesión)"),
+    ("members-only", "El video es solo para miembros del canal"),
+    ("http error 429", "YouTube está limitando la tasa de pedidos (rate-limit)"),
+    ("timed out", "Se agotó el tiempo de espera"),
+)
+
+
+def _summarize_ytdlp_error(stderr):
+    """Traduce el stderr de yt-dlp a una causa legible, o '' si no se reconoce."""
+    haystack = (stderr or '').lower()
+    for needle, reason in _YTDLP_ERROR_SIGNATURES:
+        if needle in haystack:
+            return reason
+    return ''
+
+
 class YouTubeExtractor:
     def __init__(self):
         self.name = "YouTube Extractor"
@@ -178,11 +207,18 @@ class YouTubeExtractor:
             print(f"📊 Basic extraction return code: {result.returncode}")
 
             if result.returncode != 0:
-                error_msg = result.stderr
+                error_msg = (result.stderr or '').strip()
                 print(f"❌ Error en extracción básica: {error_msg}")
+                # Preservamos el motivo real de yt-dlp: sin él, un bloqueo por
+                # IP de datacenter, un video privado y un timeout se ven
+                # exactamente igual, y el reenvío al backend residencial
+                # (_looks_login_gated en server.py) no puede reconocerlos.
+                detail = _summarize_ytdlp_error(error_msg)
                 return {
                     "success": False,
-                    "error": "No se pudo extraer el video con formato básico",
+                    "error": f"No se pudo extraer el video con formato básico: {detail}"
+                    if detail else "No se pudo extraer el video con formato básico",
+                    "detail": error_msg,
                     "suggestion": "El video podría no estar disponible o tener restricciones"
                 }
 

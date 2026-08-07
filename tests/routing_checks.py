@@ -5,6 +5,7 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from server import normalize_extraction_result, select_download_route
+from youtube.youtube_extractor import _summarize_ytdlp_error
 
 
 class DownloadRoutingTests(unittest.TestCase):
@@ -61,6 +62,49 @@ class DownloadRoutingTests(unittest.TestCase):
     def test_explicit_direct_does_not_switch_to_source_by_domain(self):
         self.assertEqual(select_download_route("direct", "facebook_video.mp4"), "direct")
         self.assertEqual(select_download_route("source", "facebook_video.mp4"), "source")
+
+
+class YouTubeErrorDiagnosisTests(unittest.TestCase):
+    """The generic fallback message used to hide *why* YouTube refused, which
+    left the residential-backend forwarding gate blind. These lock in that the
+    real yt-dlp reason survives and that only the reasons a home IP can
+    actually fix are worded so the gate forwards them."""
+
+    # Mirrors VideoDownloaderHandler._looks_login_gated in server.py.
+    GATE_NEEDLES = (
+        "iniciar sesi", "requiere login", "login required",
+        "no se pudieron obtener cookies", "empty media response",
+        "registered users", "requiere sesión", "requiere sesion",
+    )
+
+    def _forwards(self, stderr):
+        reason = _summarize_ytdlp_error(stderr)
+        return any(n in reason.lower() for n in self.GATE_NEEDLES)
+
+    def test_bot_check_is_recognized_and_forwarded_to_residential_backend(self):
+        for stderr in (
+            "ERROR: [youtube] x: Sign in to confirm you're not a bot.",
+            "ERROR: [youtube] x: Failed to extract any player response",
+        ):
+            with self.subTest(stderr=stderr):
+                self.assertTrue(self._forwards(stderr))
+
+    def test_unfixable_reasons_are_named_but_not_forwarded(self):
+        # Forwarding these to the home PC would just fail there too.
+        for stderr, expected in (
+            ("ERROR: [youtube] x: Private video.", "El video es privado"),
+            ("ERROR: [youtube] x: Video unavailable", "El video no está disponible"),
+            ("ERROR: unable to download webpage: The read operation timed out",
+             "Se agotó el tiempo de espera"),
+        ):
+            with self.subTest(stderr=stderr):
+                self.assertEqual(_summarize_ytdlp_error(stderr), expected)
+                self.assertFalse(self._forwards(stderr))
+
+    def test_unknown_failures_stay_empty_so_raw_stderr_is_what_gets_shown(self):
+        self.assertEqual(_summarize_ytdlp_error("ERROR: something brand new"), "")
+        self.assertEqual(_summarize_ytdlp_error(""), "")
+        self.assertEqual(_summarize_ytdlp_error(None), "")
 
 
 if __name__ == "__main__":
