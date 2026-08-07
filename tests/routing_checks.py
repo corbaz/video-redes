@@ -4,7 +4,11 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from server import normalize_extraction_result, select_download_route
+from server import (
+    VideoDownloaderHandler,
+    normalize_extraction_result,
+    select_download_route,
+)
 from youtube.youtube_extractor import _summarize_ytdlp_error
 
 
@@ -62,6 +66,38 @@ class DownloadRoutingTests(unittest.TestCase):
     def test_explicit_direct_does_not_switch_to_source_by_domain(self):
         self.assertEqual(select_download_route("direct", "facebook_video.mp4"), "direct")
         self.assertEqual(select_download_route("source", "facebook_video.mp4"), "source")
+
+
+class RangeHeaderTests(unittest.TestCase):
+    """Range support is what lets the card's player seek; without it Safari/iOS
+    refuses to play at all. Only a single range is supported on purpose."""
+
+    SIZE = 1000
+
+    def parse(self, header):
+        return VideoDownloaderHandler._parse_range_header(header, self.SIZE)
+
+    def test_absent_or_unsupported_headers_fall_back_to_a_full_200(self):
+        for header in (None, "", "items=0-10", "bytes=0-10,20-30", "bytes=abc"):
+            with self.subTest(header=header):
+                self.assertIsNone(self.parse(header))
+
+    def test_explicit_and_open_ended_ranges(self):
+        self.assertEqual(self.parse("bytes=0-499"), (0, 499))
+        self.assertEqual(self.parse("bytes=500-"), (500, 999))
+        self.assertEqual(self.parse("bytes=0-"), (0, 999))
+
+    def test_suffix_range_returns_the_tail(self):
+        self.assertEqual(self.parse("bytes=-200"), (800, 999))
+        self.assertEqual(self.parse("bytes=-5000"), (0, 999))
+
+    def test_end_past_eof_is_clamped_not_rejected(self):
+        self.assertEqual(self.parse("bytes=900-5000"), (900, 999))
+
+    def test_unsatisfiable_ranges_are_flagged_for_416(self):
+        for header in ("bytes=1000-", "bytes=1500-1600", "bytes=-0", "bytes=500-400"):
+            with self.subTest(header=header):
+                self.assertEqual(self.parse(header), "invalid")
 
 
 class YouTubeErrorDiagnosisTests(unittest.TestCase):

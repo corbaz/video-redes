@@ -335,7 +335,10 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                     filename = download_tasks[task_id]['filename']
 
                     if os.path.exists(file_path):
-                        self.serve_downloaded_file(file_path, filename)
+                        # inline=1 → reproducir en el visor de la tarjeta;
+                        # sin el flag se comporta como siempre (descarga).
+                        inline = params.get('inline', ['0'])[0] == '1'
+                        self.serve_downloaded_file(file_path, filename, inline=inline)
                     else:
                         self.send_error(404, "File not found on server")
                 else:
@@ -618,31 +621,104 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                 download_tasks[task_id]['status'] = 'error'
                 download_tasks[task_id]['error'] = str(e)
 
-    def serve_downloaded_file(self, path, filename):
-         try:
+    @staticmethod
+    def _parse_range_header(range_header, file_size):
+        """Traduce un header Range a (start, end) inclusivo, o None si no aplica.
+
+        Devuelve 'invalid' cuando el rango es sintácticamente válido pero cae
+        fuera del archivo, para poder responder 416 como manda el RFC 7233.
+        Solo se soporta un rango simple: alcanza para <video> y evita tener que
+        armar respuestas multipart.
+        """
+        if not range_header:
+            return None
+
+        units, _, spec = range_header.partition('=')
+        if units.strip().lower() != 'bytes' or ',' in spec:
+            return None
+
+        start_raw, sep, end_raw = spec.strip().partition('-')
+        if not sep:
+            return None
+
+        try:
+            if not start_raw:
+                # bytes=-N → los últimos N bytes
+                suffix = int(end_raw)
+                if suffix <= 0:
+                    return 'invalid'
+                start = max(0, file_size - suffix)
+                end = file_size - 1
+            else:
+                start = int(start_raw)
+                end = int(end_raw) if end_raw else file_size - 1
+        except ValueError:
+            return None
+
+        if start >= file_size or start > end:
+            return 'invalid'
+
+        return start, min(end, file_size - 1)
+
+    def serve_downloaded_file(self, path, filename, inline=False):
+        """Sirve el archivo ya descargado.
+
+        `inline=True` lo entrega para reproducir en un <video> en vez de bajarlo.
+        Se soportan Range requests (206) porque sin eso el navegador no puede
+        adelantar el video, y Safari/iOS directamente se niega a reproducir.
+        """
+        try:
             # Snyk Path Validation
             safe_base = os.path.realpath(os.getcwd())
             requested_path = os.path.realpath(path)
-            
+
             if os.path.commonpath([safe_base, requested_path]) != safe_base:
-                 logger.warning(f"⛔ Attempt to serve file outside base: {path}")
-                 self.send_error(403)
-                 return
-            
-            with open(requested_path, 'rb') as f:
-                self.send_response(200)
-                # Adivinar MIME type
-                content_type, _ = mimetypes.guess_type(filename)
-                if not content_type: content_type = 'application/octet-stream'
-                self.send_header('Content-Type', content_type)
-                self.send_header('Content-Disposition', f'attachment; filename="{filename}"')
-                self.send_header('Content-Length', str(os.path.getsize(requested_path)))
+                logger.warning(f"⛔ Attempt to serve file outside base: {path}")
+                self.send_error(403)
+                return
+
+            file_size = os.path.getsize(requested_path)
+            content_type, _ = mimetypes.guess_type(filename)
+            if not content_type:
+                content_type = 'application/octet-stream'
+
+            disposition = 'inline' if inline else 'attachment'
+            rng = self._parse_range_header(self.headers.get('Range'), file_size)
+
+            if rng == 'invalid':
+                self.send_response(416)
+                self.send_header('Content-Range', f'bytes */{file_size}')
                 self.end_headers()
-                while True:
-                    chunk = f.read(8192)
-                    if not chunk: break
+                return
+
+            if rng:
+                start, end = rng
+                length = end - start + 1
+                self.send_response(206)
+                self.send_header('Content-Range', f'bytes {start}-{end}/{file_size}')
+            else:
+                start, length = 0, file_size
+                self.send_response(200)
+
+            self.send_header('Content-Type', content_type)
+            self.send_header('Content-Disposition', f'{disposition}; filename="{filename}"')
+            self.send_header('Content-Length', str(length))
+            self.send_header('Accept-Ranges', 'bytes')
+            self.end_headers()
+
+            with open(requested_path, 'rb') as f:
+                f.seek(start)
+                remaining = length
+                while remaining > 0:
+                    chunk = f.read(min(8192, remaining))
+                    if not chunk:
+                        break
                     self.wfile.write(chunk)
-         except Exception as e:
+                    remaining -= len(chunk)
+        except (BrokenPipeError, ConnectionResetError):
+            # El <video> corta la conexión al saltar de posición: es normal.
+            logger.debug("Cliente cerró la conexión mientras se servía el archivo")
+        except Exception as e:
             logger.error(f"Error serving file: {e}")
 
     def handle_download(self):

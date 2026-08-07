@@ -25,7 +25,7 @@
     </svg>
     <div class="container">
         <div class="header">
-            <h1>Redes Sociales Downloader<span class="app-version">v.26.0807 build(16.02)</span></h1>
+            <h1>Redes Sociales Downloader<span class="app-version">v.26.0807 build(16.31)</span></h1>
             <div class="header-icons">
 
                 <!-- Instagram -->
@@ -188,6 +188,96 @@
             if (sbtn) {
                 sbtn.classList.remove('active');
                 sbtn.onclick = null;
+            }
+        };
+
+        // Reproduce el video dentro de la propia tarjeta.
+        //
+        // Se descarga primero al temporal del servidor y recién ahí se reproduce,
+        // en vez de apuntar el <video> al preview_url: esa rendición del CDN puede
+        // venir SIN audio en las plataformas que sirven video y audio por separado
+        // (el mismo motivo por el que las descargas salían mudas). El archivo
+        // temporal ya pasó por yt-dlp+FFmpeg, así que tiene audio garantizado.
+        //
+        // A diferencia de la descarga, acá no se abre modal de progreso: solo un
+        // spinner discreto sobre la miniatura.
+        window.startInlinePlayback = async function (downloadTarget, filename, triggerEl) {
+            const target = normalizeDownloadTarget(downloadTarget);
+
+            // Una galería no es reproducible: se comporta como siempre.
+            if (target.mode === 'gallery') {
+                return startSmartDownload(target, filename);
+            }
+
+            const container = triggerEl && triggerEl.querySelector('.card-video-container');
+            if (!container) return startSmartDownload(target, filename);
+
+            // Evita relanzar la descarga si ya está sonando o en curso.
+            if (container.dataset.playerState === 'loading') return;
+            if (container.dataset.playerState === 'ready') {
+                const existing = container.querySelector('video.card-player');
+                if (existing) { existing.play().catch(() => {}); return; }
+            }
+            container.dataset.playerState = 'loading';
+
+            const spinner = document.createElement('div');
+            spinner.className = 'card-player-loading';
+            spinner.innerHTML = '<div class="card-player-spinner" role="status" aria-label="Preparando video"></div>';
+            container.appendChild(spinner);
+
+            let pollInterval = null;
+            const fail = (msg) => {
+                if (pollInterval) clearInterval(pollInterval);
+                spinner.remove();
+                container.dataset.playerState = '';
+                darkModal({
+                    iconSvg: '<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#ff6b6b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
+                    iconBg: 'rgba(255,107,107,0.12)',
+                    title: 'No se pudo reproducir',
+                    text: msg,
+                    secondaryLabel: 'Cerrar'
+                });
+            };
+
+            try {
+                const targetUrl = target.url;
+                const startRes = await fetch(`/api/download_start?url=${encodeURIComponent(targetUrl)}&filename=${encodeURIComponent(filename)}&download_mode=${encodeURIComponent(target.mode)}`);
+                const startData = await startRes.json();
+                if (!startRes.ok || !startData.task_id) throw new Error(startData.error || 'No se pudo preparar el video');
+                const taskId = startData.task_id;
+
+                pollInterval = setInterval(async () => {
+                    try {
+                        const statusRes = await fetch(`/api/download_status?id=${taskId}`);
+                        if (!statusRes.ok) throw new Error('Error de red');
+                        const statusData = await statusRes.json();
+                        if (statusData.error) throw new Error(statusData.error);
+                        if (statusData.status !== 'completed') return;
+
+                        clearInterval(pollInterval);
+                        spinner.remove();
+
+                        const player = document.createElement('video');
+                        player.className = 'card-video-element card-player';
+                        player.src = `/api/download_file?id=${taskId}&inline=1`;
+                        player.controls = true;
+                        player.autoplay = true;
+                        player.playsInline = true;
+                        player.preload = 'auto';
+
+                        // El <video> reemplaza a la miniatura y al ícono de la red,
+                        // ocupando exactamente el mismo lugar y proporción.
+                        container.querySelectorAll('img, video:not(.card-player), .platform-icon-overlay')
+                            .forEach((el) => el.remove());
+                        container.appendChild(player);
+                        container.dataset.playerState = 'ready';
+                        player.play().catch(() => {}); // autoplay bloqueado: quedan los controles
+                    } catch (err) {
+                        fail(err.message || 'Error inesperado');
+                    }
+                }, 1000);
+            } catch (e) {
+                fail(e.message || 'Error inesperado');
             }
         };
 

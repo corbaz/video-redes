@@ -232,7 +232,7 @@ sequenceDiagram
 | `/api/download_start?url=...&filename=...` | Iniciar tarea de descarga |
 | `/api/download_cancel?id=task_id` | Cancelar descarga |
 | `/api/download_status?id=task_id` | Consultar estado |
-| `/api/download_file?id=task_id` | Descargar archivo completado |
+| `/api/download_file?id=task_id` | Descargar archivo completado (`&inline=1` lo sirve para reproducir en vez de bajar; soporta Range/206 para adelantar) |
 | `/api/download?url=...&filename=...` | Descarga directa legacy |
 | `/admin/cookies` | Panel para actualizar la cookie compartida (requiere ADMIN_SECRET) |
 
@@ -403,6 +403,40 @@ El proyecto está configurado para desplegarse fácilmente ("Deploy Ready").
 Sin cookie configurada, en Railway solo funcionan los reels públicos (vía proxy de embeds); el resto necesita la cookie compartida.
 
 > **Nota sobre login automático (descartado):** se probó un login en vivo con Playwright (navegador automatizado en el server) para refrescar la cookie sin exportar/pegar a mano. No funciona: Instagram/Facebook detectan el navegador automatizado (reCAPTCHA con loop infinito de captchas) y además desconfían de la IP de datacenter de Railway. La única vía confiable es cargar una cookie nacida en un navegador real y logueado (IP residencial) vía la extensión "Get cookies.txt LOCALLY" y pegarla en `/admin/cookies`.
+
+---
+
+## ▶️ Reproductor inline (clic en la tarjeta)
+
+Hacer clic en la preview **reproduce el video dentro de la propia tarjeta**.
+Descargar es responsabilidad exclusiva del botón de descarga.
+
+**Por qué se descarga al temporal antes de reproducir** (y no se apunta el
+`<video>` directo al `preview_url`, que sería instantáneo):
+
+> El `preview_url` es la rendición del CDN, y en las plataformas que sirven video
+> y audio como pistas separadas **puede venir sin audio** — el mismo motivo por el
+> que las descargas salían mudas. Reproducirlo directo mostraría el video en
+> silencio sin que nadie se entere. El archivo temporal ya pasó por yt-dlp+FFmpeg,
+> así que tiene audio garantizado.
+
+A diferencia de la descarga, la reproducción **no abre modal de progreso**: solo
+un spinner discreto sobre la miniatura mientras se prepara el archivo.
+
+**Detalles que hacen que funcione de verdad:**
+
+- `/api/download_file` acepta `&inline=1` → responde `Content-Disposition: inline`
+  en vez de `attachment`, para que el navegador reproduzca en lugar de bajar.
+- El endpoint soporta **Range requests** (`206 Partial Content` + `Accept-Ranges`).
+  Sin esto no se puede arrastrar la barra de tiempo, y Safari/iOS directamente se
+  niega a reproducir. Rango simple únicamente; fuera de rango responde `416`.
+- El `<video>` usa `object-fit: contain` (no `cover` como la miniatura): la tarjeta
+  es 9:16 y un video horizontal quedaría recortado a los costados.
+- Las galerías no son reproducibles → el clic cae a la descarga ZIP de siempre.
+
+> **Limitación conocida:** yt-dlp puede devolver el video en **AV1**. Chrome y Edge
+> lo reproducen sin problema; Safari viejo y algunos iOS no. En esos casos el
+> archivo se descarga bien igual, pero el reproductor inline puede quedar en negro.
 
 ---
 
@@ -595,6 +629,9 @@ Esta herramienta ha sido creada con fines educativos y de uso personal.
   Ahora el `stderr` crudo viaja en `detail` y la causa reconocida se anexa al `error`.
 - **Build de Android arreglado:** `gradle.properties` apuntaba a `jdk-21.0.11`, que
   dejó de existir cuando Java se auto-actualizó a `21.0.12`. Ver "App Android (APK)".
+- **Reproductor en la tarjeta:** el clic sobre la preview ahora **reproduce el video
+  ahí mismo** en vez de descargarlo; descargar quedó como responsabilidad exclusiva
+  del botón. Ver "Reproductor inline".
 
 > **Sobre el timestamp:** no se puede meter la fecha/hash de un commit *dentro* de
 > ese commit — el hash se calcula sobre el contenido, así que escribirlo adentro lo

@@ -1195,6 +1195,50 @@ body {
     border-radius: 12px;
 }
 
+/* Reproductor inline: ocupa el mismo lugar que la miniatura, pero con
+   object-fit: contain en vez de cover. La tarjeta es 9:16 y un video horizontal
+   quedaría recortado a los costados con cover; acá se prioriza ver el cuadro
+   completo sobre llenar el marco. */
+.card-player {
+    object-fit: contain;
+    background: #000;
+    z-index: 3;
+}
+
+/* Spinner discreto mientras se prepara el archivo. A propósito NO es un modal:
+   la reproducción no anuncia que está descargando. */
+.card-player-loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 12px;
+    z-index: 4;
+}
+
+.card-player-spinner {
+    width: 44px;
+    height: 44px;
+    border: 3px solid rgba(255, 255, 255, 0.25);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: card-player-spin 0.9s linear infinite;
+}
+
+@keyframes card-player-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card-player-spinner {
+        animation-duration: 2.4s;
+    }
+}
+
 .card-play-icon {
     position: absolute;
     top: 50%;

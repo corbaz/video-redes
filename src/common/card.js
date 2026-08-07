@@ -76,9 +76,11 @@ function renderVideoCard({ videoUrl = "", downloadTarget = null, thumbnail = "",
   const encodedTarget = encodeDownloadTarget(target);
   const encodedFilename = encodeURIComponent(finalFilename);
 
-  // Add onclick handler to trigger smart download
-  // We use decodeURIComponent inside the onclick to restore the original values before passing to the function
-  const clickHandler = `onclick="if(window.startSmartDownload) { window.startSmartDownload(JSON.parse(decodeURIComponent('${encodedTarget}')), decodeURIComponent('${encodedFilename}')); } else { console.error('SmartDownload not found'); }"`;
+  // Clic en la tarjeta = REPRODUCIR acá mismo, no descargar. Descargar es
+  // responsabilidad del botón dedicado. Si el visor no está disponible se cae a
+  // la descarga para no dejar el clic muerto.
+  // Se usa decodeURIComponent adentro del onclick para evitar problemas de comillas.
+  const clickHandler = `onclick="if(window.startInlinePlayback) { window.startInlinePlayback(JSON.parse(decodeURIComponent('${encodedTarget}')), decodeURIComponent('${encodedFilename}'), this); } else if (window.startSmartDownload) { window.startSmartDownload(JSON.parse(decodeURIComponent('${encodedTarget}')), decodeURIComponent('${encodedFilename}')); } else { console.error('Inline player not found'); }"`;
 
   // Platform Icons Definitions
   const platformIcons = {
@@ -110,7 +112,7 @@ function renderVideoCard({ videoUrl = "", downloadTarget = null, thumbnail = "",
 
   if (thumbnail) {
     return `
-        <div class="video-thumbnail-container video-card-container" style="cursor: pointer;" ${clickHandler} title="Clic para descargar">
+        <div class="video-thumbnail-container video-card-container" style="cursor: pointer;" ${clickHandler} title="Clic para reproducir">
           <div class="card-video-container">
             <img src="${thumbnail}" alt="${safeTitle}"
                  class="card-video-element"
@@ -122,7 +124,7 @@ function renderVideoCard({ videoUrl = "", downloadTarget = null, thumbnail = "",
   } else {
     // Fallback: Use HTML5 Video
     return `
-        <div class="video-thumbnail-container video-card-container" style="cursor: pointer;" ${clickHandler} title="Clic para descargar">
+        <div class="video-thumbnail-container video-card-container" style="cursor: pointer;" ${clickHandler} title="Clic para reproducir">
           <div class="card-video-container">
             <video src="${safeVideoUrl}#t=0.01" preload="metadata" muted playsinline
                    class="card-video-element" style="pointer-events: none;">
