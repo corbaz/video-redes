@@ -101,7 +101,14 @@ c:\www\video-redes\
 │       ├── threads_extractor.py  # Playwright + intercepción de GraphQL
 │       └── threads.js
 ├── tests/
-│   └── routing_checks.py         # Tests del enrutado preview_url / download_target
+│   └── routing_checks.py         # Tests del enrutado + diagnóstico de errores YouTube
+├── scripts/
+│   └── hooks/pre-commit          # Hook que estampa la versión (copiar a .git/hooks/)
+├── mobile/                       # App Android (cáscara Capacitor sobre la URL de Railway)
+│   ├── capacitor.config.json     # server.url apunta a Railway → la web no requiere recompilar
+│   ├── build-apk.bat             # Genera el APK de debug
+│   ├── android/                  # Proyecto Gradle (versionado como respaldo)
+│   └── RedesDownloader-debug.apk # APK distribuible (versionado)
 ├── cookies/                      # (no versionado) *.txt de la extensión; se combinan solos
 ├── home_tunnel.py                # Backend residencial: túnel Cloudflare + registro en Railway
 ├── tunnel.bat                    # Un clic: app local + túnel (para usar tu PC de backend)
@@ -399,6 +406,49 @@ Sin cookie configurada, en Railway solo funcionan los reels públicos (vía prox
 
 ---
 
+## 📱 App Android (APK)
+
+La app de Android **no es una copia de la web**: es una **cáscara delgada**
+(Capacitor) que carga el sitio vivo de Railway. En `mobile/capacitor.config.json`:
+
+```json
+"server": { "url": "https://redes-download.up.railway.app" }
+```
+
+El `mobile/www/index.html` es solo un placeholder que dice "Cargando…" mientras
+levanta la URL real.
+
+**La consecuencia práctica (y la que más confunde):**
+
+| Qué cambiaste | ¿Hay que recompilar el APK? |
+|---|---|
+| HTML / CSS / JS del frontend | ❌ No — la app lo toma de Railway al abrirse |
+| Extractores, `server.py`, backend | ❌ No — corre en Railway, no en el teléfono |
+| Plugins de Capacitor, permisos, `capacitor.config.json` | ✅ Sí |
+| Ícono, nombre, versión nativa, `AndroidManifest` | ✅ Sí |
+
+O sea: **pusheás a Railway y el APK ya instalado se actualiza solo.** No hay que
+redistribuir el APK por cada arreglo de la web.
+
+**Construir el APK:**
+
+```powershell
+cd mobile
+.\build-apk.bat
+```
+
+Deja el resultado en `mobile/RedesDownloader-debug.apk` (versionado en el repo
+como respaldo distribuible).
+
+> **Gotcha del JDK:** `mobile/android/gradle.properties` fija
+> `org.gradle.java.home` porque el `JAVA_HOME` de la máquina apunta a **JDK 17** y
+> este proyecto necesita **21**. Apunta a `C:/Program Files/Java/latest/jdk-21`,
+> que es un enlace que mantiene el instalador de Oracle — **no** a una ruta con
+> patch fijo tipo `jdk-21.0.11`. Java se auto-actualiza de patch y una ruta fija
+> deja el build roto con `Java home supplied is invalid`.
+
+---
+
 ## 🔧 Detalles Técnicos de los Extractores
 
 ### YouTube Extractor
@@ -536,6 +586,15 @@ Esta herramienta ha sido creada con fines educativos y de uso personal.
   para que el sello viaje dentro de ese mismo commit. El fuente versionado está en
   `scripts/hooks/pre-commit`; se instala copiándolo a `.git/hooks/` (ver "Instalación").
 - **`.codegraph/` ignorado:** índice local por máquina, nunca se comparte entre checkouts.
+- **YouTube: se dejó de ocultar el motivo del fallo.** El fallback de formato básico
+  capturaba el `stderr` de yt-dlp, lo imprimía y lo **descartaba**, devolviendo el
+  mismo texto genérico para todo: bloqueo por IP de datacenter, video privado,
+  rate-limit o timeout se veían idénticos. Peor: `_looks_login_gated()` decide si
+  reenviar al backend residencial **leyendo ese error**, así que nunca reconocía los
+  fallos de YouTube y el reenvío —que ya existía y funcionaba— jamás se activaba.
+  Ahora el `stderr` crudo viaja en `detail` y la causa reconocida se anexa al `error`.
+- **Build de Android arreglado:** `gradle.properties` apuntaba a `jdk-21.0.11`, que
+  dejó de existir cuando Java se auto-actualizó a `21.0.12`. Ver "App Android (APK)".
 
 > **Sobre el timestamp:** no se puede meter la fecha/hash de un commit *dentro* de
 > ese commit — el hash se calcula sobre el contenido, así que escribirlo adentro lo
