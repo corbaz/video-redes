@@ -1,13 +1,15 @@
 @echo off
+setlocal
 cls
+cd /d c:\www\video-redes
 echo Deteniendo tunel y app local...
 
 REM 1) Matar home_tunnel por su PID (asi no relanza cloudflared con la auto-reparacion)
-if exist ".tunnel_pid" (
-    set /p TPID=<.tunnel_pid
-    taskkill /f /pid %TPID% >nul 2>&1
-    del /q ".tunnel_pid" >nul 2>&1
-)
+REM    Fuera de un bloque ( ) para que %TPID% se expanda despues del set /p.
+set "TPID="
+if exist ".tunnel_pid" set /p TPID=<.tunnel_pid
+if defined TPID taskkill /f /pid %TPID% >nul 2>&1
+del /q ".tunnel_pid" >nul 2>&1
 
 REM 2) Matar las ventanas por titulo (y sus hijos con /t)
 taskkill /f /t /fi "WINDOWTITLE eq Video-Redes Tunnel*" >nul 2>&1

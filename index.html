@@ -25,7 +25,7 @@
     </svg>
     <div class="container">
         <div class="header">
-            <h1>Redes Sociales Downloader<span class="app-version">v.26.0807 build(16.57)</span></h1>
+            <h1>Redes Sociales Downloader<span class="app-version">v.26.1028 build(14.46)</span></h1>
             <div class="header-icons">
 
                 <!-- Instagram -->
@@ -754,7 +754,7 @@
                     else if (urlToCheck.includes('instagram')) { platformName = 'Instagram'; platformClass = 'instagram'; }
                     else if (urlToCheck.includes('tiktok')) { platformName = 'TikTok'; platformClass = 'tiktok'; }
                     else if (urlToCheck.includes('facebook') || urlToCheck.includes('fb.watch')) { platformName = 'Facebook'; platformClass = 'facebook'; }
-                    else if (urlToCheck.includes('linkedin')) { platformName = 'LinkedIn'; platformClass = 'linkedin'; }
+                    else if (urlToCheck.includes('linkedin') || urlToCheck.includes('lnkd.in')) { platformName = 'LinkedIn'; platformClass = 'linkedin'; }
                     else if (urlToCheck.includes('x.com') || urlToCheck.includes('twitter')) { platformName = 'X'; platformClass = 'twitter'; }
                     else if (urlToCheck.includes('twitch')) { platformName = 'Twitch'; platformClass = 'twitch'; }
                     else if (urlToCheck.includes('pinterest') || urlToCheck.includes('pin.it')) { platformName = 'Pinterest'; platformClass = 'pinterest'; }
@@ -863,7 +863,7 @@
                 } else if (url.includes('instagram')) {
                     const videoData = data.data || data;
                     showInstagramVideo(videoData, container);
-                } else if (url.includes('linkedin')) {
+                } else if (url.includes('linkedin') || url.includes('lnkd.in')) {
                     const videoData = data.data || data;
                     showLinkedinVideo(videoData, container);
                 } else if (url.includes('tiktok')) {
