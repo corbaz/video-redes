@@ -22,6 +22,11 @@ import base64
 import tempfile
 import time
 import hmac
+from dotenv import load_dotenv
+
+# Secretos locales de la PC (LINKEDIN_LI_AT, ADMIN_SECRET...). No pisa variables
+# ya definidas en el entorno, y sin .env (Railway) no hace nada.
+load_dotenv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env'))
 
 # En despliegues sin filesystem persistente (Railway, Heroku), el archivo de
 # cookies de Instagram se pasa como variable de entorno en Base64
@@ -39,7 +44,7 @@ if _cookies_b64 and not os.environ.get('INSTAGRAM_COOKIES_FILE'):
 
 
 # Importar utilidades y extractores
-from common.cookies_util import combined_cookies_file
+from common.cookies_util import combined_cookies_file, save_cookie_file
 from instagram.insta_extractor import InstagramExtractor
 from linkedin.linkedin_extractor import LinkedInExtractor
 from x.x_extractor import XExtractor
@@ -89,7 +94,7 @@ REMOTE_FALLBACK_TTL = 600
 # Works even when the browser is open and locking its cookie database.
 INSTAGRAM_COOKIES_FILE = os.environ.get(
     'INSTAGRAM_COOKIES_FILE',
-    os.path.join(os.path.dirname(__file__), '..', 'cookies', 'instagram.txt')
+    os.path.join(os.path.dirname(__file__), '..', 'cookies', 'www.instagram.com_cookies.txt')
 )
 
 
@@ -143,7 +148,7 @@ def download_with_source_auth(ydl_opts, url, error):
     if 'could not copy' in err_str or 'permission denied' in err_str:
         raise Exception(
             "BROWSER_LOCK_ERROR: Cierra Chrome/Edge para permitir el acceso a las cookies, "
-            "o exporta tus cookies de Instagram a 'cookies/instagram.txt'."
+            "o exporta tus cookies de Instagram a 'cookies/www.instagram.com_cookies.txt'."
         )
     raise last_error
 
@@ -154,6 +159,37 @@ def download_with_instagram_auth(ydl_opts, url, error):
 
 
 DOWNLOAD_MODES = {'source', 'direct', 'gallery'}
+
+# Acortadores que se expanden antes de validar/rutear: host -> sufijo de host
+# aceptado como destino (no seguimos redirecciones hacia otros dominios).
+SHORT_LINK_HOSTS = {'lnkd.in': 'linkedin.com'}
+
+
+def expand_short_link(url):
+    """Expand a known short link (e.g. https://lnkd.in/p/<code>) to its target.
+
+    Only one redirect hop is read, and only a target on the expected domain is
+    accepted; anything else (other URLs, errors, foreign targets) returns
+    ``url`` unchanged.
+    """
+    host = (urlparse(url).hostname or '').lower()
+    expected = SHORT_LINK_HOSTS.get(host)
+    if not expected:
+        return url
+    try:
+        response = requests.get(
+            url, allow_redirects=False, timeout=10,
+            headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
+    except requests.RequestException as e:
+        logger.warning(f"No se pudo expandir {url}: {e}")
+        return url
+    target = response.headers.get('Location', '')
+    target_host = (urlparse(target).hostname or '').lower()
+    if response.status_code in (301, 302, 303, 307, 308) and (
+            target_host == expected or target_host.endswith('.' + expected)):
+        logger.info(f"🔗 Enlace corto expandido: {url} -> {target}")
+        return target
+    return url
 
 
 def normalize_download_mode(mode):
@@ -211,6 +247,8 @@ def normalize_extraction_result(result, source_url, platform):
 # de Instagram sin acceder a Railway/terminal. Si no está configurada, el
 # panel queda deshabilitado (no se acepta ninguna clave).
 ADMIN_SECRET = os.environ.get('ADMIN_SECRET', '')
+# Tope del body del panel admin: un export de Instagram ronda los 300 KB.
+ADMIN_COOKIES_MAX_BYTES = 5 * 1024 * 1024
 
 # Intervalo de refresco de la sesión de Instagram (segundos). Usar la cookie
 # periódicamente extiende su vigencia; no la hace eterna, pero reduce cuánto
@@ -998,6 +1036,9 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                     {'success': False, 'error': 'Protocolo no válido'}, 400)
                 return
 
+            # lnkd.in/p/... -> URL real de linkedin.com (el front extrae con la que devolvemos)
+            url = expand_short_link(url)
+
             # Validar URL según plataforma
             if any(domain in url for domain in ['threads.com', 'threads.net', 'instagram.com', 'cdninstagram.com', 'linkedin.com', 'x.com', 'twitter.com', 'tiktok.com', 'facebook.com', 'fb.watch', 'youtube.com', 'youtu.be', 'm.youtube.com', 'twitch.tv', 'twitch.com', 'pinterest.com', 'pin.it']):
                 self.send_json_response({
@@ -1034,6 +1075,7 @@ class VideoDownloaderHandler(BaseHTTPRequestHandler):
                  self.send_json_response({'success': False, 'error': 'URL inválida (protocolo)'}, 400)
                  return
 
+            url = expand_short_link(url)
             logger.info(f"Extrayendo video de: {url}")
 
             # Determinar plataforma y extraer
@@ -1163,8 +1205,11 @@ code{background:#222;padding:1px 5px;border-radius:3px}
 </style></head><body>
 <h1>Actualizar cookies</h1>
 <p>Exportá tus cookies con la extensión "Get cookies.txt LOCALLY" (desde tu
-navegador logueado en Instagram/Facebook) y pegá el contenido completo acá.</p>
+navegador logueado en cada red) y adjuntá los <code>.txt</code> tal como los
+guarda, sin renombrar (ej. <code>www.linkedin.com_cookies.txt</code>).</p>
 <input type="password" id="secret" placeholder="Clave de administrador">
+<input type="file" id="files" accept=".txt" multiple>
+<p>O pegá el contenido de la cookie de Instagram:</p>
 <textarea id="cookies" placeholder="# Netscape HTTP Cookie File..."></textarea>
 <button onclick="save()">Guardar</button>
 <div id="msg"></div>
@@ -1176,10 +1221,12 @@ async function save() {
   const msg = document.getElementById('msg');
   msg.textContent = 'Guardando...';
   try {
+    const files = await Promise.all([...document.getElementById('files').files]
+      .map(async f => ({name: f.name, content: await f.text()})));
     const res = await fetch('/api/admin/cookies', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({secret, cookies})
+      body: JSON.stringify({secret, cookies, files})
     });
     const data = await res.json();
     msg.textContent = data.success ? '✅ Cookies actualizadas' : ('❌ ' + (data.error || 'Error'));
@@ -1226,19 +1273,38 @@ async function save() {
         return '\n'.join(out) + '\n'
 
     def handle_admin_cookies_save(self):
-        """Guarda el contenido de cookies pegado en el panel admin,
-        protegido por ADMIN_SECRET (comparación en tiempo constante)."""
+        """Guarda las cookies del panel admin (archivos adjuntos y/o el texto
+        pegado de Instagram), protegido por ADMIN_SECRET (comparación en tiempo
+        constante)."""
         try:
             content_length = int(self.headers['Content-Length'])
+            if content_length > ADMIN_COOKIES_MAX_BYTES:
+                self.send_json_response({'success': False, 'error': 'Archivos demasiado grandes'}, 413)
+                return
             post_data = self.rfile.read(content_length).decode('utf-8')
             data = json.loads(post_data)
 
             secret = data.get('secret', '')
             cookies_content = data.get('cookies', '')
+            files = data.get('files') or []
 
             if not ADMIN_SECRET or not hmac.compare_digest(secret, ADMIN_SECRET):
                 logger.warning("⛔ Intento de acceso al panel admin con clave incorrecta")
                 self.send_json_response({'success': False, 'error': 'Clave incorrecta'}, 403)
+                return
+
+            if not isinstance(files, list):
+                self.send_json_response({'success': False, 'error': 'JSON inválido'}, 400)
+                return
+            for item in files:
+                try:
+                    path = save_cookie_file(item.get('name'), item.get('content'))
+                except (ValueError, AttributeError) as e:
+                    self.send_json_response({'success': False, 'error': str(e)}, 400)
+                    return
+                logger.info(f"✅ Cookies guardadas vía panel admin: {os.path.basename(path)}")
+            if files and not cookies_content.strip():
+                self.send_json_response({'success': True})
                 return
 
             if not cookies_content.strip():

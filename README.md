@@ -54,8 +54,8 @@ Componentes:
 - **Descargas Inteligentes**:
   - LinkedIn: Detecta si es video o galería. Si es galería, descarga imágenes secuencialmente (img-1, img-2...).
   - Archivos ZIP: Empaquetado automático para descargas múltiples.
-- **Nombres de Archivo Unificados**: Todas las descargas siguen el formato `plataforma_titulo_fecha.ext` (ej. `instagram_Mar_del_Plata_Drone_20260702.mp4`). Generado por `buildFilename()` en `src/common/card.js`.
-- **Autenticación con Cookies (Instagram)**: Soporte para archivo de cookies Netscape en `cookies/instagram.txt` (o variable de entorno `INSTAGRAM_COOKIES_FILE`). Necesario porque Instagram exige login para la mayoría de los reels. Exportar con la extensión "Get cookies.txt LOCALLY". El directorio `cookies/` está en `.gitignore`.
+- **Nombres de Archivo Unificados**: Todas las descargas siguen el formato `plataforma_titulo_aa-mm-dd_hh-mm-ss.ext` con hora de Buenos Aires, así dos descargas no se pisan (ej. `instagram_Mar_del_Plata_Drone_26-07-02_14-35-08.mp4`). Generado por `buildFilename()` en `src/common/card.js`.
+- **Autenticación con Cookies (Instagram)**: Soporte para archivo de cookies Netscape en `cookies/www.instagram.com_cookies.txt` (o variable de entorno `INSTAGRAM_COOKIES_FILE`). Necesario porque Instagram exige login para la mayoría de los reels. Exportar con la extensión "Get cookies.txt LOCALLY". El directorio `cookies/` está en `.gitignore`.
 - **Interfaz Responsiva**: Diseño moderno, adaptable a móviles y escritorio.
 - **Logging Detallado**: Información completa de resolución, bitrate y errores en consola.
 - **API REST Local**: Endpoints para validación y extracción, listos para integración.
@@ -234,7 +234,7 @@ sequenceDiagram
 | `/api/download_status?id=task_id` | Consultar estado |
 | `/api/download_file?id=task_id` | Descargar archivo completado (`&inline=1` lo sirve para reproducir en vez de bajar; soporta Range/206 para adelantar) |
 | `/api/download?url=...&filename=...` | Descarga directa legacy |
-| `/admin/cookies` | Panel para actualizar la cookie compartida (requiere ADMIN_SECRET) |
+| `/admin/cookies` | Panel para adjuntar los `.txt` de cookies de cualquier red o pegar la de Instagram (requiere ADMIN_SECRET) |
 
 ### POST Endpoints
 
@@ -242,7 +242,7 @@ sequenceDiagram
 |----------|-------------|
 | `/api/validate` | Validar formato de URL |
 | `/api/extract` | Extraer información de video |
-| `/api/admin/cookies` | Actualizar la cookie compartida (requiere `secret` = ADMIN_SECRET) |
+| `/api/admin/cookies` | Guardar cookies: `files` = [{name, content}] con el nombre del export, y/o `cookies` (texto de Instagram). Requiere `secret` = ADMIN_SECRET |
 
 ### Ejemplo de Respuesta (extract)
 
@@ -366,6 +366,23 @@ variable `ADMIN_SECRET` (la misma clave del panel admin de Railway).
   (`src/common/cookies_util.py`); ante duplicados gana el archivo más nuevo.
 - La carpeta `cookies/` está en `.gitignore` — nunca se sube a GitHub.
 
+**LinkedIn (posts de grupos):** sin sesión LinkedIn responde 404. Igual que
+Instagram: logueado en LinkedIn, exportá con "Get cookies.txt LOCALLY" y dejá
+el `.txt` en `cookies/` (se toma la cookie `li_at`). Sirve el formato Netscape
+o "Header String" (todo en una línea): este último se convierte usando el
+dominio del nombre del archivo (`www.linkedin.com_cookies.txt`). Alternativa: pegar solo el
+valor de `li_at` (F12 → Application → Cookies → `https://www.linkedin.com`) en
+el `.env` de la raíz de tu PC, que tiene prioridad sobre `cookies/`:
+
+```
+LINKEDIN_LI_AT=AQEDA...
+```
+
+`server.py` lee el `.env` al arrancar (`.env` está en `.gitignore`). No la
+cargues en Railway: sin cookie, Railway reenvía estos posts a tu PC por el
+túnel. Solo se bajan posts de grupos donde tu cuenta es miembro. Si vuelve el
+error "requiere iniciar sesión", la cookie venció: copiala de nuevo.
+
 ---
 
 ## ☁️ Despliegue en la Nube (Railway/Heroku)
@@ -388,14 +405,14 @@ El proyecto está configurado para desplegarse fácilmente ("Deploy Ready").
 **Configuración inicial (una vez):**
 1. Codificar el archivo local en Base64 (PowerShell):
    ```powershell
-   [Convert]::ToBase64String([IO.File]::ReadAllBytes("cookies\instagram.txt")) | Set-Clipboard
+   [Convert]::ToBase64String([IO.File]::ReadAllBytes("cookies\www.instagram.com_cookies.txt")) | Set-Clipboard
    ```
 2. En Railway → tu proyecto → **Variables** → crear `INSTAGRAM_COOKIES_B64` y pegar el valor (queda en el portapapeles).
 3. Al arrancar, `server.py` decodifica esa variable a un archivo temporal y configura `INSTAGRAM_COOKIES_FILE` automáticamente.
 
 **Panel admin para renovarla sin volver a tocar Railway:**
 - Configurar la variable `ADMIN_SECRET` (una contraseña elegida por vos) en Railway.
-- Entrar a `https://tu-app.up.railway.app/admin/cookies`, poner la clave, pegar el contenido nuevo de `cookies/instagram.txt` y guardar. Se actualiza al instante, sin reiniciar el server.
+- Entrar a `https://tu-app.up.railway.app/admin/cookies`, poner la clave y adjuntar los `.txt` tal como los guarda la extensión (`www.instagram.com_cookies.txt`, `www.linkedin.com_cookies.txt`, ...), o pegar el contenido de la cookie de Instagram. Se actualiza al instante, sin reiniciar el server. Ojo: el disco de Railway no es persistente, así que un redeploy borra lo subido (la variable `INSTAGRAM_COOKIES_B64` sí sobrevive).
 - Sin `ADMIN_SECRET` configurada, el panel queda deshabilitado (403) — no expone nada si no lo activás.
 
 **Refresco automático:** el servidor usa la cookie compartida cada 6 horas en segundo plano para extender su vigencia. Esto no la hace eterna — Instagram igual la vence eventualmente — pero reduce cuánto hay que estar pendiente de renovarla a mano.
@@ -495,13 +512,15 @@ como respaldo distribuible).
 Cadena de extracción (de más rápido a más lento):
 1. URLs directas de CDN (cdninstagram.com) — sin extracción
 2. yt-dlp anónimo
-3. Archivo de cookies `cookies/instagram.txt` (recomendado — Instagram exige login para la mayoría de los reels desde 2026)
+3. Archivo de cookies `cookies/www.instagram.com_cookies.txt` (recomendado — Instagram exige login para la mayoría de los reels desde 2026)
 4. Proxy de embeds (kkinstagram, estilo InstaFix) — resuelve reels públicos sin login, redirige al mp4 del CDN oficial
 5. Cookies del navegador Chrome/Edge/Firefox (último recurso; falla si el navegador está abierto, y Chrome moderno usa App-Bound Encryption que yt-dlp no puede desencriptar)
 
 Detecta los errores de autenticación modernos ("empty media response", "login required", "rate-limit").
 
 ### LinkedIn Extractor
+- Enlaces cortos `lnkd.in/p/...` (se expanden a la URL de linkedin.com en el servidor)
+- Posts con login (grupos) con la cookie `li_at` de `cookies/` o `LINKEDIN_LI_AT`; descarga directa del CDN
 - Videos (yt-dlp)
 - Galerías de imágenes (JSON-LD parsing)
 - Documentos PDFs (native document config)
@@ -509,7 +528,7 @@ Detecta los errores de autenticación modernos ("empty media response", "login r
 ### Facebook Extractor
 Cadena de extracción:
 1. yt-dlp (web, luego reintenta con ID de reel y modo móvil si falla)
-2. yt-dlp con la cookie compartida (`cookies/instagram.txt`) — resuelve reels/videos que exigen login, incluidos `facebook.com/reel/...`
+2. yt-dlp con la cookie compartida (`cookies/www.instagram.com_cookies.txt`) — resuelve reels/videos que exigen login, incluidos `facebook.com/reel/...`
 3. Scraping manual: og:video + playable_url (web y móvil)
 4. Servicio externo fdown.net
 5. Servicio externo getmyfb.com (endpoint `/process`) — resuelve enlaces `share/v/` que exigen login y devuelve el título real del video
@@ -539,7 +558,7 @@ Cadena de extracción:
 
 ### Error: "Instagram exige iniciar sesión" / "empty media response"
 - **Causa**: Instagram exige login para la mayoría de los reels (comportamiento desde 2026). No es un bug de la app.
-- **Solución recomendada (permanente)**: Exportar cookies con la extensión "Get cookies.txt LOCALLY" en Chrome (logueado en Instagram) y guardarlas como `cookies/instagram.txt`. Funciona local y en Railway.
+- **Solución recomendada (permanente)**: Exportar cookies con la extensión "Get cookies.txt LOCALLY" en Chrome (logueado en Instagram) y guardarlas como `cookies/www.instagram.com_cookies.txt`. Funciona local y en Railway.
 - **Alternativa**: Cerrar completamente Chrome/Edge para que yt-dlp lea las cookies del navegador. *Nota*: Chrome moderno (v127+) cifra las cookies con App-Bound Encryption y yt-dlp puede fallar con "Failed to decrypt with DPAPI" — en ese caso la extensión es la única vía.
 - Las cookies caducan: si el error reaparece tras semanas, re-exportar el archivo.
 

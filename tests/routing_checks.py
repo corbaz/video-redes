@@ -1,11 +1,15 @@
 import unittest
 from pathlib import Path
 import sys
+from unittest import mock
+
+import requests
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from server import (
     VideoDownloaderHandler,
+    expand_short_link,
     normalize_extraction_result,
     select_download_route,
 )
@@ -141,6 +145,41 @@ class YouTubeErrorDiagnosisTests(unittest.TestCase):
         self.assertEqual(_summarize_ytdlp_error("ERROR: something brand new"), "")
         self.assertEqual(_summarize_ytdlp_error(""), "")
         self.assertEqual(_summarize_ytdlp_error(None), "")
+
+
+class ShortLinkExpansionTests(unittest.TestCase):
+    """LinkedIn now shares posts as https://lnkd.in/p/<code>, a plain 301 to the
+    real linkedin.com URL. Without expanding it, validation rejects the link
+    as an unknown platform and no extractor ever sees it."""
+
+    POST = ("https://www.linkedin.com/feed/update/"
+            "urn:li:groupPost:1976445-7521103251883335680/?utm_source=share")
+
+    def _redirect(self, location, status=301):
+        response = mock.Mock(status_code=status, headers={"Location": location})
+        return mock.patch("server.requests.get", return_value=response)
+
+    def test_lnkd_in_link_expands_to_its_linkedin_target(self):
+        with self._redirect(self.POST) as get:
+            self.assertEqual(expand_short_link("https://lnkd.in/p/ddUt5HPj"), self.POST)
+        self.assertFalse(get.call_args.kwargs["allow_redirects"])
+
+    def test_regular_urls_are_returned_untouched_without_network(self):
+        with mock.patch("server.requests.get") as get:
+            for url in ("https://www.linkedin.com/posts/abc", "https://pin.it/xyz"):
+                with self.subTest(url=url):
+                    self.assertEqual(expand_short_link(url), url)
+        get.assert_not_called()
+
+    def test_redirect_outside_linkedin_is_not_followed(self):
+        with self._redirect("https://evil.example.com/x"):
+            self.assertEqual(
+                expand_short_link("https://lnkd.in/p/abc"), "https://lnkd.in/p/abc")
+
+    def test_network_failure_keeps_the_original_url(self):
+        with mock.patch("server.requests.get", side_effect=requests.Timeout()):
+            self.assertEqual(
+                expand_short_link("https://lnkd.in/p/abc"), "https://lnkd.in/p/abc")
 
 
 if __name__ == "__main__":

@@ -15,7 +15,7 @@ from common.cookies_util import combined_cookies_file
 # incluido facebook.com — sirve para reels/videos que exigen login.
 COOKIES_FILE = os.environ.get(
     'INSTAGRAM_COOKIES_FILE',
-    os.path.join(os.path.dirname(__file__), '..', '..', 'cookies', 'instagram.txt')
+    os.path.join(os.path.dirname(__file__), '..', '..', 'cookies', 'www.instagram.com_cookies.txt')
 )
 
 

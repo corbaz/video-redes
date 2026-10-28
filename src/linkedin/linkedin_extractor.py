@@ -1,4 +1,63 @@
-from typing import Dict, Any
+import html as html_lib
+import os
+import re
+from typing import Dict, Any, Optional
+from urllib.parse import urlparse
+
+import requests
+
+from common.cookies_util import combined_cookies_file
+
+# Rutas a las que LinkedIn manda cuando el contenido exige sesión.
+_LOGIN_WALL_PATHS = ('/authwall', '/signup', '/uas/login', '/login')
+_LOGIN_REQUIRED_ERROR = (
+    "Este post de LinkedIn requiere iniciar sesión (por ejemplo, un post de grupo). "
+    "Exportá tus cookies de LinkedIn a la carpeta cookies/ de la PC "
+    "(o configurá LINKEDIN_LI_AT en el .env).")
+_SESSION_REJECTED_ERROR = (
+    "La cookie de LinkedIn venció o tu cuenta no tiene acceso a este post: "
+    "requiere iniciar sesión de nuevo y volver a exportar la cookie.")
+
+
+def _session_cookie() -> str:
+    """li_at from LINKEDIN_LI_AT, or else from the exported cookies/ folder."""
+    li_at = os.environ.get('LINKEDIN_LI_AT', '').strip()
+    if li_at:
+        return li_at
+    path = combined_cookies_file()
+    if not path or not os.path.isfile(path):
+        return ''
+    with open(path, encoding='utf-8', errors='ignore') as fh:
+        for line in fh:
+            parts = line.rstrip('\r\n').split('\t')
+            if (len(parts) >= 7 and parts[5] == 'li_at'
+                    and parts[0].lstrip('.').endswith('linkedin.com')):
+                return parts[6].strip()
+    return ''
+
+
+def find_session_video(page: str) -> Optional[str]:
+    """Return the highest-resolution video URL embedded in a logged-in page.
+
+    LinkedIn ships its data as HTML-escaped JSON with ``\\u002F`` slashes, so
+    the page is unescaped before searching for dms.licdn.com video streams.
+    """
+    text = (html_lib.unescape(page)
+            .replace('\\u002F', '/').replace('\\/', '/').replace('\\u0026', '&'))
+    urls = re.findall(r'https://dms\.licdn\.com/playlist/vid/[^"\s<>\\]+', text)
+    if not urls:
+        return None
+
+    def height(url):
+        match = re.search(r'mp4-(\d+)p', url)
+        return int(match.group(1)) if match else 0
+
+    return max(urls, key=height)
+
+
+def _needs_login(response) -> bool:
+    return (response.status_code in (401, 403, 404, 999)
+            or any(path in (response.url or '') for path in _LOGIN_WALL_PATHS))
 
 
 class LinkedInExtractor:
@@ -210,6 +269,10 @@ class LinkedInExtractor:
                         }
                     }
 
+            # Posts de grupos y contenido privado: 404 o muro de login sin sesión.
+            if _needs_login(response):
+                return self._extract_with_session(url, headers)
+
             return {
                 "success": False,
                 "error": f"No se encontró video, imagen o documento accesible."
@@ -221,3 +284,46 @@ class LinkedInExtractor:
                 "success": False,
                 "error": f"Error general LinkedIn: {str(e)}"
             }
+
+    def _extract_with_session(self, url: str, headers: Dict[str, str]) -> Dict[str, Any]:
+        """Retry a login-gated post with the user's own li_at session cookie.
+
+        Without the cookie (e.g. on Railway) the error reads as login-gated, so
+        the server forwards the request to the home PC, which has it.
+        """
+        # El ruteo acepta "linkedin.com" en cualquier parte de la URL: la cookie
+        # solo viaja a hosts de LinkedIn de verdad.
+        host = (urlparse(url).hostname or '').lower()
+        if host != 'linkedin.com' and not host.endswith('.linkedin.com'):
+            return {"success": False, "error": "No se encontró video, imagen o documento accesible."}
+
+        li_at = _session_cookie()
+        if not li_at:
+            return {"success": False, "error": _LOGIN_REQUIRED_ERROR}
+
+        print("🔐 Post con login: reintentando con la sesión de LinkedIn")
+        response = requests.get(
+            url, headers={**headers, 'Cookie': f'li_at={li_at}'}, timeout=15)
+        if response.status_code != 200 or _needs_login(response):
+            return {"success": False, "error": _SESSION_REJECTED_ERROR}
+
+        video_url = find_session_video(response.text)
+        if not video_url:
+            return {
+                "success": False,
+                "error": "No se encontró video en este post de LinkedIn (la sesión sí funcionó)."
+            }
+
+        og_title = re.search(r'<meta property="og:title" content="([^"]+)"', response.text)
+        print(f"✅ Video con sesión: {video_url[:50]}...")
+        return {
+            "success": True,
+            "data": {
+                "videoUrl": video_url,
+                "title": html_lib.unescape(og_title.group(1)) if og_title else "Video de LinkedIn",
+                "original_url": url,
+                # El CDN no pide cookie; re-descargar por yt-dlp volvería a chocar con el login.
+                "_download_mode": "direct",
+                "type": "video"
+            }
+        }

@@ -14,7 +14,7 @@ from common.cookies_util import combined_cookies_file
 # when the browser is open and locking its cookie database.
 COOKIES_FILE = os.environ.get(
     'INSTAGRAM_COOKIES_FILE',
-    os.path.join(os.path.dirname(__file__), '..', '..', 'cookies', 'instagram.txt')
+    os.path.join(os.path.dirname(__file__), '..', '..', 'cookies', 'www.instagram.com_cookies.txt')
 )
 
 
@@ -159,7 +159,7 @@ class InstagramExtractor:
                         "needs_login": True,
                         "login_platform": "instagram",
                         "error": "Instagram exige iniciar sesión para ver este contenido y no se pudieron obtener cookies válidas del navegador.",
-                        "suggestion": "Inicia sesión para este video, o exporta tus cookies de Instagram a 'cookies/instagram.txt' (formato Netscape) con una extensión como 'Get cookies.txt LOCALLY'."
+                        "suggestion": "Inicia sesión para este video, o exporta tus cookies de Instagram a 'cookies/www.instagram.com_cookies.txt' (formato Netscape) con una extensión como 'Get cookies.txt LOCALLY'."
                     }
                 if 'empty media response' in error_msg.lower():
                     return {
@@ -167,7 +167,7 @@ class InstagramExtractor:
                         "needs_login": True,
                         "login_platform": "instagram",
                         "error": "Instagram exige iniciar sesión para ver este contenido y no se pudieron obtener cookies válidas.",
-                        "suggestion": "Inicia sesión para este video, o exporta tus cookies de Instagram a 'cookies/instagram.txt' (formato Netscape) con una extensión como 'Get cookies.txt LOCALLY'."
+                        "suggestion": "Inicia sesión para este video, o exporta tus cookies de Instagram a 'cookies/www.instagram.com_cookies.txt' (formato Netscape) con una extensión como 'Get cookies.txt LOCALLY'."
                     }
                 elif 'private' in error_msg.lower():
                     return {
