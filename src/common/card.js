@@ -1,6 +1,18 @@
-// Build a consistent download filename: platform_title_date.ext
-// Example: instagram_Mar_del_Plata_Drone_20260702.mp4
+// Build a consistent download filename: platform_title_yy-mm-dd_hh-mm-ss.ext
+// Example: instagram_Mar_del_Plata_Drone_26-07-02_14-35-08.mp4
+// The time (Buenos Aires) keeps same-day downloads from overwriting each other.
 // Falls back to "video" when no title is available.
+function buildTimestamp(now = new Date()) {
+  const parts = Object.fromEntries(
+    new Intl.DateTimeFormat("en-GB", {
+      timeZone: "America/Argentina/Buenos_Aires",
+      year: "2-digit", month: "2-digit", day: "2-digit",
+      hour: "2-digit", minute: "2-digit", second: "2-digit", hourCycle: "h23",
+    }).formatToParts(now).map(p => [p.type, p.value])
+  );
+  return `${parts.year}-${parts.month}-${parts.day}_${parts.hour}-${parts.minute}-${parts.second}`;
+}
+
 function buildFilename(platform, title, extension = "mp4") {
   const safePlatform = (platform || "video").toLowerCase().replace(/[^a-z0-9]/g, "");
   const safeTitle = (title || "")
@@ -8,7 +20,7 @@ function buildFilename(platform, title, extension = "mp4") {
     .replace(/_+/g, "_")
     .replace(/^_+|_+$/g, "")
     .substring(0, 50);
-  const date = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+  const date = buildTimestamp();
   const middle = safeTitle ? `${safeTitle}_` : "video_";
   return `${safePlatform}_${middle}${date}.${extension}`;
 }
